@@ -1,0 +1,39 @@
+body {
+    background-color: lightgrey;
+    transition: background-color 1s;
+}
+
+#inici {
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px;
+}
+
+#guesspk {
+    text-transform: uppercase;
+    color: black;
+    font-size: 4em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    /*text-shadow: 0.08em 0em lightgrey;*/
+}
+
+
+#textScore {
+    font-size: 2em;
+}
+
+input[type="text"] {
+    font-size: 30px;
+    border: 1px solid black;
+}
+
+ul {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.listaflex {
+    width: 100%;
+}
