@@ -1,3 +1,4 @@
+/* higher lower*/
 body {
     background-image: url("tiled.png");
     background-repeat: repeat;
@@ -10,10 +11,10 @@ body {
     background-color: transparent;
     padding: 14px 28px;
     font-size: 20px;
-    display: block;
     margin: 10px;
     width: 8em;
 }
+
 /* blue button */
 .lower {
     border-color: #2196F3;
@@ -48,6 +49,11 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+}
+
+p {
+    color: white;
+    font-size: 20px;
 }
 
 h3 {

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POKE PEELED</title>
     <script src="../js/data.json"></script>
+    <!-- The order of jquery & bootrap affect to dropdown-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -15,45 +16,45 @@
     <link rel="icon" href="../icopz.ico">
 </head>
 
-<body>
-    <div class="container d-flex flex-column flex-md-row justify-content-center">
-        <div class="p-2 listaflex">
-            <div class="centerimgtext">
-                <img class="img_black"
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png"
-                    alt="Pika">
-                <div class="text_image">
-                    <h1>Snorlax</h1>
-                    <h3>tiene</h3>
-                    <h2>600</h2>
-                    <h3>velocidad</h3>
+<body onload="loadTwoPokes()">
+    <div class="container">
+        <div id="pokemenu">
+            <h3 id="pokescore">Score: 0</h3>
+        </div>
+        <div class="d-flex flex-column flex-md-row justify-content-center">
+            <div class="p-2 listaflex">
+                <div class="centerimgtext">
+                    <img id="pk1image" class="img_black" src="" alt=""> <!-- img loaded js-->
+                    <div class="text_image">
+                        <h1 id="pk1name"></h1> <!-- name loaded js-->
+                        <h3>has</h3>
+                        <h2 id="pk1number"></h2> <!-- number loaded js-->
+                        <h3 class="pktpye"></h3> <!-- type loaded js-->
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--
+            <!--
         <div class="p-1 centerimgtext ">
             <img id="toggleball" src="256x256bb.jpg">
         </div> -->
-        <div class="p-2 listaflex">
-            <div class="centerimgtext">
-                <img class="img_black"
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
-                    alt="Pika">
-                <div class="text_image">
-                    <h1>Pikachu</h1>
-                    <h3>tiene</h3>
-                    <button class="_btn lower">MORE</button>
-                    <button class="_btn higher">LESS</button>
-                    <h3>velocidad</h3>
+            <div class="p-2 listaflex">
+                <div class="centerimgtext">
+                    <img id="pk2image" class="img_black" src="" alt=""> <!-- name loaded js-->
+                    <div class="text_image">
+                        <h1 id="pk2name"></h1> <!-- name loaded js-->
+                        <h3>has</h3>
+                        <button onclick="btnLow()" class="_btn lower">MORE</button><br>
+                        <button onclick="btnHigh()" class="_btn higher">LESS</button>
+                        <h3 class="pktpye"></h3>
+                    </div>
                 </div>
             </div>
+
         </div>
-
-    </div>
-
-
-
-
+        <p>
+        Play Store:
+        <a href="https://play.google.com/store/apps/details?id=apps.zack.pokemorelessapp" class="link-light">Pokehigher
+            or Pokelower</a></p>
     </div>
 </body>
 

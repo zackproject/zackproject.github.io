@@ -1,3 +1,4 @@
+/* guess */
 var pkname;
 var score = 0
 var wrongList = [];
