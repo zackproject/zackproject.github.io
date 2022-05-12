@@ -20,9 +20,8 @@ function findPokeName() {
         pknameunsort = disorderWord(pkname);
     }
 
-    console.log('unsort', pknameunsort);
-
-    console.log('pkname', pkname);
+    //console.log('unsort', pknameunsort);
+   // console.log('pkname', rand);
 
     //document.getElementById('imagen').src = pkimage;
     document.getElementById('guesspk').textContent = pknameunsort;
