@@ -65,3 +65,7 @@ function refreshScore() {
 function randNumber(max, min) {
     return Math.floor(Math.random() * (max - min) + min);
 }
+
+function consoleThis() {
+    console.log("hola");
+}

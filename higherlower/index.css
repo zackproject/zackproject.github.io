@@ -96,3 +96,15 @@ h1 {
     cursor: pointer;
     text-align: center;
 }
+
+.form-select {
+    background-color: transparent;
+    color: white;
+
+}
+
+
+.form-select>option {
+    background-color: black;
+    color: white;
+}
