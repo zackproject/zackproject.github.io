@@ -24,9 +24,8 @@
                 <h3 id="pokescore">Score: 0</h3>
             </div>
             <div class="p-2 listaflex">
-                <select class="form-select" id="genViewList" aria-label="Generation List">
-                    <option selected>All generations</option>
-                    <option value="0">All generations</option>
+                <select onchange="changeGenOrType()" class="form-select" id="genViewList" aria-label="Generation List">
+                    <option selected value="0">All generations</option>
                     <option value="1">1 Generation</option>
                     <option value="2">2 Generation</option>
                     <option value="3">3 Generation</option>
@@ -38,14 +37,13 @@
                 </select>
             </div>
             <div class="p-2 listaflex">
-                <select class="form-select" id="typeViewList" aria-label="Generation List">
-                    <option selected>Speed</option>
+                <select onchange="changeGenOrType()" class="form-select" id="typeViewList" aria-label="Generation List">
                     <option value="hp">HP</option>
                     <option value="attack">Attack</option>
                     <option value="defense">Defense</option>
                     <option value="special_attack">Special Attack</option>
                     <option value="special_defense">Special Defense</option>
-                    <option value="speed">Speed</option>
+                    <option selected value="speed">Speed</option>
                     <option value="best">Total (all features)</option>
                 </select>
             </div>
