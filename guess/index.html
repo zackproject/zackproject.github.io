@@ -28,11 +28,10 @@
 
         </div>
         <div id="p_guess">
-            <p class="text-center" id="guesspk">
+            <p class="text-center" id="guesspk"></p>
         </div>
-        </h2>
         <div>
-            <input placeholder="Write the word sorted" autocomplete="off" class="md-3 form-control text-center"
+            <input placeholder="Write the name sorted" autocomplete="off" class="md-3 form-control text-center"
                 type="text" id="inputpk" name="name">
         </div>
 
@@ -42,26 +41,38 @@
 
     <div class="container d-flex flex-column flex-md-row justify-content-center ">
         <div class="p-2 listaflex">
-            <h3 class="text-center bg-light p-2">Last wrong</h1>
-                <ul id="listawrong" class="list-group">
-                    <!--   <li class="list-group-item">Wrong list</li> -->
-                </ul>
+            <!-- icon list and text on same line-->
+            <div class="listsvgtext text-center bg-light p-2">
+                <img src="list.svg" alt="list icon" height="40px" width="40px" />
+                <h3>Last wrong </h3>
+            </div>
+            <ul id="listawrong" class="list-group">
+                <!--   <li class="list-group-item">Wrong list</li> -->
+            </ul>
         </div>
         <div class="p-2 listaflex">
-            <h3 class="text-center bg-light p-2">Last right</h1>
-                <ul id="listaright" class="list-group">
-                    <!-- <li class="list-group-item">Wrong list</li> -->
-                </ul>
+            <!-- icon list and text on same line-->
+            <div class="listsvgtext text-center bg-light p-2">
+                <img src="list.svg" alt="list icon" height="40px" width="40px" />
+                <h3>Last right </h3>
+            </div>
+            <ul id="listaright" class="list-group">
+                <!-- <li class="list-group-item">Wrong list</li> -->
+            </ul>
         </div>
         <div class="p-2 listaflex">
-            <h3 class="text-center bg-light p-2">Last skipped</h1>
-                <ul id="listaskiped" class="list-group">
-                    <!-- <li class="list-group-item">Wrong list</li> -->
-                </ul>
+            <!-- icon list and text on same line-->
+            <div class="listsvgtext text-center bg-light p-2">
+                <img src="list.svg" alt="list icon" height="40px" width="40px" />
+                <h3>Last skipped </h3>
+            </div>
+            <ul id="listaskiped" class="list-group">
+                <!-- <li class="list-group-item">Wrong list</li> -->
+            </ul>
         </div>
     </div>
 
-    
+
 </body>
 <script>
     // Cuando se clica enter se ejecuta la funcion

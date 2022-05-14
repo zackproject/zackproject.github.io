@@ -20,6 +20,11 @@ body {
     /*text-shadow: 0.08em 0em lightgrey;*/
 }
 
+.listsvgtext img{
+    float: left;
+    margin-bottom: 5px;
+    
+}
 
 #textScore {
     font-size: 2em;
