@@ -79,7 +79,7 @@ function printPokeHTML() {
 }
 
 function btnLow() {
-    if (poke1[type] < poke2[type]) {
+    if (poke1[type] <= poke2[type]) {
         score++;
     } else {
         score = 0;
@@ -92,7 +92,7 @@ function btnLow() {
 }
 
 function btnHigh() {
-    if (poke1[type] > poke2[type]) {
+    if (poke1[type] >= poke2[type]) {
         score++;
     } else {
         score = 0;
