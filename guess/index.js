@@ -1,3 +1,4 @@
+/* guess */
 var pkname;
 var score = 0
 var wrongList = [];
@@ -19,11 +20,6 @@ function findPokeName() {
     while (pkname.toLowerCase() == pknameunsort || pknameunsort == '') {
         pknameunsort = disorderWord(pkname);
     }
-
-    //console.log('unsort', pknameunsort);
-   // console.log('pkname', rand);
-
-    //document.getElementById('imagen').src = pkimage;
     document.getElementById('guesspk').textContent = pknameunsort;
 }
 
@@ -66,8 +62,10 @@ function textInputGame() {
 
 function makeListHtml(_idhtml, _list) {
     let text = '';
-    //hace un remove de la ultima posicion
+    //hace un remove de la ultima posicion si es mayor a 5
     if (_list.length > 5) _list.pop();
+    //Vuelve a actualizar el list group en un texto
     _list.forEach(element => { text = text + "<li class='list-group-item'>" + element + "</li>"; });
+    //pinta en el html el nuevo list group
     document.getElementById(_idhtml).innerHTML = text;
 }

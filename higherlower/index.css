@@ -1,0 +1,110 @@
+/* higher lower*/
+body {
+    background-image: url("tiled.png");
+    background-repeat: repeat;
+}
+
+
+._btn {
+    border: 5px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 14px 28px;
+    font-size: 20px;
+    margin: 10px;
+    width: 8em;
+}
+
+/* blue button */
+.lower {
+    border-color: #2196F3;
+    color: dodgerblue
+}
+
+.lower:hover {
+    background: #2196F3;
+    color: white;
+}
+
+
+/* Red button*/
+.higher {
+    border-color: #f44336;
+    color: red
+}
+
+.higher:hover {
+    background: #f44336;
+    color: white;
+}
+
+/* Make image black with opacity*/
+.img_black {
+    filter: contrast(100%) brightness(0%) opacity(60%);
+}
+
+/* Ball of poke on center*/
+#toggleball {
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+}
+
+h3 {
+    color: white;
+    font-size: 1.5em;
+}
+
+h2 {
+    color: yellow;
+    font-size: 2em;
+}
+
+h1 {
+    color: white;
+    font-size: 3em;
+}
+
+
+.listaflex {
+    width: 100%;
+}
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_button_on_image*/
+.centerimgtext {
+    position: relative;
+}
+
+.centerimgtext img {
+    width: 100%;
+    height: auto;
+}
+
+.centerimgtext .text_image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    /*padding: 12px 24px;*/
+    cursor: pointer;
+    text-align: center;
+}
+
+.form-select {
+    background-color: transparent;
+    color: white;
+
+}
+
+
+.form-select>option {
+    background-color: black;
+    color: white;
+}
