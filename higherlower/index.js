@@ -58,7 +58,7 @@ function genMaxMin(genl) {
             return [650, 721]; //gen6
         case 7:
             return [722, 809]; //gen7
-        case 1:
+        case 8:
             return [810, 898]; //gen8
         default:
             return [1, 898]; //all gens gen=0 or other
