@@ -16,15 +16,25 @@
 </head>
 
 <body onload="findPokeName()">
+    <p style="font-size: 20px">All Peeled Poke are from <a href="https://twitter.com/peeled_pokemon">peeled pokemon</a> on Twitter</p>
+    
     <div id="inici" class="container">
         <h1 class="text-center bg-light">Poke-guess</h1>
         <div class="d-flex justify-content-between">
             <div class="p-2">
                 <p id="textScore">Score: 0</p>
             </div>
+            <div class="p2">
+                <select onchange="changeGen()" class="form-select" id="genViewList" aria-label="Generation List">
+                    <option selected value="0">1 & 2 Generation </option>
+                    <option value="1">1 Generation</option>
+                    <option value="2">2 Generation</option>
+                </select>
+            </div>
             <div class="p-2">
                 <button type="button" class="btn btn-dark" onclick="giveup()">Skip</button>
             </div>
+
 
         </div>
         <div id="imgpkpeled">
