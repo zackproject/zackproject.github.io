@@ -13,17 +13,17 @@ body {
 #guesspk {
     text-transform: uppercase;
     color: black;
-    font-size: 4em;
+    font-size: 2.5em;
     font-weight: bold;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
     /*text-shadow: 0.08em 0em lightgrey;*/
 }
 
-.listsvgtext img{
+.listsvgtext>img {
     float: left;
     margin-bottom: 5px;
-    
+
 }
 
 #textScore {
@@ -42,4 +42,19 @@ ul {
 
 .listaflex {
     width: 100%;
+}
+
+
+#imgpkpeled {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+#imgpkpeled>img {
+    max-width: 100%;
+}
+
+#inputdiv {
+    max-width: 100%;
+    margin: 0 auto;
 }

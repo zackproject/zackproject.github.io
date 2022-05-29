@@ -13,13 +13,15 @@ function disorderWord(word) {
 }
 
 function findPokeName() {
-    let rand = Math.floor(Math.random() * (898 - 1) + 1);
-    let poke = data[rand];
+    let rand = Math.floor(Math.random() * (251 - 1) + 1);
+    let poke = pokeled[rand];
     pkname = poke.name;
     let pknameunsort = '';
     while (pkname.toLowerCase() == pknameunsort || pknameunsort == '') {
         pknameunsort = disorderWord(pkname);
     }
+    document.getElementById('imagepk').alt = "Peeled " + poke.dex;
+    document.getElementById('imagepk').src = poke.image;
     document.getElementById('guesspk').textContent = pknameunsort;
 }
 
@@ -69,3 +71,5 @@ function makeListHtml(_idhtml, _list) {
     //pinta en el html el nuevo list group
     document.getElementById(_idhtml).innerHTML = text;
 }
+
+
