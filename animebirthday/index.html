@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"
+        integrity="sha512-1Gn7//DzfuF67BGkg97Oc6jPN6hqxuZXnaTpC9P5uw8C6W4yUNj5hoS/APga4g1nO2X6USBb/rXtGzADdaVDeA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+sdfeg
+</body>
+<script>
+    const url = 'https://www.animecharactersdatabase.com/api_series_characters.php?month=1&day=1';
+    //Api doc http://wiki.animecharactersdatabase.com/index.php?title=API_Access
+
+    //const url = 'https://api.github.com/users/shrutikapoor08/repos';
+
+    fetch(url,{
+        
+    })
+        .then(response => response.json())
+        .then(repos => {
+            console.log(repos);
+        })
+        .catch(err => console.log(err))
+</script>
+
+</html>

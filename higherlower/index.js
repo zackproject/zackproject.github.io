@@ -83,9 +83,9 @@ function btnLow() {
         score++;
     } else {
         score = 0;
-        alert(`WRONG!!!\n${poke1.name} ${type} : ${poke1[type]}\n${poke2.name} ${type}: ${poke2[type]}\n`)
+        document.getElementById("textmodal").innerHTML =`<p>INCORRECT</p><p>${poke1.name} ${type}: ${poke1[type]}  </p> <p>${poke2.name} ${type}: ${poke2[type]}</p>`
+        openModal();
     }
-
     //Refresh the score in the html and max score
     refreshScore();
     twiceNewPoke();
@@ -96,7 +96,8 @@ function btnHigh() {
         score++;
     } else {
         score = 0;
-        alert(`WRONG!!!\n${poke1.name} : ${poke1[type]}\n${poke2.name} : ${poke2[type]}\n`)
+        document.getElementById("textmodal").innerHTML =`<p>INCORRECT</p><p>${poke1.name} ${type}: ${poke1[type]}  </p> <p>${poke2.name} ${type}: ${poke2[type]}</p>`
+        openModal();
     }
     refreshScore();
     twiceNewPoke();
@@ -111,4 +112,15 @@ function refreshScore() {
 
 function randNumber(max, min) {
     return Math.floor(Math.random() * (max - min) + min);
+}
+
+
+function openModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
 }
