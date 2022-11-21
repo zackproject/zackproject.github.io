@@ -107,7 +107,7 @@ var adventList = [
     {
         "id": 22,
         "image_open": "images/resolved/resolved_22.webp",
-        "advent": "https://google.ca/maecenas/tincidunt/lacus.jpg"
+        "advent": "https://youtu.be/saSuSMAL5_0"
     },
     {
         "id": 23,
