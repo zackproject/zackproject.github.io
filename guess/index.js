@@ -4,23 +4,29 @@ var score = 0
 var wrongList = [];
 var rightList = [];
 var skipedList = [];
+var gen = 0;
 
-// excluye el 152 max
-
-
+//Disorder the word randoom
 function disorderWord(word) {
     return word.split('').sort(function () { return 0.5 - Math.random() }).join('').toLowerCase();
 }
 
+//Get poke and update views
 function findPokeName() {
-    let rand = Math.floor(Math.random() * (898 - 1) + 1);
-    let poke = data[rand];
+    let listGen = genMaxMin(gen);
+    let min = listGen[0];
+    let max = (listGen[1]) + 1; //random no include the last (1-152 no iclude 152)
+    let rand = Math.floor(Math.random() * (max - min) + min);
+    let poke = pokeled[rand];
     pkname = poke.name;
     let pknameunsort = '';
-    while (pkname.toLowerCase() == pknameunsort || pknameunsort == '') {
+    do {
         pknameunsort = disorderWord(pkname);
-    }
+    } while (pkname.toLowerCase() == pknameunsort || pknameunsort == '');
+    document.getElementById('imagepk').alt = "Peeled " + poke.dex;
+    document.getElementById('imagepk').src = poke.image;
     document.getElementById('guesspk').textContent = pknameunsort;
+    updateScore();
 }
 
 
@@ -30,7 +36,7 @@ function giveup() {
     if (score > 0) {
         score--;
     }
-    document.getElementById('textScore').textContent = 'Score: ' + score;
+    updateScore();
     makeListHtml(_idhtml = 'listaskiped', _list = skipedList);
     document.body.style.backgroundColor = "#cc0000";
 }
@@ -42,7 +48,7 @@ function textInputGame() {
         document.body.style.backgroundColor = "lightgreen";
         findPokeName();
         score++;
-        document.getElementById('textScore').textContent = 'Score: ' + score;
+        updateScore();
         //hace un push hacia la primera posicion
         rightList.unshift(input);
         makeListHtml(_idhtml = 'listaright', _list = rightList);
@@ -68,4 +74,27 @@ function makeListHtml(_idhtml, _list) {
     _list.forEach(element => { text = text + "<li class='list-group-item'>" + element + "</li>"; });
     //pinta en el html el nuevo list group
     document.getElementById(_idhtml).innerHTML = text;
+}
+
+function genMaxMin(genl) {
+    //return de range of number pokedex for each generation
+    switch (genl) {
+        case 1:
+            return [1, 151]; //gen1
+        case 2:
+            return [152, 251]; //gen2
+        default:
+            return [1, 251]; //gen 1&2
+    }
+}
+
+function changeGen() {
+    let genHtml = document.getElementById('genViewList').selectedOptions[0].value;
+    gen = parseInt(genHtml);
+    score = 0;
+    findPokeName();
+}
+
+function updateScore() {
+    document.getElementById('textScore').textContent = 'Score: ' + score;
 }
