@@ -6,54 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario Adviento </title>
-    <script src="dades.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="index.js"></script>
+    <script src="dades.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="favicon.ico">
 </head>
 
-<body>
+<body onload="fillDropdown()">
+    <select onchange="changeDay()" id="daysViewList" aria-label="My List">
+        <option selected value="1">Hoy</option>
+    </select>
+
+    <select onchange="changeDay()" id="monthsViewList" aria-label="My List">
+        <option selected value="1">Hoy</option>
+    </select>
     <ul id="listalo"></ul>
+
 </body>
 <script>
-    //El dia i el mes son global i varien cada dia
-    var day = 14;
-    var month = 2;
-    var llistat = document.getElementById("listalo");
-    //Per un dia en concret es crida dia i mes
-    let listArray = thisDate(day, month);
 
-    //Crea tant element 
-    listArray.forEach(element => {
-        let li = document.createElement("li");
-        li.innerText = element.name + " " + element.day + " " + element.month;
-        llistat.appendChild(li);
-    });
-
-    //Primer tria la array de aquell mes
-    function thisDate(day, month) {
-        switch (month) {
-            case 1:
-                return thisDay(january, day)
-            case 2:
-                return thisDay(february, day)
-                break;
-            default:
-                break;
-        }
-    }
-
-    //Amb la array d'aquell dia es busca el dia en concret
-    function thisDay(list, day) {
-        thisList = [];
-        list.forEach(element => {
-            if (element.day == day) {
-                thisList.push(element)
-            }
-        });
-        return thisList;
-    }
 </script>
 
 </html>
