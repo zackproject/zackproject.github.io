@@ -2,41 +2,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-    <script src="https://unpkg.com/react@15/dist/react.js"></script>
-    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Adviento </title>
+    <script src="dades.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-        let web1 = 'https://jsonplaceholder.typicode.com/users';
-        let web2 = 'https://www.animecharactersdatabase.com/api_series_characters.php?month=1&day=1';
-        let headers = new Headers({
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"
-        });
-      
-
-         fetch(
-            web1, {
-            method: 'GET',
-            headers: headers})
-            .then((res) => res.json())
-            .then((json) => {
-
-             console.log(json);
-
-            })
-
-            ReactDOM.render(
-            <h1>Hello, world!</h1>,
-            document.getElementById('root')
-        );
-    </script>
+    <ul id="listalo"></ul>
 </body>
+<script>
+    //El dia i el mes son global i varien cada dia
+    var day = 14;
+    var month = 2;
+    var llistat = document.getElementById("listalo");
+    //Per un dia en concret es crida dia i mes
+    let listArray = thisDate(day, month);
+
+    //Crea tant element 
+    listArray.forEach(element => {
+        let li = document.createElement("li");
+        li.innerText = element.name + " " + element.day + " " + element.month;
+        llistat.appendChild(li);
+    });
+
+    //Primer tria la array de aquell mes
+    function thisDate(day, month) {
+        switch (month) {
+            case 1:
+                return thisDay(january, day)
+            case 2:
+                return thisDay(february, day)
+                break;
+            default:
+                break;
+        }
+    }
+
+    //Amb la array d'aquell dia es busca el dia en concret
+    function thisDay(list, day) {
+        thisList = [];
+        list.forEach(element => {
+            if (element.day == day) {
+                thisList.push(element)
+            }
+        });
+        return thisList;
+    }
+</script>
 
 </html>
