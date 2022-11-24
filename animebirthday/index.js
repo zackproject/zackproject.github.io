@@ -16,8 +16,8 @@ function fillDropdown() {
 
     //Bucle de elements per la list <select> days
     lllistadays = loopDropdown(
-        llistaDOM = lllistadays, 
-        size = 31, 
+        llistaDOM = lllistadays,
+        size = 31,
         date = d.getDate());
 
     changeDay();
@@ -29,9 +29,9 @@ function loopDropdown(llistaDOM, size, date, useText = false) {
         let optSelect = document.createElement("option");
         optSelect.value = index;
         //Em cas de 'mes' escriu el text
-        if(useText){
-            optSelect.innerText = monthName[index-1];
-        }else{
+        if (useText) {
+            optSelect.innerText = monthName[index - 1];
+        } else {
             //En cas 'dia' escriu numero
             optSelect.innerText = index;
         }
@@ -60,14 +60,42 @@ function changeDay() {
 
     //Crea tant element 
     listArray.forEach(element => {
-        let li = document.createElement("li");
         //Exmple d'insertar personatges a la llista <li>
-        li.innerText = element.name + " " + element.day + " " + element.month;
-        llistat.appendChild(li);
+        console.log("element=>", element);
+        let ncard = createCard(element);
+        llistat.appendChild(ncard);
     });
+
 
     console.log("Day:", day, "Month", month);
 
+}
+
+function createCard(element) {
+    //Crea la carta
+    let carta = document.createElement("div");
+    carta.className = "carta";
+    //Crea el div name
+    let nom = document.createElement("div");
+    nom.className = "name-carta";
+    nom.innerText = element.name;
+
+    //Crea el div img
+    let image = document.createElement("img");
+    image.className = "image-carta";
+    //baseUrlImage es la pagina web original
+    image.src = baseUrlImage + element.character_thumb
+    image.alt = "Image of " + element.name;
+    image.loading = "lazy"
+    //Crea el div origin
+    let origin = document.createElement("div");
+    origin.className = "origin-carta";
+    origin.innerText = element.origin;
+    carta.appendChild(nom);
+    carta.appendChild(image);
+    carta.appendChild(origin);
+
+    return carta;
 }
 
 //Primer tria la array de aquell mes
