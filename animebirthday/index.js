@@ -1,22 +1,37 @@
+const d = new Date();
 
 function fillDropdown() {
     //Agafa els dos dropdown de la llista
     let lllistaMotnhs = document.getElementById("monthsViewList");
     let lllistadays = document.getElementById("daysViewList");
-
+    let monthName = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
     //Reciclem el bucle amb un 'if' per dia i mes
     for (let index = 1; index <= 31; index++) {
         let optSelect = document.createElement("option");
         optSelect.value = index;
         optSelect.innerText = index;
-        //Al de dies fica del '1' al '31'
-        lllistadays.appendChild(optSelect);
-        if (index <= 12) {
-            //Al de mesos li fica de '1' al '12'
-            lllistaMotnhs.appendChild(optSelect);
+        //Queda selecionat la data actual
+        if (d.getDate() == index) {
+            optSelect.selected = "true";
         }
+        lllistadays.appendChild(optSelect);
     }
+
+    for (let index = 1; index <= 12; index++) {
+        let optSelect = document.createElement("option");
+        optSelect.value = index;
+        optSelect.innerText = index;
+        optSelect.innerText = monthName[index - 1];
+        if (d.getMonth() + 1 == index) {
+            optSelect.selected = "true";
+        }
+        lllistaMotnhs.appendChild(optSelect);
+    }
+    changeDay();
 }
+
+
+
 
 function changeDay() {
     //El dia i el mes s'agafan de els dropdown
