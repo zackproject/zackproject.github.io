@@ -1,11 +1,21 @@
 const d = new Date();
 var monthName = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
+function start() {
+    //Emplena els dropdows de 'days' i 'month'
+    fillDropdown();
+    //Actualitza el dia segons els dropdowns
+    changeDay();
+    //Genera el footer
+    makeFooter();
+    //Canvia el color al de avui
+    changeColor();
+}
+
 function fillDropdown() {
     //Agafa els dos dropdown de la llista
     let lllistaMonths = document.getElementById("monthsViewList");
     let lllistadays = document.getElementById("daysViewList");
-    //Reciclem el bucle amb un 'if' per dia i mes
 
     //Bucle de elements per la list <select> months
     lllistaMonths = loopDropdown(
@@ -19,8 +29,6 @@ function fillDropdown() {
         llistaDOM = lllistadays,
         size = 31,
         date = d.getDate());
-
-    changeDay();
 }
 
 //Omple els dropdowns de 'days' i 'months'
@@ -61,7 +69,6 @@ function changeDay() {
     //Crea tant element 
     listArray.forEach(element => {
         //Exmple d'insertar personatges a la llista <li>
-        console.log("element=>", element);
         let ncard = createCard(element);
         llistat.appendChild(ncard);
     });
@@ -144,5 +151,24 @@ function thisDay(list, day) {
 function deleteChilds(currentDiv) {
     while (currentDiv.firstChild) {
         currentDiv.removeChild(currentDiv.firstChild);
+    }
+}
+
+function makeFooter() {
+    let foot = document.getElementsByTagName("footer")[0];
+    foot.innerHTML = `Zack Sama · ${d.getFullYear()} · <a href="https://zackproject.github.io"> Zack Project</a>`;
+}
+function changeColor() {
+    //Selecciona el dropdown de color
+    let colorHTML = document.getElementById("colorViewList")
+    //Selecciona el color triat
+    let colorSelecionat = colorHTML.selectedOptions[0].value;
+    //Pinta els elements d'aquell color
+    let body = document.getElementsByTagName("body")[0];
+    body.style.background = colorSelecionat;
+    // Fa persistent aquest canvi de color
+    localStorage.setItem('color', colorSelecionat);
+    if (localStorage.getItem("color") != colorSelecionat) {
+        colorSelecionat = localStorage.getItem("color");
     }
 }

@@ -13,16 +13,36 @@
     <link rel="icon" href="../icopz.ico">
 </head>
 
-<body onload="fillDropdown()">
-    <select onchange="changeDay()" id="daysViewList" aria-label="My List">
-    </select>
+<body onload="start()">
+    <header>
+        <a class="text-center navbar-brand"
+            href="https://play.google.com/store/apps/details?id=apps.zack.AnimeBirthday">
+            <img src="https://i.imgur.com/SWd8IVK.png" width="30" height="30" class=" d-inline-block align-top" alt="">
+            Anime Birthday on Play Store
+        </a>
+        <a class="text-center navbar-brand" href="https://zackproject.github.io/"> HOME </a>
+    </header>
 
-    <select onchange="changeDay()" id="monthsViewList" aria-label="My List">
-    </select>
     <div class="container">
+        <nav>
+            <select onchange="changeDay()" id="daysViewList" aria-label="My List">
+            </select>
+            <button>Ejemplo</button>
+            <select onchange="changeDay()" id="monthsViewList" aria-label="My List">
+            </select>
+
+            <select onchange="changeColor()" id="colorViewList" aria-label="My List">
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="gray">Gray</option>
+
+            </select>
+        </nav>
         <div id="listalo"></div>
+        <footer>Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a></footer>
     </div>
-    
+
 
 </body>
 <script>
