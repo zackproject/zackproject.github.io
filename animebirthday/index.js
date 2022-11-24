@@ -44,11 +44,31 @@ function changeDay() {
 function thisDate(day, month) {
     switch (month) {
         case 1:
-            return thisDay(january, day)
+            return thisDay(januaryList, day)
         case 2:
-            return thisDay(february, day)
+            return thisDay(februaryList, day)
+        case 3:
+            return thisDay(marchList, day)
+        case 4:
+            return thisDay(aprilList, day)
+        case 5:
+            return thisDay(mayList, day)
+        case 6:
+            return thisDay(juneList, day)
+        case 7:
+            return thisDay(julyList, day)
+        case 8:
+            return thisDay(augustList, day)
+        case 9:
+            return thisDay(septemberList, day)
+        case 10:
+            return thisDay(octoberList, day)
+        case 11:
+            return thisDay(novemberList, day)
+        case 12:
+            return thisDay(decemberList, day)
         default:
-            break;
+            return null
     }
 }
 

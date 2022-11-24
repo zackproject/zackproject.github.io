@@ -1,9 +1,8 @@
-import MySQLdb
+from Conexio import Conexio
 import requests
 from Character import Character
 import pandas as pd
 import time
-
 
 def callBirthday(day, month):
     characterList = []
@@ -34,16 +33,6 @@ def callBirthday(day, month):
     return characterList
 
 
-def conexio():
-    mydb = MySQLdb.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="zksama"
-    )
-    return mydb
-
-
 def insertQuery(character_id, anime_id, anime_image, character_image, character_thumb, gender, name, origin, description_type, day, month):
     sql = "INSERT INTO characters (character_id, anime_id, anime_image, character_image, character_thumb, gender, name, origin, description_type,day,month) VALUES (%s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     val = (character_id, anime_id, anime_image, character_image,
@@ -55,7 +44,7 @@ def insertQuery(character_id, anime_id, anime_image, character_image, character_
 def extractDescType(desc,origin):
     return desc[desc.index("is a character")+24:desc.index(origin)-1]
 
-mydb = conexio()
+mydb = Conexio()
 mycursor = mydb.cursor()
 llistaCumples = []
 startdate = "1/1/2020"
