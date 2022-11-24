@@ -1,35 +1,50 @@
 const d = new Date();
+var monthName = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
 function fillDropdown() {
     //Agafa els dos dropdown de la llista
-    let lllistaMotnhs = document.getElementById("monthsViewList");
+    let lllistaMonths = document.getElementById("monthsViewList");
     let lllistadays = document.getElementById("daysViewList");
-    let monthName = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
     //Reciclem el bucle amb un 'if' per dia i mes
-    for (let index = 1; index <= 31; index++) {
-        let optSelect = document.createElement("option");
-        optSelect.value = index;
-        optSelect.innerText = index;
-        //Queda selecionat la data actual
-        if (d.getDate() == index) {
-            optSelect.selected = "true";
-        }
-        lllistadays.appendChild(optSelect);
-    }
 
-    for (let index = 1; index <= 12; index++) {
-        let optSelect = document.createElement("option");
-        optSelect.value = index;
-        optSelect.innerText = index;
-        optSelect.innerText = monthName[index - 1];
-        if (d.getMonth() + 1 == index) {
-            optSelect.selected = "true";
-        }
-        lllistaMotnhs.appendChild(optSelect);
-    }
+    //Bucle de elements per la list <select> months
+    lllistaMonths = loopDropdown(
+        llistaDOM = lllistaMonths,
+        size = 12,
+        date = d.getMonth() + 1,
+        useText = true);
+
+    //Bucle de elements per la list <select> days
+    lllistadays = loopDropdown(
+        llistaDOM = lllistadays, 
+        size = 31, 
+        date = d.getDate());
+
     changeDay();
 }
 
+//Omple els dropdowns de 'days' i 'months'
+function loopDropdown(llistaDOM, size, date, useText = false) {
+    for (let index = 1; index <= size; index++) {
+        let optSelect = document.createElement("option");
+        optSelect.value = index;
+        //Em cas de 'mes' escriu el text
+        if(useText){
+            optSelect.innerText = monthName[index-1];
+        }else{
+            //En cas 'dia' escriu numero
+            optSelect.innerText = index;
+        }
+        //Si la 'date' es la de avui, es quedara marcada
+        if (date == index) {
+            optSelect.selected = "true";
+        }
+        //Afegeix al element creat una '<option>
+        llistaDOM.appendChild(optSelect);
+    }
+    //retorna l'element per asignarlo fora de la funcio
+    return llistaDOM;
+}
 
 
 
