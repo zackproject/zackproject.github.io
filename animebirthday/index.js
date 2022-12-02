@@ -164,8 +164,12 @@ function changeColor() {
     //Selecciona el color triat
     let colorSelecionat = colorHTML.selectedOptions[0].value;
     //Pinta els elements d'aquell color
-    let body = document.getElementsByTagName("body")[0];
-    body.style.background = colorSelecionat;
+    let cartes = document.getElementsByClassName("name-carta");
+    for (let i = 0; i < cartes.length; i++) {
+        const element = cartes[i];
+        element.style.background = colorSelecionat;
+
+    }
     // Fa persistent aquest canvi de color
     localStorage.setItem('color', colorSelecionat);
     if (localStorage.getItem("color") != colorSelecionat) {
