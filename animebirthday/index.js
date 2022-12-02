@@ -1,17 +1,120 @@
 const d = new Date();
 var monthName = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
-
 function start() {
     //Emplena els dropdows de 'days' i 'month'
     fillDropdown();
+    //Es la primera de les 3 opcions que carrega
     //Actualitza el dia segons els dropdowns
-    changeDay();
+    changeByDay();
     //Genera el footer
     makeFooter();
     //Canvia el color al de avui
     changeColor();
 }
 
+function changeColor() {
+    //Selecciona el dropdown de color
+    let colorHTML = document.getElementById("colorViewList")
+    //Selecciona el color triat
+    let colorSelecionat = colorHTML.selectedOptions[0].value;
+    //Pinta els elements d'aquell color
+    let cartes = document.getElementsByClassName("name-carta");
+    for (let i = 0; i < cartes.length; i++) {
+        const element = cartes[i];
+        element.style.background = colorSelecionat;
+
+    }
+    // Fa persistent aquest canvi de color
+    localStorage.setItem('color', colorSelecionat);
+    if (localStorage.getItem("color") != colorSelecionat) {
+        colorSelecionat = localStorage.getItem("color");
+    }
+}
+
+// Crea la carta a partir dels element passat per parametre
+function createCard(element) {
+    console.log("creando carta", element.origin);
+    //Crea la carta
+    let carta = document.createElement("div");
+    carta.className = "carta";
+    //Crea el div name
+    let nom = document.createElement("div");
+    nom.className = "name-carta";
+    nom.innerText = element.name;
+
+    //Crea el div img
+    let image = document.createElement("img");
+    image.className = "image-carta";
+    //baseUrlImage es la pagina web original
+    image.src = baseUrlImage + element.character_thumb
+    image.alt = "Image of " + element.name;
+    image.loading = "lazy"
+    //Crea el div origin
+    let origin = document.createElement("div");
+    origin.className = "origin-carta";
+    origin.innerText = element.origin;
+    carta.appendChild(nom);
+    carta.appendChild(image);
+    carta.appendChild(origin);
+    return carta;
+}
+
+function deleteChilds(currentDiv) {
+    while (currentDiv.firstChild) {
+        currentDiv.removeChild(currentDiv.firstChild);
+    }
+}
+
+function makeFooter() {
+    let foot = document.getElementsByTagName("footer")[0];
+    foot.innerHTML = `Zack Sama · ${d.getFullYear()} · <a href="https://zackproject.github.io"> Zack Project</a>`;
+}
+
+
+
+//Canvia de query segons l'opcio selecionada
+function changeQuery(option) {
+    //Primer oculta tots
+    document.getElementById("byBirthday").style.display = "none";
+    document.getElementById("byAnime").style.display = "none";
+    document.getElementById("byCharacter").style.display = "none";
+    //Segons la opcio triada, mostra un dels 3
+    switch (option) {
+        case 1:
+            document.getElementById("byAnime").style.display = "block";
+            changeByAnime();
+            break;
+        case 2:
+            document.getElementById("byBirthday").style.display = "block";
+            changeByDay()
+            break;
+        case 3:
+            document.getElementById("byCharacter").style.display = "block";
+            changeByCharacter()
+            break;
+    }
+}
+
+function changeByDay() {
+    //El dia i el mes s'agafan de els dropdown
+    let day = parseInt(document.getElementById('daysViewList').selectedOptions[0].value);
+    let month = parseInt(document.getElementById('monthsViewList').selectedOptions[0].value);
+    var llistat = document.getElementById("listalo");
+    //Esborra els fills creats abans 
+    deleteChilds(llistat);
+    //Per un dia en concret es crida dia i mes
+    let listArray = thisDate(day, month);
+
+    //Crea tant element 
+    listArray.forEach(element => {
+        //Exmple d'insertar personatges a la llista <li>
+        let ncard = createCard(element);
+        llistat.appendChild(ncard);
+    });
+    //console.log("Day:", day, "Month", month);
+}
+
+//Omple els drpdown amb mes i dia
 function fillDropdown() {
     //Agafa els dos dropdown de la llista
     let lllistaMonths = document.getElementById("monthsViewList");
@@ -52,57 +155,6 @@ function loopDropdown(llistaDOM, size, date, useText = false) {
     }
     //retorna l'element per asignarlo fora de la funcio
     return llistaDOM;
-}
-
-
-
-function changeDay() {
-    //El dia i el mes s'agafan de els dropdown
-    let day = parseInt(document.getElementById('daysViewList').selectedOptions[0].value);
-    let month = parseInt(document.getElementById('monthsViewList').selectedOptions[0].value);
-    var llistat = document.getElementById("listalo");
-    //Esborra els fills creats abans 
-    deleteChilds(llistat);
-    //Per un dia en concret es crida dia i mes
-    let listArray = thisDate(day, month);
-
-    //Crea tant element 
-    listArray.forEach(element => {
-        //Exmple d'insertar personatges a la llista <li>
-        let ncard = createCard(element);
-        llistat.appendChild(ncard);
-    });
-
-
-    console.log("Day:", day, "Month", month);
-
-}
-
-function createCard(element) {
-    //Crea la carta
-    let carta = document.createElement("div");
-    carta.className = "carta";
-    //Crea el div name
-    let nom = document.createElement("div");
-    nom.className = "name-carta";
-    nom.innerText = element.name;
-
-    //Crea el div img
-    let image = document.createElement("img");
-    image.className = "image-carta";
-    //baseUrlImage es la pagina web original
-    image.src = baseUrlImage + element.character_thumb
-    image.alt = "Image of " + element.name;
-    image.loading = "lazy"
-    //Crea el div origin
-    let origin = document.createElement("div");
-    origin.className = "origin-carta";
-    origin.innerText = element.origin;
-    carta.appendChild(nom);
-    carta.appendChild(image);
-    carta.appendChild(origin);
-
-    return carta;
 }
 
 //Primer tria la array de aquell mes
@@ -148,31 +200,51 @@ function thisDay(list, day) {
     return thisList;
 }
 
-function deleteChilds(currentDiv) {
-    while (currentDiv.firstChild) {
-        currentDiv.removeChild(currentDiv.firstChild);
+
+function changeByAnime() {
+    let limit = 50;
+    let count = 0;
+    let inputAnime = document.getElementById("inputAnime");
+    //De normal consulta la paraula cercada
+    let query = inputAnime.value;
+    //Si detecta que l'input es buit cerca el placeholder
+    if (inputAnime.value == "") {
+        query = inputAnime.placeholder;
+    }
+    var llistat = document.getElementById("listalo");
+
+    //Esborra els fills creats abans 
+    deleteChilds(llistat);
+    //Recorre la array de dades.js
+    for (let i = 0; i < allDataList.length; i++) {
+        let element = allDataList[i];
+        //Si coincideix la busqueda 
+        if ((element.origin.toLowerCase()).includes(query.toLowerCase())) {
+            //Crea una carta i la insereix
+            let ncard = createCard(element);
+            llistat.appendChild(ncard);
+            //Posarem un limit de cartes
+            count++;
+        }
+        //Si es pasa del limit, es trenca el bucle
+        if(count>limit){
+            break;
+        }
     }
 }
 
-function makeFooter() {
-    let foot = document.getElementsByTagName("footer")[0];
-    foot.innerHTML = `Zack Sama · ${d.getFullYear()} · <a href="https://zackproject.github.io"> Zack Project</a>`;
-}
-function changeColor() {
-    //Selecciona el dropdown de color
-    let colorHTML = document.getElementById("colorViewList")
-    //Selecciona el color triat
-    let colorSelecionat = colorHTML.selectedOptions[0].value;
-    //Pinta els elements d'aquell color
-    let cartes = document.getElementsByClassName("name-carta");
-    for (let i = 0; i < cartes.length; i++) {
-        const element = cartes[i];
-        element.style.background = colorSelecionat;
 
-    }
-    // Fa persistent aquest canvi de color
-    localStorage.setItem('color', colorSelecionat);
-    if (localStorage.getItem("color") != colorSelecionat) {
-        colorSelecionat = localStorage.getItem("color");
-    }
+function queryThisInput(){
+    
 }
+
+function changeByCharacter() {
+
+}
+
+//Retorna tots el personatges de tots els mesos
+function sumMonthList() {
+    return januaryList + februaryList + marchList + juneList + julyList + augustList + septemberList + octoberList + novemberList + decemberList;
+}
+
+

@@ -21,25 +21,47 @@
             Anime Birthday on Play Store
         </a>
         <a class="text-center navbar-brand" href="https://zackproject.github.io/"> HOME </a>
+        <select onchange="changeColor()" id="colorViewList" aria-label="My List">
+            <option value="lightblue">lightblue</option>
+            <option value="lightpink">lightpink</option>
+            <option value="lightgreen">lightgreen</option>
+            <option value="gray">Gray</option>
+        </select>
+        <div class="footer-btns">
+            <!-- Cambia la query 1.Anime 2.Aniversario 3. Personaje-->
+            <button onclick="changeQuery(1)">Anime</button>
+            <button onclick="changeQuery(2)">Birthday</button>
+            <button onclick="changeQuery(3)">Character</button>
+
+        </div>
     </header>
 
     <div class="container">
-        <nav>
-            <select onchange="changeDay()" id="daysViewList" aria-label="My List">
-            </select>
-            <button>Ejemplo</button>
-            <select onchange="changeDay()" id="monthsViewList" aria-label="My List">
-            </select>
+        <!-- Div en cas de dia y mes-->
+        <div id="byBirthday" style="display: block">
+            <nav>
+                <select onchange="changeByDay()" id="daysViewList" aria-label="My List">
+                </select>
+                <select onchange="changeByDay()" id="monthsViewList" aria-label="My List">
+                </select>
+            </nav>
+        </div>
+        <!-- Div en cas de anime-->
+        <div id="byAnime" style="display: none">
+            <nav> <input id="inputAnime" type="text" name="anime" placeholder="shingeki">
+                <button onclick="changeByAnime()">AnimeClick</button>
+            </nav>
+        </div>
+        
+        <!-- Div en cas de character-->
+        <div id="byCharacter" style="display: none">
+            <nav> <input id="inputCharacter" type="text" name="character" placeholder="goku">
+                <button onclick="changeByCharacter()">CharacterClick</button>
+            </nav>
+        </div>
 
-            <select onchange="changeColor()" id="colorViewList" aria-label="My List">
-                <option value="lightblue">lightblue</option>
-                <option value="lightpink">lightpink</option>
-                <option value="lightgreen">lightgreen</option>
-                <option value="gray">Gray</option>
-
-            </select>
-        </nav>
         <div id="listalo"></div>
+
         <footer>Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a></footer>
     </div>
 

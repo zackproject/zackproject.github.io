@@ -5113,3 +5113,9 @@ var decemberList = [{ 'character_id': 84307, 'name': 'A (First Raikage)', 'anime
 { 'character_id': 17728, 'name': 'Russia', 'anime_id': 100165, 'anime_image': '/productimages/u/5688-1870441539.jpg', 'character_image': '/uploads/chars/5092-1779082365.jpg', 'character_thumb': '/uploads/chars/thumbs/200/5092-1779082365.jpg', 'gender': 'Male', 'origin': 'Hetalia: Axis Powers', 'description_type': 'Anime', 'day': 30, 'month': 12 },
 { 'character_id': 76567, 'name': 'Tetsu Hachiya', 'anime_id': 104677, 'anime_image': '/productimages/u/11498-498181752.jpg', 'character_image': '/uploads/chars/32812-1634979877.jpg', 'character_thumb': '/uploads/chars/thumbs/200/32812-1634979877.jpg', 'gender': 'Male', 'origin': 'Prince of Stride: Alternative', 'description_type': 'Anime', 'day': 30, 'month': 12 },
 ];
+
+var allDataList = sumMonthList();
+//Retorna tots el personatges de tots els mesos
+function sumMonthList() {
+    return januaryList.concat(februaryList).concat(marchList).concat(juneList).concat(julyList).concat(augustList).concat(septemberList).concat(octoberList).concat(novemberList).concat(decemberList);
+}
