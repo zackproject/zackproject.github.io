@@ -47,9 +47,8 @@ select {
 }
 
 
-.carta:hover {
+.color-carta:hover {
     cursor: pointer;
-    background-color: lightgray;
 }
 
 footer {

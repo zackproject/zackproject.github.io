@@ -17,17 +17,20 @@ function changeColor() {
     let colorHTML = document.getElementById("colorViewList")
     //Selecciona el color triat
     let colorSelecionat = colorHTML.selectedOptions[0].value;
+
     //Pinta els elements d'aquell color
+    let nav = document.getElementById("color-header");
+    let foot = document.getElementById("color-footer");
+    nav.className = "dark-color-" + colorSelecionat;
+    foot.className = "dark-color-" + colorSelecionat;
 
-    let cartesList = document.getElementsByClassName("carta");
-    let nav = document.getElementById("color-nav");
-    let foot = document.getElementById("color-foot");
-    nav.className = nav.className + " color-dark-" + colorSelecionat;
-    //foot.className = foot.className + " dark-" + colorSelecionat;
-
+    //Selecciona els div pares de carta per posar el nou color
+    let cartesList = document.getElementsByClassName("color-carta");
+    //A cadascu li posem una clase que conecta amb color.css 
     for (let i = 0; i < cartesList.length; i++) {
         let element = cartesList[i];
-        element.className = element.className + " color-" + colorSelecionat;
+        //Example: class='color-blue'
+        element.className = "color-carta color-" + colorSelecionat;
     }
     // Fa persistent aquest canvi de color
     localStorage.setItem('color', colorSelecionat);
@@ -42,6 +45,11 @@ function createCard(element) {
     //Crea la carta
     let carta = document.createElement("div");
     carta.className = "carta card flexitem";
+
+    ///Clase auxiliar per cambia de color
+    let colorTheme = document.createElement("div");
+    colorTheme.className = "color-carta";
+
     //Crea el div name
     let nom = document.createElement("div");
     nom.className = "title-carta";
@@ -60,9 +68,10 @@ function createCard(element) {
     let origin = document.createElement("div");
     origin.className = "subtitle-carta";
     origin.innerText = element.origin;
-    carta.appendChild(nom);
-    carta.appendChild(image);
-    carta.appendChild(origin);
+    colorTheme.appendChild(nom);
+    colorTheme.appendChild(image);
+    colorTheme.appendChild(origin);
+    carta.appendChild(colorTheme);
     return carta;
 }
 

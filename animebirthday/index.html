@@ -10,6 +10,8 @@
     <script src="index.js"></script>
     <script src="dades.js"></script>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="color.css">
+
     <link rel="icon" href="../icopz.ico">
 
 
@@ -21,20 +23,27 @@
 
 <body onload="start()">
     <header>
-        <nav id="color-nav" class="navbar navbar-dark">
-            <a class="text-center navbar-brand"
-                href="https://play.google.com/store/apps/details?id=apps.zack.AnimeBirthday">
-                <img src="https://i.imgur.com/SWd8IVK.png" width="30" height="30" class=" d-inline-block align-top"
-                    alt="">
-                Anime Birthday on Play Store
-            </a>
-            <select onchange="changeColor()" id="colorViewList" aria-label="My List">
-                <option value="lightblue">Theme Blue</option>
-                <option value="lightpink">Theme Pink</option>
-                <option value="lightgreen">Theme Green</option>
-            </select>
-        </nav>
-
+        <!-- El js afegira un classname and color per cambiar de tema-->
+        <div id="color-header" class="">
+            <nav id="color-nav" class="navbar navbar-dark">
+                <a class="text-center navbar-brand"
+                    href="https://play.google.com/store/apps/details?id=apps.zack.AnimeBirthday">
+                    <img src="https://i.imgur.com/SWd8IVK.png" width="30" height="30" class=" d-inline-block align-top"
+                        alt="">
+                    Anime Birthday on Play Store
+                </a>
+                <select onchange="changeColor()" id="colorViewList" aria-label="My List">
+                    <!-- El js crea una clase en cada element afectat -->
+                    <!-- Example class: 'color-blue' o 'dark-color-blue' -->
+                    <option value="purple">Theme Purple</option>
+                    <option value="blue">Theme Blue</option>
+                    <option value="green">Theme Green</option>
+                    <option value="yellow">Theme Yellow</option>
+                    <option value="orange">Theme Orange</option>
+                    <option value="red">Theme Red</option>
+                </select>
+            </nav>
+        </div>
     </header>
 
     <div class="all-content">
@@ -66,9 +75,9 @@
             <div id="listalo" class="flexcontainer"></div>
 
         </div>
-        <div class="footer-btns d-flex">
-            <!-- El js afegira un classname and color per cambiar de tema-->
-            <div id="color-footer">
+        <div id="color-footer" class="">
+            <div class="footer-btns d-flex">
+                <!-- El js afegira un classname and color per cambiar de tema-->
                 <!-- Cambia la query 1.Anime 2.Aniversario 3. Personaje-->
                 <button onclick="changeQuery(1)">Anime</button>
                 <button onclick="changeQuery(2)">Birthday</button>
