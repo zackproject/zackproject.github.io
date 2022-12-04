@@ -1,0 +1,73 @@
+.all-content {
+    background-color: lightgray;
+}
+
+.container {
+    background-color: white;
+}
+
+
+.menu-find {
+    width: 500px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Totes les cartes*/
+.card {
+    border-radius: 3px;
+    margin-left: 20px;
+    width: 200px;
+    background: #A3DAE1;
+
+}
+
+
+
+select {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.flexcontainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexitem {
+    display: inline;
+}
+
+
+.carta:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+footer {
+    background-color: black;
+
+}
+
+.footer-btns {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1;
+    bottom: 0px;
+    width: 100%;
+    padding: 10px;
+}
+
+
+.footer-btns>button {
+    flex: auto;
+    margin: 10px;
+}

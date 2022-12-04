@@ -18,11 +18,16 @@ function changeColor() {
     //Selecciona el color triat
     let colorSelecionat = colorHTML.selectedOptions[0].value;
     //Pinta els elements d'aquell color
-    let cartes = document.getElementsByClassName("name-carta");
-    for (let i = 0; i < cartes.length; i++) {
-        const element = cartes[i];
-        element.style.background = colorSelecionat;
 
+    let cartesList = document.getElementsByClassName("carta");
+    let nav = document.getElementById("color-nav");
+    let foot = document.getElementById("color-foot");
+    nav.className = nav.className + " color-dark-" + colorSelecionat;
+    //foot.className = foot.className + " dark-" + colorSelecionat;
+
+    for (let i = 0; i < cartesList.length; i++) {
+        let element = cartesList[i];
+        element.className = element.className + " color-" + colorSelecionat;
     }
     // Fa persistent aquest canvi de color
     localStorage.setItem('color', colorSelecionat);
@@ -36,22 +41,24 @@ function createCard(element) {
     console.log("creando carta", element.origin);
     //Crea la carta
     let carta = document.createElement("div");
-    carta.className = "carta";
+    carta.className = "carta card flexitem";
     //Crea el div name
     let nom = document.createElement("div");
-    nom.className = "name-carta";
+    nom.className = "title-carta";
     nom.innerText = element.name;
 
     //Crea el div img
     let image = document.createElement("img");
     image.className = "image-carta";
+    image.width = "200";
+    image.height = "200";
     //baseUrlImage es la pagina web original
     image.src = baseUrlImage + element.character_thumb
     image.alt = "Image of " + element.name;
     image.loading = "lazy"
     //Crea el div origin
     let origin = document.createElement("div");
-    origin.className = "origin-carta";
+    origin.className = "subtitle-carta";
     origin.innerText = element.origin;
     carta.appendChild(nom);
     carta.appendChild(image);
@@ -227,15 +234,15 @@ function changeByAnime() {
             count++;
         }
         //Si es pasa del limit, es trenca el bucle
-        if(count>limit){
+        if (count > limit) {
             break;
         }
     }
 }
 
 
-function queryThisInput(){
-    
+function queryThisInput() {
+
 }
 
 function changeByCharacter() {
