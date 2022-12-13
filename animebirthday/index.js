@@ -41,7 +41,7 @@ function changeColor() {
 
 // Crea la carta a partir dels element passat per parametre
 function createCard(element) {
-    console.log("creando carta", element.origin);
+    //console.log("creando carta", element.origin);
     //Crea la carta
     let carta = document.createElement("div");
     carta.className = "carta card flexitem";
@@ -232,7 +232,7 @@ function changeByAnime() {
     //Esborra els fills creats abans 
     deleteChilds(llistat);
     //Recorre la array de dades.js
-    for (let i = 0; i < allDataList.length; i++) {
+    for (let i = 0; i < animeList.length; i++) {
         let element = allDataList[i];
         //Si coincideix la busqueda 
         if ((element.origin.toLowerCase()).includes(query.toLowerCase())) {
@@ -257,10 +257,4 @@ function queryThisInput() {
 function changeByCharacter() {
 
 }
-
-//Retorna tots el personatges de tots els mesos
-function sumMonthList() {
-    return januaryList + februaryList + marchList + juneList + julyList + augustList + septemberList + octoberList + novemberList + decemberList;
-}
-
 

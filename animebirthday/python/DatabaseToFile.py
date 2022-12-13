@@ -4,8 +4,8 @@ def generaMonthList(nameFile, nameList, nMonth):
     try:
         mydb = Conexio()
         mycursor = mydb.cursor()
-        query = "SELECT character_id, name, anime_id, anime_image, character_image, character_thumb, gender, origin, description_type,day, month FROM personatges WHERE month ={0}".format(
-            nMonth)
+        #query = "SELECT character_id, name, anime_id, anime_image, character_image, character_thumb, gender, origin, description_type,day, month FROM personatges WHERE month ={0}".format( nMonth)
+        query = "SELECT character_id, name, anime_id, anime_image, character_image, character_thumb, gender, origin, description_type,day, month FROM personatges"
         mycursor.execute(query)
         myresult = mycursor.fetchall()
 
@@ -25,7 +25,7 @@ def generaMonthList(nameFile, nameList, nMonth):
 
 
 nameFile = "dades.js"
-#generaMonthList(nameFile, "januaryList", 1)
+generaMonthList(nameFile, "allList", 1)
 #generaMonthList(nameFile, "februryList", 2)
 #generaMonthList(nameFile, "marchList", 3)
 #generaMonthList(nameFile, "aprilList", 4)
