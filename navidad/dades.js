@@ -82,7 +82,7 @@ var adventList = [
     {
         "id": 17,
         "image_open": "images/resolved/resolved_17.webp",
-        "advent": "https://youtu.be/zNM8eV9tcK0"
+        "advent": "https://youtu.be/WI06NWds8pM"
     },
     {
         "id": 18,
