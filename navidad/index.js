@@ -58,6 +58,8 @@ function start() {
     /*Nomes neva al desembre */
     if (month == monthWorkThisProgram) {
         letitsnow();
+        //Mostra si quedan caselles o completat
+        showProgresText();
     }
     console.info("Only for developer", 'testCode(nDay);');
 }
@@ -123,8 +125,6 @@ function imageOnCard(mid, msrc, malt) {
 function isPadLockOpen(nId, option = 0) {
     /*Nomes funcionará al desembre*/
     if (month == monthWorkThisProgram) {
-        /* Si es desembre, trec el cartell*/
-        document.getElementById("fecha-caducidad").innerText = "Selecciona el dia desbloqueado";
         switch (option) {
             case 1:
                 return day < nId ? "locked" : "unlocked";
@@ -238,6 +238,8 @@ function generateModalList(npregunta) {
         var isCorrectQuestion = checkResult(npregunta);
         if (isCorrectQuestion) {
             showImageOnSolutionCorrect(npregunta);
+            //Mostra si quedan caselles o completat
+            showProgresText();
         }
     }
     //var span = document.getElementsByClassName("close")[0];
@@ -248,4 +250,25 @@ function closeModal() {
     var modal = document.getElementById("modal-form");
     modal.style.display = "none";
 
+}
+
+function showProgresText() {
+    let elementHTML = document.getElementById("fecha-caducidad")
+    let midaLlista = adventList.length;
+    let count = 0 + 1; //El 0 lo cuento
+    for (let i = 0; i < midaLlista; i++) {
+        if (localStorage.getItem("pdunlock-" + i) != null) {
+            count++;
+        }
+    }
+    if (count == midaLlista) {
+        let textLink = document.createElement("a");
+        textLink.href = "https://zackproject.github.io";
+        textLink.text = "zackproject.github.io";
+        textLink.id = "link-final";
+        elementHTML.innerHTML = "¡Feliz Navidad! <br> Otros proyectos en ";
+        elementHTML.appendChild(textLink);
+    } else {
+        elementHTML.innerText = "Selecciona el dia desbloqueado";
+    }
 }

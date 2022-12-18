@@ -2,12 +2,18 @@
 <html lang="en">
 
 <head>
-    <title>HOME</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta title="Zack Project - Free mini games open source in Javascript">
+    <meta name="keywords" content="peeled pokemon, sort word, first generation, second generation">
+    <meta name="description"
+        content="Javascript games based on pokemon and christmas advent calendar and other projects I can think of.  Personal open source portfolio and static web pages.">
+    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Two javascript games based in pokemon">
-    <meta name="keywords" content="game, javascript, pokemon, higher, lower, peeled, first generation, second generation">
+    <meta name="keywords"
+        content="game, javascript, pokemon, higher, lower, peeled, first generation, second generation">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="author" content="Zack Project">
@@ -16,49 +22,16 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="icon" href="icopz.ico">
     <link rel="stylesheet" href="index.css">
-
 </head>
 
-<body>
+<body onload="fillCard()">
     <div class="container">
-        <div class="d-flex flex-column flex-md-row justify-content-center ">
-            <div class="p-2 listaflex">
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/WeM1zLU.png" alt="Card PokeHigher or PokeLower">
-                    <div class="card-body">
-                        <h5 class="card-title">PokeHigher or Pokelower</h5>
-                        <p class="card-text">Guess between two poke which poke has more or less speed, attack, defence,
-                            ...
-                        </p>
-                        <a href="/higherlower" class="btn btn-primary">Play</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="p-2 listaflex">
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/ieg9MPg.png" alt="Card Poke guess">
-                    <div class="card-body">
-                        <h5 class="card-title">Poke Guess</h5>
-                        <p class="card-text">Sort the poke text and guess the name of the peeled poke.</p>
-                        <a href="/guess" class="btn btn-primary">Play</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-2 listaflex">
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/XbRvtk3.png" alt="Card Poke guess">
-                    <div class="card-body">
-                        <h5 class="card-title">Calendario Navidad</h5>
-                        <p class="card-text">Cada dia se desbloquea una casilla. Acierta la quiz  y consigue la sorpresa.Sólo disponible en diciembre</p>
-                        <a href="/navidad" class="btn btn-primary">Play</a>
-                    </div>
-                </div>
-            </div>
+        <div id="cartas" class="d-flex flex-column flex-md-row justify-content-center ">
         </div>
     </div>
+    <!-- Carga la informacion de las cartas i las genera-->
+    <script src="dades.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
