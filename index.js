@@ -1,44 +1,27 @@
-var cards = [
-    {
-        "title": "PokeHigher or Pokelower",
-        "image": "https://i.imgur.com/WeM1zLU.png",
-        "alt": "Card PokeHigher or PokeLower",
-        "description": "Guess between two poke which poke has more or less speed, attack, defense, ... ",
-        "link": "/higherlower"
-    },
-    {
-        "title": "Poke Guess",
-        "image": "https://i.imgur.com/ieg9MPg.png",
-        "alt": "Card Poke guess",
-        "description": "Guess between two poke which poke has more or less speed, attack, defense, ... ",
-        "link": "/guess"
-    },
-    {
-        "title": "Calendario Navidad",
-        "image": "https://i.imgur.com/XbRvtk3.png",
-        "alt": "Card Calendario Adviento",
-        "description": "Cada dia se desbloquea una casilla. Acierta la quiz y consigue la sorpresa.Sólo disponible en diciembre",
-        "link": "/navidad"
-    }
-];
-
-var cartesHTML = [];
-
-
-
-
 function fillCard() {
-    let child = document.getElementById("carta");
-    let father = document.getElementById("cartas");
-    for (let i = 0; i < cards.length; i++) {
-        father.appendChild(document.createElement(child));
-    }
+    var father = document.getElementById("cartas");
+    cards.forEach(element => {
+        //Per cada objecte json crea una carta amb aquest html
+        let cardHtml = cardTemplate(element)
+        //En comptes de 'appendChild' sumem el contingut anterior mes el nou
+        father.innerHTML += cardHtml;
+    });
+}
 
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        
-    }
- 
+// Crea un template del html de una carta
+function cardTemplate({ title, image, alt, description, link }) {
+    return `
+    <div id="carta" class="p-2 listaflex">
+        <div class="card">
+            <img class="card-img-top" src="${image}" alt="${alt}">
+            <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text">${description}</p>
+                <a href="${link}" class="btn btn-primary">Play</a>
+            </div>
+        </div>
+    </div>
+    `;
 }
 
