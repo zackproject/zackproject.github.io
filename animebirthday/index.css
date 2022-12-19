@@ -24,10 +24,13 @@ header {
     top: 0;
     z-index: 1;
 }
-
+#demoinfo{
+    color: white;
+    text-align: center;
+}
 #color-footer {
     background-color: white;
-    position: fixed;
+    position: sticky;
     bottom: 0px;
     width: 100%;
 }

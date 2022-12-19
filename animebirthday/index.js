@@ -6,8 +6,6 @@ function start() {
     //Es la primera de les 3 opcions que carrega
     //Actualitza el dia segons els dropdowns
     changeByDay();
-    //Genera el footer
-    document.getElementById("footyear").innerText = d.getFullYear();
     //Canvia el color al de avui
     changeColor();
 }
@@ -20,13 +18,14 @@ function changeColor() {
 
     //Pinta els elements d'aquell color
     let nav = document.getElementById("color-header");
-    let foot = document.getElementById("color-footer");
+    let demoinfo = document.getElementById("demoinfo");
     let selectColor = document.getElementById("colorViewList");
     let btnFind = document.getElementById("fake-btn");
     selectColor.className = "dark-color-" + colorSelecionat;
     selectColor.style.color = "white";
     btnFind.className = "dark-color-" + colorSelecionat;
     nav.className = "dark-color-" + colorSelecionat;
+    demoinfo.className = "dark-color-" + colorSelecionat;
     //foot.className = "dark-color-" + colorSelecionat;
     //Ingenieria  inversa, consigue el color aplicado
     let col123 = getComputedStyle(document.querySelector('.dark-color-' + colorSelecionat)).backgroundColor;
@@ -48,7 +47,6 @@ function changeColor() {
     if (localStorage.getItem("color") != colorSelecionat) {
         colorSelecionat = localStorage.getItem("color");
     }
-    console.log("actualitzar a", colorSelecionat);
 }
 
 // Crea la carta a partir dels element passat per parametre
@@ -243,9 +241,10 @@ function changeByAnime() {
     deleteChilds(llistat);
     //Recorre la array de dades.js
     for (let i = 0; i < animeList.length; i++) {
-        let element = allDataList[i];
+        let element = animeList[i];
+        let lowQuery = element.origin.toLowerCase();
         //Si coincideix la busqueda 
-        if ((element.origin.toLowerCase()).includes(query.toLowerCase())) {
+        if (lowQuery.includes(query.toLowerCase())) {
             //Crea una carta i la insereix
             let ncard = createCard(element);
             llistat.appendChild(ncard);
@@ -257,6 +256,7 @@ function changeByAnime() {
             break;
         }
     }
+    changeColor();
 }
 
 
@@ -265,6 +265,37 @@ function queryThisInput() {
 }
 
 function changeByCharacter() {
+    let limit = 50;
+    let count = 0;
+    let inputCharacter = document.getElementById("inputCharacter");
+    //De normal consulta la paraula cercada
+    let query = inputCharacter.value;
+    //Si detecta que l'input es buit cerca el placeholder
+    if (inputCharacter.value == "") {
+        query = inputCharacter.placeholder;
+    }
+    var llistat = document.getElementById("listalo");
+
+    //Esborra els fills creats abans 
+    deleteChilds(llistat);
+    //Recorre la array de dades.js
+    for (let i = 0; i < allDataList.length; i++) {
+        let element = allDataList[i];
+        let lowQuery = element.name.toLowerCase();
+        //Si coincideix la busqueda 
+        if (lowQuery.includes(query.toLowerCase())) {
+            //Crea una carta i la insereix
+            let ncard = createCard(element);
+            llistat.appendChild(ncard);
+            //Posarem un limit de cartes
+            count++;
+        }
+        //Si es pasa del limit, es trenca el bucle
+        if (count > limit) {
+            break;
+        }
+    }
+    changeColor();
 
 }
 

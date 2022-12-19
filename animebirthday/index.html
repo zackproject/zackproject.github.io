@@ -54,14 +54,14 @@
         </div>
         <!-- Div en cas de anime-->
         <div id="byAnime" style="display: none">
-            <nav> <input id="inputAnime" type="text" name="anime" placeholder="attack">
-                <button onclick="changeByAnime()">AnimeClick</button>
+            <nav> <input onchange="changeByAnime()" id="inputAnime" type="text" name="anime" placeholder="on">
+                <button onclick="changeByAnime()">🔎</button>
             </nav>
         </div>
         <!-- Div en cas de character-->
         <div id="byCharacter" style="display: none">
-            <nav> <input id="inputCharacter" type="text" name="character" placeholder="goku">
-                <button onclick="changeByCharacter()">CharacterClick</button>
+            <nav> <input onchange="changeByCharacter()" id="inputCharacter" type="text" name="character" placeholder="gok">
+                <button onclick="changeByCharacter()">🔎</button>
             </nav>
         </div>
     </div> <!-- <div id="menu-find">-->
@@ -76,7 +76,7 @@
                 <!-- Cambia la query 1.Anime 2.Aniversario 3. Personaje-->
                 <button onclick="changeQuery(1)">
                     <svg xmlns="http://www.w3.org/2000/svg" 
-                    width="0.25in" height="0.25in"
+                    width="0.22in" height="0.22in"
                         viewBox="0 0 1600 1304">
                         <path id="sweetbackward" fill="red" d="M 426.00,322.94
            C 191.75,500.47 0.12,646.25 0.12,647.00
@@ -97,7 +97,7 @@
                     <div>Anime</div>
                 </button>
                 <button onclick="changeQuery(2)">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="0.3in" height="0.3in" viewBox="0 0 16 12">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="0.28in" height="0.28in" viewBox="0 0 16 12">
                         <path id="sweethome" fill="red" d="M 8.00,0.00
                           C 8.00,0.00 16.00,6.00 16.00,6.00
                             16.00,6.00 13.00,6.00 13.00,6.00
@@ -114,7 +114,7 @@
                     <div>Birthday</div>
                 </button>
                 <button onclick="changeQuery(3)">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="0.25in" height="0.25in" viewBox="0 0 123 100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="0.22in" height="0.22in" viewBox="0 0 123 100">
                         <path id="sweetforward" fill="red" d="M 123.00,49.62
                       C 123.00,49.62 57.40,100.00 57.40,100.00
                         57.40,100.00 57.40,55.91 57.40,55.91
@@ -128,6 +128,7 @@
                     <div>Character</div>
                 </button>
             </div>
+            <div id ="demoinfo" class ="">This is a DEMO try the app</div>
         </div>
     </div>
 </body>
