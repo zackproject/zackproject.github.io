@@ -4,8 +4,49 @@ var poke2;
 var score = 0;
 var maxScore = 0;
 var type = 'speed';
-var gen = '1';
+var gen = 1;
+//La llista sera del localStorage, si no existeix la crea
+var generationList = getScoreListFromLocalStorage();
 
+function addToLocalStorage(generationList) {
+    let text = "";
+    //Cada valor queda separat per comes, al ser array
+    generationList.forEach(element => {
+        //Cada array de score el separem per espai
+        text += element.toString() + " ";
+    });
+    localStorage.setItem("pokescore", text);
+}
+
+function getScoreListFromLocalStorage() {
+    //Reinicia el generationList variable
+    allGenList = [];
+    if (localStorage.getItem("pokescore") == null) {
+        // hp, attack, defense, sp_attack, sp_defense, speed, total
+        let scoreList = [0, 0, 0, 0, 0, 0, 0];
+        // Un scorelist per cada generacio
+        let genList = [scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList];
+        //Afegeix al localstorage el creat
+        addToLocalStorage(genList);
+        return genList;
+    } else {
+        let textList = localStorage.getItem("pokescore");
+        // El primer 'split()' aconseguix totes les generationList en text
+        let genListOfList = textList.split(" ");
+        genListOfList.forEach(element => {
+            //El scoreList es una array separat per comes
+            let scoreList = element.split(",");
+            // Cada array que trobi la fica al ScoreList
+            allGenList.push(scoreList);
+        });
+
+        //Hi ha un element que s'escapa llavors l'esborrem
+        allGenList.pop();
+        console.log("getScoreListFromLocalStorage()", allGenList);
+        return allGenList;
+    }
+
+}
 function changeGenOrType() {
     let typeHtml = document.getElementById('typeViewList').selectedOptions[0].value;
     let genHtml = document.getElementById('genViewList').selectedOptions[0].value;
@@ -83,7 +124,7 @@ function btnLow() {
         score++;
     } else {
         score = 0;
-        document.getElementById("textmodal").innerHTML =`<p>INCORRECT</p><p>${poke1.name} ${type}: ${poke1[type]}  </p> <p>${poke2.name} ${type}: ${poke2[type]}</p>`
+        document.getElementById("textmodal").innerHTML = `<p>INCORRECT</p><p>${poke1.name} ${type}: ${poke1[type]}  </p> <p>${poke2.name} ${type}: ${poke2[type]}</p>`
         openModal();
     }
     //Refresh the score in the html and max score
@@ -96,7 +137,7 @@ function btnHigh() {
         score++;
     } else {
         score = 0;
-        document.getElementById("textmodal").innerHTML =`<p>INCORRECT</p><p>${poke1.name} ${type}: ${poke1[type]}  </p> <p>${poke2.name} ${type}: ${poke2[type]}</p>`
+        document.getElementById("textmodal").innerHTML = `<p>INCORRECT</p><p>${poke1.name} ${type}: ${poke1[type]}  </p> <p>${poke2.name} ${type}: ${poke2[type]}</p>`
         openModal();
     }
     refreshScore();
