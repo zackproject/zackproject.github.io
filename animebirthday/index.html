@@ -5,28 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Anime Birthday</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="index.js"></script>
     <script src="dades.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="color.css">
-
     <link rel="icon" href="../icopz.ico">
-
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">
-
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-=======
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"
-        integrity="sha512-1Gn7//DzfuF67BGkg97Oc6jPN6hqxuZXnaTpC9P5uw8C6W4yUNj5hoS/APga4g1nO2X6USBb/rXtGzADdaVDeA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <meta name="robots" content="noindex">
->>>>>>> development
 </head>
 
 <body onload="start()">
@@ -38,7 +26,7 @@
                     href="https://play.google.com/store/apps/details?id=apps.zack.AnimeBirthday">
                     <img src="https://i.imgur.com/SWd8IVK.png" width="30" height="30" class=" d-inline-block align-top"
                         alt="">
-                    DEMO - Anime Birthday on Play Store
+                    Anime Birthday on Play Store
                 </a>
                 <select onchange="changeColor()" id="colorViewList" aria-label="My List">
                     <!-- El js crea una clase en cada element afectat -->
@@ -53,49 +41,95 @@
             </nav>
         </div>
     </header>
-
+    <div id="color-foot">
+        <!-- Div en cas de dia y mes-->
+        <div id="byBirthday" style="display: block">
+            <nav>
+                <select onchange="changeByDay()" id="daysViewList" aria-label="My List">
+                </select>
+                <div id="fake-btn" class="color-blue">FIND</div>
+                <select onchange="changeByDay()" id="monthsViewList" aria-label="My List">
+                </select>
+            </nav>
+        </div>
+        <!-- Div en cas de anime-->
+        <div id="byAnime" style="display: none">
+            <nav> <input id="inputAnime" type="text" name="anime" placeholder="attack">
+                <button onclick="changeByAnime()">AnimeClick</button>
+            </nav>
+        </div>
+        <!-- Div en cas de character-->
+        <div id="byCharacter" style="display: none">
+            <nav> <input id="inputCharacter" type="text" name="character" placeholder="goku">
+                <button onclick="changeByCharacter()">CharacterClick</button>
+            </nav>
+        </div>
+    </div> <!-- <div id="menu-find">-->
     <div class="all-content">
-
-        <div id="menu-find color-foot">
-            <!-- Div en cas de dia y mes-->
-            <div id="byBirthday" style="display: block">
-                <nav>
-                    <select onchange="changeByDay()" id="daysViewList" aria-label="My List">
-                    </select>
-                    <select onchange="changeByDay()" id="monthsViewList" aria-label="My List">
-                    </select>
-                </nav>
-            </div>
-            <!-- Div en cas de anime-->
-            <div id="byAnime" style="display: none">
-                <nav> <input id="inputAnime" type="text" name="anime" placeholder="attack">
-                    <button onclick="changeByAnime()">AnimeClick</button>
-                </nav>
-            </div>
-            <!-- Div en cas de character-->
-            <div id="byCharacter" style="display: none">
-                <nav> <input id="inputCharacter" type="text" name="character" placeholder="goku">
-                    <button onclick="changeByCharacter()">CharacterClick</button>
-                </nav>
-            </div>
-        </div> <!-- <div id="menu-find">-->
         <div class="container">
             <div id="listalo" class="flexcontainer"></div>
 
         </div>
-        <div id="color-footer" class="">
+        <div id="color-footer" class="" style="">
             <div class="footer-btns d-flex">
                 <!-- El js afegira un classname and color per cambiar de tema-->
                 <!-- Cambia la query 1.Anime 2.Aniversario 3. Personaje-->
-                <button onclick="changeQuery(1)">Anime</button>
-                <button onclick="changeQuery(2)">Birthday</button>
-                <button onclick="changeQuery(3)">Character</button>
+                <button onclick="changeQuery(1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                    width="0.25in" height="0.25in"
+                        viewBox="0 0 1600 1304">
+                        <path id="sweetbackward" fill="red" d="M 426.00,322.94
+           C 191.75,500.47 0.12,646.25 0.12,647.00
+             0.12,648.12 849.75,1302.87 852.50,1303.75
+             853.38,1304.13 853.75,1212.86 853.75,1017.82
+             853.75,860.29 854.00,731.39 854.38,731.39
+             854.75,731.39 1022.38,860.16 1226.88,1017.70
+             1431.38,1175.23 1599.00,1304.00 1599.38,1304.00
+             1599.75,1304.00 1600.00,1010.57 1600.00,652.00
+             1600.00,293.43 1599.62,0.00 1599.25,0.00
+             1598.88,0.00 1431.25,126.90 1226.75,281.93
+             1022.25,436.96 854.75,563.86 854.38,563.86
+             854.00,563.86 853.75,436.96 853.75,281.93
+             853.75,126.90 853.38,0.00 852.88,0.00
+             852.25,0.00 660.25,145.28 426.00,322.94 Z" />
+                    </svg>
+
+                    <div>Anime</div>
+                </button>
+                <button onclick="changeQuery(2)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="0.3in" height="0.3in" viewBox="0 0 16 12">
+                        <path id="sweethome" fill="red" d="M 8.00,0.00
+                          C 8.00,0.00 16.00,6.00 16.00,6.00
+                            16.00,6.00 13.00,6.00 13.00,6.00
+                            13.00,6.00 13.00,12.00 13.00,12.00
+                            13.00,12.00 9.00,12.00 9.00,12.00
+                            9.00,12.00 9.00,9.00 9.00,9.00
+                            9.00,9.00 7.00,9.00 7.00,9.00
+                            7.00,9.00 7.00,12.00 7.00,12.00
+                            7.00,12.00 3.00,12.00 3.00,12.00
+                            3.00,12.00 3.00,6.00 3.00,6.00
+                            3.00,6.00 0.00,6.00 0.00,6.00
+                            0.00,6.00 8.00,0.00 8.00,0.00 Z" />
+                    </svg>
+                    <div>Birthday</div>
+                </button>
+                <button onclick="changeQuery(3)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="0.25in" height="0.25in" viewBox="0 0 123 100">
+                        <path id="sweetforward" fill="red" d="M 123.00,49.62
+                      C 123.00,49.62 57.40,100.00 57.40,100.00
+                        57.40,100.00 57.40,55.91 57.40,55.91
+                        57.40,55.91 0.00,100.00 0.00,100.00
+                        0.00,100.00 0.00,0.00 0.00,0.00
+                        0.00,0.00 57.40,43.41 57.40,43.41
+                        57.40,43.41 57.40,0.00 57.40,0.00
+                        57.40,0.00 123.00,49.62 123.00,49.62 Z" />
+
+                    </svg>
+                    <div>Character</div>
+                </button>
             </div>
         </div>
-        <footer>Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a></footer>
-
     </div>
-
 </body>
 <script>
 

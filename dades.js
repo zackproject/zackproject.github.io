@@ -19,5 +19,12 @@ var cards = [
         "alt": "Card Calendario Adviento",
         "description": "Cada dia se desbloquea una casilla. Acierta la quiz y consigue la sorpresa.Sólo disponible en diciembre",
         "link": "/navidad"
+    },
+    {
+        "title": "Anime Birthday",
+        "image": "https://i.imgur.com/m75DuZD.png",
+        "alt": "Card Anime Birthday",
+        "description": "Find the birthday of the character by day and month. Demo of the App Anime Birthday",
+        "link": "/animebirthday"
     }
 ];

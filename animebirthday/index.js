@@ -7,7 +7,7 @@ function start() {
     //Actualitza el dia segons els dropdowns
     changeByDay();
     //Genera el footer
-    makeFooter();
+    document.getElementById("footyear").innerText = d.getFullYear();
     //Canvia el color al de avui
     changeColor();
 }
@@ -21,8 +21,19 @@ function changeColor() {
     //Pinta els elements d'aquell color
     let nav = document.getElementById("color-header");
     let foot = document.getElementById("color-footer");
+    let selectColor = document.getElementById("colorViewList");
+    let btnFind = document.getElementById("fake-btn");
+    selectColor.className = "dark-color-" + colorSelecionat;
+    selectColor.style.color = "white";
+    btnFind.className = "dark-color-" + colorSelecionat;
     nav.className = "dark-color-" + colorSelecionat;
-    foot.className = "dark-color-" + colorSelecionat;
+    //foot.className = "dark-color-" + colorSelecionat;
+    //Ingenieria  inversa, consigue el color aplicado
+    let col123 = getComputedStyle(document.querySelector('.dark-color-' + colorSelecionat)).backgroundColor;
+    //Aplica el mismo color al svg
+    document.getElementById("sweethome").style.fill = col123;
+    document.getElementById("sweetforward").style.fill = col123;
+    document.getElementById("sweetbackward").style.fill = col123;
 
     //Selecciona els div pares de carta per posar el nou color
     let cartesList = document.getElementsByClassName("color-carta");
@@ -37,6 +48,7 @@ function changeColor() {
     if (localStorage.getItem("color") != colorSelecionat) {
         colorSelecionat = localStorage.getItem("color");
     }
+    console.log("actualitzar a", colorSelecionat);
 }
 
 // Crea la carta a partir dels element passat per parametre
@@ -81,10 +93,6 @@ function deleteChilds(currentDiv) {
     }
 }
 
-function makeFooter() {
-    let foot = document.getElementsByTagName("footer")[0];
-    foot.innerHTML = `Zack Sama · ${d.getFullYear()} · <a href="https://zackproject.github.io"> Zack Project</a>`;
-}
 
 
 
@@ -128,6 +136,8 @@ function changeByDay() {
         llistat.appendChild(ncard);
     });
     //console.log("Day:", day, "Month", month);
+    changeColor();
+
 }
 
 //Omple els drpdown amb mes i dia
