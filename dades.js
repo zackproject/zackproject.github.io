@@ -22,7 +22,7 @@ var cards = [
     },
     {
         "title": "Anime Birthday",
-        "image": "https://i.imgur.com/m75DuZD.png",
+        "image": "https://i.imgur.com/W6FuNtS.png",
         "alt": "Card Anime Birthday",
         "description": "Find the birthday of the character by day and month. Demo of the App Anime Birthday",
         "link": "/animebirthday"
