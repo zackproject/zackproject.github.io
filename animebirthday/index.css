@@ -1,0 +1,100 @@
+.all-content {
+    background-color: lightgray;
+    padding-top: 15px;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#fake-btn{
+    width: 100px;
+    padding: 10px;
+    height: 100%;
+    text-align: center;
+    color: white;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+#demoinfo{
+    color: white;
+    text-align: center;
+}
+#color-footer {
+    background-color: white;
+    position: sticky;
+    bottom: 0px;
+    width: 100%;
+}
+button{
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+button:hover{
+    background-color: transparent;
+    border: 1px solid lightgray;
+}
+
+/* Totes les cartes*/
+.card {
+    border-radius: 3px;
+    margin: 10px;
+    width: 200px;
+    background: #A3DAE1;
+}
+
+.subtitle-carta {
+    height: 20px;
+}
+
+#color-foot{
+    background: lightgray;
+    padding: 20px;
+}
+select {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    width: 200px;
+}
+
+.flexcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flexitem {
+    display: inline;
+}
+
+
+
+
+footer {
+    background-color: black;
+
+}
+
+.footer-btns {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1;
+    bottom: 0px;
+    width: 100%;
+    line-height: 10px;
+}
+
+
+.footer-btns>button {
+    flex: auto;
+    margin: 10px;
+}
