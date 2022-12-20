@@ -4,10 +4,45 @@ var poke2;
 var score = 0;
 var maxScore = 0;
 var type = 'speed';
-var gen = 1;
+var gen = 0;
 //La llista sera del localStorage, si no existeix la crea
 var generationList = getScoreListFromLocalStorage();
 
+
+//Crea la taula score
+function generateTableScore() {
+    let father = document.getElementById("score-table");
+    if (gen == 0) {
+        father.innerText = "All Generations";
+    } else {
+        father.innerText = gen + " Generation";
+    }
+    let table = document.createElement("table");
+    let tr = document.createElement("tr");
+    let th1 = document.createElement("th");
+    th1.innerText = "Type";
+    let th2 = document.createElement("th");
+    th2.innerText = "Score";
+    tr.appendChild(th1);
+    tr.appendChild(th2);
+    table.appendChild(tr);
+
+    let typeList = ["Hp", "Attack", "Defense", "Special Attack", "Special Defense", "Speed", "Total"];
+    // 0-allGeneration , 1-gen, 2-gen, 3-gen ...
+    let scoreForGen = generationList[gen];
+    for (let i = 0; i < scoreForGen.length; i++) {
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        td1.innerText = typeList[i];
+        let td2 = document.createElement("td");
+        td2.innerText = scoreForGen[i];
+        tr.appendChild(td1)
+        tr.appendChild(td2);
+        table.appendChild(tr);
+    }
+    //Afegeix tot al pare
+    father.appendChild(table);
+}
 function addToLocalStorage(generationList) {
     let text = "";
     //Cada valor queda separat per comes, al ser array
@@ -25,7 +60,7 @@ function getScoreListFromLocalStorage() {
         // hp, attack, defense, sp_attack, sp_defense, speed, total
         let scoreList = [0, 0, 0, 0, 0, 0, 0];
         // Un scorelist per cada generacio
-        let genList = [scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList];
+        let genList = [scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList];
         //Afegeix al localstorage el creat
         addToLocalStorage(genList);
         return genList;
@@ -68,6 +103,8 @@ function loadTwoPokes() {
     poke1 = data[randNumber(max, min)];
     poke2 = data[randNumber(max, min)];
     printPokeHTML();
+    //Genera la taula nomes comenzar
+    generateTableScore()
 }
 
 function twiceNewPoke() {
@@ -132,6 +169,39 @@ function btnLow() {
     twiceNewPoke();
 }
 
+//Segons el tipus es refresca una part del scoe
+function updateScore(localList, gen, type, maxScore) {
+    switch (type) {
+        case "hp":
+            //Exemple list[Gen-1][Hp] = 12 maxscore
+            localList[gen][0] = maxScore;
+            break;
+        case "attack":
+            //Exemple [Gen-4][Attack] = 13 maxScore
+            localList[gen][1] = maxScore;
+            break;
+        case "defense":
+            localList[gen][2] = maxScore;
+            break;
+        case "special_attack":
+            localList[gen][3] = maxScore;
+            break;
+        case "special_defense":
+            localList[gen][4] = maxScore;
+            break;
+        case "speed":
+            localList[gen][5] = maxScore;
+            break;
+        case "best":
+            localList[gen][6] = maxScore;
+            break;
+        default:
+            break;
+    }
+    return localList;
+
+}
+
 function btnHigh() {
     if (poke1[type] >= poke2[type]) {
         score++;
@@ -146,7 +216,15 @@ function btnHigh() {
 
 //Refresh the score in the html and max score
 function refreshScore() {
-    if (score > maxScore) maxScore = score;
+    if (score > maxScore) {
+        maxScore = score;
+        //Score només guarda les millors puntuacions
+        let updateList = updateScore(getScoreListFromLocalStorage(), gen, type, maxScore);
+        //Actualitza el LocalStorage
+        addToLocalStorage(updateList);
+        //Regenera la taula score html
+        generateTableScore();
+    }
     document.getElementById('pokescore').textContent = "Score: " + score + " MaxScore: " + maxScore;
 
 }
