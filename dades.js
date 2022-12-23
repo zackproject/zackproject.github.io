@@ -10,7 +10,7 @@ var cards = [
         "title": "Poke Guess",
         "image": "https://i.imgur.com/ieg9MPg.png",
         "alt": "Card Poke guess",
-        "description": "Guess between two poke which poke has more or less speed, attack, defense, ... ",
+        "description": "Sort the poke text and guess the name of the peeled poke. Press Enter to check the results.",
         "link": "/guess"
     },
     {
@@ -27,4 +27,11 @@ var cards = [
         "description": "Find the birthday of the character by day and month. Demo of the App Anime Birthday",
         "link": "/animebirthday"
     }
+    /*,{
+        "title": "Quien quiere ser Otaku",
+        "image": "https://i.imgur.com/5lSpYN6.png",
+        "alt": "Card quien quiere ser Otaku",
+        "description": "Aplicación en contrucción",
+        "link": "/"
+    }*/
 ];
