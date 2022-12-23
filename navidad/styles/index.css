@@ -7,7 +7,7 @@ body {
     margin: 0;
 }
 
-#fecha-caducidad {
+.fecha-caducidad {
     color: white;
     font-size: 20px;
     text-align: center;
@@ -128,7 +128,8 @@ footer>a {
 }
 
 
-#link-final {
+.link-final {
+    padding: 10px;
     color: white;
     text-decoration: underline;
   }
