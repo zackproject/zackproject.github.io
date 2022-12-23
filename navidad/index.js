@@ -3,6 +3,7 @@ day = d.getDate();
 month = d.getMonth() + 1;
 year = d.getFullYear();
 var monthWorkThisProgram = 12;
+
 function start() {
     let currentDiv = document.getElementById("calendari");
     //advent list ve del fitxer .json
@@ -137,7 +138,7 @@ function isPadLockOpen(nId, option = 0) {
     else {
         if (localStorage.length != 0) {
             //Remove local storage
-            localStorage.clear();
+            clearCalendarStorage();
         }
         /*Si no es desembre, bloqueja tot */
         document.getElementById("fecha-caducidad").innerText = "Disponible sólo en diciembre";
@@ -158,7 +159,7 @@ function isPadLockOpen(nId, option = 0) {
 function testCode(nDay, deleteLocal = false) {
     if (deleteLocal) {
         //Esborra el localStorage
-        localStorage.clear();
+        clearCalendarStorage();
     }
     monthWorkThisProgram = month;
     day = nDay;
@@ -271,4 +272,13 @@ function showProgresText() {
     } else {
         elementHTML.innerText = "Selecciona el dia desbloqueado";
     }
+}
+
+//Borra el localstorage nomes del calendari
+function clearCalendarStorage(){
+    Object.keys(localStorage).forEach(element => {
+        if(element.includes("pdunlock")){
+         localStorage.removeItem(element)
+        }
+     });
 }
