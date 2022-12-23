@@ -77,7 +77,6 @@ function getScoreListFromLocalStorage() {
 
         //Hi ha un element que s'escapa llavors l'esborrem
         allGenList.pop();
-        console.log("getScoreListFromLocalStorage()", allGenList);
         return allGenList;
     }
 
@@ -87,9 +86,13 @@ function changeGenOrType() {
     let genHtml = document.getElementById('genViewList').selectedOptions[0].value;
     type = typeHtml;
     gen = parseInt(genHtml);
+    // Cada vegada que canvia les opcions, actualitza el score i max score
     score = 0;
-    maxScore = 0;
-    refreshScore();
+    //max score sera el valor guardar el localStorage per gen i tipus(speed)
+    maxScore = getMaxScoreLocalStorage(type, gen);
+    document.getElementById('score-number').textContent = score;
+    document.getElementById('max-score-number').textContent = maxScore;
+
     loadTwoPokes();
 }
 
@@ -105,6 +108,9 @@ function loadTwoPokes() {
     printPokeHTML();
     //Genera la taula nomes comenzar
     generateTableScore()
+    //Al carregar Score el primer cop, carrega el record del gen y tipus (speed)
+    maxScore = getMaxScoreLocalStorage(type, gen);
+    document.getElementById('max-score-number').textContent = maxScore;
 }
 
 function twiceNewPoke() {
@@ -154,8 +160,41 @@ function printPokeHTML() {
     document.getElementById('pk2image').src = poke2.img_default;
     document.getElementsByClassName('pktpye')[1].textContent = type;
     // document.getElementById('pk2number').textContent = poke2[type]; THIS NUMBER IS SECRET
+    refreshScore();
 }
 
+//Segons el tipus i la generacio retorna un record en concret
+function getMaxScoreLocalStorage(type, gen) {
+    switch (type) {
+        case "hp":
+            //Exemple list[Gen-1][Hp] = 12 maxscore
+            maxScore = generationList[gen][0];
+            break;
+        case "attack":
+            //Exemple [Gen-4][Attack] = 13 maxScore
+            maxScore = generationList[gen][1];
+            break;
+        case "defense":
+            maxScore = generationList[gen][2];
+            break;
+        case "special_attack":
+            maxScore = generationList[gen][3];
+            break;
+        case "special_defense":
+            maxScore = generationList[gen][4];
+            break;
+        case "speed":
+            maxScore = generationList[gen][5];
+            break;
+        case "best":
+            maxScore = generationList[gen][6];
+            break;
+        default:
+            break;
+    }
+    return maxScore;
+
+}
 function btnLow() {
     if (poke1[type] <= poke2[type]) {
         score++;
@@ -198,6 +237,7 @@ function updateScore(localList, gen, type, maxScore) {
         default:
             break;
     }
+    document.getElementById("max-score-number").innerText = maxScore;
     return localList;
 
 }
@@ -219,16 +259,16 @@ function refreshScore() {
     if (score > maxScore) {
         maxScore = score;
         //Score només guarda les millors puntuacions
-        let updateList = updateScore(getScoreListFromLocalStorage(), gen, type, maxScore);
+        generationList = updateScore(getScoreListFromLocalStorage(), gen, type, maxScore);
         //Actualitza el LocalStorage
-        addToLocalStorage(updateList);
+        addToLocalStorage(generationList);
         //Regenera la taula score html
         generateTableScore();
+        //Nomes actualiza el max score quan s'ha superat
+        document.getElementById('max-score-number').textContent = maxScore;
     }
-    document.getElementById('pokescore').textContent = "Score: " + score + " MaxScore: " + maxScore;
-
+    document.getElementById('score-number').textContent = score;
 }
-
 function randNumber(max, min) {
     return Math.floor(Math.random() * (max - min) + min);
 }
@@ -242,4 +282,18 @@ function openModal() {
 function closeModal() {
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
+}
+
+
+function printTable() {
+    console.table(generationList);
+}
+
+function mostrarTablaScore() {
+    let x = document.getElementById("open-score");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
 }

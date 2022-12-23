@@ -26,7 +26,9 @@
         <!-- Menu: score,  dropdown generation, dropdown type-->
         <div class="d-flex flex-column flex-md-row justify-content-center">
             <div class="p-2 listaflex">
-                <h3 id="pokescore">Score: 0</h3>
+                <button class="form-select" onclick="mostrarTablaScore()">
+                        Max: <span id="max-score-number"></span>
+                        Score: <span id="score-number"></span> </button>
             </div>
             <div class="p-2 listaflex">
                 <select onchange="changeGenOrType()" class="form-select" id="genViewList" aria-label="Generation List">
@@ -86,7 +88,12 @@
                 </div>
             </div>
         </div>
-        <div id="score-table">
+        <div id="open-score" style="color: wheat;" class="modal">
+            <div class="modal-content">
+                <div id="score-table"></div>
+                <button class="btn-modal" onclick="mostrarTablaScore()">CLOSE</button>
+
+            </div>
         </div>
         <!-- <p>
             Play Store:
@@ -100,7 +107,7 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <p id="textmodal"></p>
-                <button id="btn-modal" onclick="closeModal()">CLOSE</button>
+                <button class="btn-modal" onclick="closeModal()">CLOSE</button>
                 <a id="publi" href="https://play.google.com/store/apps/details?id=apps.zack.pokemorelessapp"
                     class="link-light">Play Store: Pokehigher
                     or Pokelower</a>
