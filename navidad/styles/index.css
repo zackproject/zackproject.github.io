@@ -7,7 +7,7 @@ body {
     margin: 0;
 }
 
-#fecha-caducidad {
+.fecha-caducidad {
     color: white;
     font-size: 20px;
     text-align: center;
@@ -127,6 +127,12 @@ footer>a {
     width: 50px;
 }
 
+
+.link-final {
+    padding: 10px;
+    color: white;
+    text-decoration: underline;
+  }
 /* animation shake */
 /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_shake */
 @keyframes shake {

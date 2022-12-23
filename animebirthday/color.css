@@ -1,0 +1,48 @@
+/* Els colors varien depenen del 'value' del 'select' en el html*/
+.dark-color-purple {
+    background-color: #6A067B;
+}
+
+.color-purple {
+    background-color: #E8C7ED;
+}
+
+.dark-color-blue {
+    background-color: #344293;
+}
+
+.color-blue {
+    background-color: lightblue;
+}
+
+.dark-color-green {
+    background-color: #047619;
+}
+
+.color-green {
+    background-color: lightgreen;
+}
+
+.dark-color-yellow {
+    background-color: #D8C202;
+}
+
+.color-yellow {
+    background-color: #EAE27B;
+}
+
+.dark-color-orange {
+    background-color: #D55601;
+}
+
+.color-orange {
+    background-color: #FDCDAC;
+}
+
+.dark-color-red {
+    background-color: #B90808;
+}
+
+.color-red {
+    background-color: #E1A1A1;
+}

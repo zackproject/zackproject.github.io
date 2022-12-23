@@ -3,6 +3,7 @@ day = d.getDate();
 month = d.getMonth() + 1;
 year = d.getFullYear();
 var monthWorkThisProgram = 12;
+
 function start() {
     let currentDiv = document.getElementById("calendari");
     //advent list ve del fitxer .json
@@ -30,9 +31,9 @@ function start() {
         mimage.id = "padlock-" + element.id;
         mimage.alt = "Candado del dia " + element.id;
         mimage.loading = "lazy"
-        mimage.src = isPadLockOpen(element.id, 2 );
+        mimage.src = isPadLockOpen(element.id, 2);
 
-        if (day >= element.id && month== monthWorkThisProgram) {
+        if (day >= element.id && month == monthWorkThisProgram) {
             imageWitOrNotHref.onclick = function (event) {
                 //Si clica un dia desbloquejat, obre el dialog
                 generateModalList(element.id);
@@ -58,6 +59,8 @@ function start() {
     /*Nomes neva al desembre */
     if (month == monthWorkThisProgram) {
         letitsnow();
+        //Mostra si quedan caselles o completat
+        showProgresText();
     }
     console.info("Only for developer", 'testCode(nDay);');
 }
@@ -123,8 +126,6 @@ function imageOnCard(mid, msrc, malt) {
 function isPadLockOpen(nId, option = 0) {
     /*Nomes funcionará al desembre*/
     if (month == monthWorkThisProgram) {
-        /* Si es desembre, trec el cartell*/
-        document.getElementById("fecha-caducidad").innerText = "Selecciona el dia desbloqueado";
         switch (option) {
             case 1:
                 return day < nId ? "locked" : "unlocked";
@@ -135,12 +136,15 @@ function isPadLockOpen(nId, option = 0) {
         }
     }
     else {
-        if (localStorage.length != 0) {
-            //Remove local storage
-            localStorage.clear();
-        }
+        clearCalendarStorage();
         /*Si no es desembre, bloqueja tot */
-        document.getElementById("fecha-caducidad").innerText = "Disponible sólo en diciembre";
+
+        let caducidadList = document.getElementsByClassName("fecha-caducidad");
+
+        for (let i = 0; i < caducidadList.length; i++) {
+            const elementHTML = caducidadList[i];
+            elementHTML.innerText = "Disponible sólo en diciembre";
+        };
         switch (option) {
             case 1:
                 return "locked";
@@ -158,7 +162,7 @@ function isPadLockOpen(nId, option = 0) {
 function testCode(nDay, deleteLocal = false) {
     if (deleteLocal) {
         //Esborra el localStorage
-        localStorage.clear();
+        clearCalendarStorage();
     }
     monthWorkThisProgram = month;
     day = nDay;
@@ -183,9 +187,9 @@ function checkResult(questionNumber) {
         //console.log("Checked", thing.value, "Expected", posResolved);
         if (thing.value == posResolved) {
             document.getElementById("llista-" + thing.value).style.background = "green";
-            let formSorpresaId= document.getElementById("form-sorpresa");
-            formSorpresaId.target ="_blank"
-            formSorpresaId.href = adventList[questionNumber-1].advent;
+            let formSorpresaId = document.getElementById("form-sorpresa");
+            formSorpresaId.target = "_blank"
+            formSorpresaId.href = adventList[questionNumber - 1].advent;
             formSorpresaId.style.display = "block";
             return true;
         } else {
@@ -201,7 +205,7 @@ function generateModalList(npregunta) {
     let listQuizHTML = document.getElementById("llista-quiz");
     //Text de les respostes de la pregunta 'npregunta' la
     document.getElementById("quiz-text").innerText = "Quiz del Dia " + npregunta;
-    document.getElementById("quiz-question").innerText =  quizList[npregunta - 1].question;
+    document.getElementById("quiz-question").innerText = quizList[npregunta - 1].question;
 
     //Exemple: La 'npregunta' 18 es en la posicio 17 => 18-1
     let quizOptionsList = quizList[npregunta - 1].options;
@@ -238,6 +242,8 @@ function generateModalList(npregunta) {
         var isCorrectQuestion = checkResult(npregunta);
         if (isCorrectQuestion) {
             showImageOnSolutionCorrect(npregunta);
+            //Mostra si quedan caselles o completat
+            showProgresText();
         }
     }
     //var span = document.getElementsByClassName("close")[0];
@@ -248,4 +254,37 @@ function closeModal() {
     var modal = document.getElementById("modal-form");
     modal.style.display = "none";
 
+}
+
+function showProgresText() {
+    //let elementHTML = document.getElementById("fecha-caducidad")
+    let caducidadList = document.getElementsByClassName("fecha-caducidad");
+    for (let i = 0; i < caducidadList.length; i++) {
+        const elementHTML = caducidadList[i];
+        let textLink = document.createElement("a");
+        textLink.className = "link-final";
+        textLink.href = "https://zackproject.github.io";
+        textLink.text = "zackproject.github.io";
+
+        let textLink2 = document.createElement("a");
+        textLink2.href = "https://forms.gle/cALW28N26hiGaiVc6";
+        textLink2.text = "AQUI";
+        textLink2.className = "link-final";
+
+        let texto2 = document.createElement("div");
+        texto2.innerText = "Breve encuesta";
+        texto2.appendChild(textLink2);
+
+        elementHTML.innerText = "¡Feliz Navidad!";
+        elementHTML.appendChild(texto2);
+    };
+}
+
+//Borra el localstorage nomes del calendari
+function clearCalendarStorage() {
+    Object.keys(localStorage).forEach(element => {
+        if (element.includes("pdunlock")) {
+            localStorage.removeItem(element)
+        }
+    });
 }
