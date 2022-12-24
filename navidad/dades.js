@@ -118,6 +118,11 @@ var adventList = [
         "id": 24,
         "image_open": "images/resolved/resolved_24.webp",
         "advent": "https://youtu.be/Pk1I8uEMrP8"
+    },
+    {
+        "id": 25,
+        "image_open": "images/resolved/resolved_25.webp",
+        "advent": "https://youtu.be/aAkMkVFwAoo"
     }
 ]
 
@@ -363,6 +368,16 @@ var quizList = [
             "PH",
             "XD",
             "OwO"
+        ]
+    },
+    {
+        "id": 25,
+        "question": "La persona que te ha llevado dentro durante 9 meses, y que en todos los idiomas se escribe igual, es",
+        "options": [
+            "Bart Simpson",
+            "Mamá",
+            "Arale",
+            "Mariah Carey"
         ]
     }
 ]
