@@ -1,0 +1,30 @@
+/* grid */
+#quiz {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "q0 q0"
+        "q1 q2"
+        "q3 q4";
+}
+
+#question {
+    grid-area: q0;
+}
+
+#pt1 {
+    grid-area: q1;
+}
+
+#pt2 {
+    grid-area: q2;
+}
+
+#pt1 {
+    grid-area: q3;
+}
+
+#pt1 {
+    grid-area: q4;
+}
