@@ -1,60 +1,257 @@
 const questionsList = [
     {
-        "question": "¿Qué personaje de anime y manga es conocido por su técnica de lucha llamada 'Chidori' y por ser el líder del Clan Uchiha?",
-        "options": ["Naruto Uzumaki", "Sasuke Uchiha", "Kakashi Hatake", "Itachi Uchiha"]
+        "id": 0,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Qué personaje de anime y manga es conocido por su técnica de lucha llamada 'Gran Rey Cero' y por ser el rey de los espadas?",
-        "options": ["Ichigo Kurosaki", "Gin Ichimaru", "Sosuke Aizen", "Toshiro Hitsugaya"]
+        "id": 1,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Qué personaje de anime y manga es conocido por su técnica de lucha llamada 'Jutsu del Dragón Celestial' y por ser el líder del Clan Hyuga?",
-        "options": ["Gaara", "Shikamaru Nara", "Rock Lee", "Hiashi Hyuga"]
+        "id": 2,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Qué personaje de anime y manga es conocido por su técnica de lucha llamada 'Gears' y por su increíble fuerza y resistencia?",
-        "options": ["Roronoa Zoro", "Griffith", "Guts", "Edward Elric"]
+        "id": 3,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Qué personaje de anime y manga es conocido por su técnica de lucha llamada 'Excalibur' y por ser el rey de los caballeros?",
-        "options": ["Saber", "Lancer", "Archer", "Rider"]
+        "id": 4,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Qué personaje de anime y manga es conocido por su técnica de lucha llamada 'Rasengan' y por ser el protagonista de la serie 'Naruto'?",
-        "options": ["Sasuke Uchiha", "Kakashi Hatake", "Gaara", "Naruto Uzumaki"]
+        "id": 5,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Qué personaje de anime y manga es conocido por su técnica de lucha llamada 'Gran Rey Cero' y por ser el antagonista principal de la serie 'Bleach'?",
-        "options": ["Gin Ichimaru", "Sosuke Aizen", "Toshiro Hitsugaya", "Ulquiorra Schiffer"]
+        "id": 6,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Qué personaje de anime y manga es conocido por su técnica de lucha llamada 'Amaterasu' y por ser el antagonista principal de la serie 'Death Note'?",
-        "options": ["Light Yagami", "L", "Mikami Teru", "Near"]
+        "id": 7,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Quièn es conocido por su técnica de lucha llamada 'Gears' y por ser el protagonista de la serie 'Fullmetal Alchemist'?",
-        "options": ["Edward Elric", "Alphonse Elric", "Roy Mustang", "Winry Rockbell"]
+        "id": 8,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Quièn es conocido por su técnica de lucha llamada 'Dragon's Roar' y por ser el protagonista de la serie 'Fairy Tail'?",
-        "options": ["Natsu Dragneel", "Gray Fullbuster", "Lucy Heartfilia", "Erza Scarlet"]
+        "id": 9,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Quièn es conocido por su técnica de lucha llamada 'Requiem' y por ser el antagonista principal de la serie 'Jojo's Bizarre Adventure'?",
-        "options": ["Dio Brando", "Jotaro Kujo", "Josuke Higashikata", "Kira Yoshikage"]
+        "id": 10,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Quièn es conocido por su técnica de lucha llamada 'Shining Finger' y por ser el protagonista de la serie 'Gundam Wing'?",
-        "options": ["Heero Yuy", "Duo Maxwell", "Quatre Raberba Winner", "Trowa Barton"]
+        "id": 11,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Quièn es conocido por su técnica de lucha llamada 'Infinite One Blade' y por ser el protagonista de la serie 'Demon Slayer'?",
-        "options": ["Tanjirou Kamado", "Nezuko Kamado", "Inosuke Hashibira", "Zenitsu Agatsuma"]
+        "id": 12,
+        "question": "",
+        "options": ["", "", "", ""]
     },
     {
-        "question": "¿Quièn es conocido por su técnica de lucha llamada 'God Finger Flick' y por ser el protagonista de la serie 'My Hero Academia'?",
-        "options": ["Izuku Midoriya", "Katsuki Bakugo", "Shoto Todoroki", "All Might"]
+        "id": 13,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 14,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 15,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 16,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 17,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 18,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 19,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 20,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 21,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 22,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 23,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 24,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 25,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 26,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 27,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 28,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 29,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 30,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 31,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 32,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 33,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 34,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 35,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 36,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 37,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 38,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 39,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 40,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 41,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 42,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 43,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 44,
+        "question": "",
+        "options": ["", "", "", ""]
+    }
+    {
+        "id": 45,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 46,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 47,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 48,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 49,
+        "question": "",
+        "options": ["", "", "", ""]
+    },
+    {
+        "id": 50,
+        "question": "",
+        "options": ["", "", "", ""]
     }
 ];
-
-const optionsPositionCorrect = [1, 2, 4, 3, 1, 3, 2, 1, 1, 2, 1, 1, 1, 1];
