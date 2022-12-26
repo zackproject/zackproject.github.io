@@ -5,26 +5,26 @@
     grid-template-rows: auto auto auto;
     grid-template-areas:
         "q0 q0"
-        "q1 q2"
-        "q3 q4";
+        "a0 a1"
+        "a2 a3";
 }
 
 #question {
     grid-area: q0;
 }
 
+#pt0 {
+    grid-area: a0;
+}
+
 #pt1 {
-    grid-area: q1;
+    grid-area: a1;
 }
 
 #pt2 {
-    grid-area: q2;
+    grid-area: a2;
 }
 
-#pt1 {
-    grid-area: q3;
-}
-
-#pt1 {
-    grid-area: q4;
+#pt3 {
+    grid-area: a3;
 }
