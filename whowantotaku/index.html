@@ -16,7 +16,13 @@
     <button onclick="fillQuiz()">Play</button>
     <div class="container">
         <!-- pantalla del juego-->
-        <div class="screen"></div>
+        <div class="screen">
+            <img src="none" alt="none">
+            <select id="rutaViewList" name="select" onchange="selectRuta()">
+                <option value="0">Ruta Pokemon</option>
+                <option value="10" selected>Ruta Shingeki</option>
+            </select>
+        </div>
         <!-- Menu 4 opciones-->
         <div id="quiz">
             <div id="question">lorem</div>

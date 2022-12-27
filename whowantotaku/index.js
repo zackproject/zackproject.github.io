@@ -14,7 +14,6 @@ function fillQuestionList() {
 }
 function fillQuiz() {
     questionHTMList = fillQuestionList();
-    console.log(questionHTMList);
     //Testing, retorna una pregunta al atzar
     indexMyQuestion = parseInt(Math.random() * ((questionsList.length - 1) - 0) + 0);
     //Es guarda la pregunta amb les opcions
@@ -44,4 +43,9 @@ function comodinMitad() {
 }
 function comodinPublico(){
     
+}
+
+function selectRuta(){
+    let selectedRuta = document.getElementById("rutaViewList").selectedOptions[0];
+    console.log(selectedRuta.value, selectRuta.text);
 }
