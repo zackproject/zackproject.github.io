@@ -12,7 +12,7 @@ const questionsList = [
     {
         "id": 2,
         "question": "¿A que evoluciona Eevee con la piedra hoja?",
-        "options": ["Leafon", "Glaceon", "Vaporeon", "Jolteon"]
+        "options": ["Vaporeon", "Glaceon", "Leafon", "Jolteon"]
     },
     {
         "id": 3,
@@ -21,8 +21,8 @@ const questionsList = [
     },
     {
         "id": 4,
-        "question": "¿En que animal esta basado 'Lapras'?",
-        "options": ["", "Monstruo de ", "Nessie", ""]
+        "question": "¿Cuál NO es un Pokemon palindromo?",
+        "options": ["Alomomola", "Girafarig", "Eevee", "Grimer"]
     },
     {
         "id": 5,
@@ -47,7 +47,7 @@ const questionsList = [
     {
         "id": 9,
         "question": "¿Qué baya aumenta la defensa especial?",
-        "options": ["Maranga", "Lichi", "Maranga", "Rimoya"]
+        "options": ["Maranga", "Lichi", "Meloc", "Rimoya"]
     },
     {
         "id": 10,
@@ -77,12 +77,12 @@ const questionsList = [
     {
         "id": 15,
         "question": "En la primera caida del muro. ¿Que poder titan NO participó?",
-        "options": ["Titan colosal", "Titan bestia", "Titan Acorazado>", "Titan hembra"]
+        "options": ["Titan colosal", "Titan bestia", "Titan Acorazado", "Titan hembra"]
     },
     {
         "id": 16,
         "question": "¿Cuál era la profesión de Grisha Jaegger?",
-        "options": ["Medico", "Militar", "Historiador", "Agricultro"]
+        "options": ["Medico", "Militar", "Historiador", "Agricultor"]
     },
     {
         "id": 17,
@@ -92,7 +92,7 @@ const questionsList = [
     {
         "id": 18,
         "question": "¿Qué deporte practicaba Zeke Jaegger?",
-        "options": ["Fútbol", "Cricket", "Baloncesto", "Beisbol"]
+        "options": ["Fútbol", "Cricket", "Beisbol", "Baloncesto"]
     },
     {
         "id": 19,
@@ -255,3 +255,14 @@ const questionsList = [
         "options": ["", "", "", ""]
     }
 ];
+
+const optionsPositionCorrect = [
+    0, 0, 2, 3, 3, 3, 0, 2, 0, 1, //quizpk 0
+    0, 1, 0, 2, 2, 1, 0, 3, 2, 3 //quizsnk 10
+]
+
+for (let i = 0; i < questionsList.length; i++) {
+    let pregunta = questionsList[i].question;
+    let resposta = questionsList[i].options[optionsPositionCorrect[i]]
+    console.log(i + ". " + pregunta, ":", resposta + "[" + optionsPositionCorrect[i] + "]");
+}
