@@ -1,103 +1,103 @@
 const questionsList = [
     {
         "id": 0,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿Qué Pokemon es un ratón electrico?",
+        "options": ["Pikachu", "Squirtle", "Charmander", "Bulbasaur"]
     },
     {
         "id": 1,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿En que animal se basa Charmander",
+        "options": ["Lagartija", "Hipopotamo", "Ratón", "Avestruz"]
     },
     {
         "id": 2,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿A que evoluciona Eevee con la piedra hoja?",
+        "options": ["Leafon", "Glaceon", "Vaporeon", "Jolteon"]
     },
     {
         "id": 3,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "Si usó 'Doble Equipo', que caracteristica augmenta",
+        "options": ["Ataque", "Defensa", "Velocidad", "Evasión"]
     },
     {
         "id": 4,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿En que animal esta basado 'Lapras'?",
+        "options": ["", "Monstruo de ", "Nessie", ""]
     },
     {
         "id": 5,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿Cual NO es de tipo dragon?",
+        "options": ["Applin", "Exeguttor Alola", "Lapras", "Salamence"]
     },
     {
         "id": 6,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "Según la Pokedex: 'Si hacen bullying a una persona que ha entablado amistad, quemará la casa del matón hasta los cimientos' ¿de que Pokemon hablamos?",
+        "options": ["Drampa", "Charizard", "Chansey", "Latios"]
     },
     {
         "id": 7,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "Que habilidad potencia los movimientos de su propio tipo",
+        "options": ["Mutatipo", "Libero", "Adaptable", "Intrepido"]
     },
     {
         "id": 8,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿Que movimiento fue introducido en Octava Generación",
+        "options": ["Hora del té", "Giro Vil", "Limpieza General", "Sustituto"]
     },
     {
         "id": 9,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿Qué baya aumenta la defensa especial?",
+        "options": ["Maranga", "Lichi", "Maranga", "Rimoya"]
     },
     {
         "id": 10,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿A que Legión están pertenecen Eren, Mikasa y Armin?",
+        "options": ["Reconocimiento", "Policia Militar", "Tropas Estacionarias", "A ninguna"]
     },
     {
         "id": 11,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "La ciudad estaba separada por 3 muros, ¿Cuál NO era un nombre de muro?",
+        "options": ["Maria", "Ymir", "Rose", "Sina"]
     },
     {
         "id": 12,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿Qué arma usaba el equipo de reconociento?",
+        "options": ["Equipo tridimensional", "Armas de fogueo", "Espadas", "Con las manos"]
     },
     {
         "id": 13,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿Cuál es el genero de Hange Zoe?",
+        "options": ["Masculino", "Femenino", "Desconocido", "Ambos"]
     },
     {
         "id": 14,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿Quien NO es parte de la familia Ackerman?",
+        "options": ["Levi", "Kenny", "Zeke", "Mikasa"]
     },
     {
         "id": 15,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "En la primera caida del muro. ¿Que poder titan NO participó?",
+        "options": ["Titan colosal", "Titan bestia", "Titan Acorazado>", "Titan hembra"]
     },
     {
         "id": 16,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿Cuál era la profesión de Grisha Jaegger?",
+        "options": ["Medico", "Militar", "Historiador", "Agricultro"]
     },
     {
         "id": 17,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿En que año cayó por primera vez el muro María?",
+        "options": ["850", "840", "854", "845"]
     },
     {
         "id": 18,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "¿Qué deporte practicaba Zeke Jaegger?",
+        "options": ["Fútbol", "Cricket", "Baloncesto", "Beisbol"]
     },
     {
         "id": 19,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "'La maldición de Ymir' dice: 'Aquellos que heredan el poder de los 9 titanes, mueren después de ...'",
+        "options": ["2 decadas", "7 años", "11 años", "1 decada y 3 años"]
     },
     {
         "id": 20,
@@ -223,7 +223,7 @@ const questionsList = [
         "id": 44,
         "question": "",
         "options": ["", "", "", ""]
-    }
+    },
     {
         "id": 45,
         "question": "",
