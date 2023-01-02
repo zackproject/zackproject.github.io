@@ -1,17 +1,17 @@
 const questionsList = [
     {
         "id": 0,
-        "question": "¿Qué Pokemon es un ratón electrico?",
+        "question": "Qué Pokemon es un ratón electrico",
         "options": ["Pikachu", "Squirtle", "Charmander", "Bulbasaur"]
     },
     {
         "id": 1,
-        "question": "¿En que animal se basa Charmander",
+        "question": "En que animal se basa Charmander",
         "options": ["Lagartija", "Hipopotamo", "Ratón", "Avestruz"]
     },
     {
         "id": 2,
-        "question": "¿A que evoluciona Eevee con la piedra hoja?",
+        "question": "A que evoluciona Eevee con la piedra hoja",
         "options": ["Vaporeon", "Glaceon", "Leafon", "Jolteon"]
     },
     {
@@ -21,17 +21,17 @@ const questionsList = [
     },
     {
         "id": 4,
-        "question": "¿Cuál NO es un Pokemon palindromo?",
+        "question": "Cuál NO es un Pokemon palindromo",
         "options": ["Alomomola", "Girafarig", "Eevee", "Grimer"]
     },
     {
         "id": 5,
-        "question": "¿Cual NO es de tipo dragon?",
+        "question": "Cual NO es de tipo dragon",
         "options": ["Applin", "Exeguttor Alola", "Lapras", "Salamence"]
     },
     {
         "id": 6,
-        "question": "Según la Pokedex: 'Si hacen bullying a una persona que ha entablado amistad, quemará la casa del matón hasta los cimientos' ¿de que Pokemon hablamos?",
+        "question": "Según la Pokedex: 'Si hacen bullying a una persona que ha entablado amistad, quemará la casa del matón hasta los cimientos'",
         "options": ["Drampa", "Charizard", "Chansey", "Latios"]
     },
     {
@@ -41,57 +41,57 @@ const questionsList = [
     },
     {
         "id": 8,
-        "question": "¿Que movimiento fue introducido en Octava Generación",
+        "question": "Que movimiento fue introducido en Octava Generación",
         "options": ["Hora del té", "Giro Vil", "Limpieza General", "Sustituto"]
     },
     {
         "id": 9,
-        "question": "¿Qué baya aumenta la defensa especial?",
-        "options": ["Maranga", "Lichi", "Meloc", "Rimoya"]
+        "question": "Qué baya aumenta la ataque especial",
+        "options": ["Aslac", "Lichi", "Chiri", "Yapati"]
     },
     {
         "id": 10,
-        "question": "¿A que Legión están pertenecen Eren, Mikasa y Armin?",
+        "question": "A que Legión pertenecen Eren, Mikasa y Armin",
         "options": ["Reconocimiento", "Policia Militar", "Tropas Estacionarias", "A ninguna"]
     },
     {
         "id": 11,
-        "question": "La ciudad estaba separada por 3 muros, ¿Cuál NO era un nombre de muro?",
+        "question": "La ciudad estaba separada por 3 muros, Cuál NO es un nombre de muro",
         "options": ["Maria", "Ymir", "Rose", "Sina"]
     },
     {
         "id": 12,
-        "question": "¿Qué arma usaba el equipo de reconociento?",
+        "question": "Qué arma usan contra los titanes",
         "options": ["Equipo tridimensional", "Armas de fogueo", "Espadas", "Con las manos"]
     },
     {
         "id": 13,
-        "question": "¿Cuál es el genero de Hange Zoe?",
+        "question": "Cuál es el genero de Hange Zoe",
         "options": ["Masculino", "Femenino", "Desconocido", "Ambos"]
     },
     {
         "id": 14,
-        "question": "¿Quien NO es parte de la familia Ackerman?",
+        "question": "Quien NO es parte de la familia Ackerman",
         "options": ["Levi", "Kenny", "Zeke", "Mikasa"]
     },
     {
         "id": 15,
-        "question": "En la primera caida del muro. ¿Que poder titan NO participó?",
+        "question": "En la primera caida del muro. Que poder titan NO participó",
         "options": ["Titan colosal", "Titan bestia", "Titan Acorazado", "Titan hembra"]
     },
     {
         "id": 16,
-        "question": "¿Cuál era la profesión de Grisha Jaegger?",
+        "question": "Cuál era la profesión de Grisha Jaegger",
         "options": ["Medico", "Militar", "Historiador", "Agricultor"]
     },
     {
         "id": 17,
-        "question": "¿En que año cayó por primera vez el muro María?",
-        "options": ["850", "840", "854", "845"]
+        "question": "En que año cayó por primera vez el muro María",
+        "options": ["En 850", "En 840", "En 854", "En 845"]
     },
     {
         "id": 18,
-        "question": "¿Qué deporte practicaba Zeke Jaegger?",
+        "question": "Qué deporte practicaba Zeke Jaeger",
         "options": ["Fútbol", "Cricket", "Beisbol", "Baloncesto"]
     },
     {
@@ -100,54 +100,53 @@ const questionsList = [
         "options": ["2 decadas", "7 años", "11 años", "1 decada y 3 años"]
     },
     {
-        "id": 20,
-        "question": "",
-        "options": ["", "", "", ""]
+        "id": 20, "question": "Quien es el principal enemigo de los Joestar",
+        "options": ["Dio", "Satoru", "Kars", "Yoshikage"]
     },
     {
         "id": 21,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "Que apellido decide ponerle joseph Joestar a su hija holly",
+        "options": ["Brando", "Peggy", "Joestar", "Kujo"]
     },
     {
         "id": 22,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "Cuantos jojobro murieron en la tercera parte",
+        "options": ["Uno", "Ninguno", "Dos", "Tres"]
     },
     {
         "id": 23,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "La frase más famosa de Joseph Joestar",
+        "options": ["Gambare", "Oni chan", "Nigerundayo", "Za Warudo"]
     },
     {
         "id": 24,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "Nombre del Stan de Kakyoin",
+        "options": ["Hierophant Green", "Star Platinum", "Hermit Purple", "The fool"]
     },
     {
         "id": 25,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "Josuke higashikata NO soportan que se metan con ...",
+        "options": ["Sus manos", "Su pelo", "Sus ojos", "Su nariz"]
     },
     {
         "id": 26,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "Cual es la prisión a la que meten a la hija de Jotaro, Jolyne Cujoh:",
+        "options": ["Folsom Prison", "Maxisum Prison", "Alcatraz", "Green Dolphin"]
     },
     {
         "id": 27,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "Qué tapadera tiene en la cárcel la persona que quiere acabar con Jolyne",
+        "options": ["Un guardia", "Un cura", "Un visitante", "Un prisionero"]
     },
     {
         "id": 28,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "Cómo se llama el mejor amigo de Josuke Higashikata",
+        "options": ["Koichi Hirose", "No tiene", "Okuyasu Nijimura", "Joseph Joestar"]
     },
     {
         "id": 29,
-        "question": "",
-        "options": ["", "", "", ""]
+        "question": "Quien es el creador de jojo's",
+        "options": ["Eichiro Oda", "Kentaro Miurea", "Kohei Horikoshi", "Hirohiko Araki"]
     },
     {
         "id": 30,
@@ -257,12 +256,9 @@ const questionsList = [
 ];
 
 const optionsPositionCorrect = [
-    0, 0, 2, 3, 3, 3, 0, 2, 0, 1, //quizpk 0
-    0, 1, 0, 2, 2, 1, 0, 3, 2, 3 //quizsnk 10
+    0, 0, 2, 3, 3, 3, 0, 2, 0, 3, //quizpk 0
+    0, 1, 0, 2, 2, 1, 0, 3, 2, 3, //quizsnk 10
+    0, 3, 3, 2, 0, 1, 3, 1, 2, 3 //quizjos 20
 ]
 
-for (let i = 0; i < questionsList.length; i++) {
-    let pregunta = questionsList[i].question;
-    let resposta = questionsList[i].options[optionsPositionCorrect[i]]
-    console.log(i + ". " + pregunta, ":", resposta + "[" + optionsPositionCorrect[i] + "]");
-}
+
