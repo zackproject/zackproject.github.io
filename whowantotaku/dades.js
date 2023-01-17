@@ -262,3 +262,28 @@ const optionsPositionCorrect = [
 ]
 
 
+const nameCalling = [
+    {
+        "name": "Tita Rosa Melano",
+        "call": [
+            "Hola sobrino, ¿que me llamas para que?,ah, leeme la pregunta. Yo creo que es la ",
+            "SOBRINO ME ESCUCHAS. Ay perdón. Estás en la TV del comedor, te vemos toda la familia ¿necesitas ayuda?. Hmm, yo marcaría la "],
+    },
+    {
+        "name": "Hermano Elton Tito",
+        "call": [
+            "Sabia que me necesitabas hermanito, te estoy viendo en directo. A ver, leyendo las opciones creo que es la ",
+            "Lo están haciendo bien 'brother' No pensaba que necesitarias ayuda pero bueno. Apuesto la moto que es la "],
+    },
+    {
+        "name": "Abuelo Elvis Nieto",
+        "call": [
+            "Que no quiero publicidad, ah, ¿un concurso de mi nieto? A ver, deja que me ponga el sonotone. Vale, diria que es la ",
+            "Buenas a mi nieto preferido ¿Que estás en un 'transcuro'? Ah, concurso. Espera que me subo el sonotone. Hmm, yo pondría la "],
+    },
+    {
+        "name": "Prima Inés Esario",
+        "call": ["Hey primito, estoy 'living' con este concurso. Sabia que llamarias a tu 'best' prima. Esta pregunta es un poco 'difficult'. Yo haria 'check' a la ",
+            "Buenas primo, te estoy viendo en el 'live' de mi 'smarthphone'. Estás a tope. Pero si necesitas un poco de 'help'. You can choose the "],
+    },
+]
