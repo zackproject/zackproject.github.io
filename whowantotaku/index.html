@@ -5,52 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who want to be otaku</title>
+    <title>Who want to be friki</title>
     <link rel="stylesheet" href="index.css">
     <script src="dades.js"></script>
     <script src="index.js"></script>
+    <script src="object.js"></script>
+    <link rel="icon" href="../icopz.ico">
 
 </head>
 
 <body>
-    <button onclick="fillQuiz()">Play</button>
-    <div class="container">
-        <!-- pantalla del juego-->
-        <div class="screen">
-            <img src="none" alt="none">
-            <select id="rutaViewList" name="select" onchange="selectRuta()">
-                <option value="0" selected>Ruta Pokemon</option>
-                <option value="10">Ruta Shingeki</option>
-                <option value="20">Ruta Jojo</option>
-            </select>
-        </div>
-        <!-- Menu 4 opciones-->
-        <div id="quiz">
-            <div id="question">lorem</div>
-            <div id="pt0">
-                <input id="quiz-0" name="quiz-element" type="radio" value="0">
-                <label class="answer" for="quiz-0"></label>
-            </div>
-            <div id="pt1">
-                <input id="quiz-1" name="quiz-element" type="radio" value="1">
-                <label class="answer" for="quiz-1"></label>
-            </div>
-            <div id="pt2">
-                <input id="quiz-2" name="quiz-element" type="radio" value="2">
-                <label class="answer" for="quiz-2"></label>
-            </div>
-            <div id="pt3">
-                <input id="quiz-3" name="quiz-element" type="radio" value="3">
-                <label class="answer" for="quiz-3"></label>
-            </div>
-        </div>
+    <div id="settings"></div>
+    <h2>Ajustes</h2>
+    <select id="rutaViewList" name="select" onchange="selectRuta()">
+        <option value="0" selected>Ruta Pokemon</option>
+        <option value="10">Ruta Shingeki</option>
+        <option value="20">Ruta Jojo</option>
+    </select>
+    <input placeholder="Escribe tu nombre" autocomplete="off" type="text" id="inputName" name="name">
+    <button onclick="playNow()">Play</button>
 
-        <!-- comodiners-->
-        <div id="comodines">
-            <button>Publico</button>
-            <button onclick="comodinMitad()">50%</button>
-            <button onclick="comodinLlamada()">Llamada</button>
+    <h2>In game</h2>
+
+    <!-- Menu 4 opciones-->
+    <div id="quiz">
+        <div id="question">lorem</div>
+        <div id="pt0">
+            <input id="quiz-0" name="quiz-element" type="radio" value="0">
+            <label class="answer" for="quiz-0"></label>
         </div>
+        <div id="pt1">
+            <input id="quiz-1" name="quiz-element" type="radio" value="1">
+            <label class="answer" for="quiz-1"></label>
+        </div>
+        <div id="pt2">
+            <input id="quiz-2" name="quiz-element" type="radio" value="2">
+            <label class="answer" for="quiz-2"></label>
+        </div>
+        <div id="pt3">
+            <input id="quiz-3" name="quiz-element" type="radio" value="3">
+            <label class="answer" for="quiz-3"></label>
+        </div>
+    </div>
+    <button>Responder</button>
+    <h2>Comodines</h2>
+    <div id="comodines">
+        <button>Publico</button>
+        <button onclick="comodinMitad()">50%</button>
+        <button onclick="comodinLlamada()">Llamada</button>
     </div>
 </body>
 

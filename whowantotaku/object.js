@@ -22,7 +22,10 @@ class Comodin {
     }
 }
 
-Comodin.prototype.apply50Percent() = function apply50Percent(question_id, ncorrect) {
+Comodin.prototype.applyFiftyPercent = function apply50Percent(question_id, ncorrect) {
+    // Marquem com utilizat el comodi
+    this.used = true
+
     let ar = [0, 1, 2, 3];
     //Remove one item
     const remove = 1;
@@ -36,7 +39,10 @@ Comodin.prototype.apply50Percent() = function apply50Percent(question_id, ncorre
 }
 
 
-Comodin.prototype.applyCalling() = function applyCalling(question_id, ncorrect) {
+Comodin.prototype.applyCalling = function applyCalling(question_id, ncorrect) {
+    // Marquem com utilizat el comodi
+    this.used = true
+
     //Decideix el porcentaje a partir del 30%
     let percent = randInt(30, 100);
     let posibilidad = randInt(1, 100);
@@ -51,28 +57,39 @@ Comodin.prototype.applyCalling() = function applyCalling(question_id, ncorrect) 
             num = randInt(0, 3);
         } while (num == ncorrect);
         //Si la posibilitat '43' es majora percent '65' diu la mentida
-        return [percent, ncorrect]; //false
+        return [percent, num]; //false
     }
-    console.log("posibilitat", posibilidad, "percent", percent);
 }
 
-Comodin.prototype.applyPublic() = function applyPublic() {
-    let dificultad = 1; // 1=facil 1=dificil
-    let opt1 = randInt(90, 99)
+Comodin.prototype.applyPublic = function applyPublic(question_id, ncorrect,) {
+    // Marquem com utilizat el comodi
+    this.used = true
+    
+    //let dificultad = question_id % 10; // 1=facil 10=dificil
+    let dificultad = 8; // 1=facil 10=dificil
+
+    //En un range on dificultat=10 --> 50% de probabilitat d'acert
+    let range = 100 - (dificultad * 5);
+    //opt1 sera la correcta, el public pot o no acertar
+    let opt1 = randInt(range - 10, range)
+    //El rand2 sera menor al opt1
     let opt2 = randInt(0, 100 - opt1);
+    //El rand3 sera menor al opt1 i opt2
     let opt3 = randInt(0, 100 - (opt2 + opt1));
+    //El rand sera la resta del 100%, lo que queda
+    // per probabilitat, pot arribar a ser major que la resta
     let opt4 = 100 - (opt3 + opt2 + opt1);
 
-    console.log(opt1, opt2, opt3, opt4, " = ", opt1 + opt2 + opt3 + opt4);
+    console.log("range", range, "opt", opt1, opt2, opt3, opt4, " = ", opt1 + opt2 + opt3 + opt4);
     return [opt1, opt2, opt3, opt4];
 }
 
 
-let c1 = new Comodin(1, "Llamada", false);
-let c2 = new Comodin(2, "Publico", false);
-let c3 = new Comodin(3, "Mitad opciones", false);
-let rangeQuestion = questionsList.slice(10, 19);
-let rangeSolution = optionsPositionCorrect.slice(10, 19);
+var c1 = new Comodin(1, "Llamada", false);
+var c2 = new Comodin(2, "Publico", false);
+var c3 = new Comodin(3, "La mitad", false);
+//let rangeQuestion = questionsList.slice(10, 19);
+//let rangeSolution = optionsPositionCorrect.slice(10, 19);
 
-let j1 = new QuizFriki("Kevin", "shingeki", 1, [c1, c2, c3], rangeQuestion, rangeSolution);
-console.log(j1);
+//let j1 = new QuizFriki("Pedro", "shingeki", 1, [c1, c2, c3], rangeQuestion, rangeSolution);
+//let j2 = new QuizFriki("Luis", "jojos", 1, [c1, c2, c3], rangeQuestion, rangeSolution);

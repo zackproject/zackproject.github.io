@@ -1,7 +1,28 @@
-//
-let numPregunta = 0;
-let indexMyQuestion = 0;
-let questionHTMList = [];
+var player;
+var optionsHTMList;
+function playNow() {
+    //Crea un jugador amb els setting definits
+    player = playNewGame();
+    console.info(player);
+    //Guarda les clases de 'options' del HTML, en una variable
+    optionsHTMList = fillQuestionList();
+    //Omple el text HTML amb els valors
+    fillQuiz();
+}
+
+//Emplena un nou objecte de joc
+function playNewGame() {
+    let inputName = document.getElementById("inputName").value;
+    let selectedCategory = document.getElementById("rutaViewList").selectedOptions[0];
+    let idAcualQuestion = 0;
+    let comodinList = [c1, c2, c3];
+    let firstRange = parseInt(selectedCategory.value);
+    let secondRange = firstRange + 9;
+    let rangeQuestion = questionsList.slice(firstRange, secondRange);
+    let rangeSolution = optionsPositionCorrect.slice(firstRange, secondRange);
+    //Una vegada creat el player el retorna
+    return new QuizFriki(inputName, selectedCategory.innerText, idAcualQuestion, comodinList, rangeQuestion, rangeSolution);
+}
 
 function fillQuestionList() {
     let list = []
@@ -13,60 +34,22 @@ function fillQuestionList() {
     return list;
 }
 function fillQuiz() {
-    questionHTMList = fillQuestionList();
-    //Testing, retorna una pregunta al atzar
-    indexMyQuestion = parseInt(Math.random() * ((questionsList.length - 1) - 0) + 0);
-    //Es guarda la pregunta amb les opcions
-    let qList = questionsList[indexMyQuestion];
-    //Escriu la pregunta al div
-    document.getElementById("question").innerText = qList.question;
-    //Llista totes les clases respostes (4)
-    for (let i = 0; i < questionHTMList.length; i++) {
-        questionHTMList[i].innerText = qList.options[i];
+    let quiz = player.questionsList[player.id_actual_question];
+    //La pregunta actual es la del 'obj'
+    let pregunta = document.getElementById("question");
+    pregunta.innerText = quiz.question;
+
+    //GLOBAL let optionsList 
+    for (let i = 0; i < optionsHTMList.length; i++) {
+        //Hi ha tantes clases com opcions: 4
+        optionsHTMList[i].innerText = quiz.options[i];
     }
 }
 
-function comodinMitad() {
-    let ncorrect = parseInt(optionsPositionCorrect[indexMyQuestion]);
-    let ar = [0, 1, 2, 3];
-    //Remove one item
-    const remove = 1;
-    //Exclueix la responsta correcta
-    ar.splice(ncorrect, remove);
-    let rand = randInt(0, ar.length - 1);
-    //Exclueix responsta random
-    ar.splice(rand, remove);
-    // Esborra dos respostes incorrecres
-    ar.forEach(element => {
-        questionHTMList[element].innerText = "";
-    });
-}
-function comodinPublico() {
-
-}
 
 function selectRuta() {
     let selectedRuta = document.getElementById("rutaViewList").selectedOptions[0];
     console.log(selectedRuta.value, selectedRuta.innerText);
 }
 
-function comodinLlamada() {
-    //Decideix el porcentaje a partir del 30%
-    let percent = randInt(30, 100);
-    console.log("Estoy al " + percent + "% seguro que es la");
-    let posibilidad = randInt(1, 100);
-    //Si la posibilitat '43' es menor o igual a percent '30' diu la veritat
-    if (posibilidad <= percent) {
-        console.log("Voy a acertar");
-    } else {
-        //Si la posibilitat '43' es majora percent '65' diu la mentida
-        console.log("Voy a fallar");
 
-    }
-    console.log("posibilitat", posibilidad, "percent", percent);
-}
-
-
-function randInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
