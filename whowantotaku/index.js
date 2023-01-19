@@ -19,7 +19,7 @@ function playNewGame() {
     let idAcualQuestion = 0;
     let comodinList = [c1, c2, c3];
     let firstRange = parseInt(selectedCategory.value);
-    let secondRange = firstRange + 9;
+    let secondRange = firstRange + 10;
     let rangeQuestion = quizList.slice(firstRange, secondRange);
     let rangeSolution = optionsPositionCorrect.slice(firstRange, secondRange);
     //Una vegada creat el player el retorna
@@ -39,7 +39,7 @@ function fillQuiz() {
     let quiz = player.questionsList[player.id_actual_question];
     //La pregunta actual es la del 'obj'
     let pregunta = document.getElementById("question");
-    pregunta.innerText = quiz.question;
+    pregunta.innerText = (player.id_actual_question+1)+". "+quiz.question;
 
     //GLOBAL let optionsList 
     for (let i = 0; i < optionsHTMList.length; i++) {
@@ -112,7 +112,7 @@ function comodinFifty(event) {
 }
 
 
-
+//Retorna el text de comodi Public en format llegible
 function representPublic(percentList, questionList) {
     let text = "";
     for (let i = 0; i < percentList.length; i++) {
@@ -122,17 +122,63 @@ function representPublic(percentList, questionList) {
     return text;
 }
 
+//Una persona en en desplegable per cada un que es pugui trucar
 function generateHTMLSelectView() {
     let pare = document.getElementById("callViewList");
     let cont = 0;
     nameCalling.forEach(element => {
         let optionHTML = document.createElement("option");
-        if(cont==0){
+        if (cont == 0) {
             optionHTML.selected = true;
         }
         optionHTML.value = cont;
         optionHTML.innerText = element.name;
         cont++;
         pare.appendChild(optionHTML);
+    });
+}
+let cojoones = null;
+function checkQuestion() {
+    //Retorna quin ha sigut checked (num)
+    let thing = document.querySelector('input[name="quiz-element"]:checked');
+
+    if (thing != null) {
+        //Aconsegueix la id de la resposta correcte
+        let correcte = player.solutionsList[player.id_actual_question];
+        //console.log("thing", thing.value, "correcte", correcte);
+        if (thing.value == correcte) {
+            //Si es correcte o marca en verd
+            optionsHTMList[thing.value].style.background = "green";
+        } else {
+            // si es incorrecta tornara a fer de zero
+            document.getElementById("btn-next").innerText = "Reintentar";
+            player.id_actual_question = -1;
+            optionsHTMList[thing.value].style.background = "red";
+        }
+        document.getElementById("btn-check").disabled = true;
+        document.getElementById("btn-next").disabled = false;
+    }
+
+}
+
+function goNextQuestion() {
+    if (player.id_actual_question < 10) {
+        player.id_actual_question++;
+        cleanOptions();
+        fillQuiz();
+        document.getElementById("btn-next").innerText = "Siguiente";
+        document.getElementById("btn-check").disabled = false;
+        document.getElementById("btn-next").disabled = true;
+    } else {
+        alert("FIN")
+    }
+
+
+}
+
+
+function cleanOptions() {
+    optionsHTMList.forEach(element => {
+        element.style.background = null;
     });
 }
