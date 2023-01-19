@@ -1,4 +1,4 @@
-const questionsList = [
+const quizList = [
     {
         "id": 0,
         "question": "Qué Pokemon es un ratón electrico",

@@ -22,10 +22,7 @@ class Comodin {
     }
 }
 
-Comodin.prototype.applyFiftyPercent = function apply50Percent(question_id, ncorrect) {
-    // Marquem com utilizat el comodi
-    this.used = true
-
+Comodin.prototype.applyFiftyPercent = function apply50Percent(ncorrect) {
     let ar = [0, 1, 2, 3];
     //Remove one item
     const remove = 1;
@@ -39,17 +36,14 @@ Comodin.prototype.applyFiftyPercent = function apply50Percent(question_id, ncorr
 }
 
 
-Comodin.prototype.applyCalling = function applyCalling(question_id, ncorrect) {
-    // Marquem com utilizat el comodi
-    this.used = true
-
+Comodin.prototype.applyCalling = function applyCalling(ncorrect) {
     //Decideix el porcentaje a partir del 30%
     let percent = randInt(30, 100);
     let posibilidad = randInt(1, 100);
     //Si la posibilitat '43' es menor o igual a percent '30' diu la veritat
     if (posibilidad <= percent) {
         //"Estoy al " + percent + "% seguro que es la"
-        return [percent, ncorrect]; //true
+        return [ncorrect, percent]; //true
     } else {
         let num = 0;
         do {
@@ -57,31 +51,38 @@ Comodin.prototype.applyCalling = function applyCalling(question_id, ncorrect) {
             num = randInt(0, 3);
         } while (num == ncorrect);
         //Si la posibilitat '43' es majora percent '65' diu la mentida
-        return [percent, num]; //false
+        return [num, percent]; //false
     }
 }
 
 Comodin.prototype.applyPublic = function applyPublic(question_id, ncorrect,) {
-    // Marquem com utilizat el comodi
-    this.used = true
-    
     //let dificultad = question_id % 10; // 1=facil 10=dificil
-    let dificultad = 8; // 1=facil 10=dificil
-
+    let dificultad = (question_id + 1) % 10; // 1=facil 10=dificil CREO QUE NO ES NECESARIO %10
     //En un range on dificultat=10 --> 50% de probabilitat d'acert
     let range = 100 - (dificultad * 5);
     //opt1 sera la correcta, el public pot o no acertar
-    let opt1 = randInt(range - 10, range)
+    let OPT1 = randInt(range - 10, range)
     //El rand2 sera menor al opt1
-    let opt2 = randInt(0, 100 - opt1);
+    let opt2 = randInt(0, 100 - OPT1);
     //El rand3 sera menor al opt1 i opt2
-    let opt3 = randInt(0, 100 - (opt2 + opt1));
+    let opt3 = randInt(0, 100 - (opt2 + OPT1));
     //El rand sera la resta del 100%, lo que queda
-    // per probabilitat, pot arribar a ser major que la resta
-    let opt4 = 100 - (opt3 + opt2 + opt1);
+    // per probabilitat, opt4 pot arribar a ser major que la resta
+    let opt4 = 100 - (opt3 + opt2 + OPT1);
 
-    console.log("range", range, "opt", opt1, opt2, opt3, opt4, " = ", opt1 + opt2 + opt3 + opt4);
-    return [opt1, opt2, opt3, opt4];
+    //nCorrect = 0,1,2,3 (4 options)
+    switch (ncorrect) {
+        case 1:
+            return [opt4, OPT1, opt3, opt2];
+        case 2:
+            return [opt3, opt2, OPT1, opt4];
+        case 3:
+            return [opt3, opt2, opt4, OPT1];
+        default:
+            //default 0
+            return [OPT1, opt2, opt3, opt4];
+    }
+
 }
 
 

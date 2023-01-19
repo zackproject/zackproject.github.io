@@ -17,12 +17,12 @@
 <body>
     <div id="settings"></div>
     <h2>Ajustes</h2>
-    <select id="rutaViewList" name="select" onchange="selectRuta()">
+    <select id="rutaViewList" name="select">
         <option value="0" selected>Ruta Pokemon</option>
         <option value="10">Ruta Shingeki</option>
         <option value="20">Ruta Jojo</option>
     </select>
-    <input placeholder="Escribe tu nombre" autocomplete="off" type="text" id="inputName" name="name">
+    <input maxlength="12" placeholder="Escribe tu nombre" autocomplete="off" type="text" id="inputName" name="name">
     <button onclick="playNow()">Play</button>
 
     <h2>In game</h2>
@@ -48,12 +48,20 @@
         </div>
     </div>
     <button>Responder</button>
+    
     <h2>Comodines</h2>
-    <div id="comodines">
-        <button>Publico</button>
-        <button onclick="comodinMitad()">50%</button>
-        <button onclick="comodinLlamada()">Llamada</button>
-    </div>
-</body>
+    <div id="applycomodin"></div>
 
+
+    <div id="comodines">
+        <button onclick="comodinLlamada(event)">Llamada</button>
+        <button onclick="comodinPublico(event)">Publico</button>
+        <button onclick="comodinFifty(event)">50%</button>
+    </div>
+
+    <select id="callViewList" name="select">
+        
+    </select>
+
+</body>
 </html>
