@@ -261,31 +261,56 @@ const optionsPositionCorrect = [
     0, 3, 3, 2, 0, 1, 3, 1, 2, 3 //quizjos 20
 ]
 
-
+// Tita: Creyente, amable y chismosa // Hermano: Inteligente y buena onda  // Abuelo: Sordo y viejo
+// Prima: Creida, euforica y 'cool' // Shoto Sama: Duchate por favor
 const nameCalling = [
     {
         "name": "Tita Elro Sario",
         "call": [
-            "Hola sobrino, ¿que me llamas para que?,ah, leeme la pregunta. Yo creo que es la ",
-            "SOBRINO ME ESCUCHAS. Ay perdón. Estás en la TV del comedor, te vemos toda la familia ¿necesitas ayuda?. Hmm, yo marcaría la "],
+            "Hola sobrino, ¿que me llamas para que?,ah, leeme la pregunta. Yo creo que es ",
+            "SOBRINO ME ESCUCHAS. Ay perdón. Estás en la TV del comedor, te vemos toda la familia ¿necesitas ayuda?. Hmm, yo marcaría ",
+            "Holiiii, ¿que 'chisme' es esta vez? ¿Qué me llamas para preguntas? Hmmm, apuesto el pelo de tu tito que es ",
+            "Elro al telefono, ¿digame?. Ah, hola sobrino ¿que te cuentas? ¿un concurso? Hmm pues ves marcando ",
+            "Buenas sobrino, te veo y te escucho, Dios está de nuestra parte y me ha dicho que es ",
+        ]
     },
     {
         "name": "Hermano Elton Tito",
         "call": [
-            "Sabia que me necesitabas hermanito, te estoy viendo en directo. A ver, leyendo las opciones creo que es la ",
-            "Lo están haciendo bien 'brother' No pensaba que necesitarias ayuda pero bueno. Apuesto la moto que es la "],
+            "Sabia que me necesitabas hermanito, te estoy viendo en directo. A ver, leyendo las opciones creo que es ",
+            "Lo están haciendo bien 'brother' No pensaba que necesitarias ayuda pero bueno. Apuesto la moto que es ",
+            "¿Qué estás haciendo? ¿Intentando engañar a alguien para que te ayude a ganar? Bueno, mi 190 de IQ dice que es ",
+            "¿'Tete' que necesitas? Ah, una pregunta que se te ha atascado, no la veo complicada creo que es "
+        ]
     },
     {
         "name": "Abuelo Elvis Nieto",
         "call": [
-            "Que no quiero publicidad, ah, ¿un concurso de mi nieto? A ver, deja que me ponga el sonotone. Vale, diria que es la ",
-            "Buenas a mi nieto preferido ¿Que estás en un 'transcuro'? Ah, concurso. Espera que me subo el sonotone. Hmm, yo pondría la "],
+            "Que no quiero publicidad, ah, ¿un concurso de mi nieto? A ver, deja que me ponga el sonotone. Vale, diria que es ",
+            "Buenas a mi nieto preferido ¿Que estás en un 'transcurso'? Ah, concurso. Espera que me subo el sonotone. Hmm, yo pondría ",
+            "¿Una llamada? En mis tiempos enviabas una paloma. Bueno, modernito, gana ese 'transcurso' y escribe ",
+            "Buenas nieto, que raro que no te la sepas si estás todo el dia con el movil, a ver ... mi intuición de anciano dice que es "
+        ]
     },
     {
         "name": "Prima Inés Esario",
-        "call": ["Hey primito, estoy 'living' con este concurso. Sabia que llamarias a tu 'best' prima. Esta pregunta es un poco 'difficult'. Yo haria 'check' a la ",
-            "Buenas primo, te estoy viendo en el 'live' de mi 'smarthphone'. Estás a tope. Pero si necesitas un poco de 'help'. You can choose the "],
+        "call": [
+            "Hey primito, estoy 'living'. Sabia que llamarias a tu 'best' prima. Es un poco 'difficult' pero haria 'check' a ",
+            "Buenas primo, te estoy viendo en 'live'. Estás a tope. Pero si necesitas un poco de 'help'. You can choose ",
+            "Hi cousin, un poco de ayudita siempre viene bien, sobretodo de tu best prima. Pon check a ",
+            "¿Estás perdidito primo? 'No problem', para eso estamos 'trust me' no hay duda es "
+        ]
     },
+    {
+        "name": "Shoto Sama",
+        "call": [
+            "Buenas futuro hokage, espera que activo el Sharigan. Hmm, veo la respuesta, deposita la confianza en ",
+            "Pensabas que era Shoto Sama pero no, SOY DIO. A ver mequetrefe, ya estas tardando en poner ",
+            "Esta pregunta es más dificil que entender Evangelion a la primera, Shinji votaria ",
+            "Trato equivalente, yo te digo la respuesta y tu repartes el premio o pierdes un brazo, marca ",
+            "Que puedo esperar de alguien que aún no se sabe la 'tabla de tipos', vamos, marca "
+        ]
+    }
 ]
 
 
