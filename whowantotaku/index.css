@@ -28,3 +28,7 @@
 #pt3 {
     grid-area: a3;
 }
+
+#winnerUrl{
+    display: none;
+}

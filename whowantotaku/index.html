@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body onload="generateHTMLSelectView()">
     <div id="settings"></div>
     <h2>Ajustes</h2>
     <select id="rutaViewList" name="select">
@@ -54,14 +54,18 @@
 
 
     <div id="comodines">
-        <button onclick="comodinLlamada(event)">Llamada</button>
-        <button onclick="comodinPublico(event)">Publico</button>
-        <button onclick="comodinFifty(event)">50%</button>
+        <!-- .comodin en el js -->
+        <button class="comodin" onclick="comodinLlamada(event)">Llamada</button>
+        <button class="comodin" onclick="comodinPublico(event)">Publico</button>
+        <button class="comodin" onclick="comodinFifty(event)">50%</button>
     </div>
 
     <select id="callViewList" name="select">
-
     </select>
+
+    <form method="get" id="winnerUrl" action="/">
+        <button type="submit">Descargar Premio</button>
+    </form>
 
 </body>
 

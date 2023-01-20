@@ -3,13 +3,14 @@ function randInt(min, max) {
 }
 
 class QuizFriki {
-    constructor(name, category, id_actual_question, comodinList, questionsList, solutionsList) {
+    constructor(name, category, id_actual_question, comodinList, questionsList, solutionsList, award) {
         this.name = name;
         this.id_actual_question = id_actual_question;
         this.category = category;
         this.comodinList = comodinList;
         this.questionsList = questionsList;
         this.solutionsList = solutionsList;
+        this.award = award;
     }
 }
 

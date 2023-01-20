@@ -256,7 +256,7 @@ const quizList = [
 ];
 
 const optionsPositionCorrect = [
-    0, 0, 2, 3, 3, 3, 0, 2, 2, 3, //quizpk 0
+    0, 0, 2, 3, 3, 2, 0, 2, 2, 3, //quizpk 0
     0, 1, 0, 2, 2, 1, 0, 3, 2, 3, //quizsnk 10
     0, 3, 3, 2, 0, 1, 3, 1, 2, 3 //quizjos 20
 ]
@@ -264,7 +264,7 @@ const optionsPositionCorrect = [
 
 const nameCalling = [
     {
-        "name": "Tita Rosa Melano",
+        "name": "Tita Elro Sario",
         "call": [
             "Hola sobrino, ¿que me llamas para que?,ah, leeme la pregunta. Yo creo que es la ",
             "SOBRINO ME ESCUCHAS. Ay perdón. Estás en la TV del comedor, te vemos toda la familia ¿necesitas ayuda?. Hmm, yo marcaría la "],
@@ -286,4 +286,11 @@ const nameCalling = [
         "call": ["Hey primito, estoy 'living' con este concurso. Sabia que llamarias a tu 'best' prima. Esta pregunta es un poco 'difficult'. Yo haria 'check' a la ",
             "Buenas primo, te estoy viendo en el 'live' de mi 'smarthphone'. Estás a tope. Pero si necesitas un poco de 'help'. You can choose the "],
     },
+]
+
+
+const awardsList = [
+    "awards/01.wastickers",
+    "awards/02.wastickers",
+    "awards/03.wastickers"
 ]

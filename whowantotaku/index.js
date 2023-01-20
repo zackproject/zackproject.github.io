@@ -8,8 +8,12 @@ function playNow() {
     optionsHTMList = fillQuestionList();
     //Omple el text HTML amb els valors
     fillQuiz();
-    //Omple les opcions del comodi Trucada
-    generateHTMLSelectView();
+    //Neteja les opcions
+    cleanOptions();
+    //Neteja els comodins
+    cleanComodin()
+    //Neteja els 2 botons del quiz
+    cleanQuizBtn();
 }
 
 //Emplena un nou objecte de joc
@@ -21,9 +25,18 @@ function playNewGame() {
     let firstRange = parseInt(selectedCategory.value);
     let secondRange = firstRange + 10;
     let rangeQuestion = quizList.slice(firstRange, secondRange);
+    //la posicio del award es la id categoria sense multiplicar per 10
+    let award = rotate(awardsList[parseInt(selectedCategory.value) / 10]);
     let rangeSolution = optionsPositionCorrect.slice(firstRange, secondRange);
     //Una vegada creat el player el retorna
-    return new QuizFriki(inputName, selectedCategory.innerText, idAcualQuestion, comodinList, rangeQuestion, rangeSolution);
+    return new QuizFriki(inputName, selectedCategory.innerText, idAcualQuestion, comodinList, rangeQuestion, rangeSolution, award);
+}
+
+function rotate(mensaje) {
+    /* https://donnierock.com/2021/02/08/funcion-para-cifrado-rot13-con-javascript/ */
+    return mensaje.replace(/[a-zA-Z]/gi, function (s) {
+        return String.fromCharCode(s.charCodeAt(0) + (s.toLowerCase() < 'n' ? 13 : -13));
+    });
 }
 
 function fillQuestionList() {
@@ -39,7 +52,7 @@ function fillQuiz() {
     let quiz = player.questionsList[player.id_actual_question];
     //La pregunta actual es la del 'obj'
     let pregunta = document.getElementById("question");
-    pregunta.innerText = (player.id_actual_question+1)+". "+quiz.question;
+    pregunta.innerText = (player.id_actual_question + 1) + ". " + quiz.question;
 
     //GLOBAL let optionsList 
     for (let i = 0; i < optionsHTMList.length; i++) {
@@ -122,7 +135,8 @@ function representPublic(percentList, questionList) {
     return text;
 }
 
-//Una persona en en desplegable per cada un que es pugui trucar
+
+//Omple les opcions del comodi Trucada
 function generateHTMLSelectView() {
     let pare = document.getElementById("callViewList");
     let cont = 0;
@@ -137,7 +151,8 @@ function generateHTMLSelectView() {
         pare.appendChild(optionHTML);
     });
 }
-let cojoones = null;
+
+//Comproba si la qui es correcte
 function checkQuestion() {
     //Retorna quin ha sigut checked (num)
     let thing = document.querySelector('input[name="quiz-element"]:checked');
@@ -155,22 +170,30 @@ function checkQuestion() {
             player.id_actual_question = -1;
             optionsHTMList[thing.value].style.background = "red";
         }
+        //'Toggle' els buttons contentar<>siguiente
         document.getElementById("btn-check").disabled = true;
         document.getElementById("btn-next").disabled = false;
     }
 
 }
 
+//
 function goNextQuestion() {
-    if (player.id_actual_question < 10) {
+    //Si el id actual es menor al les preguntes totals
+    if (player.id_actual_question + 1 < player.questionsList.length) {
+        //Incrementa la pregunta
         player.id_actual_question++;
+        //Neteja les opciones marcades
         cleanOptions();
+        //Torna escriure la seguent pregunta
         fillQuiz();
-        document.getElementById("btn-next").innerText = "Siguiente";
-        document.getElementById("btn-check").disabled = false;
-        document.getElementById("btn-next").disabled = true;
+        //'Toggle' els buttons contentar<>siguiente
+        cleanQuizBtn();
     } else {
-        alert("FIN")
+        let dwnload = document.getElementById("winnerUrl");
+        dwnload.action = rotate(player.award);
+        dwnload.style.display = "block";
+        console.info("You win");
     }
 
 
@@ -178,7 +201,25 @@ function goNextQuestion() {
 
 
 function cleanOptions() {
+    let cont = 0;
     optionsHTMList.forEach(element => {
         element.style.background = null;
+        const label = optionsHTMList[cont].htmlFor;
+        //label e input comparteixex 'id' i el 'for', treu el radio marcart
+        document.getElementById(label).checked = false;
+        cont++;
     });
+}
+
+function cleanComodin() {
+    let comodinLocalList = document.getElementsByClassName("comodin");
+    for (let i = 0; i < comodinLocalList.length; i++) {
+        comodinLocalList[i].disabled = false;
+    }
+}
+
+function cleanQuizBtn(){
+    document.getElementById("btn-next").innerText = "Siguiente";
+    document.getElementById("btn-check").disabled = false;
+    document.getElementById("btn-next").disabled = true;
 }
