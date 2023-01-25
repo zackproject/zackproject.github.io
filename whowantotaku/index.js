@@ -1,9 +1,49 @@
 var player;
+var npc;
 var optionsHTMList;
+var GAMESTORAGE = "whanttobeafriki";
+var npcPresentadorHtml;
+
 function playNow() {
+    // Si el campo de nombre esta vacio no continuara la funcion
+    let inputName = document.getElementById("inputName");
+    if (inputName.value == "") {
+        inputName.placeholder = "¡Rellena este campo!"
+        return;
+    }
     //Crea un jugador amb els setting definits
     player = playNewGame();
+    //Crea un presentador
+    npc = createPresentador();
+    //Guarda la partida creada en LocalStorage
+    localStorage.setItem(GAMESTORAGE, JSON.stringify(player));
     console.info(player);
+    //Guarda les clases de 'options' del HTML, en una variable
+    optionsHTMList = fillQuestionList();
+    //Guarda el presentador HTML
+    npcPresentadorHtml = document.getElementById("npcPresentador");
+    //Omple el text HTML amb els valors
+    fillQuiz();
+    //Neteja les opcions
+    cleanOptions();
+    //Neteja els comodins
+    cleanComodin()
+    //Neteja els 2 botons del quiz
+    cleanQuizBtn();
+    npcPresentadorHtml.innerText = npc.callPresentacion(player.name);
+}
+
+function onLoadGame() {
+    //Si hi havia una partida, boto 'Resume Game' visible
+    if (localStorage.getItem(GAMESTORAGE) != null) {
+        document.getElementById("resumeGame").style.display = "block";
+    }
+    generateHTMLSelectView()
+
+}
+
+function reloadLastGame() {
+    player = JSON.parse(localStorage.getItem(GAMESTORAGE));
     //Guarda les clases de 'options' del HTML, en una variable
     optionsHTMList = fillQuestionList();
     //Omple el text HTML amb els valors
@@ -65,6 +105,11 @@ function fillQuiz() {
 function comodinLlamada(event) {
     //Nom del comodi
     let comodin = player.comodinList[0];
+    //Anihacking, si el comodin fue usado, no deja usarlo mas
+    if (comodin.used) {
+        npcPresentadorHtml.innerText = npc.callTrampa();
+        return;
+    }
     //Guarda el index de la resposta correcta
     let indexAnswerForThisQuestion = optionsPositionCorrect[player.id_actual_question];
     //Retorna el index de la persona trucada
@@ -88,6 +133,11 @@ function comodinLlamada(event) {
 function comodinPublico(event) {
     //Nom del comodi
     let comodin = player.comodinList[1];
+    //Anihacking, si el comodin fue usado, no deja usarlo mas
+    if (comodin.used) {
+        npcPresentadorHtml.innerText = npc.callTrampa();
+        return;
+    }
     //Guarda el index de la resposta correcta
     let indexAnswerForThisQuestion = optionsPositionCorrect[player.id_actual_question];
     //Retorna un percentatges de les opcions mes votades
@@ -103,11 +153,19 @@ function comodinPublico(event) {
     comodin.used = true;
     //Desactiva el pare que l'ha cridat, o sigui el boton
     event.target.disabled = true;
+    //Guarda els canvis
+    localStorage.setItem(GAMESTORAGE, JSON.stringify(player));
 }
 
 function comodinFifty(event) {
     //Nom del comodi
     let comodin = player.comodinList[2];
+    //Anihacking, si el comodin fue usado, no deja usarlo mas
+    if (comodin.used) {
+        npcPresentadorHtml.innerText = npc.callTrampa();
+        return;
+    }
+
     //Guarda el index de la resposta correcta
     let indexAnswerForThisQuestion = optionsPositionCorrect[player.id_actual_question];
     // Retorna les opcions a esborrar
@@ -122,6 +180,8 @@ function comodinFifty(event) {
     comodin.used = true;
     //Desactiva el pare que l'ha cridat, o sigui el boton
     event.target.disabled = true;
+    //Guarda els canvis
+    localStorage.setItem(GAMESTORAGE, JSON.stringify(player));
 }
 
 
@@ -139,6 +199,8 @@ function representPublic(percentList, questionList) {
 //Omple les opcions del comodi Trucada
 function generateHTMLSelectView() {
     let pare = document.getElementById("callViewList");
+    //El Select es converteix en llista si te un 'size'
+    pare.size = nameCalling.length;
     let cont = 0;
     nameCalling.forEach(element => {
         let optionHTML = document.createElement("option");
@@ -164,11 +226,15 @@ function checkQuestion() {
         if (thing.value == correcte) {
             //Si es correcte o marca en verd
             optionsHTMList[thing.value].style.background = "green";
+            //Dialogo del presentador correcto
+            npcPresentadorHtml.innerText = npc.callCorrecto();
         } else {
             // si es incorrecta tornara a fer de zero
             document.getElementById("btn-next").innerText = "Reintentar";
             player.id_actual_question = -1;
             optionsHTMList[thing.value].style.background = "red";
+            //Dialogo del presentador incorrecto
+            npcPresentadorHtml.innerText = npc.callInorrecto(player.name);
         }
         //'Toggle' els buttons contentar<>siguiente
         document.getElementById("btn-check").disabled = true;
@@ -178,7 +244,7 @@ function checkQuestion() {
 }
 
 //
-function goNextQuestion() {
+function goNextQuestion(event) {
     //Si el id actual es menor al les preguntes totals
     if (player.id_actual_question + 1 < player.questionsList.length) {
         //Incrementa la pregunta
@@ -189,14 +255,22 @@ function goNextQuestion() {
         fillQuiz();
         //'Toggle' els buttons contentar<>siguiente
         cleanQuizBtn();
+        //Guarda els canvis
+        localStorage.setItem(GAMESTORAGE, JSON.stringify(player));
+        // Builda el text del npc Presentador
+        npcPresentadorHtml.innerText = "";
     } else {
         let dwnload = document.getElementById("winnerUrl");
         dwnload.action = rotate(player.award);
         dwnload.style.display = "block";
         console.info("You win");
+        // npc Presentador et felicita
+        npcPresentadorHtml.innerText = npc.callWinner(player.name);
+
+        event.target.disabled = true;
+        //Si guanya reseteja
+        localStorage.removeItem(GAMESTORAGE);
     }
-
-
 }
 
 
@@ -218,8 +292,20 @@ function cleanComodin() {
     }
 }
 
-function cleanQuizBtn(){
+function cleanQuizBtn() {
     document.getElementById("btn-next").innerText = "Siguiente";
     document.getElementById("btn-check").disabled = false;
     document.getElementById("btn-next").disabled = true;
+}
+
+function createPresentador() {
+    return new Presentador(
+        presentation = presenterList.startList,
+        suggestComodin = presenterList.comodinList,
+        failAnswer = presenterList.failList,
+        correctAnswer = presenterList.correctList,
+        winnerFelicitar = presenterList.winner.felicitar,
+        winnerInformar = presenterList.winner.informar,
+        tramposo = presenterList.trampa
+    )
 }

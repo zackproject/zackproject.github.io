@@ -14,7 +14,7 @@
 
 </head>
 
-<body onload="generateHTMLSelectView()">
+<body onload="onLoadGame()">
     <div id="settings"></div>
     <h2>Ajustes</h2>
     <select id="rutaViewList" name="select">
@@ -24,7 +24,7 @@
     </select>
     <input maxlength="12" placeholder="Escribe tu nombre" autocomplete="off" type="text" id="inputName" name="name">
     <button onclick="playNow()">Play</button>
-
+    <button id="resumeGame" onclick="reloadLastGame()">Recupera la partida</button>
     <h2>In game</h2>
 
     <!-- Menu 4 opciones-->
@@ -48,7 +48,9 @@
         </div>
     </div>
     <button id="btn-check" onclick="checkQuestion()">Responder</button>
-    <button id="btn-next" onclick="goNextQuestion()" disabled>Siguiente</button>
+    <button id="btn-next" onclick="goNextQuestion(event)" disabled>Siguiente</button>
+    <div>Presentador: <span id="npcPresentador"></span></div>
+
     <h2>Comodines</h2>
     <div id="applycomodin"></div>
 
@@ -68,5 +70,4 @@
     </form>
 
 </body>
-
 </html>

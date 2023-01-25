@@ -1,13 +1,13 @@
 const quizList = [
     {
         "id": 0,
-        "question": "Qué Pokemon es un ratón electrico",
+        "question": "Qué Pokemon es un roedor",
         "options": ["Pikachu", "Squirtle", "Charmander", "Bulbasaur"]
     },
     {
         "id": 1,
         "question": "En que animal se basa Charmander",
-        "options": ["Lagartija", "Hipopotamo", "Ratón", "Avestruz"]
+        "options": ["Salamandra", "Hipopotamo", "Ratón", "Avestruz"]
     },
     {
         "id": 2,
@@ -272,6 +272,7 @@ const nameCalling = [
             "Holiiii, ¿que 'chisme' es esta vez? ¿Qué me llamas para preguntas? Hmmm, apuesto el pelo de tu tito que es ",
             "Elro al telefono, ¿digame?. Ah, hola sobrino ¿que te cuentas? ¿un concurso? Hmm pues ves marcando ",
             "Buenas sobrino, te veo y te escucho, Dios está de nuestra parte y me ha dicho que es ",
+
         ]
     },
     {
@@ -319,3 +320,58 @@ const awardsList = [
     "awards/02.wastickers",
     "awards/03.wastickers"
 ]
+
+const presenterList = {
+    "trampa": "No se permite editar el codigo, es trampa",
+    "startList": [
+        "Bienvenido al concurso {}, tienes comodines disponibles y hay 10 preguntas para resolver, ¡vamos a empezar!",
+        "¡Hola concursante {}! Bienvenido al juego, recuerda tienes comodines disponibles y hay 10 preguntas para resolver.",
+        "Bienvenido al programa {}, tienes comodines disponibles y hay 10 preguntas para resolver, ¡suerte en el juego!",
+        "¡Empecemos! Bienvenido al concurso {}, recuerda tienes comodines disponibles y hay 10 preguntas para resolver.",
+        "¡Bienvenido al juego {}! Tienes comodines disponibles y hay 10 preguntas para resolver, ¡estamos listos para empezar!",
+        "¡Hola concursante {}! Bienvenido al programa, recuerda tienes comodines disponibles y hay 10 preguntas para resolver.",
+        "¡Este es tu momento! Bienvenido al concurso {}, recuerda tienes comodines disponibles y hay 10 preguntas para resolver.",
+        "¡Bienvenido al juego {}! Tienes comodines disponibles y hay 10 preguntas para resolver, ¡vamos a empezar tu camino al premio!",
+        "¡Empezamos {}! Bienvenido al programa, recuerda tienes comodines disponibles y hay 10 preguntas para resolver.",
+        "¡Bienvenido al concurso {}! Tienes comodines disponibles y hay 10 preguntas para resolver, ¡vamos a empezar tu camino al premio mayor!"],
+    "comodinList": [
+        "Recuerda, puedes pulsar el icono de la bombilla para usar comodines si lo necesitas.",
+        "No tengas miedo de pulsar el icono de la bombilla para usar comodines si estás atascado.",
+        "Los comodines están disponibles si los necesitas, solo pulsa el icono de la bombilla para usarlos.",
+        "No dudes en pulsar el icono de la bombilla para usar un comodín si te sientes inseguro.",
+        "Ten en cuenta, puedes pulsar el icono de la bombilla para usar comodines si lo necesitas.",
+        "No te olvides de pulsar el icono de la bombilla para usar los comodines si te sientes perdido.",
+        "Los comodines están aquí para ayudarte si los necesitas, solo pulsa el icono de la bombilla para usarlos.",
+        "Si estás atascado, no dudes en pulsar el icono de la bombilla para usar un comodín.",
+        "Recuerda que tienes comodines disponibles si los necesitas, solo pulsa el icono de la bombilla para usarlos.",
+        "Los comodines están aquí para ayudarte en caso de duda, solo pulsa el icono de la bombilla para usarlos."
+    ],
+    "failList": [
+        "Lo siento {}, ha fallado la pregunta y ha perdido todo.",
+        "Desafortunadamente {}, ha fallado la pregunta y se ha quedado sin premio.",
+        "Lamentablemente {}, no ha acertado la pregunta y ha perdido todo.",
+        "{}, la pregunta no ha sido respondida correctamente  y ha perdido todo.",
+        "Ha fallado la pregunta {}, lamentablemente no ganará ningún premio.",
+        "La pregunta no ha sido respondida correctamente {} y ha perdido todas sus ganancias.",
+        "Desafortunadamente {}, no ha acertado la pregunta y se ha quedºdo sin premio.",
+        "Lo siento {}, no ha respondido la pregunta correctamente y ha perdido todo.",
+        "Lamentablemente {}, ha fallado la pregunta y su juego ha terminado.",
+        "La pregunta no ha sido respondida correctamente {}, no ganará ningún premio."
+    ],
+    "correctList": [
+        "¡Correcto! Puede continuar con la siguiente pregunta.",
+        "¡Excelente! Ha acertado la pregunta y puede continuar.",
+        "¡Bien hecho! Puede continuar con la siguiente pregunta.",
+        "¡Acertado! Puede continuar con el juego .",
+        "¡Muy bien! Ha respondido correctamente y puede continuar con la siguiente pregunta.",
+        "¡Buen trabajo! Puede continuar con la siguiente pregunta.",
+        "¡Impresionante! Ha acertado la pregunta y puede continuar con el juego.",
+        "¡Fantástico! Puede continuar con la siguiente pregunta.",
+        "¡Genial! Ha respondido correctamente y puede seguir avanzando en el juego.",
+        "¡Excelente trabajo! Puede continuar con la siguiente pregunta."
+    ],
+    "winner": {
+        "felicitar": ["¡Felicidades!", "¡Enhorabuena!", "¡Increíble!", "¡Genial!", "¡Espectacular!", "¡Merecido!", "¡Excelente!", "¡Enhorabuena!", "¡Fantástico!", "¡Gran trabajo!"],
+        "informar": "{} ha ganado el premio, puede descargarlo pulsando el botón."
+    }
+};

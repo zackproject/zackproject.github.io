@@ -58,7 +58,7 @@ Comodin.prototype.applyCalling = function applyCalling(ncorrect) {
 
 Comodin.prototype.applyPublic = function applyPublic(question_id, ncorrect,) {
     //let dificultad = question_id % 10; // 1=facil 10=dificil
-    let dificultad = (question_id + 1) % 10; // 1=facil 10=dificil CREO QUE NO ES NECESARIO %10
+    let dificultad = (question_id + 1); // 1=facil 10=dificil CREO QUE NO ES NECESARIO %10
     //En un range on dificultat=10 --> 50% de probabilitat d'acert
     let range = 100 - (dificultad * 5);
     //opt1 sera la correcta, el public pot o no acertar
@@ -95,3 +95,34 @@ var c3 = new Comodin(3, "La mitad", false);
 
 //let j1 = new QuizFriki("Pedro", "shingeki", 1, [c1, c2, c3], rangeQuestion, rangeSolution);
 //let j2 = new QuizFriki("Luis", "jojos", 1, [c1, c2, c3], rangeQuestion, rangeSolution);
+
+
+class Presentador {
+    constructor(presentation, suggestComodin, failAnswer, correctAnswer, winnerFelicitar, winnerInformar, tramposo) {
+        this.presentation = presentation;
+        this.suggestComodin = suggestComodin;
+        this.failAnswer = failAnswer;
+        this.correctAnswer = correctAnswer;
+        this.winnerFelicitar = winnerFelicitar;
+        this.winnerInformar = winnerInformar;
+        this.tramposo = tramposo
+    }
+    callPresentacion(name) {
+        return this.presentation[randInt(0, this.presentation.length - 1)].replace("{}", name)
+    }
+    callComodin() {
+        return this.suggestComodin[randInt(0, this.suggestComodin.length - 1)]
+    }
+    callInorrecto(name) {
+        return this.failAnswer[randInt(0, this.failAnswer.length - 1)].replace("{}", name)
+    }
+    callCorrecto() {
+        return this.correctAnswer[randInt(0, this.correctAnswer.length - 1)]
+    }
+    callWinner(name) {
+        return this.winnerFelicitar[randInt(0, this.winnerFelicitar.length - 1)] + " " + this.winnerInformar.replace("{}", name);
+    }
+    callTrampa() {
+        return this.tramposo;
+    }
+}

@@ -29,6 +29,10 @@
     grid-area: a3;
 }
 
-#winnerUrl{
+#winnerUrl {
+    display: none;
+}
+
+#resumeGame {
     display: none;
 }
