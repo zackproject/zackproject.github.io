@@ -43,8 +43,13 @@ function onLoadGame() {
 }
 
 function reloadLastGame() {
+    //Pilla el presentador de nuevo
     player = JSON.parse(localStorage.getItem(GAMESTORAGE));
     //Guarda les clases de 'options' del HTML, en una variable
+    //Crea un presentador
+    npc = createPresentador();
+    //Guarda el presentador HTML
+    npcPresentadorHtml = document.getElementById("npcPresentador");
     optionsHTMList = fillQuestionList();
     //Omple el text HTML amb els valors
     fillQuiz();
@@ -235,9 +240,11 @@ function checkQuestion() {
             optionsHTMList[thing.value].style.background = "red";
             //Dialogo del presentador incorrecto
             npcPresentadorHtml.innerText = npc.callInorrecto(player.name);
+            // vacia el localstorage
+            localStorage.removeItem(GAMESTORAGE);
         }
         //'Toggle' els buttons contentar<>siguiente
-        document.getElementById("btn-check").disabled = true;
+        // document.getElementById("btn-check").disabled = true;
         document.getElementById("btn-next").disabled = false;
     }
 
@@ -294,7 +301,7 @@ function cleanComodin() {
 
 function cleanQuizBtn() {
     document.getElementById("btn-next").innerText = "Siguiente";
-    document.getElementById("btn-check").disabled = false;
+    // document.getElementById("btn-check").disabled = false;
     document.getElementById("btn-next").disabled = true;
 }
 
