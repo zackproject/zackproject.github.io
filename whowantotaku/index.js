@@ -247,7 +247,8 @@ function checkQuestion() {
         // document.getElementById("btn-check").disabled = true;
         document.getElementById("btn-next").disabled = false;
     }
-
+    //Desactiva les opcions quiz
+    optionHTMLDisabled(true);
 }
 
 //
@@ -266,6 +267,8 @@ function goNextQuestion(event) {
         localStorage.setItem(GAMESTORAGE, JSON.stringify(player));
         // Builda el text del npc Presentador
         npcPresentadorHtml.innerText = "";
+        //Activa les opcions quiz
+        optionHTMLDisabled(false);
     } else {
         let dwnload = document.getElementById("winnerUrl");
         dwnload.action = rotate(player.award);
@@ -315,4 +318,10 @@ function createPresentador() {
         winnerInformar = presenterList.winner.informar,
         tramposo = presenterList.trampa
     )
+}
+// per cada opcio el activa o desactiva les caselles
+function optionHTMLDisabled(estat) {
+    for (let i = 0; i < optionsHTMList.length; i++) {
+        document.getElementById("quiz-" + i).disabled = estat;
+    }
 }
