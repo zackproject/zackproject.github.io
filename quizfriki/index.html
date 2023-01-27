@@ -17,11 +17,18 @@
 <body onload="onLoadGame()">
     <div id="settings"></div>
     <h2>Ajustes</h2>
-    <select id="rutaViewList" name="select">
-        <option value="0" selected>Ruta Pokemon</option>
+
+    <select id="categoriaViewList" name="select" onchange="generateRutaList()">
+        <!-- <option value="0" selected>Ruta Pokemon</option>
         <option value="10">Ruta Shingeki</option>
-        <option value="20">Ruta Jojo</option>
+        <option value="20">Ruta Jojo</option>-->
     </select>
+    <select id="rutaViewList" name="select">
+        <!--  <option value="0" selected>Ruta Pokemon</option>
+        <option value="10">Ruta Shingeki</option>
+        <option value="20">Ruta Jojo</option>-->
+    </select>
+
     <input maxlength="12" placeholder="Escribe tu nombre" autocomplete="off" type="text" id="inputName" name="name">
     <button onclick="playNow()">Play</button>
     <button id="resumeGame" onclick="reloadLastGame()">Recupera la partida</button>
@@ -70,4 +77,5 @@
     </form>
 
 </body>
+
 </html>

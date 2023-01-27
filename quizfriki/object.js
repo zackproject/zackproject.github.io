@@ -23,7 +23,7 @@ class Comodin {
     }
 }
 
-Comodin.prototype.applyFiftyPercent = function apply50Percent(ncorrect) {
+var callApply50Percent = function apply50Percent(ncorrect) {
     let ar = [0, 1, 2, 3];
     //Remove one item
     const remove = 1;
@@ -34,10 +34,9 @@ Comodin.prototype.applyFiftyPercent = function apply50Percent(ncorrect) {
     ar.splice(rand, remove);
     //Ha d'esborrar aquestes dues opcions
     return ar;
-}
+};
 
-
-Comodin.prototype.applyCalling = function applyCalling(ncorrect) {
+var callApplyCalling = function applyCalling(ncorrect) {
     //Decideix el porcentaje a partir del 30%
     let percent = randInt(30, 100);
     let posibilidad = randInt(1, 100);
@@ -56,7 +55,7 @@ Comodin.prototype.applyCalling = function applyCalling(ncorrect) {
     }
 }
 
-Comodin.prototype.applyPublic = function applyPublic(question_id, ncorrect,) {
+var callApplyPublic = function applyPublic(question_id, ncorrect,) {
     //let dificultad = question_id % 10; // 1=facil 10=dificil
     let dificultad = (question_id + 1); // 1=facil 10=dificil CREO QUE NO ES NECESARIO %10
     //En un range on dificultat=10 --> 50% de probabilitat d'acert
@@ -86,7 +85,11 @@ Comodin.prototype.applyPublic = function applyPublic(question_id, ncorrect,) {
 
 }
 
-
+//Aplica les funcions dels comodins a OBJ, comodin
+Comodin.prototype.applyFiftyPercent = callApply50Percent;
+Comodin.prototype.applyCalling = callApplyCalling;
+Comodin.prototype.applyPublic = callApplyPublic;
+//Crea els comodins
 var c1 = new Comodin(1, "Llamada", false);
 var c2 = new Comodin(2, "Publico", false);
 var c3 = new Comodin(3, "La mitad", false);
