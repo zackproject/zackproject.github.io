@@ -79,6 +79,8 @@
     }
 
     .contact-phones-items {
+        /*Espai entre logo i select */
+        margin-top: 20px;
         /*Centra els elements al centre */
         display: flex;
         flex-direction: column;
@@ -93,18 +95,23 @@
         margin: 0 auto;
         max-width: 300px;
         margin-top: 50px;
+        /* El hijo es absolute, el padre relativo */
+        position: relative;
     }
 
     .logo-comodin {
         background-color: lightgray;
         width: 50px;
+        /* El hijo es absolute, el padre relativo */
         position: absolute;
         padding-left: 12px;
         padding-right: 8px;
         padding-bottom: 8px;
         padding-top: 8px;
-        top: 15px;
-        left: 45%;
+        right: 40%;
+        left: 40%;
+        top: -30px;
+
         border-radius: 50%;
     }
 
@@ -133,8 +140,10 @@
         padding-top: 6px;
         padding-bottom: 8px;
         border-radius: 50%;
+        position: absolute;
+        right: 10px;
+        top:10px;
     }
-
 </style>
 
 </html>
