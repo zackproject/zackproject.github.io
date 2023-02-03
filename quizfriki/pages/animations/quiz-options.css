@@ -1,0 +1,59 @@
+.question-quiz {
+  animation: example 1s, amplia 1s;
+  /* forward, se queda con el ultimo frame de la animacion*/
+  animation-fill-mode: forwards;
+}
+
+.answer-quiz,
+.suboption-quiz {
+  transform: rotateX(90deg);
+  animation: example 1s;
+  animation-fill-mode: forwards;
+}
+
+.answer-quiz:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.answer-quiz:nth-child(2) {
+  animation-delay: 1s;
+}
+.answer-quiz:nth-child(3) {
+  animation-delay: 1.5s;
+}
+.answer-quiz:nth-child(4) {
+  animation-delay: 2s;
+}
+
+@keyframes amplia {
+  0% {
+    transform: scaleX(0);
+    color: transparent;
+  }
+  50% {
+    color: transparent;
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes example {
+  0% {
+    opacity: 0;
+    transform: rotateX(45deg);
+    background-color: black;
+    /*transform: scaleX(0);*/
+    color: transparent;
+  }
+  50% {
+    color: transparent;
+    transform: rotateX(180deg);
+  }
+  75% {
+    color: transparent;
+    transform: rotateX(360deg);
+  }
+  100% { 
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
