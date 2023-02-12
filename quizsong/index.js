@@ -1,21 +1,25 @@
 
 //let sonidos = "do re mi fa sol la si d0"
 let notaActual = 0;
-var music = [
-    {
-        "title": "Evangelion",
-        "notas": "do re_ fa re_ fa fa fa la_ sol_ sol fa sol sol la_ _do fa re_ la_ la_ sol la_ la_ _do"
-    },
-    {
-        "title": "Boku No Pico",
-        "notas": "re sol fa_ fa_ mi fa_ sol mi la sol fa_ fa_ sol la re sol fa_ fa_ mi fa_ sol la mi fa_ fa_ sol la"
+//El numero de cancion de la lisra
+let numCancion = 3;
+let songOBJ = music[numCancion];
+
+function onLoadPage() {
+    createButtons();
+}
+
+//Devuelve tantos espacios como nota. En el futuro tendra que ser 'div' vacios y blancos
+function getSpaces() {
+    let texto = [];
+    for (let i = 0; i < songOBJ.title.length; i++) {
+        texto.push(" _ ")
     }
-
-];
-
-let song = music[1].notas.split(" ");
-
+    return texto;
+}
+//Elige un audio de la lista y toca una nota en cada click
 function suena() {
+    let song = songOBJ.notas.split(" ");
     var audio = new Audio('audios/' + song[notaActual] + '.mp3');
     audio.play();
     refreshView();
@@ -23,13 +27,44 @@ function suena() {
     if (song.length == notaActual) notaActual = 0;
 }
 
-
+//Cambia l texto visible en el html
 function refreshView() {
-    document.getElementById("nota-actual").innerText = `[${notaActual + 1} , ${song.length}] : ${song[notaActual]}`
+    document.getElementById("a").innerText = getSpaces();
+    document.getElementById("nota-actual").innerText = `[${notaActual + 1} , ${songOBJ.notas.length}] : ${songOBJ.notas[notaActual]}`
 }
 
+//Disorder the word randoom
+function disorderWord(word) {
+    return word.split('').sort(function () { return 0.5 - Math.random() }).join('').toLowerCase();
+}
 
+//Al cargar la cancion lo muestra y empieza de cero
 function inicioCancion() {
     notaActual = 0;
     refreshView();
+
+}
+//Crea tantos botones como letras existan en el titulo (contando espacios)
+function createButtons() {
+    let father = document.getElementById("btn-letras");
+    deleteChilds(father);
+
+    let btnList = disorderWord(songOBJ.title).toUpperCase().split("");
+    btnList.forEach(element => {
+        let btn = document.createElement("button");
+        btn.innerText = element;
+        btn.value = element;
+
+        if (element == " ") {
+            btn.innerText = "[espacio]";
+        }
+        father.appendChild(btn);
+    });
+}
+
+
+function deleteChilds(currentDiv) {
+    while (currentDiv.firstChild) {
+        currentDiv.removeChild(currentDiv.firstChild);
+    }
 }
