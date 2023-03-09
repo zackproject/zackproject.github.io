@@ -10,8 +10,8 @@ var data = [
         "special_defense": 65,
         "speed": 45,
         "best": 318,
-        "img_default": imagurl + "/other/official-artwork/1.png",
-        "img_sprite": imagurl + "/1.png"
+        "img_default": imagurl+"/other/official-artwork/1.png",
+        "img_sprite": imagurl+"/1.png"
     },
     {
         "dex": 2,
@@ -23,8 +23,8 @@ var data = [
         "special_defense": 80,
         "speed": 60,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/2.png",
-        "img_sprite": imagurl + "/2.png"
+        "img_default": imagurl+"/other/official-artwork/2.png",
+        "img_sprite": imagurl+"/2.png"
     },
     {
         "dex": 3,
@@ -36,8 +36,8 @@ var data = [
         "special_defense": 100,
         "speed": 80,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/3.png",
-        "img_sprite": imagurl + "/3.png"
+        "img_default": imagurl+"/other/official-artwork/3.png",
+        "img_sprite": imagurl+"/3.png"
     },
     {
         "dex": 4,
@@ -49,8 +49,8 @@ var data = [
         "special_defense": 50,
         "speed": 65,
         "best": 309,
-        "img_default": imagurl + "/other/official-artwork/4.png",
-        "img_sprite": imagurl + "/4.png"
+        "img_default": imagurl+"/other/official-artwork/4.png",
+        "img_sprite": imagurl+"/4.png"
     },
     {
         "dex": 5,
@@ -62,8 +62,8 @@ var data = [
         "special_defense": 65,
         "speed": 80,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/5.png",
-        "img_sprite": imagurl + "/5.png"
+        "img_default": imagurl+"/other/official-artwork/5.png",
+        "img_sprite": imagurl+"/5.png"
     },
     {
         "dex": 6,
@@ -75,8 +75,8 @@ var data = [
         "special_defense": 85,
         "speed": 100,
         "best": 534,
-        "img_default": imagurl + "/other/official-artwork/6.png",
-        "img_sprite": imagurl + "/6.png"
+        "img_default": imagurl+"/other/official-artwork/6.png",
+        "img_sprite": imagurl+"/6.png"
     },
     {
         "dex": 7,
@@ -88,8 +88,8 @@ var data = [
         "special_defense": 64,
         "speed": 43,
         "best": 314,
-        "img_default": imagurl + "/other/official-artwork/7.png",
-        "img_sprite": imagurl + "/7.png"
+        "img_default": imagurl+"/other/official-artwork/7.png",
+        "img_sprite": imagurl+"/7.png"
     },
     {
         "dex": 8,
@@ -101,8 +101,8 @@ var data = [
         "special_defense": 80,
         "speed": 58,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/8.png",
-        "img_sprite": imagurl + "/8.png"
+        "img_default": imagurl+"/other/official-artwork/8.png",
+        "img_sprite": imagurl+"/8.png"
     },
     {
         "dex": 9,
@@ -114,8 +114,8 @@ var data = [
         "special_defense": 105,
         "speed": 78,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/9.png",
-        "img_sprite": imagurl + "/9.png"
+        "img_default": imagurl+"/other/official-artwork/9.png",
+        "img_sprite": imagurl+"/9.png"
     },
     {
         "dex": 10,
@@ -127,8 +127,8 @@ var data = [
         "special_defense": 20,
         "speed": 45,
         "best": 195,
-        "img_default": imagurl + "/other/official-artwork/10.png",
-        "img_sprite": imagurl + "/10.png"
+        "img_default": imagurl+"/other/official-artwork/10.png",
+        "img_sprite": imagurl+"/10.png"
     },
     {
         "dex": 11,
@@ -140,8 +140,8 @@ var data = [
         "special_defense": 25,
         "speed": 30,
         "best": 205,
-        "img_default": imagurl + "/other/official-artwork/11.png",
-        "img_sprite": imagurl + "/11.png"
+        "img_default": imagurl+"/other/official-artwork/11.png",
+        "img_sprite": imagurl+"/11.png"
     },
     {
         "dex": 12,
@@ -153,8 +153,8 @@ var data = [
         "special_defense": 80,
         "speed": 70,
         "best": 395,
-        "img_default": imagurl + "/other/official-artwork/12.png",
-        "img_sprite": imagurl + "/12.png"
+        "img_default": imagurl+"/other/official-artwork/12.png",
+        "img_sprite": imagurl+"/12.png"
     },
     {
         "dex": 13,
@@ -166,8 +166,8 @@ var data = [
         "special_defense": 20,
         "speed": 50,
         "best": 195,
-        "img_default": imagurl + "/other/official-artwork/13.png",
-        "img_sprite": imagurl + "/13.png"
+        "img_default": imagurl+"/other/official-artwork/13.png",
+        "img_sprite": imagurl+"/13.png"
     },
     {
         "dex": 14,
@@ -179,8 +179,8 @@ var data = [
         "special_defense": 25,
         "speed": 35,
         "best": 205,
-        "img_default": imagurl + "/other/official-artwork/14.png",
-        "img_sprite": imagurl + "/14.png"
+        "img_default": imagurl+"/other/official-artwork/14.png",
+        "img_sprite": imagurl+"/14.png"
     },
     {
         "dex": 15,
@@ -192,8 +192,8 @@ var data = [
         "special_defense": 80,
         "speed": 75,
         "best": 395,
-        "img_default": imagurl + "/other/official-artwork/15.png",
-        "img_sprite": imagurl + "/15.png"
+        "img_default": imagurl+"/other/official-artwork/15.png",
+        "img_sprite": imagurl+"/15.png"
     },
     {
         "dex": 16,
@@ -205,8 +205,8 @@ var data = [
         "special_defense": 35,
         "speed": 56,
         "best": 251,
-        "img_default": imagurl + "/other/official-artwork/16.png",
-        "img_sprite": imagurl + "/16.png"
+        "img_default": imagurl+"/other/official-artwork/16.png",
+        "img_sprite": imagurl+"/16.png"
     },
     {
         "dex": 17,
@@ -218,8 +218,8 @@ var data = [
         "special_defense": 50,
         "speed": 71,
         "best": 349,
-        "img_default": imagurl + "/other/official-artwork/17.png",
-        "img_sprite": imagurl + "/17.png"
+        "img_default": imagurl+"/other/official-artwork/17.png",
+        "img_sprite": imagurl+"/17.png"
     },
     {
         "dex": 18,
@@ -231,8 +231,8 @@ var data = [
         "special_defense": 70,
         "speed": 101,
         "best": 479,
-        "img_default": imagurl + "/other/official-artwork/18.png",
-        "img_sprite": imagurl + "/18.png"
+        "img_default": imagurl+"/other/official-artwork/18.png",
+        "img_sprite": imagurl+"/18.png"
     },
     {
         "dex": 19,
@@ -244,8 +244,8 @@ var data = [
         "special_defense": 35,
         "speed": 72,
         "best": 253,
-        "img_default": imagurl + "/other/official-artwork/19.png",
-        "img_sprite": imagurl + "/19.png"
+        "img_default": imagurl+"/other/official-artwork/19.png",
+        "img_sprite": imagurl+"/19.png"
     },
     {
         "dex": 20,
@@ -257,8 +257,8 @@ var data = [
         "special_defense": 70,
         "speed": 97,
         "best": 413,
-        "img_default": imagurl + "/other/official-artwork/20.png",
-        "img_sprite": imagurl + "/20.png"
+        "img_default": imagurl+"/other/official-artwork/20.png",
+        "img_sprite": imagurl+"/20.png"
     },
     {
         "dex": 21,
@@ -270,8 +270,8 @@ var data = [
         "special_defense": 31,
         "speed": 70,
         "best": 262,
-        "img_default": imagurl + "/other/official-artwork/21.png",
-        "img_sprite": imagurl + "/21.png"
+        "img_default": imagurl+"/other/official-artwork/21.png",
+        "img_sprite": imagurl+"/21.png"
     },
     {
         "dex": 22,
@@ -283,8 +283,8 @@ var data = [
         "special_defense": 61,
         "speed": 100,
         "best": 442,
-        "img_default": imagurl + "/other/official-artwork/22.png",
-        "img_sprite": imagurl + "/22.png"
+        "img_default": imagurl+"/other/official-artwork/22.png",
+        "img_sprite": imagurl+"/22.png"
     },
     {
         "dex": 23,
@@ -296,8 +296,8 @@ var data = [
         "special_defense": 54,
         "speed": 55,
         "best": 288,
-        "img_default": imagurl + "/other/official-artwork/23.png",
-        "img_sprite": imagurl + "/23.png"
+        "img_default": imagurl+"/other/official-artwork/23.png",
+        "img_sprite": imagurl+"/23.png"
     },
     {
         "dex": 24,
@@ -309,8 +309,8 @@ var data = [
         "special_defense": 79,
         "speed": 80,
         "best": 448,
-        "img_default": imagurl + "/other/official-artwork/24.png",
-        "img_sprite": imagurl + "/24.png"
+        "img_default": imagurl+"/other/official-artwork/24.png",
+        "img_sprite": imagurl+"/24.png"
     },
     {
         "dex": 25,
@@ -322,8 +322,8 @@ var data = [
         "special_defense": 50,
         "speed": 90,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/25.png",
-        "img_sprite": imagurl + "/25.png"
+        "img_default": imagurl+"/other/official-artwork/25.png",
+        "img_sprite": imagurl+"/25.png"
     },
     {
         "dex": 26,
@@ -335,8 +335,8 @@ var data = [
         "special_defense": 80,
         "speed": 110,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/26.png",
-        "img_sprite": imagurl + "/26.png"
+        "img_default": imagurl+"/other/official-artwork/26.png",
+        "img_sprite": imagurl+"/26.png"
     },
     {
         "dex": 27,
@@ -348,8 +348,8 @@ var data = [
         "special_defense": 30,
         "speed": 40,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/27.png",
-        "img_sprite": imagurl + "/27.png"
+        "img_default": imagurl+"/other/official-artwork/27.png",
+        "img_sprite": imagurl+"/27.png"
     },
     {
         "dex": 28,
@@ -361,8 +361,8 @@ var data = [
         "special_defense": 55,
         "speed": 65,
         "best": 450,
-        "img_default": imagurl + "/other/official-artwork/28.png",
-        "img_sprite": imagurl + "/28.png"
+        "img_default": imagurl+"/other/official-artwork/28.png",
+        "img_sprite": imagurl+"/28.png"
     },
     {
         "dex": 29,
@@ -374,8 +374,8 @@ var data = [
         "special_defense": 40,
         "speed": 41,
         "best": 275,
-        "img_default": imagurl + "/other/official-artwork/29.png",
-        "img_sprite": imagurl + "/29.png"
+        "img_default": imagurl+"/other/official-artwork/29.png",
+        "img_sprite": imagurl+"/29.png"
     },
     {
         "dex": 30,
@@ -387,8 +387,8 @@ var data = [
         "special_defense": 55,
         "speed": 56,
         "best": 365,
-        "img_default": imagurl + "/other/official-artwork/30.png",
-        "img_sprite": imagurl + "/30.png"
+        "img_default": imagurl+"/other/official-artwork/30.png",
+        "img_sprite": imagurl+"/30.png"
     },
     {
         "dex": 31,
@@ -400,8 +400,8 @@ var data = [
         "special_defense": 85,
         "speed": 76,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/31.png",
-        "img_sprite": imagurl + "/31.png"
+        "img_default": imagurl+"/other/official-artwork/31.png",
+        "img_sprite": imagurl+"/31.png"
     },
     {
         "dex": 32,
@@ -413,8 +413,8 @@ var data = [
         "special_defense": 40,
         "speed": 50,
         "best": 273,
-        "img_default": imagurl + "/other/official-artwork/32.png",
-        "img_sprite": imagurl + "/32.png"
+        "img_default": imagurl+"/other/official-artwork/32.png",
+        "img_sprite": imagurl+"/32.png"
     },
     {
         "dex": 33,
@@ -426,8 +426,8 @@ var data = [
         "special_defense": 55,
         "speed": 65,
         "best": 365,
-        "img_default": imagurl + "/other/official-artwork/33.png",
-        "img_sprite": imagurl + "/33.png"
+        "img_default": imagurl+"/other/official-artwork/33.png",
+        "img_sprite": imagurl+"/33.png"
     },
     {
         "dex": 34,
@@ -439,8 +439,8 @@ var data = [
         "special_defense": 75,
         "speed": 85,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/34.png",
-        "img_sprite": imagurl + "/34.png"
+        "img_default": imagurl+"/other/official-artwork/34.png",
+        "img_sprite": imagurl+"/34.png"
     },
     {
         "dex": 35,
@@ -452,8 +452,8 @@ var data = [
         "special_defense": 65,
         "speed": 35,
         "best": 323,
-        "img_default": imagurl + "/other/official-artwork/35.png",
-        "img_sprite": imagurl + "/35.png"
+        "img_default": imagurl+"/other/official-artwork/35.png",
+        "img_sprite": imagurl+"/35.png"
     },
     {
         "dex": 36,
@@ -465,8 +465,8 @@ var data = [
         "special_defense": 90,
         "speed": 60,
         "best": 483,
-        "img_default": imagurl + "/other/official-artwork/36.png",
-        "img_sprite": imagurl + "/36.png"
+        "img_default": imagurl+"/other/official-artwork/36.png",
+        "img_sprite": imagurl+"/36.png"
     },
     {
         "dex": 37,
@@ -478,8 +478,8 @@ var data = [
         "special_defense": 65,
         "speed": 65,
         "best": 299,
-        "img_default": imagurl + "/other/official-artwork/37.png",
-        "img_sprite": imagurl + "/37.png"
+        "img_default": imagurl+"/other/official-artwork/37.png",
+        "img_sprite": imagurl+"/37.png"
     },
     {
         "dex": 38,
@@ -491,8 +491,8 @@ var data = [
         "special_defense": 100,
         "speed": 100,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/38.png",
-        "img_sprite": imagurl + "/38.png"
+        "img_default": imagurl+"/other/official-artwork/38.png",
+        "img_sprite": imagurl+"/38.png"
     },
     {
         "dex": 39,
@@ -504,8 +504,8 @@ var data = [
         "special_defense": 25,
         "speed": 20,
         "best": 270,
-        "img_default": imagurl + "/other/official-artwork/39.png",
-        "img_sprite": imagurl + "/39.png"
+        "img_default": imagurl+"/other/official-artwork/39.png",
+        "img_sprite": imagurl+"/39.png"
     },
     {
         "dex": 40,
@@ -517,8 +517,8 @@ var data = [
         "special_defense": 50,
         "speed": 45,
         "best": 435,
-        "img_default": imagurl + "/other/official-artwork/40.png",
-        "img_sprite": imagurl + "/40.png"
+        "img_default": imagurl+"/other/official-artwork/40.png",
+        "img_sprite": imagurl+"/40.png"
     },
     {
         "dex": 41,
@@ -530,8 +530,8 @@ var data = [
         "special_defense": 40,
         "speed": 55,
         "best": 245,
-        "img_default": imagurl + "/other/official-artwork/41.png",
-        "img_sprite": imagurl + "/41.png"
+        "img_default": imagurl+"/other/official-artwork/41.png",
+        "img_sprite": imagurl+"/41.png"
     },
     {
         "dex": 42,
@@ -543,8 +543,8 @@ var data = [
         "special_defense": 75,
         "speed": 90,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/42.png",
-        "img_sprite": imagurl + "/42.png"
+        "img_default": imagurl+"/other/official-artwork/42.png",
+        "img_sprite": imagurl+"/42.png"
     },
     {
         "dex": 43,
@@ -556,8 +556,8 @@ var data = [
         "special_defense": 65,
         "speed": 30,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/43.png",
-        "img_sprite": imagurl + "/43.png"
+        "img_default": imagurl+"/other/official-artwork/43.png",
+        "img_sprite": imagurl+"/43.png"
     },
     {
         "dex": 44,
@@ -569,8 +569,8 @@ var data = [
         "special_defense": 75,
         "speed": 40,
         "best": 395,
-        "img_default": imagurl + "/other/official-artwork/44.png",
-        "img_sprite": imagurl + "/44.png"
+        "img_default": imagurl+"/other/official-artwork/44.png",
+        "img_sprite": imagurl+"/44.png"
     },
     {
         "dex": 45,
@@ -582,8 +582,8 @@ var data = [
         "special_defense": 90,
         "speed": 50,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/45.png",
-        "img_sprite": imagurl + "/45.png"
+        "img_default": imagurl+"/other/official-artwork/45.png",
+        "img_sprite": imagurl+"/45.png"
     },
     {
         "dex": 46,
@@ -595,8 +595,8 @@ var data = [
         "special_defense": 55,
         "speed": 25,
         "best": 285,
-        "img_default": imagurl + "/other/official-artwork/46.png",
-        "img_sprite": imagurl + "/46.png"
+        "img_default": imagurl+"/other/official-artwork/46.png",
+        "img_sprite": imagurl+"/46.png"
     },
     {
         "dex": 47,
@@ -608,8 +608,8 @@ var data = [
         "special_defense": 80,
         "speed": 30,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/47.png",
-        "img_sprite": imagurl + "/47.png"
+        "img_default": imagurl+"/other/official-artwork/47.png",
+        "img_sprite": imagurl+"/47.png"
     },
     {
         "dex": 48,
@@ -621,8 +621,8 @@ var data = [
         "special_defense": 55,
         "speed": 45,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/48.png",
-        "img_sprite": imagurl + "/48.png"
+        "img_default": imagurl+"/other/official-artwork/48.png",
+        "img_sprite": imagurl+"/48.png"
     },
     {
         "dex": 49,
@@ -634,8 +634,8 @@ var data = [
         "special_defense": 75,
         "speed": 90,
         "best": 450,
-        "img_default": imagurl + "/other/official-artwork/49.png",
-        "img_sprite": imagurl + "/49.png"
+        "img_default": imagurl+"/other/official-artwork/49.png",
+        "img_sprite": imagurl+"/49.png"
     },
     {
         "dex": 50,
@@ -647,8 +647,8 @@ var data = [
         "special_defense": 45,
         "speed": 95,
         "best": 265,
-        "img_default": imagurl + "/other/official-artwork/50.png",
-        "img_sprite": imagurl + "/50.png"
+        "img_default": imagurl+"/other/official-artwork/50.png",
+        "img_sprite": imagurl+"/50.png"
     },
     {
         "dex": 51,
@@ -660,8 +660,8 @@ var data = [
         "special_defense": 70,
         "speed": 120,
         "best": 425,
-        "img_default": imagurl + "/other/official-artwork/51.png",
-        "img_sprite": imagurl + "/51.png"
+        "img_default": imagurl+"/other/official-artwork/51.png",
+        "img_sprite": imagurl+"/51.png"
     },
     {
         "dex": 52,
@@ -673,8 +673,8 @@ var data = [
         "special_defense": 40,
         "speed": 90,
         "best": 290,
-        "img_default": imagurl + "/other/official-artwork/52.png",
-        "img_sprite": imagurl + "/52.png"
+        "img_default": imagurl+"/other/official-artwork/52.png",
+        "img_sprite": imagurl+"/52.png"
     },
     {
         "dex": 53,
@@ -686,8 +686,8 @@ var data = [
         "special_defense": 65,
         "speed": 115,
         "best": 440,
-        "img_default": imagurl + "/other/official-artwork/53.png",
-        "img_sprite": imagurl + "/53.png"
+        "img_default": imagurl+"/other/official-artwork/53.png",
+        "img_sprite": imagurl+"/53.png"
     },
     {
         "dex": 54,
@@ -699,8 +699,8 @@ var data = [
         "special_defense": 50,
         "speed": 55,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/54.png",
-        "img_sprite": imagurl + "/54.png"
+        "img_default": imagurl+"/other/official-artwork/54.png",
+        "img_sprite": imagurl+"/54.png"
     },
     {
         "dex": 55,
@@ -712,8 +712,8 @@ var data = [
         "special_defense": 80,
         "speed": 85,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/55.png",
-        "img_sprite": imagurl + "/55.png"
+        "img_default": imagurl+"/other/official-artwork/55.png",
+        "img_sprite": imagurl+"/55.png"
     },
     {
         "dex": 56,
@@ -725,8 +725,8 @@ var data = [
         "special_defense": 45,
         "speed": 70,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/56.png",
-        "img_sprite": imagurl + "/56.png"
+        "img_default": imagurl+"/other/official-artwork/56.png",
+        "img_sprite": imagurl+"/56.png"
     },
     {
         "dex": 57,
@@ -738,8 +738,8 @@ var data = [
         "special_defense": 70,
         "speed": 95,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/57.png",
-        "img_sprite": imagurl + "/57.png"
+        "img_default": imagurl+"/other/official-artwork/57.png",
+        "img_sprite": imagurl+"/57.png"
     },
     {
         "dex": 58,
@@ -751,8 +751,8 @@ var data = [
         "special_defense": 50,
         "speed": 60,
         "best": 350,
-        "img_default": imagurl + "/other/official-artwork/58.png",
-        "img_sprite": imagurl + "/58.png"
+        "img_default": imagurl+"/other/official-artwork/58.png",
+        "img_sprite": imagurl+"/58.png"
     },
     {
         "dex": 59,
@@ -764,8 +764,8 @@ var data = [
         "special_defense": 80,
         "speed": 95,
         "best": 555,
-        "img_default": imagurl + "/other/official-artwork/59.png",
-        "img_sprite": imagurl + "/59.png"
+        "img_default": imagurl+"/other/official-artwork/59.png",
+        "img_sprite": imagurl+"/59.png"
     },
     {
         "dex": 60,
@@ -777,8 +777,8 @@ var data = [
         "special_defense": 40,
         "speed": 90,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/60.png",
-        "img_sprite": imagurl + "/60.png"
+        "img_default": imagurl+"/other/official-artwork/60.png",
+        "img_sprite": imagurl+"/60.png"
     },
     {
         "dex": 61,
@@ -790,8 +790,8 @@ var data = [
         "special_defense": 50,
         "speed": 90,
         "best": 385,
-        "img_default": imagurl + "/other/official-artwork/61.png",
-        "img_sprite": imagurl + "/61.png"
+        "img_default": imagurl+"/other/official-artwork/61.png",
+        "img_sprite": imagurl+"/61.png"
     },
     {
         "dex": 62,
@@ -803,8 +803,8 @@ var data = [
         "special_defense": 90,
         "speed": 70,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/62.png",
-        "img_sprite": imagurl + "/62.png"
+        "img_default": imagurl+"/other/official-artwork/62.png",
+        "img_sprite": imagurl+"/62.png"
     },
     {
         "dex": 63,
@@ -816,8 +816,8 @@ var data = [
         "special_defense": 55,
         "speed": 90,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/63.png",
-        "img_sprite": imagurl + "/63.png"
+        "img_default": imagurl+"/other/official-artwork/63.png",
+        "img_sprite": imagurl+"/63.png"
     },
     {
         "dex": 64,
@@ -829,8 +829,8 @@ var data = [
         "special_defense": 70,
         "speed": 105,
         "best": 400,
-        "img_default": imagurl + "/other/official-artwork/64.png",
-        "img_sprite": imagurl + "/64.png"
+        "img_default": imagurl+"/other/official-artwork/64.png",
+        "img_sprite": imagurl+"/64.png"
     },
     {
         "dex": 65,
@@ -842,8 +842,8 @@ var data = [
         "special_defense": 95,
         "speed": 120,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/65.png",
-        "img_sprite": imagurl + "/65.png"
+        "img_default": imagurl+"/other/official-artwork/65.png",
+        "img_sprite": imagurl+"/65.png"
     },
     {
         "dex": 66,
@@ -855,8 +855,8 @@ var data = [
         "special_defense": 35,
         "speed": 35,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/66.png",
-        "img_sprite": imagurl + "/66.png"
+        "img_default": imagurl+"/other/official-artwork/66.png",
+        "img_sprite": imagurl+"/66.png"
     },
     {
         "dex": 67,
@@ -868,8 +868,8 @@ var data = [
         "special_defense": 60,
         "speed": 45,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/67.png",
-        "img_sprite": imagurl + "/67.png"
+        "img_default": imagurl+"/other/official-artwork/67.png",
+        "img_sprite": imagurl+"/67.png"
     },
     {
         "dex": 68,
@@ -881,8 +881,8 @@ var data = [
         "special_defense": 85,
         "speed": 55,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/68.png",
-        "img_sprite": imagurl + "/68.png"
+        "img_default": imagurl+"/other/official-artwork/68.png",
+        "img_sprite": imagurl+"/68.png"
     },
     {
         "dex": 69,
@@ -894,8 +894,8 @@ var data = [
         "special_defense": 30,
         "speed": 40,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/69.png",
-        "img_sprite": imagurl + "/69.png"
+        "img_default": imagurl+"/other/official-artwork/69.png",
+        "img_sprite": imagurl+"/69.png"
     },
     {
         "dex": 70,
@@ -907,8 +907,8 @@ var data = [
         "special_defense": 45,
         "speed": 55,
         "best": 390,
-        "img_default": imagurl + "/other/official-artwork/70.png",
-        "img_sprite": imagurl + "/70.png"
+        "img_default": imagurl+"/other/official-artwork/70.png",
+        "img_sprite": imagurl+"/70.png"
     },
     {
         "dex": 71,
@@ -920,8 +920,8 @@ var data = [
         "special_defense": 70,
         "speed": 70,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/71.png",
-        "img_sprite": imagurl + "/71.png"
+        "img_default": imagurl+"/other/official-artwork/71.png",
+        "img_sprite": imagurl+"/71.png"
     },
     {
         "dex": 72,
@@ -933,8 +933,8 @@ var data = [
         "special_defense": 100,
         "speed": 70,
         "best": 335,
-        "img_default": imagurl + "/other/official-artwork/72.png",
-        "img_sprite": imagurl + "/72.png"
+        "img_default": imagurl+"/other/official-artwork/72.png",
+        "img_sprite": imagurl+"/72.png"
     },
     {
         "dex": 73,
@@ -946,8 +946,8 @@ var data = [
         "special_defense": 120,
         "speed": 100,
         "best": 515,
-        "img_default": imagurl + "/other/official-artwork/73.png",
-        "img_sprite": imagurl + "/73.png"
+        "img_default": imagurl+"/other/official-artwork/73.png",
+        "img_sprite": imagurl+"/73.png"
     },
     {
         "dex": 74,
@@ -959,8 +959,8 @@ var data = [
         "special_defense": 30,
         "speed": 20,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/74.png",
-        "img_sprite": imagurl + "/74.png"
+        "img_default": imagurl+"/other/official-artwork/74.png",
+        "img_sprite": imagurl+"/74.png"
     },
     {
         "dex": 75,
@@ -972,8 +972,8 @@ var data = [
         "special_defense": 45,
         "speed": 35,
         "best": 390,
-        "img_default": imagurl + "/other/official-artwork/75.png",
-        "img_sprite": imagurl + "/75.png"
+        "img_default": imagurl+"/other/official-artwork/75.png",
+        "img_sprite": imagurl+"/75.png"
     },
     {
         "dex": 76,
@@ -985,8 +985,8 @@ var data = [
         "special_defense": 65,
         "speed": 45,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/76.png",
-        "img_sprite": imagurl + "/76.png"
+        "img_default": imagurl+"/other/official-artwork/76.png",
+        "img_sprite": imagurl+"/76.png"
     },
     {
         "dex": 77,
@@ -998,8 +998,8 @@ var data = [
         "special_defense": 65,
         "speed": 90,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/77.png",
-        "img_sprite": imagurl + "/77.png"
+        "img_default": imagurl+"/other/official-artwork/77.png",
+        "img_sprite": imagurl+"/77.png"
     },
     {
         "dex": 78,
@@ -1011,8 +1011,8 @@ var data = [
         "special_defense": 80,
         "speed": 105,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/78.png",
-        "img_sprite": imagurl + "/78.png"
+        "img_default": imagurl+"/other/official-artwork/78.png",
+        "img_sprite": imagurl+"/78.png"
     },
     {
         "dex": 79,
@@ -1024,8 +1024,8 @@ var data = [
         "special_defense": 40,
         "speed": 15,
         "best": 315,
-        "img_default": imagurl + "/other/official-artwork/79.png",
-        "img_sprite": imagurl + "/79.png"
+        "img_default": imagurl+"/other/official-artwork/79.png",
+        "img_sprite": imagurl+"/79.png"
     },
     {
         "dex": 80,
@@ -1037,8 +1037,8 @@ var data = [
         "special_defense": 80,
         "speed": 30,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/80.png",
-        "img_sprite": imagurl + "/80.png"
+        "img_default": imagurl+"/other/official-artwork/80.png",
+        "img_sprite": imagurl+"/80.png"
     },
     {
         "dex": 81,
@@ -1050,8 +1050,8 @@ var data = [
         "special_defense": 55,
         "speed": 45,
         "best": 325,
-        "img_default": imagurl + "/other/official-artwork/81.png",
-        "img_sprite": imagurl + "/81.png"
+        "img_default": imagurl+"/other/official-artwork/81.png",
+        "img_sprite": imagurl+"/81.png"
     },
     {
         "dex": 82,
@@ -1063,8 +1063,8 @@ var data = [
         "special_defense": 70,
         "speed": 70,
         "best": 465,
-        "img_default": imagurl + "/other/official-artwork/82.png",
-        "img_sprite": imagurl + "/82.png"
+        "img_default": imagurl+"/other/official-artwork/82.png",
+        "img_sprite": imagurl+"/82.png"
     },
     {
         "dex": 83,
@@ -1076,8 +1076,8 @@ var data = [
         "special_defense": 62,
         "speed": 60,
         "best": 377,
-        "img_default": imagurl + "/other/official-artwork/83.png",
-        "img_sprite": imagurl + "/83.png"
+        "img_default": imagurl+"/other/official-artwork/83.png",
+        "img_sprite": imagurl+"/83.png"
     },
     {
         "dex": 84,
@@ -1089,8 +1089,8 @@ var data = [
         "special_defense": 35,
         "speed": 75,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/84.png",
-        "img_sprite": imagurl + "/84.png"
+        "img_default": imagurl+"/other/official-artwork/84.png",
+        "img_sprite": imagurl+"/84.png"
     },
     {
         "dex": 85,
@@ -1102,8 +1102,8 @@ var data = [
         "special_defense": 60,
         "speed": 110,
         "best": 470,
-        "img_default": imagurl + "/other/official-artwork/85.png",
-        "img_sprite": imagurl + "/85.png"
+        "img_default": imagurl+"/other/official-artwork/85.png",
+        "img_sprite": imagurl+"/85.png"
     },
     {
         "dex": 86,
@@ -1115,8 +1115,8 @@ var data = [
         "special_defense": 70,
         "speed": 45,
         "best": 325,
-        "img_default": imagurl + "/other/official-artwork/86.png",
-        "img_sprite": imagurl + "/86.png"
+        "img_default": imagurl+"/other/official-artwork/86.png",
+        "img_sprite": imagurl+"/86.png"
     },
     {
         "dex": 87,
@@ -1128,8 +1128,8 @@ var data = [
         "special_defense": 95,
         "speed": 70,
         "best": 475,
-        "img_default": imagurl + "/other/official-artwork/87.png",
-        "img_sprite": imagurl + "/87.png"
+        "img_default": imagurl+"/other/official-artwork/87.png",
+        "img_sprite": imagurl+"/87.png"
     },
     {
         "dex": 88,
@@ -1141,8 +1141,8 @@ var data = [
         "special_defense": 50,
         "speed": 25,
         "best": 325,
-        "img_default": imagurl + "/other/official-artwork/88.png",
-        "img_sprite": imagurl + "/88.png"
+        "img_default": imagurl+"/other/official-artwork/88.png",
+        "img_sprite": imagurl+"/88.png"
     },
     {
         "dex": 89,
@@ -1154,8 +1154,8 @@ var data = [
         "special_defense": 100,
         "speed": 50,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/89.png",
-        "img_sprite": imagurl + "/89.png"
+        "img_default": imagurl+"/other/official-artwork/89.png",
+        "img_sprite": imagurl+"/89.png"
     },
     {
         "dex": 90,
@@ -1167,8 +1167,8 @@ var data = [
         "special_defense": 25,
         "speed": 40,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/90.png",
-        "img_sprite": imagurl + "/90.png"
+        "img_default": imagurl+"/other/official-artwork/90.png",
+        "img_sprite": imagurl+"/90.png"
     },
     {
         "dex": 91,
@@ -1180,8 +1180,8 @@ var data = [
         "special_defense": 45,
         "speed": 70,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/91.png",
-        "img_sprite": imagurl + "/91.png"
+        "img_default": imagurl+"/other/official-artwork/91.png",
+        "img_sprite": imagurl+"/91.png"
     },
     {
         "dex": 92,
@@ -1193,8 +1193,8 @@ var data = [
         "special_defense": 35,
         "speed": 80,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/92.png",
-        "img_sprite": imagurl + "/92.png"
+        "img_default": imagurl+"/other/official-artwork/92.png",
+        "img_sprite": imagurl+"/92.png"
     },
     {
         "dex": 93,
@@ -1206,8 +1206,8 @@ var data = [
         "special_defense": 55,
         "speed": 95,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/93.png",
-        "img_sprite": imagurl + "/93.png"
+        "img_default": imagurl+"/other/official-artwork/93.png",
+        "img_sprite": imagurl+"/93.png"
     },
     {
         "dex": 94,
@@ -1219,8 +1219,8 @@ var data = [
         "special_defense": 75,
         "speed": 110,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/94.png",
-        "img_sprite": imagurl + "/94.png"
+        "img_default": imagurl+"/other/official-artwork/94.png",
+        "img_sprite": imagurl+"/94.png"
     },
     {
         "dex": 95,
@@ -1232,8 +1232,8 @@ var data = [
         "special_defense": 45,
         "speed": 70,
         "best": 385,
-        "img_default": imagurl + "/other/official-artwork/95.png",
-        "img_sprite": imagurl + "/95.png"
+        "img_default": imagurl+"/other/official-artwork/95.png",
+        "img_sprite": imagurl+"/95.png"
     },
     {
         "dex": 96,
@@ -1245,8 +1245,8 @@ var data = [
         "special_defense": 90,
         "speed": 42,
         "best": 328,
-        "img_default": imagurl + "/other/official-artwork/96.png",
-        "img_sprite": imagurl + "/96.png"
+        "img_default": imagurl+"/other/official-artwork/96.png",
+        "img_sprite": imagurl+"/96.png"
     },
     {
         "dex": 97,
@@ -1258,8 +1258,8 @@ var data = [
         "special_defense": 115,
         "speed": 67,
         "best": 483,
-        "img_default": imagurl + "/other/official-artwork/97.png",
-        "img_sprite": imagurl + "/97.png"
+        "img_default": imagurl+"/other/official-artwork/97.png",
+        "img_sprite": imagurl+"/97.png"
     },
     {
         "dex": 98,
@@ -1271,8 +1271,8 @@ var data = [
         "special_defense": 25,
         "speed": 50,
         "best": 325,
-        "img_default": imagurl + "/other/official-artwork/98.png",
-        "img_sprite": imagurl + "/98.png"
+        "img_default": imagurl+"/other/official-artwork/98.png",
+        "img_sprite": imagurl+"/98.png"
     },
     {
         "dex": 99,
@@ -1284,8 +1284,8 @@ var data = [
         "special_defense": 50,
         "speed": 75,
         "best": 475,
-        "img_default": imagurl + "/other/official-artwork/99.png",
-        "img_sprite": imagurl + "/99.png"
+        "img_default": imagurl+"/other/official-artwork/99.png",
+        "img_sprite": imagurl+"/99.png"
     },
     {
         "dex": 100,
@@ -1297,8 +1297,8 @@ var data = [
         "special_defense": 55,
         "speed": 100,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/100.png",
-        "img_sprite": imagurl + "/100.png"
+        "img_default": imagurl+"/other/official-artwork/100.png",
+        "img_sprite": imagurl+"/100.png"
     },
     {
         "dex": 101,
@@ -1310,8 +1310,8 @@ var data = [
         "special_defense": 80,
         "speed": 150,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/101.png",
-        "img_sprite": imagurl + "/101.png"
+        "img_default": imagurl+"/other/official-artwork/101.png",
+        "img_sprite": imagurl+"/101.png"
     },
     {
         "dex": 102,
@@ -1323,8 +1323,8 @@ var data = [
         "special_defense": 45,
         "speed": 40,
         "best": 325,
-        "img_default": imagurl + "/other/official-artwork/102.png",
-        "img_sprite": imagurl + "/102.png"
+        "img_default": imagurl+"/other/official-artwork/102.png",
+        "img_sprite": imagurl+"/102.png"
     },
     {
         "dex": 103,
@@ -1336,8 +1336,8 @@ var data = [
         "special_defense": 75,
         "speed": 55,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/103.png",
-        "img_sprite": imagurl + "/103.png"
+        "img_default": imagurl+"/other/official-artwork/103.png",
+        "img_sprite": imagurl+"/103.png"
     },
     {
         "dex": 104,
@@ -1349,8 +1349,8 @@ var data = [
         "special_defense": 50,
         "speed": 35,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/104.png",
-        "img_sprite": imagurl + "/104.png"
+        "img_default": imagurl+"/other/official-artwork/104.png",
+        "img_sprite": imagurl+"/104.png"
     },
     {
         "dex": 105,
@@ -1362,8 +1362,8 @@ var data = [
         "special_defense": 80,
         "speed": 45,
         "best": 425,
-        "img_default": imagurl + "/other/official-artwork/105.png",
-        "img_sprite": imagurl + "/105.png"
+        "img_default": imagurl+"/other/official-artwork/105.png",
+        "img_sprite": imagurl+"/105.png"
     },
     {
         "dex": 106,
@@ -1375,8 +1375,8 @@ var data = [
         "special_defense": 110,
         "speed": 87,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/106.png",
-        "img_sprite": imagurl + "/106.png"
+        "img_default": imagurl+"/other/official-artwork/106.png",
+        "img_sprite": imagurl+"/106.png"
     },
     {
         "dex": 107,
@@ -1388,8 +1388,8 @@ var data = [
         "special_defense": 110,
         "speed": 76,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/107.png",
-        "img_sprite": imagurl + "/107.png"
+        "img_default": imagurl+"/other/official-artwork/107.png",
+        "img_sprite": imagurl+"/107.png"
     },
     {
         "dex": 108,
@@ -1401,8 +1401,8 @@ var data = [
         "special_defense": 75,
         "speed": 30,
         "best": 385,
-        "img_default": imagurl + "/other/official-artwork/108.png",
-        "img_sprite": imagurl + "/108.png"
+        "img_default": imagurl+"/other/official-artwork/108.png",
+        "img_sprite": imagurl+"/108.png"
     },
     {
         "dex": 109,
@@ -1414,8 +1414,8 @@ var data = [
         "special_defense": 45,
         "speed": 35,
         "best": 340,
-        "img_default": imagurl + "/other/official-artwork/109.png",
-        "img_sprite": imagurl + "/109.png"
+        "img_default": imagurl+"/other/official-artwork/109.png",
+        "img_sprite": imagurl+"/109.png"
     },
     {
         "dex": 110,
@@ -1427,8 +1427,8 @@ var data = [
         "special_defense": 70,
         "speed": 60,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/110.png",
-        "img_sprite": imagurl + "/110.png"
+        "img_default": imagurl+"/other/official-artwork/110.png",
+        "img_sprite": imagurl+"/110.png"
     },
     {
         "dex": 111,
@@ -1440,8 +1440,8 @@ var data = [
         "special_defense": 30,
         "speed": 25,
         "best": 345,
-        "img_default": imagurl + "/other/official-artwork/111.png",
-        "img_sprite": imagurl + "/111.png"
+        "img_default": imagurl+"/other/official-artwork/111.png",
+        "img_sprite": imagurl+"/111.png"
     },
     {
         "dex": 112,
@@ -1453,8 +1453,8 @@ var data = [
         "special_defense": 45,
         "speed": 40,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/112.png",
-        "img_sprite": imagurl + "/112.png"
+        "img_default": imagurl+"/other/official-artwork/112.png",
+        "img_sprite": imagurl+"/112.png"
     },
     {
         "dex": 113,
@@ -1466,8 +1466,8 @@ var data = [
         "special_defense": 105,
         "speed": 50,
         "best": 450,
-        "img_default": imagurl + "/other/official-artwork/113.png",
-        "img_sprite": imagurl + "/113.png"
+        "img_default": imagurl+"/other/official-artwork/113.png",
+        "img_sprite": imagurl+"/113.png"
     },
     {
         "dex": 114,
@@ -1479,8 +1479,8 @@ var data = [
         "special_defense": 40,
         "speed": 60,
         "best": 435,
-        "img_default": imagurl + "/other/official-artwork/114.png",
-        "img_sprite": imagurl + "/114.png"
+        "img_default": imagurl+"/other/official-artwork/114.png",
+        "img_sprite": imagurl+"/114.png"
     },
     {
         "dex": 115,
@@ -1492,8 +1492,8 @@ var data = [
         "special_defense": 80,
         "speed": 90,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/115.png",
-        "img_sprite": imagurl + "/115.png"
+        "img_default": imagurl+"/other/official-artwork/115.png",
+        "img_sprite": imagurl+"/115.png"
     },
     {
         "dex": 116,
@@ -1505,8 +1505,8 @@ var data = [
         "special_defense": 25,
         "speed": 60,
         "best": 295,
-        "img_default": imagurl + "/other/official-artwork/116.png",
-        "img_sprite": imagurl + "/116.png"
+        "img_default": imagurl+"/other/official-artwork/116.png",
+        "img_sprite": imagurl+"/116.png"
     },
     {
         "dex": 117,
@@ -1518,8 +1518,8 @@ var data = [
         "special_defense": 45,
         "speed": 85,
         "best": 440,
-        "img_default": imagurl + "/other/official-artwork/117.png",
-        "img_sprite": imagurl + "/117.png"
+        "img_default": imagurl+"/other/official-artwork/117.png",
+        "img_sprite": imagurl+"/117.png"
     },
     {
         "dex": 118,
@@ -1531,8 +1531,8 @@ var data = [
         "special_defense": 50,
         "speed": 63,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/118.png",
-        "img_sprite": imagurl + "/118.png"
+        "img_default": imagurl+"/other/official-artwork/118.png",
+        "img_sprite": imagurl+"/118.png"
     },
     {
         "dex": 119,
@@ -1544,8 +1544,8 @@ var data = [
         "special_defense": 80,
         "speed": 68,
         "best": 450,
-        "img_default": imagurl + "/other/official-artwork/119.png",
-        "img_sprite": imagurl + "/119.png"
+        "img_default": imagurl+"/other/official-artwork/119.png",
+        "img_sprite": imagurl+"/119.png"
     },
     {
         "dex": 120,
@@ -1557,8 +1557,8 @@ var data = [
         "special_defense": 55,
         "speed": 85,
         "best": 340,
-        "img_default": imagurl + "/other/official-artwork/120.png",
-        "img_sprite": imagurl + "/120.png"
+        "img_default": imagurl+"/other/official-artwork/120.png",
+        "img_sprite": imagurl+"/120.png"
     },
     {
         "dex": 121,
@@ -1570,8 +1570,8 @@ var data = [
         "special_defense": 85,
         "speed": 115,
         "best": 520,
-        "img_default": imagurl + "/other/official-artwork/121.png",
-        "img_sprite": imagurl + "/121.png"
+        "img_default": imagurl+"/other/official-artwork/121.png",
+        "img_sprite": imagurl+"/121.png"
     },
     {
         "dex": 122,
@@ -1583,8 +1583,8 @@ var data = [
         "special_defense": 120,
         "speed": 90,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/122.png",
-        "img_sprite": imagurl + "/122.png"
+        "img_default": imagurl+"/other/official-artwork/122.png",
+        "img_sprite": imagurl+"/122.png"
     },
     {
         "dex": 123,
@@ -1596,8 +1596,8 @@ var data = [
         "special_defense": 80,
         "speed": 105,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/123.png",
-        "img_sprite": imagurl + "/123.png"
+        "img_default": imagurl+"/other/official-artwork/123.png",
+        "img_sprite": imagurl+"/123.png"
     },
     {
         "dex": 124,
@@ -1609,8 +1609,8 @@ var data = [
         "special_defense": 95,
         "speed": 95,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/124.png",
-        "img_sprite": imagurl + "/124.png"
+        "img_default": imagurl+"/other/official-artwork/124.png",
+        "img_sprite": imagurl+"/124.png"
     },
     {
         "dex": 125,
@@ -1622,8 +1622,8 @@ var data = [
         "special_defense": 85,
         "speed": 105,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/125.png",
-        "img_sprite": imagurl + "/125.png"
+        "img_default": imagurl+"/other/official-artwork/125.png",
+        "img_sprite": imagurl+"/125.png"
     },
     {
         "dex": 126,
@@ -1635,8 +1635,8 @@ var data = [
         "special_defense": 85,
         "speed": 93,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/126.png",
-        "img_sprite": imagurl + "/126.png"
+        "img_default": imagurl+"/other/official-artwork/126.png",
+        "img_sprite": imagurl+"/126.png"
     },
     {
         "dex": 127,
@@ -1648,8 +1648,8 @@ var data = [
         "special_defense": 70,
         "speed": 85,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/127.png",
-        "img_sprite": imagurl + "/127.png"
+        "img_default": imagurl+"/other/official-artwork/127.png",
+        "img_sprite": imagurl+"/127.png"
     },
     {
         "dex": 128,
@@ -1661,8 +1661,8 @@ var data = [
         "special_defense": 70,
         "speed": 110,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/128.png",
-        "img_sprite": imagurl + "/128.png"
+        "img_default": imagurl+"/other/official-artwork/128.png",
+        "img_sprite": imagurl+"/128.png"
     },
     {
         "dex": 129,
@@ -1674,8 +1674,8 @@ var data = [
         "special_defense": 20,
         "speed": 80,
         "best": 200,
-        "img_default": imagurl + "/other/official-artwork/129.png",
-        "img_sprite": imagurl + "/129.png"
+        "img_default": imagurl+"/other/official-artwork/129.png",
+        "img_sprite": imagurl+"/129.png"
     },
     {
         "dex": 130,
@@ -1687,8 +1687,8 @@ var data = [
         "special_defense": 100,
         "speed": 81,
         "best": 540,
-        "img_default": imagurl + "/other/official-artwork/130.png",
-        "img_sprite": imagurl + "/130.png"
+        "img_default": imagurl+"/other/official-artwork/130.png",
+        "img_sprite": imagurl+"/130.png"
     },
     {
         "dex": 131,
@@ -1700,8 +1700,8 @@ var data = [
         "special_defense": 95,
         "speed": 60,
         "best": 535,
-        "img_default": imagurl + "/other/official-artwork/131.png",
-        "img_sprite": imagurl + "/131.png"
+        "img_default": imagurl+"/other/official-artwork/131.png",
+        "img_sprite": imagurl+"/131.png"
     },
     {
         "dex": 132,
@@ -1713,8 +1713,8 @@ var data = [
         "special_defense": 48,
         "speed": 48,
         "best": 288,
-        "img_default": imagurl + "/other/official-artwork/132.png",
-        "img_sprite": imagurl + "/132.png"
+        "img_default": imagurl+"/other/official-artwork/132.png",
+        "img_sprite": imagurl+"/132.png"
     },
     {
         "dex": 133,
@@ -1726,8 +1726,8 @@ var data = [
         "special_defense": 65,
         "speed": 55,
         "best": 325,
-        "img_default": imagurl + "/other/official-artwork/133.png",
-        "img_sprite": imagurl + "/133.png"
+        "img_default": imagurl+"/other/official-artwork/133.png",
+        "img_sprite": imagurl+"/133.png"
     },
     {
         "dex": 134,
@@ -1739,8 +1739,8 @@ var data = [
         "special_defense": 95,
         "speed": 65,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/134.png",
-        "img_sprite": imagurl + "/134.png"
+        "img_default": imagurl+"/other/official-artwork/134.png",
+        "img_sprite": imagurl+"/134.png"
     },
     {
         "dex": 135,
@@ -1752,8 +1752,8 @@ var data = [
         "special_defense": 95,
         "speed": 130,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/135.png",
-        "img_sprite": imagurl + "/135.png"
+        "img_default": imagurl+"/other/official-artwork/135.png",
+        "img_sprite": imagurl+"/135.png"
     },
     {
         "dex": 136,
@@ -1765,8 +1765,8 @@ var data = [
         "special_defense": 110,
         "speed": 65,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/136.png",
-        "img_sprite": imagurl + "/136.png"
+        "img_default": imagurl+"/other/official-artwork/136.png",
+        "img_sprite": imagurl+"/136.png"
     },
     {
         "dex": 137,
@@ -1778,8 +1778,8 @@ var data = [
         "special_defense": 75,
         "speed": 40,
         "best": 395,
-        "img_default": imagurl + "/other/official-artwork/137.png",
-        "img_sprite": imagurl + "/137.png"
+        "img_default": imagurl+"/other/official-artwork/137.png",
+        "img_sprite": imagurl+"/137.png"
     },
     {
         "dex": 138,
@@ -1791,8 +1791,8 @@ var data = [
         "special_defense": 55,
         "speed": 35,
         "best": 355,
-        "img_default": imagurl + "/other/official-artwork/138.png",
-        "img_sprite": imagurl + "/138.png"
+        "img_default": imagurl+"/other/official-artwork/138.png",
+        "img_sprite": imagurl+"/138.png"
     },
     {
         "dex": 139,
@@ -1804,8 +1804,8 @@ var data = [
         "special_defense": 70,
         "speed": 55,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/139.png",
-        "img_sprite": imagurl + "/139.png"
+        "img_default": imagurl+"/other/official-artwork/139.png",
+        "img_sprite": imagurl+"/139.png"
     },
     {
         "dex": 140,
@@ -1817,8 +1817,8 @@ var data = [
         "special_defense": 45,
         "speed": 55,
         "best": 355,
-        "img_default": imagurl + "/other/official-artwork/140.png",
-        "img_sprite": imagurl + "/140.png"
+        "img_default": imagurl+"/other/official-artwork/140.png",
+        "img_sprite": imagurl+"/140.png"
     },
     {
         "dex": 141,
@@ -1830,8 +1830,8 @@ var data = [
         "special_defense": 70,
         "speed": 80,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/141.png",
-        "img_sprite": imagurl + "/141.png"
+        "img_default": imagurl+"/other/official-artwork/141.png",
+        "img_sprite": imagurl+"/141.png"
     },
     {
         "dex": 142,
@@ -1843,8 +1843,8 @@ var data = [
         "special_defense": 75,
         "speed": 130,
         "best": 515,
-        "img_default": imagurl + "/other/official-artwork/142.png",
-        "img_sprite": imagurl + "/142.png"
+        "img_default": imagurl+"/other/official-artwork/142.png",
+        "img_sprite": imagurl+"/142.png"
     },
     {
         "dex": 143,
@@ -1856,8 +1856,8 @@ var data = [
         "special_defense": 110,
         "speed": 30,
         "best": 540,
-        "img_default": imagurl + "/other/official-artwork/143.png",
-        "img_sprite": imagurl + "/143.png"
+        "img_default": imagurl+"/other/official-artwork/143.png",
+        "img_sprite": imagurl+"/143.png"
     },
     {
         "dex": 144,
@@ -1869,8 +1869,8 @@ var data = [
         "special_defense": 125,
         "speed": 85,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/144.png",
-        "img_sprite": imagurl + "/144.png"
+        "img_default": imagurl+"/other/official-artwork/144.png",
+        "img_sprite": imagurl+"/144.png"
     },
     {
         "dex": 145,
@@ -1882,8 +1882,8 @@ var data = [
         "special_defense": 90,
         "speed": 100,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/145.png",
-        "img_sprite": imagurl + "/145.png"
+        "img_default": imagurl+"/other/official-artwork/145.png",
+        "img_sprite": imagurl+"/145.png"
     },
     {
         "dex": 146,
@@ -1895,8 +1895,8 @@ var data = [
         "special_defense": 85,
         "speed": 90,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/146.png",
-        "img_sprite": imagurl + "/146.png"
+        "img_default": imagurl+"/other/official-artwork/146.png",
+        "img_sprite": imagurl+"/146.png"
     },
     {
         "dex": 147,
@@ -1908,8 +1908,8 @@ var data = [
         "special_defense": 50,
         "speed": 50,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/147.png",
-        "img_sprite": imagurl + "/147.png"
+        "img_default": imagurl+"/other/official-artwork/147.png",
+        "img_sprite": imagurl+"/147.png"
     },
     {
         "dex": 148,
@@ -1921,8 +1921,8 @@ var data = [
         "special_defense": 70,
         "speed": 70,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/148.png",
-        "img_sprite": imagurl + "/148.png"
+        "img_default": imagurl+"/other/official-artwork/148.png",
+        "img_sprite": imagurl+"/148.png"
     },
     {
         "dex": 149,
@@ -1934,8 +1934,8 @@ var data = [
         "special_defense": 100,
         "speed": 80,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/149.png",
-        "img_sprite": imagurl + "/149.png"
+        "img_default": imagurl+"/other/official-artwork/149.png",
+        "img_sprite": imagurl+"/149.png"
     },
     {
         "dex": 150,
@@ -1947,8 +1947,8 @@ var data = [
         "special_defense": 90,
         "speed": 130,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/150.png",
-        "img_sprite": imagurl + "/150.png"
+        "img_default": imagurl+"/other/official-artwork/150.png",
+        "img_sprite": imagurl+"/150.png"
     },
     {
         "dex": 151,
@@ -1960,8 +1960,8 @@ var data = [
         "special_defense": 100,
         "speed": 100,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/151.png",
-        "img_sprite": imagurl + "/151.png"
+        "img_default": imagurl+"/other/official-artwork/151.png",
+        "img_sprite": imagurl+"/151.png"
     },
     {
         "dex": 152,
@@ -1973,8 +1973,8 @@ var data = [
         "special_defense": 65,
         "speed": 45,
         "best": 318,
-        "img_default": imagurl + "/other/official-artwork/152.png",
-        "img_sprite": imagurl + "/152.png"
+        "img_default": imagurl+"/other/official-artwork/152.png",
+        "img_sprite": imagurl+"/152.png"
     },
     {
         "dex": 153,
@@ -1986,8 +1986,8 @@ var data = [
         "special_defense": 80,
         "speed": 60,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/153.png",
-        "img_sprite": imagurl + "/153.png"
+        "img_default": imagurl+"/other/official-artwork/153.png",
+        "img_sprite": imagurl+"/153.png"
     },
     {
         "dex": 154,
@@ -1999,8 +1999,8 @@ var data = [
         "special_defense": 100,
         "speed": 80,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/154.png",
-        "img_sprite": imagurl + "/154.png"
+        "img_default": imagurl+"/other/official-artwork/154.png",
+        "img_sprite": imagurl+"/154.png"
     },
     {
         "dex": 155,
@@ -2012,8 +2012,8 @@ var data = [
         "special_defense": 50,
         "speed": 65,
         "best": 309,
-        "img_default": imagurl + "/other/official-artwork/155.png",
-        "img_sprite": imagurl + "/155.png"
+        "img_default": imagurl+"/other/official-artwork/155.png",
+        "img_sprite": imagurl+"/155.png"
     },
     {
         "dex": 156,
@@ -2025,8 +2025,8 @@ var data = [
         "special_defense": 65,
         "speed": 80,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/156.png",
-        "img_sprite": imagurl + "/156.png"
+        "img_default": imagurl+"/other/official-artwork/156.png",
+        "img_sprite": imagurl+"/156.png"
     },
     {
         "dex": 157,
@@ -2038,8 +2038,8 @@ var data = [
         "special_defense": 85,
         "speed": 100,
         "best": 534,
-        "img_default": imagurl + "/other/official-artwork/157.png",
-        "img_sprite": imagurl + "/157.png"
+        "img_default": imagurl+"/other/official-artwork/157.png",
+        "img_sprite": imagurl+"/157.png"
     },
     {
         "dex": 158,
@@ -2051,8 +2051,8 @@ var data = [
         "special_defense": 48,
         "speed": 43,
         "best": 314,
-        "img_default": imagurl + "/other/official-artwork/158.png",
-        "img_sprite": imagurl + "/158.png"
+        "img_default": imagurl+"/other/official-artwork/158.png",
+        "img_sprite": imagurl+"/158.png"
     },
     {
         "dex": 159,
@@ -2064,8 +2064,8 @@ var data = [
         "special_defense": 63,
         "speed": 58,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/159.png",
-        "img_sprite": imagurl + "/159.png"
+        "img_default": imagurl+"/other/official-artwork/159.png",
+        "img_sprite": imagurl+"/159.png"
     },
     {
         "dex": 160,
@@ -2077,8 +2077,8 @@ var data = [
         "special_defense": 83,
         "speed": 78,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/160.png",
-        "img_sprite": imagurl + "/160.png"
+        "img_default": imagurl+"/other/official-artwork/160.png",
+        "img_sprite": imagurl+"/160.png"
     },
     {
         "dex": 161,
@@ -2090,8 +2090,8 @@ var data = [
         "special_defense": 45,
         "speed": 20,
         "best": 215,
-        "img_default": imagurl + "/other/official-artwork/161.png",
-        "img_sprite": imagurl + "/161.png"
+        "img_default": imagurl+"/other/official-artwork/161.png",
+        "img_sprite": imagurl+"/161.png"
     },
     {
         "dex": 162,
@@ -2103,8 +2103,8 @@ var data = [
         "special_defense": 55,
         "speed": 90,
         "best": 415,
-        "img_default": imagurl + "/other/official-artwork/162.png",
-        "img_sprite": imagurl + "/162.png"
+        "img_default": imagurl+"/other/official-artwork/162.png",
+        "img_sprite": imagurl+"/162.png"
     },
     {
         "dex": 163,
@@ -2116,8 +2116,8 @@ var data = [
         "special_defense": 56,
         "speed": 50,
         "best": 262,
-        "img_default": imagurl + "/other/official-artwork/163.png",
-        "img_sprite": imagurl + "/163.png"
+        "img_default": imagurl+"/other/official-artwork/163.png",
+        "img_sprite": imagurl+"/163.png"
     },
     {
         "dex": 164,
@@ -2129,8 +2129,8 @@ var data = [
         "special_defense": 96,
         "speed": 70,
         "best": 452,
-        "img_default": imagurl + "/other/official-artwork/164.png",
-        "img_sprite": imagurl + "/164.png"
+        "img_default": imagurl+"/other/official-artwork/164.png",
+        "img_sprite": imagurl+"/164.png"
     },
     {
         "dex": 165,
@@ -2142,8 +2142,8 @@ var data = [
         "special_defense": 80,
         "speed": 55,
         "best": 265,
-        "img_default": imagurl + "/other/official-artwork/165.png",
-        "img_sprite": imagurl + "/165.png"
+        "img_default": imagurl+"/other/official-artwork/165.png",
+        "img_sprite": imagurl+"/165.png"
     },
     {
         "dex": 166,
@@ -2155,8 +2155,8 @@ var data = [
         "special_defense": 110,
         "speed": 85,
         "best": 390,
-        "img_default": imagurl + "/other/official-artwork/166.png",
-        "img_sprite": imagurl + "/166.png"
+        "img_default": imagurl+"/other/official-artwork/166.png",
+        "img_sprite": imagurl+"/166.png"
     },
     {
         "dex": 167,
@@ -2168,8 +2168,8 @@ var data = [
         "special_defense": 40,
         "speed": 30,
         "best": 250,
-        "img_default": imagurl + "/other/official-artwork/167.png",
-        "img_sprite": imagurl + "/167.png"
+        "img_default": imagurl+"/other/official-artwork/167.png",
+        "img_sprite": imagurl+"/167.png"
     },
     {
         "dex": 168,
@@ -2181,8 +2181,8 @@ var data = [
         "special_defense": 70,
         "speed": 40,
         "best": 400,
-        "img_default": imagurl + "/other/official-artwork/168.png",
-        "img_sprite": imagurl + "/168.png"
+        "img_default": imagurl+"/other/official-artwork/168.png",
+        "img_sprite": imagurl+"/168.png"
     },
     {
         "dex": 169,
@@ -2194,8 +2194,8 @@ var data = [
         "special_defense": 80,
         "speed": 130,
         "best": 535,
-        "img_default": imagurl + "/other/official-artwork/169.png",
-        "img_sprite": imagurl + "/169.png"
+        "img_default": imagurl+"/other/official-artwork/169.png",
+        "img_sprite": imagurl+"/169.png"
     },
     {
         "dex": 170,
@@ -2207,8 +2207,8 @@ var data = [
         "special_defense": 56,
         "speed": 67,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/170.png",
-        "img_sprite": imagurl + "/170.png"
+        "img_default": imagurl+"/other/official-artwork/170.png",
+        "img_sprite": imagurl+"/170.png"
     },
     {
         "dex": 171,
@@ -2220,8 +2220,8 @@ var data = [
         "special_defense": 76,
         "speed": 67,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/171.png",
-        "img_sprite": imagurl + "/171.png"
+        "img_default": imagurl+"/other/official-artwork/171.png",
+        "img_sprite": imagurl+"/171.png"
     },
     {
         "dex": 172,
@@ -2233,8 +2233,8 @@ var data = [
         "special_defense": 35,
         "speed": 60,
         "best": 205,
-        "img_default": imagurl + "/other/official-artwork/172.png",
-        "img_sprite": imagurl + "/172.png"
+        "img_default": imagurl+"/other/official-artwork/172.png",
+        "img_sprite": imagurl+"/172.png"
     },
     {
         "dex": 173,
@@ -2246,8 +2246,8 @@ var data = [
         "special_defense": 55,
         "speed": 15,
         "best": 218,
-        "img_default": imagurl + "/other/official-artwork/173.png",
-        "img_sprite": imagurl + "/173.png"
+        "img_default": imagurl+"/other/official-artwork/173.png",
+        "img_sprite": imagurl+"/173.png"
     },
     {
         "dex": 174,
@@ -2259,8 +2259,8 @@ var data = [
         "special_defense": 20,
         "speed": 15,
         "best": 210,
-        "img_default": imagurl + "/other/official-artwork/174.png",
-        "img_sprite": imagurl + "/174.png"
+        "img_default": imagurl+"/other/official-artwork/174.png",
+        "img_sprite": imagurl+"/174.png"
     },
     {
         "dex": 175,
@@ -2272,8 +2272,8 @@ var data = [
         "special_defense": 65,
         "speed": 20,
         "best": 245,
-        "img_default": imagurl + "/other/official-artwork/175.png",
-        "img_sprite": imagurl + "/175.png"
+        "img_default": imagurl+"/other/official-artwork/175.png",
+        "img_sprite": imagurl+"/175.png"
     },
     {
         "dex": 176,
@@ -2285,8 +2285,8 @@ var data = [
         "special_defense": 105,
         "speed": 40,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/176.png",
-        "img_sprite": imagurl + "/176.png"
+        "img_default": imagurl+"/other/official-artwork/176.png",
+        "img_sprite": imagurl+"/176.png"
     },
     {
         "dex": 177,
@@ -2298,8 +2298,8 @@ var data = [
         "special_defense": 45,
         "speed": 70,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/177.png",
-        "img_sprite": imagurl + "/177.png"
+        "img_default": imagurl+"/other/official-artwork/177.png",
+        "img_sprite": imagurl+"/177.png"
     },
     {
         "dex": 178,
@@ -2311,8 +2311,8 @@ var data = [
         "special_defense": 70,
         "speed": 95,
         "best": 470,
-        "img_default": imagurl + "/other/official-artwork/178.png",
-        "img_sprite": imagurl + "/178.png"
+        "img_default": imagurl+"/other/official-artwork/178.png",
+        "img_sprite": imagurl+"/178.png"
     },
     {
         "dex": 179,
@@ -2324,8 +2324,8 @@ var data = [
         "special_defense": 45,
         "speed": 35,
         "best": 280,
-        "img_default": imagurl + "/other/official-artwork/179.png",
-        "img_sprite": imagurl + "/179.png"
+        "img_default": imagurl+"/other/official-artwork/179.png",
+        "img_sprite": imagurl+"/179.png"
     },
     {
         "dex": 180,
@@ -2337,8 +2337,8 @@ var data = [
         "special_defense": 60,
         "speed": 45,
         "best": 365,
-        "img_default": imagurl + "/other/official-artwork/180.png",
-        "img_sprite": imagurl + "/180.png"
+        "img_default": imagurl+"/other/official-artwork/180.png",
+        "img_sprite": imagurl+"/180.png"
     },
     {
         "dex": 181,
@@ -2350,8 +2350,8 @@ var data = [
         "special_defense": 90,
         "speed": 55,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/181.png",
-        "img_sprite": imagurl + "/181.png"
+        "img_default": imagurl+"/other/official-artwork/181.png",
+        "img_sprite": imagurl+"/181.png"
     },
     {
         "dex": 182,
@@ -2363,8 +2363,8 @@ var data = [
         "special_defense": 100,
         "speed": 50,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/182.png",
-        "img_sprite": imagurl + "/182.png"
+        "img_default": imagurl+"/other/official-artwork/182.png",
+        "img_sprite": imagurl+"/182.png"
     },
     {
         "dex": 183,
@@ -2376,8 +2376,8 @@ var data = [
         "special_defense": 50,
         "speed": 40,
         "best": 250,
-        "img_default": imagurl + "/other/official-artwork/183.png",
-        "img_sprite": imagurl + "/183.png"
+        "img_default": imagurl+"/other/official-artwork/183.png",
+        "img_sprite": imagurl+"/183.png"
     },
     {
         "dex": 184,
@@ -2389,8 +2389,8 @@ var data = [
         "special_defense": 80,
         "speed": 50,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/184.png",
-        "img_sprite": imagurl + "/184.png"
+        "img_default": imagurl+"/other/official-artwork/184.png",
+        "img_sprite": imagurl+"/184.png"
     },
     {
         "dex": 185,
@@ -2402,8 +2402,8 @@ var data = [
         "special_defense": 65,
         "speed": 30,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/185.png",
-        "img_sprite": imagurl + "/185.png"
+        "img_default": imagurl+"/other/official-artwork/185.png",
+        "img_sprite": imagurl+"/185.png"
     },
     {
         "dex": 186,
@@ -2415,8 +2415,8 @@ var data = [
         "special_defense": 100,
         "speed": 70,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/186.png",
-        "img_sprite": imagurl + "/186.png"
+        "img_default": imagurl+"/other/official-artwork/186.png",
+        "img_sprite": imagurl+"/186.png"
     },
     {
         "dex": 187,
@@ -2428,8 +2428,8 @@ var data = [
         "special_defense": 55,
         "speed": 50,
         "best": 250,
-        "img_default": imagurl + "/other/official-artwork/187.png",
-        "img_sprite": imagurl + "/187.png"
+        "img_default": imagurl+"/other/official-artwork/187.png",
+        "img_sprite": imagurl+"/187.png"
     },
     {
         "dex": 188,
@@ -2441,8 +2441,8 @@ var data = [
         "special_defense": 65,
         "speed": 80,
         "best": 340,
-        "img_default": imagurl + "/other/official-artwork/188.png",
-        "img_sprite": imagurl + "/188.png"
+        "img_default": imagurl+"/other/official-artwork/188.png",
+        "img_sprite": imagurl+"/188.png"
     },
     {
         "dex": 189,
@@ -2454,8 +2454,8 @@ var data = [
         "special_defense": 95,
         "speed": 110,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/189.png",
-        "img_sprite": imagurl + "/189.png"
+        "img_default": imagurl+"/other/official-artwork/189.png",
+        "img_sprite": imagurl+"/189.png"
     },
     {
         "dex": 190,
@@ -2467,8 +2467,8 @@ var data = [
         "special_defense": 55,
         "speed": 85,
         "best": 360,
-        "img_default": imagurl + "/other/official-artwork/190.png",
-        "img_sprite": imagurl + "/190.png"
+        "img_default": imagurl+"/other/official-artwork/190.png",
+        "img_sprite": imagurl+"/190.png"
     },
     {
         "dex": 191,
@@ -2480,8 +2480,8 @@ var data = [
         "special_defense": 30,
         "speed": 30,
         "best": 180,
-        "img_default": imagurl + "/other/official-artwork/191.png",
-        "img_sprite": imagurl + "/191.png"
+        "img_default": imagurl+"/other/official-artwork/191.png",
+        "img_sprite": imagurl+"/191.png"
     },
     {
         "dex": 192,
@@ -2493,8 +2493,8 @@ var data = [
         "special_defense": 85,
         "speed": 30,
         "best": 425,
-        "img_default": imagurl + "/other/official-artwork/192.png",
-        "img_sprite": imagurl + "/192.png"
+        "img_default": imagurl+"/other/official-artwork/192.png",
+        "img_sprite": imagurl+"/192.png"
     },
     {
         "dex": 193,
@@ -2506,8 +2506,8 @@ var data = [
         "special_defense": 45,
         "speed": 95,
         "best": 390,
-        "img_default": imagurl + "/other/official-artwork/193.png",
-        "img_sprite": imagurl + "/193.png"
+        "img_default": imagurl+"/other/official-artwork/193.png",
+        "img_sprite": imagurl+"/193.png"
     },
     {
         "dex": 194,
@@ -2519,8 +2519,8 @@ var data = [
         "special_defense": 25,
         "speed": 15,
         "best": 210,
-        "img_default": imagurl + "/other/official-artwork/194.png",
-        "img_sprite": imagurl + "/194.png"
+        "img_default": imagurl+"/other/official-artwork/194.png",
+        "img_sprite": imagurl+"/194.png"
     },
     {
         "dex": 195,
@@ -2532,8 +2532,8 @@ var data = [
         "special_defense": 65,
         "speed": 35,
         "best": 430,
-        "img_default": imagurl + "/other/official-artwork/195.png",
-        "img_sprite": imagurl + "/195.png"
+        "img_default": imagurl+"/other/official-artwork/195.png",
+        "img_sprite": imagurl+"/195.png"
     },
     {
         "dex": 196,
@@ -2545,8 +2545,8 @@ var data = [
         "special_defense": 95,
         "speed": 110,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/196.png",
-        "img_sprite": imagurl + "/196.png"
+        "img_default": imagurl+"/other/official-artwork/196.png",
+        "img_sprite": imagurl+"/196.png"
     },
     {
         "dex": 197,
@@ -2558,8 +2558,8 @@ var data = [
         "special_defense": 130,
         "speed": 65,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/197.png",
-        "img_sprite": imagurl + "/197.png"
+        "img_default": imagurl+"/other/official-artwork/197.png",
+        "img_sprite": imagurl+"/197.png"
     },
     {
         "dex": 198,
@@ -2571,8 +2571,8 @@ var data = [
         "special_defense": 42,
         "speed": 91,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/198.png",
-        "img_sprite": imagurl + "/198.png"
+        "img_default": imagurl+"/other/official-artwork/198.png",
+        "img_sprite": imagurl+"/198.png"
     },
     {
         "dex": 199,
@@ -2584,8 +2584,8 @@ var data = [
         "special_defense": 110,
         "speed": 30,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/199.png",
-        "img_sprite": imagurl + "/199.png"
+        "img_default": imagurl+"/other/official-artwork/199.png",
+        "img_sprite": imagurl+"/199.png"
     },
     {
         "dex": 200,
@@ -2597,8 +2597,8 @@ var data = [
         "special_defense": 85,
         "speed": 85,
         "best": 435,
-        "img_default": imagurl + "/other/official-artwork/200.png",
-        "img_sprite": imagurl + "/200.png"
+        "img_default": imagurl+"/other/official-artwork/200.png",
+        "img_sprite": imagurl+"/200.png"
     },
     {
         "dex": 201,
@@ -2610,8 +2610,8 @@ var data = [
         "special_defense": 48,
         "speed": 48,
         "best": 336,
-        "img_default": imagurl + "/other/official-artwork/201.png",
-        "img_sprite": imagurl + "/201.png"
+        "img_default": imagurl+"/other/official-artwork/201.png",
+        "img_sprite": imagurl+"/201.png"
     },
     {
         "dex": 202,
@@ -2623,8 +2623,8 @@ var data = [
         "special_defense": 58,
         "speed": 33,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/202.png",
-        "img_sprite": imagurl + "/202.png"
+        "img_default": imagurl+"/other/official-artwork/202.png",
+        "img_sprite": imagurl+"/202.png"
     },
     {
         "dex": 203,
@@ -2636,8 +2636,8 @@ var data = [
         "special_defense": 65,
         "speed": 85,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/203.png",
-        "img_sprite": imagurl + "/203.png"
+        "img_default": imagurl+"/other/official-artwork/203.png",
+        "img_sprite": imagurl+"/203.png"
     },
     {
         "dex": 204,
@@ -2649,8 +2649,8 @@ var data = [
         "special_defense": 35,
         "speed": 15,
         "best": 290,
-        "img_default": imagurl + "/other/official-artwork/204.png",
-        "img_sprite": imagurl + "/204.png"
+        "img_default": imagurl+"/other/official-artwork/204.png",
+        "img_sprite": imagurl+"/204.png"
     },
     {
         "dex": 205,
@@ -2662,8 +2662,8 @@ var data = [
         "special_defense": 60,
         "speed": 40,
         "best": 465,
-        "img_default": imagurl + "/other/official-artwork/205.png",
-        "img_sprite": imagurl + "/205.png"
+        "img_default": imagurl+"/other/official-artwork/205.png",
+        "img_sprite": imagurl+"/205.png"
     },
     {
         "dex": 206,
@@ -2675,8 +2675,8 @@ var data = [
         "special_defense": 65,
         "speed": 45,
         "best": 415,
-        "img_default": imagurl + "/other/official-artwork/206.png",
-        "img_sprite": imagurl + "/206.png"
+        "img_default": imagurl+"/other/official-artwork/206.png",
+        "img_sprite": imagurl+"/206.png"
     },
     {
         "dex": 207,
@@ -2688,8 +2688,8 @@ var data = [
         "special_defense": 65,
         "speed": 85,
         "best": 430,
-        "img_default": imagurl + "/other/official-artwork/207.png",
-        "img_sprite": imagurl + "/207.png"
+        "img_default": imagurl+"/other/official-artwork/207.png",
+        "img_sprite": imagurl+"/207.png"
     },
     {
         "dex": 208,
@@ -2701,8 +2701,8 @@ var data = [
         "special_defense": 65,
         "speed": 30,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/208.png",
-        "img_sprite": imagurl + "/208.png"
+        "img_default": imagurl+"/other/official-artwork/208.png",
+        "img_sprite": imagurl+"/208.png"
     },
     {
         "dex": 209,
@@ -2714,8 +2714,8 @@ var data = [
         "special_defense": 40,
         "speed": 30,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/209.png",
-        "img_sprite": imagurl + "/209.png"
+        "img_default": imagurl+"/other/official-artwork/209.png",
+        "img_sprite": imagurl+"/209.png"
     },
     {
         "dex": 210,
@@ -2727,8 +2727,8 @@ var data = [
         "special_defense": 60,
         "speed": 45,
         "best": 450,
-        "img_default": imagurl + "/other/official-artwork/210.png",
-        "img_sprite": imagurl + "/210.png"
+        "img_default": imagurl+"/other/official-artwork/210.png",
+        "img_sprite": imagurl+"/210.png"
     },
     {
         "dex": 211,
@@ -2740,8 +2740,8 @@ var data = [
         "special_defense": 55,
         "speed": 85,
         "best": 440,
-        "img_default": imagurl + "/other/official-artwork/211.png",
-        "img_sprite": imagurl + "/211.png"
+        "img_default": imagurl+"/other/official-artwork/211.png",
+        "img_sprite": imagurl+"/211.png"
     },
     {
         "dex": 212,
@@ -2753,8 +2753,8 @@ var data = [
         "special_defense": 80,
         "speed": 65,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/212.png",
-        "img_sprite": imagurl + "/212.png"
+        "img_default": imagurl+"/other/official-artwork/212.png",
+        "img_sprite": imagurl+"/212.png"
     },
     {
         "dex": 213,
@@ -2766,8 +2766,8 @@ var data = [
         "special_defense": 230,
         "speed": 5,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/213.png",
-        "img_sprite": imagurl + "/213.png"
+        "img_default": imagurl+"/other/official-artwork/213.png",
+        "img_sprite": imagurl+"/213.png"
     },
     {
         "dex": 214,
@@ -2779,8 +2779,8 @@ var data = [
         "special_defense": 95,
         "speed": 85,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/214.png",
-        "img_sprite": imagurl + "/214.png"
+        "img_default": imagurl+"/other/official-artwork/214.png",
+        "img_sprite": imagurl+"/214.png"
     },
     {
         "dex": 215,
@@ -2792,8 +2792,8 @@ var data = [
         "special_defense": 75,
         "speed": 115,
         "best": 430,
-        "img_default": imagurl + "/other/official-artwork/215.png",
-        "img_sprite": imagurl + "/215.png"
+        "img_default": imagurl+"/other/official-artwork/215.png",
+        "img_sprite": imagurl+"/215.png"
     },
     {
         "dex": 216,
@@ -2805,8 +2805,8 @@ var data = [
         "special_defense": 50,
         "speed": 40,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/216.png",
-        "img_sprite": imagurl + "/216.png"
+        "img_default": imagurl+"/other/official-artwork/216.png",
+        "img_sprite": imagurl+"/216.png"
     },
     {
         "dex": 217,
@@ -2818,8 +2818,8 @@ var data = [
         "special_defense": 75,
         "speed": 55,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/217.png",
-        "img_sprite": imagurl + "/217.png"
+        "img_default": imagurl+"/other/official-artwork/217.png",
+        "img_sprite": imagurl+"/217.png"
     },
     {
         "dex": 218,
@@ -2831,8 +2831,8 @@ var data = [
         "special_defense": 40,
         "speed": 20,
         "best": 250,
-        "img_default": imagurl + "/other/official-artwork/218.png",
-        "img_sprite": imagurl + "/218.png"
+        "img_default": imagurl+"/other/official-artwork/218.png",
+        "img_sprite": imagurl+"/218.png"
     },
     {
         "dex": 219,
@@ -2844,8 +2844,8 @@ var data = [
         "special_defense": 80,
         "speed": 30,
         "best": 430,
-        "img_default": imagurl + "/other/official-artwork/219.png",
-        "img_sprite": imagurl + "/219.png"
+        "img_default": imagurl+"/other/official-artwork/219.png",
+        "img_sprite": imagurl+"/219.png"
     },
     {
         "dex": 220,
@@ -2857,8 +2857,8 @@ var data = [
         "special_defense": 30,
         "speed": 50,
         "best": 250,
-        "img_default": imagurl + "/other/official-artwork/220.png",
-        "img_sprite": imagurl + "/220.png"
+        "img_default": imagurl+"/other/official-artwork/220.png",
+        "img_sprite": imagurl+"/220.png"
     },
     {
         "dex": 221,
@@ -2870,8 +2870,8 @@ var data = [
         "special_defense": 60,
         "speed": 50,
         "best": 450,
-        "img_default": imagurl + "/other/official-artwork/221.png",
-        "img_sprite": imagurl + "/221.png"
+        "img_default": imagurl+"/other/official-artwork/221.png",
+        "img_sprite": imagurl+"/221.png"
     },
     {
         "dex": 222,
@@ -2883,8 +2883,8 @@ var data = [
         "special_defense": 95,
         "speed": 35,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/222.png",
-        "img_sprite": imagurl + "/222.png"
+        "img_default": imagurl+"/other/official-artwork/222.png",
+        "img_sprite": imagurl+"/222.png"
     },
     {
         "dex": 223,
@@ -2896,8 +2896,8 @@ var data = [
         "special_defense": 35,
         "speed": 65,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/223.png",
-        "img_sprite": imagurl + "/223.png"
+        "img_default": imagurl+"/other/official-artwork/223.png",
+        "img_sprite": imagurl+"/223.png"
     },
     {
         "dex": 224,
@@ -2909,8 +2909,8 @@ var data = [
         "special_defense": 75,
         "speed": 45,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/224.png",
-        "img_sprite": imagurl + "/224.png"
+        "img_default": imagurl+"/other/official-artwork/224.png",
+        "img_sprite": imagurl+"/224.png"
     },
     {
         "dex": 225,
@@ -2922,8 +2922,8 @@ var data = [
         "special_defense": 45,
         "speed": 75,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/225.png",
-        "img_sprite": imagurl + "/225.png"
+        "img_default": imagurl+"/other/official-artwork/225.png",
+        "img_sprite": imagurl+"/225.png"
     },
     {
         "dex": 226,
@@ -2935,8 +2935,8 @@ var data = [
         "special_defense": 140,
         "speed": 70,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/226.png",
-        "img_sprite": imagurl + "/226.png"
+        "img_default": imagurl+"/other/official-artwork/226.png",
+        "img_sprite": imagurl+"/226.png"
     },
     {
         "dex": 227,
@@ -2948,8 +2948,8 @@ var data = [
         "special_defense": 70,
         "speed": 70,
         "best": 465,
-        "img_default": imagurl + "/other/official-artwork/227.png",
-        "img_sprite": imagurl + "/227.png"
+        "img_default": imagurl+"/other/official-artwork/227.png",
+        "img_sprite": imagurl+"/227.png"
     },
     {
         "dex": 228,
@@ -2961,8 +2961,8 @@ var data = [
         "special_defense": 50,
         "speed": 65,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/228.png",
-        "img_sprite": imagurl + "/228.png"
+        "img_default": imagurl+"/other/official-artwork/228.png",
+        "img_sprite": imagurl+"/228.png"
     },
     {
         "dex": 229,
@@ -2974,8 +2974,8 @@ var data = [
         "special_defense": 80,
         "speed": 95,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/229.png",
-        "img_sprite": imagurl + "/229.png"
+        "img_default": imagurl+"/other/official-artwork/229.png",
+        "img_sprite": imagurl+"/229.png"
     },
     {
         "dex": 230,
@@ -2987,8 +2987,8 @@ var data = [
         "special_defense": 95,
         "speed": 85,
         "best": 540,
-        "img_default": imagurl + "/other/official-artwork/230.png",
-        "img_sprite": imagurl + "/230.png"
+        "img_default": imagurl+"/other/official-artwork/230.png",
+        "img_sprite": imagurl+"/230.png"
     },
     {
         "dex": 231,
@@ -3000,8 +3000,8 @@ var data = [
         "special_defense": 40,
         "speed": 40,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/231.png",
-        "img_sprite": imagurl + "/231.png"
+        "img_default": imagurl+"/other/official-artwork/231.png",
+        "img_sprite": imagurl+"/231.png"
     },
     {
         "dex": 232,
@@ -3013,8 +3013,8 @@ var data = [
         "special_defense": 60,
         "speed": 50,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/232.png",
-        "img_sprite": imagurl + "/232.png"
+        "img_default": imagurl+"/other/official-artwork/232.png",
+        "img_sprite": imagurl+"/232.png"
     },
     {
         "dex": 233,
@@ -3026,8 +3026,8 @@ var data = [
         "special_defense": 95,
         "speed": 60,
         "best": 515,
-        "img_default": imagurl + "/other/official-artwork/233.png",
-        "img_sprite": imagurl + "/233.png"
+        "img_default": imagurl+"/other/official-artwork/233.png",
+        "img_sprite": imagurl+"/233.png"
     },
     {
         "dex": 234,
@@ -3039,8 +3039,8 @@ var data = [
         "special_defense": 65,
         "speed": 85,
         "best": 465,
-        "img_default": imagurl + "/other/official-artwork/234.png",
-        "img_sprite": imagurl + "/234.png"
+        "img_default": imagurl+"/other/official-artwork/234.png",
+        "img_sprite": imagurl+"/234.png"
     },
     {
         "dex": 235,
@@ -3052,8 +3052,8 @@ var data = [
         "special_defense": 45,
         "speed": 75,
         "best": 250,
-        "img_default": imagurl + "/other/official-artwork/235.png",
-        "img_sprite": imagurl + "/235.png"
+        "img_default": imagurl+"/other/official-artwork/235.png",
+        "img_sprite": imagurl+"/235.png"
     },
     {
         "dex": 236,
@@ -3065,8 +3065,8 @@ var data = [
         "special_defense": 35,
         "speed": 35,
         "best": 210,
-        "img_default": imagurl + "/other/official-artwork/236.png",
-        "img_sprite": imagurl + "/236.png"
+        "img_default": imagurl+"/other/official-artwork/236.png",
+        "img_sprite": imagurl+"/236.png"
     },
     {
         "dex": 237,
@@ -3078,8 +3078,8 @@ var data = [
         "special_defense": 110,
         "speed": 70,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/237.png",
-        "img_sprite": imagurl + "/237.png"
+        "img_default": imagurl+"/other/official-artwork/237.png",
+        "img_sprite": imagurl+"/237.png"
     },
     {
         "dex": 238,
@@ -3091,8 +3091,8 @@ var data = [
         "special_defense": 65,
         "speed": 65,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/238.png",
-        "img_sprite": imagurl + "/238.png"
+        "img_default": imagurl+"/other/official-artwork/238.png",
+        "img_sprite": imagurl+"/238.png"
     },
     {
         "dex": 239,
@@ -3104,8 +3104,8 @@ var data = [
         "special_defense": 55,
         "speed": 95,
         "best": 360,
-        "img_default": imagurl + "/other/official-artwork/239.png",
-        "img_sprite": imagurl + "/239.png"
+        "img_default": imagurl+"/other/official-artwork/239.png",
+        "img_sprite": imagurl+"/239.png"
     },
     {
         "dex": 240,
@@ -3117,8 +3117,8 @@ var data = [
         "special_defense": 55,
         "speed": 83,
         "best": 365,
-        "img_default": imagurl + "/other/official-artwork/240.png",
-        "img_sprite": imagurl + "/240.png"
+        "img_default": imagurl+"/other/official-artwork/240.png",
+        "img_sprite": imagurl+"/240.png"
     },
     {
         "dex": 241,
@@ -3130,8 +3130,8 @@ var data = [
         "special_defense": 70,
         "speed": 100,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/241.png",
-        "img_sprite": imagurl + "/241.png"
+        "img_default": imagurl+"/other/official-artwork/241.png",
+        "img_sprite": imagurl+"/241.png"
     },
     {
         "dex": 242,
@@ -3143,8 +3143,8 @@ var data = [
         "special_defense": 135,
         "speed": 55,
         "best": 540,
-        "img_default": imagurl + "/other/official-artwork/242.png",
-        "img_sprite": imagurl + "/242.png"
+        "img_default": imagurl+"/other/official-artwork/242.png",
+        "img_sprite": imagurl+"/242.png"
     },
     {
         "dex": 243,
@@ -3156,8 +3156,8 @@ var data = [
         "special_defense": 100,
         "speed": 115,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/243.png",
-        "img_sprite": imagurl + "/243.png"
+        "img_default": imagurl+"/other/official-artwork/243.png",
+        "img_sprite": imagurl+"/243.png"
     },
     {
         "dex": 244,
@@ -3169,8 +3169,8 @@ var data = [
         "special_defense": 75,
         "speed": 100,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/244.png",
-        "img_sprite": imagurl + "/244.png"
+        "img_default": imagurl+"/other/official-artwork/244.png",
+        "img_sprite": imagurl+"/244.png"
     },
     {
         "dex": 245,
@@ -3182,8 +3182,8 @@ var data = [
         "special_defense": 115,
         "speed": 85,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/245.png",
-        "img_sprite": imagurl + "/245.png"
+        "img_default": imagurl+"/other/official-artwork/245.png",
+        "img_sprite": imagurl+"/245.png"
     },
     {
         "dex": 246,
@@ -3195,8 +3195,8 @@ var data = [
         "special_defense": 50,
         "speed": 41,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/246.png",
-        "img_sprite": imagurl + "/246.png"
+        "img_default": imagurl+"/other/official-artwork/246.png",
+        "img_sprite": imagurl+"/246.png"
     },
     {
         "dex": 247,
@@ -3208,8 +3208,8 @@ var data = [
         "special_defense": 70,
         "speed": 51,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/247.png",
-        "img_sprite": imagurl + "/247.png"
+        "img_default": imagurl+"/other/official-artwork/247.png",
+        "img_sprite": imagurl+"/247.png"
     },
     {
         "dex": 248,
@@ -3221,8 +3221,8 @@ var data = [
         "special_defense": 100,
         "speed": 61,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/248.png",
-        "img_sprite": imagurl + "/248.png"
+        "img_default": imagurl+"/other/official-artwork/248.png",
+        "img_sprite": imagurl+"/248.png"
     },
     {
         "dex": 249,
@@ -3234,8 +3234,8 @@ var data = [
         "special_defense": 154,
         "speed": 110,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/249.png",
-        "img_sprite": imagurl + "/249.png"
+        "img_default": imagurl+"/other/official-artwork/249.png",
+        "img_sprite": imagurl+"/249.png"
     },
     {
         "dex": 250,
@@ -3247,8 +3247,8 @@ var data = [
         "special_defense": 154,
         "speed": 90,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/250.png",
-        "img_sprite": imagurl + "/250.png"
+        "img_default": imagurl+"/other/official-artwork/250.png",
+        "img_sprite": imagurl+"/250.png"
     },
     {
         "dex": 251,
@@ -3260,8 +3260,8 @@ var data = [
         "special_defense": 100,
         "speed": 100,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/251.png",
-        "img_sprite": imagurl + "/251.png"
+        "img_default": imagurl+"/other/official-artwork/251.png",
+        "img_sprite": imagurl+"/251.png"
     },
     {
         "dex": 252,
@@ -3273,8 +3273,8 @@ var data = [
         "special_defense": 55,
         "speed": 70,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/252.png",
-        "img_sprite": imagurl + "/252.png"
+        "img_default": imagurl+"/other/official-artwork/252.png",
+        "img_sprite": imagurl+"/252.png"
     },
     {
         "dex": 253,
@@ -3286,8 +3286,8 @@ var data = [
         "special_defense": 65,
         "speed": 95,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/253.png",
-        "img_sprite": imagurl + "/253.png"
+        "img_default": imagurl+"/other/official-artwork/253.png",
+        "img_sprite": imagurl+"/253.png"
     },
     {
         "dex": 254,
@@ -3299,8 +3299,8 @@ var data = [
         "special_defense": 85,
         "speed": 120,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/254.png",
-        "img_sprite": imagurl + "/254.png"
+        "img_default": imagurl+"/other/official-artwork/254.png",
+        "img_sprite": imagurl+"/254.png"
     },
     {
         "dex": 255,
@@ -3312,8 +3312,8 @@ var data = [
         "special_defense": 50,
         "speed": 45,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/255.png",
-        "img_sprite": imagurl + "/255.png"
+        "img_default": imagurl+"/other/official-artwork/255.png",
+        "img_sprite": imagurl+"/255.png"
     },
     {
         "dex": 256,
@@ -3325,8 +3325,8 @@ var data = [
         "special_defense": 60,
         "speed": 55,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/256.png",
-        "img_sprite": imagurl + "/256.png"
+        "img_default": imagurl+"/other/official-artwork/256.png",
+        "img_sprite": imagurl+"/256.png"
     },
     {
         "dex": 257,
@@ -3338,8 +3338,8 @@ var data = [
         "special_defense": 70,
         "speed": 80,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/257.png",
-        "img_sprite": imagurl + "/257.png"
+        "img_default": imagurl+"/other/official-artwork/257.png",
+        "img_sprite": imagurl+"/257.png"
     },
     {
         "dex": 258,
@@ -3351,8 +3351,8 @@ var data = [
         "special_defense": 50,
         "speed": 40,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/258.png",
-        "img_sprite": imagurl + "/258.png"
+        "img_default": imagurl+"/other/official-artwork/258.png",
+        "img_sprite": imagurl+"/258.png"
     },
     {
         "dex": 259,
@@ -3364,8 +3364,8 @@ var data = [
         "special_defense": 70,
         "speed": 50,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/259.png",
-        "img_sprite": imagurl + "/259.png"
+        "img_default": imagurl+"/other/official-artwork/259.png",
+        "img_sprite": imagurl+"/259.png"
     },
     {
         "dex": 260,
@@ -3377,8 +3377,8 @@ var data = [
         "special_defense": 90,
         "speed": 60,
         "best": 535,
-        "img_default": imagurl + "/other/official-artwork/260.png",
-        "img_sprite": imagurl + "/260.png"
+        "img_default": imagurl+"/other/official-artwork/260.png",
+        "img_sprite": imagurl+"/260.png"
     },
     {
         "dex": 261,
@@ -3390,8 +3390,8 @@ var data = [
         "special_defense": 30,
         "speed": 35,
         "best": 220,
-        "img_default": imagurl + "/other/official-artwork/261.png",
-        "img_sprite": imagurl + "/261.png"
+        "img_default": imagurl+"/other/official-artwork/261.png",
+        "img_sprite": imagurl+"/261.png"
     },
     {
         "dex": 262,
@@ -3403,8 +3403,8 @@ var data = [
         "special_defense": 60,
         "speed": 70,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/262.png",
-        "img_sprite": imagurl + "/262.png"
+        "img_default": imagurl+"/other/official-artwork/262.png",
+        "img_sprite": imagurl+"/262.png"
     },
     {
         "dex": 263,
@@ -3416,8 +3416,8 @@ var data = [
         "special_defense": 41,
         "speed": 60,
         "best": 240,
-        "img_default": imagurl + "/other/official-artwork/263.png",
-        "img_sprite": imagurl + "/263.png"
+        "img_default": imagurl+"/other/official-artwork/263.png",
+        "img_sprite": imagurl+"/263.png"
     },
     {
         "dex": 264,
@@ -3429,8 +3429,8 @@ var data = [
         "special_defense": 61,
         "speed": 100,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/264.png",
-        "img_sprite": imagurl + "/264.png"
+        "img_default": imagurl+"/other/official-artwork/264.png",
+        "img_sprite": imagurl+"/264.png"
     },
     {
         "dex": 265,
@@ -3442,8 +3442,8 @@ var data = [
         "special_defense": 30,
         "speed": 20,
         "best": 195,
-        "img_default": imagurl + "/other/official-artwork/265.png",
-        "img_sprite": imagurl + "/265.png"
+        "img_default": imagurl+"/other/official-artwork/265.png",
+        "img_sprite": imagurl+"/265.png"
     },
     {
         "dex": 266,
@@ -3455,8 +3455,8 @@ var data = [
         "special_defense": 25,
         "speed": 15,
         "best": 205,
-        "img_default": imagurl + "/other/official-artwork/266.png",
-        "img_sprite": imagurl + "/266.png"
+        "img_default": imagurl+"/other/official-artwork/266.png",
+        "img_sprite": imagurl+"/266.png"
     },
     {
         "dex": 267,
@@ -3468,8 +3468,8 @@ var data = [
         "special_defense": 50,
         "speed": 65,
         "best": 395,
-        "img_default": imagurl + "/other/official-artwork/267.png",
-        "img_sprite": imagurl + "/267.png"
+        "img_default": imagurl+"/other/official-artwork/267.png",
+        "img_sprite": imagurl+"/267.png"
     },
     {
         "dex": 268,
@@ -3481,8 +3481,8 @@ var data = [
         "special_defense": 25,
         "speed": 15,
         "best": 205,
-        "img_default": imagurl + "/other/official-artwork/268.png",
-        "img_sprite": imagurl + "/268.png"
+        "img_default": imagurl+"/other/official-artwork/268.png",
+        "img_sprite": imagurl+"/268.png"
     },
     {
         "dex": 269,
@@ -3494,8 +3494,8 @@ var data = [
         "special_defense": 90,
         "speed": 65,
         "best": 385,
-        "img_default": imagurl + "/other/official-artwork/269.png",
-        "img_sprite": imagurl + "/269.png"
+        "img_default": imagurl+"/other/official-artwork/269.png",
+        "img_sprite": imagurl+"/269.png"
     },
     {
         "dex": 270,
@@ -3507,8 +3507,8 @@ var data = [
         "special_defense": 50,
         "speed": 30,
         "best": 220,
-        "img_default": imagurl + "/other/official-artwork/270.png",
-        "img_sprite": imagurl + "/270.png"
+        "img_default": imagurl+"/other/official-artwork/270.png",
+        "img_sprite": imagurl+"/270.png"
     },
     {
         "dex": 271,
@@ -3520,8 +3520,8 @@ var data = [
         "special_defense": 70,
         "speed": 50,
         "best": 340,
-        "img_default": imagurl + "/other/official-artwork/271.png",
-        "img_sprite": imagurl + "/271.png"
+        "img_default": imagurl+"/other/official-artwork/271.png",
+        "img_sprite": imagurl+"/271.png"
     },
     {
         "dex": 272,
@@ -3533,8 +3533,8 @@ var data = [
         "special_defense": 100,
         "speed": 70,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/272.png",
-        "img_sprite": imagurl + "/272.png"
+        "img_default": imagurl+"/other/official-artwork/272.png",
+        "img_sprite": imagurl+"/272.png"
     },
     {
         "dex": 273,
@@ -3546,8 +3546,8 @@ var data = [
         "special_defense": 30,
         "speed": 30,
         "best": 220,
-        "img_default": imagurl + "/other/official-artwork/273.png",
-        "img_sprite": imagurl + "/273.png"
+        "img_default": imagurl+"/other/official-artwork/273.png",
+        "img_sprite": imagurl+"/273.png"
     },
     {
         "dex": 274,
@@ -3559,8 +3559,8 @@ var data = [
         "special_defense": 40,
         "speed": 60,
         "best": 340,
-        "img_default": imagurl + "/other/official-artwork/274.png",
-        "img_sprite": imagurl + "/274.png"
+        "img_default": imagurl+"/other/official-artwork/274.png",
+        "img_sprite": imagurl+"/274.png"
     },
     {
         "dex": 275,
@@ -3572,8 +3572,8 @@ var data = [
         "special_defense": 60,
         "speed": 80,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/275.png",
-        "img_sprite": imagurl + "/275.png"
+        "img_default": imagurl+"/other/official-artwork/275.png",
+        "img_sprite": imagurl+"/275.png"
     },
     {
         "dex": 276,
@@ -3585,8 +3585,8 @@ var data = [
         "special_defense": 30,
         "speed": 85,
         "best": 270,
-        "img_default": imagurl + "/other/official-artwork/276.png",
-        "img_sprite": imagurl + "/276.png"
+        "img_default": imagurl+"/other/official-artwork/276.png",
+        "img_sprite": imagurl+"/276.png"
     },
     {
         "dex": 277,
@@ -3598,8 +3598,8 @@ var data = [
         "special_defense": 50,
         "speed": 125,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/277.png",
-        "img_sprite": imagurl + "/277.png"
+        "img_default": imagurl+"/other/official-artwork/277.png",
+        "img_sprite": imagurl+"/277.png"
     },
     {
         "dex": 278,
@@ -3611,8 +3611,8 @@ var data = [
         "special_defense": 30,
         "speed": 85,
         "best": 270,
-        "img_default": imagurl + "/other/official-artwork/278.png",
-        "img_sprite": imagurl + "/278.png"
+        "img_default": imagurl+"/other/official-artwork/278.png",
+        "img_sprite": imagurl+"/278.png"
     },
     {
         "dex": 279,
@@ -3624,8 +3624,8 @@ var data = [
         "special_defense": 70,
         "speed": 65,
         "best": 440,
-        "img_default": imagurl + "/other/official-artwork/279.png",
-        "img_sprite": imagurl + "/279.png"
+        "img_default": imagurl+"/other/official-artwork/279.png",
+        "img_sprite": imagurl+"/279.png"
     },
     {
         "dex": 280,
@@ -3637,8 +3637,8 @@ var data = [
         "special_defense": 35,
         "speed": 40,
         "best": 198,
-        "img_default": imagurl + "/other/official-artwork/280.png",
-        "img_sprite": imagurl + "/280.png"
+        "img_default": imagurl+"/other/official-artwork/280.png",
+        "img_sprite": imagurl+"/280.png"
     },
     {
         "dex": 281,
@@ -3650,8 +3650,8 @@ var data = [
         "special_defense": 55,
         "speed": 50,
         "best": 278,
-        "img_default": imagurl + "/other/official-artwork/281.png",
-        "img_sprite": imagurl + "/281.png"
+        "img_default": imagurl+"/other/official-artwork/281.png",
+        "img_sprite": imagurl+"/281.png"
     },
     {
         "dex": 282,
@@ -3663,8 +3663,8 @@ var data = [
         "special_defense": 115,
         "speed": 80,
         "best": 518,
-        "img_default": imagurl + "/other/official-artwork/282.png",
-        "img_sprite": imagurl + "/282.png"
+        "img_default": imagurl+"/other/official-artwork/282.png",
+        "img_sprite": imagurl+"/282.png"
     },
     {
         "dex": 283,
@@ -3676,8 +3676,8 @@ var data = [
         "special_defense": 52,
         "speed": 65,
         "best": 269,
-        "img_default": imagurl + "/other/official-artwork/283.png",
-        "img_sprite": imagurl + "/283.png"
+        "img_default": imagurl+"/other/official-artwork/283.png",
+        "img_sprite": imagurl+"/283.png"
     },
     {
         "dex": 284,
@@ -3689,8 +3689,8 @@ var data = [
         "special_defense": 82,
         "speed": 80,
         "best": 454,
-        "img_default": imagurl + "/other/official-artwork/284.png",
-        "img_sprite": imagurl + "/284.png"
+        "img_default": imagurl+"/other/official-artwork/284.png",
+        "img_sprite": imagurl+"/284.png"
     },
     {
         "dex": 285,
@@ -3702,8 +3702,8 @@ var data = [
         "special_defense": 60,
         "speed": 35,
         "best": 295,
-        "img_default": imagurl + "/other/official-artwork/285.png",
-        "img_sprite": imagurl + "/285.png"
+        "img_default": imagurl+"/other/official-artwork/285.png",
+        "img_sprite": imagurl+"/285.png"
     },
     {
         "dex": 286,
@@ -3715,8 +3715,8 @@ var data = [
         "special_defense": 60,
         "speed": 70,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/286.png",
-        "img_sprite": imagurl + "/286.png"
+        "img_default": imagurl+"/other/official-artwork/286.png",
+        "img_sprite": imagurl+"/286.png"
     },
     {
         "dex": 287,
@@ -3728,8 +3728,8 @@ var data = [
         "special_defense": 35,
         "speed": 30,
         "best": 280,
-        "img_default": imagurl + "/other/official-artwork/287.png",
-        "img_sprite": imagurl + "/287.png"
+        "img_default": imagurl+"/other/official-artwork/287.png",
+        "img_sprite": imagurl+"/287.png"
     },
     {
         "dex": 288,
@@ -3741,8 +3741,8 @@ var data = [
         "special_defense": 55,
         "speed": 90,
         "best": 440,
-        "img_default": imagurl + "/other/official-artwork/288.png",
-        "img_sprite": imagurl + "/288.png"
+        "img_default": imagurl+"/other/official-artwork/288.png",
+        "img_sprite": imagurl+"/288.png"
     },
     {
         "dex": 289,
@@ -3754,8 +3754,8 @@ var data = [
         "special_defense": 65,
         "speed": 100,
         "best": 670,
-        "img_default": imagurl + "/other/official-artwork/289.png",
-        "img_sprite": imagurl + "/289.png"
+        "img_default": imagurl+"/other/official-artwork/289.png",
+        "img_sprite": imagurl+"/289.png"
     },
     {
         "dex": 290,
@@ -3767,8 +3767,8 @@ var data = [
         "special_defense": 30,
         "speed": 40,
         "best": 266,
-        "img_default": imagurl + "/other/official-artwork/290.png",
-        "img_sprite": imagurl + "/290.png"
+        "img_default": imagurl+"/other/official-artwork/290.png",
+        "img_sprite": imagurl+"/290.png"
     },
     {
         "dex": 291,
@@ -3780,8 +3780,8 @@ var data = [
         "special_defense": 50,
         "speed": 160,
         "best": 456,
-        "img_default": imagurl + "/other/official-artwork/291.png",
-        "img_sprite": imagurl + "/291.png"
+        "img_default": imagurl+"/other/official-artwork/291.png",
+        "img_sprite": imagurl+"/291.png"
     },
     {
         "dex": 292,
@@ -3793,8 +3793,8 @@ var data = [
         "special_defense": 30,
         "speed": 40,
         "best": 236,
-        "img_default": imagurl + "/other/official-artwork/292.png",
-        "img_sprite": imagurl + "/292.png"
+        "img_default": imagurl+"/other/official-artwork/292.png",
+        "img_sprite": imagurl+"/292.png"
     },
     {
         "dex": 293,
@@ -3806,8 +3806,8 @@ var data = [
         "special_defense": 23,
         "speed": 28,
         "best": 240,
-        "img_default": imagurl + "/other/official-artwork/293.png",
-        "img_sprite": imagurl + "/293.png"
+        "img_default": imagurl+"/other/official-artwork/293.png",
+        "img_sprite": imagurl+"/293.png"
     },
     {
         "dex": 294,
@@ -3819,8 +3819,8 @@ var data = [
         "special_defense": 43,
         "speed": 48,
         "best": 360,
-        "img_default": imagurl + "/other/official-artwork/294.png",
-        "img_sprite": imagurl + "/294.png"
+        "img_default": imagurl+"/other/official-artwork/294.png",
+        "img_sprite": imagurl+"/294.png"
     },
     {
         "dex": 295,
@@ -3832,8 +3832,8 @@ var data = [
         "special_defense": 73,
         "speed": 68,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/295.png",
-        "img_sprite": imagurl + "/295.png"
+        "img_default": imagurl+"/other/official-artwork/295.png",
+        "img_sprite": imagurl+"/295.png"
     },
     {
         "dex": 296,
@@ -3845,8 +3845,8 @@ var data = [
         "special_defense": 30,
         "speed": 25,
         "best": 237,
-        "img_default": imagurl + "/other/official-artwork/296.png",
-        "img_sprite": imagurl + "/296.png"
+        "img_default": imagurl+"/other/official-artwork/296.png",
+        "img_sprite": imagurl+"/296.png"
     },
     {
         "dex": 297,
@@ -3858,8 +3858,8 @@ var data = [
         "special_defense": 60,
         "speed": 50,
         "best": 474,
-        "img_default": imagurl + "/other/official-artwork/297.png",
-        "img_sprite": imagurl + "/297.png"
+        "img_default": imagurl+"/other/official-artwork/297.png",
+        "img_sprite": imagurl+"/297.png"
     },
     {
         "dex": 298,
@@ -3871,8 +3871,8 @@ var data = [
         "special_defense": 40,
         "speed": 20,
         "best": 190,
-        "img_default": imagurl + "/other/official-artwork/298.png",
-        "img_sprite": imagurl + "/298.png"
+        "img_default": imagurl+"/other/official-artwork/298.png",
+        "img_sprite": imagurl+"/298.png"
     },
     {
         "dex": 299,
@@ -3884,8 +3884,8 @@ var data = [
         "special_defense": 90,
         "speed": 30,
         "best": 375,
-        "img_default": imagurl + "/other/official-artwork/299.png",
-        "img_sprite": imagurl + "/299.png"
+        "img_default": imagurl+"/other/official-artwork/299.png",
+        "img_sprite": imagurl+"/299.png"
     },
     {
         "dex": 300,
@@ -3897,8 +3897,8 @@ var data = [
         "special_defense": 35,
         "speed": 50,
         "best": 260,
-        "img_default": imagurl + "/other/official-artwork/300.png",
-        "img_sprite": imagurl + "/300.png"
+        "img_default": imagurl+"/other/official-artwork/300.png",
+        "img_sprite": imagurl+"/300.png"
     },
     {
         "dex": 301,
@@ -3910,8 +3910,8 @@ var data = [
         "special_defense": 55,
         "speed": 90,
         "best": 400,
-        "img_default": imagurl + "/other/official-artwork/301.png",
-        "img_sprite": imagurl + "/301.png"
+        "img_default": imagurl+"/other/official-artwork/301.png",
+        "img_sprite": imagurl+"/301.png"
     },
     {
         "dex": 302,
@@ -3923,8 +3923,8 @@ var data = [
         "special_defense": 65,
         "speed": 50,
         "best": 380,
-        "img_default": imagurl + "/other/official-artwork/302.png",
-        "img_sprite": imagurl + "/302.png"
+        "img_default": imagurl+"/other/official-artwork/302.png",
+        "img_sprite": imagurl+"/302.png"
     },
     {
         "dex": 303,
@@ -3936,8 +3936,8 @@ var data = [
         "special_defense": 55,
         "speed": 50,
         "best": 380,
-        "img_default": imagurl + "/other/official-artwork/303.png",
-        "img_sprite": imagurl + "/303.png"
+        "img_default": imagurl+"/other/official-artwork/303.png",
+        "img_sprite": imagurl+"/303.png"
     },
     {
         "dex": 304,
@@ -3949,8 +3949,8 @@ var data = [
         "special_defense": 40,
         "speed": 30,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/304.png",
-        "img_sprite": imagurl + "/304.png"
+        "img_default": imagurl+"/other/official-artwork/304.png",
+        "img_sprite": imagurl+"/304.png"
     },
     {
         "dex": 305,
@@ -3962,8 +3962,8 @@ var data = [
         "special_defense": 50,
         "speed": 40,
         "best": 430,
-        "img_default": imagurl + "/other/official-artwork/305.png",
-        "img_sprite": imagurl + "/305.png"
+        "img_default": imagurl+"/other/official-artwork/305.png",
+        "img_sprite": imagurl+"/305.png"
     },
     {
         "dex": 306,
@@ -3975,8 +3975,8 @@ var data = [
         "special_defense": 60,
         "speed": 50,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/306.png",
-        "img_sprite": imagurl + "/306.png"
+        "img_default": imagurl+"/other/official-artwork/306.png",
+        "img_sprite": imagurl+"/306.png"
     },
     {
         "dex": 307,
@@ -3988,8 +3988,8 @@ var data = [
         "special_defense": 55,
         "speed": 60,
         "best": 280,
-        "img_default": imagurl + "/other/official-artwork/307.png",
-        "img_sprite": imagurl + "/307.png"
+        "img_default": imagurl+"/other/official-artwork/307.png",
+        "img_sprite": imagurl+"/307.png"
     },
     {
         "dex": 308,
@@ -4001,8 +4001,8 @@ var data = [
         "special_defense": 75,
         "speed": 80,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/308.png",
-        "img_sprite": imagurl + "/308.png"
+        "img_default": imagurl+"/other/official-artwork/308.png",
+        "img_sprite": imagurl+"/308.png"
     },
     {
         "dex": 309,
@@ -4014,8 +4014,8 @@ var data = [
         "special_defense": 40,
         "speed": 65,
         "best": 295,
-        "img_default": imagurl + "/other/official-artwork/309.png",
-        "img_sprite": imagurl + "/309.png"
+        "img_default": imagurl+"/other/official-artwork/309.png",
+        "img_sprite": imagurl+"/309.png"
     },
     {
         "dex": 310,
@@ -4027,8 +4027,8 @@ var data = [
         "special_defense": 60,
         "speed": 105,
         "best": 475,
-        "img_default": imagurl + "/other/official-artwork/310.png",
-        "img_sprite": imagurl + "/310.png"
+        "img_default": imagurl+"/other/official-artwork/310.png",
+        "img_sprite": imagurl+"/310.png"
     },
     {
         "dex": 311,
@@ -4040,8 +4040,8 @@ var data = [
         "special_defense": 75,
         "speed": 95,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/311.png",
-        "img_sprite": imagurl + "/311.png"
+        "img_default": imagurl+"/other/official-artwork/311.png",
+        "img_sprite": imagurl+"/311.png"
     },
     {
         "dex": 312,
@@ -4053,8 +4053,8 @@ var data = [
         "special_defense": 85,
         "speed": 95,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/312.png",
-        "img_sprite": imagurl + "/312.png"
+        "img_default": imagurl+"/other/official-artwork/312.png",
+        "img_sprite": imagurl+"/312.png"
     },
     {
         "dex": 313,
@@ -4066,8 +4066,8 @@ var data = [
         "special_defense": 85,
         "speed": 85,
         "best": 430,
-        "img_default": imagurl + "/other/official-artwork/313.png",
-        "img_sprite": imagurl + "/313.png"
+        "img_default": imagurl+"/other/official-artwork/313.png",
+        "img_sprite": imagurl+"/313.png"
     },
     {
         "dex": 314,
@@ -4079,8 +4079,8 @@ var data = [
         "special_defense": 85,
         "speed": 85,
         "best": 430,
-        "img_default": imagurl + "/other/official-artwork/314.png",
-        "img_sprite": imagurl + "/314.png"
+        "img_default": imagurl+"/other/official-artwork/314.png",
+        "img_sprite": imagurl+"/314.png"
     },
     {
         "dex": 315,
@@ -4092,8 +4092,8 @@ var data = [
         "special_defense": 80,
         "speed": 65,
         "best": 400,
-        "img_default": imagurl + "/other/official-artwork/315.png",
-        "img_sprite": imagurl + "/315.png"
+        "img_default": imagurl+"/other/official-artwork/315.png",
+        "img_sprite": imagurl+"/315.png"
     },
     {
         "dex": 316,
@@ -4105,8 +4105,8 @@ var data = [
         "special_defense": 53,
         "speed": 40,
         "best": 302,
-        "img_default": imagurl + "/other/official-artwork/316.png",
-        "img_sprite": imagurl + "/316.png"
+        "img_default": imagurl+"/other/official-artwork/316.png",
+        "img_sprite": imagurl+"/316.png"
     },
     {
         "dex": 317,
@@ -4118,8 +4118,8 @@ var data = [
         "special_defense": 83,
         "speed": 55,
         "best": 467,
-        "img_default": imagurl + "/other/official-artwork/317.png",
-        "img_sprite": imagurl + "/317.png"
+        "img_default": imagurl+"/other/official-artwork/317.png",
+        "img_sprite": imagurl+"/317.png"
     },
     {
         "dex": 318,
@@ -4131,8 +4131,8 @@ var data = [
         "special_defense": 20,
         "speed": 65,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/318.png",
-        "img_sprite": imagurl + "/318.png"
+        "img_default": imagurl+"/other/official-artwork/318.png",
+        "img_sprite": imagurl+"/318.png"
     },
     {
         "dex": 319,
@@ -4144,8 +4144,8 @@ var data = [
         "special_defense": 40,
         "speed": 95,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/319.png",
-        "img_sprite": imagurl + "/319.png"
+        "img_default": imagurl+"/other/official-artwork/319.png",
+        "img_sprite": imagurl+"/319.png"
     },
     {
         "dex": 320,
@@ -4157,8 +4157,8 @@ var data = [
         "special_defense": 35,
         "speed": 60,
         "best": 400,
-        "img_default": imagurl + "/other/official-artwork/320.png",
-        "img_sprite": imagurl + "/320.png"
+        "img_default": imagurl+"/other/official-artwork/320.png",
+        "img_sprite": imagurl+"/320.png"
     },
     {
         "dex": 321,
@@ -4170,8 +4170,8 @@ var data = [
         "special_defense": 45,
         "speed": 60,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/321.png",
-        "img_sprite": imagurl + "/321.png"
+        "img_default": imagurl+"/other/official-artwork/321.png",
+        "img_sprite": imagurl+"/321.png"
     },
     {
         "dex": 322,
@@ -4183,8 +4183,8 @@ var data = [
         "special_defense": 45,
         "speed": 35,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/322.png",
-        "img_sprite": imagurl + "/322.png"
+        "img_default": imagurl+"/other/official-artwork/322.png",
+        "img_sprite": imagurl+"/322.png"
     },
     {
         "dex": 323,
@@ -4196,8 +4196,8 @@ var data = [
         "special_defense": 75,
         "speed": 40,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/323.png",
-        "img_sprite": imagurl + "/323.png"
+        "img_default": imagurl+"/other/official-artwork/323.png",
+        "img_sprite": imagurl+"/323.png"
     },
     {
         "dex": 324,
@@ -4209,8 +4209,8 @@ var data = [
         "special_defense": 70,
         "speed": 20,
         "best": 470,
-        "img_default": imagurl + "/other/official-artwork/324.png",
-        "img_sprite": imagurl + "/324.png"
+        "img_default": imagurl+"/other/official-artwork/324.png",
+        "img_sprite": imagurl+"/324.png"
     },
     {
         "dex": 325,
@@ -4222,8 +4222,8 @@ var data = [
         "special_defense": 80,
         "speed": 60,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/325.png",
-        "img_sprite": imagurl + "/325.png"
+        "img_default": imagurl+"/other/official-artwork/325.png",
+        "img_sprite": imagurl+"/325.png"
     },
     {
         "dex": 326,
@@ -4235,8 +4235,8 @@ var data = [
         "special_defense": 110,
         "speed": 80,
         "best": 470,
-        "img_default": imagurl + "/other/official-artwork/326.png",
-        "img_sprite": imagurl + "/326.png"
+        "img_default": imagurl+"/other/official-artwork/326.png",
+        "img_sprite": imagurl+"/326.png"
     },
     {
         "dex": 327,
@@ -4248,8 +4248,8 @@ var data = [
         "special_defense": 60,
         "speed": 60,
         "best": 360,
-        "img_default": imagurl + "/other/official-artwork/327.png",
-        "img_sprite": imagurl + "/327.png"
+        "img_default": imagurl+"/other/official-artwork/327.png",
+        "img_sprite": imagurl+"/327.png"
     },
     {
         "dex": 328,
@@ -4261,8 +4261,8 @@ var data = [
         "special_defense": 45,
         "speed": 10,
         "best": 290,
-        "img_default": imagurl + "/other/official-artwork/328.png",
-        "img_sprite": imagurl + "/328.png"
+        "img_default": imagurl+"/other/official-artwork/328.png",
+        "img_sprite": imagurl+"/328.png"
     },
     {
         "dex": 329,
@@ -4274,8 +4274,8 @@ var data = [
         "special_defense": 50,
         "speed": 70,
         "best": 340,
-        "img_default": imagurl + "/other/official-artwork/329.png",
-        "img_sprite": imagurl + "/329.png"
+        "img_default": imagurl+"/other/official-artwork/329.png",
+        "img_sprite": imagurl+"/329.png"
     },
     {
         "dex": 330,
@@ -4287,8 +4287,8 @@ var data = [
         "special_defense": 80,
         "speed": 100,
         "best": 520,
-        "img_default": imagurl + "/other/official-artwork/330.png",
-        "img_sprite": imagurl + "/330.png"
+        "img_default": imagurl+"/other/official-artwork/330.png",
+        "img_sprite": imagurl+"/330.png"
     },
     {
         "dex": 331,
@@ -4300,8 +4300,8 @@ var data = [
         "special_defense": 40,
         "speed": 35,
         "best": 335,
-        "img_default": imagurl + "/other/official-artwork/331.png",
-        "img_sprite": imagurl + "/331.png"
+        "img_default": imagurl+"/other/official-artwork/331.png",
+        "img_sprite": imagurl+"/331.png"
     },
     {
         "dex": 332,
@@ -4313,8 +4313,8 @@ var data = [
         "special_defense": 60,
         "speed": 55,
         "best": 475,
-        "img_default": imagurl + "/other/official-artwork/332.png",
-        "img_sprite": imagurl + "/332.png"
+        "img_default": imagurl+"/other/official-artwork/332.png",
+        "img_sprite": imagurl+"/332.png"
     },
     {
         "dex": 333,
@@ -4326,8 +4326,8 @@ var data = [
         "special_defense": 75,
         "speed": 50,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/333.png",
-        "img_sprite": imagurl + "/333.png"
+        "img_default": imagurl+"/other/official-artwork/333.png",
+        "img_sprite": imagurl+"/333.png"
     },
     {
         "dex": 334,
@@ -4339,8 +4339,8 @@ var data = [
         "special_defense": 105,
         "speed": 80,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/334.png",
-        "img_sprite": imagurl + "/334.png"
+        "img_default": imagurl+"/other/official-artwork/334.png",
+        "img_sprite": imagurl+"/334.png"
     },
     {
         "dex": 335,
@@ -4352,8 +4352,8 @@ var data = [
         "special_defense": 60,
         "speed": 90,
         "best": 458,
-        "img_default": imagurl + "/other/official-artwork/335.png",
-        "img_sprite": imagurl + "/335.png"
+        "img_default": imagurl+"/other/official-artwork/335.png",
+        "img_sprite": imagurl+"/335.png"
     },
     {
         "dex": 336,
@@ -4365,8 +4365,8 @@ var data = [
         "special_defense": 60,
         "speed": 65,
         "best": 458,
-        "img_default": imagurl + "/other/official-artwork/336.png",
-        "img_sprite": imagurl + "/336.png"
+        "img_default": imagurl+"/other/official-artwork/336.png",
+        "img_sprite": imagurl+"/336.png"
     },
     {
         "dex": 337,
@@ -4378,8 +4378,8 @@ var data = [
         "special_defense": 85,
         "speed": 70,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/337.png",
-        "img_sprite": imagurl + "/337.png"
+        "img_default": imagurl+"/other/official-artwork/337.png",
+        "img_sprite": imagurl+"/337.png"
     },
     {
         "dex": 338,
@@ -4391,8 +4391,8 @@ var data = [
         "special_defense": 65,
         "speed": 70,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/338.png",
-        "img_sprite": imagurl + "/338.png"
+        "img_default": imagurl+"/other/official-artwork/338.png",
+        "img_sprite": imagurl+"/338.png"
     },
     {
         "dex": 339,
@@ -4404,8 +4404,8 @@ var data = [
         "special_defense": 41,
         "speed": 60,
         "best": 288,
-        "img_default": imagurl + "/other/official-artwork/339.png",
-        "img_sprite": imagurl + "/339.png"
+        "img_default": imagurl+"/other/official-artwork/339.png",
+        "img_sprite": imagurl+"/339.png"
     },
     {
         "dex": 340,
@@ -4417,8 +4417,8 @@ var data = [
         "special_defense": 71,
         "speed": 60,
         "best": 468,
-        "img_default": imagurl + "/other/official-artwork/340.png",
-        "img_sprite": imagurl + "/340.png"
+        "img_default": imagurl+"/other/official-artwork/340.png",
+        "img_sprite": imagurl+"/340.png"
     },
     {
         "dex": 341,
@@ -4430,8 +4430,8 @@ var data = [
         "special_defense": 35,
         "speed": 35,
         "best": 308,
-        "img_default": imagurl + "/other/official-artwork/341.png",
-        "img_sprite": imagurl + "/341.png"
+        "img_default": imagurl+"/other/official-artwork/341.png",
+        "img_sprite": imagurl+"/341.png"
     },
     {
         "dex": 342,
@@ -4443,8 +4443,8 @@ var data = [
         "special_defense": 55,
         "speed": 55,
         "best": 468,
-        "img_default": imagurl + "/other/official-artwork/342.png",
-        "img_sprite": imagurl + "/342.png"
+        "img_default": imagurl+"/other/official-artwork/342.png",
+        "img_sprite": imagurl+"/342.png"
     },
     {
         "dex": 343,
@@ -4456,8 +4456,8 @@ var data = [
         "special_defense": 70,
         "speed": 55,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/343.png",
-        "img_sprite": imagurl + "/343.png"
+        "img_default": imagurl+"/other/official-artwork/343.png",
+        "img_sprite": imagurl+"/343.png"
     },
     {
         "dex": 344,
@@ -4469,8 +4469,8 @@ var data = [
         "special_defense": 120,
         "speed": 75,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/344.png",
-        "img_sprite": imagurl + "/344.png"
+        "img_default": imagurl+"/other/official-artwork/344.png",
+        "img_sprite": imagurl+"/344.png"
     },
     {
         "dex": 345,
@@ -4482,8 +4482,8 @@ var data = [
         "special_defense": 87,
         "speed": 23,
         "best": 355,
-        "img_default": imagurl + "/other/official-artwork/345.png",
-        "img_sprite": imagurl + "/345.png"
+        "img_default": imagurl+"/other/official-artwork/345.png",
+        "img_sprite": imagurl+"/345.png"
     },
     {
         "dex": 346,
@@ -4495,8 +4495,8 @@ var data = [
         "special_defense": 107,
         "speed": 43,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/346.png",
-        "img_sprite": imagurl + "/346.png"
+        "img_default": imagurl+"/other/official-artwork/346.png",
+        "img_sprite": imagurl+"/346.png"
     },
     {
         "dex": 347,
@@ -4508,8 +4508,8 @@ var data = [
         "special_defense": 50,
         "speed": 75,
         "best": 355,
-        "img_default": imagurl + "/other/official-artwork/347.png",
-        "img_sprite": imagurl + "/347.png"
+        "img_default": imagurl+"/other/official-artwork/347.png",
+        "img_sprite": imagurl+"/347.png"
     },
     {
         "dex": 348,
@@ -4521,8 +4521,8 @@ var data = [
         "special_defense": 80,
         "speed": 45,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/348.png",
-        "img_sprite": imagurl + "/348.png"
+        "img_default": imagurl+"/other/official-artwork/348.png",
+        "img_sprite": imagurl+"/348.png"
     },
     {
         "dex": 349,
@@ -4534,8 +4534,8 @@ var data = [
         "special_defense": 55,
         "speed": 80,
         "best": 200,
-        "img_default": imagurl + "/other/official-artwork/349.png",
-        "img_sprite": imagurl + "/349.png"
+        "img_default": imagurl+"/other/official-artwork/349.png",
+        "img_sprite": imagurl+"/349.png"
     },
     {
         "dex": 350,
@@ -4547,8 +4547,8 @@ var data = [
         "special_defense": 125,
         "speed": 81,
         "best": 540,
-        "img_default": imagurl + "/other/official-artwork/350.png",
-        "img_sprite": imagurl + "/350.png"
+        "img_default": imagurl+"/other/official-artwork/350.png",
+        "img_sprite": imagurl+"/350.png"
     },
     {
         "dex": 351,
@@ -4560,8 +4560,8 @@ var data = [
         "special_defense": 70,
         "speed": 70,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/351.png",
-        "img_sprite": imagurl + "/351.png"
+        "img_default": imagurl+"/other/official-artwork/351.png",
+        "img_sprite": imagurl+"/351.png"
     },
     {
         "dex": 352,
@@ -4573,8 +4573,8 @@ var data = [
         "special_defense": 120,
         "speed": 40,
         "best": 440,
-        "img_default": imagurl + "/other/official-artwork/352.png",
-        "img_sprite": imagurl + "/352.png"
+        "img_default": imagurl+"/other/official-artwork/352.png",
+        "img_sprite": imagurl+"/352.png"
     },
     {
         "dex": 353,
@@ -4586,8 +4586,8 @@ var data = [
         "special_defense": 33,
         "speed": 45,
         "best": 295,
-        "img_default": imagurl + "/other/official-artwork/353.png",
-        "img_sprite": imagurl + "/353.png"
+        "img_default": imagurl+"/other/official-artwork/353.png",
+        "img_sprite": imagurl+"/353.png"
     },
     {
         "dex": 354,
@@ -4599,8 +4599,8 @@ var data = [
         "special_defense": 63,
         "speed": 65,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/354.png",
-        "img_sprite": imagurl + "/354.png"
+        "img_default": imagurl+"/other/official-artwork/354.png",
+        "img_sprite": imagurl+"/354.png"
     },
     {
         "dex": 355,
@@ -4612,8 +4612,8 @@ var data = [
         "special_defense": 90,
         "speed": 25,
         "best": 295,
-        "img_default": imagurl + "/other/official-artwork/355.png",
-        "img_sprite": imagurl + "/355.png"
+        "img_default": imagurl+"/other/official-artwork/355.png",
+        "img_sprite": imagurl+"/355.png"
     },
     {
         "dex": 356,
@@ -4625,8 +4625,8 @@ var data = [
         "special_defense": 130,
         "speed": 25,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/356.png",
-        "img_sprite": imagurl + "/356.png"
+        "img_default": imagurl+"/other/official-artwork/356.png",
+        "img_sprite": imagurl+"/356.png"
     },
     {
         "dex": 357,
@@ -4638,8 +4638,8 @@ var data = [
         "special_defense": 87,
         "speed": 51,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/357.png",
-        "img_sprite": imagurl + "/357.png"
+        "img_default": imagurl+"/other/official-artwork/357.png",
+        "img_sprite": imagurl+"/357.png"
     },
     {
         "dex": 358,
@@ -4651,8 +4651,8 @@ var data = [
         "special_defense": 90,
         "speed": 65,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/358.png",
-        "img_sprite": imagurl + "/358.png"
+        "img_default": imagurl+"/other/official-artwork/358.png",
+        "img_sprite": imagurl+"/358.png"
     },
     {
         "dex": 359,
@@ -4664,8 +4664,8 @@ var data = [
         "special_defense": 60,
         "speed": 75,
         "best": 465,
-        "img_default": imagurl + "/other/official-artwork/359.png",
-        "img_sprite": imagurl + "/359.png"
+        "img_default": imagurl+"/other/official-artwork/359.png",
+        "img_sprite": imagurl+"/359.png"
     },
     {
         "dex": 360,
@@ -4677,8 +4677,8 @@ var data = [
         "special_defense": 48,
         "speed": 23,
         "best": 260,
-        "img_default": imagurl + "/other/official-artwork/360.png",
-        "img_sprite": imagurl + "/360.png"
+        "img_default": imagurl+"/other/official-artwork/360.png",
+        "img_sprite": imagurl+"/360.png"
     },
     {
         "dex": 361,
@@ -4690,8 +4690,8 @@ var data = [
         "special_defense": 50,
         "speed": 50,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/361.png",
-        "img_sprite": imagurl + "/361.png"
+        "img_default": imagurl+"/other/official-artwork/361.png",
+        "img_sprite": imagurl+"/361.png"
     },
     {
         "dex": 362,
@@ -4703,8 +4703,8 @@ var data = [
         "special_defense": 80,
         "speed": 80,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/362.png",
-        "img_sprite": imagurl + "/362.png"
+        "img_default": imagurl+"/other/official-artwork/362.png",
+        "img_sprite": imagurl+"/362.png"
     },
     {
         "dex": 363,
@@ -4716,8 +4716,8 @@ var data = [
         "special_defense": 50,
         "speed": 25,
         "best": 290,
-        "img_default": imagurl + "/other/official-artwork/363.png",
-        "img_sprite": imagurl + "/363.png"
+        "img_default": imagurl+"/other/official-artwork/363.png",
+        "img_sprite": imagurl+"/363.png"
     },
     {
         "dex": 364,
@@ -4729,8 +4729,8 @@ var data = [
         "special_defense": 70,
         "speed": 45,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/364.png",
-        "img_sprite": imagurl + "/364.png"
+        "img_default": imagurl+"/other/official-artwork/364.png",
+        "img_sprite": imagurl+"/364.png"
     },
     {
         "dex": 365,
@@ -4742,8 +4742,8 @@ var data = [
         "special_defense": 90,
         "speed": 65,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/365.png",
-        "img_sprite": imagurl + "/365.png"
+        "img_default": imagurl+"/other/official-artwork/365.png",
+        "img_sprite": imagurl+"/365.png"
     },
     {
         "dex": 366,
@@ -4755,8 +4755,8 @@ var data = [
         "special_defense": 55,
         "speed": 32,
         "best": 345,
-        "img_default": imagurl + "/other/official-artwork/366.png",
-        "img_sprite": imagurl + "/366.png"
+        "img_default": imagurl+"/other/official-artwork/366.png",
+        "img_sprite": imagurl+"/366.png"
     },
     {
         "dex": 367,
@@ -4768,8 +4768,8 @@ var data = [
         "special_defense": 75,
         "speed": 52,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/367.png",
-        "img_sprite": imagurl + "/367.png"
+        "img_default": imagurl+"/other/official-artwork/367.png",
+        "img_sprite": imagurl+"/367.png"
     },
     {
         "dex": 368,
@@ -4781,8 +4781,8 @@ var data = [
         "special_defense": 75,
         "speed": 52,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/368.png",
-        "img_sprite": imagurl + "/368.png"
+        "img_default": imagurl+"/other/official-artwork/368.png",
+        "img_sprite": imagurl+"/368.png"
     },
     {
         "dex": 369,
@@ -4794,8 +4794,8 @@ var data = [
         "special_defense": 65,
         "speed": 55,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/369.png",
-        "img_sprite": imagurl + "/369.png"
+        "img_default": imagurl+"/other/official-artwork/369.png",
+        "img_sprite": imagurl+"/369.png"
     },
     {
         "dex": 370,
@@ -4807,8 +4807,8 @@ var data = [
         "special_defense": 65,
         "speed": 97,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/370.png",
-        "img_sprite": imagurl + "/370.png"
+        "img_default": imagurl+"/other/official-artwork/370.png",
+        "img_sprite": imagurl+"/370.png"
     },
     {
         "dex": 371,
@@ -4820,8 +4820,8 @@ var data = [
         "special_defense": 30,
         "speed": 50,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/371.png",
-        "img_sprite": imagurl + "/371.png"
+        "img_default": imagurl+"/other/official-artwork/371.png",
+        "img_sprite": imagurl+"/371.png"
     },
     {
         "dex": 372,
@@ -4833,8 +4833,8 @@ var data = [
         "special_defense": 50,
         "speed": 50,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/372.png",
-        "img_sprite": imagurl + "/372.png"
+        "img_default": imagurl+"/other/official-artwork/372.png",
+        "img_sprite": imagurl+"/372.png"
     },
     {
         "dex": 373,
@@ -4846,8 +4846,8 @@ var data = [
         "special_defense": 80,
         "speed": 100,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/373.png",
-        "img_sprite": imagurl + "/373.png"
+        "img_default": imagurl+"/other/official-artwork/373.png",
+        "img_sprite": imagurl+"/373.png"
     },
     {
         "dex": 374,
@@ -4859,8 +4859,8 @@ var data = [
         "special_defense": 60,
         "speed": 30,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/374.png",
-        "img_sprite": imagurl + "/374.png"
+        "img_default": imagurl+"/other/official-artwork/374.png",
+        "img_sprite": imagurl+"/374.png"
     },
     {
         "dex": 375,
@@ -4872,8 +4872,8 @@ var data = [
         "special_defense": 80,
         "speed": 50,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/375.png",
-        "img_sprite": imagurl + "/375.png"
+        "img_default": imagurl+"/other/official-artwork/375.png",
+        "img_sprite": imagurl+"/375.png"
     },
     {
         "dex": 376,
@@ -4885,8 +4885,8 @@ var data = [
         "special_defense": 90,
         "speed": 70,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/376.png",
-        "img_sprite": imagurl + "/376.png"
+        "img_default": imagurl+"/other/official-artwork/376.png",
+        "img_sprite": imagurl+"/376.png"
     },
     {
         "dex": 377,
@@ -4898,8 +4898,8 @@ var data = [
         "special_defense": 100,
         "speed": 50,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/377.png",
-        "img_sprite": imagurl + "/377.png"
+        "img_default": imagurl+"/other/official-artwork/377.png",
+        "img_sprite": imagurl+"/377.png"
     },
     {
         "dex": 378,
@@ -4911,8 +4911,8 @@ var data = [
         "special_defense": 200,
         "speed": 50,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/378.png",
-        "img_sprite": imagurl + "/378.png"
+        "img_default": imagurl+"/other/official-artwork/378.png",
+        "img_sprite": imagurl+"/378.png"
     },
     {
         "dex": 379,
@@ -4924,8 +4924,8 @@ var data = [
         "special_defense": 150,
         "speed": 50,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/379.png",
-        "img_sprite": imagurl + "/379.png"
+        "img_default": imagurl+"/other/official-artwork/379.png",
+        "img_sprite": imagurl+"/379.png"
     },
     {
         "dex": 380,
@@ -4937,8 +4937,8 @@ var data = [
         "special_defense": 130,
         "speed": 110,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/380.png",
-        "img_sprite": imagurl + "/380.png"
+        "img_default": imagurl+"/other/official-artwork/380.png",
+        "img_sprite": imagurl+"/380.png"
     },
     {
         "dex": 381,
@@ -4950,8 +4950,8 @@ var data = [
         "special_defense": 110,
         "speed": 110,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/381.png",
-        "img_sprite": imagurl + "/381.png"
+        "img_default": imagurl+"/other/official-artwork/381.png",
+        "img_sprite": imagurl+"/381.png"
     },
     {
         "dex": 382,
@@ -4963,8 +4963,8 @@ var data = [
         "special_defense": 140,
         "speed": 90,
         "best": 670,
-        "img_default": imagurl + "/other/official-artwork/382.png",
-        "img_sprite": imagurl + "/382.png"
+        "img_default": imagurl+"/other/official-artwork/382.png",
+        "img_sprite": imagurl+"/382.png"
     },
     {
         "dex": 383,
@@ -4976,8 +4976,8 @@ var data = [
         "special_defense": 90,
         "speed": 90,
         "best": 670,
-        "img_default": imagurl + "/other/official-artwork/383.png",
-        "img_sprite": imagurl + "/383.png"
+        "img_default": imagurl+"/other/official-artwork/383.png",
+        "img_sprite": imagurl+"/383.png"
     },
     {
         "dex": 384,
@@ -4989,8 +4989,8 @@ var data = [
         "special_defense": 90,
         "speed": 95,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/384.png",
-        "img_sprite": imagurl + "/384.png"
+        "img_default": imagurl+"/other/official-artwork/384.png",
+        "img_sprite": imagurl+"/384.png"
     },
     {
         "dex": 385,
@@ -5002,12 +5002,12 @@ var data = [
         "special_defense": 100,
         "speed": 100,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/385.png",
-        "img_sprite": imagurl + "/385.png"
+        "img_default": imagurl+"/other/official-artwork/385.png",
+        "img_sprite": imagurl+"/385.png"
     },
     {
         "dex": 386,
-        "name": "Deoxys-normal",
+        "name": "Deoxys",
         "hp": 50,
         "attack": 150,
         "defense": 50,
@@ -5015,8 +5015,8 @@ var data = [
         "special_defense": 50,
         "speed": 150,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/386.png",
-        "img_sprite": imagurl + "/386.png"
+        "img_default": imagurl+"/other/official-artwork/386.png",
+        "img_sprite": imagurl+"/386.png"
     },
     {
         "dex": 387,
@@ -5028,8 +5028,8 @@ var data = [
         "special_defense": 55,
         "speed": 31,
         "best": 318,
-        "img_default": imagurl + "/other/official-artwork/387.png",
-        "img_sprite": imagurl + "/387.png"
+        "img_default": imagurl+"/other/official-artwork/387.png",
+        "img_sprite": imagurl+"/387.png"
     },
     {
         "dex": 388,
@@ -5041,8 +5041,8 @@ var data = [
         "special_defense": 65,
         "speed": 36,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/388.png",
-        "img_sprite": imagurl + "/388.png"
+        "img_default": imagurl+"/other/official-artwork/388.png",
+        "img_sprite": imagurl+"/388.png"
     },
     {
         "dex": 389,
@@ -5054,8 +5054,8 @@ var data = [
         "special_defense": 85,
         "speed": 56,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/389.png",
-        "img_sprite": imagurl + "/389.png"
+        "img_default": imagurl+"/other/official-artwork/389.png",
+        "img_sprite": imagurl+"/389.png"
     },
     {
         "dex": 390,
@@ -5067,8 +5067,8 @@ var data = [
         "special_defense": 44,
         "speed": 61,
         "best": 309,
-        "img_default": imagurl + "/other/official-artwork/390.png",
-        "img_sprite": imagurl + "/390.png"
+        "img_default": imagurl+"/other/official-artwork/390.png",
+        "img_sprite": imagurl+"/390.png"
     },
     {
         "dex": 391,
@@ -5080,8 +5080,8 @@ var data = [
         "special_defense": 52,
         "speed": 81,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/391.png",
-        "img_sprite": imagurl + "/391.png"
+        "img_default": imagurl+"/other/official-artwork/391.png",
+        "img_sprite": imagurl+"/391.png"
     },
     {
         "dex": 392,
@@ -5093,8 +5093,8 @@ var data = [
         "special_defense": 71,
         "speed": 108,
         "best": 534,
-        "img_default": imagurl + "/other/official-artwork/392.png",
-        "img_sprite": imagurl + "/392.png"
+        "img_default": imagurl+"/other/official-artwork/392.png",
+        "img_sprite": imagurl+"/392.png"
     },
     {
         "dex": 393,
@@ -5106,8 +5106,8 @@ var data = [
         "special_defense": 56,
         "speed": 40,
         "best": 314,
-        "img_default": imagurl + "/other/official-artwork/393.png",
-        "img_sprite": imagurl + "/393.png"
+        "img_default": imagurl+"/other/official-artwork/393.png",
+        "img_sprite": imagurl+"/393.png"
     },
     {
         "dex": 394,
@@ -5119,8 +5119,8 @@ var data = [
         "special_defense": 76,
         "speed": 50,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/394.png",
-        "img_sprite": imagurl + "/394.png"
+        "img_default": imagurl+"/other/official-artwork/394.png",
+        "img_sprite": imagurl+"/394.png"
     },
     {
         "dex": 395,
@@ -5132,8 +5132,8 @@ var data = [
         "special_defense": 101,
         "speed": 60,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/395.png",
-        "img_sprite": imagurl + "/395.png"
+        "img_default": imagurl+"/other/official-artwork/395.png",
+        "img_sprite": imagurl+"/395.png"
     },
     {
         "dex": 396,
@@ -5145,8 +5145,8 @@ var data = [
         "special_defense": 30,
         "speed": 60,
         "best": 245,
-        "img_default": imagurl + "/other/official-artwork/396.png",
-        "img_sprite": imagurl + "/396.png"
+        "img_default": imagurl+"/other/official-artwork/396.png",
+        "img_sprite": imagurl+"/396.png"
     },
     {
         "dex": 397,
@@ -5158,8 +5158,8 @@ var data = [
         "special_defense": 40,
         "speed": 80,
         "best": 340,
-        "img_default": imagurl + "/other/official-artwork/397.png",
-        "img_sprite": imagurl + "/397.png"
+        "img_default": imagurl+"/other/official-artwork/397.png",
+        "img_sprite": imagurl+"/397.png"
     },
     {
         "dex": 398,
@@ -5171,8 +5171,8 @@ var data = [
         "special_defense": 60,
         "speed": 100,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/398.png",
-        "img_sprite": imagurl + "/398.png"
+        "img_default": imagurl+"/other/official-artwork/398.png",
+        "img_sprite": imagurl+"/398.png"
     },
     {
         "dex": 399,
@@ -5184,8 +5184,8 @@ var data = [
         "special_defense": 40,
         "speed": 31,
         "best": 250,
-        "img_default": imagurl + "/other/official-artwork/399.png",
-        "img_sprite": imagurl + "/399.png"
+        "img_default": imagurl+"/other/official-artwork/399.png",
+        "img_sprite": imagurl+"/399.png"
     },
     {
         "dex": 400,
@@ -5197,8 +5197,8 @@ var data = [
         "special_defense": 60,
         "speed": 71,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/400.png",
-        "img_sprite": imagurl + "/400.png"
+        "img_default": imagurl+"/other/official-artwork/400.png",
+        "img_sprite": imagurl+"/400.png"
     },
     {
         "dex": 401,
@@ -5210,8 +5210,8 @@ var data = [
         "special_defense": 41,
         "speed": 25,
         "best": 194,
-        "img_default": imagurl + "/other/official-artwork/401.png",
-        "img_sprite": imagurl + "/401.png"
+        "img_default": imagurl+"/other/official-artwork/401.png",
+        "img_sprite": imagurl+"/401.png"
     },
     {
         "dex": 402,
@@ -5223,8 +5223,8 @@ var data = [
         "special_defense": 51,
         "speed": 65,
         "best": 384,
-        "img_default": imagurl + "/other/official-artwork/402.png",
-        "img_sprite": imagurl + "/402.png"
+        "img_default": imagurl+"/other/official-artwork/402.png",
+        "img_sprite": imagurl+"/402.png"
     },
     {
         "dex": 403,
@@ -5236,8 +5236,8 @@ var data = [
         "special_defense": 34,
         "speed": 45,
         "best": 263,
-        "img_default": imagurl + "/other/official-artwork/403.png",
-        "img_sprite": imagurl + "/403.png"
+        "img_default": imagurl+"/other/official-artwork/403.png",
+        "img_sprite": imagurl+"/403.png"
     },
     {
         "dex": 404,
@@ -5249,8 +5249,8 @@ var data = [
         "special_defense": 49,
         "speed": 60,
         "best": 363,
-        "img_default": imagurl + "/other/official-artwork/404.png",
-        "img_sprite": imagurl + "/404.png"
+        "img_default": imagurl+"/other/official-artwork/404.png",
+        "img_sprite": imagurl+"/404.png"
     },
     {
         "dex": 405,
@@ -5262,8 +5262,8 @@ var data = [
         "special_defense": 79,
         "speed": 70,
         "best": 523,
-        "img_default": imagurl + "/other/official-artwork/405.png",
-        "img_sprite": imagurl + "/405.png"
+        "img_default": imagurl+"/other/official-artwork/405.png",
+        "img_sprite": imagurl+"/405.png"
     },
     {
         "dex": 406,
@@ -5275,8 +5275,8 @@ var data = [
         "special_defense": 70,
         "speed": 55,
         "best": 280,
-        "img_default": imagurl + "/other/official-artwork/406.png",
-        "img_sprite": imagurl + "/406.png"
+        "img_default": imagurl+"/other/official-artwork/406.png",
+        "img_sprite": imagurl+"/406.png"
     },
     {
         "dex": 407,
@@ -5288,8 +5288,8 @@ var data = [
         "special_defense": 105,
         "speed": 90,
         "best": 515,
-        "img_default": imagurl + "/other/official-artwork/407.png",
-        "img_sprite": imagurl + "/407.png"
+        "img_default": imagurl+"/other/official-artwork/407.png",
+        "img_sprite": imagurl+"/407.png"
     },
     {
         "dex": 408,
@@ -5301,8 +5301,8 @@ var data = [
         "special_defense": 30,
         "speed": 58,
         "best": 350,
-        "img_default": imagurl + "/other/official-artwork/408.png",
-        "img_sprite": imagurl + "/408.png"
+        "img_default": imagurl+"/other/official-artwork/408.png",
+        "img_sprite": imagurl+"/408.png"
     },
     {
         "dex": 409,
@@ -5314,8 +5314,8 @@ var data = [
         "special_defense": 50,
         "speed": 58,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/409.png",
-        "img_sprite": imagurl + "/409.png"
+        "img_default": imagurl+"/other/official-artwork/409.png",
+        "img_sprite": imagurl+"/409.png"
     },
     {
         "dex": 410,
@@ -5327,8 +5327,8 @@ var data = [
         "special_defense": 88,
         "speed": 30,
         "best": 350,
-        "img_default": imagurl + "/other/official-artwork/410.png",
-        "img_sprite": imagurl + "/410.png"
+        "img_default": imagurl+"/other/official-artwork/410.png",
+        "img_sprite": imagurl+"/410.png"
     },
     {
         "dex": 411,
@@ -5340,8 +5340,8 @@ var data = [
         "special_defense": 138,
         "speed": 30,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/411.png",
-        "img_sprite": imagurl + "/411.png"
+        "img_default": imagurl+"/other/official-artwork/411.png",
+        "img_sprite": imagurl+"/411.png"
     },
     {
         "dex": 412,
@@ -5353,12 +5353,12 @@ var data = [
         "special_defense": 45,
         "speed": 36,
         "best": 224,
-        "img_default": imagurl + "/other/official-artwork/412.png",
-        "img_sprite": imagurl + "/412.png"
+        "img_default": imagurl+"/other/official-artwork/412.png",
+        "img_sprite": imagurl+"/412.png"
     },
     {
         "dex": 413,
-        "name": "Wormadam-plant",
+        "name": "Wormadam",
         "hp": 60,
         "attack": 59,
         "defense": 85,
@@ -5366,8 +5366,8 @@ var data = [
         "special_defense": 105,
         "speed": 36,
         "best": 424,
-        "img_default": imagurl + "/other/official-artwork/413.png",
-        "img_sprite": imagurl + "/413.png"
+        "img_default": imagurl+"/other/official-artwork/413.png",
+        "img_sprite": imagurl+"/413.png"
     },
     {
         "dex": 414,
@@ -5379,8 +5379,8 @@ var data = [
         "special_defense": 50,
         "speed": 66,
         "best": 424,
-        "img_default": imagurl + "/other/official-artwork/414.png",
-        "img_sprite": imagurl + "/414.png"
+        "img_default": imagurl+"/other/official-artwork/414.png",
+        "img_sprite": imagurl+"/414.png"
     },
     {
         "dex": 415,
@@ -5392,8 +5392,8 @@ var data = [
         "special_defense": 42,
         "speed": 70,
         "best": 244,
-        "img_default": imagurl + "/other/official-artwork/415.png",
-        "img_sprite": imagurl + "/415.png"
+        "img_default": imagurl+"/other/official-artwork/415.png",
+        "img_sprite": imagurl+"/415.png"
     },
     {
         "dex": 416,
@@ -5405,8 +5405,8 @@ var data = [
         "special_defense": 102,
         "speed": 40,
         "best": 474,
-        "img_default": imagurl + "/other/official-artwork/416.png",
-        "img_sprite": imagurl + "/416.png"
+        "img_default": imagurl+"/other/official-artwork/416.png",
+        "img_sprite": imagurl+"/416.png"
     },
     {
         "dex": 417,
@@ -5418,8 +5418,8 @@ var data = [
         "special_defense": 90,
         "speed": 95,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/417.png",
-        "img_sprite": imagurl + "/417.png"
+        "img_default": imagurl+"/other/official-artwork/417.png",
+        "img_sprite": imagurl+"/417.png"
     },
     {
         "dex": 418,
@@ -5431,8 +5431,8 @@ var data = [
         "special_defense": 30,
         "speed": 85,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/418.png",
-        "img_sprite": imagurl + "/418.png"
+        "img_default": imagurl+"/other/official-artwork/418.png",
+        "img_sprite": imagurl+"/418.png"
     },
     {
         "dex": 419,
@@ -5444,8 +5444,8 @@ var data = [
         "special_defense": 50,
         "speed": 115,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/419.png",
-        "img_sprite": imagurl + "/419.png"
+        "img_default": imagurl+"/other/official-artwork/419.png",
+        "img_sprite": imagurl+"/419.png"
     },
     {
         "dex": 420,
@@ -5457,8 +5457,8 @@ var data = [
         "special_defense": 53,
         "speed": 35,
         "best": 275,
-        "img_default": imagurl + "/other/official-artwork/420.png",
-        "img_sprite": imagurl + "/420.png"
+        "img_default": imagurl+"/other/official-artwork/420.png",
+        "img_sprite": imagurl+"/420.png"
     },
     {
         "dex": 421,
@@ -5470,8 +5470,8 @@ var data = [
         "special_defense": 78,
         "speed": 85,
         "best": 450,
-        "img_default": imagurl + "/other/official-artwork/421.png",
-        "img_sprite": imagurl + "/421.png"
+        "img_default": imagurl+"/other/official-artwork/421.png",
+        "img_sprite": imagurl+"/421.png"
     },
     {
         "dex": 422,
@@ -5483,8 +5483,8 @@ var data = [
         "special_defense": 62,
         "speed": 34,
         "best": 325,
-        "img_default": imagurl + "/other/official-artwork/422.png",
-        "img_sprite": imagurl + "/422.png"
+        "img_default": imagurl+"/other/official-artwork/422.png",
+        "img_sprite": imagurl+"/422.png"
     },
     {
         "dex": 423,
@@ -5496,8 +5496,8 @@ var data = [
         "special_defense": 82,
         "speed": 39,
         "best": 475,
-        "img_default": imagurl + "/other/official-artwork/423.png",
-        "img_sprite": imagurl + "/423.png"
+        "img_default": imagurl+"/other/official-artwork/423.png",
+        "img_sprite": imagurl+"/423.png"
     },
     {
         "dex": 424,
@@ -5509,8 +5509,8 @@ var data = [
         "special_defense": 66,
         "speed": 115,
         "best": 482,
-        "img_default": imagurl + "/other/official-artwork/424.png",
-        "img_sprite": imagurl + "/424.png"
+        "img_default": imagurl+"/other/official-artwork/424.png",
+        "img_sprite": imagurl+"/424.png"
     },
     {
         "dex": 425,
@@ -5522,8 +5522,8 @@ var data = [
         "special_defense": 44,
         "speed": 70,
         "best": 348,
-        "img_default": imagurl + "/other/official-artwork/425.png",
-        "img_sprite": imagurl + "/425.png"
+        "img_default": imagurl+"/other/official-artwork/425.png",
+        "img_sprite": imagurl+"/425.png"
     },
     {
         "dex": 426,
@@ -5535,8 +5535,8 @@ var data = [
         "special_defense": 54,
         "speed": 80,
         "best": 498,
-        "img_default": imagurl + "/other/official-artwork/426.png",
-        "img_sprite": imagurl + "/426.png"
+        "img_default": imagurl+"/other/official-artwork/426.png",
+        "img_sprite": imagurl+"/426.png"
     },
     {
         "dex": 427,
@@ -5548,8 +5548,8 @@ var data = [
         "special_defense": 56,
         "speed": 85,
         "best": 350,
-        "img_default": imagurl + "/other/official-artwork/427.png",
-        "img_sprite": imagurl + "/427.png"
+        "img_default": imagurl+"/other/official-artwork/427.png",
+        "img_sprite": imagurl+"/427.png"
     },
     {
         "dex": 428,
@@ -5561,8 +5561,8 @@ var data = [
         "special_defense": 96,
         "speed": 105,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/428.png",
-        "img_sprite": imagurl + "/428.png"
+        "img_default": imagurl+"/other/official-artwork/428.png",
+        "img_sprite": imagurl+"/428.png"
     },
     {
         "dex": 429,
@@ -5574,8 +5574,8 @@ var data = [
         "special_defense": 105,
         "speed": 105,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/429.png",
-        "img_sprite": imagurl + "/429.png"
+        "img_default": imagurl+"/other/official-artwork/429.png",
+        "img_sprite": imagurl+"/429.png"
     },
     {
         "dex": 430,
@@ -5587,8 +5587,8 @@ var data = [
         "special_defense": 52,
         "speed": 71,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/430.png",
-        "img_sprite": imagurl + "/430.png"
+        "img_default": imagurl+"/other/official-artwork/430.png",
+        "img_sprite": imagurl+"/430.png"
     },
     {
         "dex": 431,
@@ -5600,8 +5600,8 @@ var data = [
         "special_defense": 37,
         "speed": 85,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/431.png",
-        "img_sprite": imagurl + "/431.png"
+        "img_default": imagurl+"/other/official-artwork/431.png",
+        "img_sprite": imagurl+"/431.png"
     },
     {
         "dex": 432,
@@ -5613,8 +5613,8 @@ var data = [
         "special_defense": 59,
         "speed": 112,
         "best": 452,
-        "img_default": imagurl + "/other/official-artwork/432.png",
-        "img_sprite": imagurl + "/432.png"
+        "img_default": imagurl+"/other/official-artwork/432.png",
+        "img_sprite": imagurl+"/432.png"
     },
     {
         "dex": 433,
@@ -5626,8 +5626,8 @@ var data = [
         "special_defense": 50,
         "speed": 45,
         "best": 285,
-        "img_default": imagurl + "/other/official-artwork/433.png",
-        "img_sprite": imagurl + "/433.png"
+        "img_default": imagurl+"/other/official-artwork/433.png",
+        "img_sprite": imagurl+"/433.png"
     },
     {
         "dex": 434,
@@ -5639,8 +5639,8 @@ var data = [
         "special_defense": 41,
         "speed": 74,
         "best": 329,
-        "img_default": imagurl + "/other/official-artwork/434.png",
-        "img_sprite": imagurl + "/434.png"
+        "img_default": imagurl+"/other/official-artwork/434.png",
+        "img_sprite": imagurl+"/434.png"
     },
     {
         "dex": 435,
@@ -5652,8 +5652,8 @@ var data = [
         "special_defense": 61,
         "speed": 84,
         "best": 479,
-        "img_default": imagurl + "/other/official-artwork/435.png",
-        "img_sprite": imagurl + "/435.png"
+        "img_default": imagurl+"/other/official-artwork/435.png",
+        "img_sprite": imagurl+"/435.png"
     },
     {
         "dex": 436,
@@ -5665,8 +5665,8 @@ var data = [
         "special_defense": 86,
         "speed": 23,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/436.png",
-        "img_sprite": imagurl + "/436.png"
+        "img_default": imagurl+"/other/official-artwork/436.png",
+        "img_sprite": imagurl+"/436.png"
     },
     {
         "dex": 437,
@@ -5678,8 +5678,8 @@ var data = [
         "special_defense": 116,
         "speed": 33,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/437.png",
-        "img_sprite": imagurl + "/437.png"
+        "img_default": imagurl+"/other/official-artwork/437.png",
+        "img_sprite": imagurl+"/437.png"
     },
     {
         "dex": 438,
@@ -5691,8 +5691,8 @@ var data = [
         "special_defense": 45,
         "speed": 10,
         "best": 290,
-        "img_default": imagurl + "/other/official-artwork/438.png",
-        "img_sprite": imagurl + "/438.png"
+        "img_default": imagurl+"/other/official-artwork/438.png",
+        "img_sprite": imagurl+"/438.png"
     },
     {
         "dex": 439,
@@ -5704,8 +5704,8 @@ var data = [
         "special_defense": 90,
         "speed": 60,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/439.png",
-        "img_sprite": imagurl + "/439.png"
+        "img_default": imagurl+"/other/official-artwork/439.png",
+        "img_sprite": imagurl+"/439.png"
     },
     {
         "dex": 440,
@@ -5717,8 +5717,8 @@ var data = [
         "special_defense": 65,
         "speed": 30,
         "best": 220,
-        "img_default": imagurl + "/other/official-artwork/440.png",
-        "img_sprite": imagurl + "/440.png"
+        "img_default": imagurl+"/other/official-artwork/440.png",
+        "img_sprite": imagurl+"/440.png"
     },
     {
         "dex": 441,
@@ -5730,8 +5730,8 @@ var data = [
         "special_defense": 42,
         "speed": 91,
         "best": 411,
-        "img_default": imagurl + "/other/official-artwork/441.png",
-        "img_sprite": imagurl + "/441.png"
+        "img_default": imagurl+"/other/official-artwork/441.png",
+        "img_sprite": imagurl+"/441.png"
     },
     {
         "dex": 442,
@@ -5743,8 +5743,8 @@ var data = [
         "special_defense": 108,
         "speed": 35,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/442.png",
-        "img_sprite": imagurl + "/442.png"
+        "img_default": imagurl+"/other/official-artwork/442.png",
+        "img_sprite": imagurl+"/442.png"
     },
     {
         "dex": 443,
@@ -5756,8 +5756,8 @@ var data = [
         "special_defense": 45,
         "speed": 42,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/443.png",
-        "img_sprite": imagurl + "/443.png"
+        "img_default": imagurl+"/other/official-artwork/443.png",
+        "img_sprite": imagurl+"/443.png"
     },
     {
         "dex": 444,
@@ -5769,8 +5769,8 @@ var data = [
         "special_defense": 55,
         "speed": 82,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/444.png",
-        "img_sprite": imagurl + "/444.png"
+        "img_default": imagurl+"/other/official-artwork/444.png",
+        "img_sprite": imagurl+"/444.png"
     },
     {
         "dex": 445,
@@ -5782,8 +5782,8 @@ var data = [
         "special_defense": 85,
         "speed": 102,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/445.png",
-        "img_sprite": imagurl + "/445.png"
+        "img_default": imagurl+"/other/official-artwork/445.png",
+        "img_sprite": imagurl+"/445.png"
     },
     {
         "dex": 446,
@@ -5795,8 +5795,8 @@ var data = [
         "special_defense": 85,
         "speed": 5,
         "best": 390,
-        "img_default": imagurl + "/other/official-artwork/446.png",
-        "img_sprite": imagurl + "/446.png"
+        "img_default": imagurl+"/other/official-artwork/446.png",
+        "img_sprite": imagurl+"/446.png"
     },
     {
         "dex": 447,
@@ -5808,8 +5808,8 @@ var data = [
         "special_defense": 40,
         "speed": 60,
         "best": 285,
-        "img_default": imagurl + "/other/official-artwork/447.png",
-        "img_sprite": imagurl + "/447.png"
+        "img_default": imagurl+"/other/official-artwork/447.png",
+        "img_sprite": imagurl+"/447.png"
     },
     {
         "dex": 448,
@@ -5821,8 +5821,8 @@ var data = [
         "special_defense": 70,
         "speed": 90,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/448.png",
-        "img_sprite": imagurl + "/448.png"
+        "img_default": imagurl+"/other/official-artwork/448.png",
+        "img_sprite": imagurl+"/448.png"
     },
     {
         "dex": 449,
@@ -5834,8 +5834,8 @@ var data = [
         "special_defense": 42,
         "speed": 32,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/449.png",
-        "img_sprite": imagurl + "/449.png"
+        "img_default": imagurl+"/other/official-artwork/449.png",
+        "img_sprite": imagurl+"/449.png"
     },
     {
         "dex": 450,
@@ -5847,8 +5847,8 @@ var data = [
         "special_defense": 72,
         "speed": 47,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/450.png",
-        "img_sprite": imagurl + "/450.png"
+        "img_default": imagurl+"/other/official-artwork/450.png",
+        "img_sprite": imagurl+"/450.png"
     },
     {
         "dex": 451,
@@ -5860,8 +5860,8 @@ var data = [
         "special_defense": 55,
         "speed": 65,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/451.png",
-        "img_sprite": imagurl + "/451.png"
+        "img_default": imagurl+"/other/official-artwork/451.png",
+        "img_sprite": imagurl+"/451.png"
     },
     {
         "dex": 452,
@@ -5873,8 +5873,8 @@ var data = [
         "special_defense": 75,
         "speed": 95,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/452.png",
-        "img_sprite": imagurl + "/452.png"
+        "img_default": imagurl+"/other/official-artwork/452.png",
+        "img_sprite": imagurl+"/452.png"
     },
     {
         "dex": 453,
@@ -5886,8 +5886,8 @@ var data = [
         "special_defense": 40,
         "speed": 50,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/453.png",
-        "img_sprite": imagurl + "/453.png"
+        "img_default": imagurl+"/other/official-artwork/453.png",
+        "img_sprite": imagurl+"/453.png"
     },
     {
         "dex": 454,
@@ -5899,8 +5899,8 @@ var data = [
         "special_defense": 65,
         "speed": 85,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/454.png",
-        "img_sprite": imagurl + "/454.png"
+        "img_default": imagurl+"/other/official-artwork/454.png",
+        "img_sprite": imagurl+"/454.png"
     },
     {
         "dex": 455,
@@ -5912,8 +5912,8 @@ var data = [
         "special_defense": 72,
         "speed": 46,
         "best": 454,
-        "img_default": imagurl + "/other/official-artwork/455.png",
-        "img_sprite": imagurl + "/455.png"
+        "img_default": imagurl+"/other/official-artwork/455.png",
+        "img_sprite": imagurl+"/455.png"
     },
     {
         "dex": 456,
@@ -5925,8 +5925,8 @@ var data = [
         "special_defense": 61,
         "speed": 66,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/456.png",
-        "img_sprite": imagurl + "/456.png"
+        "img_default": imagurl+"/other/official-artwork/456.png",
+        "img_sprite": imagurl+"/456.png"
     },
     {
         "dex": 457,
@@ -5938,8 +5938,8 @@ var data = [
         "special_defense": 86,
         "speed": 91,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/457.png",
-        "img_sprite": imagurl + "/457.png"
+        "img_default": imagurl+"/other/official-artwork/457.png",
+        "img_sprite": imagurl+"/457.png"
     },
     {
         "dex": 458,
@@ -5951,8 +5951,8 @@ var data = [
         "special_defense": 120,
         "speed": 50,
         "best": 345,
-        "img_default": imagurl + "/other/official-artwork/458.png",
-        "img_sprite": imagurl + "/458.png"
+        "img_default": imagurl+"/other/official-artwork/458.png",
+        "img_sprite": imagurl+"/458.png"
     },
     {
         "dex": 459,
@@ -5964,8 +5964,8 @@ var data = [
         "special_defense": 60,
         "speed": 40,
         "best": 334,
-        "img_default": imagurl + "/other/official-artwork/459.png",
-        "img_sprite": imagurl + "/459.png"
+        "img_default": imagurl+"/other/official-artwork/459.png",
+        "img_sprite": imagurl+"/459.png"
     },
     {
         "dex": 460,
@@ -5977,8 +5977,8 @@ var data = [
         "special_defense": 85,
         "speed": 60,
         "best": 494,
-        "img_default": imagurl + "/other/official-artwork/460.png",
-        "img_sprite": imagurl + "/460.png"
+        "img_default": imagurl+"/other/official-artwork/460.png",
+        "img_sprite": imagurl+"/460.png"
     },
     {
         "dex": 461,
@@ -5990,8 +5990,8 @@ var data = [
         "special_defense": 85,
         "speed": 125,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/461.png",
-        "img_sprite": imagurl + "/461.png"
+        "img_default": imagurl+"/other/official-artwork/461.png",
+        "img_sprite": imagurl+"/461.png"
     },
     {
         "dex": 462,
@@ -6003,8 +6003,8 @@ var data = [
         "special_defense": 90,
         "speed": 60,
         "best": 535,
-        "img_default": imagurl + "/other/official-artwork/462.png",
-        "img_sprite": imagurl + "/462.png"
+        "img_default": imagurl+"/other/official-artwork/462.png",
+        "img_sprite": imagurl+"/462.png"
     },
     {
         "dex": 463,
@@ -6016,8 +6016,8 @@ var data = [
         "special_defense": 95,
         "speed": 50,
         "best": 515,
-        "img_default": imagurl + "/other/official-artwork/463.png",
-        "img_sprite": imagurl + "/463.png"
+        "img_default": imagurl+"/other/official-artwork/463.png",
+        "img_sprite": imagurl+"/463.png"
     },
     {
         "dex": 464,
@@ -6029,8 +6029,8 @@ var data = [
         "special_defense": 55,
         "speed": 40,
         "best": 535,
-        "img_default": imagurl + "/other/official-artwork/464.png",
-        "img_sprite": imagurl + "/464.png"
+        "img_default": imagurl+"/other/official-artwork/464.png",
+        "img_sprite": imagurl+"/464.png"
     },
     {
         "dex": 465,
@@ -6042,8 +6042,8 @@ var data = [
         "special_defense": 50,
         "speed": 50,
         "best": 535,
-        "img_default": imagurl + "/other/official-artwork/465.png",
-        "img_sprite": imagurl + "/465.png"
+        "img_default": imagurl+"/other/official-artwork/465.png",
+        "img_sprite": imagurl+"/465.png"
     },
     {
         "dex": 466,
@@ -6055,8 +6055,8 @@ var data = [
         "special_defense": 85,
         "speed": 95,
         "best": 540,
-        "img_default": imagurl + "/other/official-artwork/466.png",
-        "img_sprite": imagurl + "/466.png"
+        "img_default": imagurl+"/other/official-artwork/466.png",
+        "img_sprite": imagurl+"/466.png"
     },
     {
         "dex": 467,
@@ -6068,8 +6068,8 @@ var data = [
         "special_defense": 95,
         "speed": 83,
         "best": 540,
-        "img_default": imagurl + "/other/official-artwork/467.png",
-        "img_sprite": imagurl + "/467.png"
+        "img_default": imagurl+"/other/official-artwork/467.png",
+        "img_sprite": imagurl+"/467.png"
     },
     {
         "dex": 468,
@@ -6081,8 +6081,8 @@ var data = [
         "special_defense": 115,
         "speed": 80,
         "best": 545,
-        "img_default": imagurl + "/other/official-artwork/468.png",
-        "img_sprite": imagurl + "/468.png"
+        "img_default": imagurl+"/other/official-artwork/468.png",
+        "img_sprite": imagurl+"/468.png"
     },
     {
         "dex": 469,
@@ -6094,8 +6094,8 @@ var data = [
         "special_defense": 56,
         "speed": 95,
         "best": 515,
-        "img_default": imagurl + "/other/official-artwork/469.png",
-        "img_sprite": imagurl + "/469.png"
+        "img_default": imagurl+"/other/official-artwork/469.png",
+        "img_sprite": imagurl+"/469.png"
     },
     {
         "dex": 470,
@@ -6107,8 +6107,8 @@ var data = [
         "special_defense": 65,
         "speed": 95,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/470.png",
-        "img_sprite": imagurl + "/470.png"
+        "img_default": imagurl+"/other/official-artwork/470.png",
+        "img_sprite": imagurl+"/470.png"
     },
     {
         "dex": 471,
@@ -6120,8 +6120,8 @@ var data = [
         "special_defense": 95,
         "speed": 65,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/471.png",
-        "img_sprite": imagurl + "/471.png"
+        "img_default": imagurl+"/other/official-artwork/471.png",
+        "img_sprite": imagurl+"/471.png"
     },
     {
         "dex": 472,
@@ -6133,8 +6133,8 @@ var data = [
         "special_defense": 75,
         "speed": 95,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/472.png",
-        "img_sprite": imagurl + "/472.png"
+        "img_default": imagurl+"/other/official-artwork/472.png",
+        "img_sprite": imagurl+"/472.png"
     },
     {
         "dex": 473,
@@ -6146,8 +6146,8 @@ var data = [
         "special_defense": 60,
         "speed": 80,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/473.png",
-        "img_sprite": imagurl + "/473.png"
+        "img_default": imagurl+"/other/official-artwork/473.png",
+        "img_sprite": imagurl+"/473.png"
     },
     {
         "dex": 474,
@@ -6159,8 +6159,8 @@ var data = [
         "special_defense": 75,
         "speed": 90,
         "best": 535,
-        "img_default": imagurl + "/other/official-artwork/474.png",
-        "img_sprite": imagurl + "/474.png"
+        "img_default": imagurl+"/other/official-artwork/474.png",
+        "img_sprite": imagurl+"/474.png"
     },
     {
         "dex": 475,
@@ -6172,8 +6172,8 @@ var data = [
         "special_defense": 115,
         "speed": 80,
         "best": 518,
-        "img_default": imagurl + "/other/official-artwork/475.png",
-        "img_sprite": imagurl + "/475.png"
+        "img_default": imagurl+"/other/official-artwork/475.png",
+        "img_sprite": imagurl+"/475.png"
     },
     {
         "dex": 476,
@@ -6185,8 +6185,8 @@ var data = [
         "special_defense": 150,
         "speed": 40,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/476.png",
-        "img_sprite": imagurl + "/476.png"
+        "img_default": imagurl+"/other/official-artwork/476.png",
+        "img_sprite": imagurl+"/476.png"
     },
     {
         "dex": 477,
@@ -6198,8 +6198,8 @@ var data = [
         "special_defense": 135,
         "speed": 45,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/477.png",
-        "img_sprite": imagurl + "/477.png"
+        "img_default": imagurl+"/other/official-artwork/477.png",
+        "img_sprite": imagurl+"/477.png"
     },
     {
         "dex": 478,
@@ -6211,8 +6211,8 @@ var data = [
         "special_defense": 70,
         "speed": 110,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/478.png",
-        "img_sprite": imagurl + "/478.png"
+        "img_default": imagurl+"/other/official-artwork/478.png",
+        "img_sprite": imagurl+"/478.png"
     },
     {
         "dex": 479,
@@ -6224,8 +6224,8 @@ var data = [
         "special_defense": 77,
         "speed": 91,
         "best": 440,
-        "img_default": imagurl + "/other/official-artwork/479.png",
-        "img_sprite": imagurl + "/479.png"
+        "img_default": imagurl+"/other/official-artwork/479.png",
+        "img_sprite": imagurl+"/479.png"
     },
     {
         "dex": 480,
@@ -6237,8 +6237,8 @@ var data = [
         "special_defense": 130,
         "speed": 95,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/480.png",
-        "img_sprite": imagurl + "/480.png"
+        "img_default": imagurl+"/other/official-artwork/480.png",
+        "img_sprite": imagurl+"/480.png"
     },
     {
         "dex": 481,
@@ -6250,8 +6250,8 @@ var data = [
         "special_defense": 105,
         "speed": 80,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/481.png",
-        "img_sprite": imagurl + "/481.png"
+        "img_default": imagurl+"/other/official-artwork/481.png",
+        "img_sprite": imagurl+"/481.png"
     },
     {
         "dex": 482,
@@ -6263,8 +6263,8 @@ var data = [
         "special_defense": 70,
         "speed": 115,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/482.png",
-        "img_sprite": imagurl + "/482.png"
+        "img_default": imagurl+"/other/official-artwork/482.png",
+        "img_sprite": imagurl+"/482.png"
     },
     {
         "dex": 483,
@@ -6276,8 +6276,8 @@ var data = [
         "special_defense": 100,
         "speed": 90,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/483.png",
-        "img_sprite": imagurl + "/483.png"
+        "img_default": imagurl+"/other/official-artwork/483.png",
+        "img_sprite": imagurl+"/483.png"
     },
     {
         "dex": 484,
@@ -6289,8 +6289,8 @@ var data = [
         "special_defense": 120,
         "speed": 100,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/484.png",
-        "img_sprite": imagurl + "/484.png"
+        "img_default": imagurl+"/other/official-artwork/484.png",
+        "img_sprite": imagurl+"/484.png"
     },
     {
         "dex": 485,
@@ -6302,8 +6302,8 @@ var data = [
         "special_defense": 106,
         "speed": 77,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/485.png",
-        "img_sprite": imagurl + "/485.png"
+        "img_default": imagurl+"/other/official-artwork/485.png",
+        "img_sprite": imagurl+"/485.png"
     },
     {
         "dex": 486,
@@ -6315,12 +6315,12 @@ var data = [
         "special_defense": 110,
         "speed": 100,
         "best": 670,
-        "img_default": imagurl + "/other/official-artwork/486.png",
-        "img_sprite": imagurl + "/486.png"
+        "img_default": imagurl+"/other/official-artwork/486.png",
+        "img_sprite": imagurl+"/486.png"
     },
     {
         "dex": 487,
-        "name": "Giratina-altered",
+        "name": "Giratina",
         "hp": 150,
         "attack": 100,
         "defense": 120,
@@ -6328,8 +6328,8 @@ var data = [
         "special_defense": 120,
         "speed": 90,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/487.png",
-        "img_sprite": imagurl + "/487.png"
+        "img_default": imagurl+"/other/official-artwork/487.png",
+        "img_sprite": imagurl+"/487.png"
     },
     {
         "dex": 488,
@@ -6341,8 +6341,8 @@ var data = [
         "special_defense": 130,
         "speed": 85,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/488.png",
-        "img_sprite": imagurl + "/488.png"
+        "img_default": imagurl+"/other/official-artwork/488.png",
+        "img_sprite": imagurl+"/488.png"
     },
     {
         "dex": 489,
@@ -6354,8 +6354,8 @@ var data = [
         "special_defense": 80,
         "speed": 80,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/489.png",
-        "img_sprite": imagurl + "/489.png"
+        "img_default": imagurl+"/other/official-artwork/489.png",
+        "img_sprite": imagurl+"/489.png"
     },
     {
         "dex": 490,
@@ -6367,8 +6367,8 @@ var data = [
         "special_defense": 100,
         "speed": 100,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/490.png",
-        "img_sprite": imagurl + "/490.png"
+        "img_default": imagurl+"/other/official-artwork/490.png",
+        "img_sprite": imagurl+"/490.png"
     },
     {
         "dex": 491,
@@ -6380,12 +6380,12 @@ var data = [
         "special_defense": 90,
         "speed": 125,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/491.png",
-        "img_sprite": imagurl + "/491.png"
+        "img_default": imagurl+"/other/official-artwork/491.png",
+        "img_sprite": imagurl+"/491.png"
     },
     {
         "dex": 492,
-        "name": "Shaymin-land",
+        "name": "Shaymin",
         "hp": 100,
         "attack": 100,
         "defense": 100,
@@ -6393,8 +6393,8 @@ var data = [
         "special_defense": 100,
         "speed": 100,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/492.png",
-        "img_sprite": imagurl + "/492.png"
+        "img_default": imagurl+"/other/official-artwork/492.png",
+        "img_sprite": imagurl+"/492.png"
     },
     {
         "dex": 493,
@@ -6406,8 +6406,8 @@ var data = [
         "special_defense": 120,
         "speed": 120,
         "best": 720,
-        "img_default": imagurl + "/other/official-artwork/493.png",
-        "img_sprite": imagurl + "/493.png"
+        "img_default": imagurl+"/other/official-artwork/493.png",
+        "img_sprite": imagurl+"/493.png"
     },
     {
         "dex": 494,
@@ -6419,8 +6419,8 @@ var data = [
         "special_defense": 100,
         "speed": 100,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/494.png",
-        "img_sprite": imagurl + "/494.png"
+        "img_default": imagurl+"/other/official-artwork/494.png",
+        "img_sprite": imagurl+"/494.png"
     },
     {
         "dex": 495,
@@ -6432,8 +6432,8 @@ var data = [
         "special_defense": 55,
         "speed": 63,
         "best": 308,
-        "img_default": imagurl + "/other/official-artwork/495.png",
-        "img_sprite": imagurl + "/495.png"
+        "img_default": imagurl+"/other/official-artwork/495.png",
+        "img_sprite": imagurl+"/495.png"
     },
     {
         "dex": 496,
@@ -6445,8 +6445,8 @@ var data = [
         "special_defense": 75,
         "speed": 83,
         "best": 413,
-        "img_default": imagurl + "/other/official-artwork/496.png",
-        "img_sprite": imagurl + "/496.png"
+        "img_default": imagurl+"/other/official-artwork/496.png",
+        "img_sprite": imagurl+"/496.png"
     },
     {
         "dex": 497,
@@ -6458,8 +6458,8 @@ var data = [
         "special_defense": 95,
         "speed": 113,
         "best": 528,
-        "img_default": imagurl + "/other/official-artwork/497.png",
-        "img_sprite": imagurl + "/497.png"
+        "img_default": imagurl+"/other/official-artwork/497.png",
+        "img_sprite": imagurl+"/497.png"
     },
     {
         "dex": 498,
@@ -6471,8 +6471,8 @@ var data = [
         "special_defense": 45,
         "speed": 45,
         "best": 308,
-        "img_default": imagurl + "/other/official-artwork/498.png",
-        "img_sprite": imagurl + "/498.png"
+        "img_default": imagurl+"/other/official-artwork/498.png",
+        "img_sprite": imagurl+"/498.png"
     },
     {
         "dex": 499,
@@ -6484,8 +6484,8 @@ var data = [
         "special_defense": 55,
         "speed": 55,
         "best": 418,
-        "img_default": imagurl + "/other/official-artwork/499.png",
-        "img_sprite": imagurl + "/499.png"
+        "img_default": imagurl+"/other/official-artwork/499.png",
+        "img_sprite": imagurl+"/499.png"
     },
     {
         "dex": 500,
@@ -6497,8 +6497,8 @@ var data = [
         "special_defense": 65,
         "speed": 65,
         "best": 528,
-        "img_default": imagurl + "/other/official-artwork/500.png",
-        "img_sprite": imagurl + "/500.png"
+        "img_default": imagurl+"/other/official-artwork/500.png",
+        "img_sprite": imagurl+"/500.png"
     },
     {
         "dex": 501,
@@ -6510,8 +6510,8 @@ var data = [
         "special_defense": 45,
         "speed": 45,
         "best": 308,
-        "img_default": imagurl + "/other/official-artwork/501.png",
-        "img_sprite": imagurl + "/501.png"
+        "img_default": imagurl+"/other/official-artwork/501.png",
+        "img_sprite": imagurl+"/501.png"
     },
     {
         "dex": 502,
@@ -6523,8 +6523,8 @@ var data = [
         "special_defense": 60,
         "speed": 60,
         "best": 413,
-        "img_default": imagurl + "/other/official-artwork/502.png",
-        "img_sprite": imagurl + "/502.png"
+        "img_default": imagurl+"/other/official-artwork/502.png",
+        "img_sprite": imagurl+"/502.png"
     },
     {
         "dex": 503,
@@ -6536,8 +6536,8 @@ var data = [
         "special_defense": 70,
         "speed": 70,
         "best": 528,
-        "img_default": imagurl + "/other/official-artwork/503.png",
-        "img_sprite": imagurl + "/503.png"
+        "img_default": imagurl+"/other/official-artwork/503.png",
+        "img_sprite": imagurl+"/503.png"
     },
     {
         "dex": 504,
@@ -6549,8 +6549,8 @@ var data = [
         "special_defense": 39,
         "speed": 42,
         "best": 255,
-        "img_default": imagurl + "/other/official-artwork/504.png",
-        "img_sprite": imagurl + "/504.png"
+        "img_default": imagurl+"/other/official-artwork/504.png",
+        "img_sprite": imagurl+"/504.png"
     },
     {
         "dex": 505,
@@ -6562,8 +6562,8 @@ var data = [
         "special_defense": 69,
         "speed": 77,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/505.png",
-        "img_sprite": imagurl + "/505.png"
+        "img_default": imagurl+"/other/official-artwork/505.png",
+        "img_sprite": imagurl+"/505.png"
     },
     {
         "dex": 506,
@@ -6575,8 +6575,8 @@ var data = [
         "special_defense": 45,
         "speed": 55,
         "best": 275,
-        "img_default": imagurl + "/other/official-artwork/506.png",
-        "img_sprite": imagurl + "/506.png"
+        "img_default": imagurl+"/other/official-artwork/506.png",
+        "img_sprite": imagurl+"/506.png"
     },
     {
         "dex": 507,
@@ -6588,8 +6588,8 @@ var data = [
         "special_defense": 65,
         "speed": 60,
         "best": 370,
-        "img_default": imagurl + "/other/official-artwork/507.png",
-        "img_sprite": imagurl + "/507.png"
+        "img_default": imagurl+"/other/official-artwork/507.png",
+        "img_sprite": imagurl+"/507.png"
     },
     {
         "dex": 508,
@@ -6601,8 +6601,8 @@ var data = [
         "special_defense": 90,
         "speed": 80,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/508.png",
-        "img_sprite": imagurl + "/508.png"
+        "img_default": imagurl+"/other/official-artwork/508.png",
+        "img_sprite": imagurl+"/508.png"
     },
     {
         "dex": 509,
@@ -6614,8 +6614,8 @@ var data = [
         "special_defense": 37,
         "speed": 66,
         "best": 281,
-        "img_default": imagurl + "/other/official-artwork/509.png",
-        "img_sprite": imagurl + "/509.png"
+        "img_default": imagurl+"/other/official-artwork/509.png",
+        "img_sprite": imagurl+"/509.png"
     },
     {
         "dex": 510,
@@ -6627,8 +6627,8 @@ var data = [
         "special_defense": 50,
         "speed": 106,
         "best": 446,
-        "img_default": imagurl + "/other/official-artwork/510.png",
-        "img_sprite": imagurl + "/510.png"
+        "img_default": imagurl+"/other/official-artwork/510.png",
+        "img_sprite": imagurl+"/510.png"
     },
     {
         "dex": 511,
@@ -6640,8 +6640,8 @@ var data = [
         "special_defense": 48,
         "speed": 64,
         "best": 316,
-        "img_default": imagurl + "/other/official-artwork/511.png",
-        "img_sprite": imagurl + "/511.png"
+        "img_default": imagurl+"/other/official-artwork/511.png",
+        "img_sprite": imagurl+"/511.png"
     },
     {
         "dex": 512,
@@ -6653,8 +6653,8 @@ var data = [
         "special_defense": 63,
         "speed": 101,
         "best": 498,
-        "img_default": imagurl + "/other/official-artwork/512.png",
-        "img_sprite": imagurl + "/512.png"
+        "img_default": imagurl+"/other/official-artwork/512.png",
+        "img_sprite": imagurl+"/512.png"
     },
     {
         "dex": 513,
@@ -6666,8 +6666,8 @@ var data = [
         "special_defense": 48,
         "speed": 64,
         "best": 316,
-        "img_default": imagurl + "/other/official-artwork/513.png",
-        "img_sprite": imagurl + "/513.png"
+        "img_default": imagurl+"/other/official-artwork/513.png",
+        "img_sprite": imagurl+"/513.png"
     },
     {
         "dex": 514,
@@ -6679,8 +6679,8 @@ var data = [
         "special_defense": 63,
         "speed": 101,
         "best": 498,
-        "img_default": imagurl + "/other/official-artwork/514.png",
-        "img_sprite": imagurl + "/514.png"
+        "img_default": imagurl+"/other/official-artwork/514.png",
+        "img_sprite": imagurl+"/514.png"
     },
     {
         "dex": 515,
@@ -6692,8 +6692,8 @@ var data = [
         "special_defense": 48,
         "speed": 64,
         "best": 316,
-        "img_default": imagurl + "/other/official-artwork/515.png",
-        "img_sprite": imagurl + "/515.png"
+        "img_default": imagurl+"/other/official-artwork/515.png",
+        "img_sprite": imagurl+"/515.png"
     },
     {
         "dex": 516,
@@ -6705,8 +6705,8 @@ var data = [
         "special_defense": 63,
         "speed": 101,
         "best": 498,
-        "img_default": imagurl + "/other/official-artwork/516.png",
-        "img_sprite": imagurl + "/516.png"
+        "img_default": imagurl+"/other/official-artwork/516.png",
+        "img_sprite": imagurl+"/516.png"
     },
     {
         "dex": 517,
@@ -6718,8 +6718,8 @@ var data = [
         "special_defense": 55,
         "speed": 24,
         "best": 292,
-        "img_default": imagurl + "/other/official-artwork/517.png",
-        "img_sprite": imagurl + "/517.png"
+        "img_default": imagurl+"/other/official-artwork/517.png",
+        "img_sprite": imagurl+"/517.png"
     },
     {
         "dex": 518,
@@ -6731,8 +6731,8 @@ var data = [
         "special_defense": 95,
         "speed": 29,
         "best": 487,
-        "img_default": imagurl + "/other/official-artwork/518.png",
-        "img_sprite": imagurl + "/518.png"
+        "img_default": imagurl+"/other/official-artwork/518.png",
+        "img_sprite": imagurl+"/518.png"
     },
     {
         "dex": 519,
@@ -6744,8 +6744,8 @@ var data = [
         "special_defense": 30,
         "speed": 43,
         "best": 264,
-        "img_default": imagurl + "/other/official-artwork/519.png",
-        "img_sprite": imagurl + "/519.png"
+        "img_default": imagurl+"/other/official-artwork/519.png",
+        "img_sprite": imagurl+"/519.png"
     },
     {
         "dex": 520,
@@ -6757,8 +6757,8 @@ var data = [
         "special_defense": 42,
         "speed": 65,
         "best": 358,
-        "img_default": imagurl + "/other/official-artwork/520.png",
-        "img_sprite": imagurl + "/520.png"
+        "img_default": imagurl+"/other/official-artwork/520.png",
+        "img_sprite": imagurl+"/520.png"
     },
     {
         "dex": 521,
@@ -6770,8 +6770,8 @@ var data = [
         "special_defense": 55,
         "speed": 93,
         "best": 488,
-        "img_default": imagurl + "/other/official-artwork/521.png",
-        "img_sprite": imagurl + "/521.png"
+        "img_default": imagurl+"/other/official-artwork/521.png",
+        "img_sprite": imagurl+"/521.png"
     },
     {
         "dex": 522,
@@ -6783,8 +6783,8 @@ var data = [
         "special_defense": 32,
         "speed": 76,
         "best": 295,
-        "img_default": imagurl + "/other/official-artwork/522.png",
-        "img_sprite": imagurl + "/522.png"
+        "img_default": imagurl+"/other/official-artwork/522.png",
+        "img_sprite": imagurl+"/522.png"
     },
     {
         "dex": 523,
@@ -6796,8 +6796,8 @@ var data = [
         "special_defense": 63,
         "speed": 116,
         "best": 497,
-        "img_default": imagurl + "/other/official-artwork/523.png",
-        "img_sprite": imagurl + "/523.png"
+        "img_default": imagurl+"/other/official-artwork/523.png",
+        "img_sprite": imagurl+"/523.png"
     },
     {
         "dex": 524,
@@ -6809,8 +6809,8 @@ var data = [
         "special_defense": 25,
         "speed": 15,
         "best": 280,
-        "img_default": imagurl + "/other/official-artwork/524.png",
-        "img_sprite": imagurl + "/524.png"
+        "img_default": imagurl+"/other/official-artwork/524.png",
+        "img_sprite": imagurl+"/524.png"
     },
     {
         "dex": 525,
@@ -6822,8 +6822,8 @@ var data = [
         "special_defense": 40,
         "speed": 20,
         "best": 390,
-        "img_default": imagurl + "/other/official-artwork/525.png",
-        "img_sprite": imagurl + "/525.png"
+        "img_default": imagurl+"/other/official-artwork/525.png",
+        "img_sprite": imagurl+"/525.png"
     },
     {
         "dex": 526,
@@ -6835,8 +6835,8 @@ var data = [
         "special_defense": 80,
         "speed": 25,
         "best": 515,
-        "img_default": imagurl + "/other/official-artwork/526.png",
-        "img_sprite": imagurl + "/526.png"
+        "img_default": imagurl+"/other/official-artwork/526.png",
+        "img_sprite": imagurl+"/526.png"
     },
     {
         "dex": 527,
@@ -6848,8 +6848,8 @@ var data = [
         "special_defense": 43,
         "speed": 72,
         "best": 323,
-        "img_default": imagurl + "/other/official-artwork/527.png",
-        "img_sprite": imagurl + "/527.png"
+        "img_default": imagurl+"/other/official-artwork/527.png",
+        "img_sprite": imagurl+"/527.png"
     },
     {
         "dex": 528,
@@ -6861,8 +6861,8 @@ var data = [
         "special_defense": 55,
         "speed": 114,
         "best": 425,
-        "img_default": imagurl + "/other/official-artwork/528.png",
-        "img_sprite": imagurl + "/528.png"
+        "img_default": imagurl+"/other/official-artwork/528.png",
+        "img_sprite": imagurl+"/528.png"
     },
     {
         "dex": 529,
@@ -6874,8 +6874,8 @@ var data = [
         "special_defense": 45,
         "speed": 68,
         "best": 328,
-        "img_default": imagurl + "/other/official-artwork/529.png",
-        "img_sprite": imagurl + "/529.png"
+        "img_default": imagurl+"/other/official-artwork/529.png",
+        "img_sprite": imagurl+"/529.png"
     },
     {
         "dex": 530,
@@ -6887,8 +6887,8 @@ var data = [
         "special_defense": 65,
         "speed": 88,
         "best": 508,
-        "img_default": imagurl + "/other/official-artwork/530.png",
-        "img_sprite": imagurl + "/530.png"
+        "img_default": imagurl+"/other/official-artwork/530.png",
+        "img_sprite": imagurl+"/530.png"
     },
     {
         "dex": 531,
@@ -6900,8 +6900,8 @@ var data = [
         "special_defense": 86,
         "speed": 50,
         "best": 445,
-        "img_default": imagurl + "/other/official-artwork/531.png",
-        "img_sprite": imagurl + "/531.png"
+        "img_default": imagurl+"/other/official-artwork/531.png",
+        "img_sprite": imagurl+"/531.png"
     },
     {
         "dex": 532,
@@ -6913,8 +6913,8 @@ var data = [
         "special_defense": 35,
         "speed": 35,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/532.png",
-        "img_sprite": imagurl + "/532.png"
+        "img_default": imagurl+"/other/official-artwork/532.png",
+        "img_sprite": imagurl+"/532.png"
     },
     {
         "dex": 533,
@@ -6926,8 +6926,8 @@ var data = [
         "special_defense": 50,
         "speed": 40,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/533.png",
-        "img_sprite": imagurl + "/533.png"
+        "img_default": imagurl+"/other/official-artwork/533.png",
+        "img_sprite": imagurl+"/533.png"
     },
     {
         "dex": 534,
@@ -6939,8 +6939,8 @@ var data = [
         "special_defense": 65,
         "speed": 45,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/534.png",
-        "img_sprite": imagurl + "/534.png"
+        "img_default": imagurl+"/other/official-artwork/534.png",
+        "img_sprite": imagurl+"/534.png"
     },
     {
         "dex": 535,
@@ -6952,8 +6952,8 @@ var data = [
         "special_defense": 40,
         "speed": 64,
         "best": 294,
-        "img_default": imagurl + "/other/official-artwork/535.png",
-        "img_sprite": imagurl + "/535.png"
+        "img_default": imagurl+"/other/official-artwork/535.png",
+        "img_sprite": imagurl+"/535.png"
     },
     {
         "dex": 536,
@@ -6965,8 +6965,8 @@ var data = [
         "special_defense": 55,
         "speed": 69,
         "best": 384,
-        "img_default": imagurl + "/other/official-artwork/536.png",
-        "img_sprite": imagurl + "/536.png"
+        "img_default": imagurl+"/other/official-artwork/536.png",
+        "img_sprite": imagurl+"/536.png"
     },
     {
         "dex": 537,
@@ -6978,8 +6978,8 @@ var data = [
         "special_defense": 75,
         "speed": 74,
         "best": 509,
-        "img_default": imagurl + "/other/official-artwork/537.png",
-        "img_sprite": imagurl + "/537.png"
+        "img_default": imagurl+"/other/official-artwork/537.png",
+        "img_sprite": imagurl+"/537.png"
     },
     {
         "dex": 538,
@@ -6991,8 +6991,8 @@ var data = [
         "special_defense": 85,
         "speed": 45,
         "best": 465,
-        "img_default": imagurl + "/other/official-artwork/538.png",
-        "img_sprite": imagurl + "/538.png"
+        "img_default": imagurl+"/other/official-artwork/538.png",
+        "img_sprite": imagurl+"/538.png"
     },
     {
         "dex": 539,
@@ -7004,8 +7004,8 @@ var data = [
         "special_defense": 75,
         "speed": 85,
         "best": 465,
-        "img_default": imagurl + "/other/official-artwork/539.png",
-        "img_sprite": imagurl + "/539.png"
+        "img_default": imagurl+"/other/official-artwork/539.png",
+        "img_sprite": imagurl+"/539.png"
     },
     {
         "dex": 540,
@@ -7017,8 +7017,8 @@ var data = [
         "special_defense": 60,
         "speed": 42,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/540.png",
-        "img_sprite": imagurl + "/540.png"
+        "img_default": imagurl+"/other/official-artwork/540.png",
+        "img_sprite": imagurl+"/540.png"
     },
     {
         "dex": 541,
@@ -7030,8 +7030,8 @@ var data = [
         "special_defense": 80,
         "speed": 42,
         "best": 380,
-        "img_default": imagurl + "/other/official-artwork/541.png",
-        "img_sprite": imagurl + "/541.png"
+        "img_default": imagurl+"/other/official-artwork/541.png",
+        "img_sprite": imagurl+"/541.png"
     },
     {
         "dex": 542,
@@ -7043,8 +7043,8 @@ var data = [
         "special_defense": 80,
         "speed": 92,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/542.png",
-        "img_sprite": imagurl + "/542.png"
+        "img_default": imagurl+"/other/official-artwork/542.png",
+        "img_sprite": imagurl+"/542.png"
     },
     {
         "dex": 543,
@@ -7056,8 +7056,8 @@ var data = [
         "special_defense": 39,
         "speed": 57,
         "best": 260,
-        "img_default": imagurl + "/other/official-artwork/543.png",
-        "img_sprite": imagurl + "/543.png"
+        "img_default": imagurl+"/other/official-artwork/543.png",
+        "img_sprite": imagurl+"/543.png"
     },
     {
         "dex": 544,
@@ -7069,8 +7069,8 @@ var data = [
         "special_defense": 79,
         "speed": 47,
         "best": 360,
-        "img_default": imagurl + "/other/official-artwork/544.png",
-        "img_sprite": imagurl + "/544.png"
+        "img_default": imagurl+"/other/official-artwork/544.png",
+        "img_sprite": imagurl+"/544.png"
     },
     {
         "dex": 545,
@@ -7082,8 +7082,8 @@ var data = [
         "special_defense": 69,
         "speed": 112,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/545.png",
-        "img_sprite": imagurl + "/545.png"
+        "img_default": imagurl+"/other/official-artwork/545.png",
+        "img_sprite": imagurl+"/545.png"
     },
     {
         "dex": 546,
@@ -7095,8 +7095,8 @@ var data = [
         "special_defense": 50,
         "speed": 66,
         "best": 280,
-        "img_default": imagurl + "/other/official-artwork/546.png",
-        "img_sprite": imagurl + "/546.png"
+        "img_default": imagurl+"/other/official-artwork/546.png",
+        "img_sprite": imagurl+"/546.png"
     },
     {
         "dex": 547,
@@ -7108,8 +7108,8 @@ var data = [
         "special_defense": 75,
         "speed": 116,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/547.png",
-        "img_sprite": imagurl + "/547.png"
+        "img_default": imagurl+"/other/official-artwork/547.png",
+        "img_sprite": imagurl+"/547.png"
     },
     {
         "dex": 548,
@@ -7121,8 +7121,8 @@ var data = [
         "special_defense": 50,
         "speed": 30,
         "best": 280,
-        "img_default": imagurl + "/other/official-artwork/548.png",
-        "img_sprite": imagurl + "/548.png"
+        "img_default": imagurl+"/other/official-artwork/548.png",
+        "img_sprite": imagurl+"/548.png"
     },
     {
         "dex": 549,
@@ -7134,12 +7134,12 @@ var data = [
         "special_defense": 75,
         "speed": 90,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/549.png",
-        "img_sprite": imagurl + "/549.png"
+        "img_default": imagurl+"/other/official-artwork/549.png",
+        "img_sprite": imagurl+"/549.png"
     },
     {
         "dex": 550,
-        "name": "Basculin-red-striped",
+        "name": "Basculin",
         "hp": 70,
         "attack": 92,
         "defense": 65,
@@ -7147,8 +7147,8 @@ var data = [
         "special_defense": 55,
         "speed": 98,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/550.png",
-        "img_sprite": imagurl + "/550.png"
+        "img_default": imagurl+"/other/official-artwork/550.png",
+        "img_sprite": imagurl+"/550.png"
     },
     {
         "dex": 551,
@@ -7160,8 +7160,8 @@ var data = [
         "special_defense": 35,
         "speed": 65,
         "best": 292,
-        "img_default": imagurl + "/other/official-artwork/551.png",
-        "img_sprite": imagurl + "/551.png"
+        "img_default": imagurl+"/other/official-artwork/551.png",
+        "img_sprite": imagurl+"/551.png"
     },
     {
         "dex": 552,
@@ -7173,8 +7173,8 @@ var data = [
         "special_defense": 45,
         "speed": 74,
         "best": 351,
-        "img_default": imagurl + "/other/official-artwork/552.png",
-        "img_sprite": imagurl + "/552.png"
+        "img_default": imagurl+"/other/official-artwork/552.png",
+        "img_sprite": imagurl+"/552.png"
     },
     {
         "dex": 553,
@@ -7186,8 +7186,8 @@ var data = [
         "special_defense": 70,
         "speed": 92,
         "best": 519,
-        "img_default": imagurl + "/other/official-artwork/553.png",
-        "img_sprite": imagurl + "/553.png"
+        "img_default": imagurl+"/other/official-artwork/553.png",
+        "img_sprite": imagurl+"/553.png"
     },
     {
         "dex": 554,
@@ -7199,12 +7199,12 @@ var data = [
         "special_defense": 45,
         "speed": 50,
         "best": 315,
-        "img_default": imagurl + "/other/official-artwork/554.png",
-        "img_sprite": imagurl + "/554.png"
+        "img_default": imagurl+"/other/official-artwork/554.png",
+        "img_sprite": imagurl+"/554.png"
     },
     {
         "dex": 555,
-        "name": "Darmanitan-standard",
+        "name": "Darmanitan",
         "hp": 105,
         "attack": 140,
         "defense": 55,
@@ -7212,8 +7212,8 @@ var data = [
         "special_defense": 55,
         "speed": 95,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/555.png",
-        "img_sprite": imagurl + "/555.png"
+        "img_default": imagurl+"/other/official-artwork/555.png",
+        "img_sprite": imagurl+"/555.png"
     },
     {
         "dex": 556,
@@ -7225,8 +7225,8 @@ var data = [
         "special_defense": 67,
         "speed": 60,
         "best": 461,
-        "img_default": imagurl + "/other/official-artwork/556.png",
-        "img_sprite": imagurl + "/556.png"
+        "img_default": imagurl+"/other/official-artwork/556.png",
+        "img_sprite": imagurl+"/556.png"
     },
     {
         "dex": 557,
@@ -7238,8 +7238,8 @@ var data = [
         "special_defense": 35,
         "speed": 55,
         "best": 325,
-        "img_default": imagurl + "/other/official-artwork/557.png",
-        "img_sprite": imagurl + "/557.png"
+        "img_default": imagurl+"/other/official-artwork/557.png",
+        "img_sprite": imagurl+"/557.png"
     },
     {
         "dex": 558,
@@ -7251,8 +7251,8 @@ var data = [
         "special_defense": 75,
         "speed": 45,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/558.png",
-        "img_sprite": imagurl + "/558.png"
+        "img_default": imagurl+"/other/official-artwork/558.png",
+        "img_sprite": imagurl+"/558.png"
     },
     {
         "dex": 559,
@@ -7264,8 +7264,8 @@ var data = [
         "special_defense": 70,
         "speed": 48,
         "best": 348,
-        "img_default": imagurl + "/other/official-artwork/559.png",
-        "img_sprite": imagurl + "/559.png"
+        "img_default": imagurl+"/other/official-artwork/559.png",
+        "img_sprite": imagurl+"/559.png"
     },
     {
         "dex": 560,
@@ -7277,8 +7277,8 @@ var data = [
         "special_defense": 115,
         "speed": 58,
         "best": 488,
-        "img_default": imagurl + "/other/official-artwork/560.png",
-        "img_sprite": imagurl + "/560.png"
+        "img_default": imagurl+"/other/official-artwork/560.png",
+        "img_sprite": imagurl+"/560.png"
     },
     {
         "dex": 561,
@@ -7290,8 +7290,8 @@ var data = [
         "special_defense": 80,
         "speed": 97,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/561.png",
-        "img_sprite": imagurl + "/561.png"
+        "img_default": imagurl+"/other/official-artwork/561.png",
+        "img_sprite": imagurl+"/561.png"
     },
     {
         "dex": 562,
@@ -7303,8 +7303,8 @@ var data = [
         "special_defense": 65,
         "speed": 30,
         "best": 303,
-        "img_default": imagurl + "/other/official-artwork/562.png",
-        "img_sprite": imagurl + "/562.png"
+        "img_default": imagurl+"/other/official-artwork/562.png",
+        "img_sprite": imagurl+"/562.png"
     },
     {
         "dex": 563,
@@ -7316,8 +7316,8 @@ var data = [
         "special_defense": 105,
         "speed": 30,
         "best": 483,
-        "img_default": imagurl + "/other/official-artwork/563.png",
-        "img_sprite": imagurl + "/563.png"
+        "img_default": imagurl+"/other/official-artwork/563.png",
+        "img_sprite": imagurl+"/563.png"
     },
     {
         "dex": 564,
@@ -7329,8 +7329,8 @@ var data = [
         "special_defense": 45,
         "speed": 22,
         "best": 355,
-        "img_default": imagurl + "/other/official-artwork/564.png",
-        "img_sprite": imagurl + "/564.png"
+        "img_default": imagurl+"/other/official-artwork/564.png",
+        "img_sprite": imagurl+"/564.png"
     },
     {
         "dex": 565,
@@ -7342,8 +7342,8 @@ var data = [
         "special_defense": 65,
         "speed": 32,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/565.png",
-        "img_sprite": imagurl + "/565.png"
+        "img_default": imagurl+"/other/official-artwork/565.png",
+        "img_sprite": imagurl+"/565.png"
     },
     {
         "dex": 566,
@@ -7355,8 +7355,8 @@ var data = [
         "special_defense": 45,
         "speed": 70,
         "best": 401,
-        "img_default": imagurl + "/other/official-artwork/566.png",
-        "img_sprite": imagurl + "/566.png"
+        "img_default": imagurl+"/other/official-artwork/566.png",
+        "img_sprite": imagurl+"/566.png"
     },
     {
         "dex": 567,
@@ -7368,8 +7368,8 @@ var data = [
         "special_defense": 65,
         "speed": 110,
         "best": 567,
-        "img_default": imagurl + "/other/official-artwork/567.png",
-        "img_sprite": imagurl + "/567.png"
+        "img_default": imagurl+"/other/official-artwork/567.png",
+        "img_sprite": imagurl+"/567.png"
     },
     {
         "dex": 568,
@@ -7381,8 +7381,8 @@ var data = [
         "special_defense": 62,
         "speed": 65,
         "best": 329,
-        "img_default": imagurl + "/other/official-artwork/568.png",
-        "img_sprite": imagurl + "/568.png"
+        "img_default": imagurl+"/other/official-artwork/568.png",
+        "img_sprite": imagurl+"/568.png"
     },
     {
         "dex": 569,
@@ -7394,8 +7394,8 @@ var data = [
         "special_defense": 82,
         "speed": 75,
         "best": 474,
-        "img_default": imagurl + "/other/official-artwork/569.png",
-        "img_sprite": imagurl + "/569.png"
+        "img_default": imagurl+"/other/official-artwork/569.png",
+        "img_sprite": imagurl+"/569.png"
     },
     {
         "dex": 570,
@@ -7407,8 +7407,8 @@ var data = [
         "special_defense": 40,
         "speed": 65,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/570.png",
-        "img_sprite": imagurl + "/570.png"
+        "img_default": imagurl+"/other/official-artwork/570.png",
+        "img_sprite": imagurl+"/570.png"
     },
     {
         "dex": 571,
@@ -7420,8 +7420,8 @@ var data = [
         "special_defense": 60,
         "speed": 105,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/571.png",
-        "img_sprite": imagurl + "/571.png"
+        "img_default": imagurl+"/other/official-artwork/571.png",
+        "img_sprite": imagurl+"/571.png"
     },
     {
         "dex": 572,
@@ -7433,8 +7433,8 @@ var data = [
         "special_defense": 40,
         "speed": 75,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/572.png",
-        "img_sprite": imagurl + "/572.png"
+        "img_default": imagurl+"/other/official-artwork/572.png",
+        "img_sprite": imagurl+"/572.png"
     },
     {
         "dex": 573,
@@ -7446,8 +7446,8 @@ var data = [
         "special_defense": 60,
         "speed": 115,
         "best": 470,
-        "img_default": imagurl + "/other/official-artwork/573.png",
-        "img_sprite": imagurl + "/573.png"
+        "img_default": imagurl+"/other/official-artwork/573.png",
+        "img_sprite": imagurl+"/573.png"
     },
     {
         "dex": 574,
@@ -7459,8 +7459,8 @@ var data = [
         "special_defense": 65,
         "speed": 45,
         "best": 290,
-        "img_default": imagurl + "/other/official-artwork/574.png",
-        "img_sprite": imagurl + "/574.png"
+        "img_default": imagurl+"/other/official-artwork/574.png",
+        "img_sprite": imagurl+"/574.png"
     },
     {
         "dex": 575,
@@ -7472,8 +7472,8 @@ var data = [
         "special_defense": 85,
         "speed": 55,
         "best": 390,
-        "img_default": imagurl + "/other/official-artwork/575.png",
-        "img_sprite": imagurl + "/575.png"
+        "img_default": imagurl+"/other/official-artwork/575.png",
+        "img_sprite": imagurl+"/575.png"
     },
     {
         "dex": 576,
@@ -7485,8 +7485,8 @@ var data = [
         "special_defense": 110,
         "speed": 65,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/576.png",
-        "img_sprite": imagurl + "/576.png"
+        "img_default": imagurl+"/other/official-artwork/576.png",
+        "img_sprite": imagurl+"/576.png"
     },
     {
         "dex": 577,
@@ -7498,8 +7498,8 @@ var data = [
         "special_defense": 50,
         "speed": 20,
         "best": 290,
-        "img_default": imagurl + "/other/official-artwork/577.png",
-        "img_sprite": imagurl + "/577.png"
+        "img_default": imagurl+"/other/official-artwork/577.png",
+        "img_sprite": imagurl+"/577.png"
     },
     {
         "dex": 578,
@@ -7511,8 +7511,8 @@ var data = [
         "special_defense": 60,
         "speed": 30,
         "best": 370,
-        "img_default": imagurl + "/other/official-artwork/578.png",
-        "img_sprite": imagurl + "/578.png"
+        "img_default": imagurl+"/other/official-artwork/578.png",
+        "img_sprite": imagurl+"/578.png"
     },
     {
         "dex": 579,
@@ -7524,8 +7524,8 @@ var data = [
         "special_defense": 85,
         "speed": 30,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/579.png",
-        "img_sprite": imagurl + "/579.png"
+        "img_default": imagurl+"/other/official-artwork/579.png",
+        "img_sprite": imagurl+"/579.png"
     },
     {
         "dex": 580,
@@ -7537,8 +7537,8 @@ var data = [
         "special_defense": 50,
         "speed": 55,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/580.png",
-        "img_sprite": imagurl + "/580.png"
+        "img_default": imagurl+"/other/official-artwork/580.png",
+        "img_sprite": imagurl+"/580.png"
     },
     {
         "dex": 581,
@@ -7550,8 +7550,8 @@ var data = [
         "special_defense": 63,
         "speed": 98,
         "best": 473,
-        "img_default": imagurl + "/other/official-artwork/581.png",
-        "img_sprite": imagurl + "/581.png"
+        "img_default": imagurl+"/other/official-artwork/581.png",
+        "img_sprite": imagurl+"/581.png"
     },
     {
         "dex": 582,
@@ -7563,8 +7563,8 @@ var data = [
         "special_defense": 60,
         "speed": 44,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/582.png",
-        "img_sprite": imagurl + "/582.png"
+        "img_default": imagurl+"/other/official-artwork/582.png",
+        "img_sprite": imagurl+"/582.png"
     },
     {
         "dex": 583,
@@ -7576,8 +7576,8 @@ var data = [
         "special_defense": 75,
         "speed": 59,
         "best": 395,
-        "img_default": imagurl + "/other/official-artwork/583.png",
-        "img_sprite": imagurl + "/583.png"
+        "img_default": imagurl+"/other/official-artwork/583.png",
+        "img_sprite": imagurl+"/583.png"
     },
     {
         "dex": 584,
@@ -7589,8 +7589,8 @@ var data = [
         "special_defense": 95,
         "speed": 79,
         "best": 535,
-        "img_default": imagurl + "/other/official-artwork/584.png",
-        "img_sprite": imagurl + "/584.png"
+        "img_default": imagurl+"/other/official-artwork/584.png",
+        "img_sprite": imagurl+"/584.png"
     },
     {
         "dex": 585,
@@ -7602,8 +7602,8 @@ var data = [
         "special_defense": 50,
         "speed": 75,
         "best": 335,
-        "img_default": imagurl + "/other/official-artwork/585.png",
-        "img_sprite": imagurl + "/585.png"
+        "img_default": imagurl+"/other/official-artwork/585.png",
+        "img_sprite": imagurl+"/585.png"
     },
     {
         "dex": 586,
@@ -7615,8 +7615,8 @@ var data = [
         "special_defense": 70,
         "speed": 95,
         "best": 475,
-        "img_default": imagurl + "/other/official-artwork/586.png",
-        "img_sprite": imagurl + "/586.png"
+        "img_default": imagurl+"/other/official-artwork/586.png",
+        "img_sprite": imagurl+"/586.png"
     },
     {
         "dex": 587,
@@ -7628,8 +7628,8 @@ var data = [
         "special_defense": 60,
         "speed": 103,
         "best": 428,
-        "img_default": imagurl + "/other/official-artwork/587.png",
-        "img_sprite": imagurl + "/587.png"
+        "img_default": imagurl+"/other/official-artwork/587.png",
+        "img_sprite": imagurl+"/587.png"
     },
     {
         "dex": 588,
@@ -7641,8 +7641,8 @@ var data = [
         "special_defense": 45,
         "speed": 60,
         "best": 315,
-        "img_default": imagurl + "/other/official-artwork/588.png",
-        "img_sprite": imagurl + "/588.png"
+        "img_default": imagurl+"/other/official-artwork/588.png",
+        "img_sprite": imagurl+"/588.png"
     },
     {
         "dex": 589,
@@ -7654,8 +7654,8 @@ var data = [
         "special_defense": 105,
         "speed": 20,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/589.png",
-        "img_sprite": imagurl + "/589.png"
+        "img_default": imagurl+"/other/official-artwork/589.png",
+        "img_sprite": imagurl+"/589.png"
     },
     {
         "dex": 590,
@@ -7667,8 +7667,8 @@ var data = [
         "special_defense": 55,
         "speed": 15,
         "best": 294,
-        "img_default": imagurl + "/other/official-artwork/590.png",
-        "img_sprite": imagurl + "/590.png"
+        "img_default": imagurl+"/other/official-artwork/590.png",
+        "img_sprite": imagurl+"/590.png"
     },
     {
         "dex": 591,
@@ -7680,8 +7680,8 @@ var data = [
         "special_defense": 80,
         "speed": 30,
         "best": 464,
-        "img_default": imagurl + "/other/official-artwork/591.png",
-        "img_sprite": imagurl + "/591.png"
+        "img_default": imagurl+"/other/official-artwork/591.png",
+        "img_sprite": imagurl+"/591.png"
     },
     {
         "dex": 592,
@@ -7693,8 +7693,8 @@ var data = [
         "special_defense": 85,
         "speed": 40,
         "best": 335,
-        "img_default": imagurl + "/other/official-artwork/592.png",
-        "img_sprite": imagurl + "/592.png"
+        "img_default": imagurl+"/other/official-artwork/592.png",
+        "img_sprite": imagurl+"/592.png"
     },
     {
         "dex": 593,
@@ -7706,8 +7706,8 @@ var data = [
         "special_defense": 105,
         "speed": 60,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/593.png",
-        "img_sprite": imagurl + "/593.png"
+        "img_default": imagurl+"/other/official-artwork/593.png",
+        "img_sprite": imagurl+"/593.png"
     },
     {
         "dex": 594,
@@ -7719,8 +7719,8 @@ var data = [
         "special_defense": 45,
         "speed": 65,
         "best": 470,
-        "img_default": imagurl + "/other/official-artwork/594.png",
-        "img_sprite": imagurl + "/594.png"
+        "img_default": imagurl+"/other/official-artwork/594.png",
+        "img_sprite": imagurl+"/594.png"
     },
     {
         "dex": 595,
@@ -7732,8 +7732,8 @@ var data = [
         "special_defense": 50,
         "speed": 65,
         "best": 319,
-        "img_default": imagurl + "/other/official-artwork/595.png",
-        "img_sprite": imagurl + "/595.png"
+        "img_default": imagurl+"/other/official-artwork/595.png",
+        "img_sprite": imagurl+"/595.png"
     },
     {
         "dex": 596,
@@ -7745,8 +7745,8 @@ var data = [
         "special_defense": 60,
         "speed": 108,
         "best": 472,
-        "img_default": imagurl + "/other/official-artwork/596.png",
-        "img_sprite": imagurl + "/596.png"
+        "img_default": imagurl+"/other/official-artwork/596.png",
+        "img_sprite": imagurl+"/596.png"
     },
     {
         "dex": 597,
@@ -7758,8 +7758,8 @@ var data = [
         "special_defense": 86,
         "speed": 10,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/597.png",
-        "img_sprite": imagurl + "/597.png"
+        "img_default": imagurl+"/other/official-artwork/597.png",
+        "img_sprite": imagurl+"/597.png"
     },
     {
         "dex": 598,
@@ -7771,8 +7771,8 @@ var data = [
         "special_defense": 116,
         "speed": 20,
         "best": 489,
-        "img_default": imagurl + "/other/official-artwork/598.png",
-        "img_sprite": imagurl + "/598.png"
+        "img_default": imagurl+"/other/official-artwork/598.png",
+        "img_sprite": imagurl+"/598.png"
     },
     {
         "dex": 599,
@@ -7784,8 +7784,8 @@ var data = [
         "special_defense": 60,
         "speed": 30,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/599.png",
-        "img_sprite": imagurl + "/599.png"
+        "img_default": imagurl+"/other/official-artwork/599.png",
+        "img_sprite": imagurl+"/599.png"
     },
     {
         "dex": 600,
@@ -7797,8 +7797,8 @@ var data = [
         "special_defense": 85,
         "speed": 50,
         "best": 440,
-        "img_default": imagurl + "/other/official-artwork/600.png",
-        "img_sprite": imagurl + "/600.png"
+        "img_default": imagurl+"/other/official-artwork/600.png",
+        "img_sprite": imagurl+"/600.png"
     },
     {
         "dex": 601,
@@ -7810,8 +7810,8 @@ var data = [
         "special_defense": 85,
         "speed": 90,
         "best": 520,
-        "img_default": imagurl + "/other/official-artwork/601.png",
-        "img_sprite": imagurl + "/601.png"
+        "img_default": imagurl+"/other/official-artwork/601.png",
+        "img_sprite": imagurl+"/601.png"
     },
     {
         "dex": 602,
@@ -7823,8 +7823,8 @@ var data = [
         "special_defense": 40,
         "speed": 60,
         "best": 275,
-        "img_default": imagurl + "/other/official-artwork/602.png",
-        "img_sprite": imagurl + "/602.png"
+        "img_default": imagurl+"/other/official-artwork/602.png",
+        "img_sprite": imagurl+"/602.png"
     },
     {
         "dex": 603,
@@ -7836,8 +7836,8 @@ var data = [
         "special_defense": 70,
         "speed": 40,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/603.png",
-        "img_sprite": imagurl + "/603.png"
+        "img_default": imagurl+"/other/official-artwork/603.png",
+        "img_sprite": imagurl+"/603.png"
     },
     {
         "dex": 604,
@@ -7849,8 +7849,8 @@ var data = [
         "special_defense": 80,
         "speed": 50,
         "best": 515,
-        "img_default": imagurl + "/other/official-artwork/604.png",
-        "img_sprite": imagurl + "/604.png"
+        "img_default": imagurl+"/other/official-artwork/604.png",
+        "img_sprite": imagurl+"/604.png"
     },
     {
         "dex": 605,
@@ -7862,8 +7862,8 @@ var data = [
         "special_defense": 55,
         "speed": 30,
         "best": 335,
-        "img_default": imagurl + "/other/official-artwork/605.png",
-        "img_sprite": imagurl + "/605.png"
+        "img_default": imagurl+"/other/official-artwork/605.png",
+        "img_sprite": imagurl+"/605.png"
     },
     {
         "dex": 606,
@@ -7875,8 +7875,8 @@ var data = [
         "special_defense": 95,
         "speed": 40,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/606.png",
-        "img_sprite": imagurl + "/606.png"
+        "img_default": imagurl+"/other/official-artwork/606.png",
+        "img_sprite": imagurl+"/606.png"
     },
     {
         "dex": 607,
@@ -7888,8 +7888,8 @@ var data = [
         "special_defense": 55,
         "speed": 20,
         "best": 275,
-        "img_default": imagurl + "/other/official-artwork/607.png",
-        "img_sprite": imagurl + "/607.png"
+        "img_default": imagurl+"/other/official-artwork/607.png",
+        "img_sprite": imagurl+"/607.png"
     },
     {
         "dex": 608,
@@ -7901,8 +7901,8 @@ var data = [
         "special_defense": 60,
         "speed": 55,
         "best": 370,
-        "img_default": imagurl + "/other/official-artwork/608.png",
-        "img_sprite": imagurl + "/608.png"
+        "img_default": imagurl+"/other/official-artwork/608.png",
+        "img_sprite": imagurl+"/608.png"
     },
     {
         "dex": 609,
@@ -7914,8 +7914,8 @@ var data = [
         "special_defense": 90,
         "speed": 80,
         "best": 520,
-        "img_default": imagurl + "/other/official-artwork/609.png",
-        "img_sprite": imagurl + "/609.png"
+        "img_default": imagurl+"/other/official-artwork/609.png",
+        "img_sprite": imagurl+"/609.png"
     },
     {
         "dex": 610,
@@ -7927,8 +7927,8 @@ var data = [
         "special_defense": 40,
         "speed": 57,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/610.png",
-        "img_sprite": imagurl + "/610.png"
+        "img_default": imagurl+"/other/official-artwork/610.png",
+        "img_sprite": imagurl+"/610.png"
     },
     {
         "dex": 611,
@@ -7940,8 +7940,8 @@ var data = [
         "special_defense": 50,
         "speed": 67,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/611.png",
-        "img_sprite": imagurl + "/611.png"
+        "img_default": imagurl+"/other/official-artwork/611.png",
+        "img_sprite": imagurl+"/611.png"
     },
     {
         "dex": 612,
@@ -7953,8 +7953,8 @@ var data = [
         "special_defense": 70,
         "speed": 97,
         "best": 540,
-        "img_default": imagurl + "/other/official-artwork/612.png",
-        "img_sprite": imagurl + "/612.png"
+        "img_default": imagurl+"/other/official-artwork/612.png",
+        "img_sprite": imagurl+"/612.png"
     },
     {
         "dex": 613,
@@ -7966,8 +7966,8 @@ var data = [
         "special_defense": 40,
         "speed": 40,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/613.png",
-        "img_sprite": imagurl + "/613.png"
+        "img_default": imagurl+"/other/official-artwork/613.png",
+        "img_sprite": imagurl+"/613.png"
     },
     {
         "dex": 614,
@@ -7979,8 +7979,8 @@ var data = [
         "special_defense": 80,
         "speed": 50,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/614.png",
-        "img_sprite": imagurl + "/614.png"
+        "img_default": imagurl+"/other/official-artwork/614.png",
+        "img_sprite": imagurl+"/614.png"
     },
     {
         "dex": 615,
@@ -7992,8 +7992,8 @@ var data = [
         "special_defense": 135,
         "speed": 105,
         "best": 515,
-        "img_default": imagurl + "/other/official-artwork/615.png",
-        "img_sprite": imagurl + "/615.png"
+        "img_default": imagurl+"/other/official-artwork/615.png",
+        "img_sprite": imagurl+"/615.png"
     },
     {
         "dex": 616,
@@ -8005,8 +8005,8 @@ var data = [
         "special_defense": 65,
         "speed": 25,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/616.png",
-        "img_sprite": imagurl + "/616.png"
+        "img_default": imagurl+"/other/official-artwork/616.png",
+        "img_sprite": imagurl+"/616.png"
     },
     {
         "dex": 617,
@@ -8018,8 +8018,8 @@ var data = [
         "special_defense": 60,
         "speed": 145,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/617.png",
-        "img_sprite": imagurl + "/617.png"
+        "img_default": imagurl+"/other/official-artwork/617.png",
+        "img_sprite": imagurl+"/617.png"
     },
     {
         "dex": 618,
@@ -8031,8 +8031,8 @@ var data = [
         "special_defense": 99,
         "speed": 32,
         "best": 471,
-        "img_default": imagurl + "/other/official-artwork/618.png",
-        "img_sprite": imagurl + "/618.png"
+        "img_default": imagurl+"/other/official-artwork/618.png",
+        "img_sprite": imagurl+"/618.png"
     },
     {
         "dex": 619,
@@ -8044,8 +8044,8 @@ var data = [
         "special_defense": 50,
         "speed": 65,
         "best": 350,
-        "img_default": imagurl + "/other/official-artwork/619.png",
-        "img_sprite": imagurl + "/619.png"
+        "img_default": imagurl+"/other/official-artwork/619.png",
+        "img_sprite": imagurl+"/619.png"
     },
     {
         "dex": 620,
@@ -8057,8 +8057,8 @@ var data = [
         "special_defense": 60,
         "speed": 105,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/620.png",
-        "img_sprite": imagurl + "/620.png"
+        "img_default": imagurl+"/other/official-artwork/620.png",
+        "img_sprite": imagurl+"/620.png"
     },
     {
         "dex": 621,
@@ -8070,8 +8070,8 @@ var data = [
         "special_defense": 90,
         "speed": 48,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/621.png",
-        "img_sprite": imagurl + "/621.png"
+        "img_default": imagurl+"/other/official-artwork/621.png",
+        "img_sprite": imagurl+"/621.png"
     },
     {
         "dex": 622,
@@ -8083,8 +8083,8 @@ var data = [
         "special_defense": 50,
         "speed": 35,
         "best": 303,
-        "img_default": imagurl + "/other/official-artwork/622.png",
-        "img_sprite": imagurl + "/622.png"
+        "img_default": imagurl+"/other/official-artwork/622.png",
+        "img_sprite": imagurl+"/622.png"
     },
     {
         "dex": 623,
@@ -8096,8 +8096,8 @@ var data = [
         "special_defense": 80,
         "speed": 55,
         "best": 483,
-        "img_default": imagurl + "/other/official-artwork/623.png",
-        "img_sprite": imagurl + "/623.png"
+        "img_default": imagurl+"/other/official-artwork/623.png",
+        "img_sprite": imagurl+"/623.png"
     },
     {
         "dex": 624,
@@ -8109,8 +8109,8 @@ var data = [
         "special_defense": 40,
         "speed": 60,
         "best": 340,
-        "img_default": imagurl + "/other/official-artwork/624.png",
-        "img_sprite": imagurl + "/624.png"
+        "img_default": imagurl+"/other/official-artwork/624.png",
+        "img_sprite": imagurl+"/624.png"
     },
     {
         "dex": 625,
@@ -8122,8 +8122,8 @@ var data = [
         "special_defense": 70,
         "speed": 70,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/625.png",
-        "img_sprite": imagurl + "/625.png"
+        "img_default": imagurl+"/other/official-artwork/625.png",
+        "img_sprite": imagurl+"/625.png"
     },
     {
         "dex": 626,
@@ -8135,8 +8135,8 @@ var data = [
         "special_defense": 95,
         "speed": 55,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/626.png",
-        "img_sprite": imagurl + "/626.png"
+        "img_default": imagurl+"/other/official-artwork/626.png",
+        "img_sprite": imagurl+"/626.png"
     },
     {
         "dex": 627,
@@ -8148,8 +8148,8 @@ var data = [
         "special_defense": 50,
         "speed": 60,
         "best": 350,
-        "img_default": imagurl + "/other/official-artwork/627.png",
-        "img_sprite": imagurl + "/627.png"
+        "img_default": imagurl+"/other/official-artwork/627.png",
+        "img_sprite": imagurl+"/627.png"
     },
     {
         "dex": 628,
@@ -8161,8 +8161,8 @@ var data = [
         "special_defense": 75,
         "speed": 80,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/628.png",
-        "img_sprite": imagurl + "/628.png"
+        "img_default": imagurl+"/other/official-artwork/628.png",
+        "img_sprite": imagurl+"/628.png"
     },
     {
         "dex": 629,
@@ -8174,8 +8174,8 @@ var data = [
         "special_defense": 65,
         "speed": 60,
         "best": 370,
-        "img_default": imagurl + "/other/official-artwork/629.png",
-        "img_sprite": imagurl + "/629.png"
+        "img_default": imagurl+"/other/official-artwork/629.png",
+        "img_sprite": imagurl+"/629.png"
     },
     {
         "dex": 630,
@@ -8187,8 +8187,8 @@ var data = [
         "special_defense": 95,
         "speed": 80,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/630.png",
-        "img_sprite": imagurl + "/630.png"
+        "img_default": imagurl+"/other/official-artwork/630.png",
+        "img_sprite": imagurl+"/630.png"
     },
     {
         "dex": 631,
@@ -8200,8 +8200,8 @@ var data = [
         "special_defense": 66,
         "speed": 65,
         "best": 484,
-        "img_default": imagurl + "/other/official-artwork/631.png",
-        "img_sprite": imagurl + "/631.png"
+        "img_default": imagurl+"/other/official-artwork/631.png",
+        "img_sprite": imagurl+"/631.png"
     },
     {
         "dex": 632,
@@ -8213,8 +8213,8 @@ var data = [
         "special_defense": 48,
         "speed": 109,
         "best": 484,
-        "img_default": imagurl + "/other/official-artwork/632.png",
-        "img_sprite": imagurl + "/632.png"
+        "img_default": imagurl+"/other/official-artwork/632.png",
+        "img_sprite": imagurl+"/632.png"
     },
     {
         "dex": 633,
@@ -8226,8 +8226,8 @@ var data = [
         "special_defense": 50,
         "speed": 38,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/633.png",
-        "img_sprite": imagurl + "/633.png"
+        "img_default": imagurl+"/other/official-artwork/633.png",
+        "img_sprite": imagurl+"/633.png"
     },
     {
         "dex": 634,
@@ -8239,8 +8239,8 @@ var data = [
         "special_defense": 70,
         "speed": 58,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/634.png",
-        "img_sprite": imagurl + "/634.png"
+        "img_default": imagurl+"/other/official-artwork/634.png",
+        "img_sprite": imagurl+"/634.png"
     },
     {
         "dex": 635,
@@ -8252,8 +8252,8 @@ var data = [
         "special_defense": 90,
         "speed": 98,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/635.png",
-        "img_sprite": imagurl + "/635.png"
+        "img_default": imagurl+"/other/official-artwork/635.png",
+        "img_sprite": imagurl+"/635.png"
     },
     {
         "dex": 636,
@@ -8265,8 +8265,8 @@ var data = [
         "special_defense": 55,
         "speed": 60,
         "best": 360,
-        "img_default": imagurl + "/other/official-artwork/636.png",
-        "img_sprite": imagurl + "/636.png"
+        "img_default": imagurl+"/other/official-artwork/636.png",
+        "img_sprite": imagurl+"/636.png"
     },
     {
         "dex": 637,
@@ -8278,8 +8278,8 @@ var data = [
         "special_defense": 105,
         "speed": 100,
         "best": 550,
-        "img_default": imagurl + "/other/official-artwork/637.png",
-        "img_sprite": imagurl + "/637.png"
+        "img_default": imagurl+"/other/official-artwork/637.png",
+        "img_sprite": imagurl+"/637.png"
     },
     {
         "dex": 638,
@@ -8291,8 +8291,8 @@ var data = [
         "special_defense": 72,
         "speed": 108,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/638.png",
-        "img_sprite": imagurl + "/638.png"
+        "img_default": imagurl+"/other/official-artwork/638.png",
+        "img_sprite": imagurl+"/638.png"
     },
     {
         "dex": 639,
@@ -8304,8 +8304,8 @@ var data = [
         "special_defense": 90,
         "speed": 108,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/639.png",
-        "img_sprite": imagurl + "/639.png"
+        "img_default": imagurl+"/other/official-artwork/639.png",
+        "img_sprite": imagurl+"/639.png"
     },
     {
         "dex": 640,
@@ -8317,12 +8317,12 @@ var data = [
         "special_defense": 129,
         "speed": 108,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/640.png",
-        "img_sprite": imagurl + "/640.png"
+        "img_default": imagurl+"/other/official-artwork/640.png",
+        "img_sprite": imagurl+"/640.png"
     },
     {
         "dex": 641,
-        "name": "Tornadus-incarnate",
+        "name": "Tornadus",
         "hp": 79,
         "attack": 115,
         "defense": 70,
@@ -8330,12 +8330,12 @@ var data = [
         "special_defense": 80,
         "speed": 111,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/641.png",
-        "img_sprite": imagurl + "/641.png"
+        "img_default": imagurl+"/other/official-artwork/641.png",
+        "img_sprite": imagurl+"/641.png"
     },
     {
         "dex": 642,
-        "name": "Thundurus-incarnate",
+        "name": "Thundurus",
         "hp": 79,
         "attack": 115,
         "defense": 70,
@@ -8343,8 +8343,8 @@ var data = [
         "special_defense": 80,
         "speed": 111,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/642.png",
-        "img_sprite": imagurl + "/642.png"
+        "img_default": imagurl+"/other/official-artwork/642.png",
+        "img_sprite": imagurl+"/642.png"
     },
     {
         "dex": 643,
@@ -8356,8 +8356,8 @@ var data = [
         "special_defense": 120,
         "speed": 90,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/643.png",
-        "img_sprite": imagurl + "/643.png"
+        "img_default": imagurl+"/other/official-artwork/643.png",
+        "img_sprite": imagurl+"/643.png"
     },
     {
         "dex": 644,
@@ -8369,12 +8369,12 @@ var data = [
         "special_defense": 100,
         "speed": 90,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/644.png",
-        "img_sprite": imagurl + "/644.png"
+        "img_default": imagurl+"/other/official-artwork/644.png",
+        "img_sprite": imagurl+"/644.png"
     },
     {
         "dex": 645,
-        "name": "Landorus-incarnate",
+        "name": "Landorus",
         "hp": 89,
         "attack": 125,
         "defense": 90,
@@ -8382,8 +8382,8 @@ var data = [
         "special_defense": 80,
         "speed": 101,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/645.png",
-        "img_sprite": imagurl + "/645.png"
+        "img_default": imagurl+"/other/official-artwork/645.png",
+        "img_sprite": imagurl+"/645.png"
     },
     {
         "dex": 646,
@@ -8395,12 +8395,12 @@ var data = [
         "special_defense": 90,
         "speed": 95,
         "best": 660,
-        "img_default": imagurl + "/other/official-artwork/646.png",
-        "img_sprite": imagurl + "/646.png"
+        "img_default": imagurl+"/other/official-artwork/646.png",
+        "img_sprite": imagurl+"/646.png"
     },
     {
         "dex": 647,
-        "name": "Keldeo-ordinary",
+        "name": "Keldeo",
         "hp": 91,
         "attack": 72,
         "defense": 90,
@@ -8408,12 +8408,12 @@ var data = [
         "special_defense": 90,
         "speed": 108,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/647.png",
-        "img_sprite": imagurl + "/647.png"
+        "img_default": imagurl+"/other/official-artwork/647.png",
+        "img_sprite": imagurl+"/647.png"
     },
     {
         "dex": 648,
-        "name": "Meloetta-aria",
+        "name": "Meloetta",
         "hp": 100,
         "attack": 77,
         "defense": 77,
@@ -8421,8 +8421,8 @@ var data = [
         "special_defense": 128,
         "speed": 90,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/648.png",
-        "img_sprite": imagurl + "/648.png"
+        "img_default": imagurl+"/other/official-artwork/648.png",
+        "img_sprite": imagurl+"/648.png"
     },
     {
         "dex": 649,
@@ -8434,8 +8434,8 @@ var data = [
         "special_defense": 95,
         "speed": 99,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/649.png",
-        "img_sprite": imagurl + "/649.png"
+        "img_default": imagurl+"/other/official-artwork/649.png",
+        "img_sprite": imagurl+"/649.png"
     },
     {
         "dex": 650,
@@ -8447,8 +8447,8 @@ var data = [
         "special_defense": 45,
         "speed": 38,
         "best": 313,
-        "img_default": imagurl + "/other/official-artwork/650.png",
-        "img_sprite": imagurl + "/650.png"
+        "img_default": imagurl+"/other/official-artwork/650.png",
+        "img_sprite": imagurl+"/650.png"
     },
     {
         "dex": 651,
@@ -8460,8 +8460,8 @@ var data = [
         "special_defense": 58,
         "speed": 57,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/651.png",
-        "img_sprite": imagurl + "/651.png"
+        "img_default": imagurl+"/other/official-artwork/651.png",
+        "img_sprite": imagurl+"/651.png"
     },
     {
         "dex": 652,
@@ -8473,8 +8473,8 @@ var data = [
         "special_defense": 75,
         "speed": 64,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/652.png",
-        "img_sprite": imagurl + "/652.png"
+        "img_default": imagurl+"/other/official-artwork/652.png",
+        "img_sprite": imagurl+"/652.png"
     },
     {
         "dex": 653,
@@ -8486,8 +8486,8 @@ var data = [
         "special_defense": 60,
         "speed": 60,
         "best": 307,
-        "img_default": imagurl + "/other/official-artwork/653.png",
-        "img_sprite": imagurl + "/653.png"
+        "img_default": imagurl+"/other/official-artwork/653.png",
+        "img_sprite": imagurl+"/653.png"
     },
     {
         "dex": 654,
@@ -8499,8 +8499,8 @@ var data = [
         "special_defense": 70,
         "speed": 73,
         "best": 409,
-        "img_default": imagurl + "/other/official-artwork/654.png",
-        "img_sprite": imagurl + "/654.png"
+        "img_default": imagurl+"/other/official-artwork/654.png",
+        "img_sprite": imagurl+"/654.png"
     },
     {
         "dex": 655,
@@ -8512,8 +8512,8 @@ var data = [
         "special_defense": 100,
         "speed": 104,
         "best": 534,
-        "img_default": imagurl + "/other/official-artwork/655.png",
-        "img_sprite": imagurl + "/655.png"
+        "img_default": imagurl+"/other/official-artwork/655.png",
+        "img_sprite": imagurl+"/655.png"
     },
     {
         "dex": 656,
@@ -8525,8 +8525,8 @@ var data = [
         "special_defense": 44,
         "speed": 71,
         "best": 314,
-        "img_default": imagurl + "/other/official-artwork/656.png",
-        "img_sprite": imagurl + "/656.png"
+        "img_default": imagurl+"/other/official-artwork/656.png",
+        "img_sprite": imagurl+"/656.png"
     },
     {
         "dex": 657,
@@ -8538,8 +8538,8 @@ var data = [
         "special_defense": 56,
         "speed": 97,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/657.png",
-        "img_sprite": imagurl + "/657.png"
+        "img_default": imagurl+"/other/official-artwork/657.png",
+        "img_sprite": imagurl+"/657.png"
     },
     {
         "dex": 658,
@@ -8551,8 +8551,8 @@ var data = [
         "special_defense": 71,
         "speed": 122,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/658.png",
-        "img_sprite": imagurl + "/658.png"
+        "img_default": imagurl+"/other/official-artwork/658.png",
+        "img_sprite": imagurl+"/658.png"
     },
     {
         "dex": 659,
@@ -8564,8 +8564,8 @@ var data = [
         "special_defense": 36,
         "speed": 57,
         "best": 237,
-        "img_default": imagurl + "/other/official-artwork/659.png",
-        "img_sprite": imagurl + "/659.png"
+        "img_default": imagurl+"/other/official-artwork/659.png",
+        "img_sprite": imagurl+"/659.png"
     },
     {
         "dex": 660,
@@ -8577,8 +8577,8 @@ var data = [
         "special_defense": 77,
         "speed": 78,
         "best": 423,
-        "img_default": imagurl + "/other/official-artwork/660.png",
-        "img_sprite": imagurl + "/660.png"
+        "img_default": imagurl+"/other/official-artwork/660.png",
+        "img_sprite": imagurl+"/660.png"
     },
     {
         "dex": 661,
@@ -8590,8 +8590,8 @@ var data = [
         "special_defense": 38,
         "speed": 62,
         "best": 278,
-        "img_default": imagurl + "/other/official-artwork/661.png",
-        "img_sprite": imagurl + "/661.png"
+        "img_default": imagurl+"/other/official-artwork/661.png",
+        "img_sprite": imagurl+"/661.png"
     },
     {
         "dex": 662,
@@ -8603,8 +8603,8 @@ var data = [
         "special_defense": 52,
         "speed": 84,
         "best": 382,
-        "img_default": imagurl + "/other/official-artwork/662.png",
-        "img_sprite": imagurl + "/662.png"
+        "img_default": imagurl+"/other/official-artwork/662.png",
+        "img_sprite": imagurl+"/662.png"
     },
     {
         "dex": 663,
@@ -8616,8 +8616,8 @@ var data = [
         "special_defense": 69,
         "speed": 126,
         "best": 499,
-        "img_default": imagurl + "/other/official-artwork/663.png",
-        "img_sprite": imagurl + "/663.png"
+        "img_default": imagurl+"/other/official-artwork/663.png",
+        "img_sprite": imagurl+"/663.png"
     },
     {
         "dex": 664,
@@ -8629,8 +8629,8 @@ var data = [
         "special_defense": 25,
         "speed": 35,
         "best": 200,
-        "img_default": imagurl + "/other/official-artwork/664.png",
-        "img_sprite": imagurl + "/664.png"
+        "img_default": imagurl+"/other/official-artwork/664.png",
+        "img_sprite": imagurl+"/664.png"
     },
     {
         "dex": 665,
@@ -8642,8 +8642,8 @@ var data = [
         "special_defense": 30,
         "speed": 29,
         "best": 213,
-        "img_default": imagurl + "/other/official-artwork/665.png",
-        "img_sprite": imagurl + "/665.png"
+        "img_default": imagurl+"/other/official-artwork/665.png",
+        "img_sprite": imagurl+"/665.png"
     },
     {
         "dex": 666,
@@ -8655,8 +8655,8 @@ var data = [
         "special_defense": 50,
         "speed": 89,
         "best": 411,
-        "img_default": imagurl + "/other/official-artwork/666.png",
-        "img_sprite": imagurl + "/666.png"
+        "img_default": imagurl+"/other/official-artwork/666.png",
+        "img_sprite": imagurl+"/666.png"
     },
     {
         "dex": 667,
@@ -8668,8 +8668,8 @@ var data = [
         "special_defense": 54,
         "speed": 72,
         "best": 369,
-        "img_default": imagurl + "/other/official-artwork/667.png",
-        "img_sprite": imagurl + "/667.png"
+        "img_default": imagurl+"/other/official-artwork/667.png",
+        "img_sprite": imagurl+"/667.png"
     },
     {
         "dex": 668,
@@ -8681,8 +8681,8 @@ var data = [
         "special_defense": 66,
         "speed": 106,
         "best": 507,
-        "img_default": imagurl + "/other/official-artwork/668.png",
-        "img_sprite": imagurl + "/668.png"
+        "img_default": imagurl+"/other/official-artwork/668.png",
+        "img_sprite": imagurl+"/668.png"
     },
     {
         "dex": 669,
@@ -8694,8 +8694,8 @@ var data = [
         "special_defense": 79,
         "speed": 42,
         "best": 303,
-        "img_default": imagurl + "/other/official-artwork/669.png",
-        "img_sprite": imagurl + "/669.png"
+        "img_default": imagurl+"/other/official-artwork/669.png",
+        "img_sprite": imagurl+"/669.png"
     },
     {
         "dex": 670,
@@ -8707,8 +8707,8 @@ var data = [
         "special_defense": 98,
         "speed": 52,
         "best": 371,
-        "img_default": imagurl + "/other/official-artwork/670.png",
-        "img_sprite": imagurl + "/670.png"
+        "img_default": imagurl+"/other/official-artwork/670.png",
+        "img_sprite": imagurl+"/670.png"
     },
     {
         "dex": 671,
@@ -8720,8 +8720,8 @@ var data = [
         "special_defense": 154,
         "speed": 75,
         "best": 552,
-        "img_default": imagurl + "/other/official-artwork/671.png",
-        "img_sprite": imagurl + "/671.png"
+        "img_default": imagurl+"/other/official-artwork/671.png",
+        "img_sprite": imagurl+"/671.png"
     },
     {
         "dex": 672,
@@ -8733,8 +8733,8 @@ var data = [
         "special_defense": 57,
         "speed": 52,
         "best": 350,
-        "img_default": imagurl + "/other/official-artwork/672.png",
-        "img_sprite": imagurl + "/672.png"
+        "img_default": imagurl+"/other/official-artwork/672.png",
+        "img_sprite": imagurl+"/672.png"
     },
     {
         "dex": 673,
@@ -8746,8 +8746,8 @@ var data = [
         "special_defense": 81,
         "speed": 68,
         "best": 531,
-        "img_default": imagurl + "/other/official-artwork/673.png",
-        "img_sprite": imagurl + "/673.png"
+        "img_default": imagurl+"/other/official-artwork/673.png",
+        "img_sprite": imagurl+"/673.png"
     },
     {
         "dex": 674,
@@ -8759,8 +8759,8 @@ var data = [
         "special_defense": 48,
         "speed": 43,
         "best": 348,
-        "img_default": imagurl + "/other/official-artwork/674.png",
-        "img_sprite": imagurl + "/674.png"
+        "img_default": imagurl+"/other/official-artwork/674.png",
+        "img_sprite": imagurl+"/674.png"
     },
     {
         "dex": 675,
@@ -8772,8 +8772,8 @@ var data = [
         "special_defense": 71,
         "speed": 58,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/675.png",
-        "img_sprite": imagurl + "/675.png"
+        "img_default": imagurl+"/other/official-artwork/675.png",
+        "img_sprite": imagurl+"/675.png"
     },
     {
         "dex": 676,
@@ -8785,8 +8785,8 @@ var data = [
         "special_defense": 90,
         "speed": 102,
         "best": 472,
-        "img_default": imagurl + "/other/official-artwork/676.png",
-        "img_sprite": imagurl + "/676.png"
+        "img_default": imagurl+"/other/official-artwork/676.png",
+        "img_sprite": imagurl+"/676.png"
     },
     {
         "dex": 677,
@@ -8798,12 +8798,12 @@ var data = [
         "special_defense": 60,
         "speed": 68,
         "best": 355,
-        "img_default": imagurl + "/other/official-artwork/677.png",
-        "img_sprite": imagurl + "/677.png"
+        "img_default": imagurl+"/other/official-artwork/677.png",
+        "img_sprite": imagurl+"/677.png"
     },
     {
         "dex": 678,
-        "name": "Meowstic-male",
+        "name": "Meowstic",
         "hp": 74,
         "attack": 48,
         "defense": 76,
@@ -8811,8 +8811,8 @@ var data = [
         "special_defense": 81,
         "speed": 104,
         "best": 466,
-        "img_default": imagurl + "/other/official-artwork/678.png",
-        "img_sprite": imagurl + "/678.png"
+        "img_default": imagurl+"/other/official-artwork/678.png",
+        "img_sprite": imagurl+"/678.png"
     },
     {
         "dex": 679,
@@ -8824,8 +8824,8 @@ var data = [
         "special_defense": 37,
         "speed": 28,
         "best": 325,
-        "img_default": imagurl + "/other/official-artwork/679.png",
-        "img_sprite": imagurl + "/679.png"
+        "img_default": imagurl+"/other/official-artwork/679.png",
+        "img_sprite": imagurl+"/679.png"
     },
     {
         "dex": 680,
@@ -8837,12 +8837,12 @@ var data = [
         "special_defense": 49,
         "speed": 35,
         "best": 448,
-        "img_default": imagurl + "/other/official-artwork/680.png",
-        "img_sprite": imagurl + "/680.png"
+        "img_default": imagurl+"/other/official-artwork/680.png",
+        "img_sprite": imagurl+"/680.png"
     },
     {
         "dex": 681,
-        "name": "Aegislash-shield",
+        "name": "Aegislash",
         "hp": 60,
         "attack": 50,
         "defense": 140,
@@ -8850,8 +8850,8 @@ var data = [
         "special_defense": 140,
         "speed": 60,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/681.png",
-        "img_sprite": imagurl + "/681.png"
+        "img_default": imagurl+"/other/official-artwork/681.png",
+        "img_sprite": imagurl+"/681.png"
     },
     {
         "dex": 682,
@@ -8863,8 +8863,8 @@ var data = [
         "special_defense": 65,
         "speed": 23,
         "best": 341,
-        "img_default": imagurl + "/other/official-artwork/682.png",
-        "img_sprite": imagurl + "/682.png"
+        "img_default": imagurl+"/other/official-artwork/682.png",
+        "img_sprite": imagurl+"/682.png"
     },
     {
         "dex": 683,
@@ -8876,8 +8876,8 @@ var data = [
         "special_defense": 89,
         "speed": 29,
         "best": 462,
-        "img_default": imagurl + "/other/official-artwork/683.png",
-        "img_sprite": imagurl + "/683.png"
+        "img_default": imagurl+"/other/official-artwork/683.png",
+        "img_sprite": imagurl+"/683.png"
     },
     {
         "dex": 684,
@@ -8889,8 +8889,8 @@ var data = [
         "special_defense": 57,
         "speed": 49,
         "best": 341,
-        "img_default": imagurl + "/other/official-artwork/684.png",
-        "img_sprite": imagurl + "/684.png"
+        "img_default": imagurl+"/other/official-artwork/684.png",
+        "img_sprite": imagurl+"/684.png"
     },
     {
         "dex": 685,
@@ -8902,8 +8902,8 @@ var data = [
         "special_defense": 75,
         "speed": 72,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/685.png",
-        "img_sprite": imagurl + "/685.png"
+        "img_default": imagurl+"/other/official-artwork/685.png",
+        "img_sprite": imagurl+"/685.png"
     },
     {
         "dex": 686,
@@ -8915,8 +8915,8 @@ var data = [
         "special_defense": 46,
         "speed": 45,
         "best": 288,
-        "img_default": imagurl + "/other/official-artwork/686.png",
-        "img_sprite": imagurl + "/686.png"
+        "img_default": imagurl+"/other/official-artwork/686.png",
+        "img_sprite": imagurl+"/686.png"
     },
     {
         "dex": 687,
@@ -8928,8 +8928,8 @@ var data = [
         "special_defense": 75,
         "speed": 73,
         "best": 482,
-        "img_default": imagurl + "/other/official-artwork/687.png",
-        "img_sprite": imagurl + "/687.png"
+        "img_default": imagurl+"/other/official-artwork/687.png",
+        "img_sprite": imagurl+"/687.png"
     },
     {
         "dex": 688,
@@ -8941,8 +8941,8 @@ var data = [
         "special_defense": 56,
         "speed": 50,
         "best": 306,
-        "img_default": imagurl + "/other/official-artwork/688.png",
-        "img_sprite": imagurl + "/688.png"
+        "img_default": imagurl+"/other/official-artwork/688.png",
+        "img_sprite": imagurl+"/688.png"
     },
     {
         "dex": 689,
@@ -8954,8 +8954,8 @@ var data = [
         "special_defense": 86,
         "speed": 68,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/689.png",
-        "img_sprite": imagurl + "/689.png"
+        "img_default": imagurl+"/other/official-artwork/689.png",
+        "img_sprite": imagurl+"/689.png"
     },
     {
         "dex": 690,
@@ -8967,8 +8967,8 @@ var data = [
         "special_defense": 60,
         "speed": 30,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/690.png",
-        "img_sprite": imagurl + "/690.png"
+        "img_default": imagurl+"/other/official-artwork/690.png",
+        "img_sprite": imagurl+"/690.png"
     },
     {
         "dex": 691,
@@ -8980,8 +8980,8 @@ var data = [
         "special_defense": 123,
         "speed": 44,
         "best": 494,
-        "img_default": imagurl + "/other/official-artwork/691.png",
-        "img_sprite": imagurl + "/691.png"
+        "img_default": imagurl+"/other/official-artwork/691.png",
+        "img_sprite": imagurl+"/691.png"
     },
     {
         "dex": 692,
@@ -8993,8 +8993,8 @@ var data = [
         "special_defense": 63,
         "speed": 44,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/692.png",
-        "img_sprite": imagurl + "/692.png"
+        "img_default": imagurl+"/other/official-artwork/692.png",
+        "img_sprite": imagurl+"/692.png"
     },
     {
         "dex": 693,
@@ -9006,8 +9006,8 @@ var data = [
         "special_defense": 89,
         "speed": 59,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/693.png",
-        "img_sprite": imagurl + "/693.png"
+        "img_default": imagurl+"/other/official-artwork/693.png",
+        "img_sprite": imagurl+"/693.png"
     },
     {
         "dex": 694,
@@ -9019,8 +9019,8 @@ var data = [
         "special_defense": 43,
         "speed": 70,
         "best": 289,
-        "img_default": imagurl + "/other/official-artwork/694.png",
-        "img_sprite": imagurl + "/694.png"
+        "img_default": imagurl+"/other/official-artwork/694.png",
+        "img_sprite": imagurl+"/694.png"
     },
     {
         "dex": 695,
@@ -9032,8 +9032,8 @@ var data = [
         "special_defense": 94,
         "speed": 109,
         "best": 481,
-        "img_default": imagurl + "/other/official-artwork/695.png",
-        "img_sprite": imagurl + "/695.png"
+        "img_default": imagurl+"/other/official-artwork/695.png",
+        "img_sprite": imagurl+"/695.png"
     },
     {
         "dex": 696,
@@ -9045,8 +9045,8 @@ var data = [
         "special_defense": 45,
         "speed": 48,
         "best": 362,
-        "img_default": imagurl + "/other/official-artwork/696.png",
-        "img_sprite": imagurl + "/696.png"
+        "img_default": imagurl+"/other/official-artwork/696.png",
+        "img_sprite": imagurl+"/696.png"
     },
     {
         "dex": 697,
@@ -9058,8 +9058,8 @@ var data = [
         "special_defense": 59,
         "speed": 71,
         "best": 521,
-        "img_default": imagurl + "/other/official-artwork/697.png",
-        "img_sprite": imagurl + "/697.png"
+        "img_default": imagurl+"/other/official-artwork/697.png",
+        "img_sprite": imagurl+"/697.png"
     },
     {
         "dex": 698,
@@ -9071,8 +9071,8 @@ var data = [
         "special_defense": 63,
         "speed": 46,
         "best": 362,
-        "img_default": imagurl + "/other/official-artwork/698.png",
-        "img_sprite": imagurl + "/698.png"
+        "img_default": imagurl+"/other/official-artwork/698.png",
+        "img_sprite": imagurl+"/698.png"
     },
     {
         "dex": 699,
@@ -9084,8 +9084,8 @@ var data = [
         "special_defense": 92,
         "speed": 58,
         "best": 521,
-        "img_default": imagurl + "/other/official-artwork/699.png",
-        "img_sprite": imagurl + "/699.png"
+        "img_default": imagurl+"/other/official-artwork/699.png",
+        "img_sprite": imagurl+"/699.png"
     },
     {
         "dex": 700,
@@ -9097,8 +9097,8 @@ var data = [
         "special_defense": 130,
         "speed": 60,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/700.png",
-        "img_sprite": imagurl + "/700.png"
+        "img_default": imagurl+"/other/official-artwork/700.png",
+        "img_sprite": imagurl+"/700.png"
     },
     {
         "dex": 701,
@@ -9110,8 +9110,8 @@ var data = [
         "special_defense": 63,
         "speed": 118,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/701.png",
-        "img_sprite": imagurl + "/701.png"
+        "img_default": imagurl+"/other/official-artwork/701.png",
+        "img_sprite": imagurl+"/701.png"
     },
     {
         "dex": 702,
@@ -9123,8 +9123,8 @@ var data = [
         "special_defense": 67,
         "speed": 101,
         "best": 431,
-        "img_default": imagurl + "/other/official-artwork/702.png",
-        "img_sprite": imagurl + "/702.png"
+        "img_default": imagurl+"/other/official-artwork/702.png",
+        "img_sprite": imagurl+"/702.png"
     },
     {
         "dex": 703,
@@ -9136,8 +9136,8 @@ var data = [
         "special_defense": 150,
         "speed": 50,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/703.png",
-        "img_sprite": imagurl + "/703.png"
+        "img_default": imagurl+"/other/official-artwork/703.png",
+        "img_sprite": imagurl+"/703.png"
     },
     {
         "dex": 704,
@@ -9149,8 +9149,8 @@ var data = [
         "special_defense": 75,
         "speed": 40,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/704.png",
-        "img_sprite": imagurl + "/704.png"
+        "img_default": imagurl+"/other/official-artwork/704.png",
+        "img_sprite": imagurl+"/704.png"
     },
     {
         "dex": 705,
@@ -9162,8 +9162,8 @@ var data = [
         "special_defense": 113,
         "speed": 60,
         "best": 452,
-        "img_default": imagurl + "/other/official-artwork/705.png",
-        "img_sprite": imagurl + "/705.png"
+        "img_default": imagurl+"/other/official-artwork/705.png",
+        "img_sprite": imagurl+"/705.png"
     },
     {
         "dex": 706,
@@ -9175,8 +9175,8 @@ var data = [
         "special_defense": 150,
         "speed": 80,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/706.png",
-        "img_sprite": imagurl + "/706.png"
+        "img_default": imagurl+"/other/official-artwork/706.png",
+        "img_sprite": imagurl+"/706.png"
     },
     {
         "dex": 707,
@@ -9188,8 +9188,8 @@ var data = [
         "special_defense": 87,
         "speed": 75,
         "best": 470,
-        "img_default": imagurl + "/other/official-artwork/707.png",
-        "img_sprite": imagurl + "/707.png"
+        "img_default": imagurl+"/other/official-artwork/707.png",
+        "img_sprite": imagurl+"/707.png"
     },
     {
         "dex": 708,
@@ -9201,8 +9201,8 @@ var data = [
         "special_defense": 60,
         "speed": 38,
         "best": 309,
-        "img_default": imagurl + "/other/official-artwork/708.png",
-        "img_sprite": imagurl + "/708.png"
+        "img_default": imagurl+"/other/official-artwork/708.png",
+        "img_sprite": imagurl+"/708.png"
     },
     {
         "dex": 709,
@@ -9214,12 +9214,12 @@ var data = [
         "special_defense": 82,
         "speed": 56,
         "best": 474,
-        "img_default": imagurl + "/other/official-artwork/709.png",
-        "img_sprite": imagurl + "/709.png"
+        "img_default": imagurl+"/other/official-artwork/709.png",
+        "img_sprite": imagurl+"/709.png"
     },
     {
         "dex": 710,
-        "name": "Pumpkaboo-average",
+        "name": "Pumpkaboo",
         "hp": 49,
         "attack": 66,
         "defense": 70,
@@ -9227,12 +9227,12 @@ var data = [
         "special_defense": 55,
         "speed": 51,
         "best": 335,
-        "img_default": imagurl + "/other/official-artwork/710.png",
-        "img_sprite": imagurl + "/710.png"
+        "img_default": imagurl+"/other/official-artwork/710.png",
+        "img_sprite": imagurl+"/710.png"
     },
     {
         "dex": 711,
-        "name": "Gourgeist-average",
+        "name": "Gourgeist",
         "hp": 65,
         "attack": 90,
         "defense": 122,
@@ -9240,8 +9240,8 @@ var data = [
         "special_defense": 75,
         "speed": 84,
         "best": 494,
-        "img_default": imagurl + "/other/official-artwork/711.png",
-        "img_sprite": imagurl + "/711.png"
+        "img_default": imagurl+"/other/official-artwork/711.png",
+        "img_sprite": imagurl+"/711.png"
     },
     {
         "dex": 712,
@@ -9253,8 +9253,8 @@ var data = [
         "special_defense": 35,
         "speed": 28,
         "best": 304,
-        "img_default": imagurl + "/other/official-artwork/712.png",
-        "img_sprite": imagurl + "/712.png"
+        "img_default": imagurl+"/other/official-artwork/712.png",
+        "img_sprite": imagurl+"/712.png"
     },
     {
         "dex": 713,
@@ -9266,8 +9266,8 @@ var data = [
         "special_defense": 46,
         "speed": 28,
         "best": 514,
-        "img_default": imagurl + "/other/official-artwork/713.png",
-        "img_sprite": imagurl + "/713.png"
+        "img_default": imagurl+"/other/official-artwork/713.png",
+        "img_sprite": imagurl+"/713.png"
     },
     {
         "dex": 714,
@@ -9279,8 +9279,8 @@ var data = [
         "special_defense": 40,
         "speed": 55,
         "best": 245,
-        "img_default": imagurl + "/other/official-artwork/714.png",
-        "img_sprite": imagurl + "/714.png"
+        "img_default": imagurl+"/other/official-artwork/714.png",
+        "img_sprite": imagurl+"/714.png"
     },
     {
         "dex": 715,
@@ -9292,8 +9292,8 @@ var data = [
         "special_defense": 80,
         "speed": 123,
         "best": 535,
-        "img_default": imagurl + "/other/official-artwork/715.png",
-        "img_sprite": imagurl + "/715.png"
+        "img_default": imagurl+"/other/official-artwork/715.png",
+        "img_sprite": imagurl+"/715.png"
     },
     {
         "dex": 716,
@@ -9305,8 +9305,8 @@ var data = [
         "special_defense": 98,
         "speed": 99,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/716.png",
-        "img_sprite": imagurl + "/716.png"
+        "img_default": imagurl+"/other/official-artwork/716.png",
+        "img_sprite": imagurl+"/716.png"
     },
     {
         "dex": 717,
@@ -9318,8 +9318,8 @@ var data = [
         "special_defense": 98,
         "speed": 99,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/717.png",
-        "img_sprite": imagurl + "/717.png"
+        "img_default": imagurl+"/other/official-artwork/717.png",
+        "img_sprite": imagurl+"/717.png"
     },
     {
         "dex": 718,
@@ -9331,8 +9331,8 @@ var data = [
         "special_defense": 95,
         "speed": 95,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/718.png",
-        "img_sprite": imagurl + "/718.png"
+        "img_default": imagurl+"/other/official-artwork/718.png",
+        "img_sprite": imagurl+"/718.png"
     },
     {
         "dex": 719,
@@ -9344,8 +9344,8 @@ var data = [
         "special_defense": 150,
         "speed": 50,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/719.png",
-        "img_sprite": imagurl + "/719.png"
+        "img_default": imagurl+"/other/official-artwork/719.png",
+        "img_sprite": imagurl+"/719.png"
     },
     {
         "dex": 720,
@@ -9357,8 +9357,8 @@ var data = [
         "special_defense": 130,
         "speed": 70,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/720.png",
-        "img_sprite": imagurl + "/720.png"
+        "img_default": imagurl+"/other/official-artwork/720.png",
+        "img_sprite": imagurl+"/720.png"
     },
     {
         "dex": 721,
@@ -9370,8 +9370,8 @@ var data = [
         "special_defense": 90,
         "speed": 70,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/721.png",
-        "img_sprite": imagurl + "/721.png"
+        "img_default": imagurl+"/other/official-artwork/721.png",
+        "img_sprite": imagurl+"/721.png"
     },
     {
         "dex": 722,
@@ -9383,8 +9383,8 @@ var data = [
         "special_defense": 50,
         "speed": 42,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/722.png",
-        "img_sprite": imagurl + "/722.png"
+        "img_default": imagurl+"/other/official-artwork/722.png",
+        "img_sprite": imagurl+"/722.png"
     },
     {
         "dex": 723,
@@ -9396,8 +9396,8 @@ var data = [
         "special_defense": 70,
         "speed": 52,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/723.png",
-        "img_sprite": imagurl + "/723.png"
+        "img_default": imagurl+"/other/official-artwork/723.png",
+        "img_sprite": imagurl+"/723.png"
     },
     {
         "dex": 724,
@@ -9409,8 +9409,8 @@ var data = [
         "special_defense": 100,
         "speed": 70,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/724.png",
-        "img_sprite": imagurl + "/724.png"
+        "img_default": imagurl+"/other/official-artwork/724.png",
+        "img_sprite": imagurl+"/724.png"
     },
     {
         "dex": 725,
@@ -9422,8 +9422,8 @@ var data = [
         "special_defense": 40,
         "speed": 70,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/725.png",
-        "img_sprite": imagurl + "/725.png"
+        "img_default": imagurl+"/other/official-artwork/725.png",
+        "img_sprite": imagurl+"/725.png"
     },
     {
         "dex": 726,
@@ -9435,8 +9435,8 @@ var data = [
         "special_defense": 50,
         "speed": 90,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/726.png",
-        "img_sprite": imagurl + "/726.png"
+        "img_default": imagurl+"/other/official-artwork/726.png",
+        "img_sprite": imagurl+"/726.png"
     },
     {
         "dex": 727,
@@ -9448,8 +9448,8 @@ var data = [
         "special_defense": 90,
         "speed": 60,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/727.png",
-        "img_sprite": imagurl + "/727.png"
+        "img_default": imagurl+"/other/official-artwork/727.png",
+        "img_sprite": imagurl+"/727.png"
     },
     {
         "dex": 728,
@@ -9461,8 +9461,8 @@ var data = [
         "special_defense": 56,
         "speed": 40,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/728.png",
-        "img_sprite": imagurl + "/728.png"
+        "img_default": imagurl+"/other/official-artwork/728.png",
+        "img_sprite": imagurl+"/728.png"
     },
     {
         "dex": 729,
@@ -9474,8 +9474,8 @@ var data = [
         "special_defense": 81,
         "speed": 50,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/729.png",
-        "img_sprite": imagurl + "/729.png"
+        "img_default": imagurl+"/other/official-artwork/729.png",
+        "img_sprite": imagurl+"/729.png"
     },
     {
         "dex": 730,
@@ -9487,8 +9487,8 @@ var data = [
         "special_defense": 116,
         "speed": 60,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/730.png",
-        "img_sprite": imagurl + "/730.png"
+        "img_default": imagurl+"/other/official-artwork/730.png",
+        "img_sprite": imagurl+"/730.png"
     },
     {
         "dex": 731,
@@ -9500,8 +9500,8 @@ var data = [
         "special_defense": 30,
         "speed": 65,
         "best": 265,
-        "img_default": imagurl + "/other/official-artwork/731.png",
-        "img_sprite": imagurl + "/731.png"
+        "img_default": imagurl+"/other/official-artwork/731.png",
+        "img_sprite": imagurl+"/731.png"
     },
     {
         "dex": 732,
@@ -9513,8 +9513,8 @@ var data = [
         "special_defense": 50,
         "speed": 75,
         "best": 355,
-        "img_default": imagurl + "/other/official-artwork/732.png",
-        "img_sprite": imagurl + "/732.png"
+        "img_default": imagurl+"/other/official-artwork/732.png",
+        "img_sprite": imagurl+"/732.png"
     },
     {
         "dex": 733,
@@ -9526,8 +9526,8 @@ var data = [
         "special_defense": 75,
         "speed": 60,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/733.png",
-        "img_sprite": imagurl + "/733.png"
+        "img_default": imagurl+"/other/official-artwork/733.png",
+        "img_sprite": imagurl+"/733.png"
     },
     {
         "dex": 734,
@@ -9539,8 +9539,8 @@ var data = [
         "special_defense": 30,
         "speed": 45,
         "best": 253,
-        "img_default": imagurl + "/other/official-artwork/734.png",
-        "img_sprite": imagurl + "/734.png"
+        "img_default": imagurl+"/other/official-artwork/734.png",
+        "img_sprite": imagurl+"/734.png"
     },
     {
         "dex": 735,
@@ -9552,8 +9552,8 @@ var data = [
         "special_defense": 60,
         "speed": 45,
         "best": 418,
-        "img_default": imagurl + "/other/official-artwork/735.png",
-        "img_sprite": imagurl + "/735.png"
+        "img_default": imagurl+"/other/official-artwork/735.png",
+        "img_sprite": imagurl+"/735.png"
     },
     {
         "dex": 736,
@@ -9565,8 +9565,8 @@ var data = [
         "special_defense": 45,
         "speed": 46,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/736.png",
-        "img_sprite": imagurl + "/736.png"
+        "img_default": imagurl+"/other/official-artwork/736.png",
+        "img_sprite": imagurl+"/736.png"
     },
     {
         "dex": 737,
@@ -9578,8 +9578,8 @@ var data = [
         "special_defense": 75,
         "speed": 36,
         "best": 400,
-        "img_default": imagurl + "/other/official-artwork/737.png",
-        "img_sprite": imagurl + "/737.png"
+        "img_default": imagurl+"/other/official-artwork/737.png",
+        "img_sprite": imagurl+"/737.png"
     },
     {
         "dex": 738,
@@ -9591,8 +9591,8 @@ var data = [
         "special_defense": 75,
         "speed": 43,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/738.png",
-        "img_sprite": imagurl + "/738.png"
+        "img_default": imagurl+"/other/official-artwork/738.png",
+        "img_sprite": imagurl+"/738.png"
     },
     {
         "dex": 739,
@@ -9604,8 +9604,8 @@ var data = [
         "special_defense": 47,
         "speed": 63,
         "best": 338,
-        "img_default": imagurl + "/other/official-artwork/739.png",
-        "img_sprite": imagurl + "/739.png"
+        "img_default": imagurl+"/other/official-artwork/739.png",
+        "img_sprite": imagurl+"/739.png"
     },
     {
         "dex": 740,
@@ -9617,12 +9617,12 @@ var data = [
         "special_defense": 67,
         "speed": 43,
         "best": 478,
-        "img_default": imagurl + "/other/official-artwork/740.png",
-        "img_sprite": imagurl + "/740.png"
+        "img_default": imagurl+"/other/official-artwork/740.png",
+        "img_sprite": imagurl+"/740.png"
     },
     {
         "dex": 741,
-        "name": "Oricorio-baile",
+        "name": "Oricorio",
         "hp": 75,
         "attack": 70,
         "defense": 70,
@@ -9630,8 +9630,8 @@ var data = [
         "special_defense": 70,
         "speed": 93,
         "best": 476,
-        "img_default": imagurl + "/other/official-artwork/741.png",
-        "img_sprite": imagurl + "/741.png"
+        "img_default": imagurl+"/other/official-artwork/741.png",
+        "img_sprite": imagurl+"/741.png"
     },
     {
         "dex": 742,
@@ -9643,8 +9643,8 @@ var data = [
         "special_defense": 40,
         "speed": 84,
         "best": 304,
-        "img_default": imagurl + "/other/official-artwork/742.png",
-        "img_sprite": imagurl + "/742.png"
+        "img_default": imagurl+"/other/official-artwork/742.png",
+        "img_sprite": imagurl+"/742.png"
     },
     {
         "dex": 743,
@@ -9656,8 +9656,8 @@ var data = [
         "special_defense": 70,
         "speed": 124,
         "best": 464,
-        "img_default": imagurl + "/other/official-artwork/743.png",
-        "img_sprite": imagurl + "/743.png"
+        "img_default": imagurl+"/other/official-artwork/743.png",
+        "img_sprite": imagurl+"/743.png"
     },
     {
         "dex": 744,
@@ -9669,12 +9669,12 @@ var data = [
         "special_defense": 40,
         "speed": 60,
         "best": 280,
-        "img_default": imagurl + "/other/official-artwork/744.png",
-        "img_sprite": imagurl + "/744.png"
+        "img_default": imagurl+"/other/official-artwork/744.png",
+        "img_sprite": imagurl+"/744.png"
     },
     {
         "dex": 745,
-        "name": "Lycanroc-midday",
+        "name": "Lycanroc",
         "hp": 75,
         "attack": 115,
         "defense": 65,
@@ -9682,8 +9682,8 @@ var data = [
         "special_defense": 65,
         "speed": 112,
         "best": 487,
-        "img_default": imagurl + "/other/official-artwork/745.png",
-        "img_sprite": imagurl + "/745.png"
+        "img_default": imagurl+"/other/official-artwork/745.png",
+        "img_sprite": imagurl+"/745.png"
     },
     {
         "dex": 746,
@@ -9695,8 +9695,8 @@ var data = [
         "special_defense": 25,
         "speed": 40,
         "best": 175,
-        "img_default": imagurl + "/other/official-artwork/746.png",
-        "img_sprite": imagurl + "/746.png"
+        "img_default": imagurl+"/other/official-artwork/746.png",
+        "img_sprite": imagurl+"/746.png"
     },
     {
         "dex": 747,
@@ -9708,8 +9708,8 @@ var data = [
         "special_defense": 52,
         "speed": 45,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/747.png",
-        "img_sprite": imagurl + "/747.png"
+        "img_default": imagurl+"/other/official-artwork/747.png",
+        "img_sprite": imagurl+"/747.png"
     },
     {
         "dex": 748,
@@ -9721,8 +9721,8 @@ var data = [
         "special_defense": 142,
         "speed": 35,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/748.png",
-        "img_sprite": imagurl + "/748.png"
+        "img_default": imagurl+"/other/official-artwork/748.png",
+        "img_sprite": imagurl+"/748.png"
     },
     {
         "dex": 749,
@@ -9734,8 +9734,8 @@ var data = [
         "special_defense": 55,
         "speed": 45,
         "best": 385,
-        "img_default": imagurl + "/other/official-artwork/749.png",
-        "img_sprite": imagurl + "/749.png"
+        "img_default": imagurl+"/other/official-artwork/749.png",
+        "img_sprite": imagurl+"/749.png"
     },
     {
         "dex": 750,
@@ -9747,8 +9747,8 @@ var data = [
         "special_defense": 85,
         "speed": 35,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/750.png",
-        "img_sprite": imagurl + "/750.png"
+        "img_default": imagurl+"/other/official-artwork/750.png",
+        "img_sprite": imagurl+"/750.png"
     },
     {
         "dex": 751,
@@ -9760,8 +9760,8 @@ var data = [
         "special_defense": 72,
         "speed": 27,
         "best": 269,
-        "img_default": imagurl + "/other/official-artwork/751.png",
-        "img_sprite": imagurl + "/751.png"
+        "img_default": imagurl+"/other/official-artwork/751.png",
+        "img_sprite": imagurl+"/751.png"
     },
     {
         "dex": 752,
@@ -9773,8 +9773,8 @@ var data = [
         "special_defense": 132,
         "speed": 42,
         "best": 454,
-        "img_default": imagurl + "/other/official-artwork/752.png",
-        "img_sprite": imagurl + "/752.png"
+        "img_default": imagurl+"/other/official-artwork/752.png",
+        "img_sprite": imagurl+"/752.png"
     },
     {
         "dex": 753,
@@ -9786,8 +9786,8 @@ var data = [
         "special_defense": 35,
         "speed": 35,
         "best": 250,
-        "img_default": imagurl + "/other/official-artwork/753.png",
-        "img_sprite": imagurl + "/753.png"
+        "img_default": imagurl+"/other/official-artwork/753.png",
+        "img_sprite": imagurl+"/753.png"
     },
     {
         "dex": 754,
@@ -9799,8 +9799,8 @@ var data = [
         "special_defense": 90,
         "speed": 45,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/754.png",
-        "img_sprite": imagurl + "/754.png"
+        "img_default": imagurl+"/other/official-artwork/754.png",
+        "img_sprite": imagurl+"/754.png"
     },
     {
         "dex": 755,
@@ -9812,8 +9812,8 @@ var data = [
         "special_defense": 75,
         "speed": 15,
         "best": 285,
-        "img_default": imagurl + "/other/official-artwork/755.png",
-        "img_sprite": imagurl + "/755.png"
+        "img_default": imagurl+"/other/official-artwork/755.png",
+        "img_sprite": imagurl+"/755.png"
     },
     {
         "dex": 756,
@@ -9825,8 +9825,8 @@ var data = [
         "special_defense": 100,
         "speed": 30,
         "best": 405,
-        "img_default": imagurl + "/other/official-artwork/756.png",
-        "img_sprite": imagurl + "/756.png"
+        "img_default": imagurl+"/other/official-artwork/756.png",
+        "img_sprite": imagurl+"/756.png"
     },
     {
         "dex": 757,
@@ -9838,8 +9838,8 @@ var data = [
         "special_defense": 40,
         "speed": 77,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/757.png",
-        "img_sprite": imagurl + "/757.png"
+        "img_default": imagurl+"/other/official-artwork/757.png",
+        "img_sprite": imagurl+"/757.png"
     },
     {
         "dex": 758,
@@ -9851,8 +9851,8 @@ var data = [
         "special_defense": 60,
         "speed": 117,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/758.png",
-        "img_sprite": imagurl + "/758.png"
+        "img_default": imagurl+"/other/official-artwork/758.png",
+        "img_sprite": imagurl+"/758.png"
     },
     {
         "dex": 759,
@@ -9864,8 +9864,8 @@ var data = [
         "special_defense": 50,
         "speed": 50,
         "best": 340,
-        "img_default": imagurl + "/other/official-artwork/759.png",
-        "img_sprite": imagurl + "/759.png"
+        "img_default": imagurl+"/other/official-artwork/759.png",
+        "img_sprite": imagurl+"/759.png"
     },
     {
         "dex": 760,
@@ -9877,8 +9877,8 @@ var data = [
         "special_defense": 60,
         "speed": 60,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/760.png",
-        "img_sprite": imagurl + "/760.png"
+        "img_default": imagurl+"/other/official-artwork/760.png",
+        "img_sprite": imagurl+"/760.png"
     },
     {
         "dex": 761,
@@ -9890,8 +9890,8 @@ var data = [
         "special_defense": 38,
         "speed": 32,
         "best": 210,
-        "img_default": imagurl + "/other/official-artwork/761.png",
-        "img_sprite": imagurl + "/761.png"
+        "img_default": imagurl+"/other/official-artwork/761.png",
+        "img_sprite": imagurl+"/761.png"
     },
     {
         "dex": 762,
@@ -9903,8 +9903,8 @@ var data = [
         "special_defense": 48,
         "speed": 62,
         "best": 290,
-        "img_default": imagurl + "/other/official-artwork/762.png",
-        "img_sprite": imagurl + "/762.png"
+        "img_default": imagurl+"/other/official-artwork/762.png",
+        "img_sprite": imagurl+"/762.png"
     },
     {
         "dex": 763,
@@ -9916,8 +9916,8 @@ var data = [
         "special_defense": 98,
         "speed": 72,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/763.png",
-        "img_sprite": imagurl + "/763.png"
+        "img_default": imagurl+"/other/official-artwork/763.png",
+        "img_sprite": imagurl+"/763.png"
     },
     {
         "dex": 764,
@@ -9929,8 +9929,8 @@ var data = [
         "special_defense": 110,
         "speed": 100,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/764.png",
-        "img_sprite": imagurl + "/764.png"
+        "img_default": imagurl+"/other/official-artwork/764.png",
+        "img_sprite": imagurl+"/764.png"
     },
     {
         "dex": 765,
@@ -9942,8 +9942,8 @@ var data = [
         "special_defense": 110,
         "speed": 60,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/765.png",
-        "img_sprite": imagurl + "/765.png"
+        "img_default": imagurl+"/other/official-artwork/765.png",
+        "img_sprite": imagurl+"/765.png"
     },
     {
         "dex": 766,
@@ -9955,8 +9955,8 @@ var data = [
         "special_defense": 60,
         "speed": 80,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/766.png",
-        "img_sprite": imagurl + "/766.png"
+        "img_default": imagurl+"/other/official-artwork/766.png",
+        "img_sprite": imagurl+"/766.png"
     },
     {
         "dex": 767,
@@ -9968,8 +9968,8 @@ var data = [
         "special_defense": 30,
         "speed": 80,
         "best": 230,
-        "img_default": imagurl + "/other/official-artwork/767.png",
-        "img_sprite": imagurl + "/767.png"
+        "img_default": imagurl+"/other/official-artwork/767.png",
+        "img_sprite": imagurl+"/767.png"
     },
     {
         "dex": 768,
@@ -9981,8 +9981,8 @@ var data = [
         "special_defense": 90,
         "speed": 40,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/768.png",
-        "img_sprite": imagurl + "/768.png"
+        "img_default": imagurl+"/other/official-artwork/768.png",
+        "img_sprite": imagurl+"/768.png"
     },
     {
         "dex": 769,
@@ -9994,8 +9994,8 @@ var data = [
         "special_defense": 45,
         "speed": 15,
         "best": 320,
-        "img_default": imagurl + "/other/official-artwork/769.png",
-        "img_sprite": imagurl + "/769.png"
+        "img_default": imagurl+"/other/official-artwork/769.png",
+        "img_sprite": imagurl+"/769.png"
     },
     {
         "dex": 770,
@@ -10007,8 +10007,8 @@ var data = [
         "special_defense": 75,
         "speed": 35,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/770.png",
-        "img_sprite": imagurl + "/770.png"
+        "img_default": imagurl+"/other/official-artwork/770.png",
+        "img_sprite": imagurl+"/770.png"
     },
     {
         "dex": 771,
@@ -10020,8 +10020,8 @@ var data = [
         "special_defense": 130,
         "speed": 5,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/771.png",
-        "img_sprite": imagurl + "/771.png"
+        "img_default": imagurl+"/other/official-artwork/771.png",
+        "img_sprite": imagurl+"/771.png"
     },
     {
         "dex": 772,
@@ -10033,8 +10033,8 @@ var data = [
         "special_defense": 95,
         "speed": 59,
         "best": 534,
-        "img_default": imagurl + "/other/official-artwork/772.png",
-        "img_sprite": imagurl + "/772.png"
+        "img_default": imagurl+"/other/official-artwork/772.png",
+        "img_sprite": imagurl+"/772.png"
     },
     {
         "dex": 773,
@@ -10046,12 +10046,12 @@ var data = [
         "special_defense": 95,
         "speed": 95,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/773.png",
-        "img_sprite": imagurl + "/773.png"
+        "img_default": imagurl+"/other/official-artwork/773.png",
+        "img_sprite": imagurl+"/773.png"
     },
     {
         "dex": 774,
-        "name": "Minior-red-meteor",
+        "name": "Minior",
         "hp": 60,
         "attack": 60,
         "defense": 100,
@@ -10059,8 +10059,8 @@ var data = [
         "special_defense": 100,
         "speed": 60,
         "best": 440,
-        "img_default": imagurl + "/other/official-artwork/774.png",
-        "img_sprite": imagurl + "/774.png"
+        "img_default": imagurl+"/other/official-artwork/774.png",
+        "img_sprite": imagurl+"/774.png"
     },
     {
         "dex": 775,
@@ -10072,8 +10072,8 @@ var data = [
         "special_defense": 95,
         "speed": 65,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/775.png",
-        "img_sprite": imagurl + "/775.png"
+        "img_default": imagurl+"/other/official-artwork/775.png",
+        "img_sprite": imagurl+"/775.png"
     },
     {
         "dex": 776,
@@ -10085,8 +10085,8 @@ var data = [
         "special_defense": 85,
         "speed": 36,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/776.png",
-        "img_sprite": imagurl + "/776.png"
+        "img_default": imagurl+"/other/official-artwork/776.png",
+        "img_sprite": imagurl+"/776.png"
     },
     {
         "dex": 777,
@@ -10098,12 +10098,12 @@ var data = [
         "special_defense": 73,
         "speed": 96,
         "best": 435,
-        "img_default": imagurl + "/other/official-artwork/777.png",
-        "img_sprite": imagurl + "/777.png"
+        "img_default": imagurl+"/other/official-artwork/777.png",
+        "img_sprite": imagurl+"/777.png"
     },
     {
         "dex": 778,
-        "name": "Mimikyu-disguised",
+        "name": "Mimikyu",
         "hp": 55,
         "attack": 90,
         "defense": 80,
@@ -10111,8 +10111,8 @@ var data = [
         "special_defense": 105,
         "speed": 96,
         "best": 476,
-        "img_default": imagurl + "/other/official-artwork/778.png",
-        "img_sprite": imagurl + "/778.png"
+        "img_default": imagurl+"/other/official-artwork/778.png",
+        "img_sprite": imagurl+"/778.png"
     },
     {
         "dex": 779,
@@ -10124,8 +10124,8 @@ var data = [
         "special_defense": 70,
         "speed": 92,
         "best": 475,
-        "img_default": imagurl + "/other/official-artwork/779.png",
-        "img_sprite": imagurl + "/779.png"
+        "img_default": imagurl+"/other/official-artwork/779.png",
+        "img_sprite": imagurl+"/779.png"
     },
     {
         "dex": 780,
@@ -10137,8 +10137,8 @@ var data = [
         "special_defense": 91,
         "speed": 36,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/780.png",
-        "img_sprite": imagurl + "/780.png"
+        "img_default": imagurl+"/other/official-artwork/780.png",
+        "img_sprite": imagurl+"/780.png"
     },
     {
         "dex": 781,
@@ -10150,8 +10150,8 @@ var data = [
         "special_defense": 90,
         "speed": 40,
         "best": 517,
-        "img_default": imagurl + "/other/official-artwork/781.png",
-        "img_sprite": imagurl + "/781.png"
+        "img_default": imagurl+"/other/official-artwork/781.png",
+        "img_sprite": imagurl+"/781.png"
     },
     {
         "dex": 782,
@@ -10163,8 +10163,8 @@ var data = [
         "special_defense": 45,
         "speed": 45,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/782.png",
-        "img_sprite": imagurl + "/782.png"
+        "img_default": imagurl+"/other/official-artwork/782.png",
+        "img_sprite": imagurl+"/782.png"
     },
     {
         "dex": 783,
@@ -10176,8 +10176,8 @@ var data = [
         "special_defense": 70,
         "speed": 65,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/783.png",
-        "img_sprite": imagurl + "/783.png"
+        "img_default": imagurl+"/other/official-artwork/783.png",
+        "img_sprite": imagurl+"/783.png"
     },
     {
         "dex": 784,
@@ -10189,8 +10189,8 @@ var data = [
         "special_defense": 105,
         "speed": 85,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/784.png",
-        "img_sprite": imagurl + "/784.png"
+        "img_default": imagurl+"/other/official-artwork/784.png",
+        "img_sprite": imagurl+"/784.png"
     },
     {
         "dex": 785,
@@ -10202,8 +10202,8 @@ var data = [
         "special_defense": 75,
         "speed": 130,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/785.png",
-        "img_sprite": imagurl + "/785.png"
+        "img_default": imagurl+"/other/official-artwork/785.png",
+        "img_sprite": imagurl+"/785.png"
     },
     {
         "dex": 786,
@@ -10215,8 +10215,8 @@ var data = [
         "special_defense": 115,
         "speed": 95,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/786.png",
-        "img_sprite": imagurl + "/786.png"
+        "img_default": imagurl+"/other/official-artwork/786.png",
+        "img_sprite": imagurl+"/786.png"
     },
     {
         "dex": 787,
@@ -10228,8 +10228,8 @@ var data = [
         "special_defense": 95,
         "speed": 75,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/787.png",
-        "img_sprite": imagurl + "/787.png"
+        "img_default": imagurl+"/other/official-artwork/787.png",
+        "img_sprite": imagurl+"/787.png"
     },
     {
         "dex": 788,
@@ -10241,8 +10241,8 @@ var data = [
         "special_defense": 130,
         "speed": 85,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/788.png",
-        "img_sprite": imagurl + "/788.png"
+        "img_default": imagurl+"/other/official-artwork/788.png",
+        "img_sprite": imagurl+"/788.png"
     },
     {
         "dex": 789,
@@ -10254,8 +10254,8 @@ var data = [
         "special_defense": 31,
         "speed": 37,
         "best": 200,
-        "img_default": imagurl + "/other/official-artwork/789.png",
-        "img_sprite": imagurl + "/789.png"
+        "img_default": imagurl+"/other/official-artwork/789.png",
+        "img_sprite": imagurl+"/789.png"
     },
     {
         "dex": 790,
@@ -10267,8 +10267,8 @@ var data = [
         "special_defense": 131,
         "speed": 37,
         "best": 400,
-        "img_default": imagurl + "/other/official-artwork/790.png",
-        "img_sprite": imagurl + "/790.png"
+        "img_default": imagurl+"/other/official-artwork/790.png",
+        "img_sprite": imagurl+"/790.png"
     },
     {
         "dex": 791,
@@ -10280,8 +10280,8 @@ var data = [
         "special_defense": 89,
         "speed": 97,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/791.png",
-        "img_sprite": imagurl + "/791.png"
+        "img_default": imagurl+"/other/official-artwork/791.png",
+        "img_sprite": imagurl+"/791.png"
     },
     {
         "dex": 792,
@@ -10293,8 +10293,8 @@ var data = [
         "special_defense": 107,
         "speed": 97,
         "best": 680,
-        "img_default": imagurl + "/other/official-artwork/792.png",
-        "img_sprite": imagurl + "/792.png"
+        "img_default": imagurl+"/other/official-artwork/792.png",
+        "img_sprite": imagurl+"/792.png"
     },
     {
         "dex": 793,
@@ -10306,8 +10306,8 @@ var data = [
         "special_defense": 131,
         "speed": 103,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/793.png",
-        "img_sprite": imagurl + "/793.png"
+        "img_default": imagurl+"/other/official-artwork/793.png",
+        "img_sprite": imagurl+"/793.png"
     },
     {
         "dex": 794,
@@ -10319,8 +10319,8 @@ var data = [
         "special_defense": 53,
         "speed": 79,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/794.png",
-        "img_sprite": imagurl + "/794.png"
+        "img_default": imagurl+"/other/official-artwork/794.png",
+        "img_sprite": imagurl+"/794.png"
     },
     {
         "dex": 795,
@@ -10332,8 +10332,8 @@ var data = [
         "special_defense": 37,
         "speed": 151,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/795.png",
-        "img_sprite": imagurl + "/795.png"
+        "img_default": imagurl+"/other/official-artwork/795.png",
+        "img_sprite": imagurl+"/795.png"
     },
     {
         "dex": 796,
@@ -10345,8 +10345,8 @@ var data = [
         "special_defense": 71,
         "speed": 83,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/796.png",
-        "img_sprite": imagurl + "/796.png"
+        "img_default": imagurl+"/other/official-artwork/796.png",
+        "img_sprite": imagurl+"/796.png"
     },
     {
         "dex": 797,
@@ -10358,8 +10358,8 @@ var data = [
         "special_defense": 101,
         "speed": 61,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/797.png",
-        "img_sprite": imagurl + "/797.png"
+        "img_default": imagurl+"/other/official-artwork/797.png",
+        "img_sprite": imagurl+"/797.png"
     },
     {
         "dex": 798,
@@ -10371,8 +10371,8 @@ var data = [
         "special_defense": 31,
         "speed": 109,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/798.png",
-        "img_sprite": imagurl + "/798.png"
+        "img_default": imagurl+"/other/official-artwork/798.png",
+        "img_sprite": imagurl+"/798.png"
     },
     {
         "dex": 799,
@@ -10384,8 +10384,8 @@ var data = [
         "special_defense": 53,
         "speed": 43,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/799.png",
-        "img_sprite": imagurl + "/799.png"
+        "img_default": imagurl+"/other/official-artwork/799.png",
+        "img_sprite": imagurl+"/799.png"
     },
     {
         "dex": 800,
@@ -10397,8 +10397,8 @@ var data = [
         "special_defense": 89,
         "speed": 79,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/800.png",
-        "img_sprite": imagurl + "/800.png"
+        "img_default": imagurl+"/other/official-artwork/800.png",
+        "img_sprite": imagurl+"/800.png"
     },
     {
         "dex": 801,
@@ -10410,8 +10410,8 @@ var data = [
         "special_defense": 115,
         "speed": 65,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/801.png",
-        "img_sprite": imagurl + "/801.png"
+        "img_default": imagurl+"/other/official-artwork/801.png",
+        "img_sprite": imagurl+"/801.png"
     },
     {
         "dex": 802,
@@ -10423,8 +10423,8 @@ var data = [
         "special_defense": 90,
         "speed": 125,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/802.png",
-        "img_sprite": imagurl + "/802.png"
+        "img_default": imagurl+"/other/official-artwork/802.png",
+        "img_sprite": imagurl+"/802.png"
     },
     {
         "dex": 803,
@@ -10436,8 +10436,8 @@ var data = [
         "special_defense": 67,
         "speed": 73,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/803.png",
-        "img_sprite": imagurl + "/803.png"
+        "img_default": imagurl+"/other/official-artwork/803.png",
+        "img_sprite": imagurl+"/803.png"
     },
     {
         "dex": 804,
@@ -10449,8 +10449,8 @@ var data = [
         "special_defense": 73,
         "speed": 121,
         "best": 540,
-        "img_default": imagurl + "/other/official-artwork/804.png",
-        "img_sprite": imagurl + "/804.png"
+        "img_default": imagurl+"/other/official-artwork/804.png",
+        "img_sprite": imagurl+"/804.png"
     },
     {
         "dex": 805,
@@ -10462,8 +10462,8 @@ var data = [
         "special_defense": 101,
         "speed": 13,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/805.png",
-        "img_sprite": imagurl + "/805.png"
+        "img_default": imagurl+"/other/official-artwork/805.png",
+        "img_sprite": imagurl+"/805.png"
     },
     {
         "dex": 806,
@@ -10475,8 +10475,8 @@ var data = [
         "special_defense": 79,
         "speed": 107,
         "best": 570,
-        "img_default": imagurl + "/other/official-artwork/806.png",
-        "img_sprite": imagurl + "/806.png"
+        "img_default": imagurl+"/other/official-artwork/806.png",
+        "img_sprite": imagurl+"/806.png"
     },
     {
         "dex": 807,
@@ -10488,8 +10488,8 @@ var data = [
         "special_defense": 80,
         "speed": 143,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/807.png",
-        "img_sprite": imagurl + "/807.png"
+        "img_default": imagurl+"/other/official-artwork/807.png",
+        "img_sprite": imagurl+"/807.png"
     },
     {
         "dex": 808,
@@ -10501,8 +10501,8 @@ var data = [
         "special_defense": 35,
         "speed": 34,
         "best": 300,
-        "img_default": imagurl + "/other/official-artwork/808.png",
-        "img_sprite": imagurl + "/808.png"
+        "img_default": imagurl+"/other/official-artwork/808.png",
+        "img_sprite": imagurl+"/808.png"
     },
     {
         "dex": 809,
@@ -10514,8 +10514,8 @@ var data = [
         "special_defense": 65,
         "speed": 34,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/809.png",
-        "img_sprite": imagurl + "/809.png"
+        "img_default": imagurl+"/other/official-artwork/809.png",
+        "img_sprite": imagurl+"/809.png"
     },
     {
         "dex": 810,
@@ -10527,8 +10527,8 @@ var data = [
         "special_defense": 40,
         "speed": 65,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/810.png",
-        "img_sprite": imagurl + "/810.png"
+        "img_default": imagurl+"/other/official-artwork/810.png",
+        "img_sprite": imagurl+"/810.png"
     },
     {
         "dex": 811,
@@ -10540,8 +10540,8 @@ var data = [
         "special_defense": 60,
         "speed": 80,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/811.png",
-        "img_sprite": imagurl + "/811.png"
+        "img_default": imagurl+"/other/official-artwork/811.png",
+        "img_sprite": imagurl+"/811.png"
     },
     {
         "dex": 812,
@@ -10553,8 +10553,8 @@ var data = [
         "special_defense": 70,
         "speed": 85,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/812.png",
-        "img_sprite": imagurl + "/812.png"
+        "img_default": imagurl+"/other/official-artwork/812.png",
+        "img_sprite": imagurl+"/812.png"
     },
     {
         "dex": 813,
@@ -10566,8 +10566,8 @@ var data = [
         "special_defense": 40,
         "speed": 69,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/813.png",
-        "img_sprite": imagurl + "/813.png"
+        "img_default": imagurl+"/other/official-artwork/813.png",
+        "img_sprite": imagurl+"/813.png"
     },
     {
         "dex": 814,
@@ -10579,8 +10579,8 @@ var data = [
         "special_defense": 60,
         "speed": 94,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/814.png",
-        "img_sprite": imagurl + "/814.png"
+        "img_default": imagurl+"/other/official-artwork/814.png",
+        "img_sprite": imagurl+"/814.png"
     },
     {
         "dex": 815,
@@ -10592,8 +10592,8 @@ var data = [
         "special_defense": 75,
         "speed": 119,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/815.png",
-        "img_sprite": imagurl + "/815.png"
+        "img_default": imagurl+"/other/official-artwork/815.png",
+        "img_sprite": imagurl+"/815.png"
     },
     {
         "dex": 816,
@@ -10605,8 +10605,8 @@ var data = [
         "special_defense": 40,
         "speed": 70,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/816.png",
-        "img_sprite": imagurl + "/816.png"
+        "img_default": imagurl+"/other/official-artwork/816.png",
+        "img_sprite": imagurl+"/816.png"
     },
     {
         "dex": 817,
@@ -10618,8 +10618,8 @@ var data = [
         "special_defense": 55,
         "speed": 90,
         "best": 420,
-        "img_default": imagurl + "/other/official-artwork/817.png",
-        "img_sprite": imagurl + "/817.png"
+        "img_default": imagurl+"/other/official-artwork/817.png",
+        "img_sprite": imagurl+"/817.png"
     },
     {
         "dex": 818,
@@ -10631,8 +10631,8 @@ var data = [
         "special_defense": 65,
         "speed": 120,
         "best": 530,
-        "img_default": imagurl + "/other/official-artwork/818.png",
-        "img_sprite": imagurl + "/818.png"
+        "img_default": imagurl+"/other/official-artwork/818.png",
+        "img_sprite": imagurl+"/818.png"
     },
     {
         "dex": 819,
@@ -10644,8 +10644,8 @@ var data = [
         "special_defense": 35,
         "speed": 25,
         "best": 275,
-        "img_default": imagurl + "/other/official-artwork/819.png",
-        "img_sprite": imagurl + "/819.png"
+        "img_default": imagurl+"/other/official-artwork/819.png",
+        "img_sprite": imagurl+"/819.png"
     },
     {
         "dex": 820,
@@ -10657,8 +10657,8 @@ var data = [
         "special_defense": 75,
         "speed": 20,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/820.png",
-        "img_sprite": imagurl + "/820.png"
+        "img_default": imagurl+"/other/official-artwork/820.png",
+        "img_sprite": imagurl+"/820.png"
     },
     {
         "dex": 821,
@@ -10670,8 +10670,8 @@ var data = [
         "special_defense": 35,
         "speed": 57,
         "best": 245,
-        "img_default": imagurl + "/other/official-artwork/821.png",
-        "img_sprite": imagurl + "/821.png"
+        "img_default": imagurl+"/other/official-artwork/821.png",
+        "img_sprite": imagurl+"/821.png"
     },
     {
         "dex": 822,
@@ -10683,8 +10683,8 @@ var data = [
         "special_defense": 55,
         "speed": 77,
         "best": 365,
-        "img_default": imagurl + "/other/official-artwork/822.png",
-        "img_sprite": imagurl + "/822.png"
+        "img_default": imagurl+"/other/official-artwork/822.png",
+        "img_sprite": imagurl+"/822.png"
     },
     {
         "dex": 823,
@@ -10696,8 +10696,8 @@ var data = [
         "special_defense": 85,
         "speed": 67,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/823.png",
-        "img_sprite": imagurl + "/823.png"
+        "img_default": imagurl+"/other/official-artwork/823.png",
+        "img_sprite": imagurl+"/823.png"
     },
     {
         "dex": 824,
@@ -10709,8 +10709,8 @@ var data = [
         "special_defense": 45,
         "speed": 45,
         "best": 180,
-        "img_default": imagurl + "/other/official-artwork/824.png",
-        "img_sprite": imagurl + "/824.png"
+        "img_default": imagurl+"/other/official-artwork/824.png",
+        "img_sprite": imagurl+"/824.png"
     },
     {
         "dex": 825,
@@ -10722,8 +10722,8 @@ var data = [
         "special_defense": 90,
         "speed": 30,
         "best": 335,
-        "img_default": imagurl + "/other/official-artwork/825.png",
-        "img_sprite": imagurl + "/825.png"
+        "img_default": imagurl+"/other/official-artwork/825.png",
+        "img_sprite": imagurl+"/825.png"
     },
     {
         "dex": 826,
@@ -10735,8 +10735,8 @@ var data = [
         "special_defense": 120,
         "speed": 90,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/826.png",
-        "img_sprite": imagurl + "/826.png"
+        "img_default": imagurl+"/other/official-artwork/826.png",
+        "img_sprite": imagurl+"/826.png"
     },
     {
         "dex": 827,
@@ -10748,8 +10748,8 @@ var data = [
         "special_defense": 52,
         "speed": 50,
         "best": 245,
-        "img_default": imagurl + "/other/official-artwork/827.png",
-        "img_sprite": imagurl + "/827.png"
+        "img_default": imagurl+"/other/official-artwork/827.png",
+        "img_sprite": imagurl+"/827.png"
     },
     {
         "dex": 828,
@@ -10761,8 +10761,8 @@ var data = [
         "special_defense": 92,
         "speed": 90,
         "best": 455,
-        "img_default": imagurl + "/other/official-artwork/828.png",
-        "img_sprite": imagurl + "/828.png"
+        "img_default": imagurl+"/other/official-artwork/828.png",
+        "img_sprite": imagurl+"/828.png"
     },
     {
         "dex": 829,
@@ -10774,8 +10774,8 @@ var data = [
         "special_defense": 60,
         "speed": 10,
         "best": 250,
-        "img_default": imagurl + "/other/official-artwork/829.png",
-        "img_sprite": imagurl + "/829.png"
+        "img_default": imagurl+"/other/official-artwork/829.png",
+        "img_sprite": imagurl+"/829.png"
     },
     {
         "dex": 830,
@@ -10787,8 +10787,8 @@ var data = [
         "special_defense": 120,
         "speed": 60,
         "best": 460,
-        "img_default": imagurl + "/other/official-artwork/830.png",
-        "img_sprite": imagurl + "/830.png"
+        "img_default": imagurl+"/other/official-artwork/830.png",
+        "img_sprite": imagurl+"/830.png"
     },
     {
         "dex": 831,
@@ -10800,8 +10800,8 @@ var data = [
         "special_defense": 45,
         "speed": 48,
         "best": 270,
-        "img_default": imagurl + "/other/official-artwork/831.png",
-        "img_sprite": imagurl + "/831.png"
+        "img_default": imagurl+"/other/official-artwork/831.png",
+        "img_sprite": imagurl+"/831.png"
     },
     {
         "dex": 832,
@@ -10813,8 +10813,8 @@ var data = [
         "special_defense": 90,
         "speed": 88,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/832.png",
-        "img_sprite": imagurl + "/832.png"
+        "img_default": imagurl+"/other/official-artwork/832.png",
+        "img_sprite": imagurl+"/832.png"
     },
     {
         "dex": 833,
@@ -10826,8 +10826,8 @@ var data = [
         "special_defense": 38,
         "speed": 44,
         "best": 284,
-        "img_default": imagurl + "/other/official-artwork/833.png",
-        "img_sprite": imagurl + "/833.png"
+        "img_default": imagurl+"/other/official-artwork/833.png",
+        "img_sprite": imagurl+"/833.png"
     },
     {
         "dex": 834,
@@ -10839,8 +10839,8 @@ var data = [
         "special_defense": 68,
         "speed": 74,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/834.png",
-        "img_sprite": imagurl + "/834.png"
+        "img_default": imagurl+"/other/official-artwork/834.png",
+        "img_sprite": imagurl+"/834.png"
     },
     {
         "dex": 835,
@@ -10852,8 +10852,8 @@ var data = [
         "special_defense": 50,
         "speed": 26,
         "best": 270,
-        "img_default": imagurl + "/other/official-artwork/835.png",
-        "img_sprite": imagurl + "/835.png"
+        "img_default": imagurl+"/other/official-artwork/835.png",
+        "img_sprite": imagurl+"/835.png"
     },
     {
         "dex": 836,
@@ -10865,8 +10865,8 @@ var data = [
         "special_defense": 60,
         "speed": 121,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/836.png",
-        "img_sprite": imagurl + "/836.png"
+        "img_default": imagurl+"/other/official-artwork/836.png",
+        "img_sprite": imagurl+"/836.png"
     },
     {
         "dex": 837,
@@ -10878,8 +10878,8 @@ var data = [
         "special_defense": 50,
         "speed": 30,
         "best": 240,
-        "img_default": imagurl + "/other/official-artwork/837.png",
-        "img_sprite": imagurl + "/837.png"
+        "img_default": imagurl+"/other/official-artwork/837.png",
+        "img_sprite": imagurl+"/837.png"
     },
     {
         "dex": 838,
@@ -10891,8 +10891,8 @@ var data = [
         "special_defense": 70,
         "speed": 50,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/838.png",
-        "img_sprite": imagurl + "/838.png"
+        "img_default": imagurl+"/other/official-artwork/838.png",
+        "img_sprite": imagurl+"/838.png"
     },
     {
         "dex": 839,
@@ -10904,8 +10904,8 @@ var data = [
         "special_defense": 90,
         "speed": 30,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/839.png",
-        "img_sprite": imagurl + "/839.png"
+        "img_default": imagurl+"/other/official-artwork/839.png",
+        "img_sprite": imagurl+"/839.png"
     },
     {
         "dex": 840,
@@ -10917,8 +10917,8 @@ var data = [
         "special_defense": 40,
         "speed": 20,
         "best": 260,
-        "img_default": imagurl + "/other/official-artwork/840.png",
-        "img_sprite": imagurl + "/840.png"
+        "img_default": imagurl+"/other/official-artwork/840.png",
+        "img_sprite": imagurl+"/840.png"
     },
     {
         "dex": 841,
@@ -10930,8 +10930,8 @@ var data = [
         "special_defense": 60,
         "speed": 70,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/841.png",
-        "img_sprite": imagurl + "/841.png"
+        "img_default": imagurl+"/other/official-artwork/841.png",
+        "img_sprite": imagurl+"/841.png"
     },
     {
         "dex": 842,
@@ -10943,8 +10943,8 @@ var data = [
         "special_defense": 80,
         "speed": 30,
         "best": 485,
-        "img_default": imagurl + "/other/official-artwork/842.png",
-        "img_sprite": imagurl + "/842.png"
+        "img_default": imagurl+"/other/official-artwork/842.png",
+        "img_sprite": imagurl+"/842.png"
     },
     {
         "dex": 843,
@@ -10956,8 +10956,8 @@ var data = [
         "special_defense": 50,
         "speed": 46,
         "best": 315,
-        "img_default": imagurl + "/other/official-artwork/843.png",
-        "img_sprite": imagurl + "/843.png"
+        "img_default": imagurl+"/other/official-artwork/843.png",
+        "img_sprite": imagurl+"/843.png"
     },
     {
         "dex": 844,
@@ -10969,8 +10969,8 @@ var data = [
         "special_defense": 70,
         "speed": 71,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/844.png",
-        "img_sprite": imagurl + "/844.png"
+        "img_default": imagurl+"/other/official-artwork/844.png",
+        "img_sprite": imagurl+"/844.png"
     },
     {
         "dex": 845,
@@ -10982,8 +10982,8 @@ var data = [
         "special_defense": 95,
         "speed": 85,
         "best": 475,
-        "img_default": imagurl + "/other/official-artwork/845.png",
-        "img_sprite": imagurl + "/845.png"
+        "img_default": imagurl+"/other/official-artwork/845.png",
+        "img_sprite": imagurl+"/845.png"
     },
     {
         "dex": 846,
@@ -10995,8 +10995,8 @@ var data = [
         "special_defense": 30,
         "speed": 66,
         "best": 280,
-        "img_default": imagurl + "/other/official-artwork/846.png",
-        "img_sprite": imagurl + "/846.png"
+        "img_default": imagurl+"/other/official-artwork/846.png",
+        "img_sprite": imagurl+"/846.png"
     },
     {
         "dex": 847,
@@ -11008,8 +11008,8 @@ var data = [
         "special_defense": 50,
         "speed": 136,
         "best": 490,
-        "img_default": imagurl + "/other/official-artwork/847.png",
-        "img_sprite": imagurl + "/847.png"
+        "img_default": imagurl+"/other/official-artwork/847.png",
+        "img_sprite": imagurl+"/847.png"
     },
     {
         "dex": 848,
@@ -11021,8 +11021,8 @@ var data = [
         "special_defense": 35,
         "speed": 40,
         "best": 242,
-        "img_default": imagurl + "/other/official-artwork/848.png",
-        "img_sprite": imagurl + "/848.png"
+        "img_default": imagurl+"/other/official-artwork/848.png",
+        "img_sprite": imagurl+"/848.png"
     },
     {
         "dex": 849,
@@ -11034,8 +11034,8 @@ var data = [
         "special_defense": 70,
         "speed": 75,
         "best": 502,
-        "img_default": imagurl + "/other/official-artwork/849.png",
-        "img_sprite": imagurl + "/849.png"
+        "img_default": imagurl+"/other/official-artwork/849.png",
+        "img_sprite": imagurl+"/849.png"
     },
     {
         "dex": 850,
@@ -11047,8 +11047,8 @@ var data = [
         "special_defense": 50,
         "speed": 45,
         "best": 305,
-        "img_default": imagurl + "/other/official-artwork/850.png",
-        "img_sprite": imagurl + "/850.png"
+        "img_default": imagurl+"/other/official-artwork/850.png",
+        "img_sprite": imagurl+"/850.png"
     },
     {
         "dex": 851,
@@ -11060,8 +11060,8 @@ var data = [
         "special_defense": 90,
         "speed": 65,
         "best": 525,
-        "img_default": imagurl + "/other/official-artwork/851.png",
-        "img_sprite": imagurl + "/851.png"
+        "img_default": imagurl+"/other/official-artwork/851.png",
+        "img_sprite": imagurl+"/851.png"
     },
     {
         "dex": 852,
@@ -11073,8 +11073,8 @@ var data = [
         "special_defense": 50,
         "speed": 32,
         "best": 310,
-        "img_default": imagurl + "/other/official-artwork/852.png",
-        "img_sprite": imagurl + "/852.png"
+        "img_default": imagurl+"/other/official-artwork/852.png",
+        "img_sprite": imagurl+"/852.png"
     },
     {
         "dex": 853,
@@ -11086,8 +11086,8 @@ var data = [
         "special_defense": 80,
         "speed": 42,
         "best": 480,
-        "img_default": imagurl + "/other/official-artwork/853.png",
-        "img_sprite": imagurl + "/853.png"
+        "img_default": imagurl+"/other/official-artwork/853.png",
+        "img_sprite": imagurl+"/853.png"
     },
     {
         "dex": 854,
@@ -11099,8 +11099,8 @@ var data = [
         "special_defense": 54,
         "speed": 50,
         "best": 308,
-        "img_default": imagurl + "/other/official-artwork/854.png",
-        "img_sprite": imagurl + "/854.png"
+        "img_default": imagurl+"/other/official-artwork/854.png",
+        "img_sprite": imagurl+"/854.png"
     },
     {
         "dex": 855,
@@ -11112,8 +11112,8 @@ var data = [
         "special_defense": 114,
         "speed": 70,
         "best": 508,
-        "img_default": imagurl + "/other/official-artwork/855.png",
-        "img_sprite": imagurl + "/855.png"
+        "img_default": imagurl+"/other/official-artwork/855.png",
+        "img_sprite": imagurl+"/855.png"
     },
     {
         "dex": 856,
@@ -11125,8 +11125,8 @@ var data = [
         "special_defense": 53,
         "speed": 39,
         "best": 265,
-        "img_default": imagurl + "/other/official-artwork/856.png",
-        "img_sprite": imagurl + "/856.png"
+        "img_default": imagurl+"/other/official-artwork/856.png",
+        "img_sprite": imagurl+"/856.png"
     },
     {
         "dex": 857,
@@ -11138,8 +11138,8 @@ var data = [
         "special_defense": 73,
         "speed": 49,
         "best": 370,
-        "img_default": imagurl + "/other/official-artwork/857.png",
-        "img_sprite": imagurl + "/857.png"
+        "img_default": imagurl+"/other/official-artwork/857.png",
+        "img_sprite": imagurl+"/857.png"
     },
     {
         "dex": 858,
@@ -11151,8 +11151,8 @@ var data = [
         "special_defense": 103,
         "speed": 29,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/858.png",
-        "img_sprite": imagurl + "/858.png"
+        "img_default": imagurl+"/other/official-artwork/858.png",
+        "img_sprite": imagurl+"/858.png"
     },
     {
         "dex": 859,
@@ -11164,8 +11164,8 @@ var data = [
         "special_defense": 40,
         "speed": 50,
         "best": 265,
-        "img_default": imagurl + "/other/official-artwork/859.png",
-        "img_sprite": imagurl + "/859.png"
+        "img_default": imagurl+"/other/official-artwork/859.png",
+        "img_sprite": imagurl+"/859.png"
     },
     {
         "dex": 860,
@@ -11177,8 +11177,8 @@ var data = [
         "special_defense": 55,
         "speed": 70,
         "best": 370,
-        "img_default": imagurl + "/other/official-artwork/860.png",
-        "img_sprite": imagurl + "/860.png"
+        "img_default": imagurl+"/other/official-artwork/860.png",
+        "img_sprite": imagurl+"/860.png"
     },
     {
         "dex": 861,
@@ -11190,8 +11190,8 @@ var data = [
         "special_defense": 75,
         "speed": 60,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/861.png",
-        "img_sprite": imagurl + "/861.png"
+        "img_default": imagurl+"/other/official-artwork/861.png",
+        "img_sprite": imagurl+"/861.png"
     },
     {
         "dex": 862,
@@ -11203,8 +11203,8 @@ var data = [
         "special_defense": 81,
         "speed": 95,
         "best": 520,
-        "img_default": imagurl + "/other/official-artwork/862.png",
-        "img_sprite": imagurl + "/862.png"
+        "img_default": imagurl+"/other/official-artwork/862.png",
+        "img_sprite": imagurl+"/862.png"
     },
     {
         "dex": 863,
@@ -11216,8 +11216,8 @@ var data = [
         "special_defense": 60,
         "speed": 50,
         "best": 440,
-        "img_default": imagurl + "/other/official-artwork/863.png",
-        "img_sprite": imagurl + "/863.png"
+        "img_default": imagurl+"/other/official-artwork/863.png",
+        "img_sprite": imagurl+"/863.png"
     },
     {
         "dex": 864,
@@ -11229,8 +11229,8 @@ var data = [
         "special_defense": 130,
         "speed": 30,
         "best": 510,
-        "img_default": imagurl + "/other/official-artwork/864.png",
-        "img_sprite": imagurl + "/864.png"
+        "img_default": imagurl+"/other/official-artwork/864.png",
+        "img_sprite": imagurl+"/864.png"
     },
     {
         "dex": 865,
@@ -11242,8 +11242,8 @@ var data = [
         "special_defense": 82,
         "speed": 65,
         "best": 507,
-        "img_default": imagurl + "/other/official-artwork/865.png",
-        "img_sprite": imagurl + "/865.png"
+        "img_default": imagurl+"/other/official-artwork/865.png",
+        "img_sprite": imagurl+"/865.png"
     },
     {
         "dex": 866,
@@ -11255,8 +11255,8 @@ var data = [
         "special_defense": 100,
         "speed": 70,
         "best": 520,
-        "img_default": imagurl + "/other/official-artwork/866.png",
-        "img_sprite": imagurl + "/866.png"
+        "img_default": imagurl+"/other/official-artwork/866.png",
+        "img_sprite": imagurl+"/866.png"
     },
     {
         "dex": 867,
@@ -11268,8 +11268,8 @@ var data = [
         "special_defense": 105,
         "speed": 30,
         "best": 483,
-        "img_default": imagurl + "/other/official-artwork/867.png",
-        "img_sprite": imagurl + "/867.png"
+        "img_default": imagurl+"/other/official-artwork/867.png",
+        "img_sprite": imagurl+"/867.png"
     },
     {
         "dex": 868,
@@ -11281,8 +11281,8 @@ var data = [
         "special_defense": 61,
         "speed": 34,
         "best": 270,
-        "img_default": imagurl + "/other/official-artwork/868.png",
-        "img_sprite": imagurl + "/868.png"
+        "img_default": imagurl+"/other/official-artwork/868.png",
+        "img_sprite": imagurl+"/868.png"
     },
     {
         "dex": 869,
@@ -11294,8 +11294,8 @@ var data = [
         "special_defense": 121,
         "speed": 64,
         "best": 495,
-        "img_default": imagurl + "/other/official-artwork/869.png",
-        "img_sprite": imagurl + "/869.png"
+        "img_default": imagurl+"/other/official-artwork/869.png",
+        "img_sprite": imagurl+"/869.png"
     },
     {
         "dex": 870,
@@ -11307,8 +11307,8 @@ var data = [
         "special_defense": 60,
         "speed": 75,
         "best": 470,
-        "img_default": imagurl + "/other/official-artwork/870.png",
-        "img_sprite": imagurl + "/870.png"
+        "img_default": imagurl+"/other/official-artwork/870.png",
+        "img_sprite": imagurl+"/870.png"
     },
     {
         "dex": 871,
@@ -11320,8 +11320,8 @@ var data = [
         "special_defense": 85,
         "speed": 15,
         "best": 435,
-        "img_default": imagurl + "/other/official-artwork/871.png",
-        "img_sprite": imagurl + "/871.png"
+        "img_default": imagurl+"/other/official-artwork/871.png",
+        "img_sprite": imagurl+"/871.png"
     },
     {
         "dex": 872,
@@ -11333,8 +11333,8 @@ var data = [
         "special_defense": 30,
         "speed": 20,
         "best": 185,
-        "img_default": imagurl + "/other/official-artwork/872.png",
-        "img_sprite": imagurl + "/872.png"
+        "img_default": imagurl+"/other/official-artwork/872.png",
+        "img_sprite": imagurl+"/872.png"
     },
     {
         "dex": 873,
@@ -11346,8 +11346,8 @@ var data = [
         "special_defense": 90,
         "speed": 65,
         "best": 475,
-        "img_default": imagurl + "/other/official-artwork/873.png",
-        "img_sprite": imagurl + "/873.png"
+        "img_default": imagurl+"/other/official-artwork/873.png",
+        "img_sprite": imagurl+"/873.png"
     },
     {
         "dex": 874,
@@ -11359,12 +11359,12 @@ var data = [
         "special_defense": 20,
         "speed": 70,
         "best": 470,
-        "img_default": imagurl + "/other/official-artwork/874.png",
-        "img_sprite": imagurl + "/874.png"
+        "img_default": imagurl+"/other/official-artwork/874.png",
+        "img_sprite": imagurl+"/874.png"
     },
     {
         "dex": 875,
-        "name": "Eiscue-ice",
+        "name": "Eiscue",
         "hp": 75,
         "attack": 80,
         "defense": 110,
@@ -11372,12 +11372,12 @@ var data = [
         "special_defense": 90,
         "speed": 50,
         "best": 470,
-        "img_default": imagurl + "/other/official-artwork/875.png",
-        "img_sprite": imagurl + "/875.png"
+        "img_default": imagurl+"/other/official-artwork/875.png",
+        "img_sprite": imagurl+"/875.png"
     },
     {
         "dex": 876,
-        "name": "Indeedee-male",
+        "name": "Indeedee",
         "hp": 60,
         "attack": 65,
         "defense": 55,
@@ -11385,8 +11385,8 @@ var data = [
         "special_defense": 95,
         "speed": 95,
         "best": 475,
-        "img_default": imagurl + "/other/official-artwork/876.png",
-        "img_sprite": imagurl + "/876.png"
+        "img_default": imagurl+"/other/official-artwork/876.png",
+        "img_sprite": imagurl+"/876.png"
     },
     {
         "dex": 877,
@@ -11398,8 +11398,8 @@ var data = [
         "special_defense": 58,
         "speed": 97,
         "best": 436,
-        "img_default": imagurl + "/other/official-artwork/877.png",
-        "img_sprite": imagurl + "/877.png"
+        "img_default": imagurl+"/other/official-artwork/877.png",
+        "img_sprite": imagurl+"/877.png"
     },
     {
         "dex": 878,
@@ -11411,8 +11411,8 @@ var data = [
         "special_defense": 49,
         "speed": 40,
         "best": 330,
-        "img_default": imagurl + "/other/official-artwork/878.png",
-        "img_sprite": imagurl + "/878.png"
+        "img_default": imagurl+"/other/official-artwork/878.png",
+        "img_sprite": imagurl+"/878.png"
     },
     {
         "dex": 879,
@@ -11424,8 +11424,8 @@ var data = [
         "special_defense": 69,
         "speed": 30,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/879.png",
-        "img_sprite": imagurl + "/879.png"
+        "img_default": imagurl+"/other/official-artwork/879.png",
+        "img_sprite": imagurl+"/879.png"
     },
     {
         "dex": 880,
@@ -11437,8 +11437,8 @@ var data = [
         "special_defense": 70,
         "speed": 75,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/880.png",
-        "img_sprite": imagurl + "/880.png"
+        "img_default": imagurl+"/other/official-artwork/880.png",
+        "img_sprite": imagurl+"/880.png"
     },
     {
         "dex": 881,
@@ -11450,8 +11450,8 @@ var data = [
         "special_defense": 80,
         "speed": 55,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/881.png",
-        "img_sprite": imagurl + "/881.png"
+        "img_default": imagurl+"/other/official-artwork/881.png",
+        "img_sprite": imagurl+"/881.png"
     },
     {
         "dex": 882,
@@ -11463,8 +11463,8 @@ var data = [
         "special_defense": 80,
         "speed": 75,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/882.png",
-        "img_sprite": imagurl + "/882.png"
+        "img_default": imagurl+"/other/official-artwork/882.png",
+        "img_sprite": imagurl+"/882.png"
     },
     {
         "dex": 883,
@@ -11476,8 +11476,8 @@ var data = [
         "special_defense": 90,
         "speed": 55,
         "best": 505,
-        "img_default": imagurl + "/other/official-artwork/883.png",
-        "img_sprite": imagurl + "/883.png"
+        "img_default": imagurl+"/other/official-artwork/883.png",
+        "img_sprite": imagurl+"/883.png"
     },
     {
         "dex": 884,
@@ -11489,8 +11489,8 @@ var data = [
         "special_defense": 50,
         "speed": 85,
         "best": 535,
-        "img_default": imagurl + "/other/official-artwork/884.png",
-        "img_sprite": imagurl + "/884.png"
+        "img_default": imagurl+"/other/official-artwork/884.png",
+        "img_sprite": imagurl+"/884.png"
     },
     {
         "dex": 885,
@@ -11502,8 +11502,8 @@ var data = [
         "special_defense": 30,
         "speed": 82,
         "best": 270,
-        "img_default": imagurl + "/other/official-artwork/885.png",
-        "img_sprite": imagurl + "/885.png"
+        "img_default": imagurl+"/other/official-artwork/885.png",
+        "img_sprite": imagurl+"/885.png"
     },
     {
         "dex": 886,
@@ -11515,8 +11515,8 @@ var data = [
         "special_defense": 50,
         "speed": 102,
         "best": 410,
-        "img_default": imagurl + "/other/official-artwork/886.png",
-        "img_sprite": imagurl + "/886.png"
+        "img_default": imagurl+"/other/official-artwork/886.png",
+        "img_sprite": imagurl+"/886.png"
     },
     {
         "dex": 887,
@@ -11528,12 +11528,12 @@ var data = [
         "special_defense": 75,
         "speed": 142,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/887.png",
-        "img_sprite": imagurl + "/887.png"
+        "img_default": imagurl+"/other/official-artwork/887.png",
+        "img_sprite": imagurl+"/887.png"
     },
     {
         "dex": 888,
-        "name": "Zacian-hero",
+        "name": "Zacian",
         "hp": 92,
         "attack": 130,
         "defense": 115,
@@ -11541,12 +11541,12 @@ var data = [
         "special_defense": 115,
         "speed": 138,
         "best": 670,
-        "img_default": imagurl + "/other/official-artwork/888.png",
-        "img_sprite": imagurl + "/888.png"
+        "img_default": imagurl+"/other/official-artwork/888.png",
+        "img_sprite": imagurl+"/888.png"
     },
     {
         "dex": 889,
-        "name": "Zamazenta-hero",
+        "name": "Zamazenta",
         "hp": 92,
         "attack": 130,
         "defense": 115,
@@ -11554,8 +11554,8 @@ var data = [
         "special_defense": 115,
         "speed": 138,
         "best": 670,
-        "img_default": imagurl + "/other/official-artwork/889.png",
-        "img_sprite": imagurl + "/889.png"
+        "img_default": imagurl+"/other/official-artwork/889.png",
+        "img_sprite": imagurl+"/889.png"
     },
     {
         "dex": 890,
@@ -11567,8 +11567,8 @@ var data = [
         "special_defense": 95,
         "speed": 130,
         "best": 690,
-        "img_default": imagurl + "/other/official-artwork/890.png",
-        "img_sprite": imagurl + "/890.png"
+        "img_default": imagurl+"/other/official-artwork/890.png",
+        "img_sprite": imagurl+"/890.png"
     },
     {
         "dex": 891,
@@ -11580,12 +11580,12 @@ var data = [
         "special_defense": 50,
         "speed": 72,
         "best": 385,
-        "img_default": imagurl + "/other/official-artwork/891.png",
-        "img_sprite": imagurl + "/891.png"
+        "img_default": imagurl+"/other/official-artwork/891.png",
+        "img_sprite": imagurl+"/891.png"
     },
     {
         "dex": 892,
-        "name": "Urshifu-single-strike",
+        "name": "Urshifu",
         "hp": 100,
         "attack": 130,
         "defense": 100,
@@ -11593,8 +11593,8 @@ var data = [
         "special_defense": 60,
         "speed": 97,
         "best": 550,
-        "img_default": imagurl + "/other/official-artwork/892.png",
-        "img_sprite": imagurl + "/892.png"
+        "img_default": imagurl+"/other/official-artwork/892.png",
+        "img_sprite": imagurl+"/892.png"
     },
     {
         "dex": 893,
@@ -11606,8 +11606,8 @@ var data = [
         "special_defense": 95,
         "speed": 105,
         "best": 600,
-        "img_default": imagurl + "/other/official-artwork/893.png",
-        "img_sprite": imagurl + "/893.png"
+        "img_default": imagurl+"/other/official-artwork/893.png",
+        "img_sprite": imagurl+"/893.png"
     },
     {
         "dex": 894,
@@ -11619,8 +11619,8 @@ var data = [
         "special_defense": 50,
         "speed": 200,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/894.png",
-        "img_sprite": imagurl + "/894.png"
+        "img_default": imagurl+"/other/official-artwork/894.png",
+        "img_sprite": imagurl+"/894.png"
     },
     {
         "dex": 895,
@@ -11632,8 +11632,8 @@ var data = [
         "special_defense": 50,
         "speed": 80,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/895.png",
-        "img_sprite": imagurl + "/895.png"
+        "img_default": imagurl+"/other/official-artwork/895.png",
+        "img_sprite": imagurl+"/895.png"
     },
     {
         "dex": 896,
@@ -11645,8 +11645,8 @@ var data = [
         "special_defense": 110,
         "speed": 30,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/896.png",
-        "img_sprite": imagurl + "/896.png"
+        "img_default": imagurl+"/other/official-artwork/896.png",
+        "img_sprite": imagurl+"/896.png"
     },
     {
         "dex": 897,
@@ -11658,8 +11658,8 @@ var data = [
         "special_defense": 80,
         "speed": 130,
         "best": 580,
-        "img_default": imagurl + "/other/official-artwork/897.png",
-        "img_sprite": imagurl + "/897.png"
+        "img_default": imagurl+"/other/official-artwork/897.png",
+        "img_sprite": imagurl+"/897.png"
     },
     {
         "dex": 898,
@@ -11671,118 +11671,119 @@ var data = [
         "special_defense": 80,
         "speed": 80,
         "best": 500,
-        "img_default": imagurl + "/other/official-artwork/898.png",
-        "img_sprite": imagurl + "/898.png"
+        "img_default": imagurl+"/other/official-artwork/898.png",
+        "img_sprite": imagurl+"/898.png"
     },
-    { "dex": 899, "name": "Wyrdeer", "hp": 103, "attack": 105, "defense": 72, "special_attack": 105, "special_defense": 75, "speed": 65, "best": 525, "img_default": imagurl + "/other/official-artwork/899.png", "img_sprite": imagurl + "/899.png" },
-    { "dex": 900, "name": "Kleavor", "hp": 70, "attack": 135, "defense": 95, "special_attack": 45, "special_defense": 70, "speed": 85, "best": 500, "img_default": imagurl + "/other/official-artwork/900.png", "img_sprite": imagurl + "/900.png" },
-    { "dex": 901, "name": "Ursaluna", "hp": 130, "attack": 140, "defense": 105, "special_attack": 45, "special_defense": 80, "speed": 50, "best": 550, "img_default": imagurl + "/other/official-artwork/901.png", "img_sprite": imagurl + "/901.png" },
-    { "dex": 902, "name": "Basculegion", "hp": 120, "attack": 112, "defense": 65, "special_attack": 80, "special_defense": 75, "speed": 78, "best": 530, "img_default": imagurl + "/other/official-artwork/902.png", "img_sprite": imagurl + "/902.png" },
-    { "dex": 903, "name": "Sneasler", "hp": 80, "attack": 130, "defense": 60, "special_attack": 40, "special_defense": 80, "speed": 120, "best": 510, "img_default": imagurl + "/other/official-artwork/903.png", "img_sprite": imagurl + "/903.png" },
-    { "dex": 904, "name": "Overqwil", "hp": 85, "attack": 115, "defense": 95, "special_attack": 65, "special_defense": 65, "speed": 85, "best": 510, "img_default": imagurl + "/other/official-artwork/904.png", "img_sprite": imagurl + "/904.png" },
-    { "dex": 905, "name": "Enamorus", "hp": 74, "attack": 115, "defense": 70, "special_attack": 135, "special_defense": 80, "speed": 106, "best": 580, "img_default": imagurl + "/other/official-artwork/905.png", "img_sprite": imagurl + "/905.png" },
-    { "dex": 906, "name": "Sprigatito", "hp": 40, "attack": 61, "defense": 54, "special_attack": 45, "special_defense": 45, "speed": 65, "best": 310, "img_default": imagurl + "/other/official-artwork/906.png", "img_sprite": imagurl + "/906.png" },
-    { "dex": 907, "name": "Floragato", "hp": 61, "attack": 80, "defense": 63, "special_attack": 60, "special_defense": 63, "speed": 83, "best": 410, "img_default": imagurl + "/other/official-artwork/907.png", "img_sprite": imagurl + "/907.png" },
-    { "dex": 908, "name": "Meowscarada", "hp": 76, "attack": 110, "defense": 70, "special_attack": 81, "special_defense": 70, "speed": 123, "best": 530, "img_default": imagurl + "/other/official-artwork/908.png", "img_sprite": imagurl + "/908.png" },
-    { "dex": 909, "name": "Fuecoco", "hp": 67, "attack": 45, "defense": 59, "special_attack": 63, "special_defense": 40, "speed": 36, "best": 310, "img_default": imagurl + "/other/official-artwork/909.png", "img_sprite": imagurl + "/909.png" },
-    { "dex": 910, "name": "Crocalor", "hp": 81, "attack": 55, "defense": 78, "special_attack": 90, "special_defense": 58, "speed": 49, "best": 411, "img_default": imagurl + "/other/official-artwork/910.png", "img_sprite": imagurl + "/910.png" },
-    { "dex": 911, "name": "Skeledirge", "hp": 104, "attack": 75, "defense": 100, "special_attack": 110, "special_defense": 75, "speed": 66, "best": 530, "img_default": imagurl + "/other/official-artwork/911.png", "img_sprite": imagurl + "/911.png" },
-    { "dex": 912, "name": "Quaxly", "hp": 55, "attack": 65, "defense": 45, "special_attack": 50, "special_defense": 45, "speed": 50, "best": 310, "img_default": imagurl + "/other/official-artwork/912.png", "img_sprite": imagurl + "/912.png" },
-    { "dex": 913, "name": "Quaxwell", "hp": 70, "attack": 85, "defense": 65, "special_attack": 65, "special_defense": 60, "speed": 65, "best": 410, "img_default": imagurl + "/other/official-artwork/913.png", "img_sprite": imagurl + "/913.png" },
-    { "dex": 914, "name": "Quaquaval", "hp": 85, "attack": 120, "defense": 80, "special_attack": 85, "special_defense": 75, "speed": 85, "best": 530, "img_default": imagurl + "/other/official-artwork/914.png", "img_sprite": imagurl + "/914.png" },
-    { "dex": 915, "name": "Lechonk", "hp": 54, "attack": 45, "defense": 40, "special_attack": 35, "special_defense": 45, "speed": 35, "best": 254, "img_default": imagurl + "/other/official-artwork/915.png", "img_sprite": imagurl + "/915.png" },
-    { "dex": 916, "name": "Oinkologne", "hp": 110, "attack": 100, "defense": 75, "special_attack": 59, "special_defense": 80, "speed": 65, "best": 489, "img_default": imagurl + "/other/official-artwork/916.png", "img_sprite": imagurl + "/916.png" },
-    { "dex": 917, "name": "Tarountula", "hp": 35, "attack": 41, "defense": 45, "special_attack": 29, "special_defense": 40, "speed": 20, "best": 210, "img_default": imagurl + "/other/official-artwork/917.png", "img_sprite": imagurl + "/917.png" },
-    { "dex": 918, "name": "Spidops", "hp": 60, "attack": 79, "defense": 92, "special_attack": 52, "special_defense": 86, "speed": 35, "best": 404, "img_default": imagurl + "/other/official-artwork/918.png", "img_sprite": imagurl + "/918.png" },
-    { "dex": 919, "name": "Nymble", "hp": 33, "attack": 46, "defense": 40, "special_attack": 21, "special_defense": 25, "speed": 45, "best": 210, "img_default": imagurl + "/other/official-artwork/919.png", "img_sprite": imagurl + "/919.png" },
-    { "dex": 920, "name": "Lokix", "hp": 71, "attack": 102, "defense": 78, "special_attack": 52, "special_defense": 55, "speed": 92, "best": 450, "img_default": imagurl + "/other/official-artwork/920.png", "img_sprite": imagurl + "/920.png" },
-    { "dex": 921, "name": "Pawmi", "hp": 45, "attack": 50, "defense": 20, "special_attack": 40, "special_defense": 25, "speed": 60, "best": 240, "img_default": imagurl + "/other/official-artwork/921.png", "img_sprite": imagurl + "/921.png" },
-    { "dex": 922, "name": "Pawmo", "hp": 60, "attack": 75, "defense": 40, "special_attack": 50, "special_defense": 40, "speed": 85, "best": 350, "img_default": imagurl + "/other/official-artwork/922.png", "img_sprite": imagurl + "/922.png" },
-    { "dex": 923, "name": "Pawmot", "hp": 70, "attack": 115, "defense": 70, "special_attack": 70, "special_defense": 60, "speed": 105, "best": 490, "img_default": imagurl + "/other/official-artwork/923.png", "img_sprite": imagurl + "/923.png" },
-    { "dex": 924, "name": "Tandemaus", "hp": 50, "attack": 50, "defense": 45, "special_attack": 40, "special_defense": 45, "speed": 75, "best": 305, "img_default": imagurl + "/other/official-artwork/924.png", "img_sprite": imagurl + "/924.png" },
-    { "dex": 925, "name": "Maushold", "hp": 74, "attack": 75, "defense": 70, "special_attack": 65, "special_defense": 75, "speed": 111, "best": 470, "img_default": imagurl + "/other/official-artwork/925.png", "img_sprite": imagurl + "/925.png" },
-    { "dex": 926, "name": "Fidough", "hp": 37, "attack": 55, "defense": 70, "special_attack": 30, "special_defense": 55, "speed": 65, "best": 312, "img_default": imagurl + "/other/official-artwork/926.png", "img_sprite": imagurl + "/926.png" },
-    { "dex": 927, "name": "Dachsbun", "hp": 57, "attack": 80, "defense": 115, "special_attack": 50, "special_defense": 80, "speed": 95, "best": 477, "img_default": imagurl + "/other/official-artwork/927.png", "img_sprite": imagurl + "/927.png" },
-    { "dex": 928, "name": "Smoliv", "hp": 41, "attack": 35, "defense": 45, "special_attack": 58, "special_defense": 51, "speed": 30, "best": 260, "img_default": imagurl + "/other/official-artwork/928.png", "img_sprite": imagurl + "/928.png" },
-    { "dex": 929, "name": "Dolliv", "hp": 52, "attack": 53, "defense": 60, "special_attack": 78, "special_defense": 78, "speed": 33, "best": 354, "img_default": imagurl + "/other/official-artwork/929.png", "img_sprite": imagurl + "/929.png" },
-    { "dex": 930, "name": "Arboliva", "hp": 78, "attack": 69, "defense": 90, "special_attack": 125, "special_defense": 109, "speed": 39, "best": 510, "img_default": imagurl + "/other/official-artwork/930.png", "img_sprite": imagurl + "/930.png" },
-    { "dex": 931, "name": "Squawkabilly", "hp": 82, "attack": 96, "defense": 51, "special_attack": 45, "special_defense": 51, "speed": 92, "best": 417, "img_default": imagurl + "/other/official-artwork/931.png", "img_sprite": imagurl + "/931.png" },
-    { "dex": 932, "name": "Nacli", "hp": 55, "attack": 55, "defense": 75, "special_attack": 35, "special_defense": 35, "speed": 25, "best": 280, "img_default": imagurl + "/other/official-artwork/932.png", "img_sprite": imagurl + "/932.png" },
-    { "dex": 933, "name": "Naclstack", "hp": 60, "attack": 60, "defense": 100, "special_attack": 35, "special_defense": 65, "speed": 35, "best": 355, "img_default": imagurl + "/other/official-artwork/933.png", "img_sprite": imagurl + "/933.png" },
-    { "dex": 934, "name": "Garganacl", "hp": 100, "attack": 100, "defense": 130, "special_attack": 45, "special_defense": 90, "speed": 35, "best": 500, "img_default": imagurl + "/other/official-artwork/934.png", "img_sprite": imagurl + "/934.png" },
-    { "dex": 935, "name": "Charcadet", "hp": 40, "attack": 50, "defense": 40, "special_attack": 50, "special_defense": 40, "speed": 35, "best": 255, "img_default": imagurl + "/other/official-artwork/935.png", "img_sprite": imagurl + "/935.png" },
-    { "dex": 936, "name": "Armarouge", "hp": 85, "attack": 60, "defense": 100, "special_attack": 125, "special_defense": 80, "speed": 75, "best": 525, "img_default": imagurl + "/other/official-artwork/936.png", "img_sprite": imagurl + "/936.png" },
-    { "dex": 937, "name": "Ceruledge", "hp": 75, "attack": 125, "defense": 80, "special_attack": 60, "special_defense": 100, "speed": 85, "best": 525, "img_default": imagurl + "/other/official-artwork/937.png", "img_sprite": imagurl + "/937.png" },
-    { "dex": 938, "name": "Tadbulb", "hp": 61, "attack": 31, "defense": 41, "special_attack": 59, "special_defense": 35, "speed": 45, "best": 272, "img_default": imagurl + "/other/official-artwork/938.png", "img_sprite": imagurl + "/938.png" },
-    { "dex": 939, "name": "Bellibolt", "hp": 109, "attack": 64, "defense": 91, "special_attack": 103, "special_defense": 83, "speed": 45, "best": 495, "img_default": imagurl + "/other/official-artwork/939.png", "img_sprite": imagurl + "/939.png" },
-    { "dex": 940, "name": "Wattrel", "hp": 40, "attack": 40, "defense": 35, "special_attack": 55, "special_defense": 40, "speed": 70, "best": 280, "img_default": imagurl + "/other/official-artwork/940.png", "img_sprite": imagurl + "/940.png" },
-    { "dex": 941, "name": "Kilowattrel", "hp": 70, "attack": 70, "defense": 60, "special_attack": 105, "special_defense": 60, "speed": 125, "best": 490, "img_default": imagurl + "/other/official-artwork/941.png", "img_sprite": imagurl + "/941.png" },
-    { "dex": 942, "name": "Maschiff", "hp": 60, "attack": 78, "defense": 60, "special_attack": 40, "special_defense": 51, "speed": 51, "best": 340, "img_default": imagurl + "/other/official-artwork/942.png", "img_sprite": imagurl + "/942.png" },
-    { "dex": 943, "name": "Mabosstiff", "hp": 80, "attack": 120, "defense": 90, "special_attack": 60, "special_defense": 70, "speed": 85, "best": 505, "img_default": imagurl + "/other/official-artwork/943.png", "img_sprite": imagurl + "/943.png" },
-    { "dex": 944, "name": "Shroodle", "hp": 40, "attack": 65, "defense": 35, "special_attack": 40, "special_defense": 35, "speed": 75, "best": 290, "img_default": imagurl + "/other/official-artwork/944.png", "img_sprite": imagurl + "/944.png" },
-    { "dex": 945, "name": "Grafaiai", "hp": 63, "attack": 95, "defense": 65, "special_attack": 80, "special_defense": 72, "speed": 110, "best": 485, "img_default": imagurl + "/other/official-artwork/945.png", "img_sprite": imagurl + "/945.png" },
-    { "dex": 946, "name": "Bramblin", "hp": 40, "attack": 65, "defense": 30, "special_attack": 45, "special_defense": 35, "speed": 60, "best": 275, "img_default": imagurl + "/other/official-artwork/946.png", "img_sprite": imagurl + "/946.png" },
-    { "dex": 947, "name": "Brambleghast", "hp": 55, "attack": 115, "defense": 70, "special_attack": 80, "special_defense": 70, "speed": 90, "best": 480, "img_default": imagurl + "/other/official-artwork/947.png", "img_sprite": imagurl + "/947.png" },
-    { "dex": 948, "name": "Toedscool", "hp": 40, "attack": 40, "defense": 35, "special_attack": 50, "special_defense": 100, "speed": 70, "best": 335, "img_default": imagurl + "/other/official-artwork/948.png", "img_sprite": imagurl + "/948.png" },
-    { "dex": 949, "name": "Toedscruel", "hp": 80, "attack": 70, "defense": 65, "special_attack": 80, "special_defense": 120, "speed": 100, "best": 515, "img_default": imagurl + "/other/official-artwork/949.png", "img_sprite": imagurl + "/949.png" },
-    { "dex": 950, "name": "Klawf", "hp": 70, "attack": 100, "defense": 115, "special_attack": 35, "special_defense": 55, "speed": 75, "best": 450, "img_default": imagurl + "/other/official-artwork/950.png", "img_sprite": imagurl + "/950.png" },
-    { "dex": 951, "name": "Capsakid", "hp": 50, "attack": 62, "defense": 40, "special_attack": 62, "special_defense": 40, "speed": 50, "best": 304, "img_default": imagurl + "/other/official-artwork/951.png", "img_sprite": imagurl + "/951.png" },
-    { "dex": 952, "name": "Scovillain", "hp": 65, "attack": 108, "defense": 65, "special_attack": 108, "special_defense": 65, "speed": 75, "best": 486, "img_default": imagurl + "/other/official-artwork/952.png", "img_sprite": imagurl + "/952.png" },
-    { "dex": 953, "name": "Rellor", "hp": 41, "attack": 50, "defense": 60, "special_attack": 31, "special_defense": 58, "speed": 30, "best": 270, "img_default": imagurl + "/other/official-artwork/953.png", "img_sprite": imagurl + "/953.png" },
-    { "dex": 954, "name": "Rabsca", "hp": 75, "attack": 50, "defense": 85, "special_attack": 115, "special_defense": 100, "speed": 45, "best": 470, "img_default": imagurl + "/other/official-artwork/954.png", "img_sprite": imagurl + "/954.png" },
-    { "dex": 955, "name": "Flittle", "hp": 30, "attack": 35, "defense": 30, "special_attack": 55, "special_defense": 30, "speed": 75, "best": 255, "img_default": imagurl + "/other/official-artwork/955.png", "img_sprite": imagurl + "/955.png" },
-    { "dex": 956, "name": "Espathra", "hp": 95, "attack": 60, "defense": 60, "special_attack": 101, "special_defense": 60, "speed": 105, "best": 481, "img_default": imagurl + "/other/official-artwork/956.png", "img_sprite": imagurl + "/956.png" },
-    { "dex": 957, "name": "Tinkatink", "hp": 50, "attack": 45, "defense": 45, "special_attack": 35, "special_defense": 64, "speed": 58, "best": 297, "img_default": imagurl + "/other/official-artwork/957.png", "img_sprite": imagurl + "/957.png" },
-    { "dex": 958, "name": "Tinkatuff", "hp": 65, "attack": 55, "defense": 55, "special_attack": 45, "special_defense": 82, "speed": 78, "best": 380, "img_default": imagurl + "/other/official-artwork/958.png", "img_sprite": imagurl + "/958.png" },
-    { "dex": 959, "name": "Tinkaton", "hp": 85, "attack": 75, "defense": 77, "special_attack": 70, "special_defense": 105, "speed": 94, "best": 506, "img_default": imagurl + "/other/official-artwork/959.png", "img_sprite": imagurl + "/959.png" },
-    { "dex": 960, "name": "Wiglett", "hp": 10, "attack": 55, "defense": 25, "special_attack": 35, "special_defense": 25, "speed": 95, "best": 245, "img_default": imagurl + "/other/official-artwork/960.png", "img_sprite": imagurl + "/960.png" },
-    { "dex": 961, "name": "Wugtrio", "hp": 35, "attack": 100, "defense": 50, "special_attack": 50, "special_defense": 70, "speed": 120, "best": 425, "img_default": imagurl + "/other/official-artwork/961.png", "img_sprite": imagurl + "/961.png" },
-    { "dex": 962, "name": "Bombirdier", "hp": 70, "attack": 103, "defense": 85, "special_attack": 60, "special_defense": 85, "speed": 82, "best": 485, "img_default": imagurl + "/other/official-artwork/962.png", "img_sprite": imagurl + "/962.png" },
-    { "dex": 963, "name": "Finizen", "hp": 70, "attack": 45, "defense": 40, "special_attack": 45, "special_defense": 40, "speed": 75, "best": 315, "img_default": imagurl + "/other/official-artwork/963.png", "img_sprite": imagurl + "/963.png" },
-    { "dex": 964, "name": "Palafin", "hp": 100, "attack": 70, "defense": 72, "special_attack": 53, "special_defense": 62, "speed": 100, "best": 457, "img_default": imagurl + "/other/official-artwork/964.png", "img_sprite": imagurl + "/964.png" },
-    { "dex": 965, "name": "Varoom", "hp": 45, "attack": 70, "defense": 63, "special_attack": 30, "special_defense": 45, "speed": 47, "best": 300, "img_default": imagurl + "/other/official-artwork/965.png", "img_sprite": imagurl + "/965.png" },
-    { "dex": 966, "name": "Revavroom", "hp": 80, "attack": 119, "defense": 90, "special_attack": 54, "special_defense": 67, "speed": 90, "best": 500, "img_default": imagurl + "/other/official-artwork/966.png", "img_sprite": imagurl + "/966.png" },
-    { "dex": 967, "name": "Cyclizar", "hp": 70, "attack": 95, "defense": 65, "special_attack": 85, "special_defense": 65, "speed": 121, "best": 501, "img_default": imagurl + "/other/official-artwork/967.png", "img_sprite": imagurl + "/967.png" },
-    { "dex": 968, "name": "Orthworm", "hp": 70, "attack": 85, "defense": 145, "special_attack": 60, "special_defense": 55, "speed": 65, "best": 480, "img_default": imagurl + "/other/official-artwork/968.png", "img_sprite": imagurl + "/968.png" },
-    { "dex": 969, "name": "Glimmet", "hp": 48, "attack": 35, "defense": 42, "special_attack": 105, "special_defense": 60, "speed": 60, "best": 350, "img_default": imagurl + "/other/official-artwork/969.png", "img_sprite": imagurl + "/969.png" },
-    { "dex": 970, "name": "Glimmora", "hp": 83, "attack": 55, "defense": 90, "special_attack": 130, "special_defense": 81, "speed": 86, "best": 525, "img_default": imagurl + "/other/official-artwork/970.png", "img_sprite": imagurl + "/970.png" },
-    { "dex": 971, "name": "Greavard", "hp": 50, "attack": 61, "defense": 60, "special_attack": 30, "special_defense": 55, "speed": 34, "best": 290, "img_default": imagurl + "/other/official-artwork/971.png", "img_sprite": imagurl + "/971.png" },
-    { "dex": 972, "name": "Houndstone", "hp": 72, "attack": 101, "defense": 100, "special_attack": 50, "special_defense": 97, "speed": 68, "best": 488, "img_default": imagurl + "/other/official-artwork/972.png", "img_sprite": imagurl + "/972.png" },
-    { "dex": 973, "name": "Flamigo", "hp": 82, "attack": 115, "defense": 74, "special_attack": 75, "special_defense": 64, "speed": 90, "best": 500, "img_default": imagurl + "/other/official-artwork/973.png", "img_sprite": imagurl + "/973.png" },
-    { "dex": 974, "name": "Cetoddle", "hp": 108, "attack": 68, "defense": 45, "special_attack": 30, "special_defense": 40, "speed": 43, "best": 334, "img_default": imagurl + "/other/official-artwork/974.png", "img_sprite": imagurl + "/974.png" },
-    { "dex": 975, "name": "Cetitan", "hp": 170, "attack": 113, "defense": 65, "special_attack": 45, "special_defense": 55, "speed": 73, "best": 521, "img_default": imagurl + "/other/official-artwork/975.png", "img_sprite": imagurl + "/975.png" },
-    { "dex": 976, "name": "Veluza", "hp": 90, "attack": 102, "defense": 73, "special_attack": 78, "special_defense": 65, "speed": 70, "best": 478, "img_default": imagurl + "/other/official-artwork/976.png", "img_sprite": imagurl + "/976.png" },
-    { "dex": 977, "name": "Dondozo", "hp": 150, "attack": 100, "defense": 115, "special_attack": 65, "special_defense": 65, "speed": 35, "best": 530, "img_default": imagurl + "/other/official-artwork/977.png", "img_sprite": imagurl + "/977.png" },
-    { "dex": 978, "name": "Tatsugiri", "hp": 68, "attack": 50, "defense": 60, "special_attack": 120, "special_defense": 95, "speed": 82, "best": 475, "img_default": imagurl + "/other/official-artwork/978.png", "img_sprite": imagurl + "/978.png" },
-    { "dex": 979, "name": "Annihilape", "hp": 110, "attack": 115, "defense": 80, "special_attack": 50, "special_defense": 90, "speed": 90, "best": 535, "img_default": imagurl + "/other/official-artwork/979.png", "img_sprite": imagurl + "/979.png" },
-    { "dex": 980, "name": "Clodsire", "hp": 130, "attack": 75, "defense": 60, "special_attack": 45, "special_defense": 100, "speed": 20, "best": 430, "img_default": imagurl + "/other/official-artwork/980.png", "img_sprite": imagurl + "/980.png" },
-    { "dex": 981, "name": "Farigiraf", "hp": 120, "attack": 90, "defense": 70, "special_attack": 110, "special_defense": 70, "speed": 60, "best": 520, "img_default": imagurl + "/other/official-artwork/981.png", "img_sprite": imagurl + "/981.png" },
-    { "dex": 982, "name": "Dudunsparce", "hp": 125, "attack": 100, "defense": 80, "special_attack": 85, "special_defense": 75, "speed": 55, "best": 520, "img_default": imagurl + "/other/official-artwork/982.png", "img_sprite": imagurl + "/982.png" },
-    { "dex": 983, "name": "Kingambit", "hp": 100, "attack": 135, "defense": 120, "special_attack": 60, "special_defense": 85, "speed": 50, "best": 550, "img_default": imagurl + "/other/official-artwork/983.png", "img_sprite": imagurl + "/983.png" },
-    { "dex": 984, "name": "Colmilargo", "hp": 115, "attack": 131, "defense": 131, "special_attack": 53, "special_defense": 53, "speed": 87, "best": 570, "img_default": imagurl + "/other/official-artwork/984.png", "img_sprite": imagurl + "/984.png" },
-    { "dex": 985, "name": "Colagrito", "hp": 115, "attack": 65, "defense": 99, "special_attack": 65, "special_defense": 115, "speed": 111, "best": 570, "img_default": imagurl + "/other/official-artwork/985.png", "img_sprite": imagurl + "/985.png" },
-    { "dex": 986, "name": "Furioseta", "hp": 111, "attack": 127, "defense": 99, "special_attack": 79, "special_defense": 99, "speed": 55, "best": 570, "img_default": imagurl + "/other/official-artwork/986.png", "img_sprite": imagurl + "/986.png" },
-    { "dex": 987, "name": "Melenaleteo", "hp": 55, "attack": 55, "defense": 55, "special_attack": 135, "special_defense": 135, "speed": 135, "best": 570, "img_default": imagurl + "/other/official-artwork/987.png", "img_sprite": imagurl + "/987.png" },
-    { "dex": 988, "name": "Reptalada", "hp": 85, "attack": 135, "defense": 79, "special_attack": 85, "special_defense": 105, "speed": 81, "best": 570, "img_default": imagurl + "/other/official-artwork/988.png", "img_sprite": imagurl + "/988.png" },
-    { "dex": 989, "name": "Pelarena", "hp": 85, "attack": 81, "defense": 97, "special_attack": 121, "special_defense": 85, "speed": 101, "best": 570, "img_default": imagurl + "/other/official-artwork/989.png", "img_sprite": imagurl + "/989.png" },
-    { "dex": 990, "name": "Ferrodada", "hp": 90, "attack": 112, "defense": 120, "special_attack": 72, "special_defense": 70, "speed": 106, "best": 570, "img_default": imagurl + "/other/official-artwork/990.png", "img_sprite": imagurl + "/990.png" },
-    { "dex": 991, "name": "Ferrosaco", "hp": 56, "attack": 80, "defense": 114, "special_attack": 124, "special_defense": 60, "speed": 136, "best": 570, "img_default": imagurl + "/other/official-artwork/991.png", "img_sprite": imagurl + "/991.png" },
-    { "dex": 992, "name": "Ferropalmas", "hp": 154, "attack": 140, "defense": 108, "special_attack": 50, "special_defense": 68, "speed": 50, "best": 570, "img_default": imagurl + "/other/official-artwork/992.png", "img_sprite": imagurl + "/992.png" },
-    { "dex": 993, "name": "Ferrocuello", "hp": 94, "attack": 80, "defense": 86, "special_attack": 122, "special_defense": 80, "speed": 108, "best": 570, "img_default": imagurl + "/other/official-artwork/993.png", "img_sprite": imagurl + "/993.png" },
-    { "dex": 994, "name": "Ferropolilla", "hp": 80, "attack": 70, "defense": 60, "special_attack": 140, "special_defense": 110, "speed": 110, "best": 570, "img_default": imagurl + "/other/official-artwork/994.png", "img_sprite": imagurl + "/994.png" },
-    { "dex": 995, "name": "Ferropuas", "hp": 100, "attack": 134, "defense": 110, "special_attack": 70, "special_defense": 84, "speed": 72, "best": 570, "img_default": imagurl + "/other/official-artwork/995.png", "img_sprite": imagurl + "/995.png" },
-    { "dex": 996, "name": "Frigibax", "hp": 65, "attack": 75, "defense": 45, "special_attack": 35, "special_defense": 45, "speed": 55, "best": 320, "img_default": imagurl + "/other/official-artwork/996.png", "img_sprite": imagurl + "/996.png" },
-    { "dex": 997, "name": "Arctibax", "hp": 90, "attack": 95, "defense": 66, "special_attack": 45, "special_defense": 65, "speed": 62, "best": 423, "img_default": imagurl + "/other/official-artwork/997.png", "img_sprite": imagurl + "/997.png" },
-    { "dex": 998, "name": "Baxcalibur", "hp": 115, "attack": 145, "defense": 92, "special_attack": 75, "special_defense": 86, "speed": 87, "best": 600, "img_default": imagurl + "/other/official-artwork/998.png", "img_sprite": imagurl + "/998.png" },
-    { "dex": 999, "name": "Gimmighoul", "hp": 45, "attack": 30, "defense": 70, "special_attack": 75, "special_defense": 70, "speed": 10, "best": 300, "img_default": imagurl + "/other/official-artwork/999.png", "img_sprite": imagurl + "/999.png" },
-    { "dex": 1000, "name": "Gholdengo", "hp": 87, "attack": 60, "defense": 95, "special_attack": 133, "special_defense": 91, "speed": 84, "best": 550, "img_default": imagurl + "/other/official-artwork/1000.png", "img_sprite": imagurl + "/1000.png" },
-    { "dex": 1001, "name": "Wo-chien", "hp": 85, "attack": 85, "defense": 100, "special_attack": 95, "special_defense": 135, "speed": 70, "best": 570, "img_default": imagurl + "/other/official-artwork/1001.png", "img_sprite": imagurl + "/1001.png" },
-    { "dex": 1002, "name": "Chien-pao", "hp": 80, "attack": 120, "defense": 80, "special_attack": 90, "special_defense": 65, "speed": 135, "best": 570, "img_default": imagurl + "/other/official-artwork/1002.png", "img_sprite": imagurl + "/1002.png" },
-    { "dex": 1003, "name": "Ting-lu", "hp": 155, "attack": 110, "defense": 125, "special_attack": 55, "special_defense": 80, "speed": 45, "best": 570, "img_default": imagurl + "/other/official-artwork/1003.png", "img_sprite": imagurl + "/1003.png" },
-    { "dex": 1004, "name": "Chi-yu", "hp": 55, "attack": 80, "defense": 80, "special_attack": 135, "special_defense": 120, "speed": 100, "best": 570, "img_default": imagurl + "/other/official-artwork/1004.png", "img_sprite": imagurl + "/1004.png" },
-    { "dex": 1005, "name": "Bramaluna", "hp": 105, "attack": 139, "defense": 71, "special_attack": 55, "special_defense": 101, "speed": 119, "best": 590, "img_default": imagurl + "/other/official-artwork/1005.png", "img_sprite": imagurl + "/1005.png" },
-    { "dex": 1006, "name": "Ferropaladin", "hp": 74, "attack": 130, "defense": 90, "special_attack": 120, "special_defense": 60, "speed": 116, "best": 590, "img_default": imagurl + "/other/official-artwork/1006.png", "img_sprite": imagurl + "/1006.png" },
-    { "dex": 1007, "name": "Koraidon", "hp": 100, "attack": 135, "defense": 115, "special_attack": 85, "special_defense": 100, "speed": 135, "best": 670, "img_default": imagurl + "/other/official-artwork/1007.png", "img_sprite": imagurl + "/1007.png" },
-    { "dex": 1008, "name": "Miraidon", "hp": 100, "attack": 85, "defense": 100, "special_attack": 135, "special_defense": 115, "speed": 135, "best": 670, "img_default": imagurl + "/other/official-artwork/1008.png", "img_sprite": imagurl + "/1008.png" },
+    { "dex": 899, "name": "Wyrdeer", "hp": 103, "attack": 105, "defense": 72, "special_attack": 105, "special_defense": 75, "speed": 65, "best": 525, "img_default": imagurl+"/other/official-artwork/899.png", "img_sprite": imagurl+"/899.png" },
+    { "dex": 900, "name": "Kleavor", "hp": 70, "attack": 135, "defense": 95, "special_attack": 45, "special_defense": 70, "speed": 85, "best": 500, "img_default": imagurl+"/other/official-artwork/900.png", "img_sprite": imagurl+"/900.png" },
+    { "dex": 901, "name": "Ursaluna", "hp": 130, "attack": 140, "defense": 105, "special_attack": 45, "special_defense": 80, "speed": 50, "best": 550, "img_default": imagurl+"/other/official-artwork/901.png", "img_sprite": imagurl+"/901.png" },
+    { "dex": 902, "name": "Basculegion", "hp": 120, "attack": 112, "defense": 65, "special_attack": 80, "special_defense": 75, "speed": 78, "best": 530, "img_default": imagurl+"/other/official-artwork/902.png", "img_sprite": imagurl+"/902.png" },
+    { "dex": 903, "name": "Sneasler", "hp": 80, "attack": 130, "defense": 60, "special_attack": 40, "special_defense": 80, "speed": 120, "best": 510, "img_default": imagurl+"/other/official-artwork/903.png", "img_sprite": imagurl+"/903.png" },
+    { "dex": 904, "name": "Overqwil", "hp": 85, "attack": 115, "defense": 95, "special_attack": 65, "special_defense": 65, "speed": 85, "best": 510, "img_default": imagurl+"/other/official-artwork/904.png", "img_sprite": imagurl+"/904.png" },
+    { "dex": 905, "name": "Enamorus", "hp": 74, "attack": 115, "defense": 70, "special_attack": 135, "special_defense": 80, "speed": 106, "best": 580, "img_default": imagurl+"/other/official-artwork/905.png", "img_sprite": imagurl+"/905.png" },
+    { "dex": 906, "name": "Sprigatito", "hp": 40, "attack": 61, "defense": 54, "special_attack": 45, "special_defense": 45, "speed": 65, "best": 310, "img_default": imagurl+"/other/official-artwork/906.png", "img_sprite": imagurl+"/906.png" },
+    { "dex": 907, "name": "Floragato", "hp": 61, "attack": 80, "defense": 63, "special_attack": 60, "special_defense": 63, "speed": 83, "best": 410, "img_default": imagurl+"/other/official-artwork/907.png", "img_sprite": imagurl+"/907.png" },
+    { "dex": 908, "name": "Meowscarada", "hp": 76, "attack": 110, "defense": 70, "special_attack": 81, "special_defense": 70, "speed": 123, "best": 530, "img_default": imagurl+"/other/official-artwork/908.png", "img_sprite": imagurl+"/908.png" },
+    { "dex": 909, "name": "Fuecoco", "hp": 67, "attack": 45, "defense": 59, "special_attack": 63, "special_defense": 40, "speed": 36, "best": 310, "img_default": imagurl+"/other/official-artwork/909.png", "img_sprite": imagurl+"/909.png" },
+    { "dex": 910, "name": "Crocalor", "hp": 81, "attack": 55, "defense": 78, "special_attack": 90, "special_defense": 58, "speed": 49, "best": 411, "img_default": imagurl+"/other/official-artwork/910.png", "img_sprite": imagurl+"/910.png" },
+    { "dex": 911, "name": "Skeledirge", "hp": 104, "attack": 75, "defense": 100, "special_attack": 110, "special_defense": 75, "speed": 66, "best": 530, "img_default": imagurl+"/other/official-artwork/911.png", "img_sprite": imagurl+"/911.png" },
+    { "dex": 912, "name": "Quaxly", "hp": 55, "attack": 65, "defense": 45, "special_attack": 50, "special_defense": 45, "speed": 50, "best": 310, "img_default": imagurl+"/other/official-artwork/912.png", "img_sprite": imagurl+"/912.png" },
+    { "dex": 913, "name": "Quaxwell", "hp": 70, "attack": 85, "defense": 65, "special_attack": 65, "special_defense": 60, "speed": 65, "best": 410, "img_default": imagurl+"/other/official-artwork/913.png", "img_sprite": imagurl+"/913.png" },
+    { "dex": 914, "name": "Quaquaval", "hp": 85, "attack": 120, "defense": 80, "special_attack": 85, "special_defense": 75, "speed": 85, "best": 530, "img_default": imagurl+"/other/official-artwork/914.png", "img_sprite": imagurl+"/914.png" },
+    { "dex": 915, "name": "Lechonk", "hp": 54, "attack": 45, "defense": 40, "special_attack": 35, "special_defense": 45, "speed": 35, "best": 254, "img_default": imagurl+"/other/official-artwork/915.png", "img_sprite": imagurl+"/915.png" },
+    { "dex": 916, "name": "Oinkologne", "hp": 110, "attack": 100, "defense": 75, "special_attack": 59, "special_defense": 80, "speed": 65, "best": 489, "img_default": imagurl+"/other/official-artwork/916.png", "img_sprite": imagurl+"/916.png" },
+    { "dex": 917, "name": "Tarountula", "hp": 35, "attack": 41, "defense": 45, "special_attack": 29, "special_defense": 40, "speed": 20, "best": 210, "img_default": imagurl+"/other/official-artwork/917.png", "img_sprite": imagurl+"/917.png" },
+    { "dex": 918, "name": "Spidops", "hp": 60, "attack": 79, "defense": 92, "special_attack": 52, "special_defense": 86, "speed": 35, "best": 404, "img_default": imagurl+"/other/official-artwork/918.png", "img_sprite": imagurl+"/918.png" },
+    { "dex": 919, "name": "Nymble", "hp": 33, "attack": 46, "defense": 40, "special_attack": 21, "special_defense": 25, "speed": 45, "best": 210, "img_default": imagurl+"/other/official-artwork/919.png", "img_sprite": imagurl+"/919.png" },
+    { "dex": 920, "name": "Lokix", "hp": 71, "attack": 102, "defense": 78, "special_attack": 52, "special_defense": 55, "speed": 92, "best": 450, "img_default": imagurl+"/other/official-artwork/920.png", "img_sprite": imagurl+"/920.png" },
+    { "dex": 921, "name": "Pawmi", "hp": 45, "attack": 50, "defense": 20, "special_attack": 40, "special_defense": 25, "speed": 60, "best": 240, "img_default": imagurl+"/other/official-artwork/921.png", "img_sprite": imagurl+"/921.png" },
+    { "dex": 922, "name": "Pawmo", "hp": 60, "attack": 75, "defense": 40, "special_attack": 50, "special_defense": 40, "speed": 85, "best": 350, "img_default": imagurl+"/other/official-artwork/922.png", "img_sprite": imagurl+"/922.png" },
+    { "dex": 923, "name": "Pawmot", "hp": 70, "attack": 115, "defense": 70, "special_attack": 70, "special_defense": 60, "speed": 105, "best": 490, "img_default": imagurl+"/other/official-artwork/923.png", "img_sprite": imagurl+"/923.png" },
+    { "dex": 924, "name": "Tandemaus", "hp": 50, "attack": 50, "defense": 45, "special_attack": 40, "special_defense": 45, "speed": 75, "best": 305, "img_default": imagurl+"/other/official-artwork/924.png", "img_sprite": imagurl+"/924.png" },
+    { "dex": 925, "name": "Maushold", "hp": 74, "attack": 75, "defense": 70, "special_attack": 65, "special_defense": 75, "speed": 111, "best": 470, "img_default": imagurl+"/other/official-artwork/925.png", "img_sprite": imagurl+"/925.png" },
+    { "dex": 926, "name": "Fidough", "hp": 37, "attack": 55, "defense": 70, "special_attack": 30, "special_defense": 55, "speed": 65, "best": 312, "img_default": imagurl+"/other/official-artwork/926.png", "img_sprite": imagurl+"/926.png" },
+    { "dex": 927, "name": "Dachsbun", "hp": 57, "attack": 80, "defense": 115, "special_attack": 50, "special_defense": 80, "speed": 95, "best": 477, "img_default": imagurl+"/other/official-artwork/927.png", "img_sprite": imagurl+"/927.png" },
+    { "dex": 928, "name": "Smoliv", "hp": 41, "attack": 35, "defense": 45, "special_attack": 58, "special_defense": 51, "speed": 30, "best": 260, "img_default": imagurl+"/other/official-artwork/928.png", "img_sprite": imagurl+"/928.png" },
+    { "dex": 929, "name": "Dolliv", "hp": 52, "attack": 53, "defense": 60, "special_attack": 78, "special_defense": 78, "speed": 33, "best": 354, "img_default": imagurl+"/other/official-artwork/929.png", "img_sprite": imagurl+"/929.png" },
+    { "dex": 930, "name": "Arboliva", "hp": 78, "attack": 69, "defense": 90, "special_attack": 125, "special_defense": 109, "speed": 39, "best": 510, "img_default": imagurl+"/other/official-artwork/930.png", "img_sprite": imagurl+"/930.png" },
+    { "dex": 931, "name": "Squawkabilly", "hp": 82, "attack": 96, "defense": 51, "special_attack": 45, "special_defense": 51, "speed": 92, "best": 417, "img_default": imagurl+"/other/official-artwork/931.png", "img_sprite": imagurl+"/931.png" },
+    { "dex": 932, "name": "Nacli", "hp": 55, "attack": 55, "defense": 75, "special_attack": 35, "special_defense": 35, "speed": 25, "best": 280, "img_default": imagurl+"/other/official-artwork/932.png", "img_sprite": imagurl+"/932.png" },
+    { "dex": 933, "name": "Naclstack", "hp": 60, "attack": 60, "defense": 100, "special_attack": 35, "special_defense": 65, "speed": 35, "best": 355, "img_default": imagurl+"/other/official-artwork/933.png", "img_sprite": imagurl+"/933.png" },
+    { "dex": 934, "name": "Garganacl", "hp": 100, "attack": 100, "defense": 130, "special_attack": 45, "special_defense": 90, "speed": 35, "best": 500, "img_default": imagurl+"/other/official-artwork/934.png", "img_sprite": imagurl+"/934.png" },
+    { "dex": 935, "name": "Charcadet", "hp": 40, "attack": 50, "defense": 40, "special_attack": 50, "special_defense": 40, "speed": 35, "best": 255, "img_default": imagurl+"/other/official-artwork/935.png", "img_sprite": imagurl+"/935.png" },
+    { "dex": 936, "name": "Armarouge", "hp": 85, "attack": 60, "defense": 100, "special_attack": 125, "special_defense": 80, "speed": 75, "best": 525, "img_default": imagurl+"/other/official-artwork/936.png", "img_sprite": imagurl+"/936.png" },
+    { "dex": 937, "name": "Ceruledge", "hp": 75, "attack": 125, "defense": 80, "special_attack": 60, "special_defense": 100, "speed": 85, "best": 525, "img_default": imagurl+"/other/official-artwork/937.png", "img_sprite": imagurl+"/937.png" },
+    { "dex": 938, "name": "Tadbulb", "hp": 61, "attack": 31, "defense": 41, "special_attack": 59, "special_defense": 35, "speed": 45, "best": 272, "img_default": imagurl+"/other/official-artwork/938.png", "img_sprite": imagurl+"/938.png" },
+    { "dex": 939, "name": "Bellibolt", "hp": 109, "attack": 64, "defense": 91, "special_attack": 103, "special_defense": 83, "speed": 45, "best": 495, "img_default": imagurl+"/other/official-artwork/939.png", "img_sprite": imagurl+"/939.png" },
+    { "dex": 940, "name": "Wattrel", "hp": 40, "attack": 40, "defense": 35, "special_attack": 55, "special_defense": 40, "speed": 70, "best": 280, "img_default": imagurl+"/other/official-artwork/940.png", "img_sprite": imagurl+"/940.png" },
+    { "dex": 941, "name": "Kilowattrel", "hp": 70, "attack": 70, "defense": 60, "special_attack": 105, "special_defense": 60, "speed": 125, "best": 490, "img_default": imagurl+"/other/official-artwork/941.png", "img_sprite": imagurl+"/941.png" },
+    { "dex": 942, "name": "Maschiff", "hp": 60, "attack": 78, "defense": 60, "special_attack": 40, "special_defense": 51, "speed": 51, "best": 340, "img_default": imagurl+"/other/official-artwork/942.png", "img_sprite": imagurl+"/942.png" },
+    { "dex": 943, "name": "Mabosstiff", "hp": 80, "attack": 120, "defense": 90, "special_attack": 60, "special_defense": 70, "speed": 85, "best": 505, "img_default": imagurl+"/other/official-artwork/943.png", "img_sprite": imagurl+"/943.png" },
+    { "dex": 944, "name": "Shroodle", "hp": 40, "attack": 65, "defense": 35, "special_attack": 40, "special_defense": 35, "speed": 75, "best": 290, "img_default": imagurl+"/other/official-artwork/944.png", "img_sprite": imagurl+"/944.png" },
+    { "dex": 945, "name": "Grafaiai", "hp": 63, "attack": 95, "defense": 65, "special_attack": 80, "special_defense": 72, "speed": 110, "best": 485, "img_default": imagurl+"/other/official-artwork/945.png", "img_sprite": imagurl+"/945.png" },
+    { "dex": 946, "name": "Bramblin", "hp": 40, "attack": 65, "defense": 30, "special_attack": 45, "special_defense": 35, "speed": 60, "best": 275, "img_default": imagurl+"/other/official-artwork/946.png", "img_sprite": imagurl+"/946.png" },
+    { "dex": 947, "name": "Brambleghast", "hp": 55, "attack": 115, "defense": 70, "special_attack": 80, "special_defense": 70, "speed": 90, "best": 480, "img_default": imagurl+"/other/official-artwork/947.png", "img_sprite": imagurl+"/947.png" },
+    { "dex": 948, "name": "Toedscool", "hp": 40, "attack": 40, "defense": 35, "special_attack": 50, "special_defense": 100, "speed": 70, "best": 335, "img_default": imagurl+"/other/official-artwork/948.png", "img_sprite": imagurl+"/948.png" },
+    { "dex": 949, "name": "Toedscruel", "hp": 80, "attack": 70, "defense": 65, "special_attack": 80, "special_defense": 120, "speed": 100, "best": 515, "img_default": imagurl+"/other/official-artwork/949.png", "img_sprite": imagurl+"/949.png" },
+    { "dex": 950, "name": "Klawf", "hp": 70, "attack": 100, "defense": 115, "special_attack": 35, "special_defense": 55, "speed": 75, "best": 450, "img_default": imagurl+"/other/official-artwork/950.png", "img_sprite": imagurl+"/950.png" },
+    { "dex": 951, "name": "Capsakid", "hp": 50, "attack": 62, "defense": 40, "special_attack": 62, "special_defense": 40, "speed": 50, "best": 304, "img_default": imagurl+"/other/official-artwork/951.png", "img_sprite": imagurl+"/951.png" },
+    { "dex": 952, "name": "Scovillain", "hp": 65, "attack": 108, "defense": 65, "special_attack": 108, "special_defense": 65, "speed": 75, "best": 486, "img_default": imagurl+"/other/official-artwork/952.png", "img_sprite": imagurl+"/952.png" },
+    { "dex": 953, "name": "Rellor", "hp": 41, "attack": 50, "defense": 60, "special_attack": 31, "special_defense": 58, "speed": 30, "best": 270, "img_default": imagurl+"/other/official-artwork/953.png", "img_sprite": imagurl+"/953.png" },
+    { "dex": 954, "name": "Rabsca", "hp": 75, "attack": 50, "defense": 85, "special_attack": 115, "special_defense": 100, "speed": 45, "best": 470, "img_default": imagurl+"/other/official-artwork/954.png", "img_sprite": imagurl+"/954.png" },
+    { "dex": 955, "name": "Flittle", "hp": 30, "attack": 35, "defense": 30, "special_attack": 55, "special_defense": 30, "speed": 75, "best": 255, "img_default": imagurl+"/other/official-artwork/955.png", "img_sprite": imagurl+"/955.png" },
+    { "dex": 956, "name": "Espathra", "hp": 95, "attack": 60, "defense": 60, "special_attack": 101, "special_defense": 60, "speed": 105, "best": 481, "img_default": imagurl+"/other/official-artwork/956.png", "img_sprite": imagurl+"/956.png" },
+    { "dex": 957, "name": "Tinkatink", "hp": 50, "attack": 45, "defense": 45, "special_attack": 35, "special_defense": 64, "speed": 58, "best": 297, "img_default": imagurl+"/other/official-artwork/957.png", "img_sprite": imagurl+"/957.png" },
+    { "dex": 958, "name": "Tinkatuff", "hp": 65, "attack": 55, "defense": 55, "special_attack": 45, "special_defense": 82, "speed": 78, "best": 380, "img_default": imagurl+"/other/official-artwork/958.png", "img_sprite": imagurl+"/958.png" },
+    { "dex": 959, "name": "Tinkaton", "hp": 85, "attack": 75, "defense": 77, "special_attack": 70, "special_defense": 105, "speed": 94, "best": 506, "img_default": imagurl+"/other/official-artwork/959.png", "img_sprite": imagurl+"/959.png" },
+    { "dex": 960, "name": "Wiglett", "hp": 10, "attack": 55, "defense": 25, "special_attack": 35, "special_defense": 25, "speed": 95, "best": 245, "img_default": imagurl+"/other/official-artwork/960.png", "img_sprite": imagurl+"/960.png" },
+    { "dex": 961, "name": "Wugtrio", "hp": 35, "attack": 100, "defense": 50, "special_attack": 50, "special_defense": 70, "speed": 120, "best": 425, "img_default": imagurl+"/other/official-artwork/961.png", "img_sprite": imagurl+"/961.png" },
+    { "dex": 962, "name": "Bombirdier", "hp": 70, "attack": 103, "defense": 85, "special_attack": 60, "special_defense": 85, "speed": 82, "best": 485, "img_default": imagurl+"/other/official-artwork/962.png", "img_sprite": imagurl+"/962.png" },
+    { "dex": 963, "name": "Finizen", "hp": 70, "attack": 45, "defense": 40, "special_attack": 45, "special_defense": 40, "speed": 75, "best": 315, "img_default": imagurl+"/other/official-artwork/963.png", "img_sprite": imagurl+"/963.png" },
+    { "dex": 964, "name": "Palafin", "hp": 100, "attack": 70, "defense": 72, "special_attack": 53, "special_defense": 62, "speed": 100, "best": 457, "img_default": imagurl+"/other/official-artwork/964.png", "img_sprite": imagurl+"/964.png" },
+    { "dex": 965, "name": "Varoom", "hp": 45, "attack": 70, "defense": 63, "special_attack": 30, "special_defense": 45, "speed": 47, "best": 300, "img_default": imagurl+"/other/official-artwork/965.png", "img_sprite": imagurl+"/965.png" },
+    { "dex": 966, "name": "Revavroom", "hp": 80, "attack": 119, "defense": 90, "special_attack": 54, "special_defense": 67, "speed": 90, "best": 500, "img_default": imagurl+"/other/official-artwork/966.png", "img_sprite": imagurl+"/966.png" },
+    { "dex": 967, "name": "Cyclizar", "hp": 70, "attack": 95, "defense": 65, "special_attack": 85, "special_defense": 65, "speed": 121, "best": 501, "img_default": imagurl+"/other/official-artwork/967.png", "img_sprite": imagurl+"/967.png" },
+    { "dex": 968, "name": "Orthworm", "hp": 70, "attack": 85, "defense": 145, "special_attack": 60, "special_defense": 55, "speed": 65, "best": 480, "img_default": imagurl+"/other/official-artwork/968.png", "img_sprite": imagurl+"/968.png" },
+    { "dex": 969, "name": "Glimmet", "hp": 48, "attack": 35, "defense": 42, "special_attack": 105, "special_defense": 60, "speed": 60, "best": 350, "img_default": imagurl+"/other/official-artwork/969.png", "img_sprite": imagurl+"/969.png" },
+    { "dex": 970, "name": "Glimmora", "hp": 83, "attack": 55, "defense": 90, "special_attack": 130, "special_defense": 81, "speed": 86, "best": 525, "img_default": imagurl+"/other/official-artwork/970.png", "img_sprite": imagurl+"/970.png" },
+    { "dex": 971, "name": "Greavard", "hp": 50, "attack": 61, "defense": 60, "special_attack": 30, "special_defense": 55, "speed": 34, "best": 290, "img_default": imagurl+"/other/official-artwork/971.png", "img_sprite": imagurl+"/971.png" },
+    { "dex": 972, "name": "Houndstone", "hp": 72, "attack": 101, "defense": 100, "special_attack": 50, "special_defense": 97, "speed": 68, "best": 488, "img_default": imagurl+"/other/official-artwork/972.png", "img_sprite": imagurl+"/972.png" },
+    { "dex": 973, "name": "Flamigo", "hp": 82, "attack": 115, "defense": 74, "special_attack": 75, "special_defense": 64, "speed": 90, "best": 500, "img_default": imagurl+"/other/official-artwork/973.png", "img_sprite": imagurl+"/973.png" },
+    { "dex": 974, "name": "Cetoddle", "hp": 108, "attack": 68, "defense": 45, "special_attack": 30, "special_defense": 40, "speed": 43, "best": 334, "img_default": imagurl+"/other/official-artwork/974.png", "img_sprite": imagurl+"/974.png" },
+    { "dex": 975, "name": "Cetitan", "hp": 170, "attack": 113, "defense": 65, "special_attack": 45, "special_defense": 55, "speed": 73, "best": 521, "img_default": imagurl+"/other/official-artwork/975.png", "img_sprite": imagurl+"/975.png" },
+    { "dex": 976, "name": "Veluza", "hp": 90, "attack": 102, "defense": 73, "special_attack": 78, "special_defense": 65, "speed": 70, "best": 478, "img_default": imagurl+"/other/official-artwork/976.png", "img_sprite": imagurl+"/976.png" },
+    { "dex": 977, "name": "Dondozo", "hp": 150, "attack": 100, "defense": 115, "special_attack": 65, "special_defense": 65, "speed": 35, "best": 530, "img_default": imagurl+"/other/official-artwork/977.png", "img_sprite": imagurl+"/977.png" },
+    { "dex": 978, "name": "Tatsugiri", "hp": 68, "attack": 50, "defense": 60, "special_attack": 120, "special_defense": 95, "speed": 82, "best": 475, "img_default": imagurl+"/other/official-artwork/978.png", "img_sprite": imagurl+"/978.png" },
+    { "dex": 979, "name": "Annihilape", "hp": 110, "attack": 115, "defense": 80, "special_attack": 50, "special_defense": 90, "speed": 90, "best": 535, "img_default": imagurl+"/other/official-artwork/979.png", "img_sprite": imagurl+"/979.png" },
+    { "dex": 980, "name": "Clodsire", "hp": 130, "attack": 75, "defense": 60, "special_attack": 45, "special_defense": 100, "speed": 20, "best": 430, "img_default": imagurl+"/other/official-artwork/980.png", "img_sprite": imagurl+"/980.png" },
+    { "dex": 981, "name": "Farigiraf", "hp": 120, "attack": 90, "defense": 70, "special_attack": 110, "special_defense": 70, "speed": 60, "best": 520, "img_default": imagurl+"/other/official-artwork/981.png", "img_sprite": imagurl+"/981.png" },
+    { "dex": 982, "name": "Dudunsparce", "hp": 125, "attack": 100, "defense": 80, "special_attack": 85, "special_defense": 75, "speed": 55, "best": 520, "img_default": imagurl+"/other/official-artwork/982.png", "img_sprite": imagurl+"/982.png" },
+    { "dex": 983, "name": "Kingambit", "hp": 100, "attack": 135, "defense": 120, "special_attack": 60, "special_defense": 85, "speed": 50, "best": 550, "img_default": imagurl+"/other/official-artwork/983.png", "img_sprite": imagurl+"/983.png" },
+    { "dex": 984, "name": "Colmilargo", "hp": 115, "attack": 131, "defense": 131, "special_attack": 53, "special_defense": 53, "speed": 87, "best": 570, "img_default": imagurl+"/other/official-artwork/984.png", "img_sprite": imagurl+"/984.png" },
+    { "dex": 985, "name": "Colagrito", "hp": 115, "attack": 65, "defense": 99, "special_attack": 65, "special_defense": 115, "speed": 111, "best": 570, "img_default": imagurl+"/other/official-artwork/985.png", "img_sprite": imagurl+"/985.png" },
+    { "dex": 986, "name": "Furioseta", "hp": 111, "attack": 127, "defense": 99, "special_attack": 79, "special_defense": 99, "speed": 55, "best": 570, "img_default": imagurl+"/other/official-artwork/986.png", "img_sprite": imagurl+"/986.png" },
+    { "dex": 987, "name": "Melenaleteo", "hp": 55, "attack": 55, "defense": 55, "special_attack": 135, "special_defense": 135, "speed": 135, "best": 570, "img_default": imagurl+"/other/official-artwork/987.png", "img_sprite": imagurl+"/987.png" },
+    { "dex": 988, "name": "Reptalada", "hp": 85, "attack": 135, "defense": 79, "special_attack": 85, "special_defense": 105, "speed": 81, "best": 570, "img_default": imagurl+"/other/official-artwork/988.png", "img_sprite": imagurl+"/988.png" },
+    { "dex": 989, "name": "Pelarena", "hp": 85, "attack": 81, "defense": 97, "special_attack": 121, "special_defense": 85, "speed": 101, "best": 570, "img_default": imagurl+"/other/official-artwork/989.png", "img_sprite": imagurl+"/989.png" },
+    { "dex": 990, "name": "Ferrodada", "hp": 90, "attack": 112, "defense": 120, "special_attack": 72, "special_defense": 70, "speed": 106, "best": 570, "img_default": imagurl+"/other/official-artwork/990.png", "img_sprite": imagurl+"/990.png" },
+    { "dex": 991, "name": "Ferrosaco", "hp": 56, "attack": 80, "defense": 114, "special_attack": 124, "special_defense": 60, "speed": 136, "best": 570, "img_default": imagurl+"/other/official-artwork/991.png", "img_sprite": imagurl+"/991.png" },
+    { "dex": 992, "name": "Ferropalmas", "hp": 154, "attack": 140, "defense": 108, "special_attack": 50, "special_defense": 68, "speed": 50, "best": 570, "img_default": imagurl+"/other/official-artwork/992.png", "img_sprite": imagurl+"/992.png" },
+    { "dex": 993, "name": "Ferrocuello", "hp": 94, "attack": 80, "defense": 86, "special_attack": 122, "special_defense": 80, "speed": 108, "best": 570, "img_default": imagurl+"/other/official-artwork/993.png", "img_sprite": imagurl+"/993.png" },
+    { "dex": 994, "name": "Ferropolilla", "hp": 80, "attack": 70, "defense": 60, "special_attack": 140, "special_defense": 110, "speed": 110, "best": 570, "img_default": imagurl+"/other/official-artwork/994.png", "img_sprite": imagurl+"/994.png" },
+    { "dex": 995, "name": "Ferropuas", "hp": 100, "attack": 134, "defense": 110, "special_attack": 70, "special_defense": 84, "speed": 72, "best": 570, "img_default": imagurl+"/other/official-artwork/995.png", "img_sprite": imagurl+"/995.png" },
+    { "dex": 996, "name": "Frigibax", "hp": 65, "attack": 75, "defense": 45, "special_attack": 35, "special_defense": 45, "speed": 55, "best": 320, "img_default": imagurl+"/other/official-artwork/996.png", "img_sprite": imagurl+"/996.png" },
+    { "dex": 997, "name": "Arctibax", "hp": 90, "attack": 95, "defense": 66, "special_attack": 45, "special_defense": 65, "speed": 62, "best": 423, "img_default": imagurl+"/other/official-artwork/997.png", "img_sprite": imagurl+"/997.png" },
+    { "dex": 998, "name": "Baxcalibur", "hp": 115, "attack": 145, "defense": 92, "special_attack": 75, "special_defense": 86, "speed": 87, "best": 600, "img_default": imagurl+"/other/official-artwork/998.png", "img_sprite": imagurl+"/998.png" },
+    { "dex": 999, "name": "Gimmighoul", "hp": 45, "attack": 30, "defense": 70, "special_attack": 75, "special_defense": 70, "speed": 10, "best": 300, "img_default": imagurl+"/other/official-artwork/999.png", "img_sprite": imagurl+"/999.png" },
+    { "dex": 1000, "name": "Gholdengo", "hp": 87, "attack": 60, "defense": 95, "special_attack": 133, "special_defense": 91, "speed": 84, "best": 550, "img_default": imagurl+"/other/official-artwork/1000.png", "img_sprite": imagurl+"/1000.png" },
+    { "dex": 1001, "name": "Wo-chien", "hp": 85, "attack": 85, "defense": 100, "special_attack": 95, "special_defense": 135, "speed": 70, "best": 570, "img_default": imagurl+"/other/official-artwork/1001.png", "img_sprite": imagurl+"/1001.png" },
+    { "dex": 1002, "name": "Chien-pao", "hp": 80, "attack": 120, "defense": 80, "special_attack": 90, "special_defense": 65, "speed": 135, "best": 570, "img_default": imagurl+"/other/official-artwork/1002.png", "img_sprite": imagurl+"/1002.png" },
+    { "dex": 1003, "name": "Ting-lu", "hp": 155, "attack": 110, "defense": 125, "special_attack": 55, "special_defense": 80, "speed": 45, "best": 570, "img_default": imagurl+"/other/official-artwork/1003.png", "img_sprite": imagurl+"/1003.png" },
+    { "dex": 1004, "name": "Chi-yu", "hp": 55, "attack": 80, "defense": 80, "special_attack": 135, "special_defense": 120, "speed": 100, "best": 570, "img_default": imagurl+"/other/official-artwork/1004.png", "img_sprite": imagurl+"/1004.png" },
+    { "dex": 1005, "name": "Bramaluna", "hp": 105, "attack": 139, "defense": 71, "special_attack": 55, "special_defense": 101, "speed": 119, "best": 590, "img_default": imagurl+"/other/official-artwork/1005.png", "img_sprite": imagurl+"/1005.png" },
+    { "dex": 1006, "name": "Ferropaladin", "hp": 74, "attack": 130, "defense": 90, "special_attack": 120, "special_defense": 60, "speed": 116, "best": 590, "img_default": imagurl+"/other/official-artwork/1006.png", "img_sprite": imagurl+"/1006.png" },
+    { "dex": 1007, "name": "Koraidon", "hp": 100, "attack": 135, "defense": 115, "special_attack": 85, "special_defense": 100, "speed": 135, "best": 670, "img_default": imagurl+"/other/official-artwork/1007.png", "img_sprite": imagurl+"/1007.png" },
+    { "dex": 1008, "name": "Miraidon", "hp": 100, "attack": 85, "defense": 100, "special_attack": 135, "special_defense": 115, "speed": 135, "best": 670, "img_default": imagurl+"/other/official-artwork/1008.png", "img_sprite": imagurl+"/1008.png" },
 
-]
+
+];
