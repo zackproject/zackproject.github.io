@@ -11026,7 +11026,7 @@ var data = [
     },
     {
         "dex": 849,
-        "name": "Toxtricity-amped",
+        "name": "Toxtricity",
         "hp": 75,
         "attack": 98,
         "defense": 70,
