@@ -1,6 +1,14 @@
-var quienEsQuienList = quienEsQuien[0].characters;
-var ntitle = quienEsQuien[0].title;
+
+//Anime selecionat
+var animeId = 0;
+//Personatge per jugar seleccionat
 var selectedCharacter = 0;
+//Total Carta
+var maxCard = 25;
+//Personatges del anime
+var quienEsQuienList = quienEsQuien[animeId].characters;
+//Titol
+var ntitle = quienEsQuien[animeId].title;
 
 //https://www.w3schools.com/howto/howto_css_flip_card.asp
 function flipCard(event) {
@@ -52,45 +60,87 @@ function cardHTML(props) {
 </div>`
 }
 
-function addSelectorCharacter(selected) {
-    document.getElementById("image-card").src = selected[0].image;
-}
+
 
 function nextImage() {
-    if (selectedCharacter < quienEsQuienList.length) {
+    if (selectedCharacter < quienEsQuienList.length - 1) {
         selectedCharacter++;
+        document.getElementById("image-card").src = quienEsQuienList[selectedCharacter].image;
     }
-    document.getElementById("image-card").src = quienEsQuienList[selectedCharacter].image;
-    console.log("next", quienEsQuienList[selectedCharacter].image);
+    refreshViewSelector()
 }
 function backImage() {
-    if (selectedCharacter > quienEsQuienList.length) {
+    if (selectedCharacter > 0) {
         selectedCharacter--;
+        document.getElementById("image-card").src = quienEsQuienList[selectedCharacter].image;
     }
-    document.getElementById("image-card").src = quienEsQuienList[selectedCharacter].image;
-    console.log("next", quienEsQuienList[selectedCharacter].image);}
+    refreshViewSelector();
+}
 
-function select() {
+function refreshViewSelector() {
+    document.getElementById("indexSelect").innerText = selectedCharacter + 1;
+    document.getElementById("indexMax").innerText = quienEsQuienList.length;
+}
 
+function deleteChilds(currentDiv) {
+    while (currentDiv.firstChild) {
+        currentDiv.removeChild(currentDiv.firstChild);
+    }
 }
 
 
 function novaPartida() {
+    deleteChilds(document.getElementById("cards"));
+    let cont = 0;
     quienEsQuienList.forEach(e => {
-        console.log(ntitle);
-        let props = { id: e.id, image: e.image, name: e.name, anime: ntitle };
-        document.getElementById("cards").innerHTML += cardHTML(props)
-
+        if (cont < maxCard) {
+            console.log(ntitle);
+            let props = { id: e.id, image: e.image, name: e.name, anime: ntitle };
+            document.getElementById("cards").innerHTML += cardHTML(props)
+            cont++;
+        }
     });
 
     for (let i = 0; i < document.getElementsByClassName("card").length; i++) {
         const element = document.getElementsByClassName("card")[i];
         element.style.animation = "aparece 2s";
-        element.style.animationDelay = i / 4 + "s";
+        element.style.animationDelay = i / 10 + "s";
         element.style.animationFillMode = "forwards";
     }
 
-    addSelectorCharacter(quienEsQuien[0].characters);
+    document.getElementById("image-card").src = quienEsQuienList[selectedCharacter].image;
+
 }
 
 
+function loadGame() {
+    //Posa la imatge per defecte del personatge
+    document.getElementById("image-card").src = quienEsQuienList[selectedCharacter].image;
+    //Omple el selector de anime
+    let selectAnime = document.getElementById("select-anime");
+    for (i in quienEsQuien) {
+        let noption = document.createElement("option");
+        //Seleciona el primer item
+        if (i == 0) noption.selected = true;
+        //El value es la i
+        noption.value = i;
+        //El text son els anime
+        noption.text = quienEsQuien[i].title;
+        selectAnime.appendChild(noption)
+    }
+
+    //Omple l'ultim selector de personatges, el primer son '0' i '12' (html)
+    let selectCards = document.getElementById("select-cards");
+    let moption = document.createElement("option");
+    moption.value = quienEsQuienList.length;
+    //El text son els anime
+    moption.selected = "true";
+    moption.text = quienEsQuienList.length + " personajes";
+    selectCards.appendChild(moption)
+    refreshViewSelector();
+}
+
+function changeCharacter (){
+    let a = document.getElementById("select-cards").selectedOptions[0].value;
+    maxCard = parseInt(a)
+}

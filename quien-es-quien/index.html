@@ -10,45 +10,47 @@
     <script src="dades.js"></script>
 </head>
 
-<body onload="novaPartida()">
+<body onload="loadGame()">
+    <div class="container">
+        <div class="selector">
+            <select id="select-anime" name="select">
+            </select>
 
-    <div class="selector">
-        <div class="card-selector">
-            <img id="image-card" height="100" alt="Imagen del personaje elegido por mi" />
-            1/12 personatges
+            <select id="select-cards" onchange="changeCharacter()" name="select">
+                <option value="8">8 personajes</option>
+                <option value="12">12 personajes</option>
+            </select>
+            <div class="card-selector">
+                <div id="name-selected"></div>
+                <img id="image-card" height="100" alt="Imagen del personaje elegido por mi" />
+                <div class="actual-selected"> <span id="indexSelect"></span> / <span id="indexMax"></span></div>
+
+            </div>
+            <button onclick="backImage()">Anterior</button>
+            <button onclick="novaPartida()">Empezar</button>
+            <button onclick="nextImage()">Siguiente</button>
         </div>
-        <button onclick="backImage()">Anterior</button>
-        <button>Seleccionar</button>
-        <button onclick="nextImage()">Siguiente</button>
-    </div>
-    <h1>Quien es quien</h1>
-    <button onclick="flipAllCard()">Nueva Partida</button>
-    <select name="select">
-        <option value="0">My Hero Academia</option>
-        <option value="1" selected>Shingeki No Kyojin</option>
-        <option value="2">One Piece</option>
-    </select>
-
-    <select name="select">
-        <option value="value1">8 cartas</option>
-        <option value="value2" selected>12 cartas</option>
-        <option value="value3">24 cartas</option>
-    </select>
-    <div id="cards">
-        <!--<div class="card">
+        <h1>Quien es quien</h1>
+        <button>Nueva Partida</button>
+        <button>Ver mi personaje</button>
+        <div id="cards">
+            <!--<div class="card">
            <div class="flip-card" onclick="flipCard(event)">
                 <div id="card-0" class="flip-card-inner">
                     <div class="flip-card-front">
                         <img id="img-0" src="Armin_Arlet.jpeg" alt="Avatar" style="width:300px;height:300px;">
                     </div>
                     <div class="flip-card-back">
-                        <h1>Armin Arlet</h1>
-                        <p>Shingeki No Kyojin</p>
+                        <div class="text-card">
+                            <h1>Armin Arlet</h1>
+                            <p>Shingeki No Kyojin</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         </div>-->
+        </div>
         <script src="index.js"></script>
 </body>
 
