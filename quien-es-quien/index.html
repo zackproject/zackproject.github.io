@@ -12,27 +12,40 @@
 
 <body onload="loadGame()">
     <div class="container">
-        <div class="selector">
-            <select id="select-anime" name="select">
+        <div class="card-selector">
+            <select id="select-anime" onchange="changeAnime()" name="select">
             </select>
-
             <select id="select-cards" onchange="changeCharacter()" name="select">
                 <option value="8">8 personajes</option>
                 <option value="12">12 personajes</option>
             </select>
-            <div class="card-selector">
-                <div id="name-selected"></div>
+
+            <div class="card-selects">
+                <div id="image-name"></div>
                 <img id="image-card" height="100" alt="Imagen del personaje elegido por mi" />
                 <div class="actual-selected"> <span id="indexSelect"></span> / <span id="indexMax"></span></div>
-
             </div>
-            <button onclick="backImage()">Anterior</button>
+
+            <div class="btn-selector">
+                <button onclick="backImage()">Anterior</button>
+                <button onclick="nextImage()">Siguiente</button>
+            </div>
+
             <button onclick="novaPartida()">Empezar</button>
-            <button onclick="nextImage()">Siguiente</button>
+
+        </div>
+
+
+        <div class="card-character">
+            Mi personaje
+            <div id="mycharacter-name"></div>
+            <img id="mycharacter-image"src="" alt="" height="100">
+            <div ></div>
+            <!-- <button>Ocultar</button> -->
         </div>
         <h1>Quien es quien</h1>
-        <button>Nueva Partida</button>
-        <button>Ver mi personaje</button>
+        <!-- <button>Nueva Partida</button> -->
+        <button onclick="showMyCharacter()">Ver mi personaje</button>
         <div id="cards">
             <!--<div class="card">
            <div class="flip-card" onclick="flipCard(event)">
