@@ -61,26 +61,107 @@
   }
 }
 
-
-.container{
+.whoiswho {
   max-width: 800px;
   margin: 0 auto;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
 }
 .card-selector {
-  border: 4px solid red;
-  padding: 5px;
+  width: 300px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
   border-radius: 6px;
+  z-index: 1;
+  transition: top 1s;
+}
+.card-selector-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-card{
+  background-color: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
+
+.card-selector-body > select {
+  padding: 5px;
+  font-size: 18px;
+  width: 80%;
+  margin: 5px;
+}
+
+.card-selects {
+  position: relative;
+  width: 220px;
+  height: 220px;
+}
+
+.card-selects > img {
+  width: 100%;
+  height: 100%;
+}
+
+#image-name {
+  color: white;
+  bottom: 0px;
+  font-size: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.388);
+  padding: 10px;
+  position: absolute;
+  font-weight: bold;
+}
+
+.actual-selected {
+  position: absolute;
+  font-size: 18px;
+  top: 0px;
+  margin: 10px;
+  color: white;
+}
+
+#fondo-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
 .card-character {
   border: 4px solid blue;
   padding: 5px;
   border-radius: 6px;
 }
 
+.btn-selector > button {
+  padding: 10px;
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+}
+#empezar-btn {
+  padding: 10px;
+  background-color: green;
+  border-radius: 5px;
+  color: white;
+}
 h1 {
   font-size: 1.4rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 /*

@@ -9,8 +9,7 @@ class WhoIsWho {
 
     //Actualitza el personatge del Player
     nextCharacter() {
-        //No guarda la llargaria, guarda el id de l'ultim de la llista
-        if (this.myCharacter.id < this.characterList[this.characterList.length - 1].id) {
+        if (this.myCharacter.id < this.maxCharacters-1) {
             //Dins els compara la id del 1r element i la id del ultim element
             this.myCharacter = this.characterList[this.myCharacter.id + 1];
         }
@@ -23,15 +22,6 @@ class WhoIsWho {
     }
 
 }
-
-console.log("search", document.location.search);
-params = new URLSearchParams(document.location.search);
-//console.log(params.get("name"));
-
-params.forEach(element => {
-    console.log(element);
-});
-
 
 //Partida per defecte
 var player = new WhoIsWho(
@@ -161,6 +151,9 @@ function novaPartida() {
 
     document.getElementById("image-card").src = player.myCharacter.image;
 
+    //Amaga la carta d'opcions
+    document.getElementById("fondo-card").style.display = "none";
+    document.getElementById("card-selector-anime").style.top = "-100%";
 }
 
 
@@ -183,6 +176,8 @@ function changeAnime() {
 function changeCharacter() {
     let slctCharacter = document.getElementById("select-cards").selectedOptions[0];
     player.maxCharacters = parseInt(slctCharacter.value)
+    //Reseteja al primer
+    player.myCharacter = player.characterList[0];
     refreshViewSelector();
 }
 
@@ -190,5 +185,10 @@ function showMyCharacter() {
     document.getElementById("mycharacter-name").innerText = player.myCharacter.name;
     document.getElementById("mycharacter-image").alt = player.myCharacter.name;
     document.getElementById("mycharacter-image").src = player.myCharacter.image;
+}
 
+function showOptions(){
+        //Ensenya la carta
+        document.getElementById("fondo-card").style.display = "block";
+        document.getElementById("card-selector-anime").style.top = "10%";
 }
