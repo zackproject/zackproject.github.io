@@ -1,3 +1,4 @@
+let isPlaying = false;
 //Objecte que controla el joc 'Quien es quien'
 class WhoIsWho {
     constructor(animeName, characterList, maxCharacters, myCharacter) {
@@ -9,15 +10,20 @@ class WhoIsWho {
 
     //Actualitza el personatge del Player
     nextCharacter() {
-        if (this.myCharacter.id < this.maxCharacters-1) {
+        console.log("min", this.characterList[0].id, "max", this.characterList[this.characterList.length - 1].id);
+        if (this.myCharacter.id < this.characterList[this.characterList.length - 1].id) {
             //Dins els compara la id del 1r element i la id del ultim element
-            this.myCharacter = this.characterList[this.myCharacter.id + 1];
+            //this.myCharacter = this.characterList[this.myCharacter.id + 1];
+            this.myCharacter = this.characterList.filter(e => e.id == this.myCharacter.id + 1)[0];
+
         }
     }
     //Actualitza el personatge del Player
     backCharacter() {
         if (this.myCharacter.id > this.characterList[0].id) {
-            this.myCharacter = this.characterList[this.myCharacter.id - 1];
+            //this.myCharacter = this.characterList[this.myCharacter.id - 1];
+
+            this.myCharacter = this.characterList.filter(e => e.id == this.myCharacter.id - 1)[0];
         }
     }
 
@@ -74,10 +80,10 @@ function flipCard(event) {
         //Controla la clase 'card-[num]'
         pos = parseInt((event.target.id).split("-")[1]);
     }
-
     //Si la posicio es nulla no fa animacio
     if (pos !== null) {
-        ncard[pos].style.transform = ncard[pos].style.transform ? "" : "rotateY(180deg)"
+        //Segons que clica agafa el numero, i sempre hi haura una carta card-[num] disponible
+        document.getElementById("card-" + pos).style.transform = document.getElementById("card-" + pos).style.transform ? "" : "rotateY(180deg)"
     }
 }
 
@@ -119,7 +125,9 @@ function backImage() {
 function refreshViewSelector() {
     document.getElementById("image-name").innerText = player.myCharacter.name;
     document.getElementById("image-card").src = player.myCharacter.image;
-    document.getElementById("indexSelect").innerText = parseInt(player.myCharacter.id) + 1;
+    //En comptes de posar la id original, resta la id del primer (51) i começa desde alla (0+1)
+    document.getElementById("indexSelect").innerText = parseInt(player.myCharacter.id) + 1 - player.characterList[0].id;
+    //No varia perque sera el que medeix l'array
     document.getElementById("indexMax").innerText = player.maxCharacters;
 
 }
@@ -132,6 +140,7 @@ function deleteChilds(currentDiv) {
 
 
 function novaPartida() {
+    isPlaying = true;
     deleteChilds(document.getElementById("cards"));
     let cont = 0;
     player.characterList.forEach(e => {
@@ -153,7 +162,7 @@ function novaPartida() {
 
     //Amaga la carta d'opcions
     document.getElementById("fondo-card").style.display = "none";
-    document.getElementById("card-selector-anime").style.top = "-100%";
+    document.getElementById("card-selector-anime").style.top = "-600px";
 }
 
 
@@ -169,8 +178,13 @@ function loadGame() {
 
 
 function changeAnime() {
-    let slctAnime = document.getElementById("select-anime").selectedOptions[0];
-    player.animeName = slctAnime.innerText;
+    let slctAnime = parseInt(document.getElementById("select-anime").selectedOptions[0].value);
+    let selectOBJ = quienEsQuien[slctAnime];
+    player.characterList = selectOBJ.characters;
+    player.animeName = selectOBJ.title;
+    player.myCharacter = selectOBJ.characters[0];
+    console.log(player);
+    refreshViewSelector();
 }
 
 function changeCharacter() {
@@ -182,13 +196,29 @@ function changeCharacter() {
 }
 
 function showMyCharacter() {
+    document.getElementById("fondo-card").style.display = "block";
+    document.getElementById("card-selector-mycharacter").style.top = "10%";
     document.getElementById("mycharacter-name").innerText = player.myCharacter.name;
     document.getElementById("mycharacter-image").alt = player.myCharacter.name;
     document.getElementById("mycharacter-image").src = player.myCharacter.image;
 }
 
-function showOptions(){
-        //Ensenya la carta
-        document.getElementById("fondo-card").style.display = "block";
-        document.getElementById("card-selector-anime").style.top = "10%";
+function showOptions() {
+    //Ensenya la carta
+    document.getElementById("fondo-card").style.display = "block";
+    document.getElementById("card-selector-anime").style.top = "10%";
+}
+
+function ocultarPersonaje() {
+    document.getElementById("fondo-card").style.display = "none";
+    document.getElementById("card-selector-mycharacter").style.top = "-600px";
+}
+
+function ocultaCartas() {
+    //Nomes en partida es pot treure la carta i el fons sol.
+    if (isPlaying) {
+        document.getElementById("fondo-card").style.display = "none";
+        document.getElementById("card-selector-mycharacter").style.top = "-600px";
+        document.getElementById("card-selector-anime").style.top = "-600px";
+    }
 }

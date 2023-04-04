@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quien es Quien</title>
     <link rel="stylesheet" href="index.css">
     <script src="dades.js"></script>
+    <link rel="icon" href="../icopz.ico">
+
 </head>
 
 <body onload="loadGame()">
+    <header>
+        <h1>QUIÉN ES QUIÉN</h1>
+    </header>
     <div class="who-is-who">
-        <div id="fondo-card"></div>
+        <div id="fondo-card"></div><!-- onclick="ocultaCartas()" -->
         <div id="card-selector-anime" class="card-selector">
             <div class="title-card"> ELIGE UN PERSONAJE
             </div>
@@ -20,8 +25,8 @@
                 <select id="select-anime" onchange="changeAnime()" name="select">
                 </select>
                 <select id="select-cards" onchange="changeCharacter()" name="select">
-                    <option value="8">8 personajes</option>
                     <option value="12">12 personajes</option>
+                    <option value="18">18 personajes</option>
                 </select>
                 <div class="card-selects">
                     <div id="image-name"></div>
@@ -37,17 +42,13 @@
                 <button id="empezar-btn" onclick="novaPartida()">Empezar</button>
             </div>
         </div>
-        <div class="card-selector" style="display: none;">
-            <div id="mycharacter-name" class="title-card"></div>
-            <img id="mycharacter-image" src="" alt="" height="100" width="100">
-        </div>
+        <div id="card-selector-mycharacter" class="card-selector">
+            <div id="mycharacter-name" class="title-card">Armin</div>
+            <img id="mycharacter-image" src="https://i.imgur.com/fSbG2ao.png" alt="" height="100%" width="100%">
 
-        <div class="card-character">
-            Mi personaje
-            <div></div>
-            <!-- <button>Ocultar</button> -->
+            <button onclick="ocultarPersonaje()"
+                style="padding: 10px; background-color: blue; color: white; width: 100%;">OCULTAR</button>
         </div>
-        <h1>Quien es quien</h1>
         <button onclick="showOptions()">Nueva Partida</button>
         <button onclick="showMyCharacter()">Ver mi personaje</button>
         <div id="cards">
@@ -68,7 +69,8 @@
         </div>
         </div>-->
         </div>
-        <script src="index.js"></script>
+    </div>
+    <script src="index.js"></script>
 </body>
 
 </html>

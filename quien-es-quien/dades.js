@@ -33,6 +33,33 @@ let quienEsQuien = [
     },
     {
         "title": "Boku No Hero",
-        "characters": []
+        "characters": [
+            { "id": 26, "name": "Aizawa", "image": "https://imgur.com/MPigBVG.png" },
+            { "id": 27, "name": "All Might", "image": "https://i.imgur.com/eWqris3.png" },
+            { "id": 28, "name": "Bakugo", "image": "https://i.imgur.com/jVCRzqT.png" },
+            { "id": 29, "name": "Best Jeanist", "image": "https://i.imgur.com/3vnXoZB.png" },
+            { "id": 30, "name": "Dabi", "image": "https://i.imgur.com/xH7n2x3.png" },
+            { "id": 31, "name": "Deku", "image": "https://i.imgur.com/bhMTpCd.png" },
+            { "id": 32, "name": "Director Nezu", "image": "https://i.imgur.com/1PnWvLj.png" },
+            { "id": 33, "name": "Eijirou Kirishima", "image": "https://i.imgur.com/468BEdj.png" },
+            { "id": 34, "name": "Eri Chan", "image": "https://i.imgur.com/6hG55CQ.png" },
+            { "id": 35, "name": "Hawks", "image": "https://i.imgur.com/7hudkbh.png" },
+            { "id": 36, "name": "Himiko Toga", "image": "https://i.imgur.com/6De688a.png" },
+            { "id": 37, "name": "Kyoka Jiro", "image": "https://i.imgur.com/Xdp8sZb.png" },
+            { "id": 38, "name": "La Brava", "image": "https://i.imgur.com/T5tYzCM.png" },
+            { "id": 39, "name": "Mina Ashido", "image": "https://i.imgur.com/wzTh9WX.png" },
+            { "id": 40, "name": "Minoru Mineta", "image": "https://i.imgur.com/5cCfXNH.png" },
+            { "id": 41, "name": "Mirio Togata", "image": "https://i.imgur.com/HaeWU9d.png" },
+            { "id": 42, "name": "Mirko", "image": "https://i.imgur.com/20w45wS.png" },
+            { "id": 43, "name": "Momo Yaoyorozu", "image": "https://i.imgur.com/0xZQd7L.png" },
+            { "id": 44, "name": "Nana Shimura", "image": "https://i.imgur.com/gRrKcFO.png" },
+            { "id": 45, "name": "Ochaco Uraraka", "image": "https://i.imgur.com/wFCjhsf.png" },
+            { "id": 46, "name": "Shigaraki", "image": "https://i.imgur.com/YbqKcsC.png" },
+            { "id": 47, "name": "Shoto Todoroki", "image": "https://i.imgur.com/bRffuCj.png" },
+            { "id": 48, "name": "Tenya Iida", "image": "https://i.imgur.com/sKGe5aL.png" },
+            { "id": 49, "name": "Toru Hagakure", "image": "https://i.imgur.com/ujUWgFb.png" },
+            { "id": 50, "name": "Tsuyu Asui", "image": "https://i.imgur.com/C1B0D7U.png" },
+            { "id": 51, "name": "Twice", "image": "https://i.imgur.com/oVUpeb3.png" }
+        ]
     }
 ]
