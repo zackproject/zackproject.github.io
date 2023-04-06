@@ -1,30 +1,14 @@
-let isPlaying = false;
+///Al 'nueva partida' el 'select' se resetea al '0', guarda estado
+let lastSelectedValue = 0;
+
 //Objecte que controla el joc 'Quien es quien'
 class WhoIsWho {
     constructor(animeName, characterList, maxCharacters, myCharacter) {
         this.animeName = animeName;
-        this.characterList = characterList
+        this.characterList = characterList;
         this.maxCharacters = maxCharacters;
         this.myCharacter = myCharacter;
-    }
-
-    //Actualitza el personatge del Player
-    nextCharacter() {
-        console.log("min", this.characterList[0].id, "max", this.characterList[this.characterList.length - 1].id);
-        if (this.myCharacter.id < this.characterList[this.characterList.length - 1].id) {
-            //Dins els compara la id del 1r element i la id del ultim element
-            //this.myCharacter = this.characterList[this.myCharacter.id + 1];
-            this.myCharacter = this.characterList.filter(e => e.id == this.myCharacter.id + 1)[0];
-
-        }
-    }
-    //Actualitza el personatge del Player
-    backCharacter() {
-        if (this.myCharacter.id > this.characterList[0].id) {
-            //this.myCharacter = this.characterList[this.myCharacter.id - 1];
-
-            this.myCharacter = this.characterList.filter(e => e.id == this.myCharacter.id - 1)[0];
-        }
+        this.isPlaying = false;
     }
 
 }
@@ -43,6 +27,8 @@ console.log(player);
 function generateSelects() {
     //Selector d'anime
     let selectAnime = document.getElementById("select-anime");
+    deleteChilds(selectAnime);
+
     for (i in quienEsQuien) {
         let noption = document.createElement("option");
         //Seleciona el primer item
@@ -53,20 +39,12 @@ function generateSelects() {
         noption.text = quienEsQuien[i].title;
         selectAnime.appendChild(noption)
     }
-
-    //Omple l'ultim selector de personatges, el primer son '0' i '12' (html)
-    let selectCards = document.getElementById("select-cards");
-    let moption = document.createElement("option");
-    moption.value = player.maxCharacters;
-    //El text son els changeAnime
-    moption.selected = "true";
-    moption.text = player.maxCharacters + " personajes";
-    selectCards.appendChild(moption)
 }
 
 //https://www.w3schools.com/howto/howto_css_flip_card.asp
 function flipCard(event) {
-    let ncard = document.getElementsByClassName("flip-card-inner");
+    console.log(event);
+    //let ncard = document.getElementsByClassName("flip-card-inner");
     let pos = null;
 
     //Cara: Controla quan es mostra imatge 
@@ -95,9 +73,33 @@ function flipAllCard() {
     }
 }
 
+function selectCard() {
+    for (let i = 0; i < document.getElementsByClassName("flip-card-inner").length; i++) {
+        const element = document.getElementsByClassName("flip-card-inner")[i];
+        element.style.filter = "brightness(0.3)";
+    }
+    //Agada la id del personatge
+    let cardid = parseInt((event.target.id).split("-")[1]);
+    //Guarda el selecionar
+    let seleccio = player.characterList.filter(e => e.id == cardid)[0];
+    player.myCharacter = seleccio;
+
+    document.getElementById("card-" + cardid).style.filter = "";
+    //document.getElementById("elegir-btn").style.display = "none";
+    document.getElementById("empezar-btn").style.display = "block";
+}
+
+function cardClicked(event) {
+    if (player.isPlaying) {
+        flipCard(event)
+    } else {
+        selectCard();
+    }
+}
+
 function cardHTML(props) {
     return `<div class="card">
-    <div class="flip-card" onclick="flipCard(event)">
+    <div class="flip-card" onclick="cardClicked(event)">
         <div id="card-${props.id}" class="flip-card-inner">
             <div class="flip-card-front">
                 <img id="img-${props.id}" src="${props.image}" alt="${props.name}" height="100%" width="100%">
@@ -112,26 +114,6 @@ function cardHTML(props) {
 }
 
 
-
-function nextImage() {
-    player.nextCharacter();
-    refreshViewSelector()
-}
-function backImage() {
-    player.backCharacter();
-    refreshViewSelector();
-}
-
-function refreshViewSelector() {
-    document.getElementById("image-name").innerText = player.myCharacter.name;
-    document.getElementById("image-card").src = player.myCharacter.image;
-    //En comptes de posar la id original, resta la id del primer (51) i começa desde alla (0+1)
-    document.getElementById("indexSelect").innerText = parseInt(player.myCharacter.id) + 1 - player.characterList[0].id;
-    //No varia perque sera el que medeix l'array
-    document.getElementById("indexMax").innerText = player.maxCharacters;
-
-}
-
 function deleteChilds(currentDiv) {
     while (currentDiv.firstChild) {
         currentDiv.removeChild(currentDiv.firstChild);
@@ -139,8 +121,7 @@ function deleteChilds(currentDiv) {
 }
 
 
-function novaPartida() {
-    isPlaying = true;
+function generateCardsHTML() {
     deleteChilds(document.getElementById("cards"));
     let cont = 0;
     player.characterList.forEach(e => {
@@ -157,23 +138,41 @@ function novaPartida() {
         element.style.animationDelay = i / 10 + "s";
         element.style.animationFillMode = "forwards";
     }
+}
 
-    document.getElementById("image-card").src = player.myCharacter.image;
-
+function novaPartida() {
     //Amaga la carta d'opcions
-    document.getElementById("fondo-card").style.display = "none";
-    document.getElementById("card-selector-anime").style.top = "-600px";
+    document.getElementById("empezar-btn").style.display = "none";
+    player.isPlaying = true;
+    generateCardsHTML();
+    for (let i = 0; i < document.getElementsByClassName("flip-card-inner").length; i++) {
+        const element = document.getElementsByClassName("flip-card-inner")[i];
+        element.style.filter = null;
+    }
+
+    document.getElementById("select-anime").style.display = "none";
+    document.getElementById("showpersonaje").style.display = "block";
+    document.getElementById("newPartida").style.display = "block";
 }
 
 
 
 function loadGame() {
-    //Posa la imatge per defecte del personatge
-    document.getElementById("image-card").src = player.myCharacter.image;
     //Omple el selector de anime
     generateSelects();
-    //Refresa la vista
-    refreshViewSelector();
+    //Genera les cartes
+    generateCardsHTML();
+}
+
+function newGame(){
+    //document.getElementById("elegir-btn").style.display = "block";
+    document.getElementById("select-anime").style.display = "block";
+    document.getElementById("showpersonaje").style.display = "none";
+    document.getElementById("newPartida").style.display = "none";
+    player.isPlaying = false;
+
+    generateCardsHTML();
+
 }
 
 
@@ -184,15 +183,10 @@ function changeAnime() {
     player.animeName = selectOBJ.title;
     player.myCharacter = selectOBJ.characters[0];
     console.log(player);
-    refreshViewSelector();
-}
+    player.isPlaying = false;
 
-function changeCharacter() {
-    let slctCharacter = document.getElementById("select-cards").selectedOptions[0];
-    player.maxCharacters = parseInt(slctCharacter.value)
-    //Reseteja al primer
-    player.myCharacter = player.characterList[0];
-    refreshViewSelector();
+    generateCardsHTML();
+
 }
 
 function showMyCharacter() {
@@ -203,12 +197,6 @@ function showMyCharacter() {
     document.getElementById("mycharacter-image").src = player.myCharacter.image;
 }
 
-function showOptions() {
-    //Ensenya la carta
-    document.getElementById("fondo-card").style.display = "block";
-    document.getElementById("card-selector-anime").style.top = "10%";
-}
-
 function ocultarPersonaje() {
     document.getElementById("fondo-card").style.display = "none";
     document.getElementById("card-selector-mycharacter").style.top = "-600px";
@@ -216,9 +204,7 @@ function ocultarPersonaje() {
 
 function ocultaCartas() {
     //Nomes en partida es pot treure la carta i el fons sol.
-    if (isPlaying) {
-        document.getElementById("fondo-card").style.display = "none";
-        document.getElementById("card-selector-mycharacter").style.top = "-600px";
-        document.getElementById("card-selector-anime").style.top = "-600px";
-    }
+    document.getElementById("fondo-card").style.display = "none";
+    document.getElementById("card-selector-mycharacter").style.top = "-600px";
+    document.getElementById("card-selector-anime").style.top = "-600px";
 }
