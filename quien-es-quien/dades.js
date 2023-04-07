@@ -1,9 +1,9 @@
 let quienEsQuien = [
     {
-        "title": "Shingeki No Kyojin",
+        "title": "Attack of Titan",
         "characters": [
             { "id": 0, "name": "Armin", "image": "https://i.imgur.com/fSbG2ao.png" },
-            { "id": 1, "name": "Berholt", "image": "https://i.imgur.com/O8HEd6C.png" },
+            { "id": 1, "name": "Bertholdt", "image": "https://i.imgur.com/O8HEd6C.png" },
             { "id": 2, "name": "Caballo", "image": "https://i.imgur.com/u6uICEY.png" },
             { "id": 3, "name": "Conny", "image": "https://i.imgur.com/9RqIYhu.png" },
             { "id": 4, "name": "Eren", "image": "https://i.imgur.com/5RekY2V.png" },
@@ -32,7 +32,7 @@ let quienEsQuien = [
         ]
     },
     {
-        "title": "Boku No Hero",
+        "title": "My Hero Academia",
         "characters": [
             { "id": 26, "name": "Aizawa", "image": "https://imgur.com/MPigBVG.png" },
             { "id": 27, "name": "All Might", "image": "https://i.imgur.com/eWqris3.png" },
@@ -60,6 +60,67 @@ let quienEsQuien = [
             { "id": 49, "name": "Toru Hagakure", "image": "https://i.imgur.com/ujUWgFb.png" },
             { "id": 50, "name": "Tsuyu Asui", "image": "https://i.imgur.com/C1B0D7U.png" },
             { "id": 51, "name": "Twice", "image": "https://i.imgur.com/oVUpeb3.png" }
+        ]
+    },
+    {
+        "title": "Demon Slayer",
+        "characters": [
+            { "id": 53, "name": "Akaza", "image": "https://i.imgur.com/umucJ3f.png" },
+            { "id": 54, "name": "Daki", "image": "https://i.imgur.com/qzVP4ZG.png" },
+            { "id": 55, "name": "Doma", "image": "https://i.imgur.com/eb64VOA.png" },
+            { "id": 56, "name": "Enmu", "image": "https://i.imgur.com/ik0k4yv.png" },
+            { "id": 57, "name": "Genya Shinazugawa", "image": "https://i.imgur.com/SLTYsls.png" },
+            { "id": 58, "name": "Giyu Tomioka", "image": "https://i.imgur.com/0k5YvtM.png" },
+            { "id": 59, "name": "Gyomei Himejima", "image": "https://i.imgur.com/qgUHcGj.png" },
+            { "id": 60, "name": "Gyutaro", "image": "https://i.imgur.com/epGBRHK.png" },
+            { "id": 61, "name": "Inosuke Hashibira", "image": "https://i.imgur.com/g6dQ9kv.png" },
+            { "id": 62, "name": "Kagaya Ubuyashiki", "image": "https://i.imgur.com/51WaV9V.png" },
+            { "id": 63, "name": "Kanao Tsuyuri", "image": "https://i.imgur.com/nH4tIyT.png" },
+            { "id": 64, "name": "Mitsuri Kanroji", "image": "https://i.imgur.com/XU1MW4b.png" },
+            { "id": 65, "name": "Muichiro Tokito", "image": "https://i.imgur.com/XkWQUab.png" },
+            { "id": 66, "name": "Muzan", "image": "https://i.imgur.com/tIWvZFY.png" },
+            { "id": 67, "name": "Nezuko Chan", "image": "https://i.imgur.com/8tpxmAo.png" },
+            { "id": 68, "name": "Obanai Iguro", "image": "https://i.imgur.com/ocUIWVN.png" },
+            { "id": 69, "name": "Rengoku", "image": "https://i.imgur.com/b8GHDVd.png" },
+            { "id": 70, "name": "Rui", "image": "https://i.imgur.com/XtnzyF5.png" },
+            { "id": 71, "name": "Sabito", "image": "https://i.imgur.com/6zEQHIo.png" },
+            { "id": 72, "name": "Sakonji Urokodaki", "image": "https://i.imgur.com/gwI2fUU.png" },
+            { "id": 73, "name": "Sanemi Shinazugawa", "image": "https://i.imgur.com/SxJKzbx.png" },
+            { "id": 74, "name": "Shinobu Kocho", "image": "https://i.imgur.com/khuX1Tp.png" },
+            { "id": 75, "name": "Susamaru", "image": "https://i.imgur.com/dYfFzUU.png" },
+            { "id": 76, "name": "Tanjro Kamado", "image": "https://i.imgur.com/klRD64V.png" },
+            { "id": 77, "name": "Tengen Uzui", "image": "https://i.imgur.com/yxwCaD1.png" },
+            { "id": 78, "name": "Zenitsu Agatsuma", "image": "https://i.imgur.com/u3lkJsC.png" }
+        ]
+    }, {
+        "title": "Dragon Ball",
+        "characters": [
+            { "id": 79, "name": "Abuelo", "image": "https://i.imgur.com/xHmMlHY.png" },
+            { "id": 80, "name": "Androide 17", "image": "https://i.imgur.com/hjNfwRc.png" },
+            { "id": 81, "name": "Androide 18", "image": "https://i.imgur.com/1fCR5zP.png" },
+            { "id": 82, "name": "Bulma", "image": "https://i.imgur.com/tvsT4mt.png" },
+            { "id": 83, "name": "Celula", "image": "https://i.imgur.com/PAqO3YX.png" },
+            { "id": 84, "name": "Chaoz", "image": "https://i.imgur.com/eGRrUUx.png" },
+            { "id": 85, "name": "Chi Chi", "image": "https://i.imgur.com/VAatNsz.png" },
+            { "id": 86, "name": "Freezer", "image": "https://i.imgur.com/GJOdfAA.png" },
+            { "id": 87, "name": "Goku", "image": "https://i.imgur.com/9e7L3uU.png" },
+            { "id": 88, "name": "Krillin", "image": "https://i.imgur.com/68Z9kJw.png" },
+            { "id": 89, "name": "Lunch", "image": "https://i.imgur.com/YvrchjY.png" },
+            { "id": 90, "name": "Majin Boo", "image": "https://i.imgur.com/ubh7s2B.png" },
+            { "id": 91, "name": "Mr Satan", "image": "https://i.imgur.com/5bTaO6m.png" },
+            { "id": 92, "name": "Mutenroshi", "image": "https://i.imgur.com/8YuEyWL.png" },
+            { "id": 93, "name": "Oolong", "image": "https://i.imgur.com/uKPr5II.png" },
+            { "id": 94, "name": "Piccolo", "image": "https://i.imgur.com/EQyJdUN.png" },
+            { "id": 95, "name": "Pilaf", "image": "https://i.imgur.com/9wuFtdN.png" },
+            { "id": 96, "name": "Presentador", "image": "https://i.imgur.com/RVuhD8Z.png" },
+            { "id": 97, "name": "Puar", "image": "https://i.imgur.com/tzHymkx.pngs" },
+            { "id": 98, "name": "Son Gohan", "image": "https://i.imgur.com/48KFiod.png" },
+            { "id": 99, "name": "Tao Pai Pai", "image": "https://i.imgur.com/XcLYjmc.png" },
+            { "id": 100, "name": "Ten Shin Han", "image": "https://i.imgur.com/Bj3t8gY.png" },
+            { "id": 101, "name": "Uranai Baba", "image": "https://i.imgur.com/52Z7jbT.png" },
+            { "id": 102, "name": "Vegeta", "image": "https://i.imgur.com/mRjeAvO.png" },
+            { "id": 103, "name": "Yajirobe", "image": "https://i.imgur.com/WapQDRA.png" },
+            { "id": 104, "name": "Yamcha", "image": "https://i.imgur.com/gyaUq3z.png" }
         ]
     }
 ]
