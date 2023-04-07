@@ -61,6 +61,7 @@ img:not(:hover){
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .flip-card {
@@ -253,6 +254,64 @@ body {
   z-index: 1;
 }
 
+#modal-new-game {
+  position: fixed;
+  background-color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 400px;
+  border-radius: 6px;
+  overflow: hidden;
+  top: -250px;
+  z-index: 2;
+}
+#modal-new-game > .title-modal {
+  background-color: black;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#modal-new-game > .info-modal {
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.ok-btn {
+  color: white;
+  background-color: darkgreen;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  width: 100px;
+  font-size: 18px;
+}
+
+.cancel-btn {
+  color: white;
+  background-color: rgb(208, 7, 7);
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  width: 100px;
+  font-size: 18px;
+}
+
+.flex-btn {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.flip-card-back > h1 {
+  font-size: 20px;
+}
 @media (max-width: 600px) {
   .menu-flex-slct {
     flex-direction: column;

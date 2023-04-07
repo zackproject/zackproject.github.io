@@ -1,6 +1,3 @@
-///Al 'nueva partida' el 'select' se resetea al '0', guarda estado
-let lastSelectedValue = 0;
-
 //Objecte que controla el joc 'Quien es quien'
 class WhoIsWho {
     constructor(animeName, characterList, maxCharacters, myCharacter) {
@@ -164,8 +161,10 @@ function loadGame() {
     generateCardsHTML();
 }
 
-function newGame(){
-    //document.getElementById("elegir-btn").style.display = "block";
+function newGame() {
+    document.getElementById("fondo-card").style.display = "none";
+
+    document.getElementById("modal-new-game").style.top = "-250px";
     document.getElementById("select-anime").style.display = "block";
     document.getElementById("showpersonaje").style.display = "none";
     document.getElementById("newPartida").style.display = "none";
@@ -174,6 +173,7 @@ function newGame(){
     generateCardsHTML();
 
 }
+
 
 
 function changeAnime() {
@@ -207,4 +207,17 @@ function ocultaCartas() {
     document.getElementById("fondo-card").style.display = "none";
     document.getElementById("card-selector-mycharacter").style.top = "-600px";
     document.getElementById("card-selector-anime").style.top = "-600px";
+}
+
+
+function hideNewGame() {
+    document.getElementById("fondo-card").style.display = "none";
+    document.getElementById("modal-new-game").style.top = "-250px";
+    document.getElementById("showpersonaje").style.display = "block";
+}
+
+function showModalNewGame() {
+    document.getElementById("modal-new-game").style.top = "150px";
+    document.getElementById("fondo-card").style.display = "block";
+    document.getElementById("showpersonaje").style.display = "none";
 }
