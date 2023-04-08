@@ -159,6 +159,8 @@ function loadGame() {
     generateSelects();
     //Genera les cartes
     generateCardsHTML();
+    //Genera el footer
+    makeFooter();
 }
 
 function newGame() {
@@ -220,4 +222,12 @@ function showModalNewGame() {
     document.getElementById("modal-new-game").style.top = "150px";
     document.getElementById("fondo-card").style.display = "block";
     document.getElementById("showpersonaje").style.display = "none";
+}
+
+
+/* Cada any el footer posara l'any actual */
+function makeFooter() {
+    const d = new Date();
+    let foot = document.getElementsByTagName("footer")[0];
+    foot.innerHTML = `Zack Sama · ${d.getFullYear()} · <a href="https://zackproject.github.io"> Zack Project</a>`;
 }

@@ -1,5 +1,12 @@
 var cards = [
     {
+        "title": "Quien es Quien",
+        "image": "https://i.imgur.com/5uzjtaD.png",
+        "alt": "Card quien es quien",
+        "description": "Juega en dos dispositivos. Elige una serie, un personaje y juega con tu amigo a adivinar el personaje del otro.",
+        "link": "/quien-es-quien"
+    },
+    {
         "title": "PokeHigher or Pokelower",
         "image": "https://i.imgur.com/WeM1zLU.png",
         "alt": "Card PokeHigher or PokeLower",
@@ -27,11 +34,4 @@ var cards = [
         "description": "Find the birthday of the character by day and month. Demo of the App Anime Birthday",
         "link": "/animebirthday"
     }
-    /*,{
-        "title": "Quien quiere ser Otaku",
-        "image": "https://i.imgur.com/5lSpYN6.png",
-        "alt": "Card quien quiere ser Otaku",
-        "description": "Aplicación en contrucción",
-        "link": "/"
-    }*/
 ];

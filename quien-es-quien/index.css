@@ -61,7 +61,8 @@ img:not(:hover){
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 50px;
+  margin: 10px;
+  /*margin-bottom: 50px;*/
 }
 
 .flip-card {
@@ -248,7 +249,7 @@ body {
 }
 
 #showpersonaje {
-  position: fixed;
+  position: sticky;
   bottom: 0px;
   width: 100%;
   z-index: 1;
@@ -312,6 +313,20 @@ body {
 .flip-card-back > h1 {
   font-size: 20px;
 }
+
+
+footer {
+  background-color: black;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+footer>a {
+  text-decoration: underline;
+  color: lightblue;
+}
+
 @media (max-width: 600px) {
   .menu-flex-slct {
     flex-direction: column;

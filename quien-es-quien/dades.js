@@ -1,6 +1,6 @@
 let quienEsQuien = [
     {
-        "title": "Attack of Titan",
+        "title": "Shingeki no Kyojin",
         "characters": [
             { "id": 0, "name": "Armin Arlet", "image": "https://i.imgur.com/fSbG2ao.png" },
             { "id": 1, "name": "Bertholdt", "image": "https://i.imgur.com/O8HEd6C.png" },
@@ -32,7 +32,7 @@ let quienEsQuien = [
         ]
     },
     {
-        "title": "My Hero Academia",
+        "title": "Boku No Hero",
         "characters": [
             { "id": 26, "name": "Aizawa", "image": "https://imgur.com/MPigBVG.png" },
             { "id": 27, "name": "All Might", "image": "https://i.imgur.com/eWqris3.png" },
@@ -63,7 +63,7 @@ let quienEsQuien = [
         ]
     },
     {
-        "title": "Demon Slayer",
+        "title": "Kimetsu No Yaiba",
         "characters": [
             { "id": 53, "name": "Akaza", "image": "https://i.imgur.com/umucJ3f.png" },
             { "id": 54, "name": "Daki", "image": "https://i.imgur.com/qzVP4ZG.png" },
@@ -92,7 +92,8 @@ let quienEsQuien = [
             { "id": 77, "name": "Tengen Uzui", "image": "https://i.imgur.com/yxwCaD1.png" },
             { "id": 78, "name": "Zenitsu Agatsuma", "image": "https://i.imgur.com/u3lkJsC.png" }
         ]
-    }, {
+    },
+    {
         "title": "Dragon Ball",
         "characters": [
             { "id": 79, "name": "Abuelo", "image": "https://i.imgur.com/xHmMlHY.png" },
@@ -121,6 +122,39 @@ let quienEsQuien = [
             { "id": 102, "name": "Vegeta", "image": "https://i.imgur.com/mRjeAvO.png" },
             { "id": 103, "name": "Yajirobe", "image": "https://i.imgur.com/WapQDRA.png" },
             { "id": 104, "name": "Yamcha", "image": "https://i.imgur.com/gyaUq3z.png" }
+        ]
+    },
+    {
+        "title": "Code Lyoko",
+        "characters": [
+            { "id": 105, "name": "Aelita", "image": "https://i.imgur.com/mpz7APi.png" },
+            { "id": 106, "name": "Avispa", "image": "https://i.imgur.com/gl9Z3vf.png" },
+            { "id": 107, "name": "Bloque", "image": "https://i.imgur.com/VqNuWFV.png" },
+            { "id": 108, "name": "Cangrejo", "image": "https://i.imgur.com/MbQig7K.png" },
+            { "id": 109, "name": "Cucaracha", "image": "https://i.imgur.com/LWM0mcz.png" },
+            { "id": 110, "name": "Enfermera Dorothy", "image": "https://i.imgur.com/94IFGdd.png" },
+            { "id": 111, "name": "Frank Hopper", "image": "https://i.imgur.com/TJzNZCv.png" },
+            { "id": 112, "name": "Goloso", "image": "https://i.imgur.com/ltWeCOV.png" },
+            { "id": 113, "name": "Gusano", "image": "https://i.imgur.com/238GVq4.png" },
+            { "id": 114, "name": "Herb Pichon", "image": "https://i.imgur.com/e8ygHJ0.png" },
+            { "id": 115, "name": "Jean- Pierres Delmas", "image": "https://i.imgur.com/vGBNN6N.png" },
+            { "id": 116, "name": "Jeremy Belpois", "image": "https://i.imgur.com/l6hUkjd.png" },
+            { "id": 117, "name": "Jim Morales", "image": "https://i.imgur.com/onZS2pF.png" },
+            { "id": 118, "name": "Kiwi", "image": "https://i.imgur.com/Ph0yX89.png" },
+            { "id": 119, "name": "Kongrio", "image": "https://i.imgur.com/Z4qRmIx.png" },
+            { "id": 120, "name": "Manta Raya", "image": "https://i.imgur.com/okQN4hP.png" },
+            { "id": 121, "name": "Milly Solovieff", "image": "https://i.imgur.com/vRnikAc.png" },
+            { "id": 122, "name": "Nicolas Poliakoff", "image": "https://i.imgur.com/Qnkdmjy.png" },
+            { "id": 123, "name": "Odd Della Robbia", "image": "https://i.imgur.com/4QvtmyJ.png" },
+            { "id": 124, "name": "Scyphozoa", "image": "https://i.imgur.com/ggNfZz4.png" },
+            { "id": 125, "name": "Sissi", "image": "https://i.imgur.com/Gii9LtS.png" },
+            { "id": 126, "name": "Suzanne Hertz", "image": "https://i.imgur.com/N6cypC7.png" },
+            { "id": 127, "name": "Tamiya Diop", "image": "https://i.imgur.com/edTw904.png" },
+            { "id": 128, "name": "Tanque", "image": "https://i.imgur.com/7T5jDpK.png" },
+            { "id": 129, "name": "Tarantula", "image": "https://i.imgur.com/TnMwGng.png" },
+            { "id": 130, "name": "Ulrich Stern", "image": "https://i.imgur.com/DyGNury.png" },
+            { "id": 131, "name": "William Dunbar", "image": "https://i.imgur.com/3upcm7U.png" },
+            { "id": 132, "name": "Yumi Ishiyama", "image": "https://i.imgur.com/D6zjlpN.png" }
         ]
     }
 ]
