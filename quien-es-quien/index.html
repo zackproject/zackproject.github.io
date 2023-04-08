@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quien es Quien</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="dades.js"></script>
+    <link rel="icon" href="../icopz.ico">
+
+</head>
+
+<body onload="loadGame()">
+    <header>
+        <h1 id="titol-quien-es-quien">QUIÉN ES QUIÉN</h1>
+    </header>
+
+    <div class="who-is-who">
+        <!-- fondo 'dark' per quan obro un modal -->
+        <div id="fondo-card"></div>
+        <!-- Selector de la partida, es mostra un boto o un altre segons el js -->
+        <div class="menu-flex-slct">
+            <button id="newPartida" class="hide-menu transparent-btn" onclick="showModalNewGame()">NUEVA
+                PARTIDA</button>
+            <select id="select-anime" onchange="changeAnime()" name="select">
+            </select>
+            <button id="empezar-btn" class="hide-menu green-btn" onclick="novaPartida()">EMPEZAR PARTIDA</button>
+        </div>
+
+        <!-- Mosta el personatge actual triar per l'usuari-->
+        <div id="card-selector-mycharacter" class="card-selector">
+            <div class="card-info-mycharacter">
+                <div id="mycharacter-name" class="title-card">Armin</div>
+                <img id="mycharacter-image" src="https://i.imgur.com/fSbG2ao.png" alt="" height="100%" width="100%">
+            </div>
+
+            <button class="hide-character" onclick="ocultarPersonaje()">OCULTAR</button>
+        </div>
+
+        <!-- Mostra un dialog on confirma que 'si' vols nova partida-->
+        <div id="modal-new-game">
+            <div class="title-modal">NUEVA PARTIDA</div>
+            <div class="info-modal">¿Quieres empezar una nueva partida?</div>
+            <div class="flex-btn">
+                <button onclick="newGame()" class="ok-btn">SI</button>
+                <button onclick="hideNewGame()" class="cancel-btn">NO</button>
+            </div>
+        </div>
+        <!-- se autogeneren les cartes de la partida-->
+        <div id="cards">
+            <!--<div class="card">
+           <div class="flip-card" onclick="cardClicked(event)">
+                <div id="card-0" class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img id="img-0" src="Armin_Arlet.jpeg" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="text-card">
+                            <h1>Armin Arlet</h1>
+                            <p>Shingeki No Kyojin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>-->
+        </div>
+    </div>
+    <!-- Mostra el personatge triat al clicar el boton -->
+    <button id="showpersonaje" class="hide-menu green-btn" onclick="showMyCharacter()">VER MI PERSONAJE</button>
+    <footer>Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a></footer>
+    <script src="index.js"></script>
+</body>
+
+</html>
