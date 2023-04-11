@@ -16,6 +16,7 @@ const PATHMUSIC = 'song'
 const PATHSONG = 'title';
 
 function readPath() {
+    //Guarda el parametres de 'PATHMUSIC' y 'PATHSONG'
     let listaStringNotes = new URLSearchParams(document.location.search).get(PATHMUSIC);
     let titleSong = new URLSearchParams(document.location.search).get(PATHSONG);
 
@@ -36,7 +37,6 @@ function readPath() {
 
     //Notas musicales
     cancionImportada = lista.map(textoListToNumbers);
-    console.log(cancionImportada);
     return true;
 }
 
@@ -73,18 +73,23 @@ function ocultaCancion(texto, encrypt = false) {
 }
 
 function loadMusic() {
+    // Si hi han paramentres, retorna 'true'
     let paramsDisponibles = readPath();
     if (!paramsDisponibles) {
+        //Amaga el 'transportador' i el 'toca esto'
         document.getElementById("tranporte").style.display = "none";
         document.getElementById("touch-this").style.display = "none";
     }
-
+    //Canvia segons l'escala
     updateTextPiano();
 }
 
 function tocaEsto() {
+    //Si la nota es fora del teclat, reseteja
     if (notaActual >= cancionImportada.length) notaActual = 0;
+    //Dibuixa la nota al teclat
     drawTecla(cancionImportada[notaActual]);
+    // Crea un link de
     let linkSong = NOTESONLINE + cancionImportada[notaActual] + '.mp3';
     var audio = new Audio(linkSong);
     audio.play();
@@ -93,22 +98,25 @@ function tocaEsto() {
 }
 
 function drawTecla(num) {
+    //Neteja totes les tecles blanques
     let listBlancaHTML = document.getElementsByClassName("primary-note");
     for (let i = 0; i < listBlancaHTML.length; i++) {
         listBlancaHTML[i].style.background = "";
         listBlancaHTML[i].style.transform = "";
     }
+    //Neteja totes les tecles negres
     let listNegraHTML = document.getElementsByClassName("secondary-note");
     for (let i = 0; i < listNegraHTML.length; i++) {
         listNegraHTML[i].style.transform = "";
     }
 
+    //Si toca una blanca, es mou
     if (notasBlancas.includes(parseInt(num))) {
         let pos = notasBlancas.indexOf(num);
         listBlancaHTML[pos].style.background = "lightgray";
         listBlancaHTML[pos].style.transform = "translateY(5px)";
     }
-
+    //Si toca una negra, es mou
     if (notasNegras.includes(parseInt(num))) {
         let pos = notasNegras.indexOf(num);
         listNegraHTML[pos].style.transform = "translateY(5px)";
@@ -119,193 +127,201 @@ function drawTecla(num) {
 function updateTextPiano() {
     let slct = document.getElementById("selectTextPiano");
     let slctNum = parseInt(slct.selectedOptions[0].value);
+    //0 = Inglesa, 1= Do 2= Alphabet
     for (let i = 0; i < document.getElementsByClassName("tecla").length; i++) {
+        //Per cada tecla actualitza el contingut
         const element = document.getElementsByClassName("tecla")[i];
         element.innerText = textoDisponibles[slctNum][i];
-        //console.log(element.innerText);
     }
 
 }
 
 function soundBlanca(ntecla) {
+    //Toca la blanca i guarda la tecla
     let linkSong = NOTESONLINE + notasBlancas[ntecla] + '.mp3';
     var audio = new Audio(linkSong);
     audio.play();
-    saveSong(true, ntecla);
+    saveSong(notasBlancas[ntecla]);
 }
 
 function soundNegra(ntecla) {
+    //Toca la negra i guarda la tecla
     let linkSong = NOTESONLINE + notasNegras[ntecla] + ".mp3"
     var audio = new Audio(linkSong);
     audio.play();
-    saveSong(false, ntecla);
-
+    saveSong(notasNegras[ntecla]);
 }
 
-function saveSong(isWhite, nTecla) {
-    if (isWhite) {
-        let asciLetra = notasBlancas.indexOf(parseInt(notasBlancas[nTecla])) + 97;
+function saveSong(nTecla) {
+    //Guarda si el troba, sino es '-1'
+    let esBlanca = notasBlancas.indexOf(nTecla);
+    let esNegra = notasNegras.indexOf(nTecla);
+    if (esBlanca !== -1) {
+        //Si es una blanca es diferent a -1
+        asciLetra = esBlanca + 97;
         letras = letras + String.fromCharCode(asciLetra).toUpperCase();
-    } else {
-        let asciLetra = notasNegras.indexOf(parseInt(notasNegras[nTecla])) + 65;
+    }
+
+    if (esNegra !== -1) {
+        //Si es una negra es diferent a -1
+        asciLetra = esNegra + 65;
         letras = letras + String.fromCharCode(asciLetra).toLowerCase();
     }
+    //Acualitza el 'a:href'
     document.getElementById("resultat").href = "./?" + PATHMUSIC + "=" + letras;
     document.getElementById("resultat").innerText = "Notas Grabadas: " + letras.length;
 }
 function pulsado(event) {
     let nTecla = null;
-    let listTecla = null;
+    let numNote = null;
     switch (event.key) {
         //Teclas blancas
         case 'z':
             nTecla = 0
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'x':
             nTecla = 1;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'c':
             nTecla = 2;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'v':
             nTecla = 3;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'b':
             nTecla = 4;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'n':
             nTecla = 5;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'm':
             nTecla = 6;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'a':
             nTecla = 7;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 's':
             nTecla = 8;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'd':
             nTecla = 9;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'f':
             nTecla = 10;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'g':
             nTecla = 11;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'h':
             nTecla = 12;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'j':
             nTecla = 13;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'q':
             nTecla = 14;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'w':
             nTecla = 15;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'e':
             nTecla = 16;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 'r':
             nTecla = 17;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case 't':
             nTecla = 18;
-            listTecla = notasBlancas[nTecla];
+            numNote = notasBlancas[nTecla];
             break;
         case '1':
             //Notas negras
             nTecla = 0;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case '2':
             nTecla = 1;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case '3':
             nTecla = 2;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case '4':
             nTecla = 3;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case '5':
             nTecla = 4;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case '6':
             nTecla = 5;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case '7':
             nTecla = 6;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case '8':
             nTecla = 7;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case '9':
             nTecla = 8;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case '0':
             nTecla = 9;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case 'y':
             nTecla = 10;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case 'u':
             nTecla = 11;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
         case 'i':
             nTecla = 12;
-            listTecla = notasNegras[nTecla];
+            numNote = notasNegras[nTecla];
             break;
     }
 
-    console.log("a");
-    //drawTecla(nTecla);
-    if (listTecla != null) {
-        let linkSong = NOTESONLINE + listTecla + '.mp3';
+    //Si la tecla existeix
+    if (numNote != null) {
+        let linkSong = NOTESONLINE + numNote + '.mp3';
         var audio = new Audio(linkSong);
         audio.play();
-        drawTecla(parseInt(listTecla))
-        if (notasBlancas.includes(parseInt(notasBlancas[nTecla])) || notasNegras.includes(parseInt(notasNegras[nTecla]))) {
-            saveSong(true, nTecla);
-        }
-    } else {
-        console.log("nope", listTecla);
+        //Pinta la tecla blanca o gris en css premuda
+        drawTecla(numNote);
+        //Guarda en 'letras' la nota actual en ASCII 
+        saveSong(numNote);
     }
 }
 
 
 function avanzaEscala() {
+    //Reseteja la song
     notaActual = 0;
     //Si incluye la ultima nota no puede avanzarla
     if (!cancionImportada.includes(notasBlancas[notasBlancas.length - 1])) {
@@ -317,23 +333,20 @@ function avanzaEscala() {
     console.log("No puedo hacerlo mas");
 }
 
-function textSum(num) {
-    if (num > 0) {
-        return "+" + num;
-    }
-    return num;
-}
-
 function retrocedeEscala() {
+    //Reseteja la song
     notaActual = 0;
     //Si incluye la primera nota no puede avanzarla
     if (!cancionImportada.includes(notasBlancas[0])) {
         cancionImportada = cancionImportada.map((e) => e - 1);
         tranportePieza--;
         document.getElementById("transportePieza").innerText = textSum(tranportePieza);
-        return;
     }
-    console.log("No puedo hacerlo menos");
-
 }
 
+function textSum(num) {
+    //Si es positiu '+1, +2'
+    if (num > 0) return "+" + num;
+    //Si no retorna tal cual (el negatiu ja te el -num)
+    return num;
+}
