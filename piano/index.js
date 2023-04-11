@@ -1,4 +1,5 @@
 
+let tranportePieza = 0;
 let notaActual = 0;
 let notasBlancas = [28, 30, 32, 33, 35, 37, 39, 40, 42, 44, 45, 47, 49, 51, 52, 54, 56, 57, 59];
 let notasNegras = [29, 31, 34, 36, 38, 41, 43, 46, 48, 50, 53, 55, 58];
@@ -10,14 +11,20 @@ let textoDisponibles = [
 
 let cancionImportada = null;
 let letras = '';
-const NOTESONLINE = 'https://www.musicca.com/lydfiler/piano/';
-const PATHMUSIC = 'music'
+const NOTESONLINE = './notes/';
+const PATHMUSIC = 'song'
+const PATHSONG = 'title';
 
 function readPath() {
-    let listaStringNotes = new URLSearchParams(document.location.search).get("music");
+    let listaStringNotes = new URLSearchParams(document.location.search).get(PATHMUSIC);
+    let titleSong = new URLSearchParams(document.location.search).get(PATHSONG);
+
     if (listaStringNotes == null || listaStringNotes == '') return false;
+    //if (titleSong == null || titleSong == '') return false;
+
     let lista = listaStringNotes.split("");
     console.log("Path:", lista);
+    console.log("Title", titleSong);
 
     //Tabla ASCII: 65:Mayuscula 97:Minuscula
     let textoListToNumbers = (e) => {
@@ -26,15 +33,49 @@ function readPath() {
         //Las letras mayusculas coresponden a las negras 'ABCDEFG'
         return notasBlancas[e.charCodeAt(0) - 65];
     }
+
     //Notas musicales
     cancionImportada = lista.map(textoListToNumbers);
     console.log(cancionImportada);
     return true;
 }
 
+function ocultaCancion(texto, encrypt = false) {
+    let nuevoTexto = ""
+    //Para en/des-encriptar tiene que  voltear el textp
+    texto = texto.split("").reverse().join("");
+    //Si es true encripta el texto
+    if (encrypt) {
+        //Primero voltea el texto
+        texto = texto.split("").reverse().join("");
+        for (let i in texto) {
+            //Codigo ascci 'z' => '{'. para evitar pongo  '7'
+            if (texto[i] == "z") {
+                nuevoTexto += "7";
+            } else {
+                //Avanza una letra
+                nuevoTexto += String.fromCharCode(texto[i].charCodeAt() + 1)
+            }
+        }
+        return nuevoTexto;
+    }
+
+    for (let i in texto) {
+        //Se invierten los casos
+        if (texto[i] == "7") {
+            nuevoTexto += "z";
+        } else {
+            //Retrocede una letra
+            nuevoTexto += String.fromCharCode(texto[i].charCodeAt() - 1)
+        }
+    }
+    return nuevoTexto;
+}
+
 function loadMusic() {
     let paramsDisponibles = readPath();
     if (!paramsDisponibles) {
+        document.getElementById("tranporte").style.display = "none";
         document.getElementById("touch-this").style.display = "none";
     }
 
@@ -110,7 +151,7 @@ function saveSong(isWhite, nTecla) {
         letras = letras + String.fromCharCode(asciLetra).toLowerCase();
     }
     document.getElementById("resultat").href = "./?" + PATHMUSIC + "=" + letras;
-    document.getElementById("resultat").innerText = "Notas Grabadas: "+letras.length;
+    document.getElementById("resultat").innerText = "Notas Grabadas: " + letras.length;
 }
 function pulsado(event) {
     let nTecla = null;
@@ -234,15 +275,65 @@ function pulsado(event) {
             nTecla = 9;
             listTecla = notasNegras[nTecla];
             break;
+        case 'y':
+            nTecla = 10;
+            listTecla = notasNegras[nTecla];
+            break;
+        case 'u':
+            nTecla = 11;
+            listTecla = notasNegras[nTecla];
+            break;
+        case 'i':
+            nTecla = 12;
+            listTecla = notasNegras[nTecla];
+            break;
     }
 
+    console.log("a");
     //drawTecla(nTecla);
     if (listTecla != null) {
         let linkSong = NOTESONLINE + listTecla + '.mp3';
         var audio = new Audio(linkSong);
         audio.play();
         drawTecla(parseInt(listTecla))
+        if (notasBlancas.includes(parseInt(notasBlancas[nTecla])) || notasNegras.includes(parseInt(notasNegras[nTecla]))) {
+            saveSong(true, nTecla);
+        }
     } else {
         console.log("nope", listTecla);
     }
 }
+
+
+function avanzaEscala() {
+    notaActual = 0;
+    //Si incluye la ultima nota no puede avanzarla
+    if (!cancionImportada.includes(notasBlancas[notasBlancas.length - 1])) {
+        cancionImportada = cancionImportada.map((e) => e + 1);
+        tranportePieza++;
+        document.getElementById("transportePieza").innerText = textSum(tranportePieza);
+        return;
+    }
+    console.log("No puedo hacerlo mas");
+}
+
+function textSum(num) {
+    if (num > 0) {
+        return "+" + num;
+    }
+    return num;
+}
+
+function retrocedeEscala() {
+    notaActual = 0;
+    //Si incluye la primera nota no puede avanzarla
+    if (!cancionImportada.includes(notasBlancas[0])) {
+        cancionImportada = cancionImportada.map((e) => e - 1);
+        tranportePieza--;
+        document.getElementById("transportePieza").innerText = textSum(tranportePieza);
+        return;
+    }
+    console.log("No puedo hacerlo menos");
+
+}
+

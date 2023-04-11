@@ -15,8 +15,8 @@
     <div id="nota-actual">Clica <span id="tempo"></span></div>
     <button id="touch-this" onclick="tocaEsto()">Toca esto</button>
     <select name="" id="selectTextPiano" onchange="updateTextPiano()">
-        <option value="0" selected>Internacional</option>
-        <option value="1">Escala DO</option>
+        <option value="0" selected>Notación inglesa</option>
+        <option value="1">Notación DO</option>
         <option value="2">Alfabetico</option>
     </select>
     <div class="piano">
@@ -52,10 +52,14 @@
         <button onclick="soundBlanca(17)" class="tecla primary-note">FA F5</button>
         <button onclick="soundNegra(12)" class="tecla secondary-note">Sol# Lab</button>
         <button onclick="soundBlanca(18)" class="tecla primary-note">SOL G5</button>
-        <!-- DragonBall - lljklmlkjijjhijkjihgf PepaPig - ljhieegikjh-->
+        <!-- DragonBall - LLJKLMLKJIJJHIJKJIHG PepaPig - LJHIEEGIKJH-->
     </div>
     Song: <a id="resultat" href="./?music="></a>
-
+    <div id="tranporte">
+        <button onclick="retrocedeEscala()">Retrocede Escala</button>
+        <span id="transportePieza">0</span>
+        <button onclick="avanzaEscala()">Avanza Escala</button>
+    </div>
 </body>
 
 </html>
