@@ -1,0 +1,41 @@
+.piano {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 5px;*/
+}
+
+.tecla {
+  font-size: 12px;
+  width: 30px;
+  border: 1px solid black;
+  width: 30px;
+
+  /*Alinea abajo */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.primary-note {
+  background: white;
+  border-radius: 6px;
+  height: 120px;
+}
+
+.secondary-note {
+  background: black;
+  border-radius: 4px;
+  color: white;
+  height: 80px;
+}
+
+
+.primary-note:hover {
+  background-color: lightgray;
+  transform: translateY(5px);
+}
+.secondary-note:hover {
+  transform: translateY(5px);
+}
