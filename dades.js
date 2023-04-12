@@ -10,14 +10,21 @@ var cards = [
         "title": "PokeHigher or Pokelower",
         "image": "https://i.imgur.com/WeM1zLU.png",
         "alt": "Card PokeHigher or PokeLower",
-        "description": "Guess between two poke which poke has more or less speed, attack, defense, ... ",
+        "description": "Quien tiene mas ataque, defensa o velocidad entre estas dos poke-criaturas.",
         "link": "/higherlower"
+    },
+    {
+        "title": "Poke Sort",
+        "image": "https://imgur.com/oCLFH4j.png",
+        "alt": "Card quien poke Sort",
+        "description": "Ordena las letras de la poke-criatura detras de la sombra. Puedes elegir cualquier generacion",
+        "link": "/sort"
     },
     {
         "title": "Poke Guess",
         "image": "https://i.imgur.com/ieg9MPg.png",
         "alt": "Card Poke guess",
-        "description": "Sort the poke text and guess the name of the peeled poke. Press Enter to check the results.",
+        "description": "Estas pokecriaturas estan un poco peladas, adivina de quien se trata. Elige cualquier generacion",
         "link": "/guess"
     },
     {
