@@ -40,7 +40,6 @@ function generateSelects() {
 
 //https://www.w3schools.com/howto/howto_css_flip_card.asp
 function flipCard(event) {
-    console.log(event);
     //let ncard = document.getElementsByClassName("flip-card-inner");
     let pos = null;
 
@@ -120,13 +119,13 @@ function deleteChilds(currentDiv) {
 
 function generateCardsHTML() {
     deleteChilds(document.getElementById("cards"));
-    let cont = 0;
+    //let cont = 0;
     player.characterList.forEach(e => {
-        if (cont < player.maxCharacters) {
+        //if (cont < player.maxCharacters) {
             let props = { id: e.id, image: e.image, name: e.name, anime: player.animeName };
             document.getElementById("cards").innerHTML += cardHTML(props)
-            cont++;
-        }
+          //  cont++;
+       // }
     });
 
     for (let i = 0; i < document.getElementsByClassName("card").length; i++) {
@@ -184,9 +183,7 @@ function changeAnime() {
     player.characterList = selectOBJ.characters;
     player.animeName = selectOBJ.title;
     player.myCharacter = selectOBJ.characters[0];
-    console.log(player);
-    player.isPlaying = false;
-
+    player.isPlaying = false
     generateCardsHTML();
 
 }
