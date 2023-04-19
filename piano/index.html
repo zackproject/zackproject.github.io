@@ -1,63 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musical</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="dades.js"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body onload="loadMusic()" onkeydown="pulsado(event)">
-    <div id="nota-actual">Clica <span id="tempo"></span></div>
-    <button id="touch-this" onclick="tocaEsto()">Toca esto</button>
-    <select name="" id="selectTextPiano" onchange="updateTextPiano()">
-        <option value="0" selected>Notación inglesa</option>
-        <option value="1">Notación DO</option>
-        <option value="2">Alfabetico</option>
-    </select>
-    <div class="piano">
-        <button onclick="soundBlanca(0)" class="tecla primary-note">DO C3</button>
-        <button onclick="soundNegra(0)" class="tecla secondary-note">DO# Reb</button>
-        <button onclick="soundBlanca(1)" class="tecla primary-note">RE D3</button>
-        <button onclick="soundNegra(1)" class="tecla secondary-note">Re# Mib</button>
-        <button onclick="soundBlanca(2)" class="tecla primary-note">MI E3</button>
-        <button onclick="soundBlanca(3)" class="tecla primary-note">FA F3</button>
-        <button onclick="soundNegra(2)" class="tecla secondary-note">Fa# Solb</button>
-        <button onclick="soundBlanca(4)" class="tecla primary-note">SOL G3</button>
-        <button onclick="soundNegra(3)" class="tecla secondary-note">Sol# Lab</button>
-        <button onclick="soundBlanca(5)" class="tecla primary-note">LA A4</button>
-        <button onclick="soundNegra(4)" class="tecla secondary-note">Fa# Solb</button>
-        <button onclick="soundBlanca(6)" class="tecla primary-note">SI B4</button>
-        <button onclick="soundBlanca(7)" class="tecla primary-note">DO C4</button>
-        <button onclick="soundNegra(5)" class="tecla secondary-note">Fa# Solb</button>
-        <button onclick="soundBlanca(8)" class="tecla primary-note">RE D4</button>
-        <button onclick="soundNegra(6)" class="tecla secondary-note">Fa# Solb</button>
-        <button onclick="soundBlanca(9)" class="tecla primary-note">MI E4</button>
-        <button onclick="soundBlanca(10)" class="tecla primary-note">FA F4</button>
-        <button onclick="soundNegra(7)" class="tecla secondary-note">Sol# Lab</button>
-        <button onclick="soundBlanca(11)" class="tecla primary-note">SOL G4</button>
-        <button onclick="soundNegra(8)" class="tecla secondary-note">Sol# Lab</button>
-        <button onclick="soundBlanca(12)" class="tecla primary-note">LA A5</button>
-        <button onclick="soundNegra(9)" class="tecla secondary-note">Sol# Lab</button>
-        <button onclick="soundBlanca(13)" class="tecla primary-note">SI B5</button>
-        <button onclick="soundBlanca(14)" class="tecla primary-note">DO C5</button>
-        <button onclick="soundNegra(10)" class="tecla secondary-note">Sol# Lab</button>
-        <button onclick="soundBlanca(15)" class="tecla primary-note">RE D5</button>
-        <button onclick="soundNegra(11)" class="tecla secondary-note">Sol# Lab</button>
-        <button onclick="soundBlanca(16)" class="tecla primary-note">MI E5</button>
-        <button onclick="soundBlanca(17)" class="tecla primary-note">FA F5</button>
-        <button onclick="soundNegra(12)" class="tecla secondary-note">Sol# Lab</button>
-        <button onclick="soundBlanca(18)" class="tecla primary-note">SOL G5</button>
-        <!-- DragonBall - LLJKLMLKJIJJHIJKJIHG PepaPig - LJHIEEGIKJH-->
+<body class="piano-page" onload="loadMusic()" onkeydown="pulsado(event)">
+    <div id="menu-piano">
+        <!--<div class="note-fall material-icons">music_note</div>-->
+        <details>
+            <summary>Opciones del Piano</summary>
+            <p>Idioma de la escala</p>
+            <select name="" id="selectTextPiano" onchange="updateTextPiano()">
+                <option value="0">Notación inglesa</option>
+                <option value="1" selected>Notación DO</option>
+                <option value="2">Alfabetico</option>
+            </select>
+            <p>Transportar escala</p>
+            <div class="content">
+                <div id="tranporte">
+                    <button onclick="retrocedeEscala()">
+                        <span class="material-icons">
+                            arrow_back
+                        </span></button>
+                    <span id="transportePieza">0</span>
+                    <button onclick="avanzaEscala()">
+                        <span class="material-icons">
+                            arrow_forward
+                        </span></button>
+                </div>
+            </div>
+        </details>
+        <div id="nota-actual">
+            <div id="tempo"></div>
+        </div>
+        <div id="enviarCancion">
+            <!-- solo acepta de la 'a' a la 'z' y ' ' espaciones. No ñ -->
+            <input id="inputSong" type="text" placeholder="Nombre canción" onkeydown="return /[a-z\s]/i.test(event.key)"
+                maxlength="50">
+            <button onclick="generateLink()">Generar link</button>
+            <button onclick="resetSong()">Reset Song</button>
+            <a id="resultat" href="./?music="></a> <a href="./"></a>
+            <div id="updateSave"></div>
+        </div>
+
+        <button id="touch-this" class="material-icons" onclick="tocaEsto()">music_note</button>
+        <details>
+            <summary>
+                Adivina Cancion
+            </summary>
+            <div id="btnGenerated"></div>
+        </details>
     </div>
-    Song: <a id="resultat" href="./?music="></a> <a href="./">Reset Song</a>
-    <div id="tranporte">
-        <button onclick="retrocedeEscala()">Retrocede Escala</button>
-        <span id="transportePieza">0</span>
-        <button onclick="avanzaEscala()">Avanza Escala</button>
+
+    <div class="piano">
+        <div class="escala">
+            <button onclick="soundBlanca(0)" class="tecla primary-note">DO C3</button>
+            <button onclick="soundNegra(0)" class="tecla secondary-note n1">DO# Reb</button>
+            <button onclick="soundBlanca(1)" class="tecla primary-note">RE D3</button>
+            <button onclick="soundNegra(1)" class="tecla secondary-note n2">Re# Mib</button>
+            <button onclick="soundBlanca(2)" class="tecla primary-note">MI E3</button>
+            <button onclick="soundBlanca(3)" class="tecla primary-note">FA F3</button>
+            <button onclick="soundNegra(2)" class="tecla secondary-note n3">Fa# Solb</button>
+            <button onclick="soundBlanca(4)" class="tecla primary-note">SOL G3</button>
+            <button onclick="soundNegra(3)" class="tecla secondary-note n4">Sol# Lab</button>
+            <button onclick="soundBlanca(5)" class="tecla primary-note">LA A4</button>
+            <button onclick="soundNegra(4)" class="tecla secondary-note n5">Fa# Solb</button>
+            <button onclick="soundBlanca(6)" class="tecla primary-note">SI B4</button>
+        </div>
+        <div class="escala">
+            <button onclick="soundBlanca(7)" class="tecla primary-note">DO C4</button>
+            <button onclick="soundNegra(5)" class="tecla secondary-note n1">Fa# Solb</button>
+            <button onclick="soundBlanca(8)" class="tecla primary-note">RE D4</button>
+            <button onclick="soundNegra(6)" class="tecla secondary-note n2">Fa# Solb</button>
+            <button onclick="soundBlanca(9)" class="tecla primary-note">MI E4</button>
+            <button onclick="soundBlanca(10)" class="tecla primary-note">FA F4</button>
+            <button onclick="soundNegra(7)" class="tecla secondary-note n3">Sol# Lab</button>
+            <button onclick="soundBlanca(11)" class="tecla primary-note">SOL G4</button>
+            <button onclick="soundNegra(8)" class="tecla secondary-note n4">Sol# Lab</button>
+            <button onclick="soundBlanca(12)" class="tecla primary-note">LA A5</button>
+            <button onclick="soundNegra(9)" class="tecla secondary-note n5">Sol# Lab</button>
+            <button onclick="soundBlanca(13)" class="tecla primary-note">SI B5</button>
+        </div>
+        <div class="escala">
+            <button onclick="soundBlanca(14)" class="tecla primary-note">DO C5</button>
+            <button onclick="soundNegra(10)" class="tecla secondary-note n1">Sol# Lab</button>
+            <button onclick="soundBlanca(15)" class="tecla primary-note">RE D5</button>
+            <button onclick="soundNegra(11)" class="tecla secondary-note n2">Sol# Lab</button>
+            <button onclick="soundBlanca(16)" class="tecla primary-note">MI E5</button>
+            <button onclick="soundBlanca(17)" class="tecla primary-note">FA F5</button>
+            <button onclick="soundNegra(12)" class="tecla secondary-note n3">Sol# Lab</button>
+            <button onclick="soundBlanca(18)" class="tecla primary-note">SOL G5</button>
+            <!-- DragonBall - ?song=LLJKLMLKJIJJHIJKJIHG&title=mmbc0ophbse
+                 PepaPig - ?song=LJHIEEGIKJH&title=hjq0bqqfq
+        coco ?song=MNLIIHLLMMNNLINONNMMLLQQPPNNJJPPOONNLNMMLM&title=pdpd -->
+        </div>
     </div>
 </body>
 

@@ -1,19 +1,9 @@
-
-let tranportePieza = 0;
-let notaActual = 0;
-let notasBlancas = [28, 30, 32, 33, 35, 37, 39, 40, 42, 44, 45, 47, 49, 51, 52, 54, 56, 57, 59];
-let notasNegras = [29, 31, 34, 36, 38, 41, 43, 46, 48, 50, 53, 55, 58];
-let textoDisponibles = [
-    ["C3", "C3#  D3b", "D3", "D3#  E3b", "E3", "F3", "F3#  G3b", "G3", "G3#  A3b", "A3", "A3#  B3b", "B3", "C4", "C4#  D4b", "D4", "D4#  E4b", "E4", "F4", "F4#  G4b", "G4", "G4#  A4b", "A4", "A4#  B4b", "B4", "C5", "C5#  D5b", "D5", "D5#  E5b", "E5", "F5", "F5#  G5b", "G5"],
-    ["DO", "DO# REb", "RE", "RE# MIb", "MI", "FA", "FA# SOLb", "SOL", "SOL# LAb", "LA", "LA# SIb", "SI", "DO", "DO# REb", "RE", "RE# MIb", "MI", "FA", "FA# SOLb", "SOL", "SOL# LAb", "LA", "LA# SIb", "SI", "DO#", "RE", "RE#", "MIb", "MI", "FA#", "SOLb", "SOL"],
-    ["A", "a", "B", "b", "C", "D", "c", "E", "d", "F", "e", "G", "H", "f", "I", "g", "J", "K", "h", "L", "i", "M", "j", "N", "O", "k", "P", "l", "Q", "R", "m", "S"]
-];
-
-let cancionImportada = null;
-let letras = '';
 const NOTESONLINE = './notes/';
 const PATHMUSIC = 'song'
 const PATHSONG = 'title';
+//tranportePieza //notaActual
+let player = new Piano(0, 0);
+console.log(player);
 
 function readPath() {
     //Guarda el parametres de 'PATHMUSIC' y 'PATHSONG'
@@ -21,11 +11,11 @@ function readPath() {
     let titleSong = new URLSearchParams(document.location.search).get(PATHSONG);
 
     if (listaStringNotes == null || listaStringNotes == '') return false;
-    //if (titleSong == null || titleSong == '') return false;
+    if (titleSong == null || titleSong == '') return false;
 
     let lista = listaStringNotes.split("");
-    console.log("Path:", lista);
-    console.log("Title", titleSong);
+    ///console.log("Path:", lista);
+    //console.log("Title", titleSong);
 
     //Tabla ASCII: 65:Mayuscula 97:Minuscula
     let textoListToNumbers = (e) => {
@@ -36,41 +26,12 @@ function readPath() {
     }
 
     //Notas musicales
-    cancionImportada = lista.map(textoListToNumbers);
+    player.titleSong = player.muestraCancion(titleSong)
+    player.cancionImportada = lista.map(textoListToNumbers);
     return true;
 }
 
-function ocultaCancion(texto, encrypt = false) {
-    let nuevoTexto = ""
-    //Para en/des-encriptar tiene que  voltear el textp
-    texto = texto.split("").reverse().join("");
-    //Si es true encripta el texto
-    if (encrypt) {
-        //Primero voltea el texto
-        texto = texto.split("").reverse().join("");
-        for (let i in texto) {
-            //Codigo ascci 'z' => '{'. para evitar pongo  '7'
-            if (texto[i] == "z") {
-                nuevoTexto += "7";
-            } else {
-                //Avanza una letra
-                nuevoTexto += String.fromCharCode(texto[i].charCodeAt() + 1)
-            }
-        }
-        return nuevoTexto;
-    }
 
-    for (let i in texto) {
-        //Se invierten los casos
-        if (texto[i] == "7") {
-            nuevoTexto += "z";
-        } else {
-            //Retrocede una letra
-            nuevoTexto += String.fromCharCode(texto[i].charCodeAt() - 1)
-        }
-    }
-    return nuevoTexto;
-}
 
 function loadMusic() {
     // Si hi han paramentres, retorna 'true'
@@ -79,6 +40,18 @@ function loadMusic() {
         //Amaga el 'transportador' i el 'toca esto'
         document.getElementById("tranporte").style.display = "none";
         document.getElementById("touch-this").style.display = "none";
+    } else {
+        document.getElementById("enviarCancion").style.display = "none";
+        //GeneraButtons
+        let btnContainer = document.getElementById("btnGenerated");
+        let listLetras = disorderWord(player.titleSong).split("");
+        for (let i = 0; i < listLetras.length; i++) {
+            let btn = document.createElement("button");
+            btn.className = "btn-guess"
+            if (listLetras[i] === " ") btn.innerHTML = "&nbsp";
+            if (listLetras[i] !== " ") btn.innerText = listLetras[i];
+            btnContainer.appendChild(btn);
+        }
     }
     //Canvia segons l'escala
     updateTextPiano();
@@ -86,15 +59,18 @@ function loadMusic() {
 
 function tocaEsto() {
     //Si la nota es fora del teclat, reseteja
-    if (notaActual >= cancionImportada.length) notaActual = 0;
+    if (player.notaActual >= player.cancionImportada.length) player.notaActual = 0;
     //Dibuixa la nota al teclat
-    drawTecla(cancionImportada[notaActual]);
+    drawTecla(player.cancionImportada[player.notaActual]);
     // Crea un link de
-    let linkSong = NOTESONLINE + cancionImportada[notaActual] + '.mp3';
+    let linkSong = NOTESONLINE + player.cancionImportada[player.notaActual] + '.mp3';
     var audio = new Audio(linkSong);
     audio.play();
-    document.getElementById("tempo").innerText = `${notaActual + 1}/${cancionImportada.length}`
-    notaActual++;
+    let tempo = document.getElementById("tempo");
+    tempo.innerText = `${player.notaActual + 1}/${player.cancionImportada.length}`;
+    tempo.style.width = (100 * (player.notaActual + 1) / player.cancionImportada.length) + "%";
+
+    player.notaActual++;
 }
 
 function drawTecla(num) {
@@ -109,16 +85,26 @@ function drawTecla(num) {
     for (let i = 0; i < listNegraHTML.length; i++) {
         listNegraHTML[i].style.transform = "";
     }
-
+    let clrsHTML = document.getElementById("touch-this");
     //Si toca una blanca, es mou
     if (notasBlancas.includes(parseInt(num))) {
         let pos = notasBlancas.indexOf(num);
+        //Color de la nota del boton
+        clrsHTML.style.color = colorList[0][pos];
+        clrsHTML.style.textShadow = `1px 1px 1px white`;
+
+        //Crea nota
+        createNoteAnimated(true, colorList[0][pos]);
         listBlancaHTML[pos].style.background = "lightgray";
         listBlancaHTML[pos].style.transform = "translateY(5px)";
     }
     //Si toca una negra, es mou
     if (notasNegras.includes(parseInt(num))) {
         let pos = notasNegras.indexOf(num);
+        //Crea nota
+        createNoteAnimated(false, colorList[1][pos]);
+        clrsHTML.style.color = colorList[1][pos];
+        clrsHTML.style.textShadow = `1px 1px 1px white`;
         listNegraHTML[pos].style.transform = "translateY(5px)";
     }
 
@@ -154,194 +140,45 @@ function soundNegra(ntecla) {
 
 function saveSong(nTecla) {
     //Guarda si el troba, sino es '-1'
-    let esBlanca = notasBlancas.indexOf(nTecla);
-    let esNegra = notasNegras.indexOf(nTecla);
-    if (esBlanca !== -1) {
-        //Si es una blanca es diferent a -1
-        asciLetra = esBlanca + 97;
-        letras = letras + String.fromCharCode(asciLetra).toUpperCase();
-    }
-
-    if (esNegra !== -1) {
-        //Si es una negra es diferent a -1
-        asciLetra = esNegra + 65;
-        letras = letras + String.fromCharCode(asciLetra).toLowerCase();
-    }
+    player.updateLetra(notasBlancas, notasNegras, nTecla)
     //Acualitza el 'a:href'
-    document.getElementById("resultat").href = "./?" + PATHMUSIC + "=" + letras;
-    document.getElementById("resultat").innerText = "Notas Grabadas: " + letras.length;
+    document.getElementById("updateSave").innerText = "Notas Grabadas: " + player.letras.length;
 }
 function pulsado(event) {
-    let nTecla = null;
-    let numNote = null;
-    switch (event.key) {
-        //Teclas blancas
-        case 'z':
-            nTecla = 0
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'x':
-            nTecla = 1;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'c':
-            nTecla = 2;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'v':
-            nTecla = 3;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'b':
-            nTecla = 4;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'n':
-            nTecla = 5;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'm':
-            nTecla = 6;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'a':
-            nTecla = 7;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 's':
-            nTecla = 8;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'd':
-            nTecla = 9;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'f':
-            nTecla = 10;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'g':
-            nTecla = 11;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'h':
-            nTecla = 12;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'j':
-            nTecla = 13;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'q':
-            nTecla = 14;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'w':
-            nTecla = 15;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'e':
-            nTecla = 16;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 'r':
-            nTecla = 17;
-            numNote = notasBlancas[nTecla];
-            break;
-        case 't':
-            nTecla = 18;
-            numNote = notasBlancas[nTecla];
-            break;
-        case '1':
-            //Notas negras
-            nTecla = 0;
-            numNote = notasNegras[nTecla];
-            break;
-        case '2':
-            nTecla = 1;
-            numNote = notasNegras[nTecla];
-            break;
-        case '3':
-            nTecla = 2;
-            numNote = notasNegras[nTecla];
-            break;
-        case '4':
-            nTecla = 3;
-            numNote = notasNegras[nTecla];
-            break;
-        case '5':
-            nTecla = 4;
-            numNote = notasNegras[nTecla];
-            break;
-        case '6':
-            nTecla = 5;
-            numNote = notasNegras[nTecla];
-            break;
-        case '7':
-            nTecla = 6;
-            numNote = notasNegras[nTecla];
-            break;
-        case '8':
-            nTecla = 7;
-            numNote = notasNegras[nTecla];
-            break;
-        case '9':
-            nTecla = 8;
-            numNote = notasNegras[nTecla];
-            break;
-        case '0':
-            nTecla = 9;
-            numNote = notasNegras[nTecla];
-            break;
-        case 'y':
-            nTecla = 10;
-            numNote = notasNegras[nTecla];
-            break;
-        case 'u':
-            nTecla = 11;
-            numNote = notasNegras[nTecla];
-            break;
-        case 'i':
-            nTecla = 12;
-            numNote = notasNegras[nTecla];
-            break;
-    }
+    //Si no es dins del 'input', sona
+    if (document.getElementById("inputSong") !== document.activeElement) {
+        let obj = tecles[event.key];
+        //Si la tecla existeix
+        if (typeof obj !== 'undefined') {
+            // do something 
+            let linkSong = NOTESONLINE + obj.tecla + '.mp3';
+            var audio = new Audio(linkSong);
+            audio.play();
+            //Pinta la tecla blanca o gris en css premuda
+            drawTecla(obj.tecla);
+            //Guarda en 'letras' la nota actual en ASCII 
+            saveSong(obj.tecla);
 
-    //Si la tecla existeix
-    if (numNote != null) {
-        let linkSong = NOTESONLINE + numNote + '.mp3';
-        var audio = new Audio(linkSong);
-        audio.play();
-        //Pinta la tecla blanca o gris en css premuda
-        drawTecla(numNote);
-        //Guarda en 'letras' la nota actual en ASCII 
-        saveSong(numNote);
+            let noteSongHTML = document.getElementById("note_color");
+            noteSongHTML.style.color = tecles[event.key].color;
+            noteSongHTML.style.textShadow = `2px 3px 2px ${tecles[event.key].color} `;
+        }
     }
 }
 
 
 function avanzaEscala() {
     //Reseteja la song
-    notaActual = 0;
     //Si incluye la ultima nota no puede avanzarla
-    if (!cancionImportada.includes(notasBlancas[notasBlancas.length - 1])) {
-        cancionImportada = cancionImportada.map((e) => e + 1);
-        tranportePieza++;
-        document.getElementById("transportePieza").innerText = textSum(tranportePieza);
-        return;
-    }
-    console.log("No puedo hacerlo mas");
+    player.avanzaPieza(notasBlancas)
+    document.getElementById("transportePieza").innerText = textSum(player.tranportePieza);
 }
 
 function retrocedeEscala() {
     //Reseteja la song
-    notaActual = 0;
-    //Si incluye la primera nota no puede avanzarla
-    if (!cancionImportada.includes(notasBlancas[0])) {
-        cancionImportada = cancionImportada.map((e) => e - 1);
-        tranportePieza--;
-        document.getElementById("transportePieza").innerText = textSum(tranportePieza);
-    }
+    //Si incluye la primera nota no puede retroceder
+    player.retrocedePieza(notasBlancas)
+    document.getElementById("transportePieza").innerText = textSum(player.tranportePieza);
 }
 
 function textSum(num) {
@@ -349,4 +186,43 @@ function textSum(num) {
     if (num > 0) return "+" + num;
     //Si no retorna tal cual (el negatiu ja te el -num)
     return num;
+}
+
+function generateLink() {
+    let nameSong = document.getElementById("inputSong").value.toLowerCase();
+    let nResultat = document.getElementById("resultat");
+    nResultat.href = `./?${PATHMUSIC}=${player.letras}&${PATHSONG}=${player.ocultaCancion(nameSong)} `
+    nResultat.innerText = nameSong;
+}
+
+function disorderWord(word) {
+    return word.split('').sort(function () { return 0.5 - Math.random() }).join('').toLowerCase();
+}
+
+
+function resetSong() {
+    player.letras = "";
+    document.getElementById("updateSave").innerText = "Notas Grabadas: " + player.letras.length;
+}
+
+
+function createNoteAnimated(isWhite, color) {
+    let father = document.getElementById("menu-piano");
+    //<div class="note-fall material-icons">music_note</div>
+    let note = document.createElement("div");
+    note.className = "note-fall material-icons";
+    note.innerText = "music_note";
+    note.style.color = color;
+    if (isWhite) {
+        note.style.animation = "fall-music-left 5s linear, rotate 4s linear";
+    } else {
+        note.style.animation = "fall-music-right 5s linear, rotate 4s linear";
+    }
+    note.style.animationFillMode = "forwards";
+    father.appendChild(note);
+    //Borrara las notas que sean mayores de'50'
+    if (document.getElementsByClassName("note-fall").length > 50) {
+        father.removeChild(document.getElementsByClassName("note-fall")[0]);
+    }
+
 }
