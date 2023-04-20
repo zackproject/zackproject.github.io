@@ -13,51 +13,34 @@
 </head>
 
 <body class="piano-page" onload="loadMusic()" onkeydown="pulsado(event)">
-    <div id="menu-piano">
-        <!--<div class="note-fall material-icons">music_note</div>-->
-        <details>
-            <summary>Opciones del Piano</summary>
-            <p>Idioma de la escala</p>
-            <select name="" id="selectTextPiano" onchange="updateTextPiano()">
-                <option value="0">Notación inglesa</option>
-                <option value="1" selected>Notación DO</option>
-                <option value="2">Alfabetico</option>
-            </select>
-            <p>Transportar escala</p>
-            <div class="content">
-                <div id="tranporte">
-                    <button onclick="retrocedeEscala()">
-                        <span class="material-icons">
-                            arrow_back
-                        </span></button>
-                    <span id="transportePieza">0</span>
-                    <button onclick="avanzaEscala()">
-                        <span class="material-icons">
-                            arrow_forward
-                        </span></button>
-                </div>
-            </div>
-        </details>
-        <div id="nota-actual">
+    <header role="banner" aria-label="Encabezado de la página">
+        <h1 aria-label="Encabezado: PIANO" id="titol-piano">PIANO</h1>
+    </header>
+    <!--<div class="note-fall material-icons">music_note</div>-->
+    <div id="menu-escribir-cancion" style="border: 1px solid red;">
+        <!-- solo acepta de la 'a' a la 'z' y ' ' espaciones. No ñ -->
+        <label for="inputSong">Titulo </label>
+        <input id="inputSong" aria-label="Ingresa el nombre de la canción que has creado" type="text"
+            placeholder="Nombre canción" onkeydown="return /[a-z\s]/i.test(event.key)" maxlength="50">
+        <button onclick="generateLink()" class="material-icons" aria-controls="resultat">share
+        </button>
+        <button onclick="resetSong()" class="material-icons" aria-label="Restablecer canción">delete
+        </button>
+        <div id="updateSave">Notas grabadas: 0</div>
+        <a id="resultat" aria-label="Enlace clicable de la canción creada" href="./?music="></a>
+
+    </div>
+    <div id="menu-adivinar-cancion">
+        <div id="progress-bar-music">
             <div id="tempo"></div>
         </div>
-        <div id="enviarCancion">
-            <!-- solo acepta de la 'a' a la 'z' y ' ' espaciones. No ñ -->
-            <input id="inputSong" type="text" placeholder="Nombre canción" onkeydown="return /[a-z\s]/i.test(event.key)"
-                maxlength="50">
-            <button onclick="generateLink()">Generar link</button>
-            <button onclick="resetSong()">Reset Song</button>
-            <a id="resultat" href="./?music="></a> <a href="./"></a>
-            <div id="updateSave"></div>
+        <div id="menu-piano">
+            <button aria-label="Abrir dialog para adivinar cancion" class="btn-adivina-song">ADIVINAR CANCIÓN</button>
+
+            <button aria-label="Reproducir nota de la cancion grabada" id="touch-this" class="material-icons"
+                onclick="tocaEsto()">music_note</button>
         </div>
 
-        <button id="touch-this" class="material-icons" onclick="tocaEsto()">music_note</button>
-        <details>
-            <summary>
-                Adivina Cancion
-            </summary>
-            <div id="btnGenerated"></div>
-        </details>
     </div>
 
     <div class="piano">
@@ -102,7 +85,25 @@
                  PepaPig - ?song=LJHIEEGIKJH&title=hjq0bqqfq
         coco ?song=MNLIIHLLMMNNLINONNMMLLQQPPNNJJPPOONNLNMMLM&title=pdpd -->
         </div>
+
     </div>
+    <select name="" id="selectTextPiano" onchange="updateTextPiano()">
+        <option value="0">NOTACIÓN INGLESA</option>
+        <option value="1" selected>NOTACIÓN DO</option>
+        <option value="2">Alfabetico</option>
+    </select>
+    <button onclick="retrocedeEscala()">
+        <span class="material-icons">
+            arrow_back
+        </span></button>
+    <span id="transportePieza">0</span>
+    <button onclick="avanzaEscala()">
+        <span class="material-icons">
+            arrow_forward
+        </span></button>
+
+    <div class="piano-reset"><a href="/piano">CREAR CANCIÓN</a></div>
+    <div style="display: none" id="btnGenerated"></div>
 </body>
 
 </html>

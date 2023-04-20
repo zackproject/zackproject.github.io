@@ -38,10 +38,11 @@ function loadMusic() {
     let paramsDisponibles = readPath();
     if (!paramsDisponibles) {
         //Amaga el 'transportador' i el 'toca esto'
-        document.getElementById("tranporte").style.display = "none";
-        document.getElementById("touch-this").style.display = "none";
+        document.getElementById("menu-adivinar-cancion").style.display = "none";
+        document.getElementById("menu-escribir-cancion").style.display = "block";
     } else {
-        document.getElementById("enviarCancion").style.display = "none";
+        document.getElementById("menu-adivinar-cancion").style.display = "block";
+        document.getElementById("menu-escribir-cancion").style.display = "none";
         //GeneraButtons
         let btnContainer = document.getElementById("btnGenerated");
         let listLetras = disorderWord(player.titleSong).split("");
@@ -67,7 +68,7 @@ function tocaEsto() {
     var audio = new Audio(linkSong);
     audio.play();
     let tempo = document.getElementById("tempo");
-    tempo.innerText = `${player.notaActual + 1}/${player.cancionImportada.length}`;
+    tempo.innerHTML = `&nbsp ${player.notaActual + 1}/${player.cancionImportada.length}`;
     tempo.style.width = (100 * (player.notaActual + 1) / player.cancionImportada.length) + "%";
 
     player.notaActual++;
@@ -91,8 +92,6 @@ function drawTecla(num) {
         let pos = notasBlancas.indexOf(num);
         //Color de la nota del boton
         clrsHTML.style.color = colorList[0][pos];
-        clrsHTML.style.textShadow = `1px 1px 1px white`;
-
         //Crea nota
         createNoteAnimated(true, colorList[0][pos]);
         listBlancaHTML[pos].style.background = "lightgray";
@@ -104,7 +103,6 @@ function drawTecla(num) {
         //Crea nota
         createNoteAnimated(false, colorList[1][pos]);
         clrsHTML.style.color = colorList[1][pos];
-        clrsHTML.style.textShadow = `1px 1px 1px white`;
         listNegraHTML[pos].style.transform = "translateY(5px)";
     }
 
@@ -118,6 +116,7 @@ function updateTextPiano() {
         //Per cada tecla actualitza el contingut
         const element = document.getElementsByClassName("tecla")[i];
         element.innerText = textoDisponibles[slctNum][i];
+        element.ariaLabel = "Reproducir nota " + textoDisponibles[slctNum][i];
     }
 
 }
@@ -159,9 +158,6 @@ function pulsado(event) {
             //Guarda en 'letras' la nota actual en ASCII 
             saveSong(obj.tecla);
 
-            let noteSongHTML = document.getElementById("note_color");
-            noteSongHTML.style.color = tecles[event.key].color;
-            noteSongHTML.style.textShadow = `2px 3px 2px ${tecles[event.key].color} `;
         }
     }
 }
@@ -214,9 +210,9 @@ function createNoteAnimated(isWhite, color) {
     note.innerText = "music_note";
     note.style.color = color;
     if (isWhite) {
-        note.style.animation = "fall-music-left 5s linear, rotate 4s linear";
+        note.style.animation = "fall-music-left 3s linear, rotate 4s linear";
     } else {
-        note.style.animation = "fall-music-right 5s linear, rotate 4s linear";
+        note.style.animation = "fall-music-right 3s linear, rotate 4s linear";
     }
     note.style.animationFillMode = "forwards";
     father.appendChild(note);
