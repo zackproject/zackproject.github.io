@@ -35,7 +35,7 @@
             <div id="tempo"></div>
         </div>
         <div id="menu-piano">
-            <button aria-label="Abrir dialog para adivinar cancion" class="btn-adivina-song">ADIVINAR CANCIÓN</button>
+            <button aria-label="Abrir dialog para adivinar cancion" onclick="switchModalGuess()" class="btn-adivina-song">ADIVINAR CANCIÓN</button>
 
             <button aria-label="Reproducir nota de la cancion grabada" id="touch-this" class="material-icons"
                 onclick="tocaEsto()">music_note</button>
@@ -85,7 +85,6 @@
                  PepaPig - ?song=LJHIEEGIKJH&title=hjq0bqqfq
         coco ?song=MNLIIHLLMMNNLINONNMMLLQQPPNNJJPPOONNLNMMLM&title=pdpd -->
         </div>
-
     </div>
     <select name="" id="selectTextPiano" onchange="updateTextPiano()">
         <option value="0">NOTACIÓN INGLESA</option>
@@ -103,7 +102,14 @@
         </span></button>
 
     <div class="piano-reset"><a href="/piano">CREAR CANCIÓN</a></div>
-    <div style="display: none" id="btnGenerated"></div>
+    <div id="dialogAdivina">
+        <h2>Adivina</h2>
+        <div id="btnGenerated"></div>
+        <input type="text" id="inputGuesSong" onchange="checkInputSong()"
+            aria-describedby="songDescription">
+        <label for="inputGuesSong">Escribe el título a partir de las letras de los botones y pulsa Enviar</label>
+        <button onclick="switchModalGuess()">CERRAR</button>
+    </div>
 </body>
 
 </html>

@@ -1,9 +1,10 @@
 let notasBlancas = [28, 30, 32, 33, 35, 37, 39, 40, 42, 44, 45, 47, 49, 51, 52, 54, 56, 57, 59]; //notasBlancas
 let notasNegras = [29, 31, 34, 36, 38, 41, 43, 46, 48, 50, 53, 55, 58]; //notasNegras
 let colorList = [
-    ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown", "gray", "black", "white", "teal", "maroon", "navy", "olive", "lime", "aqua", "fuchsia", "silver"],
-    ["gold", "indigo", "ivory", "khaki", "lavender", "magenta", "mint", "peach", "plum", "rose", "salmon", "tan", "turquoise"]
+    ["#FF5733", "#FFC300", "#DAF7A6", "#9ED9E8", "#C0C0C0", "#4B0082", "#800000", "#FFB89E", "#FFE0B2", "#ECFCCB", "#D2EEF3", "#E6E6E6", "#9666A8", "#B30000", "#E64D00", "#CCA300", "#80FF00", "#66B2FF", "#808080"],
+    ["#FF5733", "#DAF7A6", "#9ED9E8", "#800000", "#00FF00", "#FFB89E", "#ECFCCB", "#D2EEF3", "#B30000", "#80FF00", "#E64D00", "#B3B300", "#00802b"] //, "#005266", "#404040"
 ];
+
 let tecles =
 {
     "z": { "pos": 0, "tecla": notasBlancas[0] },
@@ -49,13 +50,15 @@ let textoDisponibles = [
 let cancionImportada = null;
 let letras = '';
 let nameSong = null;
+
 class Piano {
-    constructor(tranportePieza, notaActual, cancionImportada = null, titleSong = null, letras = "") {
+    constructor(tranportePieza, notaActual, disordedTitle, cancionImportada = null, titleSong = null, letras = "") {
         this.tranportePieza = tranportePieza;
         this.notaActual = notaActual;
         this.cancionImportada = cancionImportada;
-        this.titleSong = titleSong,
-            this.letras = letras
+        this.titleSong = titleSong;
+        this.letras = letras;
+        this.disordedTitle = disordedTitle;
     }
 
     avanzaPieza(nBlancas) {

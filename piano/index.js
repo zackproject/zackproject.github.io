@@ -27,9 +27,12 @@ function readPath() {
 
     //Notas musicales
     player.titleSong = player.muestraCancion(titleSong)
+    player.disordedTitle = disorderWord(player.titleSong);
+
     player.cancionImportada = lista.map(textoListToNumbers);
     return true;
 }
+
 
 
 
@@ -44,18 +47,29 @@ function loadMusic() {
         document.getElementById("menu-adivinar-cancion").style.display = "block";
         document.getElementById("menu-escribir-cancion").style.display = "none";
         //GeneraButtons
-        let btnContainer = document.getElementById("btnGenerated");
-        let listLetras = disorderWord(player.titleSong).split("");
-        for (let i = 0; i < listLetras.length; i++) {
-            let btn = document.createElement("button");
-            btn.className = "btn-guess"
-            if (listLetras[i] === " ") btn.innerHTML = "&nbsp";
-            if (listLetras[i] !== " ") btn.innerText = listLetras[i];
-            btnContainer.appendChild(btn);
-        }
+        generateButtonsGuess();
+        let inputGuess = document.getElementById("inputGuesSong");
+        //L'input nomes admet la quantitat de lletres de la 'song'
+        inputGuess.maxLength = player.titleSong.length;
     }
     //Canvia segons l'escala
     updateTextPiano();
+}
+
+function generateButtonsGuess() {
+    let btnContainer = document.getElementById("btnGenerated");
+
+    deleteChilds(btnContainer);
+    let listLetras = player.disordedTitle;
+    for (let i = 0; i < listLetras.length; i++) {
+        let btn = document.createElement("button");
+        btn.className = "btn-guess";
+        if (listLetras[i] === " ")
+            btn.innerHTML = "&nbsp";
+        if (listLetras[i] !== " ")
+            btn.innerText = listLetras[i];
+        btnContainer.appendChild(btn);
+    }
 }
 
 function tocaEsto() {
@@ -144,8 +158,9 @@ function saveSong(nTecla) {
     document.getElementById("updateSave").innerText = "Notas Grabadas: " + player.letras.length;
 }
 function pulsado(event) {
+    console.log();
     //Si no es dins del 'input', sona
-    if (document.getElementById("inputSong") !== document.activeElement) {
+    if (!inputActive()) {
         let obj = tecles[event.key];
         //Si la tecla existeix
         if (typeof obj !== 'undefined') {
@@ -159,6 +174,18 @@ function pulsado(event) {
             saveSong(obj.tecla);
 
         }
+    }
+}
+
+//Mira si el 'input' de la cancio es actiu, per desacticar el teclat premut
+function inputActive() {
+    switch (document.activeElement) {
+        case document.getElementById("inputSong"):
+            return true;
+        case document.getElementById("inputGuesSong"):
+            return true
+        default:
+            return false;
     }
 }
 
@@ -191,9 +218,7 @@ function generateLink() {
     nResultat.innerText = nameSong;
 }
 
-function disorderWord(word) {
-    return word.split('').sort(function () { return 0.5 - Math.random() }).join('').toLowerCase();
-}
+
 
 
 function resetSong() {
@@ -221,4 +246,48 @@ function createNoteAnimated(isWhite, color) {
         father.removeChild(document.getElementsByClassName("note-fall")[0]);
     }
 
+}
+
+function checkInputSong() {
+    //Genera de nuevo los botones, era eso o limpiar el formato
+    generateButtonsGuess();
+    //El text del 'input' es posa en minuscula i es torna array
+    let inputGuess = document.getElementById("inputGuesSong").value.toLowerCase().split("");
+    //Canvia los espacios del input ' ' por '&nbsp;' 
+    inputGuess = inputGuess.map((e) => e.replace(' ', '&nbsp;'));
+    let btnList = document.getElementsByClassName("btn-guess");
+    //Segon bucle per les lletres del input
+    for (let i = 0; i < inputGuess.length; i++) {
+        //Bucle per als botons
+        for (let j = 0; j < btnList.length; j++) {
+            //Per cada lletra del input es comprova els botons 
+            if (inputGuess[i] == btnList[j].innerHTML && !btnList[j].disabled) {
+                btnList[j].style.background = "white";
+                btnList[j].style.color = "black";
+                btnList[j].disabled = true;
+                break;
+            }
+        }
+
+    }
+}
+function switchModalGuess() {
+    let dialogAdivina = document.getElementById("dialogAdivina");
+    if (dialogAdivina.style.top === "") {
+        dialogAdivina.style.top = "50%";
+        return;
+    }
+    dialogAdivina.style.top = "";
+}
+
+
+
+function deleteChilds(currentDiv) {
+    while (currentDiv.firstChild) {
+        currentDiv.removeChild(currentDiv.firstChild);
+    }
+}
+//Disorder the word randoom
+function disorderWord(word) {
+    return word.split('').sort(function () { return 0.5 - Math.random() }).join('').toLowerCase();
 }
