@@ -136,6 +136,10 @@ function updateTextPiano() {
 }
 
 function soundBlanca(ntecla) {
+    //Crea animacio nota blanca
+    let clrsHTML = document.getElementById("touch-this");
+    clrsHTML.style.color = colorList[0][ntecla];
+    createNoteAnimated(true, colorList[0][ntecla]);
     //Toca la blanca i guarda la tecla
     let linkSong = NOTESONLINE + notasBlancas[ntecla] + '.mp3';
     var audio = new Audio(linkSong);
@@ -144,6 +148,10 @@ function soundBlanca(ntecla) {
 }
 
 function soundNegra(ntecla) {
+    //Crea animacio nota blanca
+    let clrsHTML = document.getElementById("touch-this");
+    clrsHTML.style.color = colorList[1][ntecla];
+    createNoteAnimated(false, colorList[1][ntecla]);
     //Toca la negra i guarda la tecla
     let linkSong = NOTESONLINE + notasNegras[ntecla] + ".mp3"
     var audio = new Audio(linkSong);
@@ -158,10 +166,10 @@ function saveSong(nTecla) {
     document.getElementById("updateSave").innerText = "Notas Grabadas: " + player.letras.length;
 }
 function pulsado(event) {
-    console.log();
+    console.log(event.keyCode, "notado", event.key);
     //Si no es dins del 'input', sona
     if (!inputActive()) {
-        let obj = tecles[event.key];
+        let obj = tecles[event.keyCode];
         //Si la tecla existeix
         if (typeof obj !== 'undefined') {
             // do something 
@@ -252,16 +260,19 @@ function checkInputSong() {
     //Genera de nuevo los botones, era eso o limpiar el formato
     generateButtonsGuess();
     //El text del 'input' es posa en minuscula i es torna array
-    let inputGuess = document.getElementById("inputGuesSong").value.toLowerCase().split("");
+    let inputGuess = document.getElementById("inputGuesSong").value;
+    let inputGuessList = inputGuess.split("");
     //Canvia los espacios del input ' ' por '&nbsp;' 
-    inputGuess = inputGuess.map((e) => e.replace(' ', '&nbsp;'));
+    inputGuessList = inputGuessList.map((e) => e.replace(' ', '&nbsp;'));
     let btnList = document.getElementsByClassName("btn-guess");
+    var label = document.querySelector("label[for='inputGuesSong']");
+
     //Segon bucle per les lletres del input
-    for (let i = 0; i < inputGuess.length; i++) {
+    for (let i = 0; i < inputGuessList.length; i++) {
         //Bucle per als botons
         for (let j = 0; j < btnList.length; j++) {
             //Per cada lletra del input es comprova els botons 
-            if (inputGuess[i] == btnList[j].innerHTML && !btnList[j].disabled) {
+            if (inputGuessList[i] == btnList[j].innerHTML && !btnList[j].disabled) {
                 btnList[j].style.background = "white";
                 btnList[j].style.color = "black";
                 btnList[j].disabled = true;
@@ -270,6 +281,19 @@ function checkInputSong() {
         }
 
     }
+    //Si falla
+    label.innerText = "Incorrecto, prueba otra vez";
+    //Si adivina la cancion
+    if (inputGuess === player.titleSong) {
+        for (let i = 0; i < btnList.length; i++) {
+            btnList[i].style.background = "green";
+            btnList[i].style.color = "white";
+            btnList[i].disabled = true;
+        }
+        // Sobrescribe el texto si 
+        label.innerText = "CORRECTO";
+    }
+    label.focus()
 }
 function switchModalGuess() {
     let dialogAdivina = document.getElementById("dialogAdivina");
@@ -289,5 +313,8 @@ function deleteChilds(currentDiv) {
 }
 //Disorder the word randoom
 function disorderWord(word) {
-    return word.split('').sort(function () { return 0.5 - Math.random() }).join('').toLowerCase();
+    let disorded = word.split('').sort(function () { return 0.5 - Math.random() }).join('').toLowerCase();
+    //Que lo haga una segunda vez solo
+    if (disorded === word) disorded = word.split('').sort(function () { return 0.5 - Math.random() }).join('').toLowerCase();
+    return disorded;
 }
