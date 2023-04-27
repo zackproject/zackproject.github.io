@@ -18,12 +18,12 @@
     </header>
     <div id="menu-escribir-cancion">
         <!-- solo acepta de la 'a' a la 'z' y ' ' espaciones. No ñ -->
-        <label class="material-icons" for="inputSong">music_note</label>
-        <input id="inputSong" aria-label="Ingresa el nombre de la canción que has creado" type="text"
+        <label class="material-icons" for="inputSong" aria-label="Canción">music_note</label>
+        <input id="inputSong"  type="text"
             placeholder="Escribe un titulo" onkeydown="return /[a-z\s]/i.test(event.key)" maxlength="50">
         <button onclick="generateLink()" class="material-icons" aria-label="Compartir cancion">share
         </button>
-        <button onclick="resetSong()" class="material-icons" aria-label="Restablecer canción">delete
+        <button onclick="resetSong()" class="material-icons" aria-label="Eliminar canción">delete
         </button>
     </div>
     <details>
@@ -67,8 +67,8 @@
     <!--<div class="note-fall material-icons">music_note</div>-->
 
     <div id="updateSave">Notas grabadas: 0</div>
-    <div class="href-resultat">
-        <a id="resultat" aria-label="Enlace clicable de la canción creada" href="./?music="></a>
+    <div class="href-resultat" >
+        <a id="resultat" aria-hidden="true" href="./?music="></a>
     </div>
     <div id="menu-adivinar-cancion">
         <div id="progress-bar-container">

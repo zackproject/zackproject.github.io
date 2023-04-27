@@ -234,6 +234,8 @@ function generateLink() {
     let nResultat = document.getElementById("resultat");
     nResultat.href = `./?${PATHMUSIC}=${player.letras}&${PATHSONG}=${player.ocultaCancion(nameSong)} `
     nResultat.innerText = nameSong;
+    nResultat.ariaLabel = "Enlace clicable de la canción creada '"+nameSong+"'";
+    nResultat.ariaHidden =false;
     nResultat.focus();
 }
 
