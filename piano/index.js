@@ -41,10 +41,14 @@ function loadMusic() {
     let paramsDisponibles = readPath();
     if (!paramsDisponibles) {
         //Amaga el 'transportador' i el 'toca esto'
+        document.getElementById("menu-create-song").style.display = "none";
         document.getElementById("menu-adivinar-cancion").style.display = "none";
-        document.getElementById("menu-escribir-cancion").style.display = "block";
+        document.getElementById("menu-transport-song").style.display = "none";
+        document.getElementById("menu-escribir-cancion").style.display = "flex";
     } else {
+        document.getElementById("menu-create-song").style.display = "block";
         document.getElementById("menu-adivinar-cancion").style.display = "block";
+        document.getElementById("menu-transport-song").style.display = "none";
         document.getElementById("menu-escribir-cancion").style.display = "none";
         //GeneraButtons
         generateButtonsGuess();
@@ -54,6 +58,7 @@ function loadMusic() {
     }
     //Canvia segons l'escala
     updateTextPiano();
+
 }
 
 function generateButtonsGuess() {
@@ -81,10 +86,15 @@ function tocaEsto() {
     let linkSong = NOTESONLINE + player.cancionImportada[player.notaActual] + '.mp3';
     var audio = new Audio(linkSong);
     audio.play();
-    let tempo = document.getElementById("tempo");
-    tempo.innerHTML = `&nbsp ${player.notaActual + 1}/${player.cancionImportada.length}`;
-    tempo.style.width = (100 * (player.notaActual + 1) / player.cancionImportada.length) + "%";
 
+    let progresBarContainer = document.getElementById("progress-bar-container");
+    let progresBar = document.getElementById("progress-bar-music");
+    let tempo = document.getElementById("tempo");
+    tempo.innerHTML = `${player.notaActual + 1}/${player.cancionImportada.length}`;
+    progresBar.style.width = (100 * (player.notaActual + 1) / player.cancionImportada.length) + "%";
+    progresBar.ariaLabel = `Notas tocadas: ${player.notaActual + 1}/${player.cancionImportada.length}`
+    tempo.ariaLabel = `Notas tocadas: ${player.notaActual + 1}/${player.cancionImportada.length}`
+    progresBarContainer.ariaLabel = `Notas restantes: ${player.cancionImportada.length - player.notaActual + 1}`
     player.notaActual++;
 }
 
@@ -92,7 +102,7 @@ function drawTecla(num) {
     //Neteja totes les tecles blanques
     let listBlancaHTML = document.getElementsByClassName("primary-note");
     for (let i = 0; i < listBlancaHTML.length; i++) {
-        listBlancaHTML[i].style.background = "";
+        // listBlancaHTML[i].style.background = "";
         listBlancaHTML[i].style.transform = "";
     }
     //Neteja totes les tecles negres
@@ -108,7 +118,7 @@ function drawTecla(num) {
         clrsHTML.style.color = colorList[0][pos];
         //Crea nota
         createNoteAnimated(true, colorList[0][pos]);
-        listBlancaHTML[pos].style.background = "lightgray";
+        // listBlancaHTML[pos].style.background = "lightgray";
         listBlancaHTML[pos].style.transform = "translateY(5px)";
     }
     //Si toca una negra, es mou
@@ -163,7 +173,7 @@ function saveSong(nTecla) {
     //Guarda si el troba, sino es '-1'
     player.updateLetra(notasBlancas, notasNegras, nTecla)
     //Acualitza el 'a:href'
-    document.getElementById("updateSave").innerText = "Notas Grabadas: " + player.letras.length;
+    document.getElementById("updateSave").innerText = "Notas grabadas: " + player.letras.length;
 }
 function pulsado(event) {
     console.log(event.keyCode, "notado", event.key);
@@ -224,6 +234,7 @@ function generateLink() {
     let nResultat = document.getElementById("resultat");
     nResultat.href = `./?${PATHMUSIC}=${player.letras}&${PATHSONG}=${player.ocultaCancion(nameSong)} `
     nResultat.innerText = nameSong;
+    nResultat.focus();
 }
 
 
@@ -240,6 +251,7 @@ function createNoteAnimated(isWhite, color) {
     //<div class="note-fall material-icons">music_note</div>
     let note = document.createElement("div");
     note.className = "note-fall material-icons";
+    note.ariaHidden = true;
     note.innerText = "music_note";
     note.style.color = color;
     if (isWhite) {
@@ -260,7 +272,7 @@ function checkInputSong() {
     //Genera de nuevo los botones, era eso o limpiar el formato
     generateButtonsGuess();
     //El text del 'input' es posa en minuscula i es torna array
-    let inputGuess = document.getElementById("inputGuesSong").value;
+    let inputGuess = document.getElementById("inputGuesSong").value.toLowerCase();
     let inputGuessList = inputGuess.split("");
     //Canvia los espacios del input ' ' por '&nbsp;' 
     inputGuessList = inputGuessList.map((e) => e.replace(' ', '&nbsp;'));
@@ -292,16 +304,22 @@ function checkInputSong() {
         }
         // Sobrescribe el texto si 
         label.innerText = "CORRECTO";
+        let btn = document.getElementById("btn-adivina-song");
+        btn.disabled = true;
+        btn.innerText = player.titleSong.toUpperCase();
     }
     label.focus()
 }
 function switchModalGuess() {
     let dialogAdivina = document.getElementById("dialogAdivina");
     if (dialogAdivina.style.top === "") {
+        dialogAdivina.ariaHidden = false;
+        document.getElementById("inputGuesSong").focus();
         dialogAdivina.style.top = "50%";
         return;
     }
     dialogAdivina.style.top = "";
+    dialogAdivina.ariaHidden = true;
 }
 
 
@@ -318,3 +336,17 @@ function disorderWord(word) {
     if (disorded === word) disorded = word.split('').sort(function () { return 0.5 - Math.random() }).join('').toLowerCase();
     return disorded;
 }
+
+
+function pintaPrimaryNote(e) {
+    console.log();
+    let checked = e.target.checked;
+    for (let i = 0; i < document.getElementsByClassName("primary-note").length; i++) {
+        const element = document.getElementsByClassName("primary-note")[i];
+        //Canvia colors entre colorit o blancs
+        element.style.background = checked ? colorList[0][i] : "white";
+    }
+
+
+}
+

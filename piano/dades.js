@@ -1,8 +1,16 @@
 let notasBlancas = [28, 30, 32, 33, 35, 37, 39, 40, 42, 44, 45, 47, 49, 51, 52, 54, 56, 57, 59, 61, 63]; //notasBlancas
 let notasNegras = [29, 31, 34, 36, 38, 41, 43, 46, 48, 50, 53, 55, 58, 60, 62]; //notasNegras
 let colorList = [
-    ["#FF5733", "#FFC300", "#DAF7A6", "#9ED9E8", "#C0C0C0", "#4B0082", "#800000", "#FFB89E", "#FFE0B2", "#ECFCCB", "#D2EEF3", "#E6E6E6", "#9666A8", "#B30000", "#E64D00", "#CCA300", "#80FF00", "#66B2FF", "#808080"],
-    ["#FF5733", "#DAF7A6", "#9ED9E8", "#800000", "#00FF00", "#FFB89E", "#ECFCCB", "#D2EEF3", "#B30000", "#80FF00", "#E64D00", "#B3B300", "#00802b", "#005266", "#404040"] //, 
+    [//Teclas blancas
+        '#FF0000', '#FFA500', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#EE82EE', //Escala 1
+        '#FF4C4C', '#FF923D', '#FFFF4C', '#4CFF4C', '#4C4CFF', '#9d2dff', '#B84CBF', //Escala 2
+        '#FF5A5A', '#FFA347', '#FFFF5A', '#5AFF5A', '#5A5AFF', '#9367c8', '#C75BCF', //Escala 3
+    ],
+    [ //Teclas negras
+        "#FF5300", "#FFD200", "#008080", "#2c0082", "#9D41B8", //Escala 1
+        '#FF6B33', '#FFE666', '#009999', '#3700A1', '#AD56C3', //Escala 2
+        "#ff853e", "#fff48f", "#00b3b3", "#3500c1", "#c977d4"  //Escala 3
+    ]
 ];
 
 let tecles =

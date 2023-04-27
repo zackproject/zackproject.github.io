@@ -16,26 +16,68 @@
     <header role="banner" aria-label="Encabezado de la página">
         <h1 aria-label="Encabezado: PIANO" id="titol-piano">PIANO</h1>
     </header>
-    <!--<div class="note-fall material-icons">music_note</div>-->
-    <div id="menu-escribir-cancion" style="border: 1px solid red;">
+    <div id="menu-escribir-cancion">
         <!-- solo acepta de la 'a' a la 'z' y ' ' espaciones. No ñ -->
-        <label for="inputSong">Titulo </label>
+        <label class="material-icons" for="inputSong">music_note</label>
         <input id="inputSong" aria-label="Ingresa el nombre de la canción que has creado" type="text"
-            placeholder="Nombre canción" onkeydown="return /[a-z\s]/i.test(event.key)" maxlength="50">
-        <button onclick="generateLink()" class="material-icons" aria-controls="resultat">share
+            placeholder="Escribe un titulo" onkeydown="return /[a-z\s]/i.test(event.key)" maxlength="50">
+        <button onclick="generateLink()" class="material-icons" aria-label="Compartir cancion">share
         </button>
         <button onclick="resetSong()" class="material-icons" aria-label="Restablecer canción">delete
         </button>
-        <div id="updateSave">Notas grabadas: 0</div>
-        <a id="resultat" aria-label="Enlace clicable de la canción creada" href="./?music="></a>
+    </div>
+    <details>
+        <summary>Más opciones</summary>
+        <div class="menu-options-piano">
+            <div id="menu-create-song" class="options-piano">
+                <div class="piano-reset">Nueva canción <a href="/piano">CREAR</a> </div>
+            </div>
+            <div class="options-piano">
+                <label for="cbox1" aria-label="Colorear piano"
+                    title="Clica para activar el color del piano, no se porque una persona ciega quedria colorearlo. Pero si te hace ilusion, hazlo">
+                    Colorear
+                </label>
+                <input type="checkbox" id="cbox1" onchange="pintaPrimaryNote(event)" aria-label="Colorear piano"
+                    title="Marque esta casilla para colorear el piano" value="first_checkbox">
+            </div>
+            <div class="options-piano">
+                <label for="selectTextPiano">Notación</label>
+                <select name="notacion" id="selectTextPiano" onchange="updateTextPiano()">
+                    <option value="0">NOTACIÓN INGLESA</option>
+                    <option value="1" selected>NOTACIÓN DO</option>
+                    <option value="2">Alfabetico</option>
+                    <option value="3">Sin notación</option>
+                </select>
+            </div>
+            <div id="menu-transport-song" class="options-piano">
+                Pieza transportada: <span id="transportePieza">0</span>
+                <button onclick="retrocedeEscala()" aria-label="Transportar pieza a menor">
+                    <span class="material-icons">
+                        arrow_back
+                    </span></button>
 
+                <button onclick="avanzaEscala()">
+                    <span class="material-icons" aria-label="Transportar pieza a mayor">
+                        arrow_forward
+                    </span></button>
+            </div>
+        </div>
+    </details>
+
+    <!--<div class="note-fall material-icons">music_note</div>-->
+
+    <div id="updateSave">Notas grabadas: 0</div>
+    <div class="href-resultat">
+        <a id="resultat" aria-label="Enlace clicable de la canción creada" href="./?music="></a>
     </div>
     <div id="menu-adivinar-cancion">
-        <div id="progress-bar-music">
-            <div id="tempo"></div>
+        <div id="progress-bar-container">
+            <div id="tempo">0/0</div>
+            <div id="progress-bar-music"></div>
         </div>
         <div id="menu-piano">
-            <button aria-label="Abrir dialog para adivinar cancion" onclick="switchModalGuess()" class="btn-adivina-song">ADIVINAR CANCIÓN</button>
+            <button class="btn-piano" aria-label="Abrir modal para adivinar cancion" onclick="switchModalGuess()"
+                id="btn-adivina-song">ADIVINAR CANCIÓN</button>
 
             <button aria-label="Reproducir nota de la cancion grabada" id="touch-this" class="material-icons"
                 onclick="tocaEsto()">music_note</button>
@@ -90,31 +132,18 @@
         coco ?song=MNLIIHLLMMNNLINONNMMLLQQPPNNJJPPOONNLNMMLM&title=pdpd -->
         </div>
     </div>
-    <select name="" id="selectTextPiano" onchange="updateTextPiano()">
-        <option value="0">NOTACIÓN INGLESA</option>
-        <option value="1" selected>NOTACIÓN DO</option>
-        <option value="2">Alfabetico</option>
-        <option value="3">Nada</option>
 
-    </select>
-    <button onclick="retrocedeEscala()">
-        <span class="material-icons">
-            arrow_back
-        </span></button>
-    <span id="transportePieza">0</span>
-    <button onclick="avanzaEscala()">
-        <span class="material-icons">
-            arrow_forward
-        </span></button>
 
-    <div class="piano-reset"><a href="/piano">CREAR CANCIÓN</a></div>
-    <div id="dialogAdivina">
-        <h2>Adivina</h2>
+
+
+    <div id="dialogAdivina" aria-modal="true" aria-hidden="true">
+        <h2 id="adivinatitle">Adivina</h2>
         <div id="btnGenerated"></div>
-        <input type="text" id="inputGuesSong" onchange="checkInputSong()"
-            aria-describedby="songDescription">
-        <label for="inputGuesSong">Escribe el título a partir de las letras de los botones y pulsa Enviar</label>
-        <button onclick="switchModalGuess()">CERRAR</button>
+        <label for="inputGuesSong" style="text-align: center;">
+            Crea el título a partir de las letras de los botones y pulsa 'Enter'.
+        </label>
+        <input type="text" id="inputGuesSong" placeholder="titulo" autofocus onchange="checkInputSong()">
+        <button class="btn-piano" onclick="switchModalGuess()">CERRAR</button>
     </div>
 </body>
 
