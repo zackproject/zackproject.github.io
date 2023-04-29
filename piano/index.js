@@ -38,10 +38,11 @@ function loadMusic() {
     // Si hi han paramentres, retorna 'true'
     let paramsDisponibles = readPath();
     //Si hi han parametres de 'song' i 'title' es mostra el menu, sino el menu es per crearla
-    document.getElementById("menu-transport-song").style.display = paramsDisponibles ? "none" : "block";
+    document.getElementById("menu-transport-song").style.display = paramsDisponibles ? "block" : "none";
     document.getElementById("menu-escribir-cancion").style.display = paramsDisponibles ? "none" : "flex";
     document.getElementById("menu-create-song").style.display = paramsDisponibles ? "block" : "none";
     document.getElementById("menu-adivinar-cancion").style.display = paramsDisponibles ? "block" : "none";
+    document.getElementById("updateSave").style.display = paramsDisponibles ? "none" : "block";
 
     if (paramsDisponibles) {
         //GeneraButtons
@@ -58,13 +59,20 @@ function generateButtonsGuess() {
 
     deleteChilds(btnContainer);
     let listLetras = player.disordedTitle;
+    let text = "Escribe la siguiente letra en el cuadro de texto: ";
     for (let i = 0; i < listLetras.length; i++) {
-        let btn = document.createElement("button");
+        let btn = document.createElement("span");
         btn.className = "btn-guess";
-        if (listLetras[i] === " ")
+        if (listLetras[i] === " ") {
             btn.innerHTML = "&nbsp";
-        if (listLetras[i] !== " ")
+            btn.ariaLabel = text + "Espacio";
+        }
+
+        if (listLetras[i] !== " ") {
             btn.innerText = listLetras[i];
+            btn.ariaLabel = text + listLetras[i];
+        }
+
         btnContainer.appendChild(btn);
     }
 }
@@ -306,12 +314,16 @@ function checkInputSong() {
 }
 function switchModalGuess() {
     let dialogAdivina = document.getElementById("dialogAdivina");
+    let fons = document.getElementById("fondo-card");
     if (dialogAdivina.style.top === "") {
         dialogAdivina.ariaHidden = false;
         document.getElementById("inputGuesSong").focus();
         dialogAdivina.style.top = "50%";
+        fons.style.display = "block";
         return;
     }
+    fons.style.display = "none";
+
     dialogAdivina.style.top = "";
     dialogAdivina.ariaHidden = true;
 }
