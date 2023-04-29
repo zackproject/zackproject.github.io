@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -26,7 +26,8 @@
                 PARTIDA</button>
             <select id="select-anime" onchange="changeAnime()" name="select">
             </select>
-            <button id="empezar-btn" class="hide-menu green-btn" onclick="novaPartida()">EMPEZAR PARTIDA</button>
+            <button id="empezar-btn" aria-label="Clica para empezar la partida" class="hide-menu green-btn"
+                onclick="novaPartida()">EMPEZAR PARTIDA</button>
         </div>
 
         <!-- Mosta el personatge actual triar per l'usuari-->
@@ -36,7 +37,7 @@
                 <img id="mycharacter-image" src="https://i.imgur.com/fSbG2ao.png" alt="" height="100%" width="100%">
             </div>
 
-            <button class="hide-character" onclick="ocultarPersonaje()">OCULTAR</button>
+            <button class="hide-character" id="btn-ocultar" onclick="ocultarPersonaje()">OCULTAR</button>
         </div>
 
         <!-- Mostra un dialog on confirma que 'si' vols nova partida-->
@@ -49,8 +50,8 @@
             </div>
         </div>
         <!-- se autogeneren les cartes de la partida-->
-        <div id="cards">
-            <!--<div class="card">
+        <article id="cards" aria-label="Muestra todas las cartas de la partida">
+            <!--<article class="card">
            <div class="flip-card" onclick="cardClicked(event)">
                 <div id="card-0" class="flip-card-inner">
                     <div class="flip-card-front">
@@ -65,11 +66,12 @@
                 </div>
             </div>
         </div>
-        </div>-->
-        </div>
+        </article>-->
+        </article>
     </div>
     <!-- Mostra el personatge triat al clicar el boton -->
-    <button id="showpersonaje" class="hide-menu green-btn" onclick="showMyCharacter()">VER MI PERSONAJE</button>
+    <button id="showpersonaje" aria-label="Muestra el personaje elegido" class="hide-menu green-btn"
+        onclick="showMyCharacter()">VER MI PERSONAJE</button>
     <footer>Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a></footer>
     <script src="index.js"></script>
 </body>

@@ -83,6 +83,7 @@ function selectCard() {
     document.getElementById("card-" + cardid).style.filter = "";
     //document.getElementById("elegir-btn").style.display = "none";
     document.getElementById("empezar-btn").style.display = "block";
+    document.getElementById("empezar-btn").focus();
 }
 
 function cardClicked(event) {
@@ -94,11 +95,11 @@ function cardClicked(event) {
 }
 
 function cardHTML(props) {
-    return `<div class="card">
+    return `<article class="card">
     <div class="flip-card" onclick="cardClicked(event)">
         <div id="card-${props.id}" class="flip-card-inner">
             <div class="flip-card-front">
-                <img id="img-${props.id}" src="${props.image}" alt="${props.name}" height="100%" width="100%">
+                <img title="Click para seleccionar y poder empezar la partida" id="img-${props.id}" src="${props.image}" alt="${props.alt}" height="100%" width="100%">
             </div>
             <div class="flip-card-back">
                 <h1 id="name-${props.id}">${props.name}</h1>
@@ -106,7 +107,7 @@ function cardHTML(props) {
             </div>
         </div>
     </div>
-</div>`
+</article>`
 }
 
 
@@ -122,10 +123,11 @@ function generateCardsHTML() {
     //let cont = 0;
     player.characterList.forEach(e => {
         //if (cont < player.maxCharacters) {
-            let props = { id: e.id, image: e.image, name: e.name, anime: player.animeName };
-            document.getElementById("cards").innerHTML += cardHTML(props)
-          //  cont++;
-       // }
+        let altCharacter = "Nombre:" + e.name + ". Descripción: " + e.alt;
+        let props = { id: e.id, image: e.image, name: e.name, anime: player.animeName, alt: altCharacter };
+        document.getElementById("cards").innerHTML += cardHTML(props)
+        //  cont++;
+        // }
     });
 
     for (let i = 0; i < document.getElementsByClassName("card").length; i++) {
@@ -148,6 +150,7 @@ function novaPartida() {
 
     document.getElementById("select-anime").style.display = "none";
     document.getElementById("showpersonaje").style.display = "block";
+    document.getElementById("showpersonaje").focus();
     document.getElementById("newPartida").style.display = "block";
 }
 
@@ -160,6 +163,7 @@ function loadGame() {
     generateCardsHTML();
     //Genera el footer
     makeFooter();
+    document.getElementById("cards").focus();
 }
 
 function newGame() {
@@ -192,13 +196,20 @@ function showMyCharacter() {
     document.getElementById("fondo-card").style.display = "block";
     document.getElementById("card-selector-mycharacter").style.top = "10%";
     document.getElementById("mycharacter-name").innerText = player.myCharacter.name;
-    document.getElementById("mycharacter-image").alt = player.myCharacter.name;
-    document.getElementById("mycharacter-image").src = player.myCharacter.image;
+    let imgMine = document.getElementById("mycharacter-image");
+    imgMine.alt = player.myCharacter.alt;
+    imgMine.src = player.myCharacter.image;
+    let btnHide = document.getElementById("btn-ocultar");
+    let altCharacter = "Nombre:" + player.myCharacter.name + ". Descripción: " + player.myCharacter.alt;
+    btnHide.title = altCharacter;
+    btnHide.focus();
+
 }
 
 function ocultarPersonaje() {
     document.getElementById("fondo-card").style.display = "none";
     document.getElementById("card-selector-mycharacter").style.top = "-600px";
+    document.getElementById("cards").focus();
 }
 
 function ocultaCartas() {
