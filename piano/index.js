@@ -14,9 +14,7 @@ function readPath() {
     if (titleSong == null || titleSong == '') return false;
 
     let lista = listaStringNotes.split("");
-    ///console.log("Path:", lista);
-    //console.log("Title", titleSong);
-
+    ///console.log("Path:", lista,"Title", titleSong);
     //Tabla ASCII: 65:Mayuscula 97:Minuscula
     let textoListToNumbers = (e) => {
         //Las letras minusculas coresponden a las negras 'abcdefg'
@@ -39,26 +37,20 @@ function readPath() {
 function loadMusic() {
     // Si hi han paramentres, retorna 'true'
     let paramsDisponibles = readPath();
-    if (!paramsDisponibles) {
-        //Amaga el 'transportador' i el 'toca esto'
-        document.getElementById("menu-create-song").style.display = "none";
-        document.getElementById("menu-adivinar-cancion").style.display = "none";
-        document.getElementById("menu-transport-song").style.display = "none";
-        document.getElementById("menu-escribir-cancion").style.display = "flex";
-    } else {
-        document.getElementById("menu-create-song").style.display = "block";
-        document.getElementById("menu-adivinar-cancion").style.display = "block";
-        document.getElementById("menu-transport-song").style.display = "none";
-        document.getElementById("menu-escribir-cancion").style.display = "none";
+    //Si hi han parametres de 'song' i 'title' es mostra el menu, sino el menu es per crearla
+    document.getElementById("menu-transport-song").style.display = paramsDisponibles ? "none" : "block";
+    document.getElementById("menu-escribir-cancion").style.display = paramsDisponibles ? "none" : "flex";
+    document.getElementById("menu-create-song").style.display = paramsDisponibles ? "block" : "none";
+    document.getElementById("menu-adivinar-cancion").style.display = paramsDisponibles ? "block" : "none";
+
+    if (paramsDisponibles) {
         //GeneraButtons
         generateButtonsGuess();
-        let inputGuess = document.getElementById("inputGuesSong");
         //L'input nomes admet la quantitat de lletres de la 'song'
-        inputGuess.maxLength = player.titleSong.length;
+        document.getElementById("inputGuesSong").maxLength = player.titleSong.length;
     }
     //Canvia segons l'escala
     updateTextPiano();
-
 }
 
 function generateButtonsGuess() {
@@ -234,8 +226,8 @@ function generateLink() {
     let nResultat = document.getElementById("resultat");
     nResultat.href = `./?${PATHMUSIC}=${player.letras}&${PATHSONG}=${player.ocultaCancion(nameSong)} `
     nResultat.innerText = nameSong;
-    nResultat.ariaLabel = "Enlace clicable de la canción creada '"+nameSong+"'";
-    nResultat.ariaHidden =false;
+    nResultat.ariaLabel = "Enlace clicable de la canción creada '" + nameSong + "'";
+    nResultat.ariaHidden = false;
     nResultat.focus();
 }
 
