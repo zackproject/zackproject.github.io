@@ -111,15 +111,17 @@ body {
 #btnGenerated {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
 }
 
 .btn-guess {
-  height: 25px;
-  width: 25px;
+  text-align: center;
+  /* height: 25px; */
+  min-width: 8px;
   border: 1px solid white;
-  padding: 2px;
-  padding-left: 1px;
+  padding: 8px;
+  text-transform: capitalize;
 }
 
 .piano-page {
@@ -130,6 +132,10 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.subpage-piano {
+  height: 100vh;
 }
 /*
 #note_color {
@@ -290,6 +296,18 @@ body {
   max-width: 300px;
 }
 
+#dialogAdivina > h2 {
+  margin-bottom: 0px;
+}
+#dialogAdivina > label {
+  margin-top: 10px;
+}
+#dialogAdivina > h3 {
+  margin: 10px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: normal;
+}
 #dialogAdivina > input {
   margin: 10px;
   background-color: #1c1c1c;
@@ -338,7 +356,6 @@ body {
   z-index: 2;
   display: none;
 }
-
 
 .note-fall {
   position: absolute;
@@ -401,4 +418,16 @@ body {
   100% {
     rotate: 0deg;
   }
+}
+
+footer {
+  background-color: black;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+footer > a {
+  text-decoration: underline;
+  color: lightblue;
 }

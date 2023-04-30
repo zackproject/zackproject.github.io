@@ -52,6 +52,7 @@ function loadMusic() {
     }
     //Canvia segons l'escala
     updateTextPiano();
+    makeFooter();
 }
 
 function generateButtonsGuess() {
@@ -59,20 +60,20 @@ function generateButtonsGuess() {
 
     deleteChilds(btnContainer);
     let listLetras = player.disordedTitle;
-    let text = "Escribe la siguiente letra en el cuadro de texto: ";
     for (let i = 0; i < listLetras.length; i++) {
         let btn = document.createElement("span");
         btn.className = "btn-guess";
         if (listLetras[i] === " ") {
             btn.innerHTML = "&nbsp";
-            btn.ariaLabel = text + "Espacio";
+            btn.ariaLabel = `Espacio. Escribe espacio en el cuadro de edición `;
         }
 
         if (listLetras[i] !== " ") {
             btn.innerText = listLetras[i];
-            btn.ariaLabel = text + listLetras[i];
+            btn.ariaLabel = `Letra ${listLetras[i]}. Escribe la letra en el cuadro de edición `;
         }
 
+        btn.setAttribute("usat", "no");
         btnContainer.appendChild(btn);
     }
 }
@@ -286,17 +287,21 @@ function checkInputSong() {
         //Bucle per als botons
         for (let j = 0; j < btnList.length; j++) {
             //Per cada lletra del input es comprova els botons 
-            if (inputGuessList[i] == btnList[j].innerHTML && !btnList[j].disabled) {
+            if (inputGuessList[i] == btnList[j].innerHTML && btnList[j].getAttribute("usat") != "yes") {
                 btnList[j].style.background = "white";
                 btnList[j].style.color = "black";
-                btnList[j].disabled = true;
+                btnList[j].ariaLabel = "Letra usada:" + btnList[j].innerHTML.replace('&nbsp;', "Espacio");
+                //Aqui controlo si la lletra s'ha utilitzat o no a partir d'aquesta variable
+                btnList[j].setAttribute("usat", "yes");
+                //btnList[j].disabled = true;
                 break;
             }
         }
 
     }
+
     //Si falla
-    label.innerText = "Incorrecto, prueba otra vez";
+    label.innerText = "Titulo incorrecto, prueba otra vez";
     //Si adivina la cancion
     if (inputGuess === player.titleSong) {
         for (let i = 0; i < btnList.length; i++) {
@@ -305,7 +310,7 @@ function checkInputSong() {
             btnList[i].disabled = true;
         }
         // Sobrescribe el texto si 
-        label.innerText = "CORRECTO";
+        label.innerText = "Titulo correctamente escrita";
         let btn = document.getElementById("btn-adivina-song");
         btn.disabled = true;
         btn.innerText = player.titleSong.toUpperCase();
@@ -356,3 +361,9 @@ function pintaPrimaryNote(e) {
 
 }
 
+/* Cada any el footer posara l'any actual */
+function makeFooter() {
+    const d = new Date();
+    let foot = document.getElementsByTagName("footer")[0];
+    foot.innerHTML = `Zack Sama · ${d.getFullYear()} · <a href="https://zackproject.github.io"> Zack Project</a>`;
+}
