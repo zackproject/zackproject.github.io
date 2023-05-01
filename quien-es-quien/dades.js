@@ -91,7 +91,7 @@ let quienEsQuien = [
             { "id": 75, "name": "Susamaru", "image": "https://i.imgur.com/dYfFzUU.png", "alt": "" },
             { "id": 76, "name": "Tanjro Kamado", "image": "https://i.imgur.com/klRD64V.png", "alt": "" },
             { "id": 77, "name": "Tengen Uzui", "image": "https://i.imgur.com/yxwCaD1.png", "alt": "" },
-            { "id": 78, "name": "Zenitsu Agatsuma", "image": "https://i.imgur.com/u3lkJsC.png" }
+            { "id": 78, "name": "Zenitsu Agatsuma", "image": "https://i.imgur.com/u3lkJsC.png", "alt": "" }
         ]
     },
     {
@@ -122,7 +122,7 @@ let quienEsQuien = [
             { "id": 101, "name": "Uranai Baba", "image": "https://i.imgur.com/52Z7jbT.png", "alt": "" },
             { "id": 102, "name": "Vegeta", "image": "https://i.imgur.com/mRjeAvO.png", "alt": "" },
             { "id": 103, "name": "Yajirobe", "image": "https://i.imgur.com/WapQDRA.png", "alt": "" },
-            { "id": 104, "name": "Yamcha", "image": "https://i.imgur.com/gyaUq3z.png" }
+            { "id": 104, "name": "Yamcha", "image": "https://i.imgur.com/gyaUq3z.png", "alt": "" }
         ]
     },
     {
@@ -155,7 +155,40 @@ let quienEsQuien = [
             { "id": 129, "name": "Tarantula", "image": "https://i.imgur.com/TnMwGng.png", "alt": "" },
             { "id": 130, "name": "Ulrich Stern", "image": "https://i.imgur.com/DyGNury.png", "alt": "" },
             { "id": 131, "name": "William Dunbar", "image": "https://i.imgur.com/3upcm7U.png", "alt": "" },
-            { "id": 132, "name": "Yumi Ishiyama", "image": "https://i.imgur.com/D6zjlpN.png" }
+            { "id": 132, "name": "Yumi Ishiyama", "image": "https://i.imgur.com/D6zjlpN.png", "alt": "" }
+        ]
+    },
+    {
+        "title": "Edens Zero",
+        "characters": [
+            { "id": 133, "name": "abc", "image": "", "alt": "" },
+            { "id": 134, "name": "abc", "image": "", "alt": "" },
+            { "id": 135, "name": "abc", "image": "", "alt": "" },
+            { "id": 136, "name": "abc", "image": "", "alt": "" },
+            { "id": 137, "name": "abc", "image": "", "alt": "" },
+            { "id": 138, "name": "abc", "image": "", "alt": "" },
+            { "id": 139, "name": "abc", "image": "", "alt": "" },
+            { "id": 140, "name": "abc", "image": "", "alt": "" },
+            { "id": 141, "name": "abc", "image": "", "alt": "" },
+            { "id": 142, "name": "abc", "image": "", "alt": "" },
+            { "id": 143, "name": "abc", "image": "", "alt": "" },
+            { "id": 144, "name": "abc", "image": "", "alt": "" },
+            { "id": 145, "name": "abc", "image": "", "alt": "" },
+            { "id": 146, "name": "abc", "image": "", "alt": "" },
+            { "id": 147, "name": "abc", "image": "", "alt": "" },
+            { "id": 148, "name": "abc", "image": "", "alt": "" },
+            { "id": 149, "name": "abc", "image": "", "alt": "" },
+            { "id": 150, "name": "abc", "image": "", "alt": "" },
+            { "id": 151, "name": "abc", "image": "", "alt": "" },
+            { "id": 152, "name": "abc", "image": "", "alt": "" },
+            { "id": 153, "name": "abc", "image": "", "alt": "" },
+            { "id": 154, "name": "abc", "image": "", "alt": "" },
+            { "id": 155, "name": "abc", "image": "", "alt": "" },
+            { "id": 156, "name": "abc", "image": "", "alt": "" },
+            { "id": 157, "name": "abc", "image": "", "alt": "" },
+            { "id": 158, "name": "abc", "image": "", "alt": "" },
+            { "id": 159, "name": "abc", "image": "", "alt": "" },
+            { "id": 160, "name": "abc", "image": "", "alt": "" }
         ]
     }
 ]
