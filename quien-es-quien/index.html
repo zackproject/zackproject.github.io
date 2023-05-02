@@ -23,7 +23,7 @@
             </span></button>
         <h1 id="titol-quien-es-quien">QUIÉN ES QUIÉN</h1>
     </header>
-    <div class="who-is-who">
+    <main class="who-is-who">
         <!-- fondo 'dark' per quan obro un modal -->
         <div id="fondo-card"></div>
         <!-- Selector de la partida, es mostra un boto o un altre segons el js -->
@@ -47,16 +47,20 @@
         </div>
 
         <!-- Mostra un dialog on confirma que 'si' vols nova partida-->
-        <div id="modal-new-game">
-            <div class="title-modal">NUEVA PARTIDA</div>
-            <div class="info-modal">¿Quieres empezar una nueva partida?</div>
+        <div id="modal-new-game" role="dialog" aria-labelledby="title-diag">
+            <div class="title-modal">
+                <h2 id="title-diag">NUEVA PARTIDA</h2>
+            </div>
+            <div class="info-modal">
+                <p>¿Quieres empezar una nueva partida?</p>
+            </div>
             <div class="flex-btn">
                 <button onclick="newGame()" class="ok-btn">SI</button>
                 <button onclick="hideNewGame()" class="cancel-btn">NO</button>
             </div>
         </div>
         <!-- se autogeneren les cartes de la partida-->
-        <article id="cards" aria-label="Muestra todas las cartas de la partida">
+        <section id="cards" aria-label="Muestra todas las cartas de la partida">
             <!--<article class="card">
            <div class="flip-card" onclick="cardClicked(event)">
                 <div id="card-0" class="flip-card-inner">
@@ -73,14 +77,14 @@
             </div>
         </div>
         </article>-->
-        </article>
-    </div>
+        </section>
+</main>
     <!-- Mostra el personatge triat al clicar el boton -->
     <button id="showpersonaje" aria-label="Muestra el personaje elegido" class="hide-menu green-btn"
         onclick="showMyCharacter()">VER MI PERSONAJE</button>
 
     <div id="dialogAccesible">
-        <h1>Jugar con una persona no vidente</h1>
+        <h1>Accesibilidad</h1>
         <div class="text-dialog">
             <p>He adaptado la partida de 'Shingeki No Kiojin' con una descripción única para cada personaje. A
                 continuación

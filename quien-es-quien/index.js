@@ -99,7 +99,7 @@ function cardHTML(props) {
     <div class="flip-card" onclick="cardClicked(event)">
         <div id="card-${props.id}" class="flip-card-inner">
             <div class="flip-card-front">
-                <img title="Click para seleccionar y poder empezar la partida" id="img-${props.id}" src="${props.image}" alt="${props.alt}" height="100%" width="100%">
+                <img title="${props.title}" id="img-${props.id}" src="${props.image}" alt="${props.alt}" height="100%" width="100%">
             </div>
             <div class="flip-card-back">
                 <h1 id="name-${props.id}">${props.name}</h1>
@@ -128,8 +128,9 @@ function generateCardsHTML() {
         let altCharacter = "Personaje";
         if (e.alt == "" || e.alt == undefined || e.alt == null) altCharacter = e.name;
         else altCharacter = "Nombre:" + e.name + ". Descripción: " + e.alt;
-
-        let props = { id: e.id, image: e.image, name: e.name, anime: player.animeName, alt: altCharacter };
+        let titleCharacter = "Click para seleccionar y poder empezar la partida pulsando el botón 'Empezar Partida'";
+        if (player.isPlaying) titleCharacter = "Activo, click para desactivar"
+        let props = { id: e.id, image: e.image, name: e.name, anime: player.animeName, alt: altCharacter, title: titleCharacter };
         document.getElementById("cards").innerHTML += cardHTML(props)
         //  cont++;
         // }

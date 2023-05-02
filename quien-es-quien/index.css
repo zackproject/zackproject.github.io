@@ -320,15 +320,16 @@ body {
   color: white;
   text-align: center;
   font-weight: bold;
-  font-size: 20px;
+
+}
+#modal-new-game > .title-modal >h2{
+  font-size: 18px;
 }
 
 #modal-new-game > .info-modal {
   padding: 10px;
   font-size: 20px;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .ok-btn {
