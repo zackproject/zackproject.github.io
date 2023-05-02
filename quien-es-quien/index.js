@@ -83,7 +83,7 @@ function selectCard() {
     document.getElementById("card-" + cardid).style.filter = "";
     //document.getElementById("elegir-btn").style.display = "none";
     document.getElementById("empezar-btn").style.display = "block";
-    document.getElementById("empezar-btn").focus();
+    // molesta si estas eligiendo document.getElementById("empezar-btn").focus();
 }
 
 function cardClicked(event) {
@@ -123,7 +123,12 @@ function generateCardsHTML() {
     //let cont = 0;
     player.characterList.forEach(e => {
         //if (cont < player.maxCharacters) {
-        let altCharacter = "Nombre:" + e.name + ". Descripción: " + e.alt;
+        //Si el alt esta vacio 
+        //Pongo un valor por defecto
+        let altCharacter = "Personaje";
+        if (e.alt == "" || e.alt == undefined || e.alt == null) altCharacter = e.name;
+        else altCharacter = "Nombre:" + e.name + ". Descripción: " + e.alt;
+
         let props = { id: e.id, image: e.image, name: e.name, anime: player.animeName, alt: altCharacter };
         document.getElementById("cards").innerHTML += cardHTML(props)
         //  cont++;
@@ -238,4 +243,11 @@ function makeFooter() {
     const d = new Date();
     let foot = document.getElementsByTagName("footer")[0];
     foot.innerHTML = `Zack Sama · ${d.getFullYear()} · <a href="https://zackproject.github.io"> Zack Project</a>`;
+}
+
+function twiceVisibilityAccesible() {
+    let estat = document.getElementById("dialogAccesible");
+    if (estat.style.display === "none" || estat.style.display === "") {
+        estat.style.display = "block"
+    } else { estat.style.display = "none" };
 }

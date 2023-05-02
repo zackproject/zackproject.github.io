@@ -8,15 +8,21 @@
     <title>Quien es Quien</title>
     <link rel="stylesheet" href="index.css">
     <script src="dades.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="../icopz.ico">
-
+    <meta name="description"
+        content="¿Quieres disfrutar del clásico juego de adivinanzas Quién es Quién con tus amigos y familiares, incluso con aquellos que tienen discapacidad visual? En nuestro sitio web encontrarás una amplia selección de personajes, una interfaz fácil de usar y opciones de juego adaptadas para personas ciegas. ¡Juega ahora y diviértete adivinando con Quién es Quién">
 </head>
 
 <body onload="loadGame()">
     <header>
+        <button id="accesible-quien-es-quien" onclick="twiceVisibilityAccesible()"
+            aria-label="Instrucciones sobre accesibilidad">
+            <span class="material-icons">
+                accessibility_new
+            </span></button>
         <h1 id="titol-quien-es-quien">QUIÉN ES QUIÉN</h1>
     </header>
-
     <div class="who-is-who">
         <!-- fondo 'dark' per quan obro un modal -->
         <div id="fondo-card"></div>
@@ -72,6 +78,27 @@
     <!-- Mostra el personatge triat al clicar el boton -->
     <button id="showpersonaje" aria-label="Muestra el personaje elegido" class="hide-menu green-btn"
         onclick="showMyCharacter()">VER MI PERSONAJE</button>
+
+    <div id="dialogAccesible">
+        <h1>Jugar con una persona no vidente</h1>
+        <div class="text-dialog">
+            <p>He adaptado la partida de 'Shingeki No Kiojin' con una descripción única para cada personaje. A
+                continuación
+                te voy a listar todas caracteristicas posibles que puedes preguntar</p>
+            <ul>
+                <li>Género: Hombre o Mujer</li>
+                <li>Edad: Adulto o Niño</li>
+                <li>Color cabello: Rubio, oscuro, canoso, castaño o castaño claro</li>
+                <li>Cabello: Corto, largo o no tiene </li>
+                <li>Colgante (caballo incluido) </li>
+                <li>Vello Facial</li>
+                <li>Orejas completamente visibles: Una, dos o ninguna</li>
+            </ul>
+            Pulsa <span class="material-icons">
+                accessibility_new
+            </span> para ocultar el modal
+        </div>
+    </div>
     <footer>Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a></footer>
     <script src="index.js"></script>
 </body>
