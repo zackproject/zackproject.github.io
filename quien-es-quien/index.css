@@ -38,7 +38,6 @@ header {
   max-width: 300px;
   z-index: 1;
   display: none;
-
 }
 
 #dialogAccesible > h1 {
@@ -106,10 +105,11 @@ img:not(:hover){
 
 #cards {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px;
+  gap: 10px;
+  margin: 0px;
+  padding: 0px;
   /*margin-bottom: 50px;*/
 }
 
@@ -161,6 +161,7 @@ img:not(:hover){
   margin: 20px;
 }
 .card {
+  list-style: none;
   opacity: 0;
 }
 @keyframes aparece {
@@ -296,11 +297,15 @@ body {
   display: none;
 }
 
-#showpersonaje {
+.bottom-btn {
   position: sticky;
   bottom: 0px;
-  width: 100%;
   z-index: 1;
+}
+.bottom-btn > button {
+  width: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 #modal-new-game {
@@ -320,9 +325,8 @@ body {
   color: white;
   text-align: center;
   font-weight: bold;
-
 }
-#modal-new-game > .title-modal >h2{
+#modal-new-game > .title-modal > h2 {
   font-size: 18px;
 }
 
@@ -336,7 +340,6 @@ body {
   color: white;
   background-color: darkgreen;
   padding: 10px;
-  border-radius: 6px;
   border: none;
   width: 100px;
   font-size: 18px;

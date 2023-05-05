@@ -189,4 +189,8 @@ let quienEsQuien = [
             { "id": 158, "name": "Xiaomei", "image": "https://i.imgur.com/f3qtLb7.png", "alt": "" }
         ]
     }
+    , {
+        "title": "Haikyuu https://areajugones.sport.es/anime/haikyuu-estos-son-los-personajes-mas-populares-del-anime/",
+        "characters": []
+    }
 ]
