@@ -190,7 +190,34 @@ let quienEsQuien = [
         ]
     }
     , {
-        "title": "Haikyuu https://areajugones.sport.es/anime/haikyuu-estos-son-los-personajes-mas-populares-del-anime/",
-        "characters": []
+        "title": "Haikyuu",
+        "characters": [
+            { "id": 158, "name": "Akane Yamamoto", "image": "https://i.imgur.com/4J3pETx.png", "alt": "" },
+            { "id": 159, "name": "Alisa Haiba", "image": "https://i.imgur.com/1mmoeH1.png", "alt": "" },
+            { "id": 160, "name": "Asahi Azumane", "image": "https://i.imgur.com/8ss2lug.png", "alt": "" },
+            { "id": 161, "name": "Atsumu Miya", "image": "https://i.imgur.com/4M3Nq5v.png", "alt": "" },
+            { "id": 162, "name": "Daichi Sawamura", "image": "https://i.imgur.com/WJ1VSqS.png", "alt": "" },
+            { "id": 163, "name": "Hitoka Yachi", "image": "https://i.imgur.com/vz5VWdl.png", "alt": "" },
+            { "id": 164, "name": "Keiji Akaashi", "image": "https://i.imgur.com/ijQJzKi.png", "alt": "" },
+            { "id": 165, "name": "Keishin Uka", "image": "https://i.imgur.com/rszbom2.png", "alt": "" },
+            { "id": 166, "name": "Kei Tsukishima", "image": "https://i.imgur.com/xzBAYHX.png", "alt": "" },
+            { "id": 167, "name": "Kenma Kozume", "image": "https://i.imgur.com/7BQDfxp.png", "alt": "" },
+            { "id": 168, "name": "Kiyoko Tanaka", "image": "https://i.imgur.com/McJLyKI.png", "alt": "" },
+            { "id": 169, "name": "Kiyoomi Sakusa", "image": "https://i.imgur.com/IYMUATi.png", "alt": "" },
+            { "id": 170, "name": "Korai Hoshiumi", "image": "https://i.imgur.com/Odd3Gyr.png", "alt": "" },
+            { "id": 171, "name": "Koshi Sugawara", "image": "https://i.imgur.com/hfYdoKn.png", "alt": "" },
+            { "id": 172, "name": "Kotaro Bokuto", "image": "https://i.imgur.com/osaC8oI.png", "alt": "" },
+            { "id": 173, "name": "Natsu Hinata", "image": "https://i.imgur.com/1fiFPhs.png", "alt": "" },
+            { "id": 174, "name": "Saeko Tanaka", "image": "https://i.imgur.com/2s5KKzm.png", "alt": "" },
+            { "id": 175, "name": "Satori Tendo", "image": "https://i.imgur.com/ujmfGhB.png", "alt": "" },
+            { "id": 176, "name": "Shoyo Hinata", "image": "https://i.imgur.com/TefZvg9.png", "alt": "" },
+            { "id": 177, "name": "Tadashi Yamaguchi", "image": "https://i.imgur.com/atAO1Hj.png", "alt": "" },
+            { "id": 178, "name": "Tetsuro Kuroo", "image": "https://i.imgur.com/svRnwnP.png", "alt": "" },
+            { "id": 179, "name": "Tobio Kageyama", "image": "https://i.imgur.com/ibVOi88.png", "alt": "" },
+            { "id": 180, "name": "Tooru Oikawa", "image": "https://i.imgur.com/5oTBhNm.png", "alt": "" },
+            { "id": 181, "name": "Wakatoshi Ushijima", "image": "https://i.imgur.com/aZeLLVO.png", "alt": "" },
+            { "id": 182, "name": "Yui Michimiya", "image": "https://i.imgur.com/wKv05Ff.png", "alt": "" },
+            { "id": 183, "name": "Yu Nishinoya", "image": "https://i.imgur.com/y4a7zEJ.png", "alt": "" }
+        ]
     }
 ]
