@@ -1,22 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
-    <meta title="Zack Project - Free mini games open source in Javascript">
-    <meta name="keywords" content="peeled pokemon, sort word, first generation, second generation">
-    <meta name="description"
-        content="Javascript games based on pokemon and christmas advent calendar and other projects I can think of.  Personal open source portfolio and static web pages.">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Two javascript games based in pokemon">
+    <title>Minijuegos de Zack Sama</title>
+    <meta name="description"
+        content="¡Bienvenidos a la web de minijuegos de Zack Sama! Aquí encontrarás juegos interactivos como Piano interactivo, Quien es quien digital (Who is Who), Higher or Lower de Pokemon, Calendario de Adviento y Ordenar el nombre de los pokemon. Juega gratis y diviértete mientras mejoras tus habilidades.">
     <meta name="keywords"
-        content="game, javascript, pokemon, higher, lower, peeled, first generation, second generation">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="author" content="Zack Project">
+        content="juegos, minijuegos, piano interactivo, quien es quien, higher or lower, pokemon, calendario de adviento, ordenar, nombres">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -25,11 +19,15 @@
 </head>
 
 <body onload="fillCard()">
-    <div class="container">
-        <div id="cartas" class="d-flex flex-column flex-md-row justify-content-center ">
-        </div>
-    </div>
+    <header>
+        <a href="/"><img  height="35" width="35" src="https://i.imgur.com/Vsh0mAs.png" alt="Logo de la página"></a>
+        
+    </header>
+    <main id="cartas" class="container d-flex flex-row flex-wrap justify-content-center">
+        <!-- cartas autogeneradas-->
+    </main>
     <!-- Carga la informacion de las cartas i las genera-->
+    <footer class="footer-zk">Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a></footer>
     <script src="dades.js"></script>
     <script src="index.js"></script>
 </body>
