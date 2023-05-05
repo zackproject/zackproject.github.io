@@ -1,7 +1,7 @@
 var cards = [
     {
         "title": "Piano",
-        "image": "https://i.imgur.com/W6FuNtS.png",
+        "image": "",
         "alt": "Card Anime Birthday",
         "description": "Toca el piano y crea canciones donde otra persona tenga que adivinar tu canción a través de un link.",
         "link": "/piano"
