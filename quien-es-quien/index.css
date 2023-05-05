@@ -13,6 +13,53 @@ header {
   overflow: hidden;
   margin-bottom: 10px;
 }
+
+#accesible-quien-es-quien {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: transparent;
+  color: white;
+  margin: 5px;
+  border-radius: 6px;
+}
+
+#accesible-quien-es-quien:hover {
+  background-color: white;
+  color: black;
+  transition: 1s;
+}
+
+#dialogAccesible {
+  position: fixed;
+  top: 50px;
+  left: 10px;
+  background-color: white;
+  max-width: 300px;
+  z-index: 1;
+  display: none;
+}
+
+#dialogAccesible > h1 {
+  background-color: black;
+  margin: 0px;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+.text-dialog {
+  padding: 5px;
+}
+.text-dialog > ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+.text-dialog > ul > li {
+  border: 1px solid black;
+  padding: 5px;
+}
+
 /*
 img:not(:hover){
   filter: brightness(0.3)
@@ -58,10 +105,11 @@ img:not(:hover){
 
 #cards {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px;
+  gap: 10px;
+  margin: 0px;
+  padding: 0px;
   /*margin-bottom: 50px;*/
 }
 
@@ -113,6 +161,7 @@ img:not(:hover){
   margin: 20px;
 }
 .card {
+  list-style: none;
   opacity: 0;
 }
 @keyframes aparece {
@@ -248,11 +297,15 @@ body {
   display: none;
 }
 
-#showpersonaje {
+.bottom-btn {
   position: sticky;
   bottom: 0px;
-  width: 100%;
   z-index: 1;
+}
+.bottom-btn > button {
+  width: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 #modal-new-game {
@@ -272,22 +325,21 @@ body {
   color: white;
   text-align: center;
   font-weight: bold;
-  font-size: 20px;
+}
+#modal-new-game > .title-modal > h2 {
+  font-size: 18px;
 }
 
 #modal-new-game > .info-modal {
   padding: 10px;
   font-size: 20px;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .ok-btn {
   color: white;
   background-color: darkgreen;
   padding: 10px;
-  border-radius: 6px;
   border: none;
   width: 100px;
   font-size: 18px;
@@ -295,7 +347,7 @@ body {
 
 .cancel-btn {
   color: white;
-  background-color: rgb(208, 7, 7);
+  background-color: #b00000;
   padding: 10px;
   border-radius: 6px;
   border: none;
@@ -314,7 +366,6 @@ body {
   font-size: 20px;
 }
 
-
 footer {
   background-color: black;
   text-align: center;
@@ -322,7 +373,7 @@ footer {
   padding: 20px;
 }
 
-footer>a {
+footer > a {
   text-decoration: underline;
   color: lightblue;
 }
