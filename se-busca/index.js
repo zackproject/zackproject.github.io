@@ -1,36 +1,18 @@
-let sebusca = [
-    { "id": 0, "name": "Monkey D. Luffy", "image": "https://i.imgur.com/7hudkbh.png" },
-    { "id": 1, "name": "Roronoa Zoro", "image": "https://imgur.com/MPigBVG.png" },
-    { "id": 2, "name": "Nami", "image": "https://i.imgur.com/eWqris3.png" },
-    { "id": 3, "name": "Ussop", "image": "https://i.imgur.com/jVCRzqT.png" },
-    { "id": 4, "name": "Sanji", "image": "https://i.imgur.com/3vnXoZB.png" },
-    { "id": 5, "name": "Tony Tony Chopper", "image": "https://i.imgur.com/xH7n2x3.png" },
-    { "id": 6, "name": "Nico Robin", "image": "https://i.imgur.com/bhMTpCd.png" },
-    { "id": 7, "name": "Franky", "image": "https://i.imgur.com/1PnWvLj.png" },
-    { "id": 8, "name": "Brook", "image": "https://i.imgur.com/468BEdj.png" },
-    { "id": 9, "name": "Jinbe", "image": "https://i.imgur.com/6hG55CQ.png" },
-];
-
-//let nivel = 1; /// 1,2,3,4,5,6,7
-//let panel = 0; // 0 clasico(flex), 1 random(position), 2 tabla
-//let listaPersonajes = [] //todos los personajes de esa partida
-//let tiempo = 60; // Tiempo que se va a restar
-//let miPersonaje = {}; // Personaje elegido
-//let listaPanel = []; //personajes repetidos y mi personaje unico
-
 class Wanted {
-    constructor(points, characterList, time, numberOfCharacters) {
+    constructor(points, characterList, time, numberOfCharacters, typePanel) {
         this.numberOfCharacters = numberOfCharacters
         this.time = time;
         this.points = points;
         this.characterList = characterList;
+        this.typePanel = typePanel;
         //S'omplen una vegada creat el panell, getRandCharacter(), getRandPanel()
         this.myCharacter = null;
         this.panelList = null;
     }
 
     getRandCharacter() {
-        this.myCharacter = this.characterList[this.randNum(0, this.characterList.length - 1)]
+        //Pot ser que la llista de characters siguin 10 pero nomes jugo amb 4 (numberOfCharacters)
+        this.myCharacter = this.characterList[this.randNum(0, this.numberOfCharacters - 1)]
     }
 
     getRandPanel() {
@@ -64,37 +46,52 @@ class Wanted {
 
 }
 
-let player = new Wanted(0, sebusca, 60, 30);
+let points = 0;
+let timer = 60;
+let maxCharacters = 10;
+//Controla si es 0-flex, 1-position, 2-staticPosition 3-table
+let typePanel = 0;
+
+let player = new Wanted(points, sebusca, timer, maxCharacters, typePanel);
 //Genera el nou character
 player.getRandCharacter();
 //Genera el nou panell
 player.getRandPanel();
 
-function dibujaenGrid() {
+
+//PANEL ESTATIC
+function drawPanelFlex() {
+    document.getElementById("typePanel").innerText =" en flex";
     let pare = document.getElementById("panelGrid");
     //Esborra el contigut de l'anterior
     deleteChilds(pare);
     //Torna a generar la partida
+    player.typePanel = 0;
     player.getRandCharacter();
     player.getRandPanel();
     //Fica el personatge triat
-    document.getElementById("myCharacter").src = player.myCharacter.image;
+    showHTMLMyCharacter(player.myCharacter);
+    // Omple el panel HTML
     for (let i = 0; i < player.panelList.length; i++) {
         let img = document.createElement("img");
         img.src = player.panelList[i].image;
         img.width = "100"
         img.alt = player.panelList[i].name;
+        //Quan cliques una imatge s'envia la seva data a la funcio 'getInfoClicked'
+        img.addEventListener("click", () => { getInfoClicked(player.panelList[i]) });
         pare.appendChild(img)
     }
 }
 
 
-
-function dibujaenPosition() {
+//PANEL RELATIVE/ABSOLUTE
+function drawPanelPosition() {
+    document.getElementById("typePanel").innerText =" en Position";
     let pare = document.getElementById("panelAbsoluto");
     //Esborra el contigut de l'anterior
     deleteChilds(pare);
     //Torna a generar la partida
+    player.typePanel = 1;
     player.getRandCharacter();
     player.getRandPanel();
     player.panelList.forEach(element => {
@@ -108,22 +105,96 @@ function dibujaenPosition() {
         img.style.left = player.randNum(0, 90, true) + "%";
         img.style.top = player.randNum(0, 90, true) + "%";
         //El personatge triat ha d'estar sobre per poder clicarlo
-        if (element === player.myCharacter) img.style.zIndex = 1;
+        if (element === player.myCharacter) {
+            img.style.zIndex = 2;
+        }
+        else {
+            img.style.zIndex = 1;
+        }
+        //Quan cliques una imatge s'envia la seva data a la funcio 'getInfoClicked'
+        img.addEventListener("click", () => { getInfoClicked(element) });
         // Puja la imatge en el container
         pare.appendChild(img)
     });
-    for (let i = 0; i < player.panelList.length; i++) {
-
-    }
-    document.getElementById("myCharacter").src = player.myCharacter.image;
-    console.log("pedro");
+    //Mostra el personatge que has de buscar al HTML
+    showHTMLMyCharacter(player.myCharacter);
 }
 
 
+//PANEL RELATIVE/ABSOLUTE 4 ELEMENTS
+function drawPanelStaticPosition() {
+    document.getElementById("typePanel").innerText =" en Static";
+    let pare = document.getElementById("panelStatico");
+    //Esborra el contigut de l'anterior
+    deleteChilds(pare);
+    //Com nomes en aquest panel necesito 4, faig copia i aplico
+    let copiaNumber = player.numberOfCharacters;
+    player.numberOfCharacters = 4;
+    //Torna a generar la partida
+    player.typePanel = 2;
+    player.getRandCharacter();
+    player.getRandPanel();
+    let tamany = 1;
+    player.panelList.forEach(element => {
+        let img = document.createElement("img");
+        img.src = element.image;
+        img.width = "100"
+        img.alt = element.name;
+        // Si el pare es relative la imatge es absoluta
+        img.style.position = "absolute";
+        // Tria una posicio x y numero random 'double' dins del panell. Al 100% no es veu
+        img.style.left = tamany * 17 + "%";
+        img.style.top = "-50%";
+        tamany++;
+        //El personatge triat ha d'estar sobre per poder clicarlo
+        if (element === player.myCharacter) img.style.zIndex = 1;
+        //Quan cliques una imatge s'envia la seva data a la funcio 'getInfoClicked'
+        img.addEventListener("click", () => { getInfoClicked(element) });
+        // Puja la imatge en el container
+        pare.appendChild(img)
+    });
+    //Mostra el personatge que has de buscar al HTML
+    showHTMLMyCharacter(player.myCharacter)
 
+    // Retorna al original aqui
+    player.numberOfCharacters = copiaNumber;
 
+}
+
+//Mostra el personatge que has de buscar al HTML
+function showHTMLMyCharacter(nPlayer) {
+    let myChar = document.getElementById("myCharacter");
+    myChar.src = nPlayer.image;
+    myChar.alt = nPlayer.name;
+}
+
+//Mata els fills per a torna a generar
 function deleteChilds(currentDiv) {
     while (currentDiv.firstChild) {
         currentDiv.removeChild(currentDiv.firstChild);
     }
+}
+
+
+//Funcio que aplica quan cliques a una imatge
+function getInfoClicked(props) {
+    if (player.myCharacter === props) {
+        console.log("Correcto", props);
+        switch (player.typePanel) {
+            case 0:
+                drawPanelFlex()
+                break;
+            case 1:
+                drawPanelPosition();
+                break;
+            case 2:
+                drawPanelStaticPosition();
+            default:
+                console.log("Tipus de panell no definit");
+                break;
+        }
+    } else {
+        console.log("Ups, no era", props.name);
+    }
+    console.log(props.name);
 }

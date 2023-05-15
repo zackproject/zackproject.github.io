@@ -13,19 +13,30 @@
     <meta name="description"
         content="¡Sumérgete en la búsqueda de piratas en el juego online 'Se busca' de One Piece! Encuentra a los más buscados en emocionantes niveles inspirados en el mundo del anime y manga. ¡Demuestra tu habilidad y conviértete en el mejor cazador de recompensas!">
 </head>
-<!-- onload="dibujaenGrid()"-->
-<!-- onload="dibujaenPosition()"-->
 
 <body>
-    <button onclick="dibujaenGrid()">dibujaenGrid</button>
-    <button onclick="dibujaenPosition()">dibujaenPosition</button>
-    <h1>Se busca </h1>
-    <img id="myCharacter" width="200" src="." alt=".">
+    <div class="panel-control">
+        <img id="myCharacter" width="100" height="100" src="." alt=".">
+        <div class="btn">
+            <h1>Se busca <span id="typePanel"></span></h1>
+            <button onclick="drawPanelFlex()">drawPanelFlex</button>
+            <button onclick="drawPanelPosition()">drawPanelPosition</button>
+            <button onclick="drawPanelStaticPosition()">drawPanelStaticPosition</button>
+        </div>
+    </div>
+
+
     <h2>Panel Flex</h2>
     <div class="panel-se-busca" id="panelGrid"></div>
 
+    <h2>Panel Statico</h2>
+    <div class="panel-se-busca" id="panelStatico"></div>
+
     <h2>Panel Position</h2>
     <div class="panel-se-busca" id="panelAbsoluto"></div>
+
+    <h2>Panel Tabla</h2>
+    <div class="panel-se-busca" id="panelTabla"></div>
     <script src="index.js"></script>
 </body>
 

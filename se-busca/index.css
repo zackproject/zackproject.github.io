@@ -1,6 +1,17 @@
+h1,
+h2 {
+  color: white;
+}
 
-h1,h2{
-    color: white;
+.panel-control {
+  padding: 10px;
+  position: sticky;
+  background-color: rgb(0, 0, 29);
+  top: 0px;
+  /* En el z-index:2 esta la solucion*/
+  z-index: 3;
+  display: flex;
+  gap: 10px;
 }
 .panel-se-busca {
   border: 1px solid white;
@@ -20,16 +31,16 @@ h1,h2{
   position: relative;
   max-width: 800px;
   height: 400px;
+  /* El que es veuria fora del panel no ho mostra*/
   overflow: hidden;
 }
 
-.img-example {
-  height: 10px;
-  width: 10px;
-  background-color: red;
-  position: absolute;
-  top: 95%;
-  left: 95%;
+#panelStatico {
+  position: relative;
+  max-width: 800px;
+  height: 100px;
+  /* El que es veuria fora del panel no ho mostra*/
+  overflow: hidden;
 }
 
 body {
