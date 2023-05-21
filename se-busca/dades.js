@@ -1,4 +1,19 @@
 let sebusca = [
+    { "id": 0, "name": "Brook", "image": "./img/brook.png" },
+    { "id": 1, "name": "Chopper", "image": "./img/chopper.png" },
+    { "id": 2, "name": "Franky", "image": "./img/franky.png" },
+    { "id": 3, "name": "Luffy", "image": "./img/luffy.png" },
+    { "id": 4, "name": "Robin", "image": "./img/robin.png" },
+    { "id": 5, "name": "Sanji", "image": "./img/sanji.png" },
+    { "id": 6, "name": "Usopp", "image": "./img/usop.png" },
+    { "id": 7, "name": "Zoro", "image": "./img/zoro.png" },
+    { "id": 8, "name": "Nami", "image": "./img/nami.png" },
+   /* { "id": 9, "name": "Hawks", "image": "./img/brook.png" },*/
+
+];
+
+/*
+let sebusca = [
     { "id": 0, "name": "Aizawa", "image": "https://imgur.com/MPigBVG.png" },
     { "id": 1, "name": "All Might", "image": "https://i.imgur.com/eWqris3.png" },
     { "id": 2, "name": "Bakugo", "image": "https://i.imgur.com/jVCRzqT.png" },
@@ -10,20 +25,4 @@ let sebusca = [
     { "id": 8, "name": "Eri Chan", "image": "https://i.imgur.com/6hG55CQ.png" },
     { "id": 9, "name": "Hawks", "image": "https://i.imgur.com/7hudkbh.png" },
 
-];
-
-
-/*
-let sebusca = [
-    { "id": 0, "name": "Monkey D. Luffy", "image": "" },
-    { "id": 1, "name": "Roronoa Zoro", "image": "" },
-    { "id": 2, "name": "Nami", "image": "" },
-    { "id": 3, "name": "Ussop", "image": "" },
-    { "id": 4, "name": "Sanji", "image": "" },
-    { "id": 5, "name": "Tony Tony Chopper", "image": "" },
-    { "id": 6, "name": "Nico Robin", "image": "" },
-    { "id": 7, "name": "Franky", "image": "" },
-    { "id": 8, "name": "Brook", "image": "" },
-    { "id": 9, "name": "Jinbe", "image": "" },
-];
-*/
+];*/
