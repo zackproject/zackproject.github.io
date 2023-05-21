@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Se busca</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="animation.css">
+
     <script src="dades.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="../icopz.ico">
@@ -21,7 +23,6 @@
             <h1>Se busca <span id="typePanel"></span></h1>
             <button onclick="drawPanelFlex()">drawPanelFlex</button>
             <button onclick="drawPanelPosition()">drawPanelPosition</button>
-            <button onclick="drawPanelStaticPosition()">drawPanelStaticPosition</button>
             <button onclick="drawPanelTable()">drawPanelTable</button>
         </div>
     </div>
@@ -30,11 +31,9 @@
     <h2>Panel Flex</h2>
     <div class="panel-se-busca" id="panelGrid"></div>
 
-    <h2>Panel Statico</h2>
-    <div class="panel-se-busca" id="panelStatico"></div>
-
     <h2>Panel Position</h2>
-    <div class="panel-se-busca" id="panelAbsoluto"></div>
+    <div class="panel-se-busca" id="panelAbsoluto">
+    </div>
 
     <h2>Panel Tabla</h2>
     <div class="panel-se-busca" id="panelTabla"></div>

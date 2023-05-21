@@ -3,12 +3,7 @@ h2,
 h3 {
   color: white;
 }
-tr,
-td {
-  color: white;
-  border: 1px solid white;
-  padding: 5px;
-}
+
 .panel-control {
   padding: 10px;
   position: sticky;
@@ -42,18 +37,23 @@ td {
 }
 
 #panelAbsoluto > img {
-  animation-name: circle;
   animation-timing-function: linear;
-  animation-duration: 6s;
   animation-iteration-count: infinite;
+ /*animation-name: circle;*/
+  animation-duration: 6s;
 }
 
-#panelStatico {
-  position: relative;
-  max-width: 800px;
-  height: 100px;
-  /* El que es veuria fora del panel no ho mostra*/
-  overflow: hidden;
+#panelTabla > tr,
+td {
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+}
+#panelTabla td > button {
+  font-size: 18px;
+}
+#panelTabla {
+  margin-bottom: 100px;
 }
 
 body {
@@ -64,12 +64,25 @@ body {
   background-size: cover;*/
 }
 
-/*https://codepen.io/mrdeeds88/pen/rNNZqVV */
-@keyframes circle {
-  0% {
-    transform: rotate(0deg) translate(-50px) rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg) translate(-25px) rotate(-360deg);
-  }
+.center-next-btn {
+  display: none; /*display block al iniciar*/
+  background-color: rgba(0, 0, 0, 0.392);
+  color: white;
+  position: absolute;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 6px;
+  top: 50%;
+  left: 50%;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  /*En el dos esta la solucion*/
+  z-index: 3;
+}
+
+.center-next-btn:hover {
+  background-color: white;
+  color: black;
+  padding: 14px;
+  transition: all 0.5s;
 }
