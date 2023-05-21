@@ -40,7 +40,7 @@ h3 {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
  /*animation-name: circle;*/
-  animation-duration: 6s;
+  animation-duration: 10s;
 }
 
 #panelTabla > tr,

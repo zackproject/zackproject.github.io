@@ -99,7 +99,7 @@ function drawPanelFlex() {
 //PANEL RELATIVE/ABSOLUTE
 function drawPanelPosition() {
     //Tria si fara l'animacio
-    let faAnimacio = player.randNum(0, 3) === 1;
+    let faAnimacio = player.randNum(0, 2) === 1;
     console.log("animas???", faAnimacio);
 
     document.getElementById("typePanel").innerText = " en Position";
@@ -125,10 +125,8 @@ function drawPanelPosition() {
         // Tria una posicio x y numero random 'double' dins del panell. Al 100% no es veu
         img.style.left = player.randNum(0, 90, true) + "%";
         img.style.top = player.randNum(0, 90, true) + "%";
-        if (i % 2 == 0 && i != 0) img.style.animationDirection = "normal";
-        if (i % 2 != 0 && i != 0) img.style.animationDirection = "reverse";
+        img.style.animationDirection = "normal";
 
-        else img.style.animationDirection = "normal";
         //Dependen de la puntuacio i de l'atzar aplica animacio
         if (faAnimacio) {
             applyAnimation(img);
@@ -191,7 +189,8 @@ function drawPanelStaticPosition() {
 
     // Retorna al original aqui
     player.numberOfCharacters = copiaNumber;
-
+    //Retorna al panell 1
+    player.typePanel = 1;
 }
 
 function drawPanelTable() {
@@ -289,14 +288,12 @@ function getInfoClicked(props, event) {
 }
 
 function nextPartida() {
+    document.getElementById("points").innerText = player.points + "⭐";
     console.log("Points:", player.points, "Panel:", player.panelList.length);
 
     if (player.typePanel === 1 && player.points < 10) {
         player.typePanel = player.randNum(1, 2);
-    } else {
-        player.typePanel = 1;
     }
-    console.log("elegi panel", player.typePanel);
 
     switch (player.typePanel) {
         case 0:
@@ -306,7 +303,7 @@ function nextPartida() {
             drawPanelPosition();
             break;
         case 2:
-            console.log("que guay");
+            //Retorn al panell '1' al acabar.
             drawPanelStaticPosition();
             break;
         case 3:
@@ -336,28 +333,35 @@ function ocultaIncorrectes() {
 function applyAnimation(element) {
     if (player.points > 10) {
         //Si ,es de 10 punts, dos animacions, si es 23, 2 animacion 
-        let animacionsDisponibles = player.points % 10;
+        let animacionsDisponibles = parseInt(player.points / 10);
         //No deixa que hi hagi mes punts que animacions
         //EX: 53 punts no hi ha animacio '5'
-        if (animacionsDisponibles > 3) { animacionsDisponibles = 3; }
+        if (animacionsDisponibles > 4) { animacionsDisponibles = 4; }
         //Tria animacions random per cada imatge, poden repetirse en el bucle
-        let num = player.randNum(0, animacionsDisponibles);
-        console.log("randimation", num,"max",animacionsDisponibles);
+        let num = player.randNum(1, animacionsDisponibles);
         //Tria una animacio
         switch (num) {
-            case 0:
+            case 1:
                 element.style.animationName = "moveFromY";
                 break;
-            case 1:
+            case 2:
                 element.style.animationName = "moveFromX";
                 break
-            case 2:
+            case 3:
                 element.style.animationName = "circle";
                 break;
-            default: //3
+            default: //4
                 element.style.animationName = "rotateDiagonal";
                 break;
         }
-        console.log("aniamcion", element.style.animationName);
+
+        //Es la velocitar a la que va segons puntatge proporcionalment als punts
+        if (player.points < 800) {
+            //10 es el que val l'animacio per defecte en el index.css
+            element.style.animationDuration = 10 - (player.points / 100) + "s";
+        } else {
+            //Si pasa del 800 punts la velocitat seran 2 segons
+            element.style.animationDuration = "2s";
+        }
     }
 }
