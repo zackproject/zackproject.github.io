@@ -8,7 +8,7 @@
     <title>Se busca</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="animation.css">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="dades.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="../icopz.ico">
@@ -17,15 +17,34 @@
 </head>
 
 <body>
-    <div class="panel-control">
-        <img id="myCharacter" width="100" height="100" src="." alt=".">
-        <div class="btn">
-            <h1>Se busca <span id="typePanel"></span> <span id="points"></span></h1>
-            <button onclick="drawPanelFlex()">drawPanelFlex</button>
-            <button onclick="drawPanelPosition()">drawPanelPosition</button>
-            <button onclick="drawPanelTable()">drawPanelTable</button>
-        </div>
+    <div class="btn">
+        <button onclick="drawPanelFlex()">drawPanelFlex</button>
+        <button onclick="drawPanelPosition()">drawPanelPosition</button>
+        <button onclick="drawPanelTable()">drawPanelTable</button>
     </div>
+    <h1>SE BUSCA</h1>
+    <div class="panel-control">
+        <div id="stars" aria-hidden="true">
+            <span class="parent-star material-icons" id="numberStars">star
+            </span>
+            <span class="sub-star material-icons">star</span>
+            <span class="sub-star material-icons">star</span>
+            <span class="sub-star material-icons">star</span>
+            <span class="sub-star material-icons">star</span>
+            <span id="number-star" title="Numero de puntos">0</span>
+        </div>
+        <div class="wanted-poster">
+            <img title="Personaje a buscar" id="myCharacter" width="100" height="100" src="." alt=".">
+            <!-- <p>SE BUSCA</p> -->
+        </div>
+        <div class="timer">
+            <h2>TIMER</h2>
+            <div id="timing-wanted">!</div>
+        </div>
+
+
+    </div>
+    <p style="color:white;"> 🪲 Si clicas al mismo puedes sumar mas puntos</p>
 
 
     <h2>Panel Flex</h2>

@@ -16,8 +16,10 @@ class Wanted {
         this.myCharacter = this.characterList[rand];
     }
     updatePanel() {
+        if (this.points % 5 == 0) {
+            this.numberOfCharacters = this.numberOfCharacters + 2;
+        }
         this.points++;
-        this.numberOfCharacters = this.numberOfCharacters * this.points;
     }
     getRandPanel() {
         let i = 0;
@@ -48,6 +50,16 @@ class Wanted {
         }
         return parseInt(Math.random() * (max - min + 1) + min);
     }
+    timerAdd() {
+        this.time += 5;
+    }
+
+    timerSubstract() {
+        this.time -= 10;
+        if (this.time < 0) {
+            this.time = 0;
+        }
+    }
 
 }
 let sebusca = [
@@ -65,6 +77,7 @@ let sebusca = [
 ];
 
 function test() {
+    console.log("----------------------");
     for (let i = 0; i <= 10000; i++) {
         let player = new Wanted(points = 0, characterList = sebusca, time = 0, numberOfCharacters = i, typePanel = 0);
         //Genera el nou character
@@ -75,6 +88,7 @@ function test() {
         //Generacio de personatges en una llista
         if (player.myCharacter === null) {
             console.log("❌ Generacio del panell:", i);
+            break;
         } else if (i % 1000 === 0) {
             console.log("✅ Generacio del panell:", i);
         }
@@ -83,6 +97,7 @@ function test() {
         let personatgeEnElPanell = player.panelList.some(e => e === player.myCharacter);
         if (!personatgeEnElPanell) {
             console.log("❌ Personatge en el panell:", i);
+            break;
         } else if (i % 1000 === 0) {
             console.log("✅ Personatge en el panell:", i);
         }
@@ -91,8 +106,12 @@ function test() {
         let personatgeTriat = player.panelList.filter(e => e === player.myCharacter);
         if (personatgeTriat.length != 1) {
             console.log("❌ Personatge unic:", i);
+            break;
         } else if (i % 1000 === 0) {
             console.log("✅ Personatge unic:", i);
+        }
+        if (i % 1000 === 0) {
+            console.log("----------------------");
         }
 
     }

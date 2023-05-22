@@ -50,17 +50,40 @@ class Wanted {
         }
         return parseInt(Math.random() * (max - min + 1) + min);
     }
+    timerAdd() {
+        this.time += 5;
+    }
+
+    timerSubstract() {
+        this.time -= 10;
+        if (this.time < 0) {
+            this.time = 0;
+        }
+    }
 
 }
 
+//Controla totes les imatges de la partida
+const IMGINGAME = "img-in-game";
 let points = 0;
-let timer = 60;
+let timer = 10;
 let maxCharacters = 4;
 //Controla si es 0-flex, 1-position, 2-staticPosition 3-table
 let typePanel = 0;
 
-//Controla totes les imatges de la partida
-const IMGINGAME = "img-in-game";
+let intervalID = setInterval(timeCountDown, 1000);
+function timeCountDown() {
+    player.time -= 1;
+    document.getElementById("timing-wanted").innerText = player.time;
+    if (player.time <= 0) {
+        document.getElementById("timing-wanted").innerText = 0;
+        document.getElementById("btn-next-partida").innerText = "GAME OVER"
+        ocultaIncorrectes();
+        clearInterval(timeCountDown);
+    }
+}
+
+
 //Crea la partida
 let player = new Wanted(points, sebusca, timer, maxCharacters, typePanel);
 //Genera el nou character
@@ -71,7 +94,6 @@ player.getRandPanel();
 
 //PANEL ESTATIC
 function drawPanelFlex() {
-    document.getElementById("typePanel").innerText = " en flex";
     let pare = document.getElementById("panelGrid");
     //Esborra el contigut de l'anterior
     deleteChilds(pare);
@@ -100,9 +122,6 @@ function drawPanelFlex() {
 function drawPanelPosition() {
     //Tria si fara l'animacio
     let faAnimacio = player.randNum(0, 2) === 1;
-    console.log("animas???", faAnimacio);
-
-    document.getElementById("typePanel").innerText = " en Position";
     let pare = document.getElementById("panelAbsoluto");
     //Esborra el contigut de l'anterior
     deleteChilds(pare);
@@ -150,7 +169,6 @@ function drawPanelPosition() {
 
 //PANEL RELATIVE/ABSOLUTE 4 ELEMENTS
 function drawPanelStaticPosition() {
-    document.getElementById("typePanel").innerText = " en Static";
     let pare = document.getElementById("panelAbsoluto");
     //Esborra el contigut de l'anterior
     deleteChilds(pare);
@@ -196,7 +214,6 @@ function drawPanelStaticPosition() {
 function drawPanelTable() {
     //let posTr = 0;
     //let posTd = 0;
-    document.getElementById("typePanel").innerText = " en Tabla";
     let pare = document.getElementById("panelTabla");
 
     deleteChilds(pare);
@@ -271,9 +288,12 @@ function getInfoClicked(props, event) {
         //Puja el nivell
         player.updatePanel();
         //Si es correcte la pantalla canviara
+        player.timerAdd();
         ocultaIncorrectes();
+        //Aplica animacio estrelles
+        animateStars();
     } else {
-        console.log("Ups, noera", props.name);
+        player.timerSubstract();
     }
     console.log(props.name);
 
@@ -287,14 +307,16 @@ function getInfoClicked(props, event) {
     //event.target.removeEventListener(eventsClicable.type, eventsClicable.listener);
 }
 
-function nextPartida() {
-    document.getElementById("points").innerText = player.points + "⭐";
-    console.log("Points:", player.points, "Panel:", player.panelList.length);
 
+function nextPartida() {
+    if (player.time <= 0) {
+        player.points = points; //default
+        player.time = timer; //deault
+        return;
+    }
     if (player.typePanel === 1 && player.points < 10) {
         player.typePanel = player.randNum(1, 2);
     }
-
     switch (player.typePanel) {
         case 0:
             drawPanelFlex()
@@ -313,6 +335,8 @@ function nextPartida() {
             console.log("Tipus de panell no definit: " + player.typePanel);
             break;
     }
+    intervalID = setInterval(timeCountDown, 1000);
+    //Amaga el boto
     document.getElementById("btn-next-partida").style.display = "none";
 }
 
@@ -324,6 +348,9 @@ function ocultaIncorrectes() {
             elements[i].style.display = "none";
         }
     }
+    //Atura el cronometre
+    document.getElementById("timing-wanted").innerText = player.time;
+    clearInterval(intervalID)
     //Mostra el boto de seguent
     document.getElementById("btn-next-partida").style.display = "block";
 }
@@ -364,4 +391,26 @@ function applyAnimation(element) {
             element.style.animationDuration = "2s";
         }
     }
+}
+
+
+function animateStars() {
+    document.getElementById("number-star").innerText = player.points;
+    let starties = document.getElementsByClassName("sub-star");
+    if (player.points % 5 == 1) {
+        document.getElementById("numberStars").style.color = "lightyellow";
+        for (let i = 0; i < starties.length; i++) {
+            starties[i].style.color = "black";
+        }
+    } else {
+        document.getElementById("numberStars").style.color = "yellow";
+        let numberStars = (player.points % 5) - 1;
+        for (let i = 0; i < numberStars; i++) {
+            starties[i].style.color = "yellow";
+        }
+        if (player.points % 5 == 0) {
+            starties[3].style.color = "yellow";
+        }
+    }
+
 }
