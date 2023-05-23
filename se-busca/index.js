@@ -70,6 +70,7 @@ let timer = 10;
 let maxCharacters = 4;
 //Controla si es 0-flex, 1-position, 2-staticPosition 3-table
 let typePanel = 0;
+let reproductor = new Audio();
 
 let intervalID = setInterval(timeCountDown, 1000);
 function timeCountDown() {
@@ -412,5 +413,25 @@ function animateStars() {
             starties[3].style.color = "yellow";
         }
     }
+
+}
+
+function loadMusic() {
+    reproductor.src = "./audio/sakebink_niclaus.mp3";
+    reproductor.muted = true;
+    reproductor.loop = true;
+}
+///Musica
+
+function playPauseMusic(event) {
+    let musicnote = event.target;
+    if (reproductor.paused) {
+        reproductor.muted = false;
+        reproductor.play();
+        musicnote.innerText = "music_note";
+        return;
+    }
+    musicnote.innerText = "music_off"
+    reproductor.pause();
 
 }

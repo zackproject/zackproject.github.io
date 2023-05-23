@@ -16,34 +16,42 @@
         content="¡Sumérgete en la búsqueda de piratas en el juego online 'Se busca' de One Piece! Encuentra a los más buscados en emocionantes niveles inspirados en el mundo del anime y manga. ¡Demuestra tu habilidad y conviértete en el mejor cazador de recompensas!">
 </head>
 
-<body>
+<body onload="loadMusic()">
     <div class="btn">
-        <button onclick="drawPanelFlex()">drawPanelFlex</button>
         <button onclick="drawPanelPosition()">drawPanelPosition</button>
-        <button onclick="drawPanelTable()">drawPanelTable</button>
     </div>
-    <h1>SE BUSCA</h1>
-    <div class="panel-control">
-        <div id="stars" aria-hidden="true">
-            <span class="parent-star material-icons" id="numberStars">star
+    <div id="fixedheader">
+        <header class="meitat-del-contingut" role="banner" aria-label="Encabezado de la página">
+            <span class="material-icons">
+                home
             </span>
-            <span class="sub-star material-icons">star</span>
-            <span class="sub-star material-icons">star</span>
-            <span class="sub-star material-icons">star</span>
-            <span class="sub-star material-icons">star</span>
-            <span id="number-star" title="Numero de puntos">0</span>
+            <h1 aria-label="Encabezado: SE-BUSCA" id="titol-se-busca">SE BUSCA</h1>
+            <span onclick="playPauseMusic(event)" class="material-icons">
+                music_off<!-- music_off -->
+            </span>
+        </header>
+        <div class="panel-control">
+            <div class="timer">
+                <h2>TIMER</h2>
+                <div id="timing-wanted">!</div>
+            </div>
+            <div class="wanted-poster">
+                <img src="./img/wanted.png" height="160" alt="">
+                <img title="Personaje a buscar" id="myCharacter"  height="80" src="." alt=".">
+                <!-- <p>SE BUSCA</p> -->
+            </div>
+            <div id="stars" aria-hidden="true">
+                <span class="parent-star material-icons" id="numberStars">star
+                </span>
+                <span class="sub-star material-icons">star</span>
+                <span class="sub-star material-icons">star</span>
+                <span class="sub-star material-icons">star</span>
+                <span class="sub-star material-icons">star</span>
+                <span id="number-star" title="Numero de puntos">0</span>
+            </div>
         </div>
-        <div class="wanted-poster">
-            <img title="Personaje a buscar" id="myCharacter" width="100" height="100" src="." alt=".">
-            <!-- <p>SE BUSCA</p> -->
-        </div>
-        <div class="timer">
-            <h2>TIMER</h2>
-            <div id="timing-wanted">!</div>
-        </div>
-
-
     </div>
+
     <p style="color:white;"> 🪲 Si clicas al mismo puedes sumar mas puntos</p>
 
 

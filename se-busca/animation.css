@@ -47,3 +47,13 @@
     transform: translateX(-10px) translateY(-10px) rotate(0deg);
   }
 }
+
+
+@keyframes note-rotate {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
