@@ -8,6 +8,7 @@ class Wanted {
         //S'omplen una vegada creat el panell, getRandCharacter(), getRandPanel()
         this.myCharacter = null;
         this.panelList = null;
+        this.isPlaying = false;
     }
 
     getRandCharacter() {
@@ -16,8 +17,9 @@ class Wanted {
         this.myCharacter = this.characterList[rand];
     }
     updatePanel() {
-        if (this.points % 5 == 0) {
-            this.numberOfCharacters = this.numberOfCharacters + 2;
+        if (this.points % 5 == 0 && this.points > 5) {
+            this.numberOfCharacters = this.numberOfCharacters + 4;
+            console.log(this.numberOfCharacters);
         }
         this.points++;
     }
@@ -51,12 +53,12 @@ class Wanted {
         return parseInt(Math.random() * (max - min + 1) + min);
     }
     timerAdd() {
-        this.time += 5;
+        this.time += 2;
     }
 
     timerSubstract() {
         this.time -= 10;
-        if (this.time < 0) {
+        if (this.time <= 0) {
             this.time = 0;
         }
     }
@@ -72,7 +74,7 @@ let maxCharacters = 4;
 let typePanel = 0;
 let reproductor = new Audio();
 
-let intervalID = setInterval(timeCountDown, 1000);
+let intervalID = null;
 function timeCountDown() {
     player.time -= 1;
     document.getElementById("timing-wanted").innerText = player.time;
@@ -80,10 +82,19 @@ function timeCountDown() {
         document.getElementById("timing-wanted").innerText = 0;
         document.getElementById("btn-next-partida").innerText = "GAME OVER"
         ocultaIncorrectes();
-        clearInterval(timeCountDown);
+        //Reset panel
+        resetPanelOnFail();
     }
 }
 
+
+function resetPanelOnFail() {
+    player.points = points;
+    player.time = timer;
+    player.numberOfCharacters = maxCharacters;
+    clearInterval(intervalID)
+
+}
 
 //Crea la partida
 let player = new Wanted(points, sebusca, timer, maxCharacters, typePanel);
@@ -121,6 +132,10 @@ function drawPanelFlex() {
 
 //PANEL RELATIVE/ABSOLUTE
 function drawPanelPosition() {
+    player.isPlaying = true;
+    if (intervalID == null) {
+        intervalID = setInterval(timeCountDown, 1000)
+    }
     //Tria si fara l'animacio
     let faAnimacio = player.randNum(0, 2) === 1;
     let pare = document.getElementById("panelAbsoluto");
@@ -242,7 +257,7 @@ function drawPanelTable() {
         //Creacio buto
         let btn = document.createElement("button");
         btn.innerText = player.panelList[i].name;
-        btn.addEventListener("click", (event) => { getInfoClicked(player.panelList[i], event) });
+        btn.addEventListener("click", (event) => { accesibleClicked(player.panelList[i], event) });
         //Fica als fills
         td.appendChild(btn);
         tr.appendChild(td)
@@ -259,10 +274,14 @@ function drawPanelTable() {
     // lasttr.colSpan = "2";
 
 
-    let h3 = document.createElement("h3");
-    h3.innerText = "Se busca a " + player.myCharacter.name; //+ " | Fila: " + posTr + " Columna: " + posTd
-    pare.appendChild(h3)
-    pare.appendChild(table)
+    //+ " | Fila: " + posTr + " Columna: " + posTd
+    let sebusca = document.getElementById("nameSeBusca");
+    sebusca.innerText = player.myCharacter.name;
+    document.getElementById("focusBusca").focus();
+    pare.appendChild(table);
+
+    document.getElementById("focusBusca").focus();
+
 }
 
 
@@ -270,7 +289,7 @@ function drawPanelTable() {
 function showHTMLMyCharacter(nPlayer) {
     let myChar = document.getElementById("myCharacter");
     myChar.src = nPlayer.image;
-    myChar.alt = nPlayer.name;
+    myChar.alt = "Se busca a " + nPlayer.name;
 }
 
 //Mata els fills per a torna a generar
@@ -280,12 +299,24 @@ function deleteChilds(currentDiv) {
     }
 }
 
-let pepe = null;
 
-//Funcio que aplica quan cliques a una imatge
-function getInfoClicked(props, event) {
+function accesibleClicked(props, event) {
+    let sebuscaText = document.getElementById("nameSeBusca");
     if (player.myCharacter === props) {
         console.log("Correcto", props);
+        //Puja el nivell
+        player.updatePanel();
+        //Si es correcte la pantalla canviara
+        player.timerAdd();
+        sebuscaText.innerText = player.myCharacter.name;
+        sebuscaText.focus();
+        drawPanelTable();
+    }
+
+}
+//Funcio que aplica quan cliques a una imatge
+function getInfoClicked(props, event) {
+    if (player.myCharacter === props && player.isPlaying) {
         //Puja el nivell
         player.updatePanel();
         //Si es correcte la pantalla canviara
@@ -293,23 +324,15 @@ function getInfoClicked(props, event) {
         ocultaIncorrectes();
         //Aplica animacio estrelles
         animateStars();
-    } else {
+        player.isPlaying = false;
+    } else if (player.isPlaying) {
         player.timerSubstract();
     }
-    console.log(props.name);
-
-    //event.target.disabled = true;
-    //console.log(event.target.disabled);
-    pepe = event.target;
-    console.log("pepe tiene valor", pepe);
-    //event.target.removeEventListener('click', getInfoClicked);
-    //let eventsClicable = getEventListeners(event.target).click[0];
-    //Esborra el primer element clicable, os sigui a getInfoClicked
-    //event.target.removeEventListener(eventsClicable.type, eventsClicable.listener);
 }
 
 
 function nextPartida() {
+    player.isPlaying = true;
     if (player.time <= 0) {
         player.points = points; //default
         player.time = timer; //deault
@@ -336,9 +359,11 @@ function nextPartida() {
             console.log("Tipus de panell no definit: " + player.typePanel);
             break;
     }
-    intervalID = setInterval(timeCountDown, 1000);
-    //Amaga el boto
-    document.getElementById("btn-next-partida").style.display = "none";
+    if (player.typePanel === 1 || player.typePanel == 0) {
+        intervalID = setInterval(timeCountDown, 1000);
+        //Amaga el boto
+        document.getElementById("btn-next-partida").style.display = "none";
+    }
 }
 
 function ocultaIncorrectes() {
@@ -354,6 +379,8 @@ function ocultaIncorrectes() {
     clearInterval(intervalID)
     //Mostra el boto de seguent
     document.getElementById("btn-next-partida").style.display = "block";
+
+
 }
 
 
@@ -363,8 +390,8 @@ function applyAnimation(element) {
         //Si ,es de 10 punts, dos animacions, si es 23, 2 animacion 
         let animacionsDisponibles = parseInt(player.points / 10);
         //No deixa que hi hagi mes punts que animacions
-        //EX: 53 punts no hi ha animacio '5'
-        if (animacionsDisponibles > 4) { animacionsDisponibles = 4; }
+        //EX: 53 punts no hi ha animacio '6'
+        if (animacionsDisponibles > 5) { animacionsDisponibles = 5; }
         //Tria animacions random per cada imatge, poden repetirse en el bucle
         let num = player.randNum(1, animacionsDisponibles);
         //Tria una animacio
@@ -378,8 +405,11 @@ function applyAnimation(element) {
             case 3:
                 element.style.animationName = "circle";
                 break;
-            default: //4
+            case 4:
                 element.style.animationName = "rotateDiagonal";
+                break;
+            default: //5
+                element.style.animationName = "translateXOpacity";
                 break;
         }
 
@@ -401,7 +431,7 @@ function animateStars() {
     if (player.points % 5 == 1) {
         document.getElementById("numberStars").style.color = "lightyellow";
         for (let i = 0; i < starties.length; i++) {
-            starties[i].style.color = "black";
+            starties[i].style.color = "#55433a";
         }
     } else {
         document.getElementById("numberStars").style.color = "yellow";

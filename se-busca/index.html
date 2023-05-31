@@ -17,10 +17,14 @@
 </head>
 
 <body onload="loadMusic()">
+    <p style="color:white;"> 🪲 Si clicas al mismo puedes sumar mas puntos</p>
     <div class="btn">
-        <button onclick="drawPanelPosition()">drawPanelPosition</button>
+        <button onclick="drawPanelPosition()">Play Random</button>
+        <button onclick="drawPanelTable()">Play Tabla</button>
+
     </div>
-    <div id="fixedheader">
+    <div class="panel-se-busca" id="panell-position">
+        <h2>Panel Position</h2>
         <header class="meitat-del-contingut" role="banner" aria-label="Encabezado de la página">
             <span class="material-icons">
                 home
@@ -37,7 +41,7 @@
             </div>
             <div class="wanted-poster">
                 <img src="./img/wanted.png" height="160" alt="">
-                <img title="Personaje a buscar" id="myCharacter"  height="80" src="." alt=".">
+                <img id="myCharacter" height="80" src="." alt=".">
                 <!-- <p>SE BUSCA</p> -->
             </div>
             <div id="stars" aria-hidden="true">
@@ -50,20 +54,25 @@
                 <span id="number-star" title="Numero de puntos">0</span>
             </div>
         </div>
+        <div id="panelAbsoluto">
+        </div>
     </div>
 
-    <p style="color:white;"> 🪲 Si clicas al mismo puedes sumar mas puntos</p>
+
 
 
     <h2>Panel Flex</h2>
     <div class="panel-se-busca" id="panelGrid"></div>
 
-    <h2>Panel Position</h2>
-    <div class="panel-se-busca" id="panelAbsoluto">
-    </div>
+
 
     <h2>Panel Tabla</h2>
-    <div class="panel-se-busca" id="panelTabla"></div>
+    <div class="panel-se-busca">
+        <h3 id="focusBusca">Se busca <span id="nameSeBusca"></span></h3>
+        <div id="panelTabla">
+
+        </div>
+    </div>
     <script src="index.js"></script>
 </body>
 
