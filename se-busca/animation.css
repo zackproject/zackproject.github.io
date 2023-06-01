@@ -67,11 +67,16 @@
   }
 }
 
-@keyframes note-rotate {
-  from {
-    transform: rotate(0deg);
+@keyframes fall-poster {
+  0% {
+    transform: translate(0px, 0px) rotate(360deg) scale(1);
+
   }
-  to {
-    transform: rotate(360deg);
+  50%{
+    transform: translate(-400px, -400px) rotate(0deg) scale(0.2);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(360deg) scale(1);
+
   }
 }

@@ -84,6 +84,8 @@ function timeCountDown() {
         ocultaIncorrectes();
         //Reset panel
         resetPanelOnFail();
+        //Mostra el boto de seguent
+        document.getElementById("btn-next-partida").style.display = "block";
     }
 }
 
@@ -325,6 +327,10 @@ function getInfoClicked(props, event) {
         //Aplica animacio estrelles
         animateStars();
         player.isPlaying = false;
+        //Carrega la nova partida
+        resetAnimation();
+        setTimeout(nextPartida, 1500);
+
     } else if (player.isPlaying) {
         player.timerSubstract();
     }
@@ -347,6 +353,7 @@ function nextPartida() {
             break;
         case 1:
             drawPanelPosition();
+  
             break;
         case 2:
             //Retorn al panell '1' al acabar.
@@ -377,10 +384,6 @@ function ocultaIncorrectes() {
     //Atura el cronometre
     document.getElementById("timing-wanted").innerText = player.time;
     clearInterval(intervalID)
-    //Mostra el boto de seguent
-    document.getElementById("btn-next-partida").style.display = "block";
-
-
 }
 
 
@@ -452,7 +455,6 @@ function loadMusic() {
     reproductor.loop = true;
 }
 ///Musica
-
 function playPauseMusic(event) {
     let musicnote = event.target;
     if (reproductor.paused) {
@@ -464,4 +466,11 @@ function playPauseMusic(event) {
     musicnote.innerText = "music_off"
     reproductor.pause();
 
+}
+//https://stackoverflow.com/a/45036752
+function resetAnimation() {
+    var el = document.getElementById('wanted-poster');
+    el.style.animation = 'none';
+    el.offsetHeight; /* trigger reflow */
+    el.style.animation = null;
 }

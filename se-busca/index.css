@@ -65,9 +65,12 @@ h3 {
 
 }
 /* cartell de se busca */
-.wanted-poster {
+#wanted-poster {
   position: relative;
   z-index: 2;
+  animation-timing-function: ease-in;
+  animation-name: fall-poster;
+  animation-duration: 1.5s;
 }
 #myCharacter {
   position: absolute;
