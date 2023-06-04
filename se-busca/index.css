@@ -47,7 +47,8 @@ h3 {
   display: flex;
   justify-content: space-around;
   gap: 10px;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 /*Estrellas del score*/
 #stars {
@@ -171,6 +172,10 @@ td {
   background-color: black;
   padding: 10px;
 }
-.footer-wanted > .material-icons {
-  font-size: 2em;
+.wanted-icon {
+  font-size: 1.5em;
+}
+
+.wanted-icon:hover {
+  cursor: pointer;
 }

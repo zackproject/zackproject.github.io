@@ -42,20 +42,20 @@
 
 @keyframes moveFromY {
   0% {
-    transform: translateY(-10px);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(100px);
+    transform: translateY(-100px);
   }
 
   100% {
-    transform: translateY(-10px);
+    transform: translateY(0px);
   }
 }
 
 @keyframes rotateDiagonal {
   0% {
-    transform: translateX(-10px) translateY(-10px) rotate(0deg);
+    transform: translateX(-10px) translateY(0px) rotate(0deg);
   }
 
   50% {
@@ -63,7 +63,7 @@
   }
 
   100% {
-    transform: translateX(-10px) translateY(-10px) rotate(0deg);
+    transform: translateX(-10px) translateY(0px) rotate(0deg);
   }
 }
 

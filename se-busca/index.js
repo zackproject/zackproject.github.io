@@ -146,7 +146,7 @@ function drawPanelPosition() {
         img.style.position = "absolute";
         // Tria una posicio x y numero random 'double' dins del panell. Al 100% no es veu
         img.style.left = player.randNum(0, 90, true) + "%";
-        img.style.top = player.randNum(0, 90, true) + "%";
+        img.style.top = player.randNum(0, 80, true) + "%";
         img.style.animationDirection = "normal";
 
         //Dependen de la puntuacio i de l'atzar aplica animacio
@@ -461,4 +461,8 @@ function resetAnimation() {
     el.style.animation = 'none';
     el.offsetHeight; /* trigger reflow */
     el.style.animation = null;
+}
+
+function pauseWanted(){
+    
 }
