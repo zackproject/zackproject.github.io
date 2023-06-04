@@ -70,13 +70,36 @@
 @keyframes fall-poster {
   0% {
     transform: translate(0px, 0px) rotate(360deg) scale(1);
-
   }
-  50%{
-    transform: translate(-400px, -400px) rotate(0deg) scale(0.2);
+  50% {
+    opacity: 0;
+    transform: translate(-200px, -200px) rotate(180deg) scale(0.2);
+  }
+  52% {
+    opacity: 0;
+    transform: translate(200px, -200px) rotate(180deg) scale(0.2);
   }
   100% {
+    opacity: 1;
     transform: translate(0px, 0px) rotate(360deg) scale(1);
+  }
+}
 
+@keyframes parpadea {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+  60%{
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

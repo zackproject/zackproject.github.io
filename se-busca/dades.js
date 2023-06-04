@@ -1,16 +1,18 @@
-let sebusca = [
-    { "id": 0, "name": "Brook", "image": "./img/brook.png" },
-    { "id": 1, "name": "Chopper", "image": "./img/chopper.png" },
-    { "id": 2, "name": "Franky", "image": "./img/franky.png" },
-    { "id": 3, "name": "Luffy", "image": "./img/luffy.png" },
-    { "id": 4, "name": "Robin", "image": "./img/robin.png" },
-    { "id": 5, "name": "Sanji", "image": "./img/sanji.png" },
-    { "id": 6, "name": "Usopp", "image": "./img/usop.png" },
-    { "id": 7, "name": "Zoro", "image": "./img/zoro.png" },
-    { "id": 8, "name": "Nami", "image": "./img/nami.png" },
-   /* { "id": 9, "name": "Hawks", "image": "./img/brook.png" },*/
+let sebusca = {
+    "clasic": [
+        { "id": 0, "name": "Brook", "image": "./img/brook.png" },
+        { "id": 1, "name": "Chopper", "image": "./img/chopper.png" },
+        { "id": 2, "name": "Franky", "image": "./img/franky.png" },
+        { "id": 3, "name": "Luffy", "image": "./img/luffy.png" },
+        { "id": 4, "name": "Robin", "image": "./img/robin.png" },
+        { "id": 5, "name": "Sanji", "image": "./img/sanji.png" },
+        { "id": 6, "name": "Usopp", "image": "./img/usop.png" },
+        { "id": 7, "name": "Zoro", "image": "./img/zoro.png" },
+        { "id": 8, "name": "Nami", "image": "./img/nami.png" }
+    ],
+    "special": { "id": 9, "name": "Wally", "image": "./img/wally.png" }
 
-];
+};
 
 /*
 let sebusca = [

@@ -1,5 +1,5 @@
 class Wanted {
-    constructor(points, characterList, time, numberOfCharacters, typePanel) {
+    constructor(points, characterList, time, numberOfCharacters, typePanel, special) {
         this.numberOfCharacters = numberOfCharacters
         this.time = time;
         this.points = points;
@@ -8,10 +8,16 @@ class Wanted {
         //S'omplen una vegada creat el panell, getRandCharacter(), getRandPanel()
         this.myCharacter = null;
         this.panelList = null;
+        this.special = special;
         this.isPlaying = false;
     }
 
     getRandCharacter() {
+        //Cada 45 punts es Wally
+        if (this.points % 45 == 0 && this.points > 0) {
+            this.myCharacter = this.special;
+            return;
+        }
         //Pot ser que la llista de characters siguin 10 pero nomes jugo amb 4 (numberOfCharacters)
         let rand = this.randNum(0, this.characterList.length - 1)
         this.myCharacter = this.characterList[rand];
@@ -19,7 +25,6 @@ class Wanted {
     updatePanel() {
         if (this.points % 5 == 0 && this.points > 5) {
             this.numberOfCharacters = this.numberOfCharacters + 4;
-            console.log(this.numberOfCharacters);
         }
         this.points++;
     }
@@ -38,6 +43,7 @@ class Wanted {
                 i++;
             }
         }
+
         //Tria una ubicacio a l'atzar
         let novaUbicacio = this.randNum(0, this.numberOfCharacters - 1)
         //Al acaba sobrescriu un a l'atzar per el nostre personatge
@@ -53,7 +59,12 @@ class Wanted {
         return parseInt(Math.random() * (max - min + 1) + min);
     }
     timerAdd() {
+        if (this.points > 40) {
+            this.time += 1;
+            return;
+        }
         this.time += 2;
+
     }
 
     timerSubstract() {
@@ -80,7 +91,7 @@ function timeCountDown() {
     document.getElementById("timing-wanted").innerText = player.time;
     if (player.time <= 0) {
         document.getElementById("timing-wanted").innerText = 0;
-        document.getElementById("btn-next-partida").innerText = "GAME OVER"
+        player.isPlaying = false;
         ocultaIncorrectes();
         //Reset panel
         resetPanelOnFail();
@@ -99,37 +110,11 @@ function resetPanelOnFail() {
 }
 
 //Crea la partida
-let player = new Wanted(points, sebusca, timer, maxCharacters, typePanel);
+let player = new Wanted(points, sebusca.clasic, timer, maxCharacters, typePanel, sebusca.special);
 //Genera el nou character
 player.getRandCharacter();
 //Genera el nou panell
 player.getRandPanel();
-
-
-//PANEL ESTATIC
-function drawPanelFlex() {
-    let pare = document.getElementById("panelGrid");
-    //Esborra el contigut de l'anterior
-    deleteChilds(pare);
-    //Torna a generar la partida
-    player.typePanel = 0;
-    player.getRandCharacter();
-    player.getRandPanel();
-    //Fica el personatge triat
-    showHTMLMyCharacter(player.myCharacter);
-    // Omple el panel HTML
-    for (let i = 0; i < player.panelList.length; i++) {
-        let img = document.createElement("img");
-        img.src = player.panelList[i].image;
-        img.width = "100"
-        img.alt = player.panelList[i].name;
-        //Controla quien elements ha d'ocultar per clase
-        img.className = IMGINGAME;
-        //Quan cliques una imatge s'envia la seva data a la funcio 'getInfoClicked'
-        img.addEventListener("click", (event) => { getInfoClicked(player.panelList[i], event) });
-        pare.appendChild(img)
-    }
-}
 
 
 //PANEL RELATIVE/ABSOLUTE
@@ -144,7 +129,7 @@ function drawPanelPosition() {
     //Esborra el contigut de l'anterior
     deleteChilds(pare);
 
-    pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='nextPartida()''>SIGUIENTE</button>"
+    pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='nextPartida()''>REINTENTAR</button>"
 
     //Torna a generar la partida
     player.typePanel = 1;
@@ -165,8 +150,11 @@ function drawPanelPosition() {
         img.style.animationDirection = "normal";
 
         //Dependen de la puntuacio i de l'atzar aplica animacio
-        if (faAnimacio) {
+        if (faAnimacio && player.points > 10) {
             applyAnimation(img);
+        } else if (player.points > 20) {
+            img.style.animationDelay = (1 + i) / 10 + "s";
+            img.style.animationName = "parpadea";
         }
         //El personatge triat ha d'estar sobre per poder clicarlo
         if (element === player.myCharacter) {
@@ -190,7 +178,7 @@ function drawPanelStaticPosition() {
     let pare = document.getElementById("panelAbsoluto");
     //Esborra el contigut de l'anterior
     deleteChilds(pare);
-    pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='nextPartida()''>SIGUIENTE</button>"
+    pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='nextPartida()''>REINTENTAR</button>"
 
     //Com nomes en aquest panel necesito 4, faig copia i aplico
     let copiaNumber = player.numberOfCharacters;
@@ -203,7 +191,7 @@ function drawPanelStaticPosition() {
     player.panelList.forEach(element => {
         let img = document.createElement("img");
         img.src = element.image;
-        img.width = "100"
+        img.width = "70"
         img.alt = element.name;
         //Controla quien elements ha d'ocultar per clase
         img.className = IMGINGAME;
@@ -211,7 +199,7 @@ function drawPanelStaticPosition() {
         img.style.position = "absolute";
         // Tria una posicio x y numero random 'double' dins del panell. Al 100% no es veu
         img.style.left = tamany * 17 + "%";
-        img.style.top = "-10%";
+        img.style.top = "-5%";
         tamany++;
         //El personatge triat ha d'estar sobre per poder clicarlo
         if (element === player.myCharacter) img.style.zIndex = 1;
@@ -220,6 +208,8 @@ function drawPanelStaticPosition() {
         // Puja la imatge en el container
         pare.appendChild(img)
     });
+
+    
     //Mostra el personatge que has de buscar al HTML
     showHTMLMyCharacter(player.myCharacter)
 
@@ -305,7 +295,6 @@ function deleteChilds(currentDiv) {
 function accesibleClicked(props, event) {
     let sebuscaText = document.getElementById("nameSeBusca");
     if (player.myCharacter === props) {
-        console.log("Correcto", props);
         //Puja el nivell
         player.updatePanel();
         //Si es correcte la pantalla canviara
@@ -353,7 +342,7 @@ function nextPartida() {
             break;
         case 1:
             drawPanelPosition();
-  
+
             break;
         case 2:
             //Retorn al panell '1' al acabar.
@@ -389,42 +378,41 @@ function ocultaIncorrectes() {
 
 //Controla les animacions que nomes s'aplican a l'atzar si es major 10 la puntuacio
 function applyAnimation(element) {
-    if (player.points > 10) {
-        //Si ,es de 10 punts, dos animacions, si es 23, 2 animacion 
-        let animacionsDisponibles = parseInt(player.points / 10);
-        //No deixa que hi hagi mes punts que animacions
-        //EX: 53 punts no hi ha animacio '6'
-        if (animacionsDisponibles > 5) { animacionsDisponibles = 5; }
-        //Tria animacions random per cada imatge, poden repetirse en el bucle
-        let num = player.randNum(1, animacionsDisponibles);
-        //Tria una animacio
-        switch (num) {
-            case 1:
-                element.style.animationName = "moveFromY";
-                break;
-            case 2:
-                element.style.animationName = "moveFromX";
-                break
-            case 3:
-                element.style.animationName = "circle";
-                break;
-            case 4:
-                element.style.animationName = "rotateDiagonal";
-                break;
-            default: //5
-                element.style.animationName = "translateXOpacity";
-                break;
-        }
-
-        //Es la velocitar a la que va segons puntatge proporcionalment als punts
-        if (player.points < 800) {
-            //10 es el que val l'animacio per defecte en el index.css
-            element.style.animationDuration = 10 - (player.points / 100) + "s";
-        } else {
-            //Si pasa del 800 punts la velocitat seran 2 segons
-            element.style.animationDuration = "2s";
-        }
+    //Si ,es de 10 punts, dos animacions, si es 23, 2 animacion 
+    let animacionsDisponibles = parseInt(player.points / 10);
+    //No deixa que hi hagi mes punts que animacions
+    //EX: 53 punts no hi ha animacio '6'
+    if (animacionsDisponibles > 5) { animacionsDisponibles = 5; }
+    //Tria animacions random per cada imatge, poden repetirse en el bucle
+    let num = player.randNum(1, animacionsDisponibles);
+    //Tria una animacio
+    switch (num) {
+        case 1:
+            element.style.animationName = "moveFromY";
+            break;
+        case 2:
+            element.style.animationName = "moveFromX";
+            break
+        case 3:
+            element.style.animationName = "circle";
+            break;
+        case 4:
+            element.style.animationName = "rotateDiagonal";
+            break;
+        default: //5
+            element.style.animationName = "translateXOpacity";
+            break;
     }
+
+    //Es la velocitar a la que va segons puntatge proporcionalment als punts
+    if (player.points < 800) {
+        //10 es el que val l'animacio per defecte en el index.css
+        element.style.animationDuration = 10 - (player.points / 100) + "s";
+    } else {
+        //Si pasa del 800 punts la velocitat seran 2 segons
+        element.style.animationDuration = "2s";
+    }
+
 }
 
 
@@ -434,7 +422,7 @@ function animateStars() {
     if (player.points % 5 == 1) {
         document.getElementById("numberStars").style.color = "lightyellow";
         for (let i = 0; i < starties.length; i++) {
-            starties[i].style.color = "#55433a";
+            starties[i].style.color = "black";
         }
     } else {
         document.getElementById("numberStars").style.color = "yellow";

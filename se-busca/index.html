@@ -17,28 +17,19 @@
 </head>
 
 <body onload="loadMusic()">
-    <div class="btn">
+    <!-- <div class="btn">
         <button onclick="drawPanelPosition()">Play Random</button>
         <button onclick="drawPanelTable()">Play Tabla</button>
 
-    </div>
-    <div class="panel-se-busca" id="panell-position">
-        <h2>Panel Position</h2>
-        <header class="meitat-del-contingut" role="banner" aria-label="Encabezado de la página">
-            <span class="material-icons">
-                home
-            </span>
-            <h1 aria-label="Encabezado: SE-BUSCA" id="titol-se-busca">SE BUSCA</h1>
-            <span onclick="playPauseMusic(event)" class="material-icons">
-                music_off<!-- music_off -->
-            </span>
-        </header>
-        <div class="panel-control">
+    </div>-->
+    <div class="container-wanted">
+
+        <header class="panel-control wanted-1">
             <div class="timer">
                 <h2>TIMER</h2>
                 <div id="timing-wanted">!</div>
             </div>
-            <div id="wanted-poster">
+            <div id="wanted-poster" onclick="drawPanelPosition()">
                 <img src="./img/wanted.png" height="160" alt="">
                 <img id="myCharacter" height="80" src="." alt=".">
                 <!-- <p>SE BUSCA</p> -->
@@ -52,25 +43,34 @@
                 <span class="sub-star material-icons">star</span>
                 <span id="number-star" title="Numero de puntos">0</span>
             </div>
+        </header>
+        <div class="item-wanted wanted-2" id="panelAbsoluto">
+            <!--
+                <div class="panel-se-busca" id="panelGrid" style="display: none;">
+                    <h2>Panel Flex</h2>
+                </div>
+    
+    
+                <div class="panel-se-busca" style="display: none;">
+                    <h3 id="focusBusca">Se busca <span id="nameSeBusca"></span></h3>
+                    <div id="panelTabla">
+                        <h2>Panel Tabla</h2>
+                    </div>
+                </div>
+            -->
         </div>
-        <div id="panelAbsoluto">
-        </div>
-    </div>
+        <footer class="wanted-3 footer-wanted">
+            <span class="material-icons wanted-icon">
+                home
+            </span>
 
-
-
-
-    <h2>Panel Flex</h2>
-    <div class="panel-se-busca" id="panelGrid"></div>
-
-
-
-    <h2>Panel Tabla</h2>
-    <div class="panel-se-busca">
-        <h3 id="focusBusca">Se busca <span id="nameSeBusca"></span></h3>
-        <div id="panelTabla">
-
-        </div>
+            <span class="material-icons wanted-icon">
+                pause_circle_outline
+            </span>
+            <span onclick="playPauseMusic(event)" class="material-icons wanted-icon">
+                music_off<!-- music_off -->
+            </span>
+        </footer>
     </div>
     <script src="index.js"></script>
 </body>
