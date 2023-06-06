@@ -74,6 +74,9 @@ class Wanted {
         this.time += 2;
 
     }
+    timerAccesible() {
+        this.time += 10;
+    }
 
     timerSubstract() {
         this.time -= 10;
@@ -99,12 +102,17 @@ function timeCountDown() {
     if (player.isPlaying) {
         player.time -= 1;
         document.getElementById("timing-wanted").innerText = player.time;
+        document.getElementById("timing-wanted").title = player.time + "segundos";
+
     }
     if (player.time <= 0) {
         //Guarda la nova puntuacio
         player.updateScore(parseInt(player.points));
+        //Update la puntuacio en el html
+        generateScore();
         localStorage.setItem(WANTEDLOCAL, player.scoreList.toString());
         document.getElementById("timing-wanted").innerText = 0;
+        document.getElementById("timing-wanted").title = "0 segundos, sin tiempo";
         player.isPlaying = false;
         ocultaIncorrectes();
         //Reset panel
@@ -122,7 +130,19 @@ function playClasic() {
     document.getElementById("container-wanted").style.display = "flex";
     document.getElementById("footer-wanted").style.display = "flex";
     document.getElementById("menu-wanted").style.display = "none";
+    document.getElementById("panelTabla").style.display = "none";
 
+}
+
+function playAccesible() {
+    document.getElementById("container-wanted").style.display = "flex";
+    document.getElementById("menu-wanted").style.display = "none";
+    document.getElementById("panelAbsoluto").style.display = "none";
+    document.getElementById("footer-wanted").style.display = "flex";
+    document.getElementById("panelTabla").style.display = "flex";
+    player.time = 60;
+    player.isPlaying = true;
+    drawPanelTable();
 }
 function backWantedMenu() {
     let pare = document.getElementById("panelAbsoluto");
@@ -302,19 +322,11 @@ function drawPanelTable() {
         }
     }
 
-    //let totalTd = table.getElementsByTagName("tr");
-    //let lasttr = totalTd[totalTd.length-1]
-    // console.log("mi ultimo es ",lasttr );
-    // lasttr.colSpan = "2";
-
-
-    //+ " | Fila: " + posTr + " Columna: " + posTd
-    let sebusca = document.getElementById("nameSeBusca");
-    sebusca.innerText = player.myCharacter.name;
-    document.getElementById("focusBusca").focus();
+    showHTMLMyCharacter(player.myCharacter)
     pare.appendChild(table);
 
-    document.getElementById("focusBusca").focus();
+    document.getElementById("timing-wanted").focus();
+
 
 }
 
@@ -335,14 +347,13 @@ function deleteChilds(currentDiv) {
 
 
 function accesibleClicked(props, event) {
-    let sebuscaText = document.getElementById("nameSeBusca");
     if (player.myCharacter === props) {
         //Puja el nivell
         player.updatePanel();
         //Si es correcte la pantalla canviara
-        player.timerAdd();
-        sebuscaText.innerText = player.myCharacter.name;
-        sebuscaText.focus();
+        player.timerAccesible();
+        document.getElementById("number-star").innerText = player.points;
+        document.getElementById("number-star").title = "Puntuación actual" + player.points;
         drawPanelTable();
     }
 
@@ -361,6 +372,7 @@ function getInfoClicked(props, event) {
         player.isPlaying = false;
         //Carrega la nova partida
         resetAnimation();
+        // Pausa per la nova puntuacio
         setTimeout(nextPartida, 1500);
     } else if (player.isPlaying) {
         player.timerSubstract();
@@ -489,6 +501,7 @@ function loadWanted() {
         player.scoreList = [0, 0, 0, 0, 0];
 
     }
+    generateScore();
     makeFooter();
 
 }
@@ -498,9 +511,11 @@ function playPauseMusic(event) {
     if (reproductor.paused) {
         reproductor.muted = false;
         reproductor.play();
+        musicnote.title = "Desactivar musica";
         musicnote.innerText = "music_note";
         return;
     }
+    musicnote.title = "Activar musica";
     musicnote.innerText = "music_off"
     reproductor.currentTime = 0;
     reproductor.pause();
@@ -516,15 +531,21 @@ function resetAnimation() {
 
 function pauseWanted(event) {
     let panel = document.getElementById("panelAbsoluto");
-
+    let accesibleTabla = document.getElementById("panelTabla");
     if (player.isPlaying) {
         panel.style.opacity = 0;
         event.target.innerText = "pause_circle_outline";
+        event.target.title = "Partida Pausada";
+        accesibleTabla.ariaHidden = "true";
+        accesibleTabla.style.opacity = "0";
         event.target.style.fontSize = "50px";
         player.isPlaying = false;
     } else if (!player.isPlaying) {
         panel.style.opacity = 1;
         event.target.style.fontSize = "24px";
+        event.target.title = "Partida Reanudada";
+        accesibleTabla.style.opacity = "1";
+        accesibleTabla.ariaHidden = "false";
         event.target.innerText = "play_circle_outline";
         player.isPlaying = true;
     }
@@ -537,7 +558,7 @@ function generateScore() {
     let ol = document.createElement("ol");
     for (let i = 0; i < player.scoreList.length; i++) {
         let li = document.createElement("li");
-        li.innerHTML = "<span class='material-icons'>star</span> ... " + player.scoreList[i];
+        li.innerHTML = `<span aria-hidden="true">${i + 1}.</span> ${player.scoreList[i]}</span><span class='material-icons' aria-hidden="true">star</span>`;
         ol.appendChild(li);
     }
     pare.appendChild(ol);
