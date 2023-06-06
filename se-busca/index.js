@@ -10,11 +10,19 @@ class Wanted {
         this.panelList = null;
         this.special = special;
         this.isPlaying = false;
+        this.scoreList = [0, 0, 0, 0, 0];
+    }
+    updateScore(newScore) {
+        let copiaList = this.scoreList;
+        copiaList.push(parseInt(newScore));
+        copiaList = copiaList.sort((a, b) => b - a); // Ordenar de forma descendente usando una función de comparación
+        copiaList.pop();
+        this.scoreList = copiaList;
     }
 
     getRandCharacter() {
         //Cada 45 punts es Wally
-        if (this.points % 45 == 0 && this.points > 0) {
+        if (this.points % 35 == 0 && this.points > 0) {
             this.myCharacter = this.special;
             return;
         }
@@ -76,20 +84,26 @@ class Wanted {
 
 }
 
+
+const WANTEDLOCAL = "wanted";
 //Controla totes les imatges de la partida
 const IMGINGAME = "img-in-game";
 let points = 0;
-let timer = 10;
+let timer = 15;
 let maxCharacters = 4;
 //Controla si es 0-flex, 1-position, 2-staticPosition 3-table
 let typePanel = 0;
 let reproductor = new Audio();
-
-let intervalID = null;
+const intervalID = setInterval(timeCountDown, 1000)
 function timeCountDown() {
-    player.time -= 1;
-    document.getElementById("timing-wanted").innerText = player.time;
+    if (player.isPlaying) {
+        player.time -= 1;
+        document.getElementById("timing-wanted").innerText = player.time;
+    }
     if (player.time <= 0) {
+        //Guarda la nova puntuacio
+        player.updateScore(parseInt(player.points));
+        localStorage.setItem(WANTEDLOCAL, player.scoreList.toString());
         document.getElementById("timing-wanted").innerText = 0;
         player.isPlaying = false;
         ocultaIncorrectes();
@@ -97,16 +111,34 @@ function timeCountDown() {
         resetPanelOnFail();
         //Mostra el boto de seguent
         document.getElementById("btn-next-partida").style.display = "block";
+        document.getElementById("footer-wanted").style.display = "none";
     }
 }
 
+
+function playClasic() {
+    //Inicia despres de acabar a la animacio
+    setTimeout(drawPanelPosition, 1500);
+    document.getElementById("container-wanted").style.display = "flex";
+    document.getElementById("footer-wanted").style.display = "flex";
+    document.getElementById("menu-wanted").style.display = "none";
+
+}
+function backWantedMenu() {
+    let pare = document.getElementById("panelAbsoluto");
+    deleteChilds(pare);
+    document.getElementById("container-wanted").style.display = "none";
+    document.getElementById("menu-wanted").style.display = "flex";
+    if (!reproductor.paused) {
+        reproductor.pause();
+    }
+}
 
 function resetPanelOnFail() {
     player.points = points;
     player.time = timer;
     player.numberOfCharacters = maxCharacters;
-    clearInterval(intervalID)
-
+    player.isPlaying = false;
 }
 
 //Crea la partida
@@ -120,17 +152,15 @@ player.getRandPanel();
 //PANEL RELATIVE/ABSOLUTE
 function drawPanelPosition() {
     player.isPlaying = true;
-    if (intervalID == null) {
-        intervalID = setInterval(timeCountDown, 1000)
-    }
     //Tria si fara l'animacio
+    document.getElementById("timing-wanted").innerText = player.time;
+
     let faAnimacio = player.randNum(0, 2) === 1;
     let pare = document.getElementById("panelAbsoluto");
     //Esborra el contigut de l'anterior
     deleteChilds(pare);
 
-    pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='nextPartida()''>REINTENTAR</button>"
-
+    pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='backWantedMenu()''>SALIR</button> <button id='btn-next-partida' class='center-next-btn' onclick='nextPartida()''>SALIR</button>"
     //Torna a generar la partida
     player.typePanel = 1;
     player.getRandCharacter();
@@ -152,10 +182,22 @@ function drawPanelPosition() {
         //Dependen de la puntuacio i de l'atzar aplica animacio
         if (faAnimacio && player.points > 10) {
             applyAnimation(img);
-        } else if (player.points > 20) {
-            img.style.animationDelay = (1 + i) / 10 + "s";
-            img.style.animationName = "parpadea";
         }
+
+        //Si no tria animacio en moviment tria parpadeig entre color o opacitat
+        if (!faAnimacio && player.points > 10) {
+            //En cas que sigui divisible entre 25 fara aquesta
+            if (player.points % 25 == 0) {
+                img.style.animationDelay = (1 + i) / 10 + "s";
+                img.style.animationName = "parpadea-gris";
+
+            } else {
+                //Sino fara aquesta
+                img.style.animationDelay = (1 + i) / 10 + "s";
+                img.style.animationName = "parpadea";
+            }
+        }
+
         //El personatge triat ha d'estar sobre per poder clicarlo
         if (element === player.myCharacter) {
             img.style.zIndex = 2;
@@ -178,7 +220,7 @@ function drawPanelStaticPosition() {
     let pare = document.getElementById("panelAbsoluto");
     //Esborra el contigut de l'anterior
     deleteChilds(pare);
-    pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='nextPartida()''>REINTENTAR</button>"
+    pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='backWantedMenu()''>SALIR</button> <button id='btn-next-partida' class='center-next-btn' onclick='nextPartida()''>SALIR</button>"
 
     //Com nomes en aquest panel necesito 4, faig copia i aplico
     let copiaNumber = player.numberOfCharacters;
@@ -209,7 +251,7 @@ function drawPanelStaticPosition() {
         pare.appendChild(img)
     });
 
-    
+
     //Mostra el personatge que has de buscar al HTML
     showHTMLMyCharacter(player.myCharacter)
 
@@ -315,11 +357,11 @@ function getInfoClicked(props, event) {
         ocultaIncorrectes();
         //Aplica animacio estrelles
         animateStars();
+        //Pausa la partida
         player.isPlaying = false;
         //Carrega la nova partida
         resetAnimation();
         setTimeout(nextPartida, 1500);
-
     } else if (player.isPlaying) {
         player.timerSubstract();
     }
@@ -327,7 +369,6 @@ function getInfoClicked(props, event) {
 
 
 function nextPartida() {
-    player.isPlaying = true;
     if (player.time <= 0) {
         player.points = points; //default
         player.time = timer; //deault
@@ -336,13 +377,11 @@ function nextPartida() {
     if (player.typePanel === 1 && player.points < 10) {
         player.typePanel = player.randNum(1, 2);
     }
+    //Continua la partida
+    player.isPlaying = true;
     switch (player.typePanel) {
-        case 0:
-            drawPanelFlex()
-            break;
         case 1:
             drawPanelPosition();
-
             break;
         case 2:
             //Retorn al panell '1' al acabar.
@@ -356,8 +395,7 @@ function nextPartida() {
             break;
     }
     if (player.typePanel === 1 || player.typePanel == 0) {
-        intervalID = setInterval(timeCountDown, 1000);
-        //Amaga el boto
+
         document.getElementById("btn-next-partida").style.display = "none";
     }
 }
@@ -372,7 +410,7 @@ function ocultaIncorrectes() {
     }
     //Atura el cronometre
     document.getElementById("timing-wanted").innerText = player.time;
-    clearInterval(intervalID)
+    player.isPlaying = false;
 }
 
 
@@ -437,10 +475,22 @@ function animateStars() {
 
 }
 
-function loadMusic() {
+function loadWanted() {
+    //Carrega la musica
     reproductor.src = "./audio/sakebink_niclaus.mp3";
     reproductor.muted = true;
     reproductor.loop = true;
+    //Carrega el localstorage
+    let dataL = localStorage.getItem(WANTEDLOCAL);
+    if (dataL != null) {
+        player.scoreList = dataL.split(",").map(Number);
+    } else {
+        localStorage.setItem(WANTEDLOCAL, "0,0,0,0,0")
+        player.scoreList = [0, 0, 0, 0, 0];
+
+    }
+    makeFooter();
+
 }
 ///Musica
 function playPauseMusic(event) {
@@ -452,6 +502,7 @@ function playPauseMusic(event) {
         return;
     }
     musicnote.innerText = "music_off"
+    reproductor.currentTime = 0;
     reproductor.pause();
 
 }
@@ -463,6 +514,37 @@ function resetAnimation() {
     el.style.animation = null;
 }
 
-function pauseWanted(){
-    
+function pauseWanted(event) {
+    let panel = document.getElementById("panelAbsoluto");
+
+    if (player.isPlaying) {
+        panel.style.opacity = 0;
+        event.target.innerText = "pause_circle_outline";
+        event.target.style.fontSize = "50px";
+        player.isPlaying = false;
+    } else if (!player.isPlaying) {
+        panel.style.opacity = 1;
+        event.target.style.fontSize = "24px";
+        event.target.innerText = "play_circle_outline";
+        player.isPlaying = true;
+    }
+
+}
+
+function generateScore() {
+    let pare = document.getElementById("score-wanted");
+    deleteChilds(pare);
+    let ol = document.createElement("ol");
+    for (let i = 0; i < player.scoreList.length; i++) {
+        let li = document.createElement("li");
+        li.innerHTML = "<span class='material-icons'>star</span> ... " + player.scoreList[i];
+        ol.appendChild(li);
+    }
+    pare.appendChild(ol);
+}
+
+function makeFooter() {
+    const d = new Date();
+    let foot = document.getElementById("wanted-menu-footer");
+    foot.innerHTML = `Zack Sama · ${d.getFullYear()} · <a href="https://www.zksama.com"> Zack Project</a>`;
 }

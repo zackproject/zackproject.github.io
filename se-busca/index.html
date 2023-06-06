@@ -12,18 +12,28 @@
     <script src="dades.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="../icopz.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <meta name="description"
         content="¡Sumérgete en la búsqueda de piratas en el juego online 'Se busca' de One Piece! Encuentra a los más buscados en emocionantes niveles inspirados en el mundo del anime y manga. ¡Demuestra tu habilidad y conviértete en el mejor cazador de recompensas!">
 </head>
 
-<body onload="loadMusic()">
-    <!-- <div class="btn">
-        <button onclick="drawPanelPosition()">Play Random</button>
-        <button onclick="drawPanelTable()">Play Tabla</button>
-
-    </div>-->
-    <div class="container-wanted">
-
+<body onload="loadWanted()">
+    <div id="menu-wanted">
+        <header id="wanted-header-menu" role="banner" aria-label="Encabezado de la página">
+            <h1 aria-label="Encabezado: SE BUSCA" id="titol-piano">SE BUSCA</h1>
+        </header>
+        <button aria-hidden="true" onclick="playClasic()">JUEGO CLÁSICO</button>
+        <button onclick="drawPanelTable()">JUEGO ACCESIBLE</button>
+        <button onclick="generateScore()">PUNTUACIÓN</button>
+        <p>El modo accesible es una partida a través de una tabla con filas y columnas.</p>
+        <div id="score-wanted"></div>
+        <footer id="wanted-menu-footer">Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a>
+        </footer>
+    </div>
+    <!-- juego-->
+    <div id="container-wanted">
         <header class="panel-control wanted-1">
             <div class="timer">
                 <h2>TIMER</h2>
@@ -46,11 +56,6 @@
         </header>
         <div class="item-wanted wanted-2" id="panelAbsoluto">
             <!--
-                <div class="panel-se-busca" id="panelGrid" style="display: none;">
-                    <h2>Panel Flex</h2>
-                </div>
-    
-    
                 <div class="panel-se-busca" style="display: none;">
                     <h3 id="focusBusca">Se busca <span id="nameSeBusca"></span></h3>
                     <div id="panelTabla">
@@ -59,9 +64,9 @@
                 </div>
             -->
         </div>
-        <footer class="wanted-3 footer-wanted">
-            <span class="material-icons wanted-icon">
-                pause_circle_outline
+        <footer id="footer-wanted" class="wanted-3">
+            <span class="material-icons wanted-icon" onclick="pauseWanted(event)">
+                play_circle_outline
             </span>
             <span onclick="playPauseMusic(event)" class="material-icons wanted-icon">
                 music_off<!-- music_off -->

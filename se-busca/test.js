@@ -13,8 +13,8 @@ class Wanted {
     }
 
     getRandCharacter() {
-        //Cada 45 punts es Wally
-        if (this.points % 45 == 0 && this.points > 0) {
+        //Cada 35 punts es Wally
+        if (this.points % 35 == 0 && this.points > 0) {
             this.myCharacter = this.special;
             return;
         }
@@ -128,8 +128,8 @@ function test() {
                 console.log("✅ Personatge unic:", i);
             }
 
-            //character special (Wally) apareix cada 45 punts
-            if (player.points % 45 == 0 && player.myCharacter != player.special) {
+            //character special (Wally) apareix cada 35 punts
+            if (player.points % 35 == 0 && player.myCharacter != player.special) {
                 console.log("❌ Personatge Wally:", i, player.myCharacter);
                 break;
             } else if (i % 1000 === 0) {

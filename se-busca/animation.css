@@ -95,11 +95,29 @@
   50% {
     opacity: 1;
   }
-  60%{
+  60% {
     opacity: 0.1;
   }
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes parpadea-gris {
+  0% {
+    filter: grayscale(100%);
+  }
+  70% {
+    filter: grayscale(100%);
+  }
+  80% {
+    filter: grayscale(0%);
+  }
+  90% {
+    filter: grayscale(100%);
+  }
+  100% {
+    filter: grayscale(100%);
   }
 }
