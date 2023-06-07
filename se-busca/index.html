@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se busca</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="animation.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="dades.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="../icopz.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="¡Sumérgete en la búsqueda de piratas en el juego online 'Se busca' de One Piece! Encuentra a los más buscados en emocionantes niveles inspirados en el mundo del anime y manga. ¡Demuestra tu habilidad y conviértete en el mejor cazador de recompensas!">
+</head>
+
+<body onload="loadWanted()">
+    <div id="menu-wanted">
+        <header id="wanted-header-menu" role="banner" aria-label="Encabezado de la página">
+            <h1 aria-label="Encabezado: SE BUSCA" id="titol-piano">SE BUSCA</h1>
+        </header>
+        <button aria-hidden="true" onclick="playClasic()">JUEGO CLÁSICO</button>
+        <button onclick="playAccesible()"
+            title="Al empezar la partida habrá un tiempo, una imagen del personaje a buscar y una tabla donde debes buscar ese personaje. También hay opciones de pausar partida y activar música.">JUEGO
+            ACCESIBLE</button>
+        <div id="score-wantel-container">
+            <h2 title="Muestra las mejores 5 puntuaciones">PUNTUACIÓN</h2>
+            <div id="score-wanted"></div>
+        </div>
+        <footer role="contentinfo" id="wanted-menu-footer">Zack Sama · 2022 · <a href="https://zackproject.github.io">
+                Zack Project</a>
+        </footer>
+    </div>
+    <!-- juego-->
+    <div id="container-wanted">
+        <header class="panel-control wanted-1">
+            <div id="timer">
+                <h2 aria-hidden="true">TIEMPO</h2>
+                <div id="timing-wanted">!</div>
+            </div>
+            <div id="wanted-poster">
+                <img src="./img/wanted.png" height="160" alt="">
+                <img id="myCharacter" height="80" src="." alt=".">
+                <!-- <p>SE BUSCA</p> -->
+            </div>
+            <div id="stars">
+                <span aria-hidden="true" class="parent-star material-icons" id="numberStars">star
+                </span>
+                <span aria-hidden="true" class="sub-star material-icons">star</span>
+                <span aria-hidden="true" class="sub-star material-icons">star</span>
+                <span aria-hidden="true" class="sub-star material-icons">star</span>
+                <span aria-hidden="true" class="sub-star material-icons">star</span>
+                <span title="puntuación actual 0" id="number-star">0</span>
+            </div>
+        </header>
+        <div class="item-wanted wanted-2" id="panelAbsoluto">
+        </div>
+        <div class="item-wanted wanted-2" id="panelTabla">
+            <h3 id="focusBusca">Se busca <span id="nameSeBusca"></span></h3>
+        </div>
+
+        <footer id="footer-wanted" class="wanted-3">
+            <span title="Pausa partida" class="material-icons wanted-icon" onclick="pauseWanted(event)">
+                play_circle_outline
+            </span>
+            <span title="Activar musica" onclick="playPauseMusic(event)" class="material-icons wanted-icon">
+                music_off<!-- music_off -->
+            </span>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

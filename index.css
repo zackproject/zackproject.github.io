@@ -18,9 +18,7 @@ header:nth-child(1) {
   z-index: 1;
 }
 
-header:nth-child(1) > img {
-  filter: invert();
-}
+
 .card {
   max-width: 20em;
 }
