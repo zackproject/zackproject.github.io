@@ -120,6 +120,12 @@ function timeCountDown() {
         //Mostra el boto de seguent
         document.getElementById("btn-next-partida").style.display = "block";
         document.getElementById("footer-wanted").style.display = "none";
+        if (player.typePanel == 3) {
+            document.getElementById("table-accesible").ariaHidden = "true";
+            document.getElementById("table-accesible").style.opacity = "0";
+
+            document.getElementById("btn-next-partida").focus();
+        }
     }
 }
 
@@ -240,7 +246,7 @@ function drawPanelStaticPosition() {
     let pare = document.getElementById("panelAbsoluto");
     //Esborra el contigut de l'anterior
     deleteChilds(pare);
-    pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='backWantedMenu()''>SALIR</button> <button id='btn-next-partida' class='center-next-btn' onclick='nextPartida()''>SALIR</button>"
+    pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='backWantedMenu()''>SALIR</button>";
 
     //Com nomes en aquest panel necesito 4, faig copia i aplico
     let copiaNumber = player.numberOfCharacters;
@@ -282,16 +288,15 @@ function drawPanelStaticPosition() {
 }
 
 function drawPanelTable() {
-    //let posTr = 0;
-    //let posTd = 0;
     let pare = document.getElementById("panelTabla");
-
     deleteChilds(pare);
+    pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='backWantedMenu()''>SALIR</button>";
     player.typePanel = 3;
     player.getRandCharacter();
     player.getRandPanel();
 
     let table = document.createElement("table");
+    table.id = "table-accesible";
     let numColumnes = player.randNum(2, 3);
 
     let tdrestant = numColumnes - (player.numberOfCharacters % numColumnes);
