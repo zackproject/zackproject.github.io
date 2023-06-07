@@ -32,8 +32,9 @@ function cardTemplate({ title, image, alt, description, link }) {
                 <p class="card-text">${description}</p>
             </header>
             <footer>
-                <a href="/${link}" title="Ir a la página ${link}" class="btn btn-primary">Play</a>
-            </footer
+                <a href="/${link}" title="Ir a la página ${link}" class="btn btn-outline-success">Play</a>
+                <a href="/como-jugar/#${link}" title="Ir al tutorial ${link}" class="btn btn-outline-primary">Como jugar</a>
+                </footer
         </section>
     </article>
     `;
