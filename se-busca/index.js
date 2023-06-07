@@ -102,7 +102,7 @@ function timeCountDown() {
     if (player.isPlaying) {
         player.time -= 1;
         document.getElementById("timing-wanted").innerText = player.time;
-        document.getElementById("timing-wanted").title = player.time + "segundos";
+        document.getElementById("timing-wanted").title = player.time + " segundos";
 
     }
     if (player.time <= 0) {
@@ -298,9 +298,6 @@ function drawPanelTable() {
     let table = document.createElement("table");
     table.id = "table-accesible";
     let numColumnes = player.randNum(2, 3);
-
-    let tdrestant = numColumnes - (player.numberOfCharacters % numColumnes);
-    console.log(tdrestant);
     //header de la taula
     let trhead = document.createElement("tr");
     for (let i = 0; i < numColumnes; i++) {
@@ -357,8 +354,12 @@ function accesibleClicked(props, event) {
         player.updatePanel();
         //Si es correcte la pantalla canviara
         player.timerAccesible();
-        document.getElementById("number-star").innerText = player.points;
-        document.getElementById("number-star").title = "Puntuación actual" + player.points;
+        let numberStar = document.getElementById("number-star");
+        let timingWanted = document.getElementById("timing-wanted");
+        numberStar.innerText = player.points;
+        numberStar.title = "Puntuación actual" + player.points;
+        timingWanted.innerText = player.time;
+        timingWanted.title = player.time + " segundos";
         drawPanelTable();
     }
 
