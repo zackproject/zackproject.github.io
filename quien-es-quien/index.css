@@ -33,11 +33,11 @@ header {
 #dialogAccesible {
   position: fixed;
   top: 50px;
-  left: 10px;
+  left: -100%;
   background-color: white;
   max-width: 300px;
   z-index: 1;
-  display: none;
+  transition: left 0.5s;
 }
 
 #dialogAccesible > h1 {

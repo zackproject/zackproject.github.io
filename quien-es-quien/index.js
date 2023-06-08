@@ -1,6 +1,7 @@
 //Objecte que controla el joc 'Quien es quien'
 class WhoIsWho {
-    constructor(animeName, characterList, myCharacter) {
+    constructor(idSelect, animeName, characterList, myCharacter) {
+        this.idSelect = idSelect;
         this.animeName = animeName;
         this.characterList = characterList;
         this.myCharacter = myCharacter;
@@ -12,13 +13,14 @@ class WhoIsWho {
     changePosition(pos, value) {
         this.positionCard[pos] = value;
     }
-    resetPosition(){
+    resetPosition() {
         this.positionCard = Array.from({ length: this.characterList.length }, () => false);
     }
 }
 const WHOISWHO = "whoiswho";
 //Partida per defecte
 var player = new WhoIsWho(
+    0,
     quienEsQuien[0].title, //Nom de la serie
     quienEsQuien[0].characters, //Personatges de Shingeki
     quienEsQuien[0].characters.length, // Maxim de personatge en partida
@@ -32,11 +34,12 @@ function generateSelects() {
     //Selector d'anime
     let selectAnime = document.getElementById("select-anime");
     deleteChilds(selectAnime);
-
+    console.log("selected", player.idSelect, typeof player.idSelect);
     for (i in quienEsQuien) {
         let noption = document.createElement("option");
         //Seleciona el primer item
-        if (i == 0) noption.selected = true;
+        if (i == parseInt(player.idSelect)) noption.selected = true;
+        console.log("aaaa", player.idSelect, quienEsQuien[i].title);
         //El value es la i
         noption.value = i;
         //El text son els anime
@@ -78,7 +81,6 @@ function rotaCarta(pos) {
     //Quan cliques la carta varia si la imatge o el text de darrere es visible
     nameA.ariaHidden = nameA.ariaHidden == "false" ? "true" : "false";
     imgA.ariaHidden = imgA.ariaHidden == "true" ? "false" : "true";
-    console.log(nameA.ariaHidden, imgA.ariaHidden);
 
     //Segons que clica agafa el numero, i sempre hi haura una carta card-[num] disponible
     let cartaRota = document.getElementById("card-" + pos);
@@ -187,7 +189,7 @@ function novaPartida() {
     document.getElementById("select-anime").style.display = "none";
     document.getElementById("showpersonaje").style.display = "block";
     document.getElementById("newPartida").style.display = "block";
-    document.getElementById("cards").focus();
+    document.getElementById("titol-quien-es-quien").focus();
 
 }
 
@@ -203,8 +205,9 @@ function loadGame() {
     let mp = JSON.parse(localStorage.getItem(WHOISWHO));
     if (mp !== null) {
         if (mp.isPlaying) {
-            player = new WhoIsWho(mp.animeName, mp.characterList, mp.myCharacter);
+            player = new WhoIsWho(mp.idSelect, mp.animeName, mp.characterList, mp.myCharacter);
             player.positionCard = mp.positionCard;
+            player.idSelect = mp.idSelect;
             novaPartida();
             for (let i = 0; i < player.positionCard.length; i++) {
                 if (player.positionCard[i]) {
@@ -214,7 +217,7 @@ function loadGame() {
             }
         }
     }
-    document.getElementById("cards").focus();
+    document.getElementById("titol-quien-es-quien").focus();
 
 }
 
@@ -228,8 +231,13 @@ function newGame() {
     player.isPlaying = false;
     player.resetPosition();
     //Guarda l'estat de nova partida
-    localStorage.setItem(WHOISWHO, JSON.stringify(player))
+    localStorage.setItem(WHOISWHO, JSON.stringify(player));
+    //Genera de nou les cartes
     generateCardsHTML();
+    //Genera de nou el select
+    generateSelects();
+    document.getElementById("modal-new-game").ariaHidden = "true"
+    document.getElementById("titol-quien-es-quien").focus();
 
 }
 
@@ -241,10 +249,11 @@ function changeAnime() {
     player.characterList = selectOBJ.characters;
     player.animeName = selectOBJ.title;
     player.myCharacter = selectOBJ.characters[0];
-
     player.isPlaying = false
+    player.idSelect = slctAnime;
     localStorage.setItem(WHOISWHO, JSON.stringify(player));
     generateCardsHTML();
+    //Omple el selector de anime
 
 }
 
@@ -256,7 +265,7 @@ function showMyCharacter() {
     imgMine.alt = player.myCharacter.alt;
     imgMine.src = player.myCharacter.image;
     let btnHide = document.getElementById("btn-ocultar");
-    let altCharacter = "Nombre:" + player.myCharacter.name + ". Descripción: " + player.myCharacter.alt;
+    let altCharacter = "Mi personaje: Nombre:" + player.myCharacter.name + ". Descripción: " + player.myCharacter.alt;
     btnHide.title = altCharacter;
     btnHide.focus();
 
@@ -265,7 +274,7 @@ function showMyCharacter() {
 function ocultarPersonaje() {
     document.getElementById("fondo-card").style.display = "none";
     document.getElementById("card-selector-mycharacter").style.top = "-600px";
-    document.getElementById("cards").focus();
+    document.getElementById("titol-quien-es-quien").focus();
 }
 
 function ocultaCartas() {
@@ -280,9 +289,12 @@ function hideNewGame() {
     document.getElementById("fondo-card").style.display = "none";
     document.getElementById("modal-new-game").style.top = "-250px";
     document.getElementById("showpersonaje").style.display = "block";
+    document.getElementById("modal-new-game").ariaHidden = "true"
+    document.getElementById("titol-quien-es-quien").focus();
 }
 
 function showModalNewGame() {
+    document.getElementById("modal-new-game").ariaHidden = "false";
     document.getElementById("modal-new-game").style.top = "150px";
     document.getElementById("fondo-card").style.display = "block";
     document.getElementById("showpersonaje").style.display = "none";
@@ -299,8 +311,13 @@ function makeFooter() {
 
 function twiceVisibilityAccesible() {
     let estat = document.getElementById("dialogAccesible");
-    if (estat.style.display === "none" || estat.style.display === "") {
-        estat.style.display = "block"
-        document.getElementById("dialogAccesible").focus();
-    } else { estat.style.display = "none" };
+    if (estat.style.left === "10px") {
+        estat.ariaHidden = "true";
+        document.getElementById("titol-quien-es-quien").focus();
+        estat.style.left = "-100%";
+    } else {
+        estat.ariaHidden = "false";
+        document.getElementById("tituloAccesible").focus();
+        estat.style.left = "10px";
+    };
 }
