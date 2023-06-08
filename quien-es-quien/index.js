@@ -12,8 +12,11 @@ class WhoIsWho {
     changePosition(pos, value) {
         this.positionCard[pos] = value;
     }
+    resetPosition(){
+        this.positionCard = Array.from({ length: this.characterList.length }, () => false);
+    }
 }
-const WHOISWHO = "whois";
+const WHOISWHO = "whoiswho";
 //Partida per defecte
 var player = new WhoIsWho(
     quienEsQuien[0].title, //Nom de la serie
@@ -223,6 +226,7 @@ function newGame() {
     document.getElementById("showpersonaje").style.display = "none";
     document.getElementById("newPartida").style.display = "none";
     player.isPlaying = false;
+    player.resetPosition();
     //Guarda l'estat de nova partida
     localStorage.setItem(WHOISWHO, JSON.stringify(player))
     generateCardsHTML();
