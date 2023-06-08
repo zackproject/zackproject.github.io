@@ -20,8 +20,14 @@
 
 <body onload="fillCard()">
     <header>
-        <a href="/"><img  height="35" width="35" src="https://i.imgur.com/Vsh0mAs.png" alt="Logo de la página"></a>
-        
+        <nav class="topnavbar">
+            <a href="/"><img height="35" width="35" src="https://i.imgur.com/Vsh0mAs.png" alt="Logo de la página"></a>
+            <a href="/como-jugar">Como jugar</a>
+            <a href="/contacto">Sobre mi</a>
+            <div class="icon material-icons" onclick="showNavBar()" style="font-size: 2em">
+                
+            </div>
+        </nav>       
     </header>
     <main id="cartas" class="container d-flex flex-row flex-wrap justify-content-center">
         <!-- cartas autogeneradas-->
