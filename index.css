@@ -7,11 +7,9 @@ body {
 
 header:nth-child(1) {
   text-align: center;
-  background-color: black;
   -webkit-box-shadow: -1px 0px 9px 0px black;
   box-shadow: -1px 0px 9px 0px black;
   color: white;
-  padding: 10px;
   margin-bottom: 10px;
   position: sticky;
   top: 0px;
@@ -49,4 +47,23 @@ h1 {
 .footer-zk > a {
   text-decoration: underline;
   color: lightblue;
+}
+
+/*navbar*/
+.topnavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* <---- NEW    */
+
+  background-color: black;
+  padding: 5px;
+}
+
+.topnavbar > a {
+  text-decoration: none;
+  color: white;
+}
+
+.topnavbar > a:hover {
+  text-decoration: underline;
 }
