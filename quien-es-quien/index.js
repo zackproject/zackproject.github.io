@@ -1,17 +1,26 @@
 //Objecte que controla el joc 'Quien es quien'
 class WhoIsWho {
-    constructor(animeName, characterList, maxCharacters, myCharacter) {
+    constructor(idSelect, animeName, characterList, myCharacter) {
+        this.idSelect = idSelect;
         this.animeName = animeName;
         this.characterList = characterList;
-        this.maxCharacters = maxCharacters;
         this.myCharacter = myCharacter;
         this.isPlaying = false;
+        this.positionCard = Array.from({ length: characterList.length }, () => false)
     }
 
+    //Canvia la carta vista o no vista
+    changePosition(pos, value) {
+        this.positionCard[pos] = value;
+    }
+    resetPosition() {
+        this.positionCard = Array.from({ length: this.characterList.length }, () => false);
+    }
 }
-
+const WHOISWHO = "whoiswho";
 //Partida per defecte
 var player = new WhoIsWho(
+    0,
     quienEsQuien[0].title, //Nom de la serie
     quienEsQuien[0].characters, //Personatges de Shingeki
     quienEsQuien[0].characters.length, // Maxim de personatge en partida
@@ -25,11 +34,12 @@ function generateSelects() {
     //Selector d'anime
     let selectAnime = document.getElementById("select-anime");
     deleteChilds(selectAnime);
-
+    console.log("selected", player.idSelect, typeof player.idSelect);
     for (i in quienEsQuien) {
         let noption = document.createElement("option");
         //Seleciona el primer item
-        if (i == 0) noption.selected = true;
+        if (i == parseInt(player.idSelect)) noption.selected = true;
+        console.log("aaaa", player.idSelect, quienEsQuien[i].title);
         //El value es la i
         noption.value = i;
         //El text son els anime
@@ -56,29 +66,39 @@ function flipCard(event) {
     if (event.target.id != "") {
         //Controla la clase 'car>d-[num]'
         pos = parseInt((event.target.id).split("-")[1]);
-
-
     }
 
     //Si la posicio es nulla no fa animacio
     if (pos !== null) {
-        let nameA = document.getElementById("name-" + pos);
-        let imgA = document.getElementById("img-" + pos);
-        //Quan cliques la carta varia si la imatge o el text de darrere es visible
-        nameA.ariaHidden = nameA.ariaHidden == "false" ? "true" : "false";
-        imgA.ariaHidden = imgA.ariaHidden == "true" ? "false" : "true";
-        console.log(nameA.ariaHidden, imgA.ariaHidden);
-
-        //Segons que clica agafa el numero, i sempre hi haura una carta card-[num] disponible
-        document.getElementById("card-" + pos).style.transform = document.getElementById("card-" + pos).style.transform ? "" : "rotateY(180deg)"
+        rotaCarta(pos);
     }
 }
 
+
+function rotaCarta(pos) {
+    let nameA = document.getElementById("name-" + pos);
+    let imgA = document.getElementById("img-" + pos);
+    //Quan cliques la carta varia si la imatge o el text de darrere es visible
+    nameA.ariaHidden = nameA.ariaHidden == "false" ? "true" : "false";
+    imgA.ariaHidden = imgA.ariaHidden == "true" ? "false" : "true";
+
+    //Segons que clica agafa el numero, i sempre hi haura una carta card-[num] disponible
+    let cartaRota = document.getElementById("card-" + pos);
+    if (cartaRota.style.transform == "") {
+        cartaRota.style.transform = "rotateY(180deg)";
+        player.changePosition(pos, true)
+    } else {
+        cartaRota.style.transform = "";
+        player.changePosition(pos, false);
+    }
+    localStorage.setItem(WHOISWHO, JSON.stringify(player));
+
+}
 function flipAllCard() {
     //Dona a volta a totes les cartes
     for (let i = 0; i < document.getElementsByClassName("flip-card-inner").length; i++) {
         const element = document.getElementsByClassName("flip-card-inner")[i];
-        element.style.transform = ""
+        element.style.transform = "";
     }
 }
 
@@ -136,7 +156,6 @@ function generateCardsHTML() {
     deleteChilds(document.getElementById("cards"));
     //let cont = 0;
     player.characterList.forEach(e => {
-        //if (cont < player.maxCharacters) {
         //Si el alt esta vacio 
         //Pongo un valor por defecto
         let altCharacter = "Personaje";
@@ -146,8 +165,6 @@ function generateCardsHTML() {
         if (player.isPlaying) titleCharacter = "Click para descartar personaje"
         let props = { id: e.id, image: e.image, name: e.name, anime: player.animeName, alt: altCharacter, title: titleCharacter };
         document.getElementById("cards").innerHTML += cardHTML(props)
-        //  cont++;
-        // }
     });
 
     for (let i = 0; i < document.getElementsByClassName("card").length; i++) {
@@ -159,6 +176,7 @@ function generateCardsHTML() {
 }
 
 function novaPartida() {
+    localStorage.setItem(WHOISWHO, JSON.stringify(player));
     //Amaga la carta d'opcions
     document.getElementById("empezar-btn").style.display = "none";
     player.isPlaying = true;
@@ -171,7 +189,7 @@ function novaPartida() {
     document.getElementById("select-anime").style.display = "none";
     document.getElementById("showpersonaje").style.display = "block";
     document.getElementById("newPartida").style.display = "block";
-    document.getElementById("cards").focus();
+    document.getElementById("titol-quien-es-quien").focus();
 
 }
 
@@ -184,7 +202,23 @@ function loadGame() {
     generateCardsHTML();
     //Genera el footer
     makeFooter();
-    document.getElementById("cards").focus();
+    let mp = JSON.parse(localStorage.getItem(WHOISWHO));
+    if (mp !== null) {
+        if (mp.isPlaying) {
+            player = new WhoIsWho(mp.idSelect, mp.animeName, mp.characterList, mp.myCharacter);
+            player.positionCard = mp.positionCard;
+            player.idSelect = mp.idSelect;
+            novaPartida();
+            for (let i = 0; i < player.positionCard.length; i++) {
+                if (player.positionCard[i]) {
+                    rotaCarta(i);
+                }
+
+            }
+        }
+    }
+    document.getElementById("titol-quien-es-quien").focus();
+
 }
 
 function newGame() {
@@ -195,8 +229,15 @@ function newGame() {
     document.getElementById("showpersonaje").style.display = "none";
     document.getElementById("newPartida").style.display = "none";
     player.isPlaying = false;
-
+    player.resetPosition();
+    //Guarda l'estat de nova partida
+    localStorage.setItem(WHOISWHO, JSON.stringify(player));
+    //Genera de nou les cartes
     generateCardsHTML();
+    //Genera de nou el select
+    generateSelects();
+    document.getElementById("modal-new-game").ariaHidden = "true"
+    document.getElementById("titol-quien-es-quien").focus();
 
 }
 
@@ -209,7 +250,10 @@ function changeAnime() {
     player.animeName = selectOBJ.title;
     player.myCharacter = selectOBJ.characters[0];
     player.isPlaying = false
+    player.idSelect = slctAnime;
+    localStorage.setItem(WHOISWHO, JSON.stringify(player));
     generateCardsHTML();
+    //Omple el selector de anime
 
 }
 
@@ -221,7 +265,7 @@ function showMyCharacter() {
     imgMine.alt = player.myCharacter.alt;
     imgMine.src = player.myCharacter.image;
     let btnHide = document.getElementById("btn-ocultar");
-    let altCharacter = "Nombre:" + player.myCharacter.name + ". Descripción: " + player.myCharacter.alt;
+    let altCharacter = "Mi personaje: Nombre:" + player.myCharacter.name + ". Descripción: " + player.myCharacter.alt;
     btnHide.title = altCharacter;
     btnHide.focus();
 
@@ -230,7 +274,7 @@ function showMyCharacter() {
 function ocultarPersonaje() {
     document.getElementById("fondo-card").style.display = "none";
     document.getElementById("card-selector-mycharacter").style.top = "-600px";
-    document.getElementById("cards").focus();
+    document.getElementById("titol-quien-es-quien").focus();
 }
 
 function ocultaCartas() {
@@ -245,9 +289,12 @@ function hideNewGame() {
     document.getElementById("fondo-card").style.display = "none";
     document.getElementById("modal-new-game").style.top = "-250px";
     document.getElementById("showpersonaje").style.display = "block";
+    document.getElementById("modal-new-game").ariaHidden = "true"
+    document.getElementById("titol-quien-es-quien").focus();
 }
 
 function showModalNewGame() {
+    document.getElementById("modal-new-game").ariaHidden = "false";
     document.getElementById("modal-new-game").style.top = "150px";
     document.getElementById("fondo-card").style.display = "block";
     document.getElementById("showpersonaje").style.display = "none";
@@ -264,8 +311,13 @@ function makeFooter() {
 
 function twiceVisibilityAccesible() {
     let estat = document.getElementById("dialogAccesible");
-    if (estat.style.display === "none" || estat.style.display === "") {
-        estat.style.display = "block"
-        document.getElementById("dialogAccesible").focus();
-    } else { estat.style.display = "none" };
+    if (estat.style.left === "10px") {
+        estat.ariaHidden = "true";
+        document.getElementById("titol-quien-es-quien").focus();
+        estat.style.left = "-100%";
+    } else {
+        estat.ariaHidden = "false";
+        document.getElementById("tituloAccesible").focus();
+        estat.style.left = "10px";
+    };
 }
