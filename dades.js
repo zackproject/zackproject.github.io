@@ -1,8 +1,16 @@
 var cards = [
+    
+    {
+        "title": "Se Busca",
+        "image": "https://i.imgur.com/75kuzC3.png",
+        "alt": "Card Se busca",
+        "description": "Encuentra al personaje que se busca antes de que se acabe el tiempo. Niveles infinitos y dificultad progresiva.",
+        "link": "se-busca"
+    },
     {
         "title": "Piano",
         "image": "https://i.imgur.com/k9tLfsE.png",
-        "alt": "Card Anime Birthday",
+        "alt": "Card Piano",
         "description": "Toca el piano y crea canciones donde otra persona tenga que adivinar tu canción a través de un link.",
         "link": "piano"
     },
