@@ -63,7 +63,7 @@
             onclick="novaPartida()">EMPEZAR PARTIDA</button>
     </div>
     <!-- si el dialog fa display:block <-> display none no fa falta el aria-hidden=true -->
-    <div id="dialogAccesible" role="dialog" aria-labelledby="tituloAccesible" aria-modal="true" aria-hidden="true" >
+    <div id="dialogAccesible" role="dialog" aria-labelledby="tituloAccesible" aria-modal="true" aria-hidden="true">
         <h1 id="tituloAccesible">Accesibilidad</h1>
         <div class="text-dialog">
             <p>Partida de 'Shingeki No Kiojin' accesible. Caracteristicas posibles que puedes preguntar</p>
@@ -103,7 +103,29 @@
             <button onclick="hideNewGame()" class="cancel-btn">NO</button>
         </div>
     </div>
-    <footer>Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a></footer>
+    <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
+    <script>
+        /* Cada any el footer posara l'any actual */
+        function makeFooter() {
+            const d = new Date();
+            document.getElementById("dateYear").innerText = d.getFullYear();
+        }
+    </script>
+    <style>
+        #footer-main {
+            background-color: black;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #footer-main>a {
+            text-decoration: underline;
+            color: white;
+
+        }
+    </style>
     <script src="index.js"></script>
 </body>
 

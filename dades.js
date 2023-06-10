@@ -22,6 +22,13 @@ var cards = [
         "link": "quien-es-quien"
     },
     {
+        "title": "Calendario Navidad",
+        "image": "https://i.imgur.com/XbRvtk3.png",
+        "alt": "Card Calendario Adviento",
+        "description": "Cada dia se desbloquea una casilla. Acierta la quiz y consigue la sorpresa.Sólo disponible en diciembre",
+        "link": "navidad"
+    },
+    {
         "title": "PokeHigher or Pokelower",
         "image": "https://i.imgur.com/WeM1zLU.png",
         "alt": "Card PokeHigher or PokeLower",
@@ -42,13 +49,6 @@ var cards = [
         "description": "Estas pokecriaturas estan un poco peladas, adivina de quien se trata. Elige cualquier generacion",
         "link": "guess"
     },*/
-    {
-        "title": "Calendario Navidad",
-        "image": "https://i.imgur.com/XbRvtk3.png",
-        "alt": "Card Calendario Adviento",
-        "description": "Cada dia se desbloquea una casilla. Acierta la quiz y consigue la sorpresa.Sólo disponible en diciembre",
-        "link": "navidad"
-    },
     {
         "title": "Anime Birthday",
         "image": "https://i.imgur.com/W6FuNtS.png",

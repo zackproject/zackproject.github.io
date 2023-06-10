@@ -569,9 +569,3 @@ function generateScore() {
     }
     pare.appendChild(ol);
 }
-
-function makeFooter() {
-    const d = new Date();
-    let foot = document.getElementById("wanted-menu-footer");
-    foot.innerHTML = `Zack Sama · ${d.getFullYear()} · <a href="https://www.zksama.com"> Zack Project</a>`;
-}

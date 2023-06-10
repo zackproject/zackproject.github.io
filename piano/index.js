@@ -360,10 +360,3 @@ function pintaPrimaryNote(e) {
 
 
 }
-
-/* Cada any el footer posara l'any actual */
-function makeFooter() {
-    const d = new Date();
-    let foot = document.getElementsByTagName("footer")[0];
-    foot.innerHTML = `Zack Sama · ${d.getFullYear()} · <a href="https://zackproject.github.io"> Zack Project</a>`;
-}

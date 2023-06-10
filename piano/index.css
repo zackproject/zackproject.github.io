@@ -419,15 +419,3 @@ body {
     rotate: 0deg;
   }
 }
-
-footer {
-  background-color: black;
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
-
-footer > a {
-  text-decoration: underline;
-  color: lightblue;
-}
