@@ -68,8 +68,8 @@ function start() {
 
 /* Cada any el footer posara l'any actual */
 function makeFooter() {
-    let foot = document.getElementsByTagName("footer")[0];
-    foot.innerHTML = `Zack Sama · ${year} · <a href="https://zackproject.github.io"> Zack Project</a>`;
+    const d = new Date();
+    document.getElementById("dateYear").innerText = d.getFullYear();
 }
 
 /* Genera tants fills com 'copitos' vulgui*/

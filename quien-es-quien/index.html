@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,8 +62,9 @@
         <button id="empezar-btn" aria-label="Clica para empezar la partida" class="hide-menu green-btn"
             onclick="novaPartida()">EMPEZAR PARTIDA</button>
     </div>
-    <div id="dialogAccesible" >
-        <h1>Accesibilidad</h1>
+    <!-- si el dialog fa display:block <-> display none no fa falta el aria-hidden=true -->
+    <div id="dialogAccesible" role="dialog" aria-labelledby="tituloAccesible" aria-modal="true" aria-hidden="true">
+        <h1 id="tituloAccesible">Accesibilidad</h1>
         <div class="text-dialog">
             <p>Partida de 'Shingeki No Kiojin' accesible. Caracteristicas posibles que puedes preguntar</p>
             <ul>
@@ -74,14 +76,12 @@
                 <li>Vello Facial</li>
                 <li>Orejas completamente visibles: Una, dos o ninguna</li>
             </ul>
-            Pulsa <span class="material-icons" aria-label="Instrucciones sobre accesibilidad">
-                accessibility_new
-            </span> para ocultar el modal
+            <button onclick="twiceVisibilityAccesible()" aria-label="Ocultar sobre accesibilidad">OCULTAR</button>
         </div>
     </div>
 
-     <!-- Mosta el personatge actual triar per l'usuari-->
-     <div id="card-selector-mycharacter" aria-hidden="true" class="card-selector">
+    <!-- Mosta el personatge actual triar per l'usuari-->
+    <div id="card-selector-mycharacter" aria-hidden="true" class="card-selector">
         <div class="card-info-mycharacter">
             <div id="mycharacter-name" class="title-card">Armin</div>
             <img id="mycharacter-image" src="https://i.imgur.com/fSbG2ao.png" alt="" height="100%" width="100%">
@@ -103,7 +103,29 @@
             <button onclick="hideNewGame()" class="cancel-btn">NO</button>
         </div>
     </div>
-    <footer>Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a></footer>
+    <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
+    <script>
+        /* Cada any el footer posara l'any actual */
+        function makeFooter() {
+            const d = new Date();
+            document.getElementById("dateYear").innerText = d.getFullYear();
+        }
+    </script>
+    <style>
+        #footer-main {
+            background-color: black;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #footer-main>a {
+            text-decoration: underline;
+            color: white;
+
+        }
+    </style>
     <script src="index.js"></script>
 </body>
 
