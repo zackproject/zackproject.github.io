@@ -152,7 +152,29 @@
                 onclick="switchModalGuess()">CERRAR</button>
         </div>
     </div>
-    <footer>Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a></footer>
+    <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
+    <script>
+        /* Cada any el footer posara l'any actual */
+        function makeFooter() {
+            const d = new Date();
+            document.getElementById("dateYear").innerText = d.getFullYear();
+        }
+    </script>
+    <style>
+        #footer-main {
+            background-color: black;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #footer-main>a {
+            text-decoration: underline;
+            color: white;
+
+        }
+    </style>
 </body>
 
 </html>
