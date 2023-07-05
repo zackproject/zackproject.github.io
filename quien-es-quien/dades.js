@@ -221,7 +221,7 @@ let quienEsQuien = [
         ]
     }
     , {
-        "title": "Mira culos",
+        "title": "Miraculous",
         "characters": [
             {"id": 184, "name": "Adrien", "image": "https://i.ibb.co/tXfMGhP/Adrien.webp", "alt": ""},
             {"id": 185, "name": "Alya", "image": "https://i.ibb.co/nCdwsVF/Alya.webp", "alt": ""}, 
