@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piano</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Piano</title>    
     <script src="dades.js"></script>
-    <script src="index.js"></script>
     <link rel="icon" href="../icopz.ico">
-
     <link rel="stylesheet" href="index.css">
+    <meta name="description"
+    content="Crea, comparte y despierta tu creatividad musical en este piano interactivo. Podrás componer y tocar tus propias canciones. ¡Conecta con otros músicos, comparte tus creaciones del piano! Haz realidad tus melodías con nuestro piano interactivo.">
+    <meta name="keywords"
+    content="Piano interactivo, Compartir canciones, Creatividad musical, Teclas, Interfaz intuitiva, Componer canciones, Tocar canciones, Conectar con músicos, Comunidad de amantes del piano, Melodías, Talent musical, Armonía perfecta, Notas musicales, Imaginación, Creaciones musicales, Aprender a tocar piano, Práctica musical, Explorar sonidos, Interacción musical, Experiencia musical interactiva">
+    <link rel="canonical" href="https://www.zksama.com/piano">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body class="piano-page" onload="loadMusic()" onkeydown="pulsado(event)">
@@ -152,7 +155,30 @@
                 onclick="switchModalGuess()">CERRAR</button>
         </div>
     </div>
-    <footer>Zack Sama · 2022 · <a href="https://zackproject.github.io"> Zack Project</a></footer>
+    <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
+    <script src="index.js"></script>
+    <script>
+        /* Cada any el footer posara l'any actual */
+        function makeFooter() {
+            const d = new Date();
+            document.getElementById("dateYear").innerText = d.getFullYear();
+        }
+    </script>
+    <style>
+        #footer-main {
+            background-color: black;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #footer-main>a {
+            text-decoration: underline;
+            color: white;
+
+        }
+    </style>
 </body>
 
 </html>
