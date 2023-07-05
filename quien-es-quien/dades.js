@@ -220,4 +220,35 @@ let quienEsQuien = [
             { "id": 183, "name": "Yu Nishinoya", "image": "https://i.imgur.com/y4a7zEJ.png", "alt": "" }
         ]
     }
+    , {
+        "title": "Mira culos",
+        "characters": [
+            {"id": 184, "name": "Adrien", "image": "https://i.ibb.co/tXfMGhP/Adrien.webp", "alt": ""},
+            {"id": 185, "name": "Alya", "image": "https://i.ibb.co/nCdwsVF/Alya.webp", "alt": ""}, 
+            {"id": 186, "name": "Cat Noir", "image": "https://i.ibb.co/n6J4wYS/CatNoir.webp", "alt": ""},
+            {"id": 187, "name": "Chloe", "image": "https://i.ibb.co/6sRmWbM/Chloe.webp", "alt": ""},
+            {"id": 188, "name": "Daizzi", "image": "https://i.ibb.co/r2Jw3Yg/Daizzi.webp", "alt": ""}, 
+            {"id": 189, "name": "Emily Agreste", "image": "https://i.ibb.co/tLV7Q42/Emily-Agreste.webp", "alt": ""}, 
+            {"id": 190, "name": "Felix", "image": "https://i.ibb.co/55R7vsG/Felix.webp", "alt": ""}, 
+            {"id": 191, "name": "Fluff", "image": "https://i.ibb.co/FxLzqsk/Fluff.webp", "alt": ""}, 
+            {"id": 192, "name": "Gabriel Agreste", "image": "https://i.ibb.co/j57RzLf/Gabriel-Agreste.webp", "alt": ""},
+            {"id": 193, "name": "Ladybug", "image": "https://i.ibb.co/Ht0f9pX/Ladybug.webp", "alt": ""}, 
+            {"id": 194, "name": "Lepidoptero", "image": "https://i.ibb.co/QHdTHcc/Lepidoptero.webp", "alt": ""},
+            {"id": 195, "name": "Lila", "image": "https://i.ibb.co/vjyjXGH/Lila.webp", "alt": ""}, 
+            {"id": 196, "name": "Luka", "image": "https://i.ibb.co/1Q58pFN/Luka.webp", "alt": ""}, 
+            {"id": 197, "name": "Marinette", "image": "https://i.ibb.co/3cq39Wf/Marinette.webp", "alt": ""},
+            {"id": 198, "name": "Nathalie", "image": "https://i.ibb.co/nbngjMj/Nathalie.webp", "alt": ""},
+            {"id": 199, "name": "Nathaniel", "image": "https://i.ibb.co/zJk6L4x/Nathaniel.webp", "alt": ""},
+            {"id": 200, "name": "Nino", "image": "https://i.ibb.co/tbgTFmr/Nino.webp", "alt": ""}, 
+            {"id": 201, "name": "Nooroo", "image": "https://i.ibb.co/YyJ889n/Nooroo.webp", "alt": ""},
+            {"id": 202, "name": "Plagg", "image": "https://i.ibb.co/CMLQMFY/Plagg.webp", "alt": ""}, 
+            {"id": 203, "name": "Pollen", "image": "https://i.ibb.co/yqQHvtT/Pollen.webp", "alt": ""},
+            {"id": 204, "name": "Sass", "image": "https://i.ibb.co/W5hpyDQ/Sass.webp", "alt": ""}, 
+            {"id": 205, "name": "Tikki", "image": "https://i.ibb.co/1MPwrZ1/Tikki.webp", "alt": ""}, 
+            {"id": 206, "name": "Trixx", "image": "https://i.ibb.co/vZSqbrx/Trixx.webp", "alt": ""}, 
+            {"id": 207, "name": "Wayzz", "image": "https://i.ibb.co/KXVKzwK/Wayzz.webp", "alt": ""}, 
+            {"id": 208, "name": "Xuppu", "image": "https://i.ibb.co/GkZN2Tm/Xuppu.webp", "alt": ""},
+            {"id": 209, "name": "Ziggy", "image": "https://i.ibb.co/Gs9DVfv/Ziggy.webp", "alt": ""}
+        ]
+    }
 ]
