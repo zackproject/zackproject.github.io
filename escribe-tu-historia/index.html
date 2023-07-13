@@ -1,45 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escribe tu historia</title>
+    <title>Document</title>
     <script src="dades.js"></script>
-    <meta name="description" content="">
-    <link rel="icon" href="../icopz.ico">
-    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
 </head>
 
-<body>
-    <h1>Escribe tu historia</h1>
-    <h2>Cada dia un parrafo, cada semana un capitulo</h2>
-    <p>
-        Imagina que eres un arquitecto de palabras, construyendo tu propia historia capítulo a capítulo.
+<body onload="cargaStory()">
 
-        Este minijuego está diseñado para desafiarte y motivarte a escribir todos los días. Cada día recibirás una
-        palabra nueva . Tu tarea es utilizar esa palabra para escribir un párrafo intrigante, donde la palabra en
-        cuestión sea el hilo conductor.
-
-        Imagina que cada palabra es como una pequeña chispa que enciende tu imaginación. ¡Será fascinante ver cómo cada
-        palabra se integra en tu historia y le da vida! Con el paso de los días, tus párrafos se irán acumulando y, al
-        final de la semana, tendrás suficiente material para nombrar un capítulo.
-
-        ¡Pero eso no es todo! Una vez que completes tu historia, tendrás el honor de ponerle un título a tu libro. </p>
-    <main id="container">
+    <div id="container">
         <article id="story">
-        
+
         </article>
-        El párrafo de hoy debe contener la palabra : "amanecer"
-        <textarea id="story-area" maxlength="500" onchange="getAreaText()" name="story-area"
-            placeholder="Escribe el párrafo de hoy aquí"></textarea>
-        <button class="send-parraf">Enviar</button>
-    </main>
+    </div>
+    <textarea name="" id="story-area" cols="30" rows="10" onkeydown="textAreaLimit()"></textarea>
+    <div id="max-story">0/500</div>
+    <input type="text" id="title-story" placeholder="Pon titulo al capitulo">
+    <button onclick="addParraf()">Enviar</button>
     <script>
 
     </script>
-    <script src="index.js"></script>
+
 </body>
 
 </html>
