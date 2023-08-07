@@ -16,14 +16,18 @@ header:nth-child(1) {
   z-index: 1;
 }
 
+#home-tab-zksama {
+  text-decoration: underline;
+}
 
 .card {
   max-width: 20em;
 }
 
-.card > footer {
+.card>footer {
   margin: 10px;
 }
+
 #cartas {
   gap: 10px;
 }
@@ -31,6 +35,7 @@ header:nth-child(1) {
 h1 {
   font-size: 20px;
 }
+
 #links {
   list-style: none;
   display: flex;
@@ -44,7 +49,7 @@ h1 {
   padding: 20px;
 }
 
-.footer-zk > a {
+.footer-zk>a {
   text-decoration: underline;
   color: lightblue;
 }
@@ -53,17 +58,18 @@ h1 {
 .topnavbar {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* <---- NEW    */
+  align-items: center;
+  /* <---- NEW    */
 
   background-color: black;
   padding: 5px;
 }
 
-.topnavbar > a {
+.topnavbar>a {
   text-decoration: none;
   color: white;
 }
 
-.topnavbar > a:hover {
+.topnavbar>a:hover {
   text-decoration: underline;
 }
