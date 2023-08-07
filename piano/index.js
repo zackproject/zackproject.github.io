@@ -53,6 +53,10 @@ function loadMusic() {
     //Canvia segons l'escala
     updateTextPiano();
     makeFooter();
+
+    //Precarrega tots els audios
+    preloadAudio(notasBlancas.map(obj => NOTESONLINE + obj + ".mp3"));
+    preloadAudio(notasNegras.map(obj => NOTESONLINE + obj + ".mp3"));
 }
 
 function generateButtonsGuess() {
@@ -177,7 +181,7 @@ function saveSong(nTecla) {
     document.getElementById("updateSave").innerText = "Notas grabadas: " + player.letras.length;
 }
 function pulsado(event) {
-    console.log(event.keyCode, "notado", event.key);
+    //console.log(event.keyCode, "notado", event.key);
     //Si no es dins del 'input', sona
     if (!inputActive()) {
         let obj = tecles[event.keyCode];
@@ -350,13 +354,19 @@ function disorderWord(word) {
 
 
 function pintaPrimaryNote(e) {
-    console.log();
     let checked = e.target.checked;
     for (let i = 0; i < document.getElementsByClassName("primary-note").length; i++) {
         const element = document.getElementsByClassName("primary-note")[i];
         //Canvia colors entre colorit o blancs
         element.style.background = checked ? colorList[0][i] : "white";
     }
+}
 
-
+//Preload audio https://stackoverflow.com/a/13116795
+function preloadAudio(preloads) {
+    for (var x = 0; x < preloads.length; x++) {
+        let aud = new Audio(preloads[x])
+        //console.log("Cached", aud);
+        aud.preload = 'auto';
+    }
 }
