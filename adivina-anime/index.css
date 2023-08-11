@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    font-size: 30px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: lightgrey;
+    padding: 10px;
+    justify-content: center;
+}
+
+.card {
+    width: 290px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 18px;
+    margin: 0px;
+
+}
+
+h2 {
+    font-size: 16px;
+    margin: 5px;
+}
+
+
+#progress-container {
+    background-color: black;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#progress-song {
+    background-color: green;
+    padding: 10px 0px 10px 0px;
+    width: 0%;
+    transition: width 0.5s;
+}
+
+#btn-play-anime{
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+    height: 250px;
+    width: 250px;
+    font-size: 100px;
+}
+
+.content-guess{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
