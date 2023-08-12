@@ -12,12 +12,6 @@ let playlist = [
         "author": "re:TYE"
     },
     {
-        "title": "Dragon Ball GT",
-        "fragment": "./songs/dragonballgt.mp3",
-        "song": "https://youtu.be/ANrgY_8feF0",
-        "author": "AgusPQ"
-    },
-    {
         "title": "Fire Force",
         "fragment": "./songs/fireforce.mp3",
         "song": "https://youtu.be/GHQcDS66Qt4",
@@ -336,16 +330,28 @@ let playlist = [
         "author": "xyYAYmusic"
     },
     {
-        "title": "",
-        "fragment": "./songs/aa.mp3",
-        "song": "",
-        "author": "dd"
+        "title": "Komi San",
+        "fragment": "./songs/komisan.mp3",
+        "song": "https://youtu.be/6WF6i1z5gJ4",
+        "author": "RDary Z"
     },
     {
-        "title": "",
-        "fragment": "./songs/aa.mp3",
-        "song": "",
-        "author": "dd"
+        "title": "Dr Stone",
+        "fragment": "./songs/drstone.mp3",
+        "song": "https://youtu.be/F5T-BNnFzpQ",
+        "author": "RDary Z"
+    },
+    {
+        "title": "Black Clover",
+        "fragment": "./songs/blackclover.mp3",
+        "song": "https://youtu.be/wuxnkgrnBLI",
+        "author": "RDary Z"
+    },
+    {
+        "title": "Dragon Ball GT",
+        "fragment": "./songs/dragonballgt.mp3",
+        "song": "https://youtu.be/ANrgY_8feF0",
+        "author": "AgusPQ"
     },
 ]
 

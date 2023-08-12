@@ -4,95 +4,154 @@
 
 
 // elige una cancion  de una lista desordenada+
-let iSong = 26;
-let songOBJ = playlist[iSong];
-let song = new Audio(songOBJ.fragment);
-let btnGuessAnime = document.getElementById("btn-play-anime");
-let animeSolution = document.getElementById("anime-solution");
-
-let progressbar = document.getElementById("progress-song");
+//Desordena
 const intervalID = null;
 let timeToResolve = 10;
 let number = 0; //0, 1,2,3 // 3 all-audio
-fillSolution(songOBJ);
+
+let btnGuessAnime = document.getElementById("btn-play-anime");
+let animeSolution = document.getElementById("anime-solution");
+let countDownHTML = document.getElementById("countdown");
+let copyAnimation = document.getElementById("copy-animation");
+let progressbar = document.getElementById("progress-song");
+let imgAnime = document.getElementById("img-anime");
+let authorAnime = document.getElementById("author-anime");
+
+class AnimeSong {
+    constructor(iSong, playlist, status, timeWait, timeResolve) {
+        this.iSong = iSong;
+        this.playlist = playlist.sort(() => Math.random() - 0.5);
+        this.song = new Audio(playlist[iSong].fragment);
+        this.songOBJ = playlist[iSong];
+        this.timeWait = timeWait;
+        this.status = status;
+        this.timeResolve = timeResolve;
+    }
+
+    disorderList() {
+        this.playlist = this.playlist.sort(() => Math.random() - 0.5);
+    }
+
+    percentSong() {
+        return this.song.currentTime / this.song.duration * 100
+    }
+
+    nextSong() {
+        if (this.iSong < this.playlist.length) {
+            this.iSong++;
+        } else {
+            this.iSong = 0;
+            this.disorderList();
+        }
+        this.songOBJ = this.playlist[this.iSong]; // mira si puedo utilizarlo en this.song despues
+        this.song = new Audio(this.playlist[this.iSong].fragment);
+        this.status = 0;
+        this.preloadSong();
+    }
+
+    preloadSong() {
+        if (this.iSong + 1 < this.playlist.length) {
+            let aud = new Audio(this.playlist[this.iSong + 1].fragment)
+            aud.preload = 'auto';
+            return;
+        }
+        let aud = new Audio(this.playlist[0].fragment)
+        aud.preload = 'auto';
+    }
+}
+let player = new AnimeSong(0, playlist, 0, 5, 15);
+
+fillSolution(player.songOBJ);
+
 function fillSolution({ title, fragment, song, author }) {
     document.getElementById("title-anime").innerText = title;
-    let imgAnime = document.getElementById("img-anime");
     imgAnime.src = `http://i3.ytimg.com/vi/${song.split("/").pop()}/hqdefault.jpg`
     imgAnime.alt = `Miniatura del video de YouTube ${title} del autor ${author}`
-    let authorAnime = document.getElementById("author-anime");
     authorAnime.innerText = "Canción de " + author;
     authorAnime.href = song;
 }
 function pressBtn() {
-    if (!song.paused) {
-        song.pause();
-        song.currentTime = 0;
-        btnGuessAnime.innerText = "electric_bolt";
+    //En la primera carrega precarrega el seguent audio
+    copyAnimation.style.animationName = "muevete";
+    if (player.status == 0) {
+        player.preloadSong();
+    }
+    if (!player.song.paused) {
+        player.song.pause();
+        player.song.currentTime = 0;
+        btnGuessAnime.innerText = "play_arrow";
         btnGuessAnime.disabled = true;
+        playAnimation(0);
         callSolution();
-        return;
     } else {
-        if (number < 3) number++;
-        song.currentTime = 0;
-        btnGuessAnime.stu
+        if (player.status < 3) player.status++;
+        player.song.currentTime = 0;
         playSong();
-        fillSolution(songOBJ);
+        fillSolution(player.songOBJ);
         animeSolution.style.display = "none";
-        if (number != 3) {
-            timeOut(number);
-        }
+
+        timeOut(player.status);
+        playAnimation(1);
+        // btnGuessAnime.style.animation = "muevete 1s infinite";
         btnGuessAnime.innerText = "touch_app";
         btnGuessAnime.style.backgroundColor = "red"
         btnGuessAnime.title = "Adivinar";
     }
 }
 
+
+function applyRandAnimation() {
+
+}
 function callSolution() {
-    let time = timeToResolve;
-    let countDownHTML = document.getElementById("countdown");
-    countDownHTML.innerText = time;
+    countDownHTML.innerText = player.timeResolve;
+    btnGuessAnime.style.display = "none";
+    countDownHTML.style.animation = "tracking-in-expand-forward-top 1s linear infinite";
     const intervalID = setInterval(() => {
-        if (time > 0) {
-            time--;
-            console.log("tiempo", time);
-            countDownHTML.innerText = time;
+        if (player.timeResolve > 0) {
+            player.timeResolve--;
+            countDownHTML.innerText = player.timeResolve;
 
         } else {
             clearInterval(intervalID);
-            countDownHTML.innerText = "";
-            animeSolution.style.display = "flex";
-            btnGuessAnime.disabled = false;
-            btnGuessAnime.innerText = "play_arrow";
-            btnGuessAnime.style.backgroundColor = "green"
-            iSong++;
-            number = 0;
-            songOBJ = playlist[iSong];
-            song = new Audio(songOBJ.fragment);
+            countDownHTML.style.animation = "";
+            resetSong();
         }
-        console.log();
     }, 1000);
+}
+function resetSong() {
+    player.nextSong()
+    countDownHTML.innerText = "";
+    animeSolution.style.display = "flex";
+    btnGuessAnime.disabled = false;
+    btnGuessAnime.style.backgroundColor = "green";
+    btnGuessAnime.innerText = "play_arrow";
+    btnGuessAnime.style.display = "block";
 }
 function playSong() {
     //Primera vez interval 5 segundos, segunda vez, interval 10, tercera vez sin interval
     const intervalID = setInterval(() => {
-        let calcul = song.currentTime / song.duration * 100;
-        progressbar.style.width = calcul + "%";
+        progressbar.style.width = player.percentSong() + "%";
     }, 500);
-    song.play();
+
+    player.song.play();
 }
 
 function timeOut(number) {
+    // Si el temps es complet, retorna tot el temps en milisegons
+    let time = (number === 3) ? player.song.duration * 1000 : number * 5000;
+    console.log("tiempo", time);
     setTimeout(function () {
-        clearInterval(intervalID);
-        song.pause();
+        player.song.pause();
         // Si pulsan el boton mientras esta el repetir, cuenta atras para decir el titulo
         // sino aparece solo
+        btnGuessAnime.style.animation = "rotate-scale-up 0.5s linear both";
+        copyAnimation.style.animationName = "";
         btnGuessAnime.innerText = "replay";
         btnGuessAnime.style.backgroundColor = "green"
         btnGuessAnime.title = "Repetir";
-
-    }, number * 5000);
+        playAnimation(0);
+    }, time);
 
 }
 
@@ -118,5 +177,20 @@ llista.forEach((element) => {
         pare.innerHTML += template(element);
         total++;
     }
-});
-document.getElementById("total").innerText = total;*/
+});*/
+//document.getElementById("total").innerText = total;
+
+
+function playAnimation(status) {
+    //Carrega la animacio per cada barra i li posa un delay a cadascun
+    let barresMusicals = document.getElementsByClassName("melody");
+    for (let i = 0; i < barresMusicals.length; i++) {
+        if (status == 1) {
+            barresMusicals[i].style.animation = "musicamaestro 1s infinite";
+            barresMusicals[i].style.animationDelay = i * 0.2 + "s";
+        } else {
+            barresMusicals[i].style.animationPlayState = "paused";
+        }
+        console.log(barresMusicals[i].style.animationPlayState);
+    }
+}

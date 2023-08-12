@@ -1,14 +1,16 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    margin: 0px;
 }
 
 header {
-    position: sticky;
-    top: 0px;
-    left: 0px;
     font-size: 30px;
     text-align: center;
-    background-color: white;
+    background-color: black;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    color: white;
     padding: 10px;
 }
 
@@ -17,7 +19,6 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    background-color: lightgrey;
     padding: 10px;
     justify-content: center;
 }
@@ -31,7 +32,19 @@ header {
 }
 
 
+#body-anime {
+    position: relative;
+    background-color: black;
+    height: 400px;
+}
 
+.melodies {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    top: 0px;
+}
 
 #progress-container {
     background-color: black;
@@ -54,24 +67,165 @@ header {
     width: 250px;
     font-size: 100px;
     transition: background-color 0.5s;
+    z-index: 1;
+    border: none;
+}
+
+#copy-animation {
+    border-radius: 50%;
+    background-color: red;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    /* Animation name in js*/
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+#title-anime {
+    color: white;
 }
 
 .content-guess {
     display: flex;
+    padding: 10px;
     justify-content: center;
     align-items: center;
+    height: 400px;
 }
 
-#anime-solution{
+#anime-solution {
     flex-direction: column;
     align-items: center;
-    display: none; /*flex*/
+    display: none;
+    /*flex*/
 }
+
 #countdown {
     font-size: 8em;
     text-align: center;
+    color: white;
+    z-index: 2;
+    top: 20px;
+    position: absolute;
+
 }
 
-#img-anime{
+#img-anime {
     width: 80%;
+}
+
+
+@keyframes rotate-center {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes rotate-scale-up {
+    0% {
+        transform: scale(1) rotateZ(0deg)
+    }
+
+    50% {
+        transform: scale(1.5) rotateZ(-180deg)
+    }
+
+    100% {
+        transform: scale(1) rotateZ(-360deg)
+    }
+}
+
+
+
+
+@keyframes tracking-in-expand-forward-top {
+    0% {
+        letter-spacing: -.2em;
+        transform: translateZ(-700px) translateY(-100px);
+        opacity: 0
+    }
+
+    40% {
+        opacity: .6
+    }
+
+    100% {
+        transform: translateZ(0) translateY(0);
+        opacity: 1
+    }
+}
+
+
+.melody {
+    background-color: rgba(255, 255, 255, 0.352);
+    padding: 10px;
+    margin: 10px;
+    align-items: space-between;
+}
+
+@keyframes musicamaestro {
+    0% {
+        height: 100px;
+        filter: brightness(100%);
+    }
+
+    25% {
+        height: 400px;
+        filter: brightness(40%);
+    }
+
+    30% {
+        height: 220px;
+    }
+
+    50% {
+        height: 200px;
+        filter: brightness(100%);
+    }
+
+    100% {
+        height: 110px;
+    }
+}
+
+@keyframes muevete {
+    0% {
+        transform: skew(0deg) rotate(0deg) scale(1.1);
+    }
+
+    25% {
+        transform: skew(10deg, 10deg) scale(1);
+    }
+
+    60% {
+        transform: skew(0deg, 0deg) scale(1.1);
+
+    }
+
+    50% {
+        transform: rotate(180deg) skew(5deg, 5deg) scale(1);
+
+    }
+
+    70% {
+        transform: scale(1);
+
+    }
+
+
+    75% {
+        transform: skew(-10deg, -10deg) scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
 }
