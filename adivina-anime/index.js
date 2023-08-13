@@ -6,8 +6,6 @@
 // elige una cancion  de una lista desordenada+
 //Desordena
 const intervalID = null;
-let timeToResolve = 10;
-let number = 0; //0, 1,2,3 // 3 all-audio
 
 let btnGuessAnime = document.getElementById("btn-play-anime");
 let animeSolution = document.getElementById("anime-solution");
@@ -16,16 +14,18 @@ let copyAnimation = document.getElementById("copy-animation");
 let progressbar = document.getElementById("progress-song");
 let imgAnime = document.getElementById("img-anime");
 let authorAnime = document.getElementById("author-anime");
-
+let URLPATHSONG = "https://github.com/zackproject/static-api/raw/master/cc-covers-anime-song/";
 class AnimeSong {
-    constructor(iSong, playlist, status, timeWait, timeResolve) {
+    constructor(iSong, playlist, status, timeWait, timeResolve, pathSong) {
+        this.pathSong = pathSong;
         this.iSong = iSong;
         this.playlist = playlist.sort(() => Math.random() - 0.5);
-        this.song = new Audio(playlist[iSong].fragment);
+        this.song = new Audio(this.pathSong + playlist[iSong].fragment);
         this.songOBJ = playlist[iSong];
         this.timeWait = timeWait;
         this.status = status;
         this.timeResolve = timeResolve;
+        this.isPlaying = false;
     }
 
     disorderList() {
@@ -44,7 +44,7 @@ class AnimeSong {
             this.disorderList();
         }
         this.songOBJ = this.playlist[this.iSong]; // mira si puedo utilizarlo en this.song despues
-        this.song = new Audio(this.playlist[this.iSong].fragment);
+        this.song = new Audio(this.pathSong + this.playlist[this.iSong].fragment);
         this.status = 0;
         this.preloadSong();
     }
@@ -59,7 +59,7 @@ class AnimeSong {
         aud.preload = 'auto';
     }
 }
-let player = new AnimeSong(0, playlist, 0, 5, 15);
+let player = new AnimeSong(0, playlist, 0, 5, 15, URLPATHSONG);
 
 fillSolution(player.songOBJ);
 
@@ -73,6 +73,8 @@ function fillSolution({ title, fragment, song, author }) {
 function pressBtn() {
     //En la primera carrega precarrega el seguent audio
     copyAnimation.style.animationName = "muevete";
+    btnGuessAnime.style.animation = "";
+    copyAnimation.style.backgroundColor = "green";
     if (player.status == 0) {
         player.preloadSong();
     }
@@ -84,34 +86,40 @@ function pressBtn() {
         playAnimation(0);
         callSolution();
     } else {
-        if (player.status < 3) player.status++;
-        player.song.currentTime = 0;
-        playSong();
-        fillSolution(player.songOBJ);
-        animeSolution.style.display = "none";
+        //Prevent ddos clicked
+        if (!player.isPlaying) {
+            setTimeout(() => {
+                if (player.status < 3) player.status++;
+                player.song.currentTime = 0;
+                playSong();
+                fillSolution(player.songOBJ);
+                animeSolution.style.display = "none";
 
-        timeOut(player.status);
-        playAnimation(1);
-        // btnGuessAnime.style.animation = "muevete 1s infinite";
-        btnGuessAnime.innerText = "touch_app";
-        btnGuessAnime.style.backgroundColor = "red"
-        btnGuessAnime.title = "Adivinar";
+                timeOut(player.status);
+                playAnimation(1);
+                btnGuessAnime.innerText = "touch_app";
+                copyAnimation.style.backgroundColor = "red";
+                btnGuessAnime.style.backgroundColor = "red"
+                btnGuessAnime.title = "Adivinar";
+                player.isPlaying = false;
+            }, 3000);
+        }
+        player.isPlaying = true;
+
     }
 }
 
-
-function applyRandAnimation() {
-
-}
 function callSolution() {
     countDownHTML.innerText = player.timeResolve;
     btnGuessAnime.style.display = "none";
+    copyAnimation.style.animationName = "";
     countDownHTML.style.animation = "tracking-in-expand-forward-top 1s linear infinite";
-    const intervalID = setInterval(() => {
-        if (player.timeResolve > 0) {
-            player.timeResolve--;
-            countDownHTML.innerText = player.timeResolve;
 
+    let countTime = player.timeResolve;
+    const intervalID = setInterval(() => {
+        if (countTime > 0) {
+            countTime--;
+            countDownHTML.innerText = countTime;
         } else {
             clearInterval(intervalID);
             countDownHTML.style.animation = "";
@@ -145,8 +153,8 @@ function timeOut(number) {
         player.song.pause();
         // Si pulsan el boton mientras esta el repetir, cuenta atras para decir el titulo
         // sino aparece solo
-        btnGuessAnime.style.animation = "rotate-scale-up 0.5s linear both";
         copyAnimation.style.animationName = "";
+        btnGuessAnime.style.animation = "gira 1s";
         btnGuessAnime.innerText = "replay";
         btnGuessAnime.style.backgroundColor = "green"
         btnGuessAnime.title = "Repetir";
