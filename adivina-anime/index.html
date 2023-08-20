@@ -11,40 +11,65 @@
 </head>
 
 <body>
-    <header>Adivinar anime</header>
-    <div id="anime-solution">
-        <h2 id="title-anime"></h2>
-        <a id="author-anime" href="">Author</a>
-        <img id="img-anime" alt="Miniatura del video {} de {} de">
-    </div>
-    <div id="body-anime">
-        <div class="melodies">
-            <div class="melody"></div>
-            <div class="melody"></div>
-            <div class="melody"></div>
-            <div class="melody"></div>
-            <div class="melody"></div>
-            <div class="melody"></div>
-            <div class="melody"></div>
-            <div class="melody"></div>
-            <div class="melody"></div>
-        </div>
-        <div class="content-guess">
-            <button id="btn-play-anime" class="material-icons" onclick="pressBtn()">
-                play_arrow
-            </button>
-            <div id="copy-animation">
-                <div id="countdown"></div>
+    <div class="container">
+        <header>Adivinar anime</header>
+        <details>
+            <summary style="color: white; padding: 10px;">Ver opciones</summary>
+            <div class="selectors">
+                <select name="timeWait" id="timeWait" onchange="changeTimeStart(event)">
+                    <option value="3" selected>3 segundos para iniciar</option>
+                    <option value="5">5 segundos para iniciar</option>
+                    <option value="10">10 segundos para iniciar</option>
+                    <option value="15">15 segundos para iniciar</option>
+                </select>
+
+                <select name="timeResolve" id="timeResolve" onchange="changeTimeResolve(event)">
+                    <option value="5">5 segundos para adivinar</option>
+                    <option value="10">10 segundos para adivinar</option>
+                    <option value="15" selected>15 segundos para adivinar</option>
+                    <option value="20">20 segundos para adivinar</option>
+                    <option value="30">20 segundos para adivinar</option>
+                </select>
+
+                <select name="animeSong" id="animeSong" onchange="changeAnime(event)">
+                    <option value="original" selected>Animes Originales</option>
+                    <option value="cover">Covers de Anime</option>
+                </select>
             </div>
+        </details>
+        <main>
 
-        </div>
-    </div>
-    <div id="progress-container">
-        <div id="progress-song"></div>
-    </div>
 
-    <span id="total"></span>
-    <div id="container">
+            <div class="melodies">
+                <div class="melody"></div>
+                <div class="melody"></div>
+                <div class="melody"></div>
+                <div class="melody"></div>
+                <div class="melody"></div>
+                <div class="melody"></div>
+                <div class="melody"></div>
+                <div class="melody"></div>
+                <div class="melody"></div>
+            </div>
+            <div class="content-guess">
+                <button id="btn-play-anime" class="material-icons" onclick="pressBtn()">
+                    play_arrow
+                </button>
+                <div id="copy-animation">
+                    <div id="countdown"></div>
+                </div>
+            </div>
+            <div id="progress-song"></div>
+            <div id="anime-background">
+                <div id="anime-solution">
+                    <h2 id="title-anime"></h2>
+                    <img id="img-anime" alt="Miniatura del video {} de {} de">
+                    <a id="author-anime" href="" target="_blank">Ver en YouTube</a>
+                    <button class="btn-close-anime" onclick="closeModal()">x</button>
+                </div>
+            </div>
+        </main>
+        <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
     </div>
     <script src="dades.js"></script>
     <script src="index.js"></script>

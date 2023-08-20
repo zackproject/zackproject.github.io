@@ -1,4 +1,4 @@
-let playlist = [
+let playlistOriginal = [
     {
         "title": "Full Metal Alchemist Brotherhood",
         "fragment": "fmab.mp3",

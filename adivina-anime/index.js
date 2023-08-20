@@ -8,7 +8,7 @@
 const intervalID = null;
 
 let btnGuessAnime = document.getElementById("btn-play-anime");
-let animeSolution = document.getElementById("anime-solution");
+let animeSolution = document.getElementById("anime-background");
 let countDownHTML = document.getElementById("countdown");
 let copyAnimation = document.getElementById("copy-animation");
 let progressbar = document.getElementById("progress-song");
@@ -33,7 +33,11 @@ class AnimeSong {
     }
 
     percentSong() {
-        return this.song.currentTime / this.song.duration * 100
+        let percent = this.song.currentTime / this.song.duration * 100;
+        if (percent > 98) {
+            return 100;
+        }
+        return percent
     }
 
     nextSong() {
@@ -59,16 +63,37 @@ class AnimeSong {
         aud.preload = 'auto';
     }
 }
-let player = new AnimeSong(0, playlist, 0, 5, 15, URLPATHSONG);
+let player = new AnimeSong(0, playlistOriginal, 0, 3, 15, URLPATHSONG);
+makeFooter();
 
+function changeTimeStart(event) {
+    // El temps d'espera es igual al del selector html
+    player.timeWait = parseInt(event.target.value)
+}
+
+function changeTimeResolve(event) {
+    // El temps de resoldre es igual al del selector html
+    player.timeResolve = parseInt(event.target.value)
+}
+
+function changeAnime(event) {
+    if (event.target.value === "original") {
+        player.playlist = playlistOriginal;
+        console.log("la original");
+    } else {
+        //player.playlist = playlistCover;
+        console.log("la copia");
+    }
+    player.disorderList();
+
+}
 fillSolution(player.songOBJ);
 
 function fillSolution({ title, fragment, song, author }) {
     document.getElementById("title-anime").innerText = title;
     imgAnime.src = `http://i3.ytimg.com/vi/${song.split("/").pop()}/hqdefault.jpg`
     imgAnime.alt = `Miniatura del video de YouTube ${title} del autor ${author}`
-    authorAnime.innerText = "Canción de " + author;
-    authorAnime.href = song;
+    authorAnime.href = "ergt" + song;
 }
 function pressBtn() {
     //En la primera carrega precarrega el seguent audio
@@ -102,7 +127,7 @@ function pressBtn() {
                 btnGuessAnime.style.backgroundColor = "red"
                 btnGuessAnime.title = "Adivinar";
                 player.isPlaying = false;
-            }, 3000);
+            }, player.timeWait * 1000); // SECONDS TO MILISECONDS
         }
         player.isPlaying = true;
 
@@ -130,7 +155,7 @@ function callSolution() {
 function resetSong() {
     player.nextSong()
     countDownHTML.innerText = "";
-    animeSolution.style.display = "flex";
+    animeSolution.style.display = "block";
     btnGuessAnime.disabled = false;
     btnGuessAnime.style.backgroundColor = "green";
     btnGuessAnime.innerText = "play_arrow";
@@ -164,29 +189,24 @@ function timeOut(number) {
 }
 
 
+
+function closeModal() {
+    document.getElementById("btn-play-anime").focus();
+    document.getElementById("anime-solution").style.display = "none";
+}  /*   
 function template(props) {
     // console.log(props.title, props.song, props.author, "AAAAAA");
     return `<div class="card">
                 <h1>${props.title}</h1>
                 <h2><a href="${props.song}">${props.author}</a></h2>
-                <img  height="200" src="http://i3.ytimg.com/vi/${props.song.split("/").pop()}/hqdefault.jpg" alt="Youtube link of song ${props.title}">
-   
+                <img  height="200" src="http://i3.ytimg.com/vi/${props.song.split("/").pop()}/hqdefault.jpg" alt="Youtube link of song ${props.title}"> 
             </div>`
-    /*             <audio controls>
+            <audio controls>
             <source src="${props.fragment}" type="audio/mpeg">
             Your browser does not support the audio element.
-        </audio> */
+        </audio> 
 }
-/*let pare = document.getElementById("container");
-let llista = playlist.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
-let total = 0;
-llista.forEach((element) => {
-    if (element.title != "") {
-        pare.innerHTML += template(element);
-        total++;
-    }
-});*/
-//document.getElementById("total").innerText = total;
+*/
 
 
 function playAnimation(status) {
@@ -201,4 +221,10 @@ function playAnimation(status) {
         }
         console.log(barresMusicals[i].style.animationPlayState);
     }
+}
+
+
+function makeFooter() {
+    const d = new Date();
+    document.getElementById("dateYear").innerText = d.getFullYear();
 }
