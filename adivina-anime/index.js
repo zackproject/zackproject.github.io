@@ -14,7 +14,7 @@ let copyAnimation = document.getElementById("copy-animation");
 let progressbar = document.getElementById("progress-song");
 let imgAnime = document.getElementById("img-anime");
 let authorAnime = document.getElementById("author-anime");
-let URLPATHSONG = "https://github.com/zackproject/static-api/raw/master/cc-covers-anime-song/";
+let URLPATHSONG = "https://github.com/zackproject/static-api/raw/master/";
 class AnimeSong {
     constructor(iSong, playlist, status, timeWait, timeResolve, pathSong) {
         this.pathSong = pathSong;
@@ -41,17 +41,19 @@ class AnimeSong {
     }
 
     nextSong() {
-        if (this.iSong < this.playlist.length) {
+        if (this.iSong + 1 < this.playlist.length) {
             this.iSong++;
         } else {
             this.iSong = 0;
             this.disorderList();
         }
         this.songOBJ = this.playlist[this.iSong]; // mira si puedo utilizarlo en this.song despues
-        this.song = new Audio(this.pathSong + this.playlist[this.iSong].fragment);
+        this.song = new Audio(this.pathSong + this.songOBJ.fragment);
         this.status = 0;
         this.preloadSong();
     }
+
+
 
     preloadSong() {
         if (this.iSong + 1 < this.playlist.length) {
@@ -63,7 +65,15 @@ class AnimeSong {
         aud.preload = 'auto';
     }
 }
-let player = new AnimeSong(0, playlistOriginal, 0, 3, 15, URLPATHSONG);
+let player = new AnimeSong(
+    0,
+    playlistSong.map(e => { // crea un objecte nou amb aquests parametres
+        return { "title": e.title, "fragment": e.fragment, "song": e.song }
+    }),
+    0,
+    3,
+    15,
+    URLPATHSONG);
 makeFooter();
 
 function changeTimeStart(event) {
@@ -78,14 +88,21 @@ function changeTimeResolve(event) {
 
 function changeAnime(event) {
     if (event.target.value === "original") {
-        player.playlist = playlistOriginal;
-        console.log("la original");
+        // crea un objecte nou amb title, fragmentm ,song -> original
+        player.playlist = playlistSong.map(e => {
+            return { "title": e.title, "fragment": e.fragment, "song": e.song }
+        });
     } else {
-        //player.playlist = playlistCover;
-        console.log("la copia");
+        //Primer filtra els que tinguis la propietat "cover"
+        const nplayListCover = playlistSong.filter(item => item.hasOwnProperty("cover"));
+        // crea un objecte nou amb title, fragment, song -> cover
+        player.playlist = nplayListCover.map(e => {
+            return { "title": e.title, "fragment": e.cover.fragment, "song": e.cover.song }
+
+        });
     }
     player.disorderList();
-
+    player.iSong = 0;
 }
 fillSolution(player.songOBJ);
 
@@ -93,7 +110,7 @@ function fillSolution({ title, fragment, song, author }) {
     document.getElementById("title-anime").innerText = title;
     imgAnime.src = `http://i3.ytimg.com/vi/${song.split("/").pop()}/hqdefault.jpg`
     imgAnime.alt = `Miniatura del video de YouTube ${title} del autor ${author}`
-    authorAnime.href = "ergt" + song;
+    authorAnime.href = song;
 }
 function pressBtn() {
     //En la primera carrega precarrega el seguent audio
@@ -155,7 +172,7 @@ function callSolution() {
 function resetSong() {
     player.nextSong()
     countDownHTML.innerText = "";
-    animeSolution.style.display = "block";
+    animeSolution.style.display = "grid";
     btnGuessAnime.disabled = false;
     btnGuessAnime.style.backgroundColor = "green";
     btnGuessAnime.innerText = "play_arrow";
@@ -173,7 +190,6 @@ function playSong() {
 function timeOut(number) {
     // Si el temps es complet, retorna tot el temps en milisegons
     let time = (number === 3) ? player.song.duration * 1000 : number * 5000;
-    console.log("tiempo", time);
     setTimeout(function () {
         player.song.pause();
         // Si pulsan el boton mientras esta el repetir, cuenta atras para decir el titulo
@@ -192,22 +208,25 @@ function timeOut(number) {
 
 function closeModal() {
     document.getElementById("btn-play-anime").focus();
-    document.getElementById("anime-solution").style.display = "none";
-}  /*   
+    animeSolution.style.display = "none";
+}
+/*
 function template(props) {
     // console.log(props.title, props.song, props.author, "AAAAAA");
-    return `<div class="card">
-                <h1>${props.title}</h1>
-                <h2><a href="${props.song}">${props.author}</a></h2>
-                <img  height="200" src="http://i3.ytimg.com/vi/${props.song.split("/").pop()}/hqdefault.jpg" alt="Youtube link of song ${props.title}"> 
-            </div>`
-            <audio controls>
-            <source src="${props.fragment}" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio> 
-}
-*/
+    if (props.hasOwnProperty("cover")) {
+        return `<div class="card">
+        <h1>${props.title}</h1>
+        <img  height="200" src="http://i3.ytimg.com/vi/${props.song.split("/").pop()}/hqdefault.jpg" alt="Youtube link of song ${props.title}"> 
+        <img  height="200" src="http://i3.ytimg.com/vi/${props.cover.song.split("/").pop()}/hqdefault.jpg" alt="Youtube link of song ${props.title}"> 
+        </div>`
+    } else {
+        return `<div class="card">
+        <h1>${props.title}</h1>
+        <img  height="200" src="http://i3.ytimg.com/vi/${props.song.split("/").pop()}/hqdefault.jpg" alt="Youtube link of song ${props.title}"> 
+        </div>`
 
+    }
+}*/
 
 function playAnimation(status) {
     //Carrega la animacio per cada barra i li posa un delay a cadascun
@@ -219,7 +238,6 @@ function playAnimation(status) {
         } else {
             barresMusicals[i].style.animationPlayState = "paused";
         }
-        console.log(barresMusicals[i].style.animationPlayState);
     }
 }
 

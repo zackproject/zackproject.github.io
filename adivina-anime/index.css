@@ -59,15 +59,6 @@ footer>a {
 
 
 
-.melodies {
-    position: absolute;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    top: 0px;
-    overflow: hidden;
-}
-
 #progress-container {
     /*background-color: black;*/
     width: 100%;
@@ -145,11 +136,7 @@ footer>a {
 }
 
 #anime-solution {
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%);
-    -ms-transform: translate(-50%);
-    /*flex*/
+    position: relative;
     background-color: black;
     top: 20px;
     display: flex;
@@ -162,8 +149,8 @@ footer>a {
 
 #anime-background {
     display: none;
+    place-items: center;
     position: fixed;
-    padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
@@ -171,7 +158,7 @@ footer>a {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
-    z-index: 2;
+    z-index: 3;
 }
 
 
@@ -230,8 +217,15 @@ footer>a {
     width: 80%;
 }
 
-
-
+.melodies {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    overflow: hidden;
+}
 
 @keyframes tracking-in-expand-forward-top {
     0% {
@@ -248,38 +242,41 @@ footer>a {
 
     }
 }
-
-
 .melody {
     background-color: rgba(255, 255, 255, 0.352);
     padding: 10px;
     margin: 10px;
+    height: 5%;
     align-items: space-between;
 }
 
 @keyframes musicamaestro {
     0% {
-        height: 100px;
+        height: 10%;
         filter: brightness(100%);
     }
-
+    
     25% {
-        height: 400px;
+        height: 80%;
+    }
+    
+    30% {
+        height: 65%;
+    }
+    
+    50% {
+        height: 45%;
         filter: brightness(40%);
     }
-
-    30% {
-        height: 220px;
+    75%{
+        height: 5%;
     }
-
-    50% {
-        height: 200px;
-        filter: brightness(100%);
-    }
-
+    
     100% {
-        height: 110px;
-    }
+        height: 27.5%;
+        filter: brightness(100%);
+
+    }    
 }
 
 @keyframes muevete {
