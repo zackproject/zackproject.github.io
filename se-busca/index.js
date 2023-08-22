@@ -75,7 +75,11 @@ class Wanted {
 
     }
     timerAccesible() {
-        this.time += 10;
+        if (this.points > 40) {
+            this.time += 2;
+            return;
+        }
+        this.time += 5;
     }
 
     timerSubstract() {
@@ -131,6 +135,8 @@ function timeCountDown() {
 
 
 function playClasic() {
+    //Precarrega la musica al iniciar partida
+    reproductor.src = "./audio/sakebink_niclaus.mp3";
     //Inicia despres de acabar a la animacio
     setTimeout(drawPanelPosition, 1500);
     document.getElementById("container-wanted").style.display = "flex";
@@ -141,12 +147,14 @@ function playClasic() {
 }
 
 function playAccesible() {
+    //Precarrega la musica al iniciar partida
+    reproductor.src = "./audio/sakebink_niclaus.mp3";
     document.getElementById("container-wanted").style.display = "flex";
     document.getElementById("menu-wanted").style.display = "none";
     document.getElementById("panelAbsoluto").style.display = "none";
     document.getElementById("footer-wanted").style.display = "flex";
     document.getElementById("panelTabla").style.display = "flex";
-    player.time = 60;
+    player.time = 20;
     player.isPlaying = true;
     drawPanelTable();
 }
@@ -495,7 +503,6 @@ function animateStars() {
 
 function loadWanted() {
     //Carrega la musica
-    reproductor.src = "./audio/sakebink_niclaus.mp3";
     reproductor.muted = true;
     reproductor.loop = true;
     //Carrega el localstorage
@@ -510,6 +517,9 @@ function loadWanted() {
     generateScore();
     makeFooter();
 
+    //Preload images in cache
+    preloadImages(player.characterList.map(obj => obj.image));
+    preloadImages([player.special.image])
 }
 ///Musica
 function playPauseMusic(event) {
@@ -568,4 +578,13 @@ function generateScore() {
         ol.appendChild(li);
     }
     pare.appendChild(ol);
+}
+
+//Preload images https://stackoverflow.com/a/287780
+function preloadImages(preloads) {
+    var tempImg = []
+    for (var x = 0; x < preloads.length; x++) {
+        tempImg[x] = new Image()
+        tempImg[x].src = preloads[x]
+    }
 }
