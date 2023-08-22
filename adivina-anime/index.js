@@ -53,8 +53,6 @@ class AnimeSong {
         this.preloadSong();
     }
 
-
-
     preloadSong() {
         if (this.iSong + 1 < this.playlist.length) {
             let aud = new Audio(this.playlist[this.iSong + 1].fragment)
@@ -64,6 +62,15 @@ class AnimeSong {
         let aud = new Audio(this.playlist[0].fragment)
         aud.preload = 'auto';
     }
+    rebaseSong() {
+        this.disorderList();
+        this.song.pause();
+        this.song.currentTime = 0;
+        this.iSong = 0;
+        this.songOBJ = this.playlist[this.iSong];
+        this.song = new Audio(this.pathSong + this.playlist[this.iSong].fragment);
+        this.preloadSong();
+    }
 }
 let player = new AnimeSong(
     0,
@@ -71,8 +78,8 @@ let player = new AnimeSong(
         return { "title": e.title, "fragment": e.fragment, "song": e.song }
     }),
     0,
-    3,
-    15,
+    3,// wait start
+    10,//wait resolve
     URLPATHSONG);
 makeFooter();
 
@@ -101,15 +108,16 @@ function changeAnime(event) {
 
         });
     }
-    player.disorderList();
-    player.iSong = 0;
+    //Actualitza tot l'objecte amb els nous valors
+    player.rebaseSong();
+    console.log(player);
 }
 fillSolution(player.songOBJ);
 
 function fillSolution({ title, fragment, song, author }) {
     document.getElementById("title-anime").innerText = title;
     imgAnime.src = `http://i3.ytimg.com/vi/${song.split("/").pop()}/hqdefault.jpg`
-    imgAnime.alt = `Miniatura del video de YouTube ${title} del autor ${author}`
+    imgAnime.alt = `Miniatura del video de YouTube ${title}`
     authorAnime.href = song;
 }
 function pressBtn() {
@@ -142,7 +150,7 @@ function pressBtn() {
                 btnGuessAnime.innerText = "touch_app";
                 copyAnimation.style.backgroundColor = "red";
                 btnGuessAnime.style.backgroundColor = "red"
-                btnGuessAnime.title = "Adivinar";
+                btnGuessAnime.title = "Adivinar en" + document.getElementById("timeResolve").value + " segundos";;
                 player.isPlaying = false;
             }, player.timeWait * 1000); // SECONDS TO MILISECONDS
         }
@@ -173,6 +181,7 @@ function resetSong() {
     player.nextSong()
     countDownHTML.innerText = "";
     animeSolution.style.display = "grid";
+    document.getElementById("title-anime").focus()
     btnGuessAnime.disabled = false;
     btnGuessAnime.style.backgroundColor = "green";
     btnGuessAnime.innerText = "play_arrow";
@@ -198,7 +207,7 @@ function timeOut(number) {
         btnGuessAnime.style.animation = "gira 1s";
         btnGuessAnime.innerText = "replay";
         btnGuessAnime.style.backgroundColor = "green"
-        btnGuessAnime.title = "Repetir";
+        btnGuessAnime.title = "Repetir en " + document.getElementById("timeWait").value + " segundos";
         playAnimation(0);
     }, time);
 

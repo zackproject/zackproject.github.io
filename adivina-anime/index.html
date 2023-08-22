@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
     <title>Adivina Anime</title>
     <link rel="icon" href="../icopz.ico">
     <link rel="stylesheet" href="index.css">
@@ -28,7 +28,7 @@
                     <option value="10">10 segundos para adivinar</option>
                     <option value="15" selected>15 segundos para adivinar</option>
                     <option value="20">20 segundos para adivinar</option>
-                    <option value="30">20 segundos para adivinar</option>
+                    <option value="30">30 segundos para adivinar</option>
                 </select>
 
                 <select name="animeSong" id="animeSong" onchange="changeAnime(event)">
@@ -52,7 +52,7 @@
                 <div class="melody"></div>
             </div>
             <div class="content-guess">
-                <button id="btn-play-anime" class="material-icons" onclick="pressBtn()">
+                <button id="btn-play-anime" class="material-icons" onclick="pressBtn()" aria-label="Reproductor" title="Reproducir">
                     play_arrow
                 </button>
                 <div id="copy-animation">
@@ -65,7 +65,7 @@
                     <h2 id="title-anime"></h2>
                     <img id="img-anime" alt="Miniatura del video {} de {} de">
                     <a id="author-anime" href="" target="_blank">Ver en YouTube</a>
-                    <button class="btn-close-anime" onclick="closeModal()">x</button>
+                    <button class="btn-close-anime" onclick="closeModal()" title="Click para cerrar">x</button>
                 </div>
             </div>
         </main>
