@@ -79,7 +79,7 @@ let player = new AnimeSong(
     }),
     0,
     3,// wait start
-    10,//wait resolve
+    15,//wait resolve
     URLPATHSONG);
 makeFooter();
 

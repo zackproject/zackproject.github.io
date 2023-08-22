@@ -1,5 +1,11 @@
 var cards = [
-    
+    {
+        "title": "Adivina Anime",
+        "image": "https://i.ibb.co/NLcKQNw/image.png",
+        "alt": "Adivina Anime",
+        "description": "Juega con amigos. Pulsa el botón de Reproducir e intenta adivinar la canción. Si alguien la sabe, que pulse el botón rojo y se revelará el anime.",
+        "link": "adivina-anime"
+    },
     {
         "title": "Se Busca",
         "image": "https://i.ibb.co/9ZfbY1W/wanted.webp",
