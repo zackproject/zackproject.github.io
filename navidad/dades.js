@@ -1,130 +1,137 @@
-var adventList = [
-    {
-        "id": 1,
-        "image_open": "images/resolved/resolved_1.webp",
-        "advent": "https://youtu.be/rnS-05XoXs4"
-    },
-    {
-        "id": 2,
-        "image_open": "images/resolved/resolved_2.webp",
-        "advent": "https://youtu.be/VS-Jk2YwA0E"
-    },
-    {
-        "id": 3,
-        "image_open": "images/resolved/resolved_4.webp",
-        "advent": "https://youtu.be/Eq0J2W7vkDQ"
-    },
-    {
-        "id": 4,
-        "image_open": "images/resolved/resolved_3.webp",
-        "advent": "https://youtu.be/rBQEW5uFdDY"
-    },
-    {
-        "id": 5,
-        "image_open": "images/resolved/resolved_5.webp",
-        "advent": "https://youtu.be/XeM0hGdzVzQ"
-    },
-    {
-        "id": 6,
-        "image_open": "images/resolved/resolved_6.webp",
-        "advent": "https://youtu.be/rVsP8nm5hiE"
-    },
-    {
-        "id": 7,
-        "image_open": "images/resolved/resolved_7.webp",
-        "advent": "https://youtu.be/TnKyvgoO_VI"
-    },
-    {
-        "id": 8,
-        "image_open": "images/resolved/resolved_8.webp",
-        "advent": "https://youtu.be/R2mZ64XAmqw"
-    },
-    {
-        "id": 9,
-        "image_open": "images/resolved/resolved_9.webp",
-        "advent": "https://youtu.be/kEPfM3jSoBw"
-    },
-    {
-        "id": 10,
-        "image_open": "images/resolved/resolved_10.webp",
-        "advent": "https://youtu.be/INkzB4iJrnY"
-    },
-    {
-        "id": 11,
-        "image_open": "images/resolved/resolved_11.webp",
-        "advent": "https://youtube.com/shorts/JL2A6rNgOns"
-    },
-    {
-        "id": 12,
-        "image_open": "images/resolved/resolved_12.webp",
-        "advent": "https://youtu.be/cG8o24djj-o"
-    },
-    {
-        "id": 13,
-        "image_open": "images/resolved/resolved_13.webp",
-        "advent": "https://youtu.be/VZzSBv6tXMw"
-    },
-    {
-        "id": 14,
-        "image_open": "images/resolved/resolved_14.webp",
-        "advent": "https://youtu.be/ILZh2xncU8A"
-    },
-    {
-        "id": 15,
-        "image_open": "images/resolved/resolved_15.webp",
-        "advent": "https://youtu.be/WI06NWds8pM"
-    },
-    {
-        "id": 16,
-        "image_open": "images/resolved/resolved_16.webp",
-        "advent": "https://youtu.be/9klzZsVw-cQ"
-    },
-    {
-        "id": 17,
-        "image_open": "images/resolved/resolved_17.webp",
-        "advent": "https://youtu.be/zNM8eV9tcK0"
-    },
-    {
-        "id": 18,
-        "image_open": "images/resolved/resolved_18.webp",
-        "advent": "https://youtu.be/MLy655j9LM8"
-    },
-    {
-        "id": 19,
-        "image_open": "images/resolved/resolved_19.webp",
-        "advent": "https://youtu.be/yV0Nf6NqMv0"
-    },
-    {
-        "id": 20,
-        "image_open": "images/resolved/resolved_20.webp",
-        "advent": "https://youtu.be/WCu00OVc-Yc"
-    },
-    {
-        "id": 21,
-        "image_open": "images/resolved/resolved_21.webp",
-        "advent": "https://youtu.be/XwGFQsyi8PE"
-    },
-    {
-        "id": 22,
-        "image_open": "images/resolved/resolved_22.webp",
-        "advent": "https://youtu.be/saSuSMAL5_0"
-    },
-    {
-        "id": 23,
-        "image_open": "images/resolved/resolved_23.webp",
-        "advent": "https://youtu.be/50iY3RJm898"
-    },
-    {
-        "id": 24,
-        "image_open": "images/resolved/resolved_24.webp",
-        "advent": "https://youtu.be/Pk1I8uEMrP8"
-    },
-    {
-        "id": 25,
-        "image_open": "images/resolved/resolved_25.webp",
-        "advent": "https://youtu.be/aAkMkVFwAoo"
-    }
-]
+var adventList =
+
+{
+    "questions": [
+        {
+            "id": 1,
+            "quiz": "¿De dónde es originaria Mulan (Disney)?",
+            "options": ["China", "Korea", "Japón", "Colombia"],
+        },
+        {
+            "id": 2,
+            "quiz": "¿Cuál de los siguientes hombres no fue un filósofo?",
+            "options": ["Platón", "Kant", "Sócrates", "Einstein"],
+        },
+        {
+            "id": 3,
+            "quiz": "¿Cuál no fue una canción de Michael Jackson?",
+            "options": ["Peaches", "Thriller", "Beat it", "Bad"],
+        },
+        {
+            "id": 4,
+            "quiz": "¿Qué nombre recibe el arte de escenificar con sombras?",
+            "options": ["Teatro de luces", "Teatro de sombras", " Anfiteatro de sombras", "Anfiteatro de luces"],
+        },
+        {
+            "id": 5,
+            "quiz": "¿Contra qué animal perdió Napoleón?",
+            "options": ["Canguros", "Conejos", "Toros", "Gatos"],
+        },
+        {
+            "id": 6,
+            "quiz": "¿De qué videojuego es la canción Megalovania?",
+            "options": ["Undertale", "FNAF", "LOL", "Genshin Impact"],
+        },
+        {
+            "id": 7,
+            "quiz": "¿Cómo se llamó al experimento social en el que miles de personas jugaron en directo una misma partida de Pokémon al mismo tiempo?",
+            "options": ["Pokemon Awards", "Crossover Pokemon", "Pokeverse", "Twitch Play Pokemon"],
+        },
+        {
+            "id": 8,
+            "quiz": "¿Cuál NO es un instrumento de percusión?",
+            "options": ["Triangulo", "Tambor", "Flauta", "Xilófono"],
+        },
+        {
+            "id": 9,
+            "quiz": "¿Cómo se conoce al sonido envolvente que, al escucharlo con auriculares, crea la sensación de que el sonido se expande a nuestro alrededor?",
+            "options": ["Audio 1D", "Audio 2D", "Audio 8D", "Audio 27D"],
+        },
+        {
+            "id": 10,
+            "quiz": "¿Cómo se llama a la adicción a los juegos de azar?",
+            "options": ["Homeopatia", "Ludopatia", "Telepatia", "Apatia"],
+        },
+        {
+            "id": 11,
+            "quiz": "¿Cuál de los siguientes Pokémon es de tipo fuego?",
+            "options": ["Charmander", "Pikachu", "Squirtle", "Bulbasaur"],
+        },
+        {
+            "id": 12,
+            "quiz": "Si estoy en Argentina, ¿de qué otra forma se puede pedir el autobús?",
+            "options": ["Bondi", "Guagua", "Burra", "Chiva"],
+        },
+        {
+            "id": 13,
+            "quiz": "¿Quién realizaba los dibujos a gran escala en Art Attack?",
+            "options": ["El brazitos", "El piernitas", " El manitas", "El piececitos"],
+        },
+        {
+            "id": 14,
+            "quiz": "¿De qué época era el T-Rex?",
+            "options": ["Triasico", "Cretaceo", "Jurasico", "Paleolitico"],
+        },
+        {
+            "id": 15,
+            "quiz": "Sigue la canción: 'Somebody once told me. The world is gonna'",
+            "options": ["shake me", "save me", "kill me", "roll me"],
+        },
+        {
+            "id": 16,
+            "quiz": "¿Cuál de estos cuadros NO pertenece a Vincent van Gogh?",
+            "options": ["Los girasoles", "La noche estrellada", "El guernica", "Autoretrato"],
+        },
+        {
+            "id": 17,
+            "quiz": "¿Cuál de los siguientes sistemas operativos de Windows es más antiguo?",
+            "options": ["Windows XP", "Windows Vista", "Windows 7", "Windows 10"],
+        },
+        {
+            "id": 18,
+            "quiz": "¿Qué país ganó Eurovisión Junior en junio de 2004?",
+            "options": ["España", "Francia", "Reino Unido", "Suiza"],
+        },
+        {
+            "id": 19,
+            "quiz": "¿Qué famoso es conocido por ser youtuber?",
+            "options": ["Chenoa", "Pablo Picasso", "Ryan Gosling", "Rafa Nadal", "WillyRex"],
+        },
+        {
+            "id": 20,
+            "quiz": "¿Qué animal fue Garfield?",
+            "options": ["Perro", "Gato", "Mapache", "Hamster"],
+        },
+        {
+            "id": 21,
+            "quiz": "¿Cómo se llamaba el villano de la serie 'Lazy Town'?",
+            "options": ["Robbie", "Charlie", "William", "Donald"],
+        },
+        {
+            "id": 22,
+            "quiz": "En la película 'Encanto' de Disney, ¿de qué personaje no se debe hablar?",
+            "options": ["Luisa", "Mirabel", "Bruno", "Julieta"],
+        },
+        {
+            "id": 23,
+            "quiz": "¿Cuál es el mejor festival de música techno del mundo?",
+            "options": ["Sonár Festival", "Kappa Futur Festival", "Tomorrowland", "DJ Juanito"],
+        },
+        {
+            "id": 24,
+            "quiz": "¿En qué país se le conoce a Santa Claus como 'Viejito Pascuero'?",
+            "options": ["España", "Uruguay", "Mexico", "Chile"],
+        },
+        {
+            "id": 25,
+            "quiz": "¿Cuál es el nombre del reno que lidera el trineo de Santa Claus en muchas historias navideñas?",
+            "options": ["Rudolph", "Dasher", "Blitzen", "Comet"],
+        }
+    ],
+    "resolves": [0, 3, 0, 1, 1, 0, 3, 2, 2, 2, 0, 0, 2, 1, 3, 2, 0, 0, 3, 1, 0, 2, 2, 3, 0],
+    "surprises": ['https://youtu.be/AL8qLEUkDOM', 'https://youtu.be/8DG-IRGboWo', 'https://youtu.be/utTQfsQE9ns', 'https://youtu.be/a4Fv98jttYA', 'https://youtu.be/43Ztv1qNx2Y', 'https://youtu.be/6rButCwD66o', 'https://youtu.be/0kyvehQtOhY', 'https://youtu.be/IvUU8joBb1Q', 'https://youtu.be/QLcokj4XqTo', 'https://youtu.be/Tfeuc-kHsO4', 'https://youtu.be/gpWdOc1ls1I', 'https://youtu.be/Xyp7xt-ygy0', 'https://youtu.be/ETZuJ6grRA0', 'https://youtu.be/8gE8QZFUSDU', 'https://youtu.be/Lp8S5x-RVKg', 'https://youtu.be/0ACMx9beQHg', 'https://youtu.be/NfUeUCErCmQ', 'https://youtu.be/rY5B5BX5A1g', 'https://youtu.be/nugrbr8dvvk', 'https://youtu.be/5nRJLdAgltc', 'https://youtu.be/iEXPkv7lJgc', 'https://youtu.be/3VqbiF3EBvA', 'https://youtu.be/sjrcO6FWzdE', 'https://youtu.be/cgWwV-Sinao', 'https://youtu.be/ybHmPgvuxfs']
+}
+
 
 
 var resolveList = [2, 0, 1, 3, 0, 0, 2, 1, 2, 3, 1, 1, 1, 2, 2, 3, 3, 0, 0, 1, 1, 2, 3, 1, 1]

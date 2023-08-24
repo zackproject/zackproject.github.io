@@ -14,7 +14,7 @@ function start() {
 
     adventList.forEach(element => {
         //Crea un div carta
-        let carta = document.createElement("div");
+        let carta = document.createElement("li");
         carta.className = "carta ";
         carta.id = "carta-" + element.id;
 
@@ -46,7 +46,7 @@ function start() {
         carta.appendChild(imageWitOrNotHref);
 
         //Fica tots el elements en la carta
-        let imgFondoCarta = imageOnCard(element.id, "images/web/fondo.webp", "Fondo de la carta")
+        let imgFondoCarta = imageOnCard(element.id, "images/web/fondo.webp")
         carta.appendChild(imgFondoCarta);
 
         //Fica la la imatge en la carta
@@ -114,12 +114,13 @@ function applyLocalStorage(mId) {
     }
 }
 /* Genera una imatge amb 'url' i 'alt'*/
-function imageOnCard(mid, msrc, malt) {
+function imageOnCard(mid, msrc) {
     let img1 = document.createElement("img");
     img1.id = "padback-" + mid;
     img1.loading = "lazy"
     img1.src = msrc;
-    img1.alt = malt;
+    img1.alt = "";
+    img1.ariaHidden = "true";
     return img1;
 }
 

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+    <ul id="pare">
+    </ul>
+    <script src="dades.js"></script>
+</body>
+
+
+<script>
+    const fondoHtml = "images/web/fondo.webp";
+    const candadoCerrado = "images/web/candado_cerrado.png";
+    const candadoAbierto = "images/web/candado_abierto.png";
+
+    const cardOpenHTML = (day) => {
+        return `<li class="carta">
+        <img class="fondo-card" src="${fondoHtml}" alt="" aria-hidden="true">
+        <img class="padlock opacity-padlock" src="${candadoAbierto}" alt="Candado abierto"
+            title="Casilla del dia ${day} abierta, click para resolver la casilla" onclick="openModal()"">
+        <div class=" carta-text" aria-hidden="true">${day}</div>
+    </li>`;
+    }
+
+    const cardCloseHTML = (day) => {
+        return `<li class="carta">
+            <img class="fondo-card" src="${fondoHtml}" alt="" aria-hidden="true">
+            <img class="padlock shake-padlock" src="${candadoCerrado}" alt="Candado cerrado"
+                title="Casilla del dia ${day} cerrada, espera al dia para abrir la casilla">
+            <div class="carta-text" aria-hidden="true">${day}</div>
+        </li>`;
+    }
+
+    const cardResolveHTML = (ytVideo, day) => { //https://youtu.be/AL8qLEUkDOM
+        return `<li class="carta">
+        <img class="fondo-card-resolved" src="http://i3.ytimg.com/vi/${ytVideo.split("/").pop()}/mqdefault.jpg"
+            alt="Dia ${day}, candado resuelto" title="Casilla del dia ${day} resuelta, click para volver a responderla">
+        <div class="carta-text" aria-hidden="true">${day}</div>
+    </li>`;
+    }
+
+    class Advent {
+        constructor(questions, resolves, surprises) {
+            this.questions = questions;
+            this.resolves = resolves;
+            this.surprises = surprises;
+            this.unlockdays = Array.from({ length: adventList.length }, () => 0); //si guarda el dia que la resolvio no hace isResolved= False porque resolveDays !=0
+        }
+        checkAnswer(nDay, checkThis) {
+            // Comprova si es correcta la resposta
+            if (this.resolves[nDay - 1] = parseInt(checkThis)) {
+                //Si es correcta retorna true i guarda el moment en el que s'ha resolt
+                if (this.unlockdays != 0) this.unlockdays = Math.floor(Date.now() / 1000);;
+                return true;
+            }
+            return false;
+        }
+
+        getSurprise(nDay) {
+            return this.surprises[nDay - 1];
+        }
+    };
+
+    let player = new Advent(adventList.questions, adventList.resolves, adventList.surprises)
+    let pare = document.getElementById("pare");
+    adventList.questions.forEach(element => {
+        // pare.innerHTML += cardOpenHTML(element.id);
+        //pare.innerHTML += cardCloseHTML(element.id)
+        pare.innerHTML += cardResolveHTML(player.getSurprise(element.id), element.id)
+
+    });
+
+
+    function openModal() {
+        alert("abierto")
+    }
+</script>
+<style>
+    .opacity-padlock {
+        transition: opacity 0.5s;
+    }
+
+    .opacity-padlock:hover {
+        opacity: 0.2;
+    }
+
+    .shake-padlock:hover {
+        animation: shake 0.5s;
+    }
+
+    @keyframes shake {
+        0% {
+            transform: translate(1px, 1px) rotate(0deg);
+        }
+
+        10% {
+            transform: translate(-1px, -2px) rotate(-1deg);
+        }
+
+        20% {
+            transform: translate(-3px, 0px) rotate(1deg)
+        }
+
+        30% {
+            transform: translate(3px, 2px) rotate(0deg);
+        }
+
+        40% {
+            transform: translate(1px, -1px) rotate(1deg);
+        }
+
+        50% {
+            transform: translate(-1px, 2px) rotate(-1deg);
+        }
+
+        60% {
+            transform: translate(-3px, 1px) rotate(0deg);
+        }
+
+        70% {
+            transform: translate(3px, 1px) rotate(-1deg);
+        }
+
+        80% {
+            transform: translate(-1px, -1px) rotate(1deg);
+        }
+
+        90% {
+            transform: translate(1px, 2px) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(1px, -2px) rotate(-1deg);
+        }
+    }
+
+
+    #pare {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 1000px;
+        gap: 10px;
+    }
+
+    .carta {
+        border: 1px solid red;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .padlock {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .carta-text {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .fondo-card-resolved {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+
+</html>
