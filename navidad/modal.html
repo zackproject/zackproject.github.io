@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Modal Example</title>
+    <style>
+        /* Styles for the modal and overlay */
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Button to open the modal -->
+    <button onclick="openModal()" id="openModalButton">Open Modal</button>
+        <!-- The modal -->
+
+    <div id="modal">
+        <div id="modal-content" role="dialog" aria-hidden="true" aria-modal="true" aria-labelledby="title-modal">
+            <header>
+                <h2 id="title-modal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, architecto.</h2>
+                <button aria-label="Cerrar" onclick="closeModal()">x</button>
+            </header>
+            <main style="border-top:1px solid black; border-bottom: 1px solid black;">
+                <form onsubmit="return checkAnswer(event)">
+                    <p id="quiz-question"></p>
+                    <input type="radio" id="quiz-1" name="quiz_answer" value="0">
+                    <label for="quiz-1">HTML</label><br>
+                    <input type="radio" id="quiz-2" name="quiz_answer" value="1">
+                    <label for="quiz-2">CSS</label><br>
+                    <input type="radio" id="quiz-3" name="quiz_answer" value="2">
+                    <label for="quiz-3">JavaScript</label><br>
+                    <input type="radio" id="quiz-4" name="quiz_answer" value="3">
+                    <label for="quiz-4">JavaScript</label><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </main>
+            <footer>
+                Marca una opción
+            </footer>
+    
+        </div>
+    </div>
+ 
+    <script>
+        let modal = document.getElementById("modal");
+        let titleModal = document.getElementById("title-modal");
+        let fuera = document.getElementById("openModalButton");
+        function checkAnswer(event) {
+            //quiz_answer => name="quiz_answer"
+            let respostaForm = parseInt(event.target.quiz_answer.value)
+            console.log(" de la respuesta ", respostaForm);
+            return false; // Evita el envío normal del formulario
+        }
+        function openModal() {
+            modal.style.display = "block";
+            modal.ariaHidden = "false"
+            titleModal.focus();
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+            modal.ariaHidden = "true"
+            fuera.focus();
+        }
+
+
+    </script>
+</body>
+
+</html>
