@@ -1,291 +1,118 @@
-const d = new Date();
-day = d.getDate();
-month = d.getMonth() + 1;
-year = d.getFullYear();
-var monthWorkThisProgram = 12;
+const fondoHtml = "./2022/images/web/fondo.webp";
+const candadoCerrado = "./2022/images/web/candado_cerrado.png";
+const candadoAbierto = "./2022/images/web/candado_abierto.png";
 
-function start() {
-    let currentDiv = document.getElementById("calendari");
-    //advent list ve del fitxer .json
+const cardOpenHTML = (day) => {
+    return `<li class="carta">
+        <img class="fondo-card" src="${fondoHtml}" alt="" aria-hidden="true">
+        <img class="padlock opacity-padlock" data-day="${day}" src="${candadoAbierto}" alt="Candado abierto"
+            title="Casilla del dia ${day} abierta, click para resolver la casilla" onclick="openModal(event)"">
+        <div class=" carta-text" aria-hidden="true">${day}</div>
+    </li>`;
+}
 
-    //Amaga el dialog / modal
-    //let nmodal = document.getElementById("modal-form");
-    //nmodal.style.display = "none";
+const cardCloseHTML = (day) => {
+    return `<li class="carta">
+            <img class="fondo-card" src="${fondoHtml}" alt="" aria-hidden="true">
+            <img class="padlock shake-padlock" src="${candadoCerrado}" alt="Candado cerrado"
+                title="Casilla del dia ${day} cerrada, espera al dia para abrir la casilla">
+            <div class="carta-text" aria-hidden="true">${day}</div>
+        </li>`;
+}
 
-    adventList.forEach(element => {
-        //Crea un div carta
-        let carta = document.createElement("li");
-        carta.className = "carta ";
-        carta.id = "carta-" + element.id;
+const cardResolveHTML = (ytVideo, day) => { //https://youtu.be/AL8qLEUkDOM
+    return `<li class="carta">
+        <img class="fondo-card-resolved" data-day="${day}" src="http://i3.ytimg.com/vi/${ytVideo.split("/").pop()}/mqdefault.jpg"
+            alt="Dia ${day}, candado resuelto" title="Casilla del dia ${day} resuelta, click para volver a responderla" onclick="openModal(event)">
+        <div class="carta-text" aria-hidden="true">${day}</div>
+    </li>`;
+}
 
-        //Crea el text de la carta i fica el numero
-        let text = document.createElement("div");
-        text.className = "carta-text";
-        text.innerText = element.id;
-
-        //Afegeix el href si el dia ha pasat
-        let imageWitOrNotHref = document.createElement("div");
-        //Genera la imatge dins de la carta
-        imageWitOrNotHref.className = "after " + isPadLockOpen(element.id, 1);
-        let mimage = document.createElement("img");
-        mimage.id = "padlock-" + element.id;
-        mimage.alt = "Candado del dia " + element.id;
-        mimage.loading = "lazy"
-        mimage.src = isPadLockOpen(element.id, 2);
-
-        if (day >= element.id && month == monthWorkThisProgram) {
-            imageWitOrNotHref.onclick = function (event) {
-                //Si clica un dia desbloquejat, obre el dialog
-                generateModalList(element.id);
-            };
-        }
-
-        imageWitOrNotHref.appendChild(mimage);
-
-        //Guarda a imatge a la carta
-        carta.appendChild(imageWitOrNotHref);
-
-        //Fica tots el elements en la carta
-        let imgFondoCarta = imageOnCard(element.id, "images/web/fondo.webp")
-        carta.appendChild(imgFondoCarta);
-
-        //Fica la la imatge en la carta
-        carta.appendChild(text);
-        currentDiv.appendChild(carta);
-        applyLocalStorage(element.id);
-    });
-
-    makeFooter();
-    /*Nomes neva al desembre */
-    if (month == monthWorkThisProgram) {
-        letitsnow();
-        //Mostra si quedan caselles o completat
-        showProgresText();
+class Advent {
+    constructor(questions, resolves, surprises) {
+        this.questions = questions;
+        this.resolves = resolves;
+        this.surprises = surprises;
+        this.unlockdays = Array.from({ length: questions.length }, () => 0); //si guarda el dia que la resolvio no hace isResolved= False porque resolveDays !=0
     }
-    console.info("Only for developer", 'testCode(nDay);');
-}
-
-
-/* Cada any el footer posara l'any actual */
-function makeFooter() {
-    const d = new Date();
-    document.getElementById("dateYear").innerText = d.getFullYear();
-}
-
-/* Genera tants fills com 'copitos' vulgui*/
-function letitsnow() {
-    /* https://pajasevi.github.io/CSSnowflakes/*/
-    let copitos = 13;
-    let nevarDiv = document.getElementsByClassName("nevar")[0];
-    for (let i = 0; i < copitos; i++) {
-        let copitodiv = document.createElement("div");
-        copitodiv.className = "copito";
-        copitodiv.innerText = "*";
-        nevarDiv.appendChild(copitodiv);
-    }
-}
-function showImageOnSolutionCorrect(npregunta) {
-    // Amaga l'imatge del candau
-    let imgPadLock = document.getElementById("padlock-" + npregunta);
-    imgPadLock.style.visibility = "hidden";
-    //Canvia l'imatge de fons
-    let imgBackPadLock = document.getElementById("padback-" + npregunta);
-    //EXAMPLE IMAGE
-    imgBackPadLock.loading = "lazy"
-    imgBackPadLock.src = adventList[npregunta - 1].image_open;
-
-    //console.log("Candado abierto, id:", npregunta);
-    //Guarda al localstorage el id de les ja clicades
-    localStorage.setItem('pdunlock-' + npregunta, npregunta);
-}
-
-
-function applyLocalStorage(mId) {
-    if (localStorage.getItem("pdunlock-" + mId) != null) {
-        //codigo repetido
-        let imgPadLock = document.getElementById("padlock-" + mId);
-        imgPadLock.style.visibility = "hidden";
-        //Canvia l'imatge de fons
-        let imgBackPadLock = document.getElementById("padback-" + mId);
-        //EXAMPLE IMAGE
-        imgBackPadLock.loading = "lazy"
-        imgBackPadLock.src = adventList[mId - 1].image_open;
-
-    }
-}
-/* Genera una imatge amb 'url' i 'alt'*/
-function imageOnCard(mid, msrc) {
-    let img1 = document.createElement("img");
-    img1.id = "padback-" + mid;
-    img1.loading = "lazy"
-    img1.src = msrc;
-    img1.alt = "";
-    img1.ariaHidden = "true";
-    return img1;
-}
-
-function isPadLockOpen(nId, option = 0) {
-    /*Nomes funcionará al desembre*/
-    if (month == monthWorkThisProgram) {
-        switch (option) {
-            case 1:
-                return day < nId ? "locked" : "unlocked";
-            case 2:
-                return day < nId ? "images/web/candado_cerrado.png" : "images/web/candado_abierto.png";
-            default:
-                return "???";
-        }
-    }
-    else {
-        clearCalendarStorage();
-        /*Si no es desembre, bloqueja tot */
-
-        let caducidadList = document.getElementsByClassName("fecha-caducidad");
-
-        for (let i = 0; i < caducidadList.length; i++) {
-            const elementHTML = caducidadList[i];
-            elementHTML.innerText = "Disponible sólo en diciembre";
-        };
-        switch (option) {
-            case 1:
-                return "locked";
-            case 2:
-                return "images/web/candado_cerrado.png";
-            default:
-                return "!?¿?";
-        }
-
-    }
-
-}
-
-/* Only for developing */
-function testCode(nDay, deleteLocal = false) {
-    if (deleteLocal) {
-        //Esborra el localStorage
-        clearCalendarStorage();
-    }
-    monthWorkThisProgram = month;
-    day = nDay;
-    let currentDiv = document.getElementById("calendari");
-    //Borra el primer fill
-    deleteChilds(currentDiv);
-    start();
-    letitsnow();
-}
-
-function deleteChilds(currentDiv) {
-    while (currentDiv.firstChild) {
-        currentDiv.removeChild(currentDiv.firstChild);
-    }
-}
-
-//Tria una pregunta de lla llista 'quizList'
-function checkResult(questionNumber) {
-    let thing = document.querySelector('input[name="quiz-element"]:checked');
-    if (thing != null) {
-        let posResolved = resolveList[questionNumber - 1];
-        //console.log("Checked", thing.value, "Expected", posResolved);
-        if (thing.value == posResolved) {
-            document.getElementById("llista-" + thing.value).style.background = "green";
-            let formSorpresaId = document.getElementById("form-sorpresa");
-            formSorpresaId.target = "_blank"
-            formSorpresaId.href = adventList[questionNumber - 1].advent;
-            formSorpresaId.style.display = "block";
+    checkAnswer(nDay, checkThis) {
+        // Comprova si es correcta la resposta
+        if (this.resolves[nDay - 1] = parseInt(checkThis)) {
+            //Si es correcta retorna true i guarda el moment en el que s'ha resolt
+            if (this.unlockdays[nDay - 1] != 0) this.unlockdays[nDay - 1] = Math.floor(Date.now() / 1000);;
             return true;
+        }
+        return false;
+    }
+
+    getSurprise(nDay) {
+        return this.surprises[nDay - 1];
+    }
+    getQuestion(nDay) {
+        return this.questions[nDay - 1].quiz;
+    }
+
+    getOption(nDay) {
+        return this.questions[nDay - 1].options;
+    }
+};
+const d = new Date();
+const dayGlobal = 7;//d.getDate();
+const monthGlobal = d.getMonth() + 1;
+const monthWorkThisProgram = 8; //Mes que funciona el programa
+let player = new Advent(adventList.questions, adventList.resolves, adventList.surprises)
+let pare = document.getElementById("pare");
+adventList.questions.forEach((element, i) => {
+    //Funciona si es el mes marcat i el dia ha passat
+    if (dayGlobal >= element.id && monthGlobal === monthWorkThisProgram) {
+        if (player.unlockdays[i] !== 0) {
+            // Si esta guardat la data en milisegonds  s'ha completat
+            pare.innerHTML += cardResolveHTML(player.getSurprise(element.id), element.id)
         } else {
-            document.getElementById("llista-" + thing.value).style.background = "red";
-            return false;
+            // Sino, esta sense resoldre
+            pare.innerHTML += cardOpenHTML(element.id);
         }
-    }
-}
-
-function generateModalList(npregunta) {
-    //Amaga el link de resposta
-    document.getElementById("form-sorpresa").style.display = "none";
-    let listQuizHTML = document.getElementById("llista-quiz");
-    //Text de les respostes de la pregunta 'npregunta' la
-    document.getElementById("quiz-text").innerText = "Quiz del Dia " + npregunta;
-    document.getElementById("quiz-question").innerText = quizList[npregunta - 1].question;
-
-    //Exemple: La 'npregunta' 18 es en la posicio 17 => 18-1
-    let quizOptionsList = quizList[npregunta - 1].options;
-    //Borra tots els fills
-    deleteChilds(listQuizHTML);
-
-    //Genera tants fills com opcions tingui la pregunta
-    for (let i = 0; i < quizOptionsList.length; i++) {
-        const element = quizOptionsList[i];
-        //Crea un 'li' element 
-        let liElement = document.createElement("li");
-        liElement.id = "llista-" + i;
-        let inputElement = document.createElement("input");
-        inputElement.id = "quiz-" + i;
-        inputElement.value = i;
-        inputElement.name = "quiz-element"
-        inputElement.type = "radio";
-        //Crea un 'label' element
-        let labelElement = document.createElement("label");
-        labelElement.innerHTML = element;
-        labelElement.setAttribute("for", "quiz-" + i);
-        //Fica 'input' dins de 'li'
-        liElement.appendChild(inputElement);
-        //Fica 'label' dins de 'li'
-        liElement.appendChild(labelElement);
-        //Fica 'li' dins a 'ul'
-        listQuizHTML.appendChild(liElement);
+    } else {
+        //En altres casos, esta tancada
+        pare.innerHTML += cardCloseHTML(element.id)
     }
 
-    var modal = document.getElementById("modal-form");
-    var btnSolution = document.getElementById("modal-btn");
+
     //
-    btnSolution.onclick = function () {
-        var isCorrectQuestion = checkResult(npregunta);
-        if (isCorrectQuestion) {
-            showImageOnSolutionCorrect(npregunta);
-            //Mostra si quedan caselles o completat
-            showProgresText();
-        }
-    }
-    //var span = document.getElementsByClassName("close")[0];
+
+});
+
+
+/* Modal */
+let modal = document.getElementById("modal");
+let titleModal = document.getElementById("title-modal");
+let fuera = document.getElementById("headnavidad");
+function checkAnswer(event) {
+    //quiz_answer => name="quiz_answer"
+    let respostaForm = parseInt(event.target.quiz_answer.value)
+    //player.checkAnswer()
+    console.log(" de la respuesta ", respostaForm);
+    return false; // Evita el envío normal del formulario
+}
+function openModal(event) {
+    let day = event.target.getAttribute("data-day");
+    console.log(event.target);
+    //Omple la pregunta d'avui
+    document.getElementById("quiz-question").innerText = player.getQuestion(day);
+    document.querySelector("label[for='quiz-1']").innerText = player.getOption(day)[0];
+    document.querySelector("label[for='quiz-2']").innerText = player.getOption(day)[1];
+    document.querySelector("label[for='quiz-3']").innerText = player.getOption(day)[2];
+    document.querySelector("label[for='quiz-4']").innerText = player.getOption(day)[3];
+    //Mostra el contingut
     modal.style.display = "block";
+    modal.ariaHidden = "false"
+    titleModal.focus();
 }
 
 function closeModal() {
-    var modal = document.getElementById("modal-form");
     modal.style.display = "none";
-
+    modal.ariaHidden = "true"
+    fuera.focus();
 }
 
-function showProgresText() {
-    //let elementHTML = document.getElementById("fecha-caducidad")
-    let caducidadList = document.getElementsByClassName("fecha-caducidad");
-    for (let i = 0; i < caducidadList.length; i++) {
-        const elementHTML = caducidadList[i];
-        let textLink = document.createElement("a");
-        textLink.className = "link-final";
-        textLink.href = "https://zackproject.github.io";
-        textLink.text = "zackproject.github.io";
 
-        let textLink2 = document.createElement("a");
-        textLink2.href = "https://forms.gle/cALW28N26hiGaiVc6";
-        textLink2.text = "AQUI";
-        textLink2.className = "link-final";
-
-        let texto2 = document.createElement("div");
-        texto2.innerText = "Breve encuesta";
-        texto2.appendChild(textLink2);
-
-        elementHTML.innerText = "¡Feliz Navidad!";
-        elementHTML.appendChild(texto2);
-    };
-}
-
-//Borra el localstorage nomes del calendari
-function clearCalendarStorage() {
-    Object.keys(localStorage).forEach(element => {
-        if (element.includes("pdunlock")) {
-            localStorage.removeItem(element)
-        }
-    });
-}
