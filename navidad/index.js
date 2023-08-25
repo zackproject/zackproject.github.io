@@ -1,7 +1,7 @@
 const fondoHtml = "./2022/images/web/fondo.webp";
 const candadoCerrado = "./2022/images/web/candado_cerrado.png";
 const candadoAbierto = "./2022/images/web/candado_abierto.png";
-
+makeFooter();
 const cardOpenHTML = (day) => {
     return `<li class="carta">
         <img class="fondo-card" src="${fondoHtml}" alt="" aria-hidden="true">
@@ -115,4 +115,8 @@ function closeModal() {
     fuera.focus();
 }
 
-
+/* Cada any el footer posara l'any actual */
+function makeFooter() {
+    const d = new Date();
+    document.getElementById("dateYear").innerText = d.getFullYear();
+}

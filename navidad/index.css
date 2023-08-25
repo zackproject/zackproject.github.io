@@ -157,3 +157,19 @@ body {
 .fondo-card-resolved:hover {
     transform: scale(1.2);
 }
+
+
+/* footer */
+footer {
+    margin-top: 10px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer>a {
+    text-decoration: underline;
+    color: white;
+}
