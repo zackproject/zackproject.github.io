@@ -1,6 +1,7 @@
 const fondoHtml = "./2022/images/web/fondo.webp";
 const candadoCerrado = "./2022/images/web/candado_cerrado.png";
 const candadoAbierto = "./2022/images/web/candado_abierto.png";
+const NAVIDAD = "navidad2023"
 makeFooter();
 const cardOpenHTML = (day) => {
     return `<li class="carta">
@@ -35,9 +36,9 @@ class Advent {
         this.surprises = surprises;
         this.unlockdays = Array.from({ length: questions.length }, () => 0); //si guarda el dia que la resolvio no hace isResolved= False porque resolveDays !=0
     }
-    checkAnswer(nDay, checkThis) {
+    checkQuiz(nDay, checkThis) {
         // Comprova si es correcta la resposta
-        if (this.resolves[nDay - 1] = parseInt(checkThis)) {
+        if (this.resolves[nDay - 1] === checkThis) {
             //Si es correcta retorna true i guarda el moment en el que s'ha resolt
             if (this.unlockdays[nDay - 1] != 0) this.unlockdays[nDay - 1] = Math.floor(Date.now() / 1000);;
             return true;
@@ -60,7 +61,16 @@ const d = new Date();
 const dayGlobal = 7;//d.getDate();
 const monthGlobal = d.getMonth() + 1;
 const monthWorkThisProgram = 8; //Mes que funciona el programa
-let player = new Advent(adventList.questions, adventList.resolves, adventList.surprises)
+let player = null;
+
+if (localStorage.getItem(NAVIDAD) != null) {
+    let mPlayer = JSON.stringify(localStorage.getItem(NAVIDAD));
+    player = new Advent(mPlayer.questions, mPlayer.resolves, mPlayer.surprises);
+} else {
+    player = new Advent(adventList.questions, adventList.resolves, adventList.surprises);
+    //localStorage.setItem("")
+}
+
 let pare = document.getElementById("pare");
 adventList.questions.forEach((element, i) => {
     //Funciona si es el mes marcat i el dia ha passat
@@ -87,25 +97,40 @@ adventList.questions.forEach((element, i) => {
 let modal = document.getElementById("modal");
 let titleModal = document.getElementById("title-modal");
 let fuera = document.getElementById("headnavidad");
-function checkAnswer(event) {
+const checkAnswer = (event) => {
     //quiz_answer => name="quiz_answer"
-    let respostaForm = parseInt(event.target.quiz_answer.value)
-    //player.checkAnswer()
-    console.log(" de la respuesta ", respostaForm);
+    let myAnswer = event.target.quiz_answer.value;
+    let myQuestion = document.getElementById("quiz-question").getAttribute("data-day");
+    console.log("uno", myAnswer, "dos", myQuestion);
+    if (player.checkQuiz(parseInt(myQuestion), parseInt(myAnswer))) {
+        console.log("OK");
+        titleModal.innerText = "Respuesta correcta";
+
+    } else {
+        console.log("MAL");
+        titleModal.innerText = "Respuesta incorrecta";
+    }
+
+    titleModal.focus();
     return false; // Evita el envío normal del formulario
+
 }
+
 function openModal(event) {
     let day = event.target.getAttribute("data-day");
-    console.log(event.target);
     //Omple la pregunta d'avui
+    document.getElementById("day-quiz").innerText = day;
     document.getElementById("quiz-question").innerText = player.getQuestion(day);
-    document.querySelector("label[for='quiz-1']").innerText = player.getOption(day)[0];
-    document.querySelector("label[for='quiz-2']").innerText = player.getOption(day)[1];
-    document.querySelector("label[for='quiz-3']").innerText = player.getOption(day)[2];
-    document.querySelector("label[for='quiz-4']").innerText = player.getOption(day)[3];
+    document.getElementById("quiz-question").setAttribute("data-day", day);
+    for (let i = 1; i <= 4; i++) {
+        document.querySelector("label[for='quiz-" + i + "']").innerText = player.getOption(day)[i - 1];
+        document.getElementById("quiz-" + i).checked = false;
+    }
     //Mostra el contingut
     modal.style.display = "block";
     modal.ariaHidden = "false"
+    titleModal.innerText = "Marca una opción";
+
     titleModal.focus();
 }
 

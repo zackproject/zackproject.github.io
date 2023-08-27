@@ -23,21 +23,29 @@
     <div id="modal">
         <div id="modal-content" role="dialog" aria-hidden="true" aria-modal="true" aria-labelledby="quiz-modal">
             <header>
-                <h2 id="quiz-modal">Pregunta del dia</h2>
+                <h2 id="quiz-modal">Pregunta del dia <span id="day-quiz"></span></h2>
                 <button aria-label="Cerrar" onclick="closeModal()">x</button>
             </header>
-            <main style="border-top:1px solid black; border-bottom: 1px solid black;">
+            <main>
                 <form onsubmit="return checkAnswer(event)">
-                    <p id="quiz-question"></p>
-                    <input type="radio" id="quiz-1" name="quiz_answer" value="0">
-                    <label for="quiz-1">HTML</label><br>
-                    <input type="radio" id="quiz-2" name="quiz_answer" value="1">
-                    <label for="quiz-2">CSS</label><br>
-                    <input type="radio" id="quiz-3" name="quiz_answer" value="2">
-                    <label for="quiz-3">JavaScript</label><br>
-                    <input type="radio" id="quiz-4" name="quiz_answer" value="3">
-                    <label for="quiz-4">JavaScript</label><br>
-                    <input type="submit" value="Submit">
+                    <p id="quiz-question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, totam.</p>
+                    <div class="quiz-options">
+                        <input type="radio" id="quiz-1" name="quiz_answer" value="0">
+                        <label for="quiz-1">HTML</label>
+                    </div>
+                    <div class="quiz-options">
+                        <input type="radio" id="quiz-2" name="quiz_answer" value="1">
+                        <label for="quiz-2">CSS</label>
+                    </div>
+                    <div class="quiz-options">
+                        <input type="radio" id="quiz-3" name="quiz_answer" value="2">
+                        <label for="quiz-3">JavaScript</label>
+                    </div>
+                    <div class="quiz-options">
+                        <input type="radio" id="quiz-4" name="quiz_answer" value="3">
+                        <label for="quiz-4">JavaScript</label>
+                    </div>
+                    <input type="submit" value="Contestar">
                 </form>
             </main>
             <footer id="title-modal">
