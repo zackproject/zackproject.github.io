@@ -35,14 +35,33 @@
 
         }
 
-    
 
         @keyframes mueve {
-            to {
+       
+
+            50% {
+                transform: translateY(0px);
+            }
+
+            100% {
                 transform: translateY(150px);
-                rotate: 0deg;
             }
         }
+
+        @keyframes responde {
+            0% {
+                visibility: hidden;
+            }
+
+            50% {
+                visibility: hidden;
+            }
+
+            100% {
+                visibility: visible;
+            }
+        }
+
         .correct {
             background-color: green;
         }
@@ -50,6 +69,7 @@
         .incorrect {
             background-color: red;
         }
+
         .cuadro {
             border-radius: 50%;
             height: 200px;
@@ -60,17 +80,22 @@
 
         .retrato {
             animation: mueve 5s forwards;
+            animation-delay: 1s;
             position: relative;
             height: 200px;
             width: 200px;
+            transform: translateY(100px);
+
         }
 
         .respuesta {
+            animation: responde 5s forwards;
+            animation-delay: 1s;
             height: 75px;
             width: 75px;
             border-radius: 50%;
             position: absolute;
-            bottom: 220px;
+            bottom: 210px;
             left: 85px;
             z-index: 1;
             display: grid;
@@ -78,6 +103,7 @@
             color: white;
             font-size: 2.5em;
             font-weight: bold;
+            visibility: hidden;
         }
 
         .mano {
@@ -100,7 +126,7 @@
             bottom: 190px;
             left: 105px;
             z-index: 1;
-   
+
 
         }
 
