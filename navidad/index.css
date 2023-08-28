@@ -1,6 +1,6 @@
 /*Modal*/
 #modal {
-    /*  display: none;*/
+    display: none;
     position: fixed;
     z-index: 3;
     left: 0;
@@ -22,7 +22,12 @@
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 1s;
 
+}
+
+#title-modal {
+    text-align: end;
 }
 
 #modal-content>header {
@@ -44,13 +49,19 @@
 #modal-content>main {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    position: relative;
 }
-#quiz-question{
+
+#quiz-question {
     font-weight: bold;
 }
 
-#modal-content>main>form>input[type=submit] {
-    background-color: red;
+#form-quiz {
+    position: relative;
+    overflow: hidden;
+}
+
+#form-quiz>input[type=submit] {
     border: none;
     background-color: white;
     font-size: 1.2em;
@@ -59,14 +70,15 @@
     padding: 10px;
     background-color: #235e6f;
     color: white;
-    transition:  background-color 1s;
+    transition: background-color 1s;
 
 }
 
-#modal-content>main>form>input[type=submit]:hover{
+#form-quiz>input[type=submit]:hover {
     background-color: black;
     cursor: pointer;
 }
+
 #quiz-modal {
     color: #235e6f;
 }
@@ -80,8 +92,6 @@
     border-radius: 5px;
     transition: background-color 1s;
 }
-
-
 
 
 #headnavidad {
@@ -176,6 +186,8 @@ body {
     max-width: 1000px;
     padding: 0px;
     gap: 25px;
+    list-style-type: none;
+
 }
 
 .carta {
@@ -231,4 +243,91 @@ body {
 #footer-main>a {
     text-decoration: underline;
     color: white;
+}
+
+/*animation*/
+@keyframes mueve {
+    0% {
+        transform: translateY(150%);
+    }
+
+    50% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(150%);
+    }
+}
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}
+
+
+#retrato {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    bottom: 0px;
+    right: 0px;
+    transform: translateY(150%);
+}
+
+#respuesta {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 170px;
+    right: 10px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.mano {
+    background-color: #ffdbac;
+    width: 50px;
+    height: 75px;
+    border-radius: 15px 15px 15px 15px;
+    position: absolute;
+    bottom: 140px;
+    right: 48px;
+    z-index: 1;
+    border: 1px solid black;
+}
+
+.dedo {
+    background-color: #ffdbac;
+    width: 25px;
+    height: 50px;
+    border-radius: 10px 10px 10px 0px;
+    position: absolute;
+    bottom: 140px;
+    right: 35px;
+    z-index: 1;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.brazo {
+    padding: 5px;
+    background-color: blue;
+    width: 35px;
+    height: 150px;
+    border-radius: 25px 25px 0px 0px;
+    position: absolute;
+    bottom: 0px;
+    right: 45px;
+    border: 1px solid black;
 }

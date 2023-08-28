@@ -1,7 +1,7 @@
 const fondoHtml = "./2022/images/web/fondo.webp";
 const candadoCerrado = "./2022/images/web/candado_cerrado.png";
 const candadoAbierto = "./2022/images/web/candado_abierto.png";
-const NAVIDAD = "navidad2023"
+const NAVIDAD = "navida2023"
 makeFooter();
 const cardOpenHTML = (day) => {
     return `<li class="carta">
@@ -23,8 +23,9 @@ const cardCloseHTML = (day) => {
 
 const cardResolveHTML = (ytVideo, day) => { //https://youtu.be/AL8qLEUkDOM
     return `<li class="carta">
+    <a href="${ytVideo}" target="_blank" >
         <img class="fondo-card-resolved" data-day="${day}" src="http://i3.ytimg.com/vi/${ytVideo.split("/").pop()}/mqdefault.jpg"
-            alt="Dia ${day}, candado resuelto" title="Casilla del dia ${day} resuelta, click para volver a responderla" onclick="openModal(event)">
+            alt="Dia ${day}, candado resuelto" title="Casilla del dia ${day} resuelta, click ver la sorpresa" ></a>
         <div class="carta-text" aria-hidden="true">${day}</div>
     </li>`;
 }
@@ -40,7 +41,7 @@ class Advent {
         // Comprova si es correcta la resposta
         if (this.resolves[nDay - 1] === checkThis) {
             //Si es correcta retorna true i guarda el moment en el que s'ha resolt
-            if (this.unlockdays[nDay - 1] != 0) this.unlockdays[nDay - 1] = Math.floor(Date.now() / 1000);;
+            if (this.unlockdays[nDay - 1] === 0) this.unlockdays[nDay - 1] = Math.floor(Date.now() / 1000);;
             return true;
         }
         return false;
@@ -58,39 +59,46 @@ class Advent {
     }
 };
 const d = new Date();
-const dayGlobal = 7;//d.getDate();
+const dayGlobal = 25;//d.getDate();
 const monthGlobal = d.getMonth() + 1;
 const monthWorkThisProgram = 8; //Mes que funciona el programa
 let player = null;
 
 if (localStorage.getItem(NAVIDAD) != null) {
-    let mPlayer = JSON.stringify(localStorage.getItem(NAVIDAD));
+    let mPlayer = JSON.parse(localStorage.getItem(NAVIDAD));
     player = new Advent(mPlayer.questions, mPlayer.resolves, mPlayer.surprises);
+    //No es crea en el OBJ i es defineix internament, pero aixo no es guarda
+    player.unlockdays = mPlayer.unlockdays;
 } else {
     player = new Advent(adventList.questions, adventList.resolves, adventList.surprises);
-    //localStorage.setItem("")
+    localStorage.setItem(NAVIDAD, JSON.stringify(player))
 }
 
 let pare = document.getElementById("pare");
-adventList.questions.forEach((element, i) => {
-    //Funciona si es el mes marcat i el dia ha passat
-    if (dayGlobal >= element.id && monthGlobal === monthWorkThisProgram) {
-        if (player.unlockdays[i] !== 0) {
-            // Si esta guardat la data en milisegonds  s'ha completat
-            pare.innerHTML += cardResolveHTML(player.getSurprise(element.id), element.id)
+
+fillCalendar();
+function fillCalendar() {
+    deleteChilds(pare);
+    console.log("lo hizo");
+    adventList.questions.forEach((element, i) => {
+        //Funciona si es el mes marcat i el dia ha passat
+        if (dayGlobal >= element.id && monthGlobal === monthWorkThisProgram) {
+            console.log(i, player.unlockdays[i]);
+            if (player.unlockdays[i] !== 0) {
+                // Si esta guardat la data en milisegonds  s'ha completat
+                pare.innerHTML += cardResolveHTML(player.getSurprise(element.id), element.id)
+            } else {
+                // Sino, esta sense resoldre
+                pare.innerHTML += cardOpenHTML(element.id);
+            }
         } else {
-            // Sino, esta sense resoldre
-            pare.innerHTML += cardOpenHTML(element.id);
+            //En altres casos, esta tancada
+            pare.innerHTML += cardCloseHTML(element.id)
         }
-    } else {
-        //En altres casos, esta tancada
-        pare.innerHTML += cardCloseHTML(element.id)
-    }
+        //
+    });
 
-
-    //
-
-});
+}
 
 
 /* Modal */
@@ -102,16 +110,27 @@ const checkAnswer = (event) => {
     let myAnswer = event.target.quiz_answer.value;
     let myQuestion = document.getElementById("quiz-question").getAttribute("data-day");
     console.log("uno", myAnswer, "dos", myQuestion);
+    let respuesta = document.getElementById("respuesta");
     if (player.checkQuiz(parseInt(myQuestion), parseInt(myAnswer))) {
         console.log("OK");
-        titleModal.innerText = "Respuesta correcta";
-
+        respuesta.innerText = "✓"
+        respuesta.style.backgroundColor = "green"
+        titleModal.innerText = "¡CORRECTO! Cierra la ventana y clica la casilla " + myQuestion;
+        //Genera de nou el calendari
+        localStorage.setItem(NAVIDAD, JSON.stringify(player));
+        fillCalendar();
     } else {
         console.log("MAL");
-        titleModal.innerText = "Respuesta incorrecta";
+        respuesta.innerText = "X"
+        respuesta.style.backgroundColor = "red";
+        titleModal.innerText = "¡INCORRECTO! Vuelve a intentarlo";
     }
 
     titleModal.focus();
+    let animado = document.getElementById("retrato");
+    animado.style.animation = 'none';
+    void animado.offsetWidth; // Reflujos forzados para reiniciar la animación
+    document.getElementById("retrato").style.animation = "mueve 4s forwards"
     return false; // Evita el envío normal del formulario
 
 }
@@ -127,16 +146,17 @@ function openModal(event) {
         document.getElementById("quiz-" + i).checked = false;
     }
     //Mostra el contingut
-    modal.style.display = "block";
     modal.ariaHidden = "false"
+    modal.style.display = "block";
     titleModal.innerText = "Marca una opción";
-
     titleModal.focus();
 }
 
 function closeModal() {
     modal.style.display = "none";
     modal.ariaHidden = "true"
+    let animado = document.getElementById("retrato");
+    animado.style.animation = 'none';
     fuera.focus();
 }
 
@@ -144,4 +164,11 @@ function closeModal() {
 function makeFooter() {
     const d = new Date();
     document.getElementById("dateYear").innerText = d.getFullYear();
+}
+
+
+function deleteChilds(currentDiv) {
+    while (currentDiv.firstChild) {
+        currentDiv.removeChild(currentDiv.firstChild);
+    }
 }

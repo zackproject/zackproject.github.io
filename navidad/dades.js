@@ -95,7 +95,7 @@ var adventList =
         {
             "id": 19,
             "quiz": "¿Qué famoso es conocido por ser youtuber?",
-            "options": ["Chenoa", "Pablo Picasso", "Ryan Gosling", "Rafa Nadal", "WillyRex"],
+            "options": ["Pablo Picasso", "Ryan Gosling", "Rafa Nadal", "WillyRex"],
         },
         {
             "id": 20,

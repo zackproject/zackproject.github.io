@@ -21,13 +21,13 @@
     <ul id="pare">
     </ul>
     <div id="modal">
-        <div id="modal-content" role="dialog" aria-hidden="true" aria-modal="true" aria-labelledby="quiz-modal">
+        <div id="modal-content" role="dialog" aria-modal="true" aria-labelledby="quiz-modal">
             <header>
                 <h2 id="quiz-modal">Pregunta del dia <span id="day-quiz"></span></h2>
                 <button aria-label="Cerrar" onclick="closeModal()">x</button>
             </header>
             <main>
-                <form onsubmit="return checkAnswer(event)">
+                <form id="form-quiz" onsubmit="return checkAnswer(event)">
                     <p id="quiz-question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, totam.</p>
                     <div class="quiz-options">
                         <input type="radio" id="quiz-1" name="quiz_answer" value="0">
@@ -46,6 +46,13 @@
                         <label for="quiz-4">JavaScript</label>
                     </div>
                     <input type="submit" value="Contestar">
+                    <div id="retrato" aria-hidden="true">
+                        <div class="mano"></div>
+                        <div id="respuesta" class="correct">✓</div>
+                        <div class="dedo"></div>
+                        <div class="brazo">
+                        </div>
+                    </div>
                 </form>
             </main>
             <footer id="title-modal">
