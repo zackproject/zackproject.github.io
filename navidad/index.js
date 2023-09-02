@@ -1,12 +1,17 @@
 const fondoHtml = "./2022/images/web/fondo.webp";
 const candadoCerrado = "./2022/images/web/candado_cerrado.png";
 const candadoAbierto = "./2022/images/web/candado_abierto.png";
-const NAVIDAD = "navida2023"
-makeFooter();
+const NAVIDAD = "navidad2023";
+const d = new Date();
+const dayGlobal = d.getDate();
+const monthGlobal = d.getMonth() + 1;
+const monthWorkThisProgram = 12; //Mes que funciona el programa
+let player = null;
+
 const cardOpenHTML = (day) => {
     return `<li class="carta">
-        <img class="fondo-card" src="${fondoHtml}" alt="" aria-hidden="true">
-        <img class="padlock opacity-padlock" data-day="${day}" src="${candadoAbierto}" alt="Candado abierto"
+        <img class="fondo-card" src="${fondoHtml}"  height="200" width="200" alt="" aria-hidden="true">
+        <img class="padlock opacity-padlock" data-day="${day}" height="200" width="200" src="${candadoAbierto}" alt="Candado abierto"
             title="Casilla del dia ${day} abierta, click para resolver la casilla" onclick="openModal(event)"">
         <div class=" carta-text" aria-hidden="true">${day}</div>
     </li>`;
@@ -14,21 +19,23 @@ const cardOpenHTML = (day) => {
 
 const cardCloseHTML = (day) => {
     return `<li class="carta">
-            <img class="fondo-card" src="${fondoHtml}" alt="" aria-hidden="true">
-            <img class="padlock shake-padlock" src="${candadoCerrado}" alt="Candado cerrado"
+            <img class="fondo-card" src="${fondoHtml}" alt="" height="200" width="200" aria-hidden="true">
+            <img class="padlock shake-padlock" src="${candadoCerrado}" height="200" width="200" alt="Candado cerrado"
                 title="Casilla del dia ${day} cerrada, espera al dia para abrir la casilla">
             <div class="carta-text" aria-hidden="true">${day}</div>
         </li>`;
 }
 
-const cardResolveHTML = (ytVideo, day) => { //https://youtu.be/AL8qLEUkDOM
+const cardResolveHTML = (ytVideo, day) => {
     return `<li class="carta">
     <a href="${ytVideo}" target="_blank" >
-        <img class="fondo-card-resolved" data-day="${day}" src="http://i3.ytimg.com/vi/${ytVideo.split("/").pop()}/mqdefault.jpg"
-            alt="Dia ${day}, candado resuelto" title="Casilla del dia ${day} resuelta, click ver la sorpresa" ></a>
+        <img class="fondo-card-resolved" data-day="${day}" height="200" width="200" src="http://i3.ytimg.com/vi/${ytVideo.split("/").pop()}/mqdefault.jpg"
+            alt="Dia ${day}, candado resuelto" title="Casilla del dia ${day} resuelta, click para ver la sorpresa" ></a>
         <div class="carta-text" aria-hidden="true">${day}</div>
     </li>`;
 }
+
+
 
 class Advent {
     constructor(questions, resolves, surprises) {
@@ -58,11 +65,7 @@ class Advent {
         return this.questions[nDay - 1].options;
     }
 };
-const d = new Date();
-const dayGlobal = 25;//d.getDate();
-const monthGlobal = d.getMonth() + 1;
-const monthWorkThisProgram = 8; //Mes que funciona el programa
-let player = null;
+
 
 if (localStorage.getItem(NAVIDAD) != null) {
     let mPlayer = JSON.parse(localStorage.getItem(NAVIDAD));
@@ -75,15 +78,32 @@ if (localStorage.getItem(NAVIDAD) != null) {
 }
 
 let pare = document.getElementById("pare");
-
+makeFooter();
 fillCalendar();
+infoChristmas();
+
+
+function infoChristmas() {
+    let info = document.getElementById("infonavidad");
+    if (monthGlobal === monthWorkThisProgram) {
+        document.getElementById("snowing").style.display = "flex";
+        if (dayGlobal < 25) {
+            info.innerText = "Abre la casilla de hoy";
+        } else {
+            info.innerText = "¡Feliz Navidad!";
+        }
+    } else {
+        info.innerText = "Disponible sólo en diciembre";
+
+    }
+
+}
 function fillCalendar() {
     deleteChilds(pare);
     console.log("lo hizo");
     adventList.questions.forEach((element, i) => {
         //Funciona si es el mes marcat i el dia ha passat
         if (dayGlobal >= element.id && monthGlobal === monthWorkThisProgram) {
-            console.log(i, player.unlockdays[i]);
             if (player.unlockdays[i] !== 0) {
                 // Si esta guardat la data en milisegonds  s'ha completat
                 pare.innerHTML += cardResolveHTML(player.getSurprise(element.id), element.id)

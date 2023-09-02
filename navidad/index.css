@@ -331,3 +331,107 @@ body {
     right: 45px;
     border: 1px solid black;
 }
+
+#snowing {
+    position: fixed;
+    /* display: flex; ONLY WORK DECEMBER MONTH*/
+    display: none;
+    width: 100%;
+    justify-content: space-around;
+    z-index: 1;
+    color: white;
+    top: 0px;
+    left: 0px;
+    font-size: 1.5em;
+}
+
+#infonavidad{
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+.snow {
+    font-size: 1.8em;
+    font-family: 'Times New Roman', Times, serif;
+    animation-name: snow-here;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear, ease-in-out;
+
+}
+
+@keyframes snow-here {
+    0% {
+        transform: translateY(0px);
+        opacity: 0.5;
+    }
+
+    75% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(700px) rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/*.snow {
+    -webkit-animation-name: snow-now;
+    animation-name: snow-now;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}*/
+
+.snow:nth-child(2) {
+    animation-delay: 0.2s;
+    font-size: 1.5em;
+}
+
+.snow:nth-child(4) {
+    animation-delay: 1s;
+    font-size: 1.5em;
+}
+
+.snow:nth-child(10) {
+    animation-delay: 3.5s;
+    font-size: 1.5em;
+}
+
+.snow:nth-child(8) {
+    animation-delay: 2s;
+}
+
+.snow:nth-child(6) {
+    animation-delay: 2.2s;
+}
+
+.snow:nth-child(1) {
+    animation-delay: 3s;
+}
+
+.snow:nth-child(3) {
+    animation-delay: 4s;
+    font-size: 1em;
+}
+
+.snow:nth-child(5) {
+    animation-delay: 5s;
+}
+
+.snow:nth-child(7) {
+    animation-delay: 4.5s;
+    font-size: 1em;
+}
+
+.snow:nth-child(9) {
+    animation-delay: 5s;
+}

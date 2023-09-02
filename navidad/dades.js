@@ -50,7 +50,7 @@ var adventList =
         {
             "id": 10,
             "quiz": "¿Cómo se llama a la adicción a los juegos de azar?",
-            "options": ["Homeopatia", "Ludopatia", "Telepatia", "Apatia"],
+            "options": ["Homeopatia", "Telepatia", "Ludopatia", "Apatia"],
         },
         {
             "id": 11,
