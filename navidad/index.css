@@ -1,0 +1,437 @@
+/*Modal*/
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 1s;
+
+}
+
+#title-modal {
+    text-align: end;
+}
+
+#modal-content>header {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#modal-content>header>button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    height: 40px;
+    width: 40px;
+    font-size: 1.6em;
+}
+
+#modal-content>main {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+
+#quiz-question {
+    font-weight: bold;
+}
+
+#form-quiz {
+    position: relative;
+    overflow: hidden;
+}
+
+#form-quiz>input[type=submit] {
+    border: none;
+    background-color: white;
+    font-size: 1.2em;
+    border-radius: 6px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #235e6f;
+    color: white;
+    transition: background-color 1s;
+
+}
+
+#form-quiz>input[type=submit]:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+#quiz-modal {
+    color: #235e6f;
+}
+
+
+.quiz-options {
+    background-color: lightgray;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 1s;
+}
+
+
+#headnavidad {
+    top: 0;
+    position: sticky;
+    /*snow is z-index:2 */
+    z-index: 3;
+    background-color: #235e6f;
+    padding: 10px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Mountains of Christmas', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    -webkit-box-shadow: -1px 0px 9px 0px black;
+    box-shadow: -1px 0px 9px 0px black;
+    margin-bottom: 10px;
+}
+
+body {
+    /* https://www.svgbackgrounds.com/ */
+    background-color: #338729;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(178,768,359)'%3E%3Cstop offset='0' stop-color='%232DFF16'/%3E%3Cstop offset='1' stop-color='%23127E0F'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='538' height='448.3' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.08'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+}
+
+.opacity-padlock {
+    transition: opacity 0.5s;
+}
+
+.opacity-padlock:hover {
+    opacity: 0.2;
+}
+
+.shake-padlock:hover {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg)
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+
+#pare {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0px;
+    gap: 25px;
+    list-style-type: none;
+
+}
+
+.carta {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    /*Aplica ombra */
+    -webkit-box-shadow: -1px 0px 9px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 0px 9px 0px rgba(0, 0, 0, 0.75);
+}
+
+.padlock {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.carta-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 50px;
+    font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+}
+
+.fondo-card-resolved {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s transform;
+}
+
+.fondo-card-resolved:hover {
+    transform: scale(1.2);
+}
+
+
+/* footer */
+#footer-main {
+    margin-top: 10px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#footer-main>a {
+    text-decoration: underline;
+    color: white;
+}
+
+/*animation*/
+@keyframes mueve {
+    0% {
+        transform: translateY(150%);
+    }
+
+    50% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(150%);
+    }
+}
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}
+
+
+#retrato {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    bottom: 0px;
+    right: 0px;
+    transform: translateY(150%);
+}
+
+#respuesta {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 170px;
+    right: 10px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.mano {
+    background-color: #ffdbac;
+    width: 50px;
+    height: 75px;
+    border-radius: 15px 15px 15px 15px;
+    position: absolute;
+    bottom: 140px;
+    right: 48px;
+    z-index: 1;
+    border: 1px solid black;
+}
+
+.dedo {
+    background-color: #ffdbac;
+    width: 25px;
+    height: 50px;
+    border-radius: 10px 10px 10px 0px;
+    position: absolute;
+    bottom: 140px;
+    right: 35px;
+    z-index: 1;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.brazo {
+    padding: 5px;
+    background-color: blue;
+    width: 35px;
+    height: 150px;
+    border-radius: 25px 25px 0px 0px;
+    position: absolute;
+    bottom: 0px;
+    right: 45px;
+    border: 1px solid black;
+}
+
+#snowing {
+    position: fixed;
+    /* display: flex; ONLY WORK DECEMBER MONTH*/
+    display: none;
+    width: 100%;
+    justify-content: space-around;
+    z-index: 1;
+    color: white;
+    top: 0px;
+    left: 0px;
+    font-size: 1.5em;
+}
+
+#infonavidad{
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+.snow {
+    font-size: 1.8em;
+    font-family: 'Times New Roman', Times, serif;
+    animation-name: snow-here;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear, ease-in-out;
+
+}
+
+@keyframes snow-here {
+    0% {
+        transform: translateY(0px);
+        opacity: 0.5;
+    }
+
+    75% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(700px) rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/*.snow {
+    -webkit-animation-name: snow-now;
+    animation-name: snow-now;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}*/
+
+.snow:nth-child(2) {
+    animation-delay: 0.2s;
+    font-size: 1.5em;
+}
+
+.snow:nth-child(4) {
+    animation-delay: 1s;
+    font-size: 1.5em;
+}
+
+.snow:nth-child(10) {
+    animation-delay: 3.5s;
+    font-size: 1.5em;
+}
+
+.snow:nth-child(8) {
+    animation-delay: 2s;
+}
+
+.snow:nth-child(6) {
+    animation-delay: 2.2s;
+}
+
+.snow:nth-child(1) {
+    animation-delay: 3s;
+}
+
+.snow:nth-child(3) {
+    animation-delay: 4s;
+    font-size: 1em;
+}
+
+.snow:nth-child(5) {
+    animation-delay: 5s;
+}
+
+.snow:nth-child(7) {
+    animation-delay: 4.5s;
+    font-size: 1em;
+}
+
+.snow:nth-child(9) {
+    animation-delay: 5s;
+}
