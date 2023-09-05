@@ -9,9 +9,6 @@
 </head>
 
 <body>
-    <h3>Escribe tu historia</h3>
-    <button>Nueva historia</button>
-    <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
     <select name="" id="">
         <option value="0">Euskera</option>
         <option value="1" selected>Gallego</option>
@@ -21,13 +18,14 @@
 
         <!-- Dejar elegir color de portada-->
     </select>
+    <h3>Escribe tu historia</h3>
+    <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
+
+    <textarea id="textInput" name="textInput" rows="4" cols="50" placeholder="Escribe un parrafo"></textarea>
+    <input type="text" placeholder="Titulo capitulo">
+    <button onclick="postText()">Enviar</button>
     <div class="library">
-        <div class="books" style="display: flex; justify-content: space-around; ; flex-direction: column;writing-mode: vertical-lr;
-        ">
-            <div class="book">El sueño de Filo</div>
-            <div class="book">Pedro y el lobo</div>
-            <div class="book" style="background-color: red;"> Libro inacabado</div>
-        </div>
+ 
         <div class="books">Estanteria vacia</div>
         <div class="books">Estanteria vacia</div>
         <div class="books">Estanteria vacia</div>
@@ -71,6 +69,7 @@
             color: white;
         }
     </style>
+    <script src="index.js"></script>
 </body>
 
 </html>
