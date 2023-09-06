@@ -9,20 +9,19 @@ class Chapter {
         this.parrafList = parrafList;
     }
 
-    sendText(texting, word) {
+    addParraf(texting) {
         //La paraula es dins deixa ficar
-        if ((texting.toLowerCase()).includes(word.toLowerCase())) {
-            this.parrafList.push(texting);
-            return true;
-        }
-        return false;
+        this.parrafList.push(texting);
     }
     fullOfParrafs(maxParrafs) {
-        //Comprova si el capitol te el maxim de paragafs i si te titol
-        return this.parrafList.length === maxParrafs && this.title !== null;
+        //Comprova si el capitol te el maxim de paragafs
+        return this.parrafList.length === maxParrafs;
     }
     isTitle() {
         return this.title !== null;
+    }
+    setTitle(text) {
+        this.title = text;
     }
 
 }
@@ -35,25 +34,47 @@ class Book {
         this.minWords = minWords;
         this.wordsList = wordsList;
         this.maxParrafs = maxParrafs;
+        //Compte internament les paraules utilitzades
+        this.actualIndexWord = 0;
+    }
+    isMinWords() {
+        return this.actualIndexWord > this.minWords;
     }
     isFillChapter() {
         //L'uktim capitol es ple
-        return this.chapters[this.chapters.length - 1].fullOfParrafs(maxParrafs);
+        return this.chapters[this.chapters.length - 1].fullOfParrafs(this.maxParrafs - 1);
     }
     isTitleLastChapter() {
         return this.chapters[this.chapters.length - 1].isTitle();
     }
 
     addNewChapter(text) {
-        this.chapters.push(new Chapter(null, [text]))
+        this.chapters.push(new Chapter(null, [text]));
+        this.actualIndexWord++;
+    }
+
+    addParrafLastChapter(text) {
+        this.chapters[this.chapters.length - 1].addParraf(text);
+        this.actualIndexWord++;
+    }
+    getTodayWord() {
+        return this.wordsList[this.actualIndexWord];
+    }
+
+    isTheWord(txt) {
+        return txt.toLowerCase().includes(this.wordsList[this.actualIndexWord]);
+
+    }
+    setLastTitle(text) {
+        return this.chapters[this.chapters.length - 1].setTitle(text);
+
     }
 }
 
 let parrafsByChapters = 3;
 let minWords = 50;
-let player = new Book(1, null, [new Chapter(null, [])], 50, ["pera", "platano", "manzana"], 3);
+let player = new Book(1, null, [new Chapter(null, [])], 50, ["manzana", "pera", "naranja", "uva", "plátano", "sandía", "fresa", "kiwi", "mango", "limón", "piña", "cereza", "papaya", "frambuesa", "melocotón", "albaricoque", "ciruela", "higo", "melón", "guayaba"], 3);
 
-let listChapter = [];
 
 
 //Escriu algun cosa al textarea
@@ -61,12 +82,50 @@ let listChapter = [];
 //Si hi ha el fa push al existen
 //Al ficar el tercer capitol demana el titol
 // Si arriba al minim de paraules (50) deixa finalitzar el libre i començar un altre
-function postText() {
-    let text = document.getElementById("textInput").value;
+let parrafHTML = document.getElementById("textInput");
+let titleHTML = document.getElementById("textTitle");
 
-    let pepe = player.sendText(text, "jose");
-    console.log("pepe", pepe, player);
+function postText() {
+    if (!player.isTheWord(parrafHTML.value)) {
+        console.log("Falta la palabra", player.getTodayWord());
+        return;
+    }
+    console.log("lol");
+
+    if (player.isFillChapter()) {
+        //display block input
+        player.addNewChapter(parrafHTML.value);
+        parrafHTML.value = "";
+        console.log("Pon un titulo al anterior");
+        titleHTML.style.display = "block";
+        parrafHTML.style.display = "none";
+    } else {
+        player.addParrafLastChapter(parrafHTML.value);
+        parrafHTML.value = "";
+    }
+    document.getElementById("palabra").innerText = player.getTodayWord();
+}
+function postTitleChapter() {
+    if (titleHTML.value != "") {
+        player.setLastTitle(titleHTML.value);
+        console.log("Titulado");
+        titleHTML.value = "";
+        titleHTML.style.display = "none";
+        parrafHTML.style.display = "block";
+        return;
+    }
+    console.log("Pon un titulo porfa");
 }
 
+function onStartStory() {
+    document.getElementById("palabra").innerText = player.getTodayWord();
+    if (!player.isTitleLastChapter()) {
+        console.log("Alguien se olvido");
+        return;
+    }
+    if (player.isMinWords()) {
+        console.log("Permite acabar el libro en cualquier momento, si queda capitulo abierto debe cerrarlo");
 
-
+    }
+    console.log("ok");
+}

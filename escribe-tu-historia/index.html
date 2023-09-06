@@ -8,7 +8,7 @@
     <link rel="icon" href="../icopz.ico">
 </head>
 
-<body>
+<body onload="onStartStory()">
     <select name="" id="">
         <option value="0">Euskera</option>
         <option value="1" selected>Gallego</option>
@@ -20,12 +20,12 @@
     </select>
     <h3>Escribe tu historia</h3>
     <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
-
+    <p>Debe contener la palabra "<span id="palabra"></span>"</p>
     <textarea id="textInput" name="textInput" rows="4" cols="50" placeholder="Escribe un parrafo"></textarea>
-    <input type="text" placeholder="Titulo capitulo">
+    <input type="text" name="textTitle" id="textTitle" placeholder="Escribe el titulo">
     <button onclick="postText()">Enviar</button>
     <div class="library">
- 
+        <div class="books">Estanteria vacia</div>
         <div class="books">Estanteria vacia</div>
         <div class="books">Estanteria vacia</div>
         <div class="books">Estanteria vacia</div>
@@ -40,6 +40,10 @@
     </div>
     <!-- cuando llene la estanteria, haz una nueva estanteria-->
     <style>
+
+        #textTitle{
+            display: none;
+        }
         .library {
             border: 1px solid black;
             display: flex;
