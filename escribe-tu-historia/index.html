@@ -6,24 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
     <link rel="icon" href="../icopz.ico">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body onload="onStartStory()">
-    <select name="" id="">
+    <h3>Escribe tu historia</h3>
+
+    <p>¡Saludos! Te doy la bienvenida a la majestuosa Biblioteca de Ohara, un lugar que aguarda pacientemente ser
+        llenado con los tesoros de la literatura. Aunque ahora mismo reina el silencio, estoy aquí para ayudarte a dar
+        vida a estas estanterías vacías con las palabras de tu elección.
+
+        Este proceso es sencillo y emocionante. Te invito a elegir una lengua de las opciones disponibles en el
+        desplegable. A medida que escribas, te brindaré pequeñas pinceladas de inspiración, pero la verdadera magia
+        emergerá de tu imaginación. Permíteme explicarte cómo funciona: en cada párrafo que escribas, te pediré que
+        incluyas una palabra específica en ese párrafo. Una vez hayas alcanzado una cantidad de párrafos adecuada, te
+        solicitaré que le des un título a este capítulo. Estableceré un mínimo de párrafos que debes cumplir, pero una
+        vez lo alcances, podrás cerrar el libro y darle un título. Entonces, podrás crear otra historia si lo deseas.
+        ¡Adelante, comencemos a llenar estas páginas en blanco con tus historias!</p>
+
+    <select name="wordLista" id="wordLista">
         <option value="0">Euskera</option>
         <option value="1" selected>Gallego</option>
         <option value="2">Catalán</option>
         <option value="3">Asturiano</option>
         <option value="4">Valenciano</option>
-
         <!-- Dejar elegir color de portada-->
-    </select>
-    <h3>Escribe tu historia</h3>
+    </select> <button onclick="startStory()">Empezar mi historia</button>
+    <div id="generateStory"></div>
+
     <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
     <p>Debe contener la palabra "<span id="palabra"></span>"</p>
     <textarea id="textInput" name="textInput" rows="4" cols="50" placeholder="Escribe un parrafo"></textarea>
     <input type="text" name="textTitle" id="textTitle" placeholder="Escribe el titulo">
     <button onclick="postText()">Enviar</button>
+
     <div class="library">
         <div class="books">Estanteria vacia</div>
         <div class="books">Estanteria vacia</div>
@@ -39,40 +55,6 @@
         <div class="books">Estanteria vacia</div>
     </div>
     <!-- cuando llene la estanteria, haz una nueva estanteria-->
-    <style>
-
-        #textTitle{
-            display: none;
-        }
-        .library {
-            border: 1px solid black;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            background-color: #9F3917;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='162' height='162' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%238e2a09' fill-opacity='0.59'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.59'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
-            max-width: 700px;
-            margin: 0 auto;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-
-        .book {
-            background-color: black;
-            height: 130px;
-            width: 35px;
-        }
-
-        .books {
-            display: grid;
-            place-items: center;
-            height: 150px;
-            width: 150px;
-            background-color: rgba(0, 0, 0, 0.362);
-            color: white;
-        }
-    </style>
     <script src="index.js"></script>
 </body>
 
