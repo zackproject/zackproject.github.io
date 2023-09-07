@@ -42,7 +42,7 @@ class Book {
     }
     isFillChapter() {
         //L'uktim capitol es ple
-        return this.chapters[this.chapters.length - 1].fullOfParrafs(this.maxParrafs - 1);
+        return this.chapters[this.chapters.length - 1].fullOfParrafs(this.maxParrafs);
     }
     isTitleLastChapter() {
         return this.chapters[this.chapters.length - 1].isTitle();
@@ -89,8 +89,11 @@ function startStory() {
     let wordsList = getWordList(document.getElementById("wordLista").value);
     //Crea un llibre buit
     player = new Book(0, null, [new Chapter(null, [])], minWords, wordsList, parrafsByChapters);
-    console.log(player.wordsList);
     document.getElementById("palabra").innerText = player.getTodayWord();
+    //Si no empieza la historia que lo pierda
+    //localStorage.setItem(LOCALSTORY,JSON.stringify(player));
+
+
 }
 
 function getWordList(number) {
@@ -126,6 +129,8 @@ function postText() {
         parrafHTML.value = "";
     }
     document.getElementById("palabra").innerText = player.getTodayWord();
+    generateBook(player);
+    localStorage.setItem(LOCALSTORY, JSON.stringify(player));
 }
 function postTitleChapter() {
     if (titleHTML.value != "") {
@@ -134,12 +139,24 @@ function postTitleChapter() {
         titleHTML.value = "";
         titleHTML.style.display = "none";
         parrafHTML.style.display = "block";
+        generateBook(player);
         return;
     }
     console.log("Pon un titulo porfa");
 }
 
-function onStartStory() {
+function onLoadStory() {
+
+    let localBook = localStorage.getItem(LOCALSTORY);
+    if (localBook === null) {
+        console.log("No hay nada guardado");
+        document.getElementById("sendStory").style.display = "block";
+    } else {
+        console.log("Precarga historia");
+        generateBook(JSON.parse(localBook));
+        player = generateClassWithBook(JSON.parse(localBook));
+        
+    }
     document.getElementById("palabra").innerText = player.getTodayWord();
     if (!player.isTitleLastChapter()) {
         console.log("Alguien se olvido");
@@ -149,19 +166,41 @@ function onStartStory() {
         console.log("Permite acabar el libro en cualquier momento, si queda capitulo abierto debe cerrarlo");
     }
     console.log("ok");
+
 }
 
-function generalo() {
-    let pare = document.getElementById("generateStory");
-    let copia = JSON.parse(localStorage.getItem(LOCALSTORY));
-    console.log();
+//Retorna un llibre amb les funciones del local Storage
+function generateClassWithBook(mp) {
+    console.log("pedro",mp);
+    let mplayer = new Book(mp.id, mp.title, [], mp.minWords, mp.wordsList, mp.maxParrafs);
+    console.log(mp);
+    mplayer.actualIndexWord = mp.actualIndexWord;
+    mp.chapters.forEach(e => {
+        mplayer.chapters.push(new Chapter(e.title, e.parrafList));
+    });
+    return mplayer;
+}
 
-    copia.chapters.forEach((e, i) => {
-        console.log(e);
+//Borra el contingut del pare
+function deleteChilds(currentDiv) {
+    while (currentDiv.firstChild) {
+        currentDiv.removeChild(currentDiv.firstChild);
+    }
+}
+
+//Crea en html un llibre a partir del OBJ
+function generateBook(book) {
+    let pare = document.getElementById("generateStory");
+    deleteChilds(pare);
+    book.chapters.forEach((e, i) => {
         let details = document.createElement("details");
         let summary = document.createElement("summary");
         //Titol capitol
-        summary.innerHTML = "Capitulo " + (i + 1) + " - " + e.title;
+        if (e.title !== null) {
+            summary.innerHTML = "Capitulo " + (i + 1) + " - " + e.title;
+        } else {
+            summary.innerHTML = "Capitulo " + (i + 1);
+        }
         details.appendChild(summary);
         //Parrafs del capitol
         e.parrafList.forEach(f => {
@@ -172,6 +211,11 @@ function generalo() {
         //Fica al pare
         pare.appendChild(details)
     });
+    //Si no te titol, segueix escrivint, llavor l'ultim capitol obert
+    if (book.title === null) {
+        let lastDetails = pare.getElementsByTagName("details");
+        lastDetails[lastDetails.length - 1].open = true;
+    }
 }
-localStorage.setItem(LOCALSTORY, '{"id":0,"title":null,"chapters":[{"title":"pedrito","parrafList":["El nuevo miembro de mi banda es un Toyota","Jugaba en una piscina Honda"]},{"title":"Cars","parrafList":["Y Harrison Ford daba las buenas noches","el nuevo deberia ser un Chevrolet"]},{"title":"otaku","parrafList":["Y ohaio nissan waka waka","Este nuevo cap tesla pobre"]},{"title":"otro titulazo","parrafList":["y bmwwxyz esta invitado","Este caso deberia Audi tenerlo"]},{"title":"final ahora si part2","parrafList":["Y no te olvides del Mercedes-Benz que palo","seguimos lexus de casa"]},{"title":"pito","parrafList":["y Volkswagen o volks que torni"]}],"minWords":50,"wordsList":["Toyota","Honda","Ford","Chevrolet","Nissan","Tesla","BMW","Audi","Mercedes-Benz","Lexus","Volkswagen","Hyundai","Kia","Mazda","Subaru","Jeep","Chrysler","Fiat","Volvo","Land Rover"],"maxParrafs":3,"actualIndexWord":11}')
-generalo();
+
+//localStorage.setItem(LOCALSTORY, '{"id":0,"title":null,"chapters":[{"title":"Inicio de la casa","parrafList":["El nuevo miembro de mi banda es un Toyota","Jugaba en una piscina Honda"]},{"title":"Cars","parrafList":["Y Harrison Ford daba las buenas noches","el nuevo deberia ser un Chevrolet"]},{"title":"otaku","parrafList":["Y ohaio nissan waka waka","Este nuevo cap tesla pobre"]},{"title":"otro titulazo","parrafList":["y bmwwxyz esta invitado","Este caso deberia Audi tenerlo"]},{"title":"final ahora si part2","parrafList":["Y no te olvides del Mercedes-Benz que palo","seguimos lexus de casa"]},{"title":"pito","parrafList":["y Volkswagen o volks que torni"]}],"minWords":50,"wordsList":["Toyota","Honda","Ford","Chevrolet","Nissan","Tesla","BMW","Audi","Mercedes-Benz","Lexus","Volkswagen","Hyundai","Kia","Mazda","Subaru","Jeep","Chrysler","Fiat","Volvo","Land Rover"],"maxParrafs":3,"actualIndexWord":11}')

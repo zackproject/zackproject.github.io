@@ -9,36 +9,51 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body onload="onStartStory()">
-    <h3>Escribe tu historia</h3>
+<body onload="onLoadStory()">
+    <h1>Escribe tu historia</h1>
+    <details>
+        <summary>¡Saludos! Te doy la bienvenida a la majestuosa Biblioteca de Ohara ...</summary>
+        <p> Un lugar que aguarda pacientemente ser llenado con los tesoros de la literatura. Aunque ahora mismo reina el
+            silencio, estoy aquí para ayudarte a
+            dar vida a estas estanterías vacías con las palabras de tu elección.</p>
 
-    <p>¡Saludos! Te doy la bienvenida a la majestuosa Biblioteca de Ohara, un lugar que aguarda pacientemente ser
-        llenado con los tesoros de la literatura. Aunque ahora mismo reina el silencio, estoy aquí para ayudarte a dar
-        vida a estas estanterías vacías con las palabras de tu elección.
+        <p>Este proceso es sencillo y emocionante. Te invito a elegir una lengua de las opciones disponibles en el
+            desplegable. A medida que escribas, te brindaré pequeñas pinceladas de inspiración, pero la verdadera magia
+            emergerá de tu imaginación. Permíteme explicarte cómo funciona: en cada párrafo que escribas, te pediré que
+            incluyas una palabra específica en ese párrafo. </p>
+        <p>Una vez hayas alcanzado una cantidad de párrafos adecuada,
+            te solicitaré que le des un título a este capítulo. Estableceré un mínimo de párrafos que debes cumplir,
+            pero unavez lo alcances, podrás cerrar el libro y darle un título. Entonces, podrás crear otra historia si
+            lo deseas.
+            ¡Adelante, comencemos a llenar estas páginas en blanco con tus historias!</p>
+    </details>
 
-        Este proceso es sencillo y emocionante. Te invito a elegir una lengua de las opciones disponibles en el
-        desplegable. A medida que escribas, te brindaré pequeñas pinceladas de inspiración, pero la verdadera magia
-        emergerá de tu imaginación. Permíteme explicarte cómo funciona: en cada párrafo que escribas, te pediré que
-        incluyas una palabra específica en ese párrafo. Una vez hayas alcanzado una cantidad de párrafos adecuada, te
-        solicitaré que le des un título a este capítulo. Estableceré un mínimo de párrafos que debes cumplir, pero una
-        vez lo alcances, podrás cerrar el libro y darle un título. Entonces, podrás crear otra historia si lo deseas.
-        ¡Adelante, comencemos a llenar estas páginas en blanco con tus historias!</p>
 
-    <select name="wordLista" id="wordLista">
-        <option value="0">Euskera</option>
-        <option value="1" selected>Gallego</option>
-        <option value="2">Catalán</option>
-        <option value="3">Asturiano</option>
-        <option value="4">Valenciano</option>
-        <!-- Dejar elegir color de portada-->
-    </select> <button onclick="startStory()">Empezar mi historia</button>
+    <div id="sendStory">
+        <select name="wordLista" id="wordLista">
+            <option value="0">Euskera</option>
+            <option value="1" selected>Gallego</option>
+            <option value="2">Catalán</option>
+            <option value="3">Asturiano</option>
+            <option value="4">Valenciano</option>
+            <!-- Dejar elegir color de portada-->
+        </select> <button onclick="startStory()">Empezar mi historia</button>
+    </div>
+
     <div id="generateStory"></div>
 
     <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
-    <p>Debe contener la palabra "<span id="palabra"></span>"</p>
-    <textarea id="textInput" name="textInput" rows="4" cols="50" placeholder="Escribe un parrafo"></textarea>
-    <input type="text" name="textTitle" id="textTitle" placeholder="Escribe el titulo">
-    <button onclick="postText()">Enviar</button>
+    <div id="sendChapter">
+        <p>Debe contener la palabra "<span id="palabra"></span>"</p>
+        <textarea id="textInput" name="textInput" rows="4" cols="50" placeholder="Escribe un parrafo"></textarea>
+        <button onclick="postText()">Enviar</button>
+    </div>
+    <div id="sendTitle">
+        <p>Pon un titulo al capitulo anterior</p>
+        <input type="text" name="textTitle" id="textTitle" placeholder="Escribe el titulo">
+        <button onclick="postTitleChapter()">Enviar</button>
+
+    </div>
 
     <div class="library">
         <div class="books">Estanteria vacia</div>

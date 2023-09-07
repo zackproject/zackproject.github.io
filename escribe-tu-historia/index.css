@@ -20,7 +20,15 @@ details[open] summary {
     margin-bottom: 0.5em;
 }
 
-#textTitle {
+#sendTitle {
+    display: none;
+}
+
+#sendChapter {
+    display: none;
+}
+
+#sendStory {
     display: none;
 }
 
