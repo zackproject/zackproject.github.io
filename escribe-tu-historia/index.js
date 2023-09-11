@@ -32,7 +32,7 @@ class Book {
         this.title = title;
         this.chapters = chapters;
         this.minWords = minWords;
-        this.wordsList = wordsList;
+        this.wordsList =  wordsList.sort(() => Math.random() - 0.5);
         this.maxParrafs = maxParrafs;
         //Compte internament les paraules utilitzades
         this.actualIndexWord = 0;
@@ -43,6 +43,10 @@ class Book {
     isFillChapter() {
         //L'uktim capitol es ple
         return this.chapters[this.chapters.length - 1].fullOfParrafs(this.maxParrafs);
+    }
+    isNextFillChapter() {
+        //L'uktim capitol es ple
+        return this.chapters[this.chapters.length - 1].fullOfParrafs(this.maxParrafs + 1);
     }
     isTitleLastChapter() {
         return this.chapters[this.chapters.length - 1].isTitle();
@@ -58,6 +62,11 @@ class Book {
         this.actualIndexWord++;
     }
     getTodayWord() {
+        //Si es queda sense paraules, afegeix 10 mes al final
+        if (this.wordsList.length === this.actualIndexWord) {
+            let ultims = this.wordsList.sort(() => Math.random() - 0.5).slice(-10);
+            this.wordsList = this.wordsList.concat(ultims);
+        }
         return this.wordsList[this.actualIndexWord];
     }
 
@@ -82,6 +91,12 @@ class Book {
 // Si arriba al minim de paraules (50) deixa finalitzar el libre i començar un altre
 let parrafHTML = document.getElementById("textInput");
 let titleHTML = document.getElementById("textTitle");
+
+//Principals display block or none, capitol o titol o nova historia
+let newStory = document.getElementById("sendStory");
+let newParraf = document.getElementById("sendChapter");
+let newTitle = document.getElementById("sendTitle");
+//let endStory = document.getElementById("endStory");
 let player = new Book(0, null, [new Chapter(null, [])], 49, ["a", "b"], 3);;
 function startStory() {
     let parrafsByChapters = 3;
@@ -92,6 +107,8 @@ function startStory() {
     document.getElementById("palabra").innerText = player.getTodayWord();
     //Si no empieza la historia que lo pierda
     //localStorage.setItem(LOCALSTORY,JSON.stringify(player));
+    newStory.style.display = "none";
+    newParraf.style.display = "block"
 
 
 }
@@ -111,13 +128,14 @@ function getWordList(number) {
     }
 }
 function postText() {
+
     if (!player.isTheWord(parrafHTML.value)) {
         console.log("Falta la palabra", player.getTodayWord());
         return;
     }
     console.log("lol");
 
-    if (player.isFillChapter()) {
+    if (player.isNextFillChapter()) {
         //display block input
         player.addNewChapter(parrafHTML.value);
         parrafHTML.value = "";
@@ -137,31 +155,35 @@ function postTitleChapter() {
         player.setLastTitle(titleHTML.value);
         console.log("Titulado");
         titleHTML.value = "";
-        titleHTML.style.display = "none";
-        parrafHTML.style.display = "block";
         generateBook(player);
+        newParraf.style.display = "block";
+        newTitle.style.display = "none";
+        //Guarda localment
+        localStorage.setItem(LOCALSTORY, JSON.stringify(player));
         return;
     }
     console.log("Pon un titulo porfa");
 }
 
 function onLoadStory() {
-
     let localBook = localStorage.getItem(LOCALSTORY);
     if (localBook === null) {
         console.log("No hay nada guardado");
         document.getElementById("sendStory").style.display = "block";
+        newStory.style.display = "block";
     } else {
         console.log("Precarga historia");
+        //Genera el html de la historia
         generateBook(JSON.parse(localBook));
         player = generateClassWithBook(JSON.parse(localBook));
-        
+        if (player.isFillChapter() && !player.isTitleLastChapter()) {
+            newTitle.style.display = "block";
+        } else {
+            newParraf.style.display = "block";
+        }
+        localStorage.setItem(LOCALSTORY, JSON.stringify(player));
     }
     document.getElementById("palabra").innerText = player.getTodayWord();
-    if (!player.isTitleLastChapter()) {
-        console.log("Alguien se olvido");
-        return;
-    }
     if (player.isMinWords()) {
         console.log("Permite acabar el libro en cualquier momento, si queda capitulo abierto debe cerrarlo");
     }
@@ -171,7 +193,7 @@ function onLoadStory() {
 
 //Retorna un llibre amb les funciones del local Storage
 function generateClassWithBook(mp) {
-    console.log("pedro",mp);
+    console.log("pedro", mp);
     let mplayer = new Book(mp.id, mp.title, [], mp.minWords, mp.wordsList, mp.maxParrafs);
     console.log(mp);
     mplayer.actualIndexWord = mp.actualIndexWord;
