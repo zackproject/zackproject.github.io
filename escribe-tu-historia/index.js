@@ -32,10 +32,13 @@ class Book {
         this.title = title;
         this.chapters = chapters;
         this.minWords = minWords;
-        this.wordsList =  wordsList.sort(() => Math.random() - 0.5);
+        this.wordsList = wordsList;
         this.maxParrafs = maxParrafs;
         //Compte internament les paraules utilitzades
         this.actualIndexWord = 0;
+    }
+    disorderWordList() {
+        this.wordsList = this.wordsList.sort(() => Math.random() - 0.5);
     }
     isMinWords() {
         return this.actualIndexWord > this.minWords;
@@ -45,8 +48,8 @@ class Book {
         return this.chapters[this.chapters.length - 1].fullOfParrafs(this.maxParrafs);
     }
     isNextFillChapter() {
-        //L'uktim capitol es ple
-        return this.chapters[this.chapters.length - 1].fullOfParrafs(this.maxParrafs + 1);
+        //L'uktim capitol es plenaria amb la seguent parraf
+        return this.chapters[this.chapters.length - 1].fullOfParrafs(this.maxParrafs - 1);
     }
     isTitleLastChapter() {
         return this.chapters[this.chapters.length - 1].isTitle();
@@ -104,6 +107,8 @@ function startStory() {
     let wordsList = getWordList(document.getElementById("wordLista").value);
     //Crea un llibre buit
     player = new Book(0, null, [new Chapter(null, [])], minWords, wordsList, parrafsByChapters);
+    //Posa en un ordre diferents les paraules
+    player.disorderWordList();
     document.getElementById("palabra").innerText = player.getTodayWord();
     //Si no empieza la historia que lo pierda
     //localStorage.setItem(LOCALSTORY,JSON.stringify(player));
@@ -128,26 +133,32 @@ function getWordList(number) {
     }
 }
 function postText() {
-
+    // No te paraula, no et deixo pujar
     if (!player.isTheWord(parrafHTML.value)) {
         console.log("Falta la palabra", player.getTodayWord());
         return;
     }
-    console.log("lol");
 
+
+    //Si en el seguent parraf s'ompliria, demana el titol
     if (player.isNextFillChapter()) {
         //display block input
-        player.addNewChapter(parrafHTML.value);
+        //player.addNewChapter(parrafHTML.value);
         parrafHTML.value = "";
         console.log("Pon un titulo al anterior");
-        titleHTML.style.display = "block";
-        parrafHTML.style.display = "none";
+        newTitle.style.display = "block";
+        newParraf.style.display = "none";
+    }
+
+    if (player.isFillChapter() && player.isTitleLastChapter()) {
+        player.addNewChapter(parrafHTML.value);
     } else {
         player.addParrafLastChapter(parrafHTML.value);
         parrafHTML.value = "";
     }
     document.getElementById("palabra").innerText = player.getTodayWord();
     generateBook(player);
+    console.log("plauer", player);
     localStorage.setItem(LOCALSTORY, JSON.stringify(player));
 }
 function postTitleChapter() {
@@ -193,9 +204,9 @@ function onLoadStory() {
 
 //Retorna un llibre amb les funciones del local Storage
 function generateClassWithBook(mp) {
-    console.log("pedro", mp);
+    console.log("pedro", mp.wordsList);
     let mplayer = new Book(mp.id, mp.title, [], mp.minWords, mp.wordsList, mp.maxParrafs);
-    console.log(mp);
+    console.log(mplayer.wordsList);
     mplayer.actualIndexWord = mp.actualIndexWord;
     mp.chapters.forEach(e => {
         mplayer.chapters.push(new Chapter(e.title, e.parrafList));
