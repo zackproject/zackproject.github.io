@@ -32,6 +32,10 @@ details[open] summary {
     display: none;
 }
 
+#endStory{
+    display: none;
+}
+
 .library {
     border: 1px solid black;
     display: flex;

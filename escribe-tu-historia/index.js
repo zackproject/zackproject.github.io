@@ -1,8 +1,8 @@
 console.log("(͠≖ ͜ʖ͠≖)👌");
 
 //Cada llibre tindra el seu propi localstorage
-let num = 0; // 0 reservado para escritura
-let LOCALSTORY = "story-" + num;
+let LOCALSTORY = "wrihte-your-story";
+let BOOKLOCAL = "story-";
 class Chapter {
     constructor(title, parrafList) {
         this.title = title;
@@ -27,60 +27,68 @@ class Chapter {
 }
 
 class Book {
-    constructor(id, title, chapters, minWords, wordsList, maxParrafs) {
+    constructor(id, title, chapters, minChapters, wordsList, maxParrafs) {
         this.id = id;
         this.title = title;
         this.chapters = chapters;
-        this.minWords = minWords;
+        this.minChapters = minChapters;
         this.wordsList = wordsList;
         this.maxParrafs = maxParrafs;
         //Compte internament les paraules utilitzades
         this.actualIndexWord = 0;
     }
     disorderWordList() {
+        //Desordena la lllista de paraules
         this.wordsList = this.wordsList.sort(() => Math.random() - 0.5);
     }
-    isMinWords() {
-        return this.actualIndexWord > this.minWords;
-    }
     isFillChapter() {
-        //L'uktim capitol es ple
+        //Es ple el capitol segons el num de parrafs?
         return this.chapters[this.chapters.length - 1].fullOfParrafs(this.maxParrafs);
     }
     isNextFillChapter() {
-        //L'uktim capitol es plenaria amb la seguent parraf
+        //L'uktim capitol es plenaria amb la seguent parraf?
         return this.chapters[this.chapters.length - 1].fullOfParrafs(this.maxParrafs - 1);
     }
     isTitleLastChapter() {
+        //Te titol l'ultim capitol?
         return this.chapters[this.chapters.length - 1].isTitle();
     }
 
     addNewChapter(text) {
+        //Fica el parraf en un nou capitol
         this.chapters.push(new Chapter(null, [text]));
         this.actualIndexWord++;
     }
 
     addParrafLastChapter(text) {
+        //Fica el parraf en el capitol actual
         this.chapters[this.chapters.length - 1].addParraf(text);
         this.actualIndexWord++;
     }
+
     getTodayWord() {
         //Si es queda sense paraules, afegeix 10 mes al final
         if (this.wordsList.length === this.actualIndexWord) {
             let ultims = this.wordsList.sort(() => Math.random() - 0.5).slice(-10);
             this.wordsList = this.wordsList.concat(ultims);
         }
+        //Retorna la paraula que pertoca per al parraf
         return this.wordsList[this.actualIndexWord];
     }
 
     isTheWord(txt) {
-        console.log("txt", txt.includes("Toyota"));
+        //Comprova si la paraula demanada es al parraf
         return txt.toLowerCase().includes(this.wordsList[this.actualIndexWord].toLowerCase());
 
     }
     setLastTitle(text) {
+        //Posa titol al l'ultim capitol
         return this.chapters[this.chapters.length - 1].setTitle(text);
+    }
 
+    canCloseBook() {
+        // Si te el minim de capitols i te titol, permet finalizar llibre
+        return this.chapters.length >= this.minChapters && this.chapters[this.chapters.length - 1].title != null;
     }
 }
 
@@ -99,14 +107,16 @@ let titleHTML = document.getElementById("textTitle");
 let newStory = document.getElementById("sendStory");
 let newParraf = document.getElementById("sendChapter");
 let newTitle = document.getElementById("sendTitle");
-//let endStory = document.getElementById("endStory");
-let player = new Book(0, null, [new Chapter(null, [])], 49, ["a", "b"], 3);;
+let endStory = document.getElementById("endStory");
+
+let player = null;
+
 function startStory() {
     let parrafsByChapters = 3;
-    let minWords = 50;
+    let minChapters = 15;
     let wordsList = getWordList(document.getElementById("wordLista").value);
     //Crea un llibre buit
-    player = new Book(0, null, [new Chapter(null, [])], minWords, wordsList, parrafsByChapters);
+    player = new Book(0, null, [new Chapter(null, [])], minChapters, wordsList, parrafsByChapters);
     //Posa en un ordre diferents les paraules
     player.disorderWordList();
     document.getElementById("palabra").innerText = player.getTodayWord();
@@ -114,8 +124,6 @@ function startStory() {
     //localStorage.setItem(LOCALSTORY,JSON.stringify(player));
     newStory.style.display = "none";
     newParraf.style.display = "block"
-
-
 }
 
 function getWordList(number) {
@@ -144,7 +152,6 @@ function postText() {
     if (player.isNextFillChapter()) {
         //display block input
         //player.addNewChapter(parrafHTML.value);
-        parrafHTML.value = "";
         console.log("Pon un titulo al anterior");
         newTitle.style.display = "block";
         newParraf.style.display = "none";
@@ -154,12 +161,21 @@ function postText() {
         player.addNewChapter(parrafHTML.value);
     } else {
         player.addParrafLastChapter(parrafHTML.value);
-        parrafHTML.value = "";
     }
+    parrafHTML.value = "";
+
     document.getElementById("palabra").innerText = player.getTodayWord();
     generateBook(player);
-    console.log("plauer", player);
     localStorage.setItem(LOCALSTORY, JSON.stringify(player));
+
+    if (player.canCloseBook()) {
+        document.getElementById("btn-end-book").disabled = false;
+    }
+}
+
+function canPostTitleBook() {
+    endStory.style.display = "block"
+    newParraf.style.display = "block"
 }
 function postTitleChapter() {
     if (titleHTML.value != "") {
@@ -195,17 +211,17 @@ function onLoadStory() {
         localStorage.setItem(LOCALSTORY, JSON.stringify(player));
     }
     document.getElementById("palabra").innerText = player.getTodayWord();
-    if (player.isMinWords()) {
-        console.log("Permite acabar el libro en cualquier momento, si queda capitulo abierto debe cerrarlo");
-    }
+
     console.log("ok");
+
+    console.log("Llibres finalitzats", Object.keys(localStorage).filter(e => e.includes(BOOKLOCAL)));
 
 }
 
 //Retorna un llibre amb les funciones del local Storage
 function generateClassWithBook(mp) {
     console.log("pedro", mp.wordsList);
-    let mplayer = new Book(mp.id, mp.title, [], mp.minWords, mp.wordsList, mp.maxParrafs);
+    let mplayer = new Book(mp.id, mp.title, [], mp.minChapters, mp.wordsList, mp.maxParrafs);
     console.log(mplayer.wordsList);
     mplayer.actualIndexWord = mp.actualIndexWord;
     mp.chapters.forEach(e => {
@@ -251,4 +267,18 @@ function generateBook(book) {
     }
 }
 
-//localStorage.setItem(LOCALSTORY, '{"id":0,"title":null,"chapters":[{"title":"Inicio de la casa","parrafList":["El nuevo miembro de mi banda es un Toyota","Jugaba en una piscina Honda"]},{"title":"Cars","parrafList":["Y Harrison Ford daba las buenas noches","el nuevo deberia ser un Chevrolet"]},{"title":"otaku","parrafList":["Y ohaio nissan waka waka","Este nuevo cap tesla pobre"]},{"title":"otro titulazo","parrafList":["y bmwwxyz esta invitado","Este caso deberia Audi tenerlo"]},{"title":"final ahora si part2","parrafList":["Y no te olvides del Mercedes-Benz que palo","seguimos lexus de casa"]},{"title":"pito","parrafList":["y Volkswagen o volks que torni"]}],"minWords":50,"wordsList":["Toyota","Honda","Ford","Chevrolet","Nissan","Tesla","BMW","Audi","Mercedes-Benz","Lexus","Volkswagen","Hyundai","Kia","Mazda","Subaru","Jeep","Chrysler","Fiat","Volvo","Land Rover"],"maxParrafs":3,"actualIndexWord":11}')
+function postBook() {
+    //De les variables locals, compte quants son llibres
+    const total = Object.keys(localStorage).filter(e => e.includes(BOOKLOCAL)).length;
+    //L'id de llibre correspon a la cuantitat de llibres en local
+    player.id = total;
+    //  El titol de llibre ve per al input
+    player.title = document.getElementById("textTitleBook").value;
+    //Esborra el llibre escrit i el converteix en llibre acabat
+    localStorage.removeItem(LOCALSTORY);
+    // El nom de llibre local es el numero de BOOKLOCAL + total
+    localStorage.setItem(BOOKLOCAL + total, JSON.stringify(player))
+}
+
+
+//localStorage.setItem(LOCALSTORY, '{"id":0,"title":null,"chapters":[{"title":"Inicio de la casa","parrafList":["El nuevo miembro de mi banda es un Toyota","Jugaba en una piscina Honda"]},{"title":"Cars","parrafList":["Y Harrison Ford daba las buenas noches","el nuevo deberia ser un Chevrolet"]},{"title":"otaku","parrafList":["Y ohaio nissan waka waka","Este nuevo cap tesla pobre"]},{"title":"otro titulazo","parrafList":["y bmwwxyz esta invitado","Este caso deberia Audi tenerlo"]},{"title":"final ahora si part2","parrafList":["Y no te olvides del Mercedes-Benz que palo","seguimos lexus de casa"]},{"title":"pito","parrafList":["y Volkswagen o volks que torni"]}],"minChapters":50,"wordsList":["Toyota","Honda","Ford","Chevrolet","Nissan","Tesla","BMW","Audi","Mercedes-Benz","Lexus","Volkswagen","Hyundai","Kia","Mazda","Subaru","Jeep","Chrysler","Fiat","Volvo","Land Rover"],"maxParrafs":3,"actualIndexWord":11}')

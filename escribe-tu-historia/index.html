@@ -22,8 +22,8 @@
             emergerá de tu imaginación. Permíteme explicarte cómo funciona: en cada párrafo que escribas, te pediré que
             incluyas una palabra específica en ese párrafo. </p>
         <p>Una vez hayas alcanzado una cantidad de párrafos adecuada,
-            te solicitaré que le des un título a este capítulo. Estableceré un mínimo de párrafos que debes cumplir,
-            pero unavez lo alcances, podrás cerrar el libro y darle un título. Entonces, podrás crear otra historia si
+            te solicitaré que le des un título a este capítulo. Estableceré un mínimo de capitulos que debes cumplir,
+            pero una vez lo alcances, podrás cerrar el libro y darle un título. Entonces, podrás crear otra historia si
             lo deseas.
             ¡Adelante, comencemos a llenar estas páginas en blanco con tus historias!</p>
     </details>
@@ -37,7 +37,6 @@
             <option value="5">Asturiano</option>
             <option value="5">Valenciano</option>
             <option value="6">Canario</option>
-            <option value="0">Lluvia de ideas</option>
             <!-- Dejar elegir color de portada-->
         </select> <button onclick="startStory()">Empezar mi historia</button>
     </div>
@@ -54,7 +53,16 @@
         <p>Pon un titulo al capitulo anterior</p>
         <input type="text" name="textTitle" id="textTitle" placeholder="Escribe el titulo">
         <button onclick="postTitleChapter()">Enviar</button>
+    </div>
+    <p>Escribe como minimo 15 capitulos para finalizar la historia</p>
 
+    <button onclick="canPostTitleBook()" disabled id="btn-end-book"> Terminar mi historia</button>
+
+    <div id="endStory">
+        <div>
+            <input type="text" name="textTitle" id="textTitleBook" placeholder="Escribe el titulo de la historia">
+            <button onclick="postBook()">Terminar</button>
+        </div>
     </div>
 
     <div class="library">
