@@ -36,6 +36,11 @@ details[open] summary {
     display: none;
 }
 
+#textInput{
+    width: 100%;
+    resize: none;
+}
+
 .library {
     border: 1px solid black;
     display: flex;
