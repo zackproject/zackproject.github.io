@@ -69,3 +69,25 @@ details[open] summary {
     background-color: rgba(0, 0, 0, 0.362);
     color: white;
 }
+
+#lectura{
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.book-page{
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.512);
+    min-height: 400px;
+    text-align: justify;
+}
+
+.book-page:nth-child(1){
+    background-color: red;
+    color: white;
+    display: grid;
+    align-items: center;
+    text-align: center;
+}

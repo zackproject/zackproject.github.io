@@ -36,6 +36,8 @@ class Book {
         this.maxParrafs = maxParrafs;
         //Compte internament les paraules utilitzades
         this.actualIndexWord = 0;
+        //Quan llegeix un llibre, internament es la pagina (per capitols)
+        this.actualPage = 0;
     }
     disorderWordList() {
         //Desordena la lllista de paraules
@@ -92,6 +94,13 @@ class Book {
     canCloseBook() {
         // Si te el minim de capitols i te titol, permet finalizar llibre
         return this.chapters.length >= this.minChapters && this.chapters[this.chapters.length - 1].title != null;
+    }
+
+    closeMyBook(id, title) {
+        this.id = id;
+        this.title = title;
+        // El numero de paraules han de ser igual a les utilitzades
+        this.wordsList = this.wordsList.slice(0, this.actualIndexWord);
     }
 }
 
@@ -175,9 +184,10 @@ function postText() {
 
     //Si escriu parraf, continua la historia (no pot acabar sense titol)
     document.getElementById("btn-end-book").disabled = true;
-    
+
     localStorage.setItem(LOCALSTORY, JSON.stringify(player));
 
+    document.getElementById("mustContainThisWord").focus();
 
 }
 
@@ -295,12 +305,54 @@ function postBook() {
         //De les variables locals, compte quants son llibres
         const total = Object.keys(localStorage).filter(e => e.includes(BOOKLOCAL)).length;
         //L'id de llibre correspon a la cuantitat de llibres en local
-        player.id = total;
-        //  El titol de llibre ve per al input
-        player.title = titleBook;
+        player.closeMyBook(total, titleBook);
         //Esborra el llibre escrit i el converteix en llibre acabat
         localStorage.removeItem(LOCALSTORY);
-        // El nom de llibre local es el numero de BOOKLOCAL + total
-        localStorage.setItem(BOOKLOCAL + total, JSON.stringify(player))
+        //Transforma el titol en encode per no tenir problemes amb accents
+        let encodeTitle = encodeURIComponent(player.title);
+        console.log("Encoded", encodeTitle);
+        //Guarda el llibre localment si no existeix
+        console.log("Decoded", decodeURIComponent(encodeTitle));
+        if (localStorage.getItem(BOOKLOCAL + encodeTitle) == null) {
+            localStorage.setItem(BOOKLOCAL + encodeTitle, JSON.stringify(player))
+        } else {
+            alert("Titulo repetido")
+        }
+
     }
 }
+
+const btnTitleBook = (event) => {
+    console.log(event.target.innerText);
+    //Al clicar el boto, retorna el llibre escrit localment
+    player = JSON.parse(localStorage.getItem(BOOKLOCAL + encodeURIComponent(event.target.innerText)));
+    fillBook(player);
+}
+let bookPare = document.getElementById("libros");
+
+let llibres = Object.keys(localStorage).filter(e => e.includes(BOOKLOCAL));
+llibres.forEach(e => {
+    // decode string and title start after "story-" (BOOKLOCAL VARIABLE)
+    let title = decodeURIComponent(e.substring(BOOKLOCAL.length));
+    console.log(title);
+    let btn = document.createElement("button");
+    btn.innerText = title;
+    btn.onclick = btnTitleBook;
+    bookPare.appendChild(btn);
+});
+
+
+
+function fillBook(book) {
+    document.getElementById("title-book").innerText = book.title;
+    document.getElementById("title-chapter").innerText = book.actualPage + ". " + book.chapters[book.actualPage].title;
+    let parraf = document.getElementById("parraf-chapter");
+    deleteChilds(parraf);
+    book.chapters[book.actualPage].parrafList.forEach(e => {
+        let p = document.createElement("p");
+        p.innerText = e;
+        parraf.appendChild(p);
+    });
+
+}
+

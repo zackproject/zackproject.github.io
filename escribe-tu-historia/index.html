@@ -46,16 +46,18 @@
 
     <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
     <div id="sendChapter">
-        <p>Debe contener la palabra '<span id="palabra"></span>' <a id="definicion" target="_blank" href="">¿Qué
+        <p id="mustContainThisWord">Debe contener la palabra '<span id="palabra"></span>' <a id="definicion"
+                target="_blank" href="">¿Qué
                 significa?</a></p>
-        <textarea id="textInput" name="textInput" width="100%" placeholder="Escribe un parrafo"></textarea>
+        <textarea id="textInput" name="textInput" width="100%" rows="10" cols="20"
+            placeholder="Escribe un parrafo"></textarea>
         <button onclick="postText()">Enviar</button>
         <p>Escribe como minimo <span id="minChap"></span> capitulos completos para finalizar la historia</p>
     </div>
     <div id="sendTitle">
         <p>Pon un titulo al capitulo anterior</p>
         <input type="text" name="textTitle" id="textTitle" placeholder="Escribe el titulo">
-        <button onclick="postTitleChapter()">Enviar</button>
+        <button onclick="postTitleChapter()" title="Enviar parrafo al capitulo">Enviar</button>
     </div>
 
     <button onclick="canPostTitleBook()" disabled id="btn-end-book"> Terminar mi historia</button>
@@ -64,10 +66,66 @@
         <div>
             <p>Pon un titulo a la historia</p>
             <input type="text" name="textTitle" id="textTitleBook" placeholder="Escribe el titulo de la historia">
-            <button onclick="postBook()">Terminar</button>
+            <button onclick="postBook()" title="Terminar mi historia">Terminar</button>
         </div>
     </div>
 
+    <h2>Llibres</h2>
+    <div id="libros">
+
+    </div>
+
+    <h2>Llibre</h2>
+    <div id="lectura">
+        <div class="book-page">
+            <h1 id="title-book">Lorem, ipsum.</h1>
+        </div>
+        <div class="book-page">
+            <h2>Indice</h2>
+            <ul>
+                <li>Capitulo 1 - La pica de metro</li>
+                <li>Capitulo 2 - El autobus encantado</li>
+                <li>Capitulo 3 - La luz de coche</li>
+            </ul>
+        </div>
+        <div class="book-page">
+            <h2>Capitulo 1 - La pica de metro</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
+                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
+                fuga
+                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
+                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
+                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
+                fuga
+                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
+                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
+                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
+                fuga
+                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
+                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
+        </div>
+        <div class="book-page">
+            <h2>Capitulo 2 - El autobus encantado</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
+                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
+                fuga
+                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
+                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
+                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
+                fuga
+                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
+                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
+                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
+                fuga
+                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
+                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
+        </div>
+
+    </div>
     <div class="library">
         <div class="books">Estanteria vacia</div>
         <div class="books">Estanteria vacia</div>
