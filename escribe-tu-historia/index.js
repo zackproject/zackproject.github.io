@@ -2,7 +2,7 @@ console.log("(͠≖ ͜ʖ͠≖)👌");
 
 //Cada llibre tindra el seu propi localstorage
 let LOCALSTORY = "write-your-story";
-let BOOKLOCAL = "story-";
+let BOOKLOCAL = "book";
 class Chapter {
     constructor(title, parrafList) {
         this.title = title;
@@ -36,8 +36,8 @@ class Book {
         this.maxParrafs = maxParrafs;
         //Compte internament les paraules utilitzades
         this.actualIndexWord = 0;
-        //Quan llegeix un llibre, internament es la pagina (per capitols)
-        this.actualPage = 0;
+        //Color de portada
+        this.coverPageColor = "#174d0f";
     }
     disorderWordList() {
         //Desordena la lllista de paraules
@@ -313,46 +313,92 @@ function postBook() {
         console.log("Encoded", encodeTitle);
         //Guarda el llibre localment si no existeix
         console.log("Decoded", decodeURIComponent(encodeTitle));
-        if (localStorage.getItem(BOOKLOCAL + encodeTitle) == null) {
-            localStorage.setItem(BOOKLOCAL + encodeTitle, JSON.stringify(player))
+        //El titol i el color portada es queda en localstorage
+        let SAVELOCALBOOK = BOOKLOCAL + "-" + player.coverPageColor + "-" + encodeTitle;
+        if (localStorage.getItem(SAVELOCALBOOK) == null) {
+            localStorage.setItem(SAVELOCALBOOK, JSON.stringify(player))
         } else {
-            alert("Titulo repetido")
+            alert("Titulo repetido, escribe otro")
         }
 
     }
 }
 
 const btnTitleBook = (event) => {
-    console.log(event.target.innerText);
+    console.log(event.target.id);
     //Al clicar el boto, retorna el llibre escrit localment
-    player = JSON.parse(localStorage.getItem(BOOKLOCAL + encodeURIComponent(event.target.innerText)));
+    player = JSON.parse(localStorage.getItem(event.target.id));
+    console.log("pedro", player);
     fillBook(player);
 }
 let bookPare = document.getElementById("libros");
 
 let llibres = Object.keys(localStorage).filter(e => e.includes(BOOKLOCAL));
 llibres.forEach(e => {
-    // decode string and title start after "story-" (BOOKLOCAL VARIABLE)
-    let title = decodeURIComponent(e.substring(BOOKLOCAL.length));
+    // decode string  Exemple "story-color-title"; [1]=color [2]=title 
+    //split 3 is to limit split "-" array 3 items
+    let title = decodeURIComponent(e.split("-", 3)[2]);
     console.log(title);
     let btn = document.createElement("button");
     btn.innerText = title;
+    btn.className = "book-on-shelf";
+    btn.style.backgroundColor = e.split("-", 3)[1];
+    btn.id = e;
     btn.onclick = btnTitleBook;
     bookPare.appendChild(btn);
 });
 
 
-
 function fillBook(book) {
+    let bookPages = document.getElementById("book-pages");
     document.getElementById("title-book").innerText = book.title;
-    document.getElementById("title-chapter").innerText = book.actualPage + ". " + book.chapters[book.actualPage].title;
-    let parraf = document.getElementById("parraf-chapter");
-    deleteChilds(parraf);
-    book.chapters[book.actualPage].parrafList.forEach(e => {
-        let p = document.createElement("p");
-        p.innerText = e;
-        parraf.appendChild(p);
+    document.getElementById("cover-page").style.backgroundColor = book.coverPageColor;
+    document.getElementById("cover-page").style.border = "20px solid " + book.coverPageColor;
+
+    let indexBook = document.getElementById("book-index");
+    deleteChilds(indexBook);
+    deleteChilds(bookPages);
+    player.chapters.forEach((e, i) => {
+        // Titols dels capitols, Index
+        let li = document.createElement("li");
+        let a = document.createElement("a");
+        a.innerText = e.title;
+        a.href = "#chapter-" + (i + 1);
+        li.appendChild(a);
+        indexBook.appendChild(li);
+
+        //Capitols
+
+        let section = document.createElement("section");
+        section.className = "book-page";
+        let h1 = document.createElement("h1");
+        h1.innerText = (i + 1) + ". " + e.title;
+        h1.id = "chapter-" + (i + 1);
+        section.appendChild(h1);
+        (player.chapters[i]).parrafList.forEach(element => {
+            let p = document.createElement("p");
+            p.innerText = element;
+            section.appendChild(p);
+        });
+        bookPages.appendChild(section);
     });
+    //Mostra el llibre
+    document.getElementById("lectura").style.display = "block";
+}
+
+
+function changeColor() {
+    let demoCover = document.getElementById("demo-cover");
+    let inputColor = document.getElementById("myColor").value;
+    demoCover.style.backgroundColor = inputColor;
+    demoCover.style.border = "20px solid " + inputColor;
+    player.coverPageColor = inputColor;
+
+
 
 }
 
+
+function deleteAll() {
+    localStorage.clear();
+}

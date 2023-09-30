@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Description -->
+    <meta name="description"
+        content="Escribe tus propios libros en gallego, catalán, euskera, canario y castellano en nuestra plataforma de escritura en línea. Personaliza los títulos de los capítulos y el título del libro. Tus creaciones se guardarán en una estantería virtual. ¡Desarrolla tu creatividad literaria con nosotros!">
+    <!-- Meta Keywords -->
+    <meta name="keywords"
+        content="Escritura en línea, escribir libros, gallego, catalán, euskera, canario, castellano, plataforma de escritura, títulos de capítulos, guardar libros, estantería virtual, creatividad literaria">
     <title>Biblioteca</title>
     <link rel="icon" href="../icopz.ico">
     <link rel="stylesheet" href="index.css">
@@ -11,134 +17,109 @@
 </head>
 
 <body onload="onLoadStory()">
-    <h1>Escribe tu historia</h1>
-    <details>
-        <summary>¡Saludos! Te doy la bienvenida a la majestuosa Biblioteca de Ohara ...</summary>
-        <p> Un lugar que aguarda pacientemente ser llenado con los tesoros de la literatura. Aunque ahora mismo reina el
-            silencio, estoy aquí para ayudarte a
-            dar vida a estas estanterías vacías con las palabras de tu elección.</p>
+    <header role="banner" id="write-story-header" aria-label="Encabezado de la página">
+        <h1 aria-label="Encabezado: PIANO">Escribe tu historia</h1>
+    </header>
+    <div class="container-story">
+        <article class="primary-story">
+            <details>
+                <summary>¡Saludos! Te doy la bienvenida a la majestuosa Biblioteca de Ohara ...</summary>
+                <p> Un lugar que aguarda pacientemente ser llenado con los tesoros de la literatura. Aunque ahora mismo
+                    reina el
+                    silencio, estoy aquí para ayudarte a
+                    dar vida a estas estanterías vacías con las palabras de tu elección.</p>
 
-        <p>Este proceso es sencillo y emocionante. Te invito a elegir una lengua de las opciones disponibles en el
-            desplegable. A medida que escribas, te brindaré pequeñas pinceladas de inspiración, pero la verdadera magia
-            emergerá de tu imaginación. Permíteme explicarte cómo funciona: en cada párrafo que escribas, te pediré que
-            incluyas una palabra específica en ese párrafo. </p>
-        <p>Una vez hayas alcanzado una cantidad de párrafos adecuada,
-            te solicitaré que le des un título a este capítulo. Estableceré un mínimo de capitulos que debes cumplir,
-            pero una vez lo alcances, podrás cerrar el libro y darle un título. Entonces, podrás crear otra historia si
-            lo deseas.
-            ¡Adelante, comencemos a llenar estas páginas en blanco con tus historias!</p>
-    </details>
+                <p>Este proceso es sencillo y emocionante. Te invito a elegir una lengua de las opciones disponibles en
+                    el
+                    desplegable. A medida que escribas, te brindaré pequeñas pinceladas de inspiración, pero la
+                    verdadera
+                    magia
+                    emergerá de tu imaginación. Permíteme explicarte cómo funciona: en cada párrafo que escribas, te
+                    pediré
+                    que
+                    incluyas una palabra específica en ese párrafo. </p>
+                <p>Una vez hayas alcanzado una cantidad de párrafos adecuada,
+                    te solicitaré que le des un título a este capítulo. Estableceré un mínimo de capitulos que debes
+                    cumplir,
+                    pero una vez lo alcances, podrás cerrar el libro y darle un título. Entonces, podrás crear otra
+                    historia
+                    si
+                    lo deseas.
+                    ¡Adelante, comencemos a llenar estas páginas en blanco con tus historias!</p>
+            </details>
+            <div id="sendStory">
+                <select name="wordLista" id="wordLista">
+                    <option value="0">Castellano</option> <!-- es -->
+                    <option value="1" selected>Catalán</option> <!-- ca -->
+                    <option value="2">Canario</option>
+                    <option value="3">Euskera</option> <!-- eu-->
+                    <option value="5">Asturiano</option>
+                    <option value="5">Valenciano</option>
+                    <option value="5">Gallego</option> <!-- gl-->
 
+                    <!-- Dejar elegir color de portada-->
+                </select> <button onclick="startStory()">Empezar mi historia</button>
+            </div>
+        </article>
 
-    <div id="sendStory">
-        <select name="wordLista" id="wordLista">
-            <option value="0">Castellano</option>
-            <option value="1" selected>Catalán</option>
-            <option value="2">Canario</option>
-            <option value="3">Euskera</option>
-            <option value="5">Asturiano</option>
-            <option value="5">Valenciano</option>
-            <!-- Dejar elegir color de portada-->
-        </select> <button onclick="startStory()">Empezar mi historia</button>
-    </div>
+        <section>
+            <h2>Mi historia</h2>
+            <div id="generateStory"></div>
+        </section>
 
-    <div id="generateStory"></div>
-
-    <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
-    <div id="sendChapter">
-        <p id="mustContainThisWord">Debe contener la palabra '<span id="palabra"></span>' <a id="definicion"
-                target="_blank" href="">¿Qué
-                significa?</a></p>
-        <textarea id="textInput" name="textInput" width="100%" rows="10" cols="20"
-            placeholder="Escribe un parrafo"></textarea>
-        <button onclick="postText()">Enviar</button>
-        <p>Escribe como minimo <span id="minChap"></span> capitulos completos para finalizar la historia</p>
-    </div>
-    <div id="sendTitle">
-        <p>Pon un titulo al capitulo anterior</p>
-        <input type="text" name="textTitle" id="textTitle" placeholder="Escribe el titulo">
-        <button onclick="postTitleChapter()" title="Enviar parrafo al capitulo">Enviar</button>
-    </div>
-
-    <button onclick="canPostTitleBook()" disabled id="btn-end-book"> Terminar mi historia</button>
-
-    <div id="endStory">
-        <div>
-            <p>Pon un titulo a la historia</p>
-            <input type="text" name="textTitle" id="textTitleBook" placeholder="Escribe el titulo de la historia">
-            <button onclick="postBook()" title="Terminar mi historia">Terminar</button>
+        <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
+        <div id="sendChapter">
+            <p id="mustContainThisWord">Debe contener la palabra '<span id="palabra"></span>' <a id="definicion"
+                    target="_blank" href="">¿Qué
+                    significa?</a></p>
+            <textarea id="textInput" name="textInput" width="100%" rows="10" cols="20" placeholder="Escribe un parrafo"
+                lang="es"></textarea>
+            <button onclick="postText()">Enviar</button>
+            <p>Escribe como minimo <span id="minChap"></span> capitulos completos para finalizar la historia</p>
         </div>
-    </div>
-
-    <h2>Llibres</h2>
-    <div id="libros">
-
-    </div>
-
-    <h2>Llibre</h2>
-    <div id="lectura">
-        <div class="book-page">
-            <h1 id="title-book">Lorem, ipsum.</h1>
-        </div>
-        <div class="book-page">
-            <h2>Indice</h2>
-            <ul>
-                <li>Capitulo 1 - La pica de metro</li>
-                <li>Capitulo 2 - El autobus encantado</li>
-                <li>Capitulo 3 - La luz de coche</li>
-            </ul>
-        </div>
-        <div class="book-page">
-            <h2>Capitulo 1 - La pica de metro</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
-                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
-                fuga
-                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
-                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
-                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
-                fuga
-                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
-                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
-                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
-                fuga
-                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
-                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
-        </div>
-        <div class="book-page">
-            <h2>Capitulo 2 - El autobus encantado</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
-                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
-                fuga
-                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
-                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
-                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
-                fuga
-                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
-                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ea alias eveniet
-                laboriosam. Iusto veniam saepe incidunt ducimus magni harum cupiditate, magnam sint quos voluptatibus
-                fuga
-                distinctio mollitia voluptatum voluptate ex recusandae nobis eaque quod accusantium impedit. Cum culpa
-                veniam necessitatibus eaque neque possimus iure dolorem saepe quis, laboriosam autem?</p>
+        <div id="sendTitle">
+            <p>Pon un titulo al capitulo anterior</p>
+            <input type="text" name="textTitle" id="textTitle" placeholder="Escribe el titulo">
+            <button onclick="postTitleChapter()" title="Enviar parrafo al capitulo">Enviar</button>
         </div>
 
-    </div>
-    <div class="library">
-        <div class="books">Estanteria vacia</div>
-        <div class="books">Estanteria vacia</div>
-        <div class="books">Estanteria vacia</div>
-        <div class="books">Estanteria vacia</div>
-        <div class="books">Estanteria vacia</div>
-        <div class="books">Estanteria vacia</div>
-        <div class="books">Estanteria vacia</div>
-        <div class="books">Estanteria vacia</div>
-        <div class="books">Estanteria vacia</div>
-        <div class="books">Estanteria vacia</div>
-        <div class="books">Estanteria vacia</div>
-        <div class="books">Estanteria vacia</div>
+        <button onclick="canPostTitleBook()" disabled id="btn-end-book"> Terminar mi historia</button>
+
+        <div id="endStory">
+            <div>
+                <p>Pon un titulo a la historia</p>
+                <input type="text" name="textTitle" id="textTitleBook" placeholder="Escribe el titulo de la historia">
+                <button onclick="postBook()" title="Terminar mi historia">Terminar</button>
+                <input id="myColor" type="color" value="#174d0f" onchange="changeColor()">
+                <div id="demo-cover">
+                    Color de la portada
+                </div>
+            </div>
+        </div>
+
+
+        <h2>Estanteria</h2>
+        <div id="lectura">
+            <header id="cover-page" class="book-page">
+                <h1 id="title-book">Title</h1>
+                <p style="font-size: 14px;" id="author">zksama.com/escribe-tu-historia</p>
+            </header>
+            <nav class="book-page">
+                <h2>Índice</h2>
+                <ol id="book-index">
+                    <li>Capitulo 1 - La pica de metro</li>
+                    <li>Capitulo 2 - El autobus encantado</li>
+                    <li>Capitulo 3 - La luz de coche</li>
+                </ol>
+            </nav>
+            <div id="book-pages">
+                <!-- autogenerated book-->
+            </div>
+
+        </div>
+        <div class="bookshelf" id="libros">
+
+        </div>
     </div>
     <!-- cuando llene la estanteria, haz una nueva estanteria-->
     <script src="index.js"></script>

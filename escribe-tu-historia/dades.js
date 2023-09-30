@@ -1,235 +1,235 @@
 let canarianWords = [
     {
         "word": "abamballado",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/abamballado/"
     },
     {
         "word": "abanazo",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/abanazo/"
     },
     {
-        "word": "aquellar",
-        "definition": ""
+        "word": "aquella",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/aquellar/"
     },
     {
         "word": "ajio",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/ajio/"
     },
     {
         "word": "bartolo",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/bartolo/"
     },
     {
         "word": "bardagada",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/bardagada/"
     },
     {
         "word": "bimba",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/bimba/"
     },
     {
         "word": "brisca",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/briscar/"
     },
     {
         "word": "cancajos",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/cancajos/"
     },
     {
         "word": "cazcarrilla",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/cazcarrilla/"
     },
     {
         "word": "caquero",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/caquero/"
     },
     {
         "word": "carrascudo",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/carrascudo/"
     },
     {
-        "word": "despalillar",
-        "definition": ""
+        "word": "despalilla",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/despalillar/"
     },
     {
-        "word": "desperrar",
-        "definition": ""
+        "word": "desperra",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/desperrar/"
     },
     {
-        "word": "desbambarriarse",
-        "definition": ""
+        "word": "cho",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/cho/"
     },
     {
-        "word": "deschavetarse",
-        "definition": ""
+        "word": "deschaveta",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/deschavetarse/"
     },
     {
-        "word": "endorar",
-        "definition": ""
+        "word": "endora",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/endorar/"
     },
     {
-        "word": "enfolinarse",
-        "definition": ""
+        "word": "enfolina",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/enfolinarse/"
     },
     {
         "word": "enrejada",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/enrejada/"
     },
     {
         "word": "empenarse",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/empenarse/"
     },
     {
         "word": "faicán",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/faican/"
     },
     {
         "word": "fisco",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/fisco/"
     },
     {
         "word": "fote",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/fote/"
     },
     {
         "word": "fule",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/fule/"
     },
     {
         "word": "gildana",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/gildana/"
     },
     {
         "word": "guanil",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/guanil/"
     },
     {
         "word": "güiro",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/guiro/"
     },
     {
         "word": "godo",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/godo/"
     },
     {
         "word": "haragán",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/haragan/"
     },
     {
         "word": "hormiguilla",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/hormiguilla/"
     },
     {
         "word": "hinchona",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/hinchona/"
     },
     {
         "word": "hablantín",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/hablantin/"
     },
     {
         "word": "hoto",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/hoto/"
     },
     {
         "word": "indiano",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/indiano/"
     },
     {
         "word": "ingua",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/ingua/"
     },
     {
         "word": "insalla",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/insalla/"
     },
     {
         "word": "iscariote",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/iscariote/"
     },
     {
         "word": "jarca",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/jarca/"
     },
     {
         "word": "jocicón",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/jocicon/"
     },
     {
         "word": "jumaza",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/jumaza/"
     },
     {
         "word": "jusillo",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/jusillo/"
     },
     {
-        "word": "lambear",
-        "definition": ""
+        "word": "lambea",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/lambear/"
     },
     {
         "word": "lomazo",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/lomazo/"
     },
     {
         "word": "lambucear",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/lambucear/"
     },
     {
         "word": "largar",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/largar/"
     },
     {
         "word": "macanuda",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/macanuda/"
     },
     {
         "word": "malorico",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/malorico/"
     },
     {
         "word": "malpaís",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/malpaís/"
     },
     {
-        "word": "margarear",
-        "definition": ""
+        "word": "margarea",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/margarear/"
     },
     {
         "word": "nabolengo",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/nabolengo/"
     },
     {
         "word": "nano",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/nano/"
     },
     {
         "word": "nombrete",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/nombrete/"
     },
     {
         "word": "nivariense",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/nivariense/"
     },
     {
         "word": "obstinarse",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/obstinarse/"
     },
     {
-        "word": "opilar",
-        "definition": ""
+        "word": "opila",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/opilar/"
     },
     {
         "word": "orasa",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/orasa/"
     },
     {
         "word": "orobal",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/orobal/"
     },
     {
         "word": "paparacho",
-        "definition": ""
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/paparacho/"
     }
 ];
 
@@ -238,7 +238,7 @@ let catalanWords = [
     { "word": "Exèrcit", "definition": "https://www.diccionari.cat/GDLC/exercit" },
     { "word": "Constitució", "definition": "https://www.diccionari.cat/GDLC/constitucio" },
     { "word": "Paradoxal", "definition": "https://www.diccionari.cat/GDLC/paradoxal" },
-    { "word": "Malabarisme", "definition": "https://www.diccionari.cat/GDLC/malabarisme" },
+    { "word": "Xiuxiueja", "definition": "https://www.diccionari.cat/GDLC/xiuxiuejar" },
     { "word": "Dimensió", "definition": "https://www.diccionari.cat/GDLC/dimensio" },
     { "word": "Imprevisible", "definition": "https://www.diccionari.cat/GDLC/imprevisible" },
     { "word": "Deliberació", "definition": "https://www.diccionari.cat/GDLC/deliberacio" },
@@ -337,6 +337,11 @@ let catalanWords = [
     { "word": "figa", "definition": "https://www.diccionari.cat/GDLC/figa" },
 ];
 
+
+let galicianWords=[
+    { "word": "biosbadrdo", "definition": "https://academia.gal/dicionario/-/termo/biosbardo" },
+
+]
 //Comprova si la paraula es repetida en la array
 function findRepeatedWords(array) {
     const repeatedWords = [];
