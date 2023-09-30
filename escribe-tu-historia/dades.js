@@ -1,3 +1,4 @@
+// https://www.academiacanarialengua.org/diccionario/
 let canarianWords = [
     {
         "word": "abamballado",
@@ -233,7 +234,7 @@ let canarianWords = [
     }
 ];
 
-
+// https://www.diccionari.cat/
 let catalanWords = [
     { "word": "Exèrcit", "definition": "https://www.diccionari.cat/GDLC/exercit" },
     { "word": "Constitució", "definition": "https://www.diccionari.cat/GDLC/constitucio" },
@@ -337,11 +338,116 @@ let catalanWords = [
     { "word": "figa", "definition": "https://www.diccionari.cat/GDLC/figa" },
 ];
 
-
-let galicianWords=[
-    { "word": "biosbadrdo", "definition": "https://academia.gal/dicionario/-/termo/biosbardo" },
+// https://academia.gal/dicionario
+let galicianWords = [
+    { "word": "Biosbardo", "definition": "https://academia.gal/dicionario/-/termo/biosbardo" },
+    { "word": "Faladoiro", "definition": "https://academia.gal/dicionario/-/termo/faladoiro" },
+    { "word": "Agasallo", "definition": "https://academia.gal/dicionario/-/termo/agasallo" },
+    { "word": "Baleiro", "definition": "https://academia.gal/dicionario/-/termo/baleiro" },
+    { "word": "Feitizo", "definition": "https://academia.gal/dicionario/-/termo/feitizo" },
+    { "word": "Canon", "definition": "https://academia.gal/dicionario/-/termo/canon" },
+    { "word": "Abalar", "definition": "https://academia.gal/dicionario/-/termo/abalar" },
+    { "word": "Despexar", "definition": "https://academia.gal/dicionario/-/termo/despexar" },
+    { "word": "Gheada", "definition": "https://academia.gal/dicionario/-/termo/gheada" },
+    { "word": "Namorar", "definition": "https://academia.gal/dicionario/-/termo/namorar" },
+    { "word": "Arroutada", "definition": "https://academia.gal/dicionario/-/termo/arroutada" },
+    { "word": "Botafumeiro", "definition": "https://academia.gal/dicionario/-/termo/botafumeiro" },
+    { "word": "Chisco", "definition": "https://academia.gal/dicionario/-/termo/chisco" },
+    { "word": "Rechouchío", "definition": "https://academia.gal/dicionario/-/termo/rechouchío" },
+    { "word": "Xentil", "definition": "https://academia.gal/dicionario/-/termo/xentil" },
+    { "word": "Pasamento", "definition": "https://academia.gal/dicionario/-/termo/pasamento" },
+    { "word": "Abonda", "definition": "https://academia.gal/dicionario/-/termo/abonda" },
+    { "word": "Chosco", "definition": "https://academia.gal/dicionario/-/termo/chosco" },
+    { "word": "Barallocas", "definition": "https://academia.gal/dicionario/-/termo/barallocas" },
+    { "word": "Enxebre", "definition": "https://academia.gal/dicionario/-/termo/enxebre" },
+    { "word": "Luar", "definition": "https://academia.gal/dicionario/-/termo/luar" },
+    { "word": "Morca", "definition": "https://academia.gal/dicionario/-/termo/morca" },
+    { "word": "Parvo", "definition": "https://academia.gal/dicionario/-/termo/parvo" },
+    { "word": "Saudade", "definition": "https://academia.gal/dicionario/-/termo/saudade" },
+    { "word": "Xeito", "definition": "https://academia.gal/dicionario/-/termo/xeito" },
+    { "word": "Rosmar", "definition": "https://academia.gal/dicionario/-/termo/rosmar" },
+    { "word": "Aperta", "definition": "https://academia.gal/dicionario/-/termo/aperta" },
+    { "word": "Ledicia", "definition": "https://academia.gal/dicionario/-/termo/ledicia" },
+    { "word": "Rabudo", "definition": "https://academia.gal/dicionario/-/termo/rabudo" },
+    { "word": "Toxo", "definition": "https://academia.gal/dicionario/-/termo/toxo" },
+    { "word": "Trapallada", "definition": "https://academia.gal/dicionario/-/termo/trapallada" },
+    { "word": "Fochica", "definition": "https://academia.gal/dicionario/-/termo/fochicar" },
+    { "word": "Coso", "definition": "https://academia.gal/dicionario/-/termo/coso" },
+    { "word": "Esmaga", "definition": "https://academia.gal/dicionario/-/termo/esmagar" },
+    { "word": "Fulana", "definition": "https://academia.gal/dicionario/-/termo/fulana" },
+    { "word": "Esnafrar", "definition": "https://academia.gal/dicionario/-/termo/esnafrar" },
+    { "word": "Fozar", "definition": "https://academia.gal/dicionario/-/termo/fozar" },
+    { "word": "Miñaxoia", "definition": "https://academia.gal/dicionario/-/termo/miñaxoia" },
+    { "word": "Coitado", "definition": "https://academia.gal/dicionario/-/termo/coitado" },
+    { "word": "Seica", "definition": "https://academia.gal/dicionario/-/termo/seica" },
+    { "word": "Chafallada", "definition": "https://academia.gal/dicionario/-/termo/chafallada" },
+    { "word": "Prea", "definition": "https://academia.gal/dicionario/-/termo/prea" },
+    { "word": "Afouteza", "definition": "https://academia.gal/dicionario/-/termo/afouteza" },
+    { "word": "Esmorga", "definition": "https://academia.gal/dicionario/-/termo/esmorga" },
+    { "word": "Carallo", "definition": "https://academia.gal/dicionario/-/termo/carallo" },
+    { "word": "Larpeiro", "definition": "https://academia.gal/dicionario/-/termo/larpeiro" },
+    { "word": "Bolboreta", "definition": "https://academia.gal/dicionario/-/termo/bolboreta" },
+    { "word": "Sapoconcho", "definition": "https://academia.gal/dicionario/-/termo/sapoconcho" },
+    { "word": "Trapalleiro", "definition": "https://academia.gal/dicionario/-/termo/trapalleiro" },
+    { "word": "Furancho", "definition": "https://academia.gal/dicionario/-/termo/furancho" },
+    { "word": "Recuncar", "definition": "https://academia.gal/dicionario/-/termo/recuncar" },
+    { "word": "Luscofusco", "definition": "https://academia.gal/dicionario/-/termo/luscofusco" },
+    { "word": "Cruceiro", "definition": "https://academia.gal/dicionario/-/termo/cruceiro" },
+    { "word": "Queimada", "definition": "https://academia.gal/dicionario/-/termo/queimada" },
+    { "word": "Escarallar", "definition": "https://academia.gal/dicionario/-/termo/escarallar" },
+    { "word": "Esbardalla", "definition": "https://academia.gal/dicionario/-/termo/esbardallar" },
+    { "word": "Abracadabrante", "definition": "https://academia.gal/dicionario/-/termo/abracadabrante" },
+    { "word": "Lea", "definition": "https://academia.gal/dicionario/-/termo/lea" },
+    { "word": "Lilaina", "definition": "https://academia.gal/dicionario/-/termo/lilaina" },
+    { "word": "Chincar", "definition": "https://academia.gal/dicionario/-/termo/chincar" },
+    { "word": "Curruncho", "definition": "https://academia.gal/dicionario/-/termo/curruncho" },
+    { "word": "Cotelear", "definition": "https://academia.gal/dicionario/-/termo/cotelear" },
+    { "word": "Arrolicarse", "definition": "https://academia.gal/dicionario/-/termo/arrolicarse" },
+    { "word": "Achourila", "definition": "https://academia.gal/dicionario/-/termo/achourilar" },
+    { "word": "Luzada", "definition": "https://academia.gal/dicionario/-/termo/luzada" },
+    { "word": "Bulebule", "definition": "https://academia.gal/dicionario/-/termo/bulebule" },
+    { "word": "Alfeirar", "definition": "https://academia.gal/dicionario/-/termo/alfeirar" },
+    { "word": "Garatuxa", "definition": "https://academia.gal/dicionario/-/termo/garatuxa" },
+    { "word": "Apreixo", "definition": "https://academia.gal/dicionario/-/termo/apreixo" }, //aperta
+    { "word": "Aloumiño", "definition": "https://academia.gal/dicionario/-/termo/aloumiño" },
+    { "word": "Beldade", "definition": "https://academia.gal/dicionario/-/termo/beldade" },
+    { "word": "Froallo", "definition": "https://academia.gal/dicionario/-/termo/froallo" },
+    { "word": "Galopina", "definition": "https://academia.gal/dicionario/-/termo/galopina" },
+    { "word": "Chega", "definition": "https://academia.gal/dicionario/-/termo/chegar" },
+    { "word": "Maña", "definition": "https://academia.gal/dicionario/-/termo/maña" },
+    { "word": "Feitío", "definition": "https://academia.gal/dicionario/-/termo/feitío" },
+    { "word": "Bico", "definition": "https://academia.gal/dicionario/-/termo/bico" },
+    { "word": "Follada", "definition": "https://academia.gal/dicionario/-/termo/follada" },
+    { "word": "Tarambaina", "definition": "https://academia.gal/dicionario/-/termo/tarambaina" },
+    { "word": "Rasante", "definition": "https://academia.gal/dicionario/-/termo/rasante" },
+    { "word": "Desleitar", "definition": "https://academia.gal/dicionario/-/termo/desleitar" },
+    { "word": "Raqueiro", "definition": "https://academia.gal/dicionario/-/termo/raqueiro" },
+    { "word": "Fular", "definition": "https://academia.gal/dicionario/-/termo/fular" },
+    { "word": "Marmular", "definition": "https://academia.gal/dicionario/-/termo/marmular" },
+    { "word": "Paraxe", "definition": "https://academia.gal/dicionario/-/termo/paraxe" },
+    { "word": "Talabarte", "definition": "https://academia.gal/dicionario/-/termo/talabarte" },
+    { "word": "Rateiro", "definition": "https://academia.gal/dicionario/-/termo/rateiro" },
+    { "word": "Anoxo", "definition": "https://academia.gal/dicionario/-/termo/anoxo" },
+    { "word": "Brincadeira", "definition": "https://academia.gal/dicionario/-/termo/brincadeira" },
+    { "word": "Inxuria", "definition": "https://academia.gal/dicionario/-/termo/inxuria" },
+    { "word": "Loura", "definition": "https://academia.gal/dicionario/-/termo/loura" },
+    { "word": "Zafallar", "definition": "https://academia.gal/dicionario/-/termo/zafallar" },
+    { "word": "Atrancar", "definition": "https://academia.gal/dicionario/-/termo/atrancar" },
+    { "word": "Ransoño", "definition": "https://academia.gal/dicionario/-/termo/ransoño" },
+    { "word": "Filandra", "definition": "https://academia.gal/dicionario/-/termo/filandra" },
+    { "word": "Medorra", "definition": "https://academia.gal/dicionario/-/termo/medorra" },
+    { "word": "Xerbo", "definition": "https://academia.gal/dicionario/-/termo/xerbo" },
+    { "word": "Chiscar", "definition": "https://academia.gal/dicionario/-/termo/chiscar" },
+    { "word": "Aventar", "definition": "https://academia.gal/dicionario/-/termo/aventar" },
+    { "word": "Sobranceira", "definition": "https://academia.gal/dicionario/-/termo/sobranceria" },
 
 ]
+
+
+let basqueWords = [];
+let valencianWords = [];
+let asturianWords = [];
+
 //Comprova si la paraula es repetida en la array
 function findRepeatedWords(array) {
     const repeatedWords = [];

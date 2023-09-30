@@ -52,50 +52,51 @@
                     <option value="0">Castellano</option> <!-- es -->
                     <option value="1" selected>Catalán</option> <!-- ca -->
                     <option value="2">Canario</option>
-                    <option value="3">Euskera</option> <!-- eu-->
+                    <option value="3">Gallego</option> <!-- gl-->
+                    <option value="4">Euskera</option> <!-- eu-->
                     <option value="5">Asturiano</option>
-                    <option value="5">Valenciano</option>
-                    <option value="5">Gallego</option> <!-- gl-->
+                    <option value="6">Valenciano</option>
 
                     <!-- Dejar elegir color de portada-->
                 </select> <button onclick="startStory()">Empezar mi historia</button>
             </div>
         </article>
 
-        <section>
+        <section style="background-color: yellow;">
             <h2>Mi historia</h2>
             <div id="generateStory"></div>
         </section>
+        <section style="background-color: lightblue;"> <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
+            <div id="sendChapter">
+                <p id="mustContainThisWord">Debe contener la palabra '<span id="palabra"></span>' <a id="definicion"
+                        target="_blank" href="">¿Qué
+                        significa?</a></p>
+                <textarea id="textInput" name="textInput" width="100%" rows="10" cols="20"
+                    placeholder="Escribe un parrafo" lang="es"></textarea>
+                <button onclick="postText()">Enviar</button>
+                <p>Escribe como minimo <span id="minChap"></span> capitulos completos para finalizar la historia</p>
+            </div>
+            <div id="sendTitle">
+                <p>Pon un titulo al capitulo anterior</p>
+                <input type="text" name="textTitle" id="textTitle" placeholder="Escribe el titulo">
+                <button onclick="postTitleChapter()" title="Enviar parrafo al capitulo">Enviar</button>
+            </div>
 
-        <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
-        <div id="sendChapter">
-            <p id="mustContainThisWord">Debe contener la palabra '<span id="palabra"></span>' <a id="definicion"
-                    target="_blank" href="">¿Qué
-                    significa?</a></p>
-            <textarea id="textInput" name="textInput" width="100%" rows="10" cols="20" placeholder="Escribe un parrafo"
-                lang="es"></textarea>
-            <button onclick="postText()">Enviar</button>
-            <p>Escribe como minimo <span id="minChap"></span> capitulos completos para finalizar la historia</p>
-        </div>
-        <div id="sendTitle">
-            <p>Pon un titulo al capitulo anterior</p>
-            <input type="text" name="textTitle" id="textTitle" placeholder="Escribe el titulo">
-            <button onclick="postTitleChapter()" title="Enviar parrafo al capitulo">Enviar</button>
-        </div>
+            <button onclick="canPostTitleBook()" disabled id="btn-end-book"> Terminar mi historia</button>
 
-        <button onclick="canPostTitleBook()" disabled id="btn-end-book"> Terminar mi historia</button>
-
-        <div id="endStory">
-            <div>
-                <p>Pon un titulo a la historia</p>
-                <input type="text" name="textTitle" id="textTitleBook" placeholder="Escribe el titulo de la historia">
-                <button onclick="postBook()" title="Terminar mi historia">Terminar</button>
-                <input id="myColor" type="color" value="#174d0f" onchange="changeColor()">
-                <div id="demo-cover">
-                    Color de la portada
+            <div id="endStory">
+                <div>
+                    <p>Pon un titulo a la historia</p>
+                    <input type="text" name="textTitle" id="textTitleBook"
+                        placeholder="Escribe el titulo de la historia">
+                    <button onclick="postBook()" title="Terminar mi historia">Terminar</button>
+                    <input id="myColor" type="color" value="#174d0f" onchange="changeColor()">
+                    <div id="demo-cover">
+                        Color de la portada
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
 
         <h2>Estanteria</h2>
@@ -123,6 +124,30 @@
     </div>
     <!-- cuando llene la estanteria, haz una nueva estanteria-->
     <script src="index.js"></script>
+    <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
 </body>
+<script>
+    /* Cada any el footer posara l'any actual */
+    function makeFooter() {
+        const d = new Date();
+        document.getElementById("dateYear").innerText = d.getFullYear();
+    }
+    makeFooter();
+</script>
+<style>
+    #footer-main {
+        background-color: black;
+        text-align: center;
+        color: white;
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #footer-main>a {
+        text-decoration: underline;
+        color: white;
+
+    }
+</style>
 
 </html>
