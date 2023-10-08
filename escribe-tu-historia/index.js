@@ -150,8 +150,12 @@ function getWordList(number) {
             return galicianWords;
         case "4": //Euskera
             return basqueWords;
-        default:  //Valenciano
-           // return ["rosa", "manzanilla", "orquídea", "lirio", "tulipán", "girasol", "helecho", "cactus", "margarita", "violeta", "bonsái", "peonia", "diente de león", "dalia", "tomillo", "lavanda", "cerezo", "pino", "eucalipto", "bambú"];
+        case "5": //Valencian
+            return valencianWords;
+        case "6": //Asturian
+            return asturianWords;
+        default:  //Castillan
+            return castillianWords;
     }
 }
 function postText() {

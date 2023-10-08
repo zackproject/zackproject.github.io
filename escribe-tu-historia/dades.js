@@ -1,4 +1,4 @@
-// https://www.diccionari.cat/
+// https://www.diccionari.cat/ 100
 let catalanWords = [
     { "word": "Exèrcit", "definition": "https://www.diccionari.cat/GDLC/exercit" },
     { "word": "Constitució", "definition": "https://www.diccionari.cat/GDLC/constitucio" },
@@ -102,7 +102,7 @@ let catalanWords = [
     { "word": "figa", "definition": "https://www.diccionari.cat/GDLC/figa" },
 ];
 
-// https://academia.gal/dicionario
+// https://academia.gal/dicionario 100
 let galicianWords = [
     { "word": "Biosbardo", "definition": "https://academia.gal/dicionario/-/termo/biosbardo" },
     { "word": "Faladoiro", "definition": "https://academia.gal/dicionario/-/termo/faladoiro" },
@@ -207,7 +207,7 @@ let galicianWords = [
 
 ];
 
-// https://www.ehu.eus/eeh/
+// https://www.ehu.eus/eeh/ 100
 let basqueWords = [
     { "word": "Gora", "definition": "https://www.ehu.eus/eeh/cgi/bila?z=2148&l=g" },
     { "word": "Eta", "definition": "https://www.ehu.eus/eeh/cgi/bila?z=6237&l=e" },
@@ -311,7 +311,7 @@ let basqueWords = [
     { "word": "Gizajo", "definition": "https://www.ehu.eus/eeh/cgi/bila?z=1654&l=g" }
 ];
 
-// https://www.academiacanarialengua.org/diccionario/
+// https://www.academiacanarialengua.org/diccionario/ 58
 let canarianWords = [
     {
         "word": "abamballado",
@@ -547,8 +547,116 @@ let canarianWords = [
     }
 ];
 
-let valencianWords = [];
+// https://www.avl.gva.es/lexicval/ 100
+let valencianWords = [
+    { "word": "Abajocat", "definition": "https://www.avl.gva.es/lexicval/?paraula=Abajocat" },
+    { "word": "Abaltir", "definition": "https://www.avl.gva.es/lexicval/?paraula=Abaltir" },
+    { "word": "Abassegar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Abassegar" },
+    { "word": "Abasta", "definition": "https://www.avl.gva.es/lexicval/?paraula=Abastar" },
+    { "word": "Abatanar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Abatanar" },
+    { "word": "Balb", "definition": "https://www.avl.gva.es/lexicval/?paraula=Balb" },
+    { "word": "Baluerna", "definition": "https://www.avl.gva.es/lexicval/?paraula=Baluerna" },
+    { "word": "Baquejar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Baquejar" },
+    { "word": "Barbolla", "definition": "https://www.avl.gva.es/lexicval/?paraula=Barbolla" },
+    { "word": "Bardoll", "definition": "https://www.avl.gva.es/lexicval/?paraula=Bardoll" },
+    { "word": "Cabal", "definition": "https://www.avl.gva.es/lexicval/?paraula=Cabal" },
+    { "word": "Camallada", "definition": "https://www.avl.gva.es/lexicval/?paraula=Camallada" },
+    { "word": "Capir", "definition": "https://www.avl.gva.es/lexicval/?paraula=Capir" },
+    { "word": "Collonada", "definition": "https://www.avl.gva.es/lexicval/?paraula=Collonada" },
+    { "word": "Cartapell", "definition": "https://www.avl.gva.es/lexicval/?paraula=Cartapell " },
+    { "word": "Davalla", "definition": "https://www.avl.gva.es/lexicval/?paraula=Davallar" },
+    { "word": "Debades", "definition": "https://www.avl.gva.es/lexicval/?paraula=Debades" },
+    { "word": "Debellida", "definition": "https://www.avl.gva.es/lexicval/?paraula=Debellit" },
+    { "word": "Decés", "definition": "https://www.avl.gva.es/lexicval/?paraula=Decés" },
+    { "word": "Deler", "definition": "https://www.avl.gva.es/lexicval/?paraula=Deler" },
+    { "word": "Emboira", "definition": "https://www.avl.gva.es/lexicval/?paraula=Emboirar" },
+    { "word": "Eixelebrat", "definition": "https://www.avl.gva.es/lexicval/?paraula=Eixelebrat" },
+    { "word": "Eixorc", "definition": "https://www.avl.gva.es/lexicval/?paraula=Eixorc" },
+    { "word": "Embabuca", "definition": "https://www.avl.gva.es/lexicval/?paraula=Embabucar" },
+    { "word": "Embadalir", "definition": "https://www.avl.gva.es/lexicval/?paraula=Embadalir " },
+    { "word": "Facècia", "definition": "https://www.avl.gva.es/lexicval/?paraula=Facècia" },
+    { "word": "Fadrina", "definition": "https://www.avl.gva.es/lexicval/?paraula=Fadrina" },
+    { "word": "Fanfarró", "definition": "https://www.avl.gva.es/lexicval/?paraula=Fanfarró" },
+    { "word": "Famolenc", "definition": "https://www.avl.gva.es/lexicval/?paraula=Famolenc" },
+    { "word": "Gosar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Gosar" },
+    { "word": "Galdós", "definition": "https://www.avl.gva.es/lexicval/?paraula=Galdós" },
+    { "word": "Galimaties", "definition": "https://www.avl.gva.es/lexicval/?paraula=Galimaties" },
+    { "word": "Galtada", "definition": "https://www.avl.gva.es/lexicval/?paraula=Galtada" },
+    { "word": "Home", "definition": "https://www.avl.gva.es/lexicval/?paraula=Home" },
+    { "word": "Horabaixa", "definition": "https://www.avl.gva.es/lexicval/?paraula=Horabaixa" },
+    { "word": "Hosti", "definition": "https://www.avl.gva.es/lexicval/?paraula=Hosti" },
+    { "word": "Horada", "definition": "https://www.avl.gva.es/lexicval/?paraula=Horada" },
+    { "word": "Impedit", "definition": "https://www.avl.gva.es/lexicval/?paraula=Impedit" },
+    { "word": "Indret", "definition": "https://www.avl.gva.es/lexicval/?paraula=Indret" },
+    { "word": "Inxa", "definition": "https://www.avl.gva.es/lexicval/?paraula=Inxa" },
+    { "word": "Llambregada", "definition": "https://www.avl.gva.es/lexicval/?paraula=Llambregada" },
+    { "word": "Llamenc", "definition": "https://www.avl.gva.es/lexicval/?paraula=Llamenc" },
+    { "word": "Llampada", "definition": "https://www.avl.gva.es/lexicval/?paraula=Llampada" },
+    { "word": "Llandós", "definition": "https://www.avl.gva.es/lexicval/?paraula=Llandós" },
+    { "word": "Sortós", "definition": "https://www.avl.gva.es/lexicval/?paraula=Sortós" },
+    { "word": "Llebeig", "definition": "https://www.avl.gva.es/lexicval/?paraula=Llebeig" },
+    { "word": "Maldar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Maldar" },
+    { "word": "Paella", "definition": "https://www.avl.gva.es/lexicval/?paraula=Paella" },
+    { "word": "Mainatge", "definition": "https://www.avl.gva.es/lexicval/?paraula=Mainatge" },
+    { "word": "Malentès", "definition": "https://www.avl.gva.es/lexicval/?paraula=Malentès" },
+    { "word": "Malva", "definition": "https://www.avl.gva.es/lexicval/?paraula=Malva" },
+    { "word": "Mampresa", "definition": "https://www.avl.gva.es/lexicval/?paraula=Mampresa" },
+    { "word": "Mandra", "definition": "https://www.avl.gva.es/lexicval/?paraula=Mandra" },
+    { "word": "Maniosa", "definition": "https://www.avl.gva.es/lexicval/?paraula=Maniosa" },
+    { "word": "Manprendre", "definition": "https://www.avl.gva.es/lexicval/?paraula=Manprendre" },
+    { "word": "Nano", "definition": "https://www.avl.gva.es/lexicval/?paraula=Nano" },
+    { "word": "Neguit", "definition": "https://www.avl.gva.es/lexicval/?paraula=Neguit" },
+    { "word": "Niuada", "definition": "https://www.avl.gva.es/lexicval/?paraula=Niuada" },
+    { "word": "Nosa", "definition": "https://www.avl.gva.es/lexicval/?paraula=Nosa" },
+    { "word": "Oi", "definition": "https://www.avl.gva.es/lexicval/?paraula=Oi" },
+    { "word": "Oldre", "definition": "https://www.avl.gva.es/lexicval/?paraula=Oldre" },
+    { "word": "Pagat", "definition": "https://www.avl.gva.es/lexicval/?paraula=Pagat" },
+    { "word": "Palleta", "definition": "https://www.avl.gva.es/lexicval/?paraula=Palleta" },
+    { "word": "Pamboli", "definition": "https://www.avl.gva.es/lexicval/?paraula=Pamboli" },
+    { "word": "Pampallugues", "definition": "https://www.avl.gva.es/lexicval/?paraula=Pampallugues" },
+    { "word": "Panxacontent", "definition": "https://www.avl.gva.es/lexicval/?paraula=Panxacontent" },
+    { "word": "Atzucac", "definition": "https://www.avl.gva.es/lexicval/?paraula=Atzucac" },
+    { "word": "Papar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Papar" },
+    { "word": "Quid", "definition": "https://www.avl.gva.es/lexicval/?paraula=Quid" },
+    { "word": "Paquet", "definition": "https://www.avl.gva.es/lexicval/?paraula=Paquet" },
+    { "word": "Quotidiana", "definition": "https://www.avl.gva.es/lexicval/?paraula=Quotidiana" },
+    { "word": "Rabeja", "definition": "https://www.avl.gva.es/lexicval/?paraula=rabejar" },
+    { "word": "Rabent", "definition": "https://www.avl.gva.es/lexicval/?paraula=Rabent" },
+    { "word": "Rajolí", "definition": "https://www.avl.gva.es/lexicval/?paraula=Rajolí" },
+    { "word": "Raonar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Raonar" },
+    { "word": "Ras", "definition": "https://www.avl.gva.es/lexicval/?paraula=Ras" },
+    { "word": "Saforejar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Saforejar" },
+    { "word": "Sagal", "definition": "https://www.avl.gva.es/lexicval/?paraula=Sagal" },
+    { "word": "Salar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Salar" },
+    { "word": "Salut", "definition": "https://www.avl.gva.es/lexicval/?paraula=Salut" },
+    { "word": "Sampar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Sampar" },
+    { "word": "Saó", "definition": "https://www.avl.gva.es/lexicval/?paraula=Saó" },
+    { "word": "Tabal", "definition": "https://www.avl.gva.es/lexicval/?paraula=Tabal" },
+    { "word": "Tafanejar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Tafanejar" },
+    { "word": "Talent", "definition": "https://www.avl.gva.es/lexicval/?paraula=Talent" },
+    { "word": "Tanmateix", "definition": "https://www.avl.gva.es/lexicval/?paraula=Tanmateix" },
+    { "word": "Ufanosa", "definition": "https://www.avl.gva.es/lexicval/?paraula=Ufanosa" },
+    { "word": "Uix", "definition": "https://www.avl.gva.es/lexicval/?paraula=Uix" },
+    { "word": "Ullada", "definition": "https://www.avl.gva.es/lexicval/?paraula=Ullada" },
+    { "word": "Upa", "definition": "https://www.avl.gva.es/lexicval/?paraula=Upa" },
+    { "word": "Urent", "definition": "https://www.avl.gva.es/lexicval/?paraula=Urent" },
+    { "word": "Vailet", "definition": "https://www.avl.gva.es/lexicval/?paraula=Vailet" },
+    { "word": "Vara", "definition": "https://www.avl.gva.es/lexicval/?paraula=Vara" },
+    { "word": "Vatua", "definition": "https://www.avl.gva.es/lexicval/?paraula=Vatua" },
+    { "word": "Ventar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Ventar" },
+    { "word": "Xafar", "definition": "https://www.avl.gva.es/lexicval/?paraula=Xafar" },
+    { "word": "Xafarranxo", "definition": "https://www.avl.gva.es/lexicval/?paraula=Xafarranxo" },
+    { "word": "Xàfec", "definition": "https://www.avl.gva.es/lexicval/?paraula=Xàfec" },
+    { "word": "Cama", "definition": "https://www.avl.gva.es/lexicval/?paraula=Cama" },
+    { "word": "Zumzeig", "definition": "https://www.avl.gva.es/lexicval/?paraula=Zumzeig" }
+];
+
+// https://diccionariu.alladixital.org/ 0
 let asturianWords = [];
+
+// https://dle.rae.es/ 0
+let castillianWords = [];
+
 
 //Comprova si la paraula es repetida en la array
 function findRepeatedWords(array) {
