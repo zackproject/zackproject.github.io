@@ -38,7 +38,7 @@ details[open] summary {
 
 #textInput {
     width: 100%;
-    resize: none;
+    form-sizing:content;
 }
 
 .bookshelf {
