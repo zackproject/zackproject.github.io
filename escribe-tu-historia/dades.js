@@ -138,7 +138,7 @@ let galicianWords = [
     { "word": "Fochica", "definition": "https://academia.gal/dicionario/-/termo/fochicar" },
     { "word": "Coso", "definition": "https://academia.gal/dicionario/-/termo/coso" },
     { "word": "Esmaga", "definition": "https://academia.gal/dicionario/-/termo/esmagar" },
-    { "word": "Fulana", "definition": "https://academia.gal/dicionario/-/termo/fulana" },
+    { "word": "Axiña", "definition": "https://academia.gal/dicionario/-/termo/axi%C3%B1a" },
     { "word": "Esnafrar", "definition": "https://academia.gal/dicionario/-/termo/esnafrar" },
     { "word": "Fozar", "definition": "https://academia.gal/dicionario/-/termo/fozar" },
     { "word": "Miñaxoia", "definition": "https://academia.gal/dicionario/-/termo/miñaxoia" },

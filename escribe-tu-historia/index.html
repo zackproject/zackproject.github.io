@@ -13,12 +13,15 @@
     <title>Biblioteca</title>
     <link rel="icon" href="../icopz.ico">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="book.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="dades.js"></script>
 </head>
 
 <body onload="onLoadStory()">
     <header role="banner" id="write-story-header" aria-label="Encabezado de la página">
-        <h1 aria-label="Encabezado: PIANO">Escribe tu historia</h1>
+        <h1>Escribe tu historia</h1>
     </header>
     <div class="container-story">
         <article class="primary-story">
@@ -34,19 +37,27 @@
                     desplegable. A medida que escribas, te brindaré pequeñas pinceladas de inspiración, pero la
                     verdadera
                     magia
-                    emergerá de tu imaginación. Permíteme explicarte cómo funciona: en cada párrafo que escribas, te
-                    pediré
-                    que
-                    incluyas una palabra específica en ese párrafo. </p>
-                <p>Una vez hayas alcanzado una cantidad de párrafos adecuada,
+                    emergerá de tu imaginación. </p>
+                <p>Permíteme explicarte cómo funciona. En cada párrafo que escribas, te pediré que
+                    incluyas una palabra específica en ese párrafo. Una vez hayas alcanzado una cantidad de párrafos
+                    adecuada,
                     te solicitaré que le des un título a este capítulo. Estableceré un mínimo de capitulos que debes
                     cumplir,
-                    pero una vez lo alcances, podrás cerrar el libro y darle un título. Entonces, podrás crear otra
+                    pero una vez lo alcances, podrás cerrar el libro en cualquier momento y darle un título. Entonces,
+                    podrás crear otra
                     historia
                     si
-                    lo deseas.
-                    ¡Adelante, comencemos a llenar estas páginas en blanco con tus historias!</p>
+                    lo deseas.</p>
+                <p> <strong>No se permite escribir más de un libro al mismo tiempo</strong>; primero finaliza el
+                    anterior, dejar la tarea
+                    a medias es como no haberla comenzado. ¡Adelante, comencemos a llenar estas páginas en blanco con
+                    tus historias!</p>
             </details>
+       
+        </article>
+
+        <section >
+            <h2>Mi historia</h2>
             <div id="sendStory">
                 <select name="wordLista" id="wordLista">
                     <option value="0">Castellano</option> <!-- es -->
@@ -58,38 +69,34 @@
                     <option value="6">Asturiano</option>
 
                     <!-- Dejar elegir color de portada-->
-                </select> <button onclick="startStory()">Empezar mi historia</button>
+                </select> <button class="btn-of-story" onclick="startStory()">Empezar mi historia</button>
             </div>
-        </article>
-
-        <section style="background-color: yellow;">
-            <h2>Mi historia</h2>
             <div id="generateStory"></div>
         </section>
-        <section style="background-color: lightblue;"> <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
+        <section> <!-- haz que parezca una estanteria de verdad ¿Perspectiva?-->
             <div id="sendChapter">
                 <p id="mustContainThisWord">Debe contener la palabra '<span id="palabra"></span>' <a id="definicion"
                         target="_blank" href="">¿Qué
                         significa?</a></p>
                 <textarea id="textInput" name="textInput" width="100%" rows="10" cols="20"
                     placeholder="Escribe un parrafo" lang="es"></textarea>
-                <button onclick="postText()">Enviar</button>
+                <button class="btn-of-story" title="Enviar parrafo" onclick="postText()">Enviar párrafo</button>
                 <p>Escribe como minimo <span id="minChap"></span> capitulos completos para finalizar la historia</p>
             </div>
             <div id="sendTitle">
                 <p>Pon un titulo al capitulo anterior</p>
                 <input type="text" name="textTitle" id="textTitle" placeholder="Escribe el titulo">
-                <button onclick="postTitleChapter()" title="Enviar parrafo al capitulo">Enviar</button>
+                <button class="btn-of-story" onclick="postTitleChapter()" title="Enviar titulo del capitulo">Enviar titulo</button>
             </div>
 
-            <button onclick="canPostTitleBook()" disabled id="btn-end-book"> Terminar mi historia</button>
+            <button class="btn-of-story" onclick="canPostTitleBook()" disabled id="btn-end-book"> Terminar mi historia</button>
 
             <div id="endStory">
                 <div>
                     <p>Pon un titulo a la historia</p>
                     <input type="text" name="textTitle" id="textTitleBook"
                         placeholder="Escribe el titulo de la historia">
-                    <button onclick="postBook()" title="Terminar mi historia">Terminar</button>
+                    <button class="btn-of-story" onclick="postBook()" title="Terminar mi historia">Terminar</button>
                     <input id="myColor" type="color" value="#174d0f" onchange="changeColor()">
                     <div id="demo-cover">
                         Color de la portada
@@ -101,6 +108,10 @@
 
         <h2>Estanteria</h2>
         <div id="lectura">
+            <button id="btn-close-book" onclick="closeReadingBook()" class="material-icons" aria-label="Cerrar"
+                title="Cerrar libro">
+                close
+            </button>
             <header id="cover-page" class="book-page">
                 <h1 id="title-book">Title</h1>
                 <p style="font-size: 14px;" id="author">zksama.com/escribe-tu-historia</p>
