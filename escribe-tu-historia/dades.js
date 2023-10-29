@@ -311,240 +311,281 @@ let basqueWords = [
     { "word": "Gizajo", "definition": "https://www.ehu.eus/eeh/cgi/bila?z=1654&l=g" }
 ];
 
-// https://www.academiacanarialengua.org/diccionario/ 58
+// https://www.academiacanarialengua.org/diccionario/ 68
 let canarianWords = [
     {
-        "word": "abamballado",
+        "word": "Abamballado",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/abamballado/"
     },
     {
-        "word": "abanazo",
+        "word": "Abanazo",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/abanazo/"
     },
     {
-        "word": "aquella",
+        "word": "Aquella",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/aquellar/"
     },
     {
-        "word": "ajio",
+        "word": "Ajio",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/ajio/"
     },
     {
-        "word": "bartolo",
+        "word": "Bartolo",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/bartolo/"
     },
     {
-        "word": "bardagada",
+        "word": "Bardagada",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/bardagada/"
     },
     {
-        "word": "bimba",
+        "word": "Bimba",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/bimba/"
     },
     {
-        "word": "brisca",
+        "word": "Brisca",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/briscar/"
     },
     {
-        "word": "cancajos",
+        "word": "Cancajos",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/cancajos/"
     },
     {
-        "word": "cazcarrilla",
+        "word": "Cazcarrilla",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/cazcarrilla/"
     },
     {
-        "word": "caquero",
+        "word": "Caquero",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/caquero/"
     },
     {
-        "word": "carrascudo",
+        "word": "Carrascudo",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/carrascudo/"
     },
     {
-        "word": "despalilla",
+        "word": "Despalilla",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/despalillar/"
     },
     {
-        "word": "desperra",
+        "word": "Desperra",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/desperrar/"
     },
     {
-        "word": "cho",
+        "word": "Cho",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/cho/"
     },
     {
-        "word": "deschaveta",
+        "word": "Deschaveta",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/deschavetarse/"
     },
     {
-        "word": "endora",
+        "word": "Endora",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/endorar/"
     },
     {
-        "word": "enfolina",
+        "word": "Enfolina",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/enfolinarse/"
     },
     {
-        "word": "enrejada",
+        "word": "Enrejada",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/enrejada/"
     },
     {
-        "word": "empenarse",
+        "word": "Empenarse",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/empenarse/"
     },
     {
-        "word": "faicán",
+        "word": "Faicán",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/faican/"
     },
     {
-        "word": "fisco",
+        "word": "Fisco",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/fisco/"
     },
     {
-        "word": "fote",
+        "word": "Fote",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/fote/"
     },
     {
-        "word": "fule",
+        "word": "Fule",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/fule/"
     },
     {
-        "word": "gildana",
+        "word": "Gildana",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/gildana/"
     },
     {
-        "word": "guanil",
+        "word": "Guanil",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/guanil/"
     },
     {
-        "word": "güiro",
+        "word": "Güiro",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/guiro/"
     },
     {
-        "word": "godo",
+        "word": "Godo",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/godo/"
     },
     {
-        "word": "haragán",
+        "word": "Haragán",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/haragan/"
     },
     {
-        "word": "hormiguilla",
+        "word": "Hormiguilla",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/hormiguilla/"
     },
     {
-        "word": "hinchona",
+        "word": "Hinchona",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/hinchona/"
     },
     {
-        "word": "hablantín",
+        "word": "Hablantín",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/hablantin/"
     },
     {
-        "word": "hoto",
+        "word": "Hoto",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/hoto/"
     },
     {
-        "word": "indiano",
+        "word": "Indiano",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/indiano/"
     },
     {
-        "word": "ingua",
+        "word": "Ingua",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/ingua/"
     },
     {
-        "word": "insalla",
+        "word": "Insalla",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/insalla/"
     },
     {
-        "word": "iscariote",
+        "word": "Iscariote",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/iscariote/"
     },
     {
-        "word": "jarca",
+        "word": "Jarca",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/jarca/"
     },
     {
-        "word": "jocicón",
+        "word": "Jocicón",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/jocicon/"
     },
     {
-        "word": "jumaza",
+        "word": "Jumaza",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/jumaza/"
     },
     {
-        "word": "jusillo",
+        "word": "Jusillo",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/jusillo/"
     },
     {
-        "word": "lambea",
+        "word": "Lambea",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/lambear/"
     },
     {
-        "word": "lomazo",
+        "word": "Lomazo",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/lomazo/"
     },
     {
-        "word": "lambucear",
+        "word": "Lambucear",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/lambucear/"
     },
     {
-        "word": "largar",
+        "word": "Largar",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/largar/"
     },
     {
-        "word": "macanuda",
+        "word": "Macanuda",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/macanuda/"
     },
     {
-        "word": "malorico",
+        "word": "Malorico",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/malorico/"
     },
     {
-        "word": "malpaís",
-        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/malpaís/"
+        "word": "Malpaís",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/malpais/"
     },
     {
-        "word": "margarea",
+        "word": "Margarea",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/margarear/"
     },
     {
-        "word": "nabolengo",
+        "word": "Nabolengo",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/nabolengo/"
     },
     {
-        "word": "nano",
+        "word": "Nano",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/nano/"
     },
     {
-        "word": "nombrete",
+        "word": "Nombrete",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/nombrete/"
     },
     {
-        "word": "nivariense",
+        "word": "Nivariense",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/nivariense/"
     },
     {
-        "word": "obstinarse",
+        "word": "Obstinarse",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/obstinarse/"
     },
     {
-        "word": "opila",
+        "word": "Opila",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/opilar/"
     },
     {
-        "word": "orasa",
+        "word": "Orasa",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/orasa/"
     },
     {
-        "word": "orobal",
+        "word": "Orobal",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/orobal/"
     },
     {
-        "word": "paparacho",
+        "word": "Paparacho",
         "definition": "https://www.academiacanarialengua.org/diccionario/entrada/paparacho/"
-    }
+    },
+    ////////////////////////
+    {
+        "word": "Aderno",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/aderno/"
+    },
+    {
+        "word": "Aguachirre",
+        "definition": "https://www.academiacanarialengua.org/diccionario/entrada/aguachirre/"
+    },
+    {
+        "word": "Agujilla",
+        "definition":"https://www.academiacanarialengua.org/diccionario/entrada/agujilla/"
+    },
+    {
+        "word": "Airón",
+        "definition":"https://www.academiacanarialengua.org/diccionario/entrada/airon/"
+    },
+    {
+        "word": "Ajeitada",
+        "definition":"https://www.academiacanarialengua.org/diccionario/entrada/ajeitado/"
+    },
+    {
+        "word": "Alerta",
+        "definition":"https://www.academiacanarialengua.org/diccionario/entrada/alerta/"
+    },
+    {
+        "word": "Amulamiento",
+        "definition":"https://www.academiacanarialengua.org/diccionario/entrada/amulamiento/"
+    },
+    {
+        "word": "Baifudo",
+        "definition":"https://www.academiacanarialengua.org/diccionario/entrada/baifudo/"
+    },
+    {
+        "word": "Bardino",
+        "definition":"https://www.academiacanarialengua.org/diccionario/entrada/bardino/"
+    },
+    {
+        "word": "Barra",
+        "definition":"https://www.academiacanarialengua.org/diccionario/entrada/barra/"
+    },
 ];
 
 // https://www.avl.gva.es/lexicval/ 100
@@ -562,7 +603,7 @@ let valencianWords = [
     { "word": "Cabal", "definition": "https://www.avl.gva.es/lexicval/?paraula=Cabal" },
     { "word": "Camallada", "definition": "https://www.avl.gva.es/lexicval/?paraula=Camallada" },
     { "word": "Capir", "definition": "https://www.avl.gva.es/lexicval/?paraula=Capir" },
-    { "word": "Collonada", "definition": "https://www.avl.gva.es/lexicval/?paraula=Collonada" },
+    { "word": "Canapè", "definition": "https://www.avl.gva.es/lexicval/?paraula=Canap%C3%A9" },
     { "word": "Cartapell", "definition": "https://www.avl.gva.es/lexicval/?paraula=Cartapell " },
     { "word": "Davalla", "definition": "https://www.avl.gva.es/lexicval/?paraula=Davallar" },
     { "word": "Debades", "definition": "https://www.avl.gva.es/lexicval/?paraula=Debades" },
@@ -814,6 +855,17 @@ let castillianWords = [
     { "word": "Sutil", "definition": "https://dle.rae.es/sutil" },
     { "word": "Equidista", "definition": "https://dle.rae.es/equidistar" },
     { "word": "Onírico", "definition": "https://dle.rae.es/on%C3%ADrico" },
+    { "word": "Ósculo", "definition": "https://dle.rae.es/%C3%B3sculo" },
+    { "word": "Superfluo", "definition": "https://dle.rae.es/superfluo" },
+    { "word": "Serendipia", "definition": "https://dle.rae.es/serendipia" },
+    { "word": "Entelequia", "definition": "https://dle.rae.es/entelequia" },
+    { "word": "Quijotismo", "definition": "https://dle.rae.es/quijotismo" },
+    { "word": "Inexpugnable", "definition": "https://dle.rae.es/inexpugnable" },
+    { "word": "Furtivo", "definition": "https://dle.rae.es/furtivo" },
+    { "word": "Tenaz", "definition": "https://dle.rae.es/tenaz" },
+
+
+
 ];
 
 

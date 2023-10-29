@@ -134,7 +134,7 @@ body {
 }
 
 
-.container-story {
+#container-story {
     margin: 0 auto;
     max-width: 810px;
     padding: 10px;

@@ -120,7 +120,11 @@ let newStory = document.getElementById("sendStory");
 let newParraf = document.getElementById("sendChapter");
 let newTitle = document.getElementById("sendTitle");
 let endStory = document.getElementById("endStory");
+let containThiWord = document.getElementById("mustContainThisWord");
 
+
+let containerStory = document.getElementById("container-story");
+let containerReadBook = document.getElementById("lectura");
 let player = null;
 const parrafsByChapters = 3;
 const minChapters = 3;
@@ -138,6 +142,8 @@ function startStory() {
     //localStorage.setItem(LOCALSTORY,JSON.stringify(player));
     newStory.style.display = "none";
     newParraf.style.display = "block"
+    // Enfoca al text area
+    containThiWord.focus();
 }
 
 function getWordList(number) {
@@ -162,7 +168,7 @@ function postText() {
     // No te paraula, no et deixo pujar
     if (!player.isTheWord(parrafHTML.value)) {
         console.log("Falta la palabra", player.getTodayWord());
-        document.getElementById("mustContainThisWord").focus();
+        containThiWord.focus();
         return;
     }
 
@@ -192,7 +198,7 @@ function postText() {
 
     localStorage.setItem(LOCALSTORY, JSON.stringify(player));
 
-    document.getElementById("mustContainThisWord").focus();
+    containThiWord.focus();
 
 }
 
@@ -337,9 +343,9 @@ function postBook() {
 const btnTitleBook = (event) => {
     console.log(event.target.id);
     //Al clicar el boto, retorna el llibre escrit localment
-    player = JSON.parse(localStorage.getItem(event.target.id));
-    console.log("pedro", player);
-    fillBook(player);
+    let readBook = JSON.parse(localStorage.getItem(event.target.id));
+    //llegeix "book" NO player, perque sino sobrescriu la escritura actual
+    fillBook(readBook);
 }
 function generateBookInBookShelf() {
     let bookPare = document.getElementById("libros");
@@ -351,6 +357,7 @@ function generateBookInBookShelf() {
         let title = decodeURIComponent(e.split("-", 3)[2]);
         console.log(title);
         let btn = document.createElement("button");
+        btn.title = "Libro"
         btn.innerText = title;
         btn.className = "book-on-shelf";
         btn.style.backgroundColor = e.split("-", 3)[1];
@@ -364,14 +371,18 @@ function generateBookInBookShelf() {
 
 function fillBook(book) {
     let bookPages = document.getElementById("book-pages");
-    document.getElementById("title-book").innerText = book.title;
+    let ntitlebook = document.getElementById("title-book");
+    ntitlebook.innerText = book.title;
     document.getElementById("cover-page").style.backgroundColor = book.coverPageColor;
     document.getElementById("cover-page").style.border = "20px solid " + book.coverPageColor;
-
     let indexBook = document.getElementById("book-index");
     deleteChilds(indexBook);
     deleteChilds(bookPages);
-    player.chapters.forEach((e, i) => {
+    //Per cada parraf incrementa en 1, per poder utilitzar la 'wordlist' que pertoca
+    let iParraf = 0;
+
+    // bucle per cada capitol del llibre
+    book.chapters.forEach((e, i) => {
         // Titols dels capitols, Index
         let li = document.createElement("li");
         let a = document.createElement("a");
@@ -381,26 +392,46 @@ function fillBook(book) {
         indexBook.appendChild(li);
 
         //Capitols
-
         let section = document.createElement("section");
         section.className = "book-page";
-        let h1 = document.createElement("h1");
-        h1.innerText = (i + 1) + ". " + e.title;
-        h1.id = "chapter-" + (i + 1);
-        section.appendChild(h1);
-        (player.chapters[i]).parrafList.forEach(element => {
+        let h2 = document.createElement("h2");
+        h2.innerText = (i + 1) + ". " + e.title;
+        h2.id = "chapter-" + (i + 1);
+        section.appendChild(h2);
+
+        // bucle per cada parraf del llibre
+        const bookParrafs = book.chapters[i].parrafList;
+
+        bookParrafs.forEach((element) => {
             let p = document.createElement("p");
-            p.innerText = element;
+            // Cambia la paraula del parraf per un destacat
+            p.innerHTML = distinctWordUsedInParraf(book.wordsList[iParraf].word, element);
             section.appendChild(p);
+            //incrementa iparraf per la seguent wordlist[iParraf]
+            iParraf++;
         });
+
         bookPages.appendChild(section);
     });
     //Mostra el llibre
-    document.getElementById("lectura").style.display = "flex";
-    document.getElementById("title-book").focus();
+    containerReadBook.style.display = "flex";
+    document.getElementById
+    //Amaga el contungut de la pagina
+    containerStory.ariaHidden = "true";
+    ntitlebook.focus();
+    console.log(book.wordsList);
+
 }
 
 
+function distinctWordUsedInParraf(word, parraf) {
+    // La expresio regular 'gi' compara en cas de majuscula o minuscula indistintivament
+    const expresionRegular = new RegExp(word, "gi");
+    //"$&" en una expressió regular representa la coincidència trobada i es manté sense canvis en la cadena resultat.
+    const parrafChanged = parraf.replace(expresionRegular, '<strong>$&</strong>');
+    return parrafChanged;
+
+}
 function changeColor() {
     let demoCover = document.getElementById("demo-cover");
     let inputColor = document.getElementById("myColor").value;
@@ -412,7 +443,9 @@ function changeColor() {
 
 }
 function closeReadingBook() {
-    document.getElementById("lectura").style.display = "none";
+    containerReadBook.style.display = "none";
+    //Talkback torna a interactuar amb la pagina
+    containerStory.ariaHidden = "false";
     document.getElementById("write-story-header").focus();
 }
 
