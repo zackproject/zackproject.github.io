@@ -84,6 +84,7 @@ nav.book-page {
     background-color: white;
     padding: 20px;
     min-height: 600px;
+    line-height: 22px;   /* within paragraph */
     text-align: justify;
     width: 500px;
     -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);

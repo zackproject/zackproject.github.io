@@ -669,12 +669,34 @@ let castillianWords = [
     { "word": "Constancia", "definition": "https://dle.rae.es/constancia" },
 ];
 
-function abrelo(arrayOfObjects){
+let storyZackSama = {
+    "id": 3,
+    "title": "Zack Sama",
+    "chapters": [
+        {
+            "title": "Bienvenido",
+            "parrafList": [
+                "Un saludo a todos los artistas de las palabras que desean incursionar en este mundo de la escritura. Todo el mundo es capaz de escribir una historia; solo necesita una chispa para crearlas. La imaginación de una persona es inconmensurable, pero muchas veces sufrimos de procrastinación o sentimos que no sabemos cómo continuar nuestra historia. Ya habrás notado que por algún motivo la palabra \"inconmensurable \" está en negrita. Ahora mismo estoy escribiendo en la opción \"Castellano\", y esa es la palabra que debo utilizar en este párrafo. No tiene que ser la palabra exacta; puedo escribir el párrafo con una palabra que contenga \"inconmensurable\", es decir, puedo escribir \"inconmensurable\", \"inconmensurablemente\" o \"inconmensurablewadipfae\". Esta última palabra no es real y constituye un error ortográfico bastante grave, ¡jajaja!",
+                "Si en algún momento hay alguna palabra cuyo significado no conoces, puedes hacer clic en el enlace que se encuentra justo al lado de la palabra. El enlace te dirigirá al diccionario para que puedas ver su significado y algunos ejemplos. Recuerda que, según el contexto que le des, una palabra puede servir para una historia de acción, romance, terror, etc.\n\nTe proporciono unos ejemplos:\n- En el rincón del jardín, entre las nomeolvides, sus manos se encontraron y sus labios se unieron en un dulce beso, sellando un amor que nunca olvidarían.\n- En el oscuro cementerio, entre las tumbas, una única nomeolvides florecía, recordando a todos los que yacían en silencio. La noche susurraba historias de almas que nunca descansaban, unidas por el eterno susurro: 'No me olvides'.\"\n- En la azotea del rascacielos, con la ciudad brillando bajo las estrellas, se enfrentaron dos adversarios. La lucha fue intensa, pero en el último instante, ella le entregó una nomeolvides y le dijo: \"En esta vida o la próxima, no me olvides\". La sorpresa en su rostro fue su oportunidad para escapar.\n\nComo puedes ver, la palabra no te limita en la historia que desees contar, es el contexto el que determina su dirección.",
+                "Como habrán podido notar los escritores más avanzados es que no soy un Cervantes de la escritura. Sólo soy un friki que busca mejorar la experiencia de quien utilice mis \"minijuegos\". La elección de lenguas elegidas y palabras que deberás utilizar no es aleatoria. He querido buscar palabras que en su mayoría se puedan utilizar en cualquier contexto y he querido que si buscas esa palabra en el diccionario que sea en una web fiable. La elección de las lenguas tampoco ha sido al azar; estos \"minijuegos\" están enfocados en las diferentes lenguas de España. Siempre se ha dicho que: \"La riqueza de las distintas modalidades lingüísticas de España es un patrimonio cultural que será objeto de especial respeto y protección.\" Así que me gustaría poner mi granito de arena con las modalidades lingüisticas que nos ofrece Asturias, País Vasco, Galicia, Catalunya, Canarias y València. Por cada lengua, aproximadamente hay 100 palabras que he tenido que buscar, eso hace un total de cerca de 700 palabras. Y como dije, sólo soy un friki haciendo esto. Agradezco que os toméis el tiempo en confiar en este \"minijuego\" y ojalá que con vuestra imaginación y este \"minijuego\" salgan grandes historias."]
+        }],
+    "minChapters": 3,
+    "wordsList": [
+        { "word": "Inconmensurable", "definition": "https://dle.rae.es/inconmensurable" },
+        { "word": "Nomeolvides", "definition": "https://dle.rae.es/nomeolvides" },
+        { "word": "Friki", "definition": "https://dle.rae.es/friki" }
+    ],
+    "maxParrafs": 3,
+    "actualIndexWord": 3,
+    "coverPageColor": "#174d0f"
+};
+
+function abrelo(arrayOfObjects) {
     arrayOfObjects.forEach(obj => {
         if (obj.definition) {
-          window.open(obj.definition, '_blank'); // '_blank' opens the link in a new tab
+            window.open(obj.definition, '_blank'); // '_blank' opens the link in a new tab
         }
-      });
+    });
 }
 
 //Comprova si la paraula es repetida en la array
