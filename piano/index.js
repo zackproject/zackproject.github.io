@@ -4,7 +4,7 @@ const PATHSONG = 'title';
 //tranportePieza //notaActual
 let player = new Piano(0, 0);
 console.log(player);
-
+let numInNote = 1;
 function readPath() {
     //Guarda el parametres de 'PATHMUSIC' y 'PATHSONG'
     let listaStringNotes = new URLSearchParams(document.location.search).get(PATHMUSIC);
@@ -31,9 +31,23 @@ function readPath() {
     return true;
 }
 
+// Dibuixa numeros en la tecla
+function drawNumber(event) {
+    event.preventDefault();
+    let slct = document.getElementById("selectTextPiano");
+    if (slct.value == "3") {
+        event.target.innerText = numInNote;
+        numInNote++;
+    }
+}
 
+const teclaElements = document.querySelectorAll('.tecla');
 
+teclaElements.forEach(function (element) {
+    element.addEventListener('contextmenu', (event) => drawNumber(event));
+});
 
+document.getElementsByClassName("tecla").se
 function loadMusic() {
     // Si hi han paramentres, retorna 'true'
     let paramsDisponibles = readPath();
@@ -138,6 +152,8 @@ function drawTecla(num) {
 }
 
 function updateTextPiano() {
+    // reseteja el numero que es mostra en "Sin notacion"
+    numInNote = 1;
     let slct = document.getElementById("selectTextPiano");
     let slctNum = parseInt(slct.selectedOptions[0].value);
     //0 = Inglesa, 1= Do 2= Alphabet
