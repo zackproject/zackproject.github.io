@@ -1,0 +1,124 @@
+
+#btn-close-book {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    border-radius: 6px;
+    background-color: #00000091;
+    border: 1px solid white;
+    transition: 0.5s all;
+}
+
+.book {
+    background-color: black;
+    height: 130px;
+    width: 35px;
+}
+
+.books {
+    display: grid;
+    place-items: center;
+    height: 150px;
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0.362);
+    color: white;
+}
+
+
+
+#btn-close-book:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+#cover-page {
+    background-attachment: fixed;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #174d0f;
+    color: white;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    box-shadow: inset 0px 0px 0px 2px white;
+    /*si te border no te padding 20px*/
+    border: 20px solid #174d0f;
+    background-repeat: repeat;
+    background-blend-mode: hard-light;
+    min-height: 600px;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+#cover-page>h1 {
+    padding-bottom: 10px;
+}
+
+nav.book-page {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.512);
+    text-align: justify;
+    min-height: 600px;
+    width: 500px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+
+}
+
+#book-pages {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#book-pages>.book-page {
+    background-color: white;
+    padding: 20px;
+    min-height: 600px;
+    line-height: 22px;   /* within paragraph */
+    text-align: justify;
+    width: 500px;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#book-index>li {
+    border-bottom: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+#book-index>li>a {
+    text-decoration: none;
+
+}
+
+/* Estilos específicos para tabletas y móviles */
+@media (max-width: 767px) {
+    #cover-page {
+        border: 20px solid #174d0f;
+        min-height: 400px;
+        width: 80%;
+    }
+
+    nav.book-page {
+        min-height: 400px;
+        width: 80%;
+
+    }
+
+    #book-pages>.book-page {
+        min-height: 400px;
+        width: 80%;
+    }
+}
