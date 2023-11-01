@@ -35,6 +35,10 @@ const cardResolveHTML = (ytVideo, day) => {
     </li>`;
 }
 
+//Pagina
+const mainPage = document.getElementById("pare");
+//Modal
+const modalPage = document.getElementById("modal");
 
 
 class Advent {
@@ -90,7 +94,7 @@ function infoChristmas() {
         if (dayGlobal < 25) {
             info.innerText = "Abre la casilla de hoy";
         } else {
-            info.innerText = "¡Feliz Navidad!";
+            info.innerHTML = "¡Feliz Navidad!<br> Breve encuesta <a href='https://forms.gle/vLmFKNZi2FidamfDA'>AQUÍ</a>";
         }
     } else {
         info.innerText = "Disponible sólo en diciembre";
@@ -100,7 +104,6 @@ function infoChristmas() {
 }
 function fillCalendar() {
     deleteChilds(pare);
-    console.log("lo hizo");
     adventList.questions.forEach((element, i) => {
         //Funciona si es el mes marcat i el dia ha passat
         if (dayGlobal >= element.id && monthGlobal === monthWorkThisProgram) {
@@ -109,6 +112,7 @@ function fillCalendar() {
                 pare.innerHTML += cardResolveHTML(player.getSurprise(element.id), element.id)
             } else {
                 // Sino, esta sense resoldre
+                //TEST pare.innerHTML += cardResolveHTML(player.getSurprise(element.id), element.id);
                 pare.innerHTML += cardOpenHTML(element.id);
             }
         } else {
@@ -120,16 +124,15 @@ function fillCalendar() {
 
 }
 
-
 /* Modal */
-let modal = document.getElementById("modal");
 let titleModal = document.getElementById("title-modal");
 let fuera = document.getElementById("headnavidad");
 const checkAnswer = (event) => {
+    // Evitar que el formulario se envíe nuevamente
+    event.preventDefault();
     //quiz_answer => name="quiz_answer"
     let myAnswer = event.target.quiz_answer.value;
     let myQuestion = document.getElementById("quiz-question").getAttribute("data-day");
-    console.log("uno", myAnswer, "dos", myQuestion);
     let respuesta = document.getElementById("respuesta");
     if (player.checkQuiz(parseInt(myQuestion), parseInt(myAnswer))) {
         console.log("OK");
@@ -151,11 +154,14 @@ const checkAnswer = (event) => {
     animado.style.animation = 'none';
     void animado.offsetWidth; // Reflujos forzados para reiniciar la animación
     document.getElementById("retrato").style.animation = "mueve 4s forwards"
-    return false; // Evita el envío normal del formulario
+    //return false; // Evita el envío normal del formulario
 
 }
 
 function openModal(event) {
+    //Pagina principal oculta i modal visible
+    mainPage.ariaHidden = "true";
+    modalPage.ariaHidden = "false";
     let day = event.target.getAttribute("data-day");
     //Omple la pregunta d'avui
     document.getElementById("day-quiz").innerText = day;
@@ -166,15 +172,16 @@ function openModal(event) {
         document.getElementById("quiz-" + i).checked = false;
     }
     //Mostra el contingut
-    modal.ariaHidden = "false"
-    modal.style.display = "block";
+    modalPage.style.display = "block";
     titleModal.innerText = "Marca una opción";
     titleModal.focus();
+
 }
 
 function closeModal() {
-    modal.style.display = "none";
-    modal.ariaHidden = "true"
+    mainPage.ariaHidden = "false";
+    modalPage.ariaHidden = "true";
+    modalPage.style.display = "none";
     let animado = document.getElementById("retrato");
     animado.style.animation = 'none';
     fuera.focus();
