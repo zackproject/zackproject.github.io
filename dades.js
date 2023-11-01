@@ -1,5 +1,19 @@
 var cards = [
     {
+        "title": "Escribe tu historia",
+        "image": "https://i.ibb.co/xmLNJ8R/image.png",
+        "alt": "Escribe tu historia",
+        "description": "Crea un libro por párrafos, titulando cada capítulo y finalizándolo con un título y portada. Disponible en: Catalán, castellano, gallego, canario, euskera, asturiano y valenciano.",
+        "link": "escribe-tu-historia"
+    },
+    {
+        "title": "Calendario de Adviento",
+        "image": "https://i.ibb.co/BgH65YZ/navidad.webp",
+        "alt": "Card Calendario Adviento",
+        "description": "Cada dia se desbloquea una casilla. Acierta la quiz y consigue la sorpresa.Sólo disponible en diciembre",
+        "link": "navidad"
+    },
+    {
         "title": "Adivina Anime",
         "image": "https://i.ibb.co/NLcKQNw/image.png",
         "alt": "Adivina Anime",
@@ -27,13 +41,7 @@ var cards = [
         "description": "Juega en dos dispositivos. Elige una serie, un personaje y juega con tu amigo a adivinar el personaje del otro.",
         "link": "quien-es-quien"
     },
-    {
-        "title": "Calendario Navidad",
-        "image": "https://i.ibb.co/BgH65YZ/navidad.webp",
-        "alt": "Card Calendario Adviento",
-        "description": "Cada dia se desbloquea una casilla. Acierta la quiz y consigue la sorpresa.Sólo disponible en diciembre",
-        "link": "navidad"
-    },
+
     {
         "title": "PokeHigher or Pokelower",
         "image": "https://i.ibb.co/cgsfTwT/pokehigherlower.webp",
