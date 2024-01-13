@@ -8,26 +8,28 @@
     <title>Poke Sort</title>
     <meta title="Order the letters of this peeled pokemon and win points">
     <meta name="keywords" content="sort pokemon, sort word, first generation, second generation">
-    <meta name="description"
-        content="Can you sort the name of the Pokemon. Let's play now.">
+    <meta name="description" content="Can you sort the name of the Pokemon. Let's play now.">
     <meta name="robots" content="index">
     <script src="../js/data.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="../icopz.ico">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
+    <link async href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body onload="findPokeName()">
-    <div id="container-guess">
+    <header>
+        <a href="/"><img height="35" width="35" src="../logo.webp" alt="Logo de la página"></a>
+        <h1>Poke Sort</h1>
+    </header>
+    <main id="container-guess">
         <div class="guess-puntuacion">
-            Puntuacion: <span id="textScore"></span> Record:
-            <span id="textMaxScore"></span>
+            <div> Puntuación: <span id="textScore"></span></div>
+            <div> Record: <span id="textMaxScore"></span></div>
         </div>
         <div class="nav-poke-guess">
-            <button class="material-icons btn-guess" type="button" onclick="giveup()">
+            <button aria-label="Skip" title="Skip Pokemon" class="material-icons btn-guess" type="button"
+                onclick="giveup()">
                 skip_next
             </button>
             <select onchange="changeGen()" id="genViewListGuess" aria-label="Generation List">
@@ -42,14 +44,15 @@
                 <option value="8">8 Generación</option>
                 <option value="9">9 Generación</option>
             </select>
-            <button id="btn-retry-icon" class="material-icons btn-guess" type="button" onclick="createBtnGuess()">
+            <button aria-label="Desordenar" title="Desordenar letras" id="btn-retry-icon"
+                class="material-icons btn-guess" type="button" onclick="createBtnGuess()">
                 restart_alt
             </button>
         </div>
 
         <div id="text-resultat-guess"></div>
         <div id="imgpkpeled">
-            <img id="imagepk" src="" alt="" />
+            <img id="imagepk" src="" alt="" height="200" width="200" />
         </div>
         <div id="p_guess">
             <div id="guesspk"></div>
@@ -65,7 +68,7 @@
         </div>
 
         <div class="lista-flex-guess">
-            <div class="lista-flex-guess-child">
+            <section class="lista-flex-guess-child">
                 <div class="listsvgtext">
                     <span class="material-icons">menu</span>
                     <div class="title-list-guess">CORRECTO</div>
@@ -73,8 +76,8 @@
                 <nav>
                     <ul id="listaright" class="list-group"></ul>
                 </nav>
-            </div>
-            <div class="lista-flex-guess-child">
+            </section>
+            <section class="lista-flex-guess-child">
                 <div class="listsvgtext">
                     <span class="material-icons">menu</span>
                     <div class="title-list-guess">INCORRECTO</div>
@@ -82,9 +85,9 @@
                 <nav>
                     <ul id="listawrong" class="list-group"></ul>
                 </nav>
-            </div>
+            </section>
 
-            <div class="lista-flex-guess-child">
+            <section class="lista-flex-guess-child">
                 <div class="listsvgtext">
                     <span class="material-icons">menu</span>
                     <div class="title-list-guess">SKIP</div>
@@ -92,9 +95,33 @@
                 <nav>
                     <ul id="listaskiped" class="list-group"></ul>
                 </nav>
-            </div>
+            </section>
         </div>
-    </div>
+    </main>
+    <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
+    <script>
+        /* Cada any el footer posara l'any actual */
+        function makeFooter() {
+            const d = new Date();
+            document.getElementById("dateYear").innerText = d.getFullYear();
+        }
+        makeFooter();
+    </script>
+    <style>
+        #footer-main {
+            background-color: black;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #footer-main>a {
+            text-decoration: underline;
+            color: white;
+
+        }
+    </style>
 </body>
 
 </html>
