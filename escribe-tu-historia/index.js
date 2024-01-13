@@ -294,6 +294,9 @@ function generateBook(book) {
         } else {
             summary.innerHTML = "Capitulo " + (i + 1);
         }
+        // actua com a grup, com el radio button, nomes permet que estigui obert un del grup alhora
+        details.name = "chapter-reading"
+        
         details.appendChild(summary);
         //Parrafs del capitol
         e.parrafList.forEach(f => {
