@@ -1,4 +1,7 @@
 const d = new Date();
+
+const COLORBIRTHDAY = "themebirthday";
+let colorSelecionat = 'green';
 var monthName = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 function start() {
     //Emplena els dropdows de 'days' i 'month'
@@ -6,16 +9,30 @@ function start() {
     //Es la primera de les 3 opcions que carrega
     //Actualitza el dia segons els dropdowns
     changeByDay();
-    //Canvia el color al de avui
+    // get color localy, else, set 'green'
+    let colorLocal = localStorage.getItem(COLORBIRTHDAY);
+    if (colorLocal !== null) {
+        colorSelecionat = colorLocal;
+    } else {
+        localStorage.setItem(COLORBIRTHDAY, colorSelecionat)
+    }
+    console.log(colorLocal, colorLocal !== "" ,localStorage.getItem(COLORBIRTHDAY));
+    // set selected in option of <select>
+    document.getElementById('colorViewList').value = colorSelecionat;
     changeColor();
 }
 
-function changeColor() {
+function updateColor() {
     //Selecciona el dropdown de color
     let colorHTML = document.getElementById("colorViewList")
     //Selecciona el color triat
-    let colorSelecionat = colorHTML.selectedOptions[0].value;
-
+    colorSelecionat = colorHTML.selectedOptions[0].value;
+    localStorage.setItem(COLORBIRTHDAY, colorSelecionat);
+    console.log(COLORBIRTHDAY, colorSelecionat);
+    // actualitza el color
+    changeColor();
+}
+function changeColor() {
     //Pinta els elements d'aquell color
     let nav = document.getElementById("color-header");
     let demoinfo = document.getElementById("demoinfo");
@@ -41,11 +58,6 @@ function changeColor() {
         let element = cartesList[i];
         //Example: class='color-blue'
         element.className = "color-carta color-" + colorSelecionat;
-    }
-    // Fa persistent aquest canvi de color
-    localStorage.setItem('color', colorSelecionat);
-    if (localStorage.getItem("color") != colorSelecionat) {
-        colorSelecionat = localStorage.getItem("color");
     }
 }
 
