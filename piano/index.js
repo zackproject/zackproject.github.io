@@ -57,6 +57,9 @@ function loadMusic() {
     document.getElementById("menu-create-song").style.display = paramsDisponibles ? "block" : "none";
     document.getElementById("menu-adivinar-cancion").style.display = paramsDisponibles ? "block" : "none";
     document.getElementById("updateSave").style.display = paramsDisponibles ? "none" : "block";
+    // si es modo crear, mostra la llista de cancons, si es modo adivinar obre el desplegable
+    document.getElementById("detail-example-song").open = !paramsDisponibles;
+    document.getElementById("detail-example-birth").open = !paramsDisponibles;
 
     if (paramsDisponibles) {
         //GeneraButtons
@@ -115,6 +118,10 @@ function tocaEsto() {
     tempo.ariaLabel = `Notas tocadas: ${player.notaActual + 1}/${player.cancionImportada.length}`
     progresBarContainer.ariaLabel = `Notas restantes: ${player.cancionImportada.length - player.notaActual + 1}`
     player.notaActual++;
+    // Amaga la info si es toca mes de 4 notes o arriba al final de la canco
+    if (player.notaActual > 4 || player.notaActual == player.cancionImportada.length) {
+        document.getElementById("infoToca").style.display = "none";
+    }
 }
 
 function drawTecla(num) {
@@ -222,7 +229,9 @@ function inputActive() {
         case document.getElementById("inputSong"):
             return true;
         case document.getElementById("inputGuesSong"):
-            return true
+            return true;
+        case document.getElementById("nameBirth"):
+            return true;
         default:
             return false;
     }
@@ -253,11 +262,13 @@ function textSum(num) {
 function generateLink() {
     let nameSong = document.getElementById("inputSong").value.toLowerCase();
     let nResultat = document.getElementById("resultat");
-    nResultat.href = `./?${PATHMUSIC}=${player.letras}&${PATHSONG}=${player.ocultaCancion(nameSong)} `
-    nResultat.innerText = nameSong;
-    nResultat.ariaLabel = "Enlace clicable de la canción creada '" + nameSong + "'";
-    nResultat.ariaHidden = false;
-    nResultat.focus();
+    if (nameSong != "") {
+        nResultat.href = `./?${PATHMUSIC}=${player.letras}&${PATHSONG}=${player.ocultaCancion(nameSong)} `
+        nResultat.innerText = "Click aquí: " + nameSong;
+        nResultat.ariaLabel = "Enlace clicable de la canción creada '" + nameSong + "'";
+        nResultat.ariaHidden = false;
+        nResultat.focus();
+    }
 }
 
 
@@ -378,6 +389,15 @@ function pintaPrimaryNote(e) {
     }
 }
 
+
+function sendBirthday() {
+    let namePerson = document.getElementById("nameBirth").value;
+    let linkBirth = document.getElementById("linkBirth");
+    if (namePerson != "") {
+        linkBirth.href = "./?song=IIJILhIIJIMLIIPNLhJOONLML&title=" + player.ocultaCancion(namePerson);
+        linkBirth.innerText = `Comparte este link con '${namePerson}' `;
+    }
+}
 //Preload audio https://stackoverflow.com/a/13116795
 function preloadAudio(preloads) {
     for (var x = 0; x < preloads.length; x++) {
