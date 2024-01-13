@@ -22,7 +22,11 @@
 </head>
 
 <body onload="loadTwoPokes()">
-    <div class="container">
+    <header>
+        <a href="/"><img height="35" width="35" src="../logo.webp" alt="Logo de la página"></a>
+        <h1> <span class="color-high">PokeHigher</span> <span class="color-low">PokeLower</span></h1>
+    </header>
+    <main class="container">
         <!-- Menu: score,  dropdown generation, dropdown type-->
         <div class="d-flex flex-column flex-md-row justify-content-center">
             <div class="p-2 listaflex">
@@ -113,9 +117,31 @@
                     class="link-light">Play Store: Pokehigher
                     or Pokelower</a>
             </div>
-
         </div>
-    </div>
+    </main>
+    <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
+    <script>
+        /* Cada any el footer posara l'any actual */
+        function makeFooter() {
+            const d = new Date();
+            document.getElementById("dateYear").innerText = d.getFullYear();
+        }
+        makeFooter();
+    </script>
+    <style>
+        #footer-main {
+            background-color: black;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #footer-main>a {
+            text-decoration: underline;
+            color: white;
+        }
+    </style>
 </body>
 
 </html>
