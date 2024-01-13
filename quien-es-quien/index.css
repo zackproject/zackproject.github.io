@@ -1,10 +1,12 @@
 header {
+  display:  flex;
+  justify-content: space-between;
+  align-items: center;
   color: white;
   background-color: #030b1a;
   position: sticky;
   top: 0px;
   z-index: 1;
-  width: 100%;
   text-align: center;
   font-size: 2rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -12,32 +14,31 @@ header {
   box-shadow: -1px 0px 9px 0px black;
   overflow: hidden;
   margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #accesible-quien-es-quien {
-  position: absolute;
-  top: 10px;
-  left: 10px;
   background-color: transparent;
   color: white;
-  margin: 5px;
   border-radius: 6px;
 }
 
 #accesible-quien-es-quien:hover {
   background-color: white;
   color: black;
+  cursor: pointer;
   transition: 1s;
 }
 
 #dialogAccesible {
   position: fixed;
   top: 50px;
-  left: -100%;
+  right: -100%;
   background-color: white;
   max-width: 300px;
   z-index: 1;
-  transition: left 0.5s;
+  transition: right 0.5s;
 }
 
 #dialogAccesible > h1 {

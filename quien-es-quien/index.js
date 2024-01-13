@@ -304,13 +304,13 @@ function showModalNewGame() {
 
 function twiceVisibilityAccesible() {
     let estat = document.getElementById("dialogAccesible");
-    if (estat.style.left === "10px") {
+    if (estat.style.right === "10px") {
         estat.ariaHidden = "true";
         document.getElementById("titol-quien-es-quien").focus();
-        estat.style.left = "-100%";
+        estat.style.right = "-100%";
     } else {
         estat.ariaHidden = "false";
         document.getElementById("tituloAccesible").focus();
-        estat.style.left = "10px";
+        estat.style.right = "10px";
     };
 }
