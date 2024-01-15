@@ -22,17 +22,21 @@
 <body onload="loadWanted()">
     <div id="menu-wanted">
         <header id="wanted-header-menu" role="banner" aria-label="Encabezado de la página">
+            <a href="/"><img height="35" width="35" src="../logo.webp" alt="Logo de la página"></a>
             <h1 aria-label="Encabezado: SE BUSCA" id="titol-piano">SE BUSCA</h1>
+            <button class="btn-accesible material-icons" onclick="playAccesible()" aria-label="Juego accesible"
+                title="Al empezar la partida habrá un tiempo, una imagen del personaje a buscar y una tabla donde debes buscar ese personaje. También hay opciones de pausar partida y activar música.">
+                accessibility_new
+            </button>
         </header>
-        <button aria-hidden="true" onclick="playClasic()">JUEGO CLÁSICO</button>
-        <button onclick="playAccesible()"
-            title="Al empezar la partida habrá un tiempo, una imagen del personaje a buscar y una tabla donde debes buscar ese personaje. También hay opciones de pausar partida y activar música.">JUEGO
-            ACCESIBLE</button>
+
+        <button class="play-wanted" title="Jugar con personajes en movimiento" onclick="playClassic()">JUGAR</button>
+
         <div id="score-wantel-container">
             <h2 title="Muestra las mejores 5 puntuaciones">PUNTUACIÓN</h2>
             <div id="score-wanted"></div>
         </div>
-
+        <p class="credits">Imágenes de <a href="https://www.instagram.com/SergiRomeroArt/">@SergiRomeroArt</a></p>
         <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
 
     </div>
@@ -68,7 +72,7 @@
             <span title="Pausa partida" class="material-icons wanted-icon" onclick="pauseWanted(event)">
                 play_circle_outline
             </span>
-            <span title="Activar musica" onclick="playPauseMusic(event)" class="material-icons wanted-icon">
+            <span title="Activar música" onclick="playPauseMusic(event)" class="material-icons wanted-icon">
                 music_off<!-- music_off -->
             </span>
         </footer>

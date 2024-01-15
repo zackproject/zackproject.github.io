@@ -59,6 +59,17 @@ class Wanted {
         this.panelList = newLlista;
     }
 
+    getTime() {
+        if (this.points < 10) {
+            return 10;
+        }
+        let calcul = 10 - this.points / 15;
+        if (calcul > 3) {
+            return calcul
+        }
+        return 3;
+    }
+
     randNum(min, max, double = false) {
         if (double) {
             //Ho talla a dos decimals i acaba sent float de 2 decimals
@@ -67,10 +78,17 @@ class Wanted {
         return parseInt(Math.random() * (max - min + 1) + min);
     }
     timerAdd() {
+        if (this.points % 50 == 0) {
+            this.time += 5;
+            this.numberOfCharacters = parseInt(this.numberOfCharacters / 2);
+            return;
+        }
+
         if (this.points > 40) {
             this.time += 1;
             return;
         }
+
         this.time += 2;
 
     }
@@ -134,7 +152,7 @@ function timeCountDown() {
 }
 
 
-function playClasic() {
+function playClassic() {
     //Precarrega la musica al iniciar partida
     reproductor.src = "./audio/sakebink_niclaus.mp3";
     //Inicia despres de acabar a la animacio
@@ -181,7 +199,7 @@ let player = new Wanted(points, sebusca.clasic, timer, maxCharacters, typePanel,
 player.getRandCharacter();
 //Genera el nou panell
 player.getRandPanel();
-
+showHTMLMyCharacter(player.myCharacter);
 
 //PANEL RELATIVE/ABSOLUTE
 function drawPanelPosition() {
@@ -197,12 +215,12 @@ function drawPanelPosition() {
     pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='backWantedMenu()''>SALIR</button> <button id='btn-next-partida' class='center-next-btn' onclick='nextPartida()''>SALIR</button>"
     //Torna a generar la partida
     player.typePanel = 1;
-    player.getRandCharacter();
     player.getRandPanel();
     player.panelList.forEach((element, i) => {
         let img = document.createElement("img");
         img.src = element.image;
-        img.width = "70"
+        img.height = "70";
+        img.width = "70";
         img.alt = element.name;
         //Controla quien elements ha d'ocultar per clase
         img.className = IMGINGAME;
@@ -245,7 +263,6 @@ function drawPanelPosition() {
         pare.appendChild(img)
     });
     //Mostra el personatge que has de buscar al HTML
-    showHTMLMyCharacter(player.myCharacter);
 }
 
 
@@ -261,13 +278,13 @@ function drawPanelStaticPosition() {
     player.numberOfCharacters = 4;
     //Torna a generar la partida
     player.typePanel = 2;
-    player.getRandCharacter();
     player.getRandPanel();
     let tamany = 1;
     player.panelList.forEach(element => {
         let img = document.createElement("img");
         img.src = element.image;
-        img.width = "70"
+        img.height = "70";
+        img.width = "70";
         img.alt = element.name;
         //Controla quien elements ha d'ocultar per clase
         img.className = IMGINGAME;
@@ -287,7 +304,6 @@ function drawPanelStaticPosition() {
 
 
     //Mostra el personatge que has de buscar al HTML
-    showHTMLMyCharacter(player.myCharacter)
 
     // Retorna al original aqui
     player.numberOfCharacters = copiaNumber;
@@ -300,6 +316,7 @@ function drawPanelTable() {
     deleteChilds(pare);
     pare.innerHTML = "<button id='btn-next-partida' class='center-next-btn' onclick='backWantedMenu()''>SALIR</button>";
     player.typePanel = 3;
+    // Com no hi ha timeOut, el panell i el personatge es trian al moment
     player.getRandCharacter();
     player.getRandPanel();
 
@@ -332,7 +349,7 @@ function drawPanelTable() {
         }
     }
 
-    showHTMLMyCharacter(player.myCharacter)
+    showHTMLMyCharacter(player.myCharacter, false)
     pare.appendChild(table);
 
     document.getElementById("timing-wanted").focus();
@@ -342,9 +359,15 @@ function drawPanelTable() {
 
 
 //Mostra el personatge que has de buscar al HTML
-function showHTMLMyCharacter(nPlayer) {
+function showHTMLMyCharacter(nPlayer, usedAlt = true) {
     let myChar = document.getElementById("myCharacter");
-    myChar.src = nPlayer.image;
+    if (usedAlt) {
+        myChar.src = nPlayer.image;
+
+    } else {
+        // https://stackoverflow.com/questions/5775469/whats-the-valid-way-to-include-an-image-with-no-src
+        myChar.src = "data:,";
+    }
     myChar.alt = "Se busca a " + nPlayer.name;
 }
 
@@ -369,6 +392,9 @@ function accesibleClicked(props, event) {
         timingWanted.innerText = player.time;
         timingWanted.title = player.time + " segundos";
         drawPanelTable();
+    }else{
+        player.timerSubstract();
+
     }
 
 }
@@ -386,13 +412,21 @@ function getInfoClicked(props, event) {
         player.isPlaying = false;
         //Carrega la nova partida
         resetAnimation();
-        // Pausa per la nova puntuacio
+        // A  mitja animacio (meitat de 1500) carrega el nou character
+        setTimeout(nextCharacter, 750);
+        // Al acabar la animacio mostra el panell
         setTimeout(nextPartida, 1500);
     } else if (player.isPlaying) {
         player.timerSubstract();
     }
 }
 
+
+function nextCharacter() {
+    player.getRandCharacter();
+    showHTMLMyCharacter(player.myCharacter);
+
+}
 
 function nextPartida() {
     if (player.time <= 0) {
@@ -446,7 +480,7 @@ function applyAnimation(element) {
     let animacionsDisponibles = parseInt(player.points / 10);
     //No deixa que hi hagi mes punts que animacions
     //EX: 53 punts no hi ha animacio '6'
-    if (animacionsDisponibles > 5) { animacionsDisponibles = 5; }
+    if (animacionsDisponibles > 8) { animacionsDisponibles = 8; }
     //Tria animacions random per cada imatge, poden repetirse en el bucle
     let num = player.randNum(1, animacionsDisponibles);
     //Tria una animacio
@@ -463,19 +497,22 @@ function applyAnimation(element) {
         case 4:
             element.style.animationName = "rotateDiagonal";
             break;
-        default: //5
+        case 5:
+            element.style.animationName = "desenfoque";
+            break;
+        case 6:
+            element.style.animationName = "escalarX";
+            break;
+        case 7:
+            element.style.animationName = "escalarY";
+            break;         
+        default: //8
             element.style.animationName = "translateXOpacity";
             break;
     }
-
-    //Es la velocitar a la que va segons puntatge proporcionalment als punts
-    if (player.points < 800) {
-        //10 es el que val l'animacio per defecte en el index.css
-        element.style.animationDuration = 10 - (player.points / 100) + "s";
-    } else {
-        //Si pasa del 800 punts la velocitat seran 2 segons
-        element.style.animationDuration = "2s";
-    }
+    // Default, 10, quant mes puntuacio, menys segons
+    element.style.animationDuration = player.getTime() + "s";
+    console.log(player.getTime());
 
 }
 
