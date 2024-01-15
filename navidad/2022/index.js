@@ -55,7 +55,6 @@ function start() {
         applyLocalStorage(element.id);
     });
 
-    makeFooter();
     /*Nomes neva al desembre */
     if (month == monthWorkThisProgram) {
         letitsnow();
@@ -65,12 +64,6 @@ function start() {
     console.info("Only for developer", 'testCode(nDay);');
 }
 
-
-/* Cada any el footer posara l'any actual */
-function makeFooter() {
-    const d = new Date();
-    document.getElementById("dateYear").innerText = d.getFullYear();
-}
 
 /* Genera tants fills com 'copitos' vulgui*/
 function letitsnow() {

@@ -552,7 +552,6 @@ function loadWanted() {
 
     }
     generateScore();
-    makeFooter();
 
     //Preload images in cache
     preloadImages(player.characterList.map(obj => obj.image));

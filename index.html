@@ -16,6 +16,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="icon" href="icopz.ico">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="footer/index.css">
 </head>
 
 <body onload="fillCard()">
@@ -35,31 +36,9 @@
     </main>
     <!-- Carga la informacion de las cartas i las genera-->
     <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
+    <script src="../footer/index.js"></script>
     <script src="dades.js"></script>
     <script src="index.js"></script>
-    <script>
-        /* Cada any el footer posara l'any actual */
-        function makeFooter() {
-            const d = new Date();
-            document.getElementById("dateYear").innerText = d.getFullYear();
-        }
-        makeFooter();
-    </script>
-    <style>
-        #footer-main {
-            background-color: black;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        #footer-main>a {
-            text-decoration: underline;
-            color: white;
-
-        }
-    </style>
 </body>
 
 </html>

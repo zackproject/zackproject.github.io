@@ -81,7 +81,6 @@ let player = new AnimeSong(
     3,// wait start
     15,//wait resolve
     URLPATHSONG);
-makeFooter();
 
 function changeTimeStart(event) {
     // El temps d'espera es igual al del selector html
@@ -248,10 +247,4 @@ function playAnimation(status) {
             barresMusicals[i].style.animationPlayState = "paused";
         }
     }
-}
-
-
-function makeFooter() {
-    const d = new Date();
-    document.getElementById("dateYear").innerText = d.getFullYear();
 }

@@ -201,7 +201,6 @@ function loadGame() {
     //Genera les cartes
     generateCardsHTML();
     //Genera el footer
-    makeFooter();
     let mp = JSON.parse(localStorage.getItem(WHOISWHO));
     if (mp !== null) {
         if (mp.isPlaying) {

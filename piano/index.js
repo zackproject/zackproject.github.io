@@ -69,7 +69,6 @@ function loadMusic() {
     }
     //Canvia segons l'escala
     updateTextPiano();
-    makeFooter();
 
     //Precarrega tots els audios
     preloadAudio(notasBlancas.map(obj => NOTESONLINE + obj + ".mp3"));

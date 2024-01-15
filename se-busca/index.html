@@ -14,10 +14,11 @@
     <link rel="icon" href="../icopz.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <meta name="description"
-        content="¡Sumérgete en la búsqueda de piratas en el juego online 'Se busca' de One Piece! Encuentra a los más buscados en emocionantes niveles inspirados en el mundo del anime y manga. ¡Demuestra tu habilidad y conviértete en el mejor cazador de recompensas!">
-</head>
+    content="¡Sumérgete en la búsqueda de piratas en el juego online 'Se busca' de One Piece! Encuentra a los más buscados en emocionantes niveles inspirados en el mundo del anime y manga. ¡Demuestra tu habilidad y conviértete en el mejor cazador de recompensas!">
+    <link rel="stylesheet" href="../footer/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+   </head>
 
 <body onload="loadWanted()">
     <div id="menu-wanted">
@@ -37,8 +38,8 @@
             <div id="score-wanted"></div>
         </div>
         <p class="credits">Imágenes de <a href="https://www.instagram.com/SergiRomeroArt/">@SergiRomeroArt</a></p>
-        <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
-
+        <footer id="footer-main">info@zksama.com</footer>
+        <script src="../footer/index.js"></script>
     </div>
     <!-- juego-->
     <div id="container-wanted">
@@ -78,28 +79,6 @@
         </footer>
     </div>
     <script src="index.js"></script>
-    <script>
-        /* Cada any el footer posara l'any actual */
-        function makeFooter() {
-            const d = new Date();
-            document.getElementById("dateYear").innerText = d.getFullYear();
-        }
-    </script>
-    <style>
-        #footer-main {
-            background-color: black;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        #footer-main>a {
-            text-decoration: underline;
-            color: white;
-
-        }
-    </style>
 </body>
 
 </html>

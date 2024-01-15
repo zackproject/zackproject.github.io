@@ -18,6 +18,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../footer/index.css">
+
     <link rel="icon" href="../icopz.ico">
 </head>
 
@@ -119,29 +121,8 @@
             </div>
         </div>
     </main>
-    <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
-    <script>
-        /* Cada any el footer posara l'any actual */
-        function makeFooter() {
-            const d = new Date();
-            document.getElementById("dateYear").innerText = d.getFullYear();
-        }
-        makeFooter();
-    </script>
-    <style>
-        #footer-main {
-            background-color: black;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        #footer-main>a {
-            text-decoration: underline;
-            color: white;
-        }
-    </style>
+    <footer id="footer-main">info@zksama.com</footer>
+    <script src="../footer/index.js"></script>
 </body>
 
 </html>
