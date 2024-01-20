@@ -1,3 +1,11 @@
+#menu-transport-song,
+#menu-create-song {
+  display: none;
+}
+
+
+
+
 header {
   position: relative;
   color: white;
@@ -12,12 +20,13 @@ header {
   margin-bottom: 5px;
 }
 
-header>a{
+header>a {
   position: absolute;
   top: 10px;
   left: 10px;
   text-align: center;
 }
+
 body {
   margin: 0;
 }
@@ -34,6 +43,20 @@ h2 {
   gap: 10px;
   padding-top: 5px;
   padding-bottom: 15px;
+}
+
+.btn-escala {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  transition: border 0.5s;
+}
+
+.btn-escala:hover {
+  border: 1px solid black;
+  background-color: black;
+
+  cursor: pointer;
 }
 
 .btn-piano {
@@ -178,7 +201,7 @@ h2 {
 #menu-escribir-cancion {
   margin-top: 10px;
   margin-bottom: 10px;
-  display: flex;
+  display: none;
   justify-content: center;
   gap: 10px;
 }
@@ -200,6 +223,7 @@ h2 {
 }
 
 #updateSave {
+  display: none;
   text-align: center;
 }
 
@@ -288,9 +312,11 @@ h2 {
   background-color: darkgray;
 }
 
-#menu-adivinar-cancion{
+#menu-adivinar-cancion {
+  display: none;
   position: relative;
 }
+
 #infoToca {
   margin: 0px;
   padding: 0px;
@@ -394,6 +420,10 @@ h2 {
   accent-color: red;
 }
 
+.options-piano>input[type="checkbox"]:hover{
+  cursor: pointer;
+}
+
 #fondo-card {
   position: fixed;
   top: 0;
@@ -422,6 +452,10 @@ h2 {
   color: white;
 }
 
+.songs-example>li>a:hover {
+  text-decoration: un;
+}
+
 .noselect {
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -438,17 +472,22 @@ h2 {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
+details:hover {
+  cursor: pointer;
+}
+
 .detail-question {
   margin-bottom: 10px;
   padding-left: 10px;
 }
-#linkBirth{
+
+#linkBirth {
   color: white;
   display: block;
   padding: 5px;
 }
 
-#nameBirth{
+#nameBirth {
   background-color: black;
   padding: 5px;
   border: 1px solid wheat;
@@ -459,7 +498,8 @@ h2 {
   padding: 5px;
   color: white;
 }
-.btn-birth{
+
+.btn-birth {
   background-color: black;
   color: white;
   border-radius: 2px;
@@ -469,13 +509,25 @@ h2 {
   border: 1px solid black;
   transition: all 0.5s;
 }
-.btn-birth:hover{
+
+.btn-birth:hover {
   cursor: pointer;
   background-color: white;
   color: black;
 }
+
 .inline {
   display: inline;
+}
+
+#newPiece {
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+#newPiece:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 800px) {

@@ -5,9 +5,11 @@ const PATHSONG = 'title';
 let player = new Piano(0, 0);
 console.log(player);
 let numInNote = 1;
+let urlNotes = "";
 function readPath() {
     //Guarda el parametres de 'PATHMUSIC' y 'PATHSONG'
     let listaStringNotes = new URLSearchParams(document.location.search).get(PATHMUSIC);
+    urlNotes = listaStringNotes;
     let titleSong = new URLSearchParams(document.location.search).get(PATHSONG);
 
     if (listaStringNotes == null || listaStringNotes == '') return false;
@@ -242,6 +244,7 @@ function avanzaEscala() {
     //Si incluye la ultima nota no puede avanzarla
     player.avanzaPieza(notasBlancas)
     document.getElementById("transportePieza").innerText = textSum(player.tranportePieza);
+    getNewLink();
 }
 
 function retrocedeEscala() {
@@ -249,6 +252,7 @@ function retrocedeEscala() {
     //Si incluye la primera nota no puede retroceder
     player.retrocedePieza(notasBlancas)
     document.getElementById("transportePieza").innerText = textSum(player.tranportePieza);
+    getNewLink();
 }
 
 function textSum(num) {
@@ -340,7 +344,7 @@ function checkInputSong() {
             btnList[i].disabled = true;
         }
         // Sobrescribe el texto si 
-        label.innerText = "Titulo correctamente escrita";
+        label.innerText = "Titulo correctamente escrito";
         let btn = document.getElementById("btn-adivina-song");
         btn.disabled = true;
         btn.innerText = player.titleSong.toUpperCase();
@@ -395,6 +399,7 @@ function sendBirthday() {
     if (namePerson != "") {
         linkBirth.href = "./?song=IIJILhIIJIMLIIPNLhJOONLML&title=" + player.ocultaCancion(namePerson);
         linkBirth.innerText = `Comparte este link con '${namePerson}' `;
+        document.getElementById("linkBirth").focus();
     }
 }
 //Preload audio https://stackoverflow.com/a/13116795
@@ -404,4 +409,22 @@ function preloadAudio(preloads) {
         //console.log("Cached", aud);
         aud.preload = 'auto';
     }
+}
+
+function cifrarCesar(texto, numeroCifrado) {
+    // Estructura del teclat
+    const teclado = "AaBbCDcEdFeGHfIgJKhLiMjNOkPlQRmSnToU"
+    let textoList = texto.split("");
+    let total = "";
+    console.log(textoList);
+    for (let i = 0; i < textoList.length; i++) {
+        //Cada tecla s'ha de moure el segons l'escala 'teclado'
+        total += teclado[teclado.indexOf(textoList[i]) +numeroCifrado] ;
+    }
+    return total;
+}
+
+function getNewLink() {
+    console.log(player);
+    document.getElementById("newPiece").href = `./?${PATHMUSIC}=${cifrarCesar(urlNotes, player.tranportePieza)}&${PATHSONG}=${player.ocultaCancion(player.titleSong)}`
 }

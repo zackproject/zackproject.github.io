@@ -61,13 +61,13 @@
                     </select>
                 </div>
                 <div id="menu-transport-song" class="options-piano">
-                    Pieza transportada: <span id="transportePieza">0</span>
-                    <button onclick="retrocedeEscala()" aria-label="Transportar pieza a menor">
+                    <a id="newPiece" href="">Pieza transportada</a>: <span id="transportePieza">0</span>
+                    <button class="btn-escala" onclick="retrocedeEscala()" aria-label="Transportar pieza a menor">
                         <span class="material-icons">
                             arrow_back
                         </span></button>
 
-                    <button onclick="avanzaEscala()">
+                    <button class="btn-escala" onclick="avanzaEscala()">
                         <span class="material-icons" aria-label="Transportar pieza a mayor">
                             arrow_forward
                         </span></button>
@@ -167,7 +167,7 @@
             </summary>
             <input type="text" id="nameBirth" placeholder="Nombre de la persona">
             <button class="btn-birth" onclick="sendBirthday()">Generar felicitación</button>
-            <a  id="linkBirth" href=""></a>
+            <a id="linkBirth" aria-label="Link de feliz cumpleaños con el nombre de la persona" href=""></a>
         </details>
 
         <div id="dialogAdivina" aria-modal="true" aria-hidden="true">
