@@ -34,8 +34,7 @@ function cardTemplate({ title, image, alt, description, link }) {
             <footer>
                 <a href="/${link}" title="Ir a la página ${link}" class="btn btn-outline-success">Jugar</a>
                 <a href="/como-jugar/#${link}" title="Ir al tutorial ${link}" class="btn btn-outline-primary">Como jugar</a>
-                </footer
-        </section>
+                </footer>
     </article>
     `;
 }

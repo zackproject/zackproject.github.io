@@ -181,6 +181,7 @@ function backWantedMenu() {
     deleteChilds(pare);
     document.getElementById("container-wanted").style.display = "none";
     document.getElementById("menu-wanted").style.display = "flex";
+    document.getElementById("music-one-piece").innerText = "music_off"
     if (!reproductor.paused) {
         reproductor.pause();
     }
