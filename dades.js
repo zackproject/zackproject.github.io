@@ -42,7 +42,8 @@ var cards = [
         "image": "https://i.ibb.co/JFvLKJy/pokehigherlower.webp",
         "alt": "PokeHigher or PokeLower",
         "description": "Quien tiene mas ataque, defensa o velocidad entre estas dos poke-criaturas.",
-        "link": "higherlower"
+        "link": "higherlower",
+        "store":"https://play.google.com/store/apps/details?id=apps.zack.pokemorelessapp"
     },
     {
         "title": "Poke Sort",
@@ -70,6 +71,7 @@ var cards = [
         "image": "https://i.ibb.co/gVDxRyG/animebirthday.webp",
         "alt": "Anime Birthday",
         "description": "Find the birthday of the character by day and month. Demo of the App Anime Birthday",
-        "link": "animebirthday"
+        "link": "animebirthday",
+        "store":"https://play.google.com/store/apps/details?id=apps.zack.AnimeBirthday"
     }
 ];
