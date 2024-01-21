@@ -472,10 +472,10 @@ h2 {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
-details:hover {
+/*details:hover {
   cursor: pointer;
 }
-
+*/
 .detail-question {
   margin-bottom: 10px;
   padding-left: 10px;
