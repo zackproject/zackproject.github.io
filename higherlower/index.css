@@ -4,6 +4,42 @@ body {
     background-repeat: repeat;
 }
 
+header {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+
+    color: white;
+    background-color: rgb(41, 41, 41);
+    width: 100%;
+    text-align: center;
+    -webkit-box-shadow: -1px 0px 9px 0px rgba(0, 0, 0, 0.223);
+    box-shadow: -1px 0px 9px 0px rgba(0, 0, 0, 0.258);
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.color-high {
+    color: #d53c31;
+}
+
+.color-low {
+    color: #1e7fce;
+}
+
+
+header>h1 {
+    width: 100%;
+    padding-top: 5px;
+    font-weight: bold;
+    color: white;
+    font-size: 1.7rem;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
 
 ._btn {
     border: 5px solid black;
@@ -15,26 +51,25 @@ body {
     width: 8em;
 }
 
-/* blue button */
 .lower {
-    border-color: #2196F3;
-    color: dodgerblue
+    border-color: #f44336;
+    color: red;
+    transition: all 0.5s;
 }
 
 .lower:hover {
-    background: #2196F3;
+    background: #f44336;
     color: white;
 }
 
-
-/* Red button*/
 .higher {
-    border-color: #f44336;
-    color: red
+    border-color: #2196F3;
+    color: dodgerblue;
+    transition: all 0.5s;
 }
 
 .higher:hover {
-    background: #f44336;
+    background: #2196F3;
     color: white;
 }
 
@@ -150,14 +185,16 @@ h1 {
 .close:focus {
     cursor: pointer;
 }
-#pokescore{
-border-radius: 5px;
-    border: 1px solid white; 
+
+#pokescore {
+    border-radius: 5px;
+    border: 1px solid white;
     background-color: transparent;
     padding: 6px;
     color: white;
 
 }
+
 #textmodal {
     text-align: center;
     color: rgb(255, 255, 255);
@@ -177,20 +214,29 @@ border-radius: 5px;
     font-size: 1.5rem;
 
 }
-#publi{
+
+#publi {
     margin-top: 10px;
     text-align: center;
 }
 
-#score-table > table{
+#score-table>table {
     margin: 0 auto;
     margin-bottom: 10px;
 
 }
 
-#score-table > table> tr > td{
+#score-table>table>tr>td {
     text-align: center;
- border: 1px solid white;
- padding: 5px;
- border-radius: 5px;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    header>h1 {
+        font-size: 1.5rem;
+    }
+
+
 }

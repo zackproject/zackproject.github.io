@@ -3,14 +3,29 @@
     padding-top: 15px;
 }
 
-
+#link-birhday-app{
+    color: white;
+    text-decoration: underline;
+}
 nav {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.title-bithday{
 
+    left: 0px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+.title-bithday > h1{
+    margin: 0px;
+    font-size: 22px;
+}
 #fake-btn{
     width: 100px;
     padding: 10px;
@@ -19,6 +34,14 @@ nav {
     color: white;
 }
 
+#color-nav{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 header {
     position: sticky;
     top: 0;

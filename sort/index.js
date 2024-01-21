@@ -180,28 +180,28 @@ function makeListHtml(_idhtml, _list) {
 
 //retun max min for Generación in dex number
 function genMaxMin(genl) {
-  //return de range of number pokedex for each Generación
+  //return de range of number pokedex for each generation
   switch (genl) {
-    case 1:
-      return [1, 151]; //gen1
-    case 2:
-      return [152, 251]; //gen2
-    case 3:
-      return [252, 386]; //gen3
-    case 4:
-      return [387, 493]; //gen4
-    case 5:
-      return [494, 649]; //gen5
-    case 6:
-      return [650, 721]; //gen6
-    case 7:
-      return [722, 809]; //gen7
-    case 8:
-      return [810, 905]; //gen8
-    case 9:
-      return [906, 1008]; //gen9
-    default:
-      return [1, 1008]; //all gens gen=0 or other
+      case 1:
+          return [0, 150]; //gen1
+      case 2:
+          return [151, 250]; //gen2
+      case 3:
+          return [251, 385]; //gen3
+      case 4:
+          return [386, 492]; //gen4
+      case 5:
+          return [493, 648]; //gen5
+      case 6:
+          return [649, 720]; //gen6
+      case 7:
+          return [721, 808]; //gen7
+      case 8:
+          return [809, 904]; //gen8
+      case 9:
+          return [905, 1007]; //gen9
+      default:
+          return [1, 1007]; //all gens gen=0 or other
   }
 }
 

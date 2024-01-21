@@ -23,7 +23,7 @@ function generateLinks(link) {
     pare.appendChild(li);
 }
 // Crea un template del html de una carta
-function cardTemplate({ title, image, alt, description, link }) {
+function cardTemplate({ title, image, alt, description, link, store = "" }) {
     return `
     <article class="carta card" class="p-2 listaflex">
             <img width="318" height="171" class="card-img-top" src="${image}" alt="${alt}">
@@ -32,11 +32,17 @@ function cardTemplate({ title, image, alt, description, link }) {
                 <p class="card-text">${description}</p>
             </header>
             <footer>
-                <a href="/${link}" title="Ir a la página ${link}" class="btn btn-outline-success">Jugar</a>
-                <a href="/como-jugar/#${link}" title="Ir al tutorial ${link}" class="btn btn-outline-primary">Como jugar</a>
-                </footer
-        </section>
+                <a href="/${link}" title="Ir a la página ${link}" class="btn btn-outline-primary">Jugar</a>
+                <a href="/como-jugar/#${link}" title="Ir al tutorial ${link}" class="btn btn-outline-secondary">Como jugar</a>
+                ${setBtnPlayStore(store)}
+                </footer>
     </article>
     `;
+}
+function setBtnPlayStore(e) {
+    if (e != "") {
+        return `<a href="${e}" title="Ir a Play Store" class="btn btn-outline-success">Play Store</a>`;
+    }
+    return ""
 }
 

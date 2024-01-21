@@ -13,15 +13,19 @@
         content="Piano interactivo, Compartir canciones, Creatividad musical, Teclas, Interfaz intuitiva, Componer canciones, Tocar canciones, Conectar con músicos, Comunidad de amantes del piano, Melodías, Talent musical, Armonía perfecta, Notas musicales, Imaginación, Creaciones musicales, Aprender a tocar piano, Práctica musical, Explorar sonidos, Interacción musical, Experiencia musical interactiva">
     <link rel="canonical" href="https://www.zksama.com/piano">
     <link rel="stylesheet" href="index.css">
+    <meta name="robots" content="index, follow">
     <script src="dades.js"></script>
+    <link rel="stylesheet" href="../footer/index.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body class="piano-page" onload="loadMusic()" onkeydown="pulsado(event)">
     <div class="subpage-piano">
         <header role="banner" aria-label="Encabezado de la página">
+            <a href="/"><img height="35" width="35" src="../logo.webp" alt="Logo de la página"></a>
             <h1 aria-label="Encabezado: PIANO" id="titol-piano">PIANO</h1>
         </header>
+
         <!-- fondo 'dark' per quan obro un modal -->
         <div id="fondo-card"></div>
         <div id="menu-escribir-cancion">
@@ -57,13 +61,13 @@
                     </select>
                 </div>
                 <div id="menu-transport-song" class="options-piano">
-                    Pieza transportada: <span id="transportePieza">0</span>
-                    <button onclick="retrocedeEscala()" aria-label="Transportar pieza a menor">
+                    <a id="newPiece" href="">Pieza transportada</a>: <span id="transportePieza">0</span>
+                    <button class="btn-escala" onclick="retrocedeEscala()" aria-label="Transportar pieza a menor">
                         <span class="material-icons">
                             arrow_back
                         </span></button>
 
-                    <button onclick="avanzaEscala()">
+                    <button class="btn-escala" onclick="avanzaEscala()">
                         <span class="material-icons" aria-label="Transportar pieza a mayor">
                             arrow_forward
                         </span></button>
@@ -78,6 +82,7 @@
             <a id="resultat" aria-hidden="true" href="./?music="></a>
         </div>
         <div id="menu-adivinar-cancion">
+            <p id="infoToca">Toca repetidas veces la nota musical</p>
             <div id="progress-bar-container">
                 <div id="tempo">0/0</div>
                 <div id="progress-bar-music"></div>
@@ -86,8 +91,8 @@
                 <button class="btn-piano" aria-label="Abrir modal para adivinar cancion" onclick="switchModalGuess()"
                     id="btn-adivina-song">ADIVINAR CANCIÓN</button>
 
-                <button aria-label="Reproducir nota de la cancion grabada" id="touch-this" class="material-icons"
-                    onclick="tocaEsto()">music_note</button>
+                <button aria-label="Reproducir nota de la cancion grabada" id="touch-this"
+                    class="material-icons noselect" onclick="tocaEsto()">music_note</button>
             </div>
 
         </div>
@@ -139,9 +144,31 @@
         coco ?song=MNLIIHLLMMNNLINONNMMLLQQPPNNJJPPOONNLNMMLM&title=pdpd -->
             </div>
         </div>
-
-
-
+        <details class="detail-question" id="detail-example-song">
+            <summary>
+                <h2 class="inline">¿Quieres tocar canciones ya creadas?</h2>
+            </summary>
+            <ul class="songs-example">
+                <li><a href="./?song=NQSmQUTmQSmlRN&title=sfuupq0zssbi">Harry Potter</a></li>
+                <li><a href="./?song=QNOPONMMOQPONOPQOMMPRTSRQOQPONNOPQOMM&title=tjsufu">Tetris</a></li>
+                <li><a href="./?song=JMNOMJMNOMJMNONMONMQQQQPQRRRQPRQQPONQONM&title=pbjd0bmmfc">Bella Ciao</a></li>
+                <li><a href="./?song=QQQOQSLOLJMNjMLQSTRSQOPN&title=tpsc0pjsbn">Mario Bros</a></li>
+                <li><a href="./?song=HgKgKKKjiLKLLjOKgjjLjjO&title=opjmfhobwf">Evangelion</a></li>
+                <li><a href="./?song=LLjOLLKhLLjOLLKhoSPoSkoSjjO&title=fmcjtpqnj0opjtjn">Mision Imposible</a></li>
+                <li><a href="./?song=FJMNkNMJIhkQkM&title=ugbsdfojn">Minecraft</a></li>
+                <li><a href="./?song=NQSmQSQmQOPNNQSmQSQmQjMMOlmMOlQ&title=pojsebq0mf">El padrino</a></li>
+                <li><a href="./?song=gJhLgJhLONJLNjMLJIJ&title=btps0bsfuobq">Pantera Rosa</a></li>
+                <li><a href="./?song=eeggegKgKiLgeeggegKKiLKgKgKg&title=fdfjq0fop">One Piece</a></li>
+            </ul>
+        </details>
+        <details class="detail-question" id="detail-example-birth">
+            <summary>
+                <h2 class="inline">¿Quieres felicitar a alguien ?</h2>
+            </summary>
+            <input type="text" id="nameBirth" placeholder="Nombre de la persona">
+            <button class="btn-birth" onclick="sendBirthday()">Generar felicitación</button>
+            <a id="linkBirth" aria-label="Link de feliz cumpleaños con el nombre de la persona" href=""></a>
+        </details>
 
         <div id="dialogAdivina" aria-modal="true" aria-hidden="true">
             <h2 id="adivinatitle">Adivina</h2>
@@ -155,30 +182,9 @@
                 onclick="switchModalGuess()">CERRAR</button>
         </div>
     </div>
-    <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
+    <footer id="footer-main">info@zksama.com</footer>
+    <script src="../footer/index.js"></script>
     <script src="index.js"></script>
-    <script>
-        /* Cada any el footer posara l'any actual */
-        function makeFooter() {
-            const d = new Date();
-            document.getElementById("dateYear").innerText = d.getFullYear();
-        }
-    </script>
-    <style>
-        #footer-main {
-            background-color: black;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        #footer-main>a {
-            text-decoration: underline;
-            color: white;
-
-        }
-    </style>
 </body>
 
 </html>

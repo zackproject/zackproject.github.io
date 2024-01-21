@@ -14,13 +14,14 @@
     <link rel="icon" href="../icopz.ico">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="book.css">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../footer/index.css">
     <script src="dades.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body onload="onLoadStory()">
     <header role="banner" id="write-story-header" aria-label="Encabezado de la página">
+        <a href="/"><img height="35" width="35" src="../logo.webp" alt="Logo de la página"></a>
         <h1>Escribe tu historia</h1>
     </header>
     <main id="container-story">
@@ -63,7 +64,7 @@
                 <label style="display: block;" for="wordLista">Selecciona una lengua:</label>
                 <select name="wordLista" id="wordLista">
                     <option value="0" selected>Castellano</option> <!-- es -->
-                    <option value="1" >Catalán</option> <!-- ca -->
+                    <option value="1">Catalán</option> <!-- ca -->
                     <option value="2">Canario</option>
                     <option value="3">Gallego</option> <!-- gl-->
                     <option value="4">Euskera</option> <!-- eu-->
@@ -140,31 +141,12 @@
 
     </div>
     <!-- cuando llene la estanteria, haz una nueva estanteria-->
+
+    <footer id="footer-main">info@zksama.com</footer>
+    <script src="../footer/index.js"></script>
     <script src="index.js"></script>
-    <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
+
 </body>
-<script>
-    /* Cada any el footer posara l'any actual */
-    function makeFooter() {
-        const d = new Date();
-        document.getElementById("dateYear").innerText = d.getFullYear();
-    }
-    makeFooter();
-</script>
-<style>
-    #footer-main {
-        background-color: black;
-        text-align: center;
-        color: white;
-        padding: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-    }
 
-    #footer-main>a {
-        text-decoration: underline;
-        color: white;
-
-    }
-</style>
 
 </html>

@@ -18,11 +18,17 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../footer/index.css">
+
     <link rel="icon" href="../icopz.ico">
 </head>
 
 <body onload="loadTwoPokes()">
-    <div class="container">
+    <header>
+        <a href="/"><img height="35" width="35" src="../logo.webp" alt="Logo de la página"></a>
+        <h1> <span class="color-high">PokeHigher</span> <span class="color-low">PokeLower</span></h1>
+    </header>
+    <main class="container">
         <!-- Menu: score,  dropdown generation, dropdown type-->
         <div class="d-flex flex-column flex-md-row justify-content-center">
             <div class="p-2 listaflex">
@@ -113,9 +119,10 @@
                     class="link-light">Play Store: Pokehigher
                     or Pokelower</a>
             </div>
-
         </div>
-    </div>
+    </main>
+    <footer id="footer-main">info@zksama.com</footer>
+    <script src="../footer/index.js"></script>
 </body>
 
 </html>

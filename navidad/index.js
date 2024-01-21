@@ -82,7 +82,6 @@ if (localStorage.getItem(NAVIDAD) != null) {
 }
 
 let pare = document.getElementById("pare");
-makeFooter();
 fillCalendar();
 infoChristmas();
 
@@ -187,11 +186,6 @@ function closeModal() {
     fuera.focus();
 }
 
-/* Cada any el footer posara l'any actual */
-function makeFooter() {
-    const d = new Date();
-    document.getElementById("dateYear").innerText = d.getFullYear();
-}
 
 
 function deleteChilds(currentDiv) {

@@ -8,20 +8,24 @@
     <title>Quien es Quien</title>
     <link rel="stylesheet" href="index.css">
     <script src="dades.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="../icopz.ico">
     <meta name="description"
         content="¿Quieres disfrutar del clásico juego de adivinanzas Quién es Quién con tus amigos y familiares, incluso con aquellos que tienen discapacidad visual? En nuestro sitio web encontrarás una amplia selección de personajes, una interfaz fácil de usar y opciones de juego adaptadas para personas ciegas. ¡Juega ahora y diviértete adivinando con Quién es Quién">
+    <meta name="description"
+        content="¡Sumérgete en la búsqueda de piratas en el juego online 'Se busca' de One Piece! Encuentra a los más buscados en emocionantes niveles inspirados en el mundo del anime y manga. ¡Demuestra tu habilidad y conviértete en el mejor cazador de recompensas!">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body onload="loadGame()">
     <header>
+        <a href="/"><img height="35" width="35" src="../logo.webp" alt="Logo de la página"></a>
+        <h1 id="titol-quien-es-quien">QUIÉN ES QUIÉN</h1>
         <button id="accesible-quien-es-quien" onclick="twiceVisibilityAccesible()"
             aria-label="Instrucciones sobre accesibilidad">
             <span class="material-icons">
                 accessibility_new
             </span></button>
-        <h1 id="titol-quien-es-quien">QUIÉN ES QUIÉN</h1>
     </header>
     <main class="who-is-who">
         <!-- fondo 'dark' per quan obro un modal -->
@@ -103,29 +107,8 @@
             <button onclick="hideNewGame()" class="cancel-btn">NO</button>
         </div>
     </div>
-    <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
-    <script>
-        /* Cada any el footer posara l'any actual */
-        function makeFooter() {
-            const d = new Date();
-            document.getElementById("dateYear").innerText = d.getFullYear();
-        }
-    </script>
-    <style>
-        #footer-main {
-            background-color: black;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        #footer-main>a {
-            text-decoration: underline;
-            color: white;
-
-        }
-    </style>
+    <footer id="footer-main">info@zksama.com</footer>
+    <script src="../footer/index.js"></script>
     <script src="index.js"></script>
 </body>
 

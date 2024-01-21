@@ -1,4 +1,13 @@
+#menu-transport-song,
+#menu-create-song {
+  display: none;
+}
+
+
+
+
 header {
+  position: relative;
   color: white;
   background-color: black;
   width: 100%;
@@ -10,8 +19,21 @@ header {
   overflow: hidden;
   margin-bottom: 5px;
 }
+
+header>a {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-align: center;
+}
+
 body {
   margin: 0;
+}
+
+h2 {
+  font-size: 1rem;
+  text-align: center;
 }
 
 #menu-piano {
@@ -21,6 +43,20 @@ body {
   gap: 10px;
   padding-top: 5px;
   padding-bottom: 15px;
+}
+
+.btn-escala {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  transition: border 0.5s;
+}
+
+.btn-escala:hover {
+  border: 1px solid black;
+  background-color: black;
+
+  cursor: pointer;
 }
 
 .btn-piano {
@@ -34,8 +70,10 @@ body {
 .btn-piano:hover {
   background-color: black;
   border: 1px solid black;
+  cursor: pointer;
   transition: border 0.5s;
 }
+
 .piano {
   display: flex;
   flex-direction: row;
@@ -86,6 +124,7 @@ body {
   background-color: lightgray;
   transform: translateY(5px);
 }
+
 .secondary-note:hover {
   transform: translateY(5px);
 }
@@ -97,6 +136,7 @@ body {
 .n2 {
   left: 74px;
 }
+
 .n3 {
   left: 169px;
 }
@@ -104,6 +144,7 @@ body {
 .n4 {
   left: 218px;
 }
+
 .n5 {
   left: 263px;
 }
@@ -135,8 +176,9 @@ body {
 }
 
 .subpage-piano {
-  height: 100vh;
+  min-height: 100vh;
 }
+
 /*
 #note_color {
   color: red;
@@ -155,10 +197,11 @@ body {
   overflow: hidden;
   text-align: left;
 }
+
 #menu-escribir-cancion {
   margin-top: 10px;
   margin-bottom: 10px;
-  display: flex;
+  display: none;
   justify-content: center;
   gap: 10px;
 }
@@ -168,28 +211,33 @@ body {
   padding: 10px;
 }
 
-.href-resultat > a {
+.href-resultat>a {
   color: white;
   font-size: 18px;
 }
-#menu-escribir-cancion > button {
+
+#menu-escribir-cancion>button {
   background-color: black;
   color: white;
   border-radius: 6px;
 }
+
 #updateSave {
+  display: none;
   text-align: center;
 }
-#menu-escribir-cancion > input {
+
+#menu-escribir-cancion>input {
   background-color: black;
   color: white;
   padding: 6px;
   border-radius: 6px;
 }
 
-#menu-escribir-cancion > a {
+#menu-escribir-cancion>a {
   color: white;
 }
+
 #tempo {
   position: absolute;
   top: 0px;
@@ -198,6 +246,7 @@ body {
   left: 50%;
   transform: translate(-50%);
 }
+
 #progress-bar-music {
   position: absolute;
   left: 0px;
@@ -207,7 +256,7 @@ body {
   transition: 1s width;
 }
 
-.piano-reset > a {
+.piano-reset>a {
   color: white;
   text-decoration: none;
   border: 1px solid white;
@@ -215,11 +264,12 @@ body {
   border-radius: 6px;
 }
 
-.piano-reset > a:hover {
+.piano-reset>a:hover {
   background-color: black;
   border: 1px solid black;
   transition: border 0.5s;
 }
+
 @media (max-width: 600px) {
   .primary-note {
     width: 38px;
@@ -238,6 +288,7 @@ body {
   .n2 {
     left: 67px;
   }
+
   .n3 {
     left: 150px;
   }
@@ -245,10 +296,12 @@ body {
   .n4 {
     left: 192px;
   }
+
   .n5 {
     left: 236px;
   }
 }
+
 #touch-this {
   text-shadow: 1px 1px 1px white;
   width: 50px;
@@ -259,6 +312,21 @@ body {
   background-color: darkgray;
 }
 
+#menu-adivinar-cancion {
+  display: none;
+  position: relative;
+}
+
+#infoToca {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  color: yellow;
+  z-index: 1;
+}
+
 #selectTextPiano {
   border-radius: 6px;
   background-color: transparent;
@@ -267,16 +335,14 @@ body {
   border: 1px solid white;
 }
 
-#selectTextPiano > option {
+#selectTextPiano>option {
   background-color: black;
   color: white;
 }
 
-/*
 #touch-this:hover {
-  background-color: darkgrey;
-  color: white;
-}*/
+  cursor: pointer;
+}
 
 #dialogAdivina {
   background-color: black;
@@ -296,19 +362,22 @@ body {
   max-width: 300px;
 }
 
-#dialogAdivina > h2 {
+#dialogAdivina>h2 {
   margin-bottom: 0px;
 }
-#dialogAdivina > label {
+
+#dialogAdivina>label {
   margin-top: 10px;
 }
-#dialogAdivina > h3 {
+
+#dialogAdivina>h3 {
   margin: 10px;
   font-size: 14px;
   text-align: center;
   font-weight: normal;
 }
-#dialogAdivina > input {
+
+#dialogAdivina>input {
   margin: 10px;
   background-color: #1c1c1c;
   padding: 10px;
@@ -316,7 +385,8 @@ body {
   border-radius: 6px;
   color: white;
 }
-#btnGenerated > button {
+
+#btnGenerated>button {
   height: 30px;
   width: 30px;
   font-size: 20px;
@@ -334,16 +404,24 @@ body {
   padding: 10px;
 }
 
-.options-piano > input[type="checkbox"] {
+.options-piano>input[type="checkbox"] {
   margin-left: 15px;
   /* Double-sized Checkboxes */
-  -ms-transform: scale(1.7); /* IE */
-  -moz-transform: scale(1.7); /* FF */
-  -webkit-transform: scale(1.7); /* Safari and Chrome */
-  -o-transform: scale(1.7); /* Opera */
+  -ms-transform: scale(1.7);
+  /* IE */
+  -moz-transform: scale(1.7);
+  /* FF */
+  -webkit-transform: scale(1.7);
+  /* Safari and Chrome */
+  -o-transform: scale(1.7);
+  /* Opera */
   transform: scale(1.7);
   padding: 10px;
   accent-color: red;
+}
+
+.options-piano>input[type="checkbox"]:hover{
+  cursor: pointer;
 }
 
 #fondo-card {
@@ -365,19 +443,115 @@ body {
   text-shadow: 1px 1px 1px white;
 }
 
+.songs-example>li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.songs-example>li>a {
+  color: white;
+}
+
+.songs-example>li>a:hover {
+  text-decoration: un;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+details:hover {
+  cursor: pointer;
+}
+
+.detail-question {
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+#linkBirth {
+  color: white;
+  display: block;
+  padding: 5px;
+}
+
+#nameBirth {
+  background-color: black;
+  padding: 5px;
+  border: 1px solid wheat;
+  border-radius: 2px;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  padding: 5px;
+  color: white;
+}
+
+.btn-birth {
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 5px;
+  margin-left: 10px;
+  border: 1px solid black;
+  transition: all 0.5s;
+}
+
+.btn-birth:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.inline {
+  display: inline;
+}
+
+#newPiece {
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+#newPiece:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  #touch-this:hover {
+    cursor: auto;
+  }
+}
+
 @keyframes fall-music-left {
   0% {
     bottom: 20px;
     left: 50%;
   }
+
   25% {
     bottom: 30px;
     left: 40%;
   }
+
   50% {
     bottom: 0px;
     left: 30%;
   }
+
   100% {
     bottom: 50px;
     left: 10%;
@@ -390,14 +564,17 @@ body {
     bottom: 20px;
     right: 50%;
   }
+
   25% {
     bottom: 30px;
     right: 40%;
   }
+
   50% {
     bottom: 0px;
     right: 30%;
   }
+
   100% {
     bottom: 50px;
     right: 10%;
@@ -409,12 +586,15 @@ body {
   0% {
     rotate: 0deg;
   }
+
   50% {
     rotate: 45deg;
   }
+
   75% {
     rotate: -45deg;
   }
+
   100% {
     rotate: 0deg;
   }

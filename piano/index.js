@@ -5,9 +5,11 @@ const PATHSONG = 'title';
 let player = new Piano(0, 0);
 console.log(player);
 let numInNote = 1;
+let urlNotes = "";
 function readPath() {
     //Guarda el parametres de 'PATHMUSIC' y 'PATHSONG'
     let listaStringNotes = new URLSearchParams(document.location.search).get(PATHMUSIC);
+    urlNotes = listaStringNotes;
     let titleSong = new URLSearchParams(document.location.search).get(PATHSONG);
 
     if (listaStringNotes == null || listaStringNotes == '') return false;
@@ -57,6 +59,9 @@ function loadMusic() {
     document.getElementById("menu-create-song").style.display = paramsDisponibles ? "block" : "none";
     document.getElementById("menu-adivinar-cancion").style.display = paramsDisponibles ? "block" : "none";
     document.getElementById("updateSave").style.display = paramsDisponibles ? "none" : "block";
+    // si es modo crear, mostra la llista de cancons, si es modo adivinar obre el desplegable
+    document.getElementById("detail-example-song").open = !paramsDisponibles;
+    document.getElementById("detail-example-birth").open = !paramsDisponibles;
 
     if (paramsDisponibles) {
         //GeneraButtons
@@ -66,7 +71,6 @@ function loadMusic() {
     }
     //Canvia segons l'escala
     updateTextPiano();
-    makeFooter();
 
     //Precarrega tots els audios
     preloadAudio(notasBlancas.map(obj => NOTESONLINE + obj + ".mp3"));
@@ -115,6 +119,10 @@ function tocaEsto() {
     tempo.ariaLabel = `Notas tocadas: ${player.notaActual + 1}/${player.cancionImportada.length}`
     progresBarContainer.ariaLabel = `Notas restantes: ${player.cancionImportada.length - player.notaActual + 1}`
     player.notaActual++;
+    // Amaga la info si es toca mes de 4 notes o arriba al final de la canco
+    if (player.notaActual > 4 || player.notaActual == player.cancionImportada.length) {
+        document.getElementById("infoToca").style.display = "none";
+    }
 }
 
 function drawTecla(num) {
@@ -222,7 +230,9 @@ function inputActive() {
         case document.getElementById("inputSong"):
             return true;
         case document.getElementById("inputGuesSong"):
-            return true
+            return true;
+        case document.getElementById("nameBirth"):
+            return true;
         default:
             return false;
     }
@@ -234,6 +244,7 @@ function avanzaEscala() {
     //Si incluye la ultima nota no puede avanzarla
     player.avanzaPieza(notasBlancas)
     document.getElementById("transportePieza").innerText = textSum(player.tranportePieza);
+    getNewLink();
 }
 
 function retrocedeEscala() {
@@ -241,6 +252,7 @@ function retrocedeEscala() {
     //Si incluye la primera nota no puede retroceder
     player.retrocedePieza(notasBlancas)
     document.getElementById("transportePieza").innerText = textSum(player.tranportePieza);
+    getNewLink();
 }
 
 function textSum(num) {
@@ -253,11 +265,13 @@ function textSum(num) {
 function generateLink() {
     let nameSong = document.getElementById("inputSong").value.toLowerCase();
     let nResultat = document.getElementById("resultat");
-    nResultat.href = `./?${PATHMUSIC}=${player.letras}&${PATHSONG}=${player.ocultaCancion(nameSong)} `
-    nResultat.innerText = nameSong;
-    nResultat.ariaLabel = "Enlace clicable de la canción creada '" + nameSong + "'";
-    nResultat.ariaHidden = false;
-    nResultat.focus();
+    if (nameSong != "") {
+        nResultat.href = `./?${PATHMUSIC}=${player.letras}&${PATHSONG}=${player.ocultaCancion(nameSong)} `
+        nResultat.innerText = "Click aquí: " + nameSong;
+        nResultat.ariaLabel = "Enlace clicable de la canción creada '" + nameSong + "'";
+        nResultat.ariaHidden = false;
+        nResultat.focus();
+    }
 }
 
 
@@ -330,7 +344,7 @@ function checkInputSong() {
             btnList[i].disabled = true;
         }
         // Sobrescribe el texto si 
-        label.innerText = "Titulo correctamente escrita";
+        label.innerText = "Titulo correctamente escrito";
         let btn = document.getElementById("btn-adivina-song");
         btn.disabled = true;
         btn.innerText = player.titleSong.toUpperCase();
@@ -378,6 +392,16 @@ function pintaPrimaryNote(e) {
     }
 }
 
+
+function sendBirthday() {
+    let namePerson = document.getElementById("nameBirth").value;
+    let linkBirth = document.getElementById("linkBirth");
+    if (namePerson != "") {
+        linkBirth.href = "./?song=IIJILhIIJIMLIIPNLhJOONLML&title=" + player.ocultaCancion(namePerson);
+        linkBirth.innerText = `Comparte este link con '${namePerson}' `;
+        document.getElementById("linkBirth").focus();
+    }
+}
 //Preload audio https://stackoverflow.com/a/13116795
 function preloadAudio(preloads) {
     for (var x = 0; x < preloads.length; x++) {
@@ -385,4 +409,22 @@ function preloadAudio(preloads) {
         //console.log("Cached", aud);
         aud.preload = 'auto';
     }
+}
+
+function cifrarCesar(texto, numeroCifrado) {
+    // Estructura del teclat
+    const teclado = "AaBbCDcEdFeGHfIgJKhLiMjNOkPlQRmSnToU"
+    let textoList = texto.split("");
+    let total = "";
+    console.log(textoList);
+    for (let i = 0; i < textoList.length; i++) {
+        //Cada tecla s'ha de moure el segons l'escala 'teclado'
+        total += teclado[teclado.indexOf(textoList[i]) +numeroCifrado] ;
+    }
+    return total;
+}
+
+function getNewLink() {
+    console.log(player);
+    document.getElementById("newPiece").href = `./?${PATHMUSIC}=${cifrarCesar(urlNotes, player.tranportePieza)}&${PATHSONG}=${player.ocultaCancion(player.titleSong)}`
 }
