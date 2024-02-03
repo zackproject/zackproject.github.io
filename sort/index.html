@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poke Sort</title>
+    <meta title="Ordena las letras de este pokemon y gana puntos">
+    <meta name="keywords" content="ordenar pokemon, ordenar palabra, primera generación, segunda generación">
+    <meta name="description" content="¿Puedes ordenar el nombre del Pokémon? Vamos a jugar ahora.">
+    <meta name="robots" content="index">
+    <script src="../js/data.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="../icopz.ico">
+    <link rel="stylesheet" href="../footer/index.css">
+    <link async href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body onload="findPokeName()">
+    <header>
+        <a href="/"><img height="35" width="35" src="../logo.webp" alt="Logo de la página"></a>
+        <h1>Poke Sort</h1>
+    </header>
+    <main id="container-guess">
+        <div class="guess-puntuacion">
+            <div> Puntuación: <span id="textScore"></span></div>
+            <div> Record: <span id="textMaxScore"></span></div>
+        </div>
+        <div class="nav-poke-guess">
+            <button aria-label="Skip" title="Skip Pokemon" class="material-icons btn-guess" type="button"
+                onclick="giveup()">
+                skip_next
+            </button>
+            <select onchange="changeGen()" id="genViewListGuess" aria-label="Generation List">
+                <option value="0" selected>Todas las generaciones </option>
+                <option value="1">1 Generación</option>
+                <option value="2">2 Generación</option>
+                <option value="3">3 Generación</option>
+                <option value="4">4 Generación</option>
+                <option value="5">5 Generación</option>
+                <option value="6">6 Generación</option>
+                <option value="7">7 Generación</option>
+                <option value="8">8 Generación</option>
+                <option value="9">9 Generación</option>
+            </select>
+            <button aria-label="Desordenar" title="Desordenar letras" id="btn-retry-icon"
+                class="material-icons btn-guess" type="button" onclick="createBtnGuess()">
+                restart_alt
+            </button>
+        </div>
+
+        <div id="text-resultat-guess"></div>
+        <div id="imgpkpeled">
+            <img id="imagepk" src="" alt="" height="200" width="200" />
+        </div>
+        <div id="p_guess">
+            <div id="guesspk"></div>
+            <div class="btn-center" id="btn-peeled"></div>
+        </div>
+        <div class="btns-solutions">
+            <button id="btn-next-guess" class="btn-on-solution" onclick="findPokeName()">
+                SIGUIENTE
+            </button>
+            <button id="btn-retry-guess" class="btn-on-solution" onclick="createBtnGuess()">
+                REINTENTAR
+            </button>
+        </div>
+
+        <div class="lista-flex-guess">
+            <section class="lista-flex-guess-child">
+                <div class="listsvgtext">
+                    <span class="material-icons">menu</span>
+                    <div class="title-list-guess">CORRECTO</div>
+                </div>
+                <nav>
+                    <ul id="listaright" class="list-group"></ul>
+                </nav>
+            </section>
+            <section class="lista-flex-guess-child">
+                <div class="listsvgtext">
+                    <span class="material-icons">menu</span>
+                    <div class="title-list-guess">INCORRECTO</div>
+                </div>
+                <nav>
+                    <ul id="listawrong" class="list-group"></ul>
+                </nav>
+            </section>
+
+            <section class="lista-flex-guess-child">
+                <div class="listsvgtext">
+                    <span class="material-icons">menu</span>
+                    <div class="title-list-guess">SKIP</div>
+                </div>
+                <nav>
+                    <ul id="listaskiped" class="list-group"></ul>
+                </nav>
+            </section>
+        </div>
+    </main>
+    <footer id="footer-main">info@zksama.com</footer>
+    <script src="../footer/index.js"></script>
+</body>
+
+</html>

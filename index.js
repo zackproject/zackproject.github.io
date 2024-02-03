@@ -5,23 +5,44 @@ function fillCard() {
         let cardHtml = cardTemplate(element)
         //En comptes de 'appendChild' sumem el contingut anterior mes el nou
         father.innerHTML += cardHtml;
+        //generateLinks(element.link)
     });
+
+
 }
 
 
+
+function generateLinks(link) {
+    let pare = document.getElementById("links");
+    let li = document.createElement("li");
+    let a = document.createElement("a");
+    a.href = "/" + link;
+    a.innerText = link
+    li.appendChild(a);
+    pare.appendChild(li);
+}
 // Crea un template del html de una carta
-function cardTemplate({ title, image, alt, description, link }) {
+function cardTemplate({ title, image, alt, description, link, store = "" }) {
     return `
-    <div id="carta" class="p-2 listaflex">
-        <div class="card">
-            <img class="card-img-top" src="${image}" alt="${alt}">
-            <div class="card-body">
-                <h5 class="card-title">${title}</h5>
+    <article class="carta card" class="p-2 listaflex">
+            <img width="318" height="171" class="card-img-top" src="${image}" alt="${alt}">
+            <header class="card-body">
+                <h1 class="card-title">${title}</h1>
                 <p class="card-text">${description}</p>
-                <a href="${link}" class="btn btn-primary">Play</a>
-            </div>
-        </div>
-    </div>
+            </header>
+            <footer>
+                <a href="/${link}" title="Ir a la página ${link}" class="btn btn-outline-primary">Jugar</a>
+                <a href="/como-jugar/#${link}" title="Ir al tutorial ${link}" class="btn btn-outline-secondary">Como jugar</a>
+                ${setBtnPlayStore(store)}
+                </footer>
+    </article>
     `;
+}
+function setBtnPlayStore(e) {
+    if (e != "") {
+        return `<a href="${e}" title="Ir a Play Store" class="btn btn-outline-success">Play Store</a>`;
+    }
+    return ""
 }
 

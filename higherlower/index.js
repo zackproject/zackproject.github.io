@@ -5,6 +5,7 @@ var score = 0;
 var maxScore = 0;
 var type = 'speed';
 var gen = 0;
+let POKESTORAGE = "pokescored";
 //La llista sera del localStorage, si no existeix la crea
 var generationList = getScoreListFromLocalStorage();
 
@@ -50,22 +51,22 @@ function addToLocalStorage(generationList) {
         //Cada array de score el separem per espai
         text += element.toString() + " ";
     });
-    localStorage.setItem("pokescore", text);
+    localStorage.setItem(POKESTORAGE, text);
 }
 
 function getScoreListFromLocalStorage() {
     //Reinicia el generationList variable
     allGenList = [];
-    if (localStorage.getItem("pokescore") == null) {
+    if (localStorage.getItem(POKESTORAGE) == null) {
         // hp, attack, defense, sp_attack, sp_defense, speed, total
         let scoreList = [0, 0, 0, 0, 0, 0, 0];
         // Un scorelist per cada generacio
-        let genList = [scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList];
+        let genList = [scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList, scoreList,scoreList];
         //Afegeix al localstorage el creat
         addToLocalStorage(genList);
         return genList;
     } else {
-        let textList = localStorage.getItem("pokescore");
+        let textList = localStorage.getItem(POKESTORAGE);
         // El primer 'split()' aconseguix totes les generationList en text
         let genListOfList = textList.split(" ");
         genListOfList.forEach(element => {
@@ -129,34 +130,42 @@ function genMaxMin(genl) {
     //return de range of number pokedex for each generation
     switch (genl) {
         case 1:
-            return [1, 151]; //gen1
+            return [0, 150]; //gen1
         case 2:
-            return [152, 251]; //gen2
+            return [151, 250]; //gen2
         case 3:
-            return [252, 386]; //gen3
+            return [251, 385]; //gen3
         case 4:
-            return [387, 493]; //gen4
+            return [386, 492]; //gen4
         case 5:
-            return [494, 649]; //gen5
+            return [493, 648]; //gen5
         case 6:
-            return [650, 721]; //gen6
+            return [649, 720]; //gen6
         case 7:
-            return [722, 809]; //gen7
+            return [721, 808]; //gen7
         case 8:
-            return [810, 898]; //gen8
+            return [809, 904]; //gen8
+        case 9:
+            return [905, 1007]; //gen9
         default:
-            return [1, 898]; //all gens gen=0 or other
+            return [1, 1007]; //all gens gen=0 or other
     }
 
+}
+
+function a(n1, n2){
+    console.log(data[n1].name,data[n2].name);
 }
 function printPokeHTML() {
     // First poke
     document.getElementById('pk1name').textContent = poke1.name;
     document.getElementById('pk1image').src = poke1.img_default;
+    document.getElementById('pk1image').alt = poke1.name;
     document.getElementById('pk1number').textContent = poke1[type]; //Ex: type['speed'] =  156
     document.getElementsByClassName('pktpye')[0].textContent = type; //Ex: type = 'speed'
     //second poke
     document.getElementById('pk2name').textContent = poke2.name;
+    document.getElementById('pk2image').alt = poke2.name;
     document.getElementById('pk2image').src = poke2.img_default;
     document.getElementsByClassName('pktpye')[1].textContent = type;
     // document.getElementById('pk2number').textContent = poke2[type]; THIS NUMBER IS SECRET
@@ -270,7 +279,10 @@ function refreshScore() {
     document.getElementById('score-number').textContent = score;
 }
 function randNumber(max, min) {
-    return Math.floor(Math.random() * (max - min) + min);
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+    // The maximum is inclusive and the minimum is inclusive
 }
 
 

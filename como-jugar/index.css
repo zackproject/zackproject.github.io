@@ -1,0 +1,106 @@
+html {
+  scroll-behavior: smooth;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+  margin: 0px;
+  background-color: rgb(248, 248, 248);
+}
+
+#home-tab-zksama {
+  text-decoration: underline;
+}
+
+#how-to-play h2 {
+  /*text-align: center;*/
+  margin-bottom: 10px;
+}
+#how-to-play h3 {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+#how-to-play article {
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+/*https://desarrolloweb.com/articulos/recortar-texto-css-ellipsis.html*/
+
+#how-play-main {
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 4px;
+  background: black;
+  width: 0%;
+}
+#how-to-play {
+  max-width: 800px;
+  padding: 12px;
+  margin: 0 auto;
+}
+#how-to-play p {
+  text-align: justify;
+}
+#back-up {
+  position: fixed;
+  border-radius: 50%;
+  bottom: 10px;
+  right: 10px;
+  background-color: black;
+  text-decoration: none;
+  color: white;
+  transition: right 1s;
+}
+#back-up > .material-icons {
+  font-size: 2em;
+  padding: 10px;
+  box-shadow: 1px;
+}
+
+/* NAVBAR*/
+
+#myLinks {
+  border-top: 1px solid black;
+  display: none;
+}
+#myLinks > ol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#myLinks > ol > li > a {
+  color: black;
+}
+.topnavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* <---- NEW    */
+
+  background-color: white;
+  padding: 5px;
+}
+
+.topnavbar > a {
+  text-decoration: none;
+  color: black;
+}
+
+.topnavbar > a:hover {
+  text-decoration: underline;
+}

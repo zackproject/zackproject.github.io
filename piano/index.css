@@ -1,0 +1,601 @@
+#menu-transport-song,
+#menu-create-song {
+  display: none;
+}
+
+
+
+
+header {
+  position: relative;
+  color: white;
+  background-color: black;
+  width: 100%;
+  text-align: center;
+  font-size: 0.7rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-box-shadow: -1px 0px 9px 0px black;
+  box-shadow: -1px 0px 9px 0px black;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+header>a {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1rem;
+  text-align: center;
+}
+
+#menu-piano {
+  display: grid;
+  place-items: center;
+  position: relative;
+  gap: 10px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+.btn-escala {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  transition: border 0.5s;
+}
+
+.btn-escala:hover {
+  border: 1px solid black;
+  background-color: black;
+
+  cursor: pointer;
+}
+
+.btn-piano {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.btn-piano:hover {
+  background-color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: border 0.5s;
+}
+
+.piano {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* gap: 5px;*/
+  justify-content: center;
+}
+
+.escala {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.tecla {
+  font-size: 14px;
+  border: 1px solid black;
+
+  /*Alinea abajo */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 5px;
+  margin: 2px;
+}
+
+.primary-note {
+  background: white;
+  border-radius: 6px;
+  height: 135px;
+  width: 43px;
+  transition: background 1s;
+}
+
+.secondary-note {
+  width: 33px;
+  position: absolute;
+  background: black;
+  border-radius: 4px;
+  color: white;
+  height: 80px;
+  z-index: 1;
+}
+
+.primary-note:hover {
+  background-color: lightgray;
+  transform: translateY(5px);
+}
+
+.secondary-note:hover {
+  transform: translateY(5px);
+}
+
+.n1 {
+  left: 27px;
+}
+
+.n2 {
+  left: 74px;
+}
+
+.n3 {
+  left: 169px;
+}
+
+.n4 {
+  left: 218px;
+}
+
+.n5 {
+  left: 263px;
+}
+
+#btnGenerated {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-guess {
+  text-align: center;
+  /* height: 25px; */
+  min-width: 8px;
+  border: 1px solid white;
+  padding: 8px;
+  text-transform: capitalize;
+}
+
+.piano-page {
+  color: white;
+  background-color: #1c1c1c;
+  /* background by SVGBackgrounds.com */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(183,768,359)'%3E%3Cstop offset='0' stop-color='%231C1C1C'/%3E%3Cstop offset='1' stop-color='%23242424'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='540' height='450' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.04'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.subpage-piano {
+  min-height: 100vh;
+}
+
+/*
+#note_color {
+  color: red;
+  text-shadow: 2px 3px 2px red;
+}*/
+
+#progress-bar-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  width: 100%;
+  height: 20px;
+  color: black;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: left;
+}
+
+#menu-escribir-cancion {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: none;
+  justify-content: center;
+  gap: 10px;
+}
+
+.href-resultat {
+  text-align: center;
+  padding: 10px;
+}
+
+.href-resultat>a {
+  color: white;
+  font-size: 18px;
+}
+
+#menu-escribir-cancion>button {
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+}
+
+#updateSave {
+  display: none;
+  text-align: center;
+}
+
+#menu-escribir-cancion>input {
+  background-color: black;
+  color: white;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+#menu-escribir-cancion>a {
+  color: white;
+}
+
+#tempo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#progress-bar-music {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 20px;
+  background-color: greenyellow;
+  transition: 1s width;
+}
+
+.piano-reset>a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.piano-reset>a:hover {
+  background-color: black;
+  border: 1px solid black;
+  transition: border 0.5s;
+}
+
+@media (max-width: 600px) {
+  .primary-note {
+    width: 38px;
+    /*height: 80px;*/
+  }
+
+  .secondary-note {
+    width: 30px;
+    /* height: 40px;*/
+  }
+
+  .n1 {
+    left: 23px;
+  }
+
+  .n2 {
+    left: 67px;
+  }
+
+  .n3 {
+    left: 150px;
+  }
+
+  .n4 {
+    left: 192px;
+  }
+
+  .n5 {
+    left: 236px;
+  }
+}
+
+#touch-this {
+  text-shadow: 1px 1px 1px white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  animation: rotate 5s infinite;
+  background-color: darkgray;
+}
+
+#menu-adivinar-cancion {
+  display: none;
+  position: relative;
+}
+
+#infoToca {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  color: yellow;
+  z-index: 1;
+}
+
+#selectTextPiano {
+  border-radius: 6px;
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+#selectTextPiano>option {
+  background-color: black;
+  color: white;
+}
+
+#touch-this:hover {
+  cursor: pointer;
+}
+
+#dialogAdivina {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 10px;
+  width: 80%;
+  border-radius: 6px;
+  transition: top 1s;
+  max-width: 300px;
+}
+
+#dialogAdivina>h2 {
+  margin-bottom: 0px;
+}
+
+#dialogAdivina>label {
+  margin-top: 10px;
+}
+
+#dialogAdivina>h3 {
+  margin: 10px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: normal;
+}
+
+#dialogAdivina>input {
+  margin: 10px;
+  background-color: #1c1c1c;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 6px;
+  color: white;
+}
+
+#btnGenerated>button {
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 4px;
+}
+
+.menu-options-piano {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.356);
+  padding: 10px;
+}
+
+.options-piano>input[type="checkbox"] {
+  margin-left: 15px;
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.7);
+  /* IE */
+  -moz-transform: scale(1.7);
+  /* FF */
+  -webkit-transform: scale(1.7);
+  /* Safari and Chrome */
+  -o-transform: scale(1.7);
+  /* Opera */
+  transform: scale(1.7);
+  padding: 10px;
+  accent-color: red;
+}
+
+.options-piano>input[type="checkbox"]:hover{
+  cursor: pointer;
+}
+
+#fondo-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  display: none;
+}
+
+.note-fall {
+  position: absolute;
+  bottom: 0px;
+  /*animation: rotate 4s , fall-music-right 5s linear;*/
+  z-index: -1;
+  text-shadow: 1px 1px 1px white;
+}
+
+.songs-example>li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.songs-example>li>a {
+  color: white;
+}
+
+.songs-example>li>a:hover {
+  text-decoration: un;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+/*details:hover {
+  cursor: pointer;
+}
+*/
+.detail-question {
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+#linkBirth {
+  color: white;
+  display: block;
+  padding: 5px;
+}
+
+#nameBirth {
+  background-color: black;
+  padding: 5px;
+  border: 1px solid wheat;
+  border-radius: 2px;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  padding: 5px;
+  color: white;
+}
+
+.btn-birth {
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 5px;
+  margin-left: 10px;
+  border: 1px solid black;
+  transition: all 0.5s;
+}
+
+.btn-birth:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.inline {
+  display: inline;
+}
+
+#newPiece {
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+#newPiece:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  #touch-this:hover {
+    cursor: auto;
+  }
+}
+
+@keyframes fall-music-left {
+  0% {
+    bottom: 20px;
+    left: 50%;
+  }
+
+  25% {
+    bottom: 30px;
+    left: 40%;
+  }
+
+  50% {
+    bottom: 0px;
+    left: 30%;
+  }
+
+  100% {
+    bottom: 50px;
+    left: 10%;
+    opacity: 0;
+  }
+}
+
+@keyframes fall-music-right {
+  0% {
+    bottom: 20px;
+    right: 50%;
+  }
+
+  25% {
+    bottom: 30px;
+    right: 40%;
+  }
+
+  50% {
+    bottom: 0px;
+    right: 30%;
+  }
+
+  100% {
+    bottom: 50px;
+    right: 10%;
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: 45deg;
+  }
+
+  75% {
+    rotate: -45deg;
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}

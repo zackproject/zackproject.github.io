@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="color.css">
     <link rel="icon" href="../icopz.ico">
+    <link rel="stylesheet" href="../footer/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -22,21 +23,21 @@
         <!-- El js afegira un classname and color per cambiar de tema-->
         <div id="color-header" class="">
             <nav id="color-nav" class="navbar navbar-dark">
-                <a class="text-center navbar-brand"
-                    href="https://play.google.com/store/apps/details?id=apps.zack.AnimeBirthday">
+                <a href="/"><img height="35" width="35" src="../logo.webp" alt="Logo de la página"></a>
+                <div class="title-bithday">
                     <img src="https://i.imgur.com/SWd8IVK.png" width="30" height="30" class=" d-inline-block align-top"
-                        alt="">
-                    Anime Birthday on Play Store
-                </a>
-                <select onchange="changeColor()" id="colorViewList" aria-label="My List">
+                        alt="Logo Anime Birthday">
+                    <h1>Anime Birthday</h1>
+                </div>
+                <select onchange="updateColor()" id="colorViewList" aria-label="My List">
                     <!-- El js crea una clase en cada element afectat -->
                     <!-- Example class: 'color-blue' o 'dark-color-blue' -->
-                    <option value="purple">Theme Purple</option>
-                    <option value="blue">Theme Blue</option>
-                    <option value="green">Theme Green</option>
-                    <option value="yellow">Theme Yellow</option>
-                    <option value="orange">Theme Orange</option>
-                    <option value="red">Theme Red</option>
+                    <option value="purple">Theme purple</option>
+                    <option value="blue">Theme blue</option>
+                    <option value="green">Theme green</option>
+                    <option value="yellow">Theme yellow</option>
+                    <option value="orange">Theme orange</option>
+                    <option value="red">Theme red</option>
                 </select>
             </nav>
         </div>
@@ -60,7 +61,8 @@
         </div>
         <!-- Div en cas de character-->
         <div id="byCharacter" style="display: none">
-            <nav> <input onchange="changeByCharacter()" id="inputCharacter" type="text" name="character" placeholder="gok">
+            <nav> <input onchange="changeByCharacter()" id="inputCharacter" type="text" name="character"
+                    placeholder="gok">
                 <button onclick="changeByCharacter()">🔎</button>
             </nav>
         </div>
@@ -75,9 +77,7 @@
                 <!-- El js afegira un classname and color per cambiar de tema-->
                 <!-- Cambia la query 1.Anime 2.Aniversario 3. Personaje-->
                 <button onclick="changeQuery(1)">
-                    <svg xmlns="http://www.w3.org/2000/svg" 
-                    width="0.22in" height="0.22in"
-                        viewBox="0 0 1600 1304">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="0.22in" height="0.22in" viewBox="0 0 1600 1304">
                         <path id="sweetbackward" fill="red" d="M 426.00,322.94
            C 191.75,500.47 0.12,646.25 0.12,647.00
              0.12,648.12 849.75,1302.87 852.50,1303.75
@@ -128,9 +128,16 @@
                     <div>Character</div>
                 </button>
             </div>
-            <div id ="demoinfo" class ="">This is a DEMO try the app</div>
+            <div id="demoinfo" class="">This is a DEMO try the app on
+                <a id="link-birhday-app" class="text-center navbar-brand color-white "
+                    href="https://play.google.com/store/apps/details?id=apps.zack.AnimeBirthday">
+                    Play Store
+                </a>
+            </div>
         </div>
     </div>
+    <footer id="footer-main">info@zksama.com</footer>
+    <script src="../footer/index.js"></script>
 </body>
 <script>
 

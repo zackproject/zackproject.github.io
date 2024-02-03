@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quien es Quien</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="dades.js"></script>
+    <link rel="icon" href="../icopz.ico">
+    <meta name="description"
+        content="¿Quieres disfrutar del clásico juego de adivinanzas Quién es Quién con tus amigos y familiares, incluso con aquellos que tienen discapacidad visual? En nuestro sitio web encontrarás una amplia selección de personajes, una interfaz fácil de usar y opciones de juego adaptadas para personas ciegas. ¡Juega ahora y diviértete adivinando con Quién es Quién">
+    <meta name="description"
+        content="¡Sumérgete en la búsqueda de piratas en el juego online 'Se busca' de One Piece! Encuentra a los más buscados en emocionantes niveles inspirados en el mundo del anime y manga. ¡Demuestra tu habilidad y conviértete en el mejor cazador de recompensas!">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body onload="loadGame()">
+    <header>
+        <a href="/"><img height="35" width="35" src="../logo.webp" alt="Logo de la página"></a>
+        <h1 id="titol-quien-es-quien">QUIÉN ES QUIÉN</h1>
+        <button id="accesible-quien-es-quien" onclick="twiceVisibilityAccesible()"
+            aria-label="Instrucciones sobre accesibilidad">
+            <span class="material-icons">
+                accessibility_new
+            </span></button>
+    </header>
+    <main class="who-is-who">
+        <!-- fondo 'dark' per quan obro un modal -->
+        <div id="fondo-card"></div>
+        <!-- Selector de la partida, es mostra un boto o un altre segons el js -->
+        <div class="menu-flex-slct">
+            <button id="newPartida" class="hide-menu transparent-btn" onclick="showModalNewGame()">NUEVA
+                PARTIDA</button>
+            <select id="select-anime" onchange="changeAnime()" name="select">
+            </select>
+        </div>
+        <!-- se autogeneren les cartes de la partida-->
+        <section>
+            <ul id="cards" aria-label="Muestra todas las cartas de la partida">
+                <!--<article class="card">
+           <div class="flip-card" onclick="cardClicked(event)">
+                <div id="card-0" class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img id="img-0" src="Armin_Arlet.jpeg" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="text-card">
+                            <h1>Armin Arlet</h1>
+                            <p>Shingeki No Kyojin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </article>-->
+            </ul>
+        </section>
+    </main>
+    <!-- Mostra el personatge triat al clicar el boton -->
+    <div class="bottom-btn">
+        <button id="showpersonaje" aria-label="Muestra el personaje elegido" class="hide-menu green-btn"
+            onclick="showMyCharacter()">VER MI PERSONAJE</button>
+        <button id="empezar-btn" aria-label="Clica para empezar la partida" class="hide-menu green-btn"
+            onclick="novaPartida()">EMPEZAR PARTIDA</button>
+    </div>
+    <!-- si el dialog fa display:block <-> display none no fa falta el aria-hidden=true -->
+    <div id="dialogAccesible" role="dialog" aria-labelledby="tituloAccesible" aria-modal="true" aria-hidden="true">
+        <h1 id="tituloAccesible">Accesibilidad</h1>
+        <div class="text-dialog">
+            <p>Partida de 'Shingeki No Kiojin' accesible. Caracteristicas posibles que puedes preguntar</p>
+            <ul>
+                <li>Género: Hombre o Mujer</li>
+                <li>Edad: Adulto o Niño</li>
+                <li>Color cabello: Rubio, oscuro, canoso, castaño o castaño claro</li>
+                <li>Cabello: Corto, largo o no tiene </li>
+                <li>Colgante (caballo incluido) </li>
+                <li>Vello Facial</li>
+                <li>Orejas completamente visibles: Una, dos o ninguna</li>
+            </ul>
+            <button onclick="twiceVisibilityAccesible()" aria-label="Ocultar sobre accesibilidad">OCULTAR</button>
+        </div>
+    </div>
+
+    <!-- Mosta el personatge actual triar per l'usuari-->
+    <div id="card-selector-mycharacter" aria-hidden="true" class="card-selector">
+        <div class="card-info-mycharacter">
+            <div id="mycharacter-name" class="title-card">Armin</div>
+            <img id="mycharacter-image" src="https://i.imgur.com/fSbG2ao.png" alt="" height="100%" width="100%">
+        </div>
+
+        <button class="hide-character" id="btn-ocultar" onclick="ocultarPersonaje()">OCULTAR</button>
+    </div>
+
+    <!-- Mostra un dialog on confirma que 'si' vols nova partida-->
+    <div id="modal-new-game" role="dialog" aria-labelledby="title-diag" aria-hidden="true">
+        <div class="title-modal">
+            <h2 id="title-diag">NUEVA PARTIDA</h2>
+        </div>
+        <div class="info-modal">
+            <p>¿Quieres empezar una nueva partida?</p>
+        </div>
+        <div class="flex-btn">
+            <button onclick="newGame()" class="ok-btn">SI</button>
+            <button onclick="hideNewGame()" class="cancel-btn">NO</button>
+        </div>
+    </div>
+    <footer id="footer-main">info@zksama.com</footer>
+    <script src="../footer/index.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
