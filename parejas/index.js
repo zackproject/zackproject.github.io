@@ -7,14 +7,15 @@ class Card {
 }
 
 class Couple {
-    constructor(cards, maxCards) {
+    constructor(cards, maxCards, helpWithNums) {
         this.points = 0;
         this.isPlaying = true;
-        this.maxCards = maxCards / 2; // Si tria 10, es dupliquen i son 20
-        this.cards = cards.slice(0, maxCards / 2);
+        this.maxCards = maxCards; // Si tria 10, es dupliquen i son 20
+        this.cards = cards.slice(0, maxCards);
         this.doubleCards = this.generateDouble();
         this.rightCardList = [];
         this.firstCard = null; // en realidad solo necesitas guardar una 'card1'
+        this.helpWithNums = helpWithNums;
     }
 
     saveResolvedCard(value) {
@@ -54,31 +55,97 @@ class Couple {
     }
 }
 
-const maxCards = 4;
-var player = new Couple(quienEsQuien[0].characters, maxCards);
+// HTML TAGS
+// CLASS VALUES
+const maxCoupleCards = 4
+const helpWithNums = false;
+var player = new Couple(quienEsQuien[0].characters, maxCoupleCards, helpWithNums);
 
 function loadPage() {
     generateSelector();
+    generateSelectorMax();
     generateCards();
 }
 
+function generateSelector() {
+    let slct = document.getElementById("selector-couple");
+    deleteChilds(slct);
+    quienEsQuien.forEach((e, i) => {
+        let opt = document.createElement("option");
+        opt.innerText = e.title;
+        opt.value = i;
+        slct.appendChild(opt);
+    });
+}
 
-function cardHTML(props, index) {
+function generateSelectorMax() {
+    let slctMax = document.getElementById("selector-max");
+    let slctSerie = document.getElementById("selector-couple");
+    deleteChilds(slctMax);
+    let charactersList = quienEsQuien[slctSerie.selectedIndex].characters;
+    /// predefault list
+    let llistat = [4, 6, 8, 10, 14, 20];
+    for (let i = 0; i <= charactersList.length; i++) {
+        if (i < llistat.length) {
+            let opt = document.createElement("option");
+            opt.innerText = llistat[i] + " parejas";
+            opt.value = llistat[i];
+            slctMax.appendChild(opt);
+        }
+    }
+
+    if (!llistat.includes(charactersList.length)) {
+        let opt = document.createElement("option");
+        opt.innerText = charactersList.length + " parejas";
+        opt.value = charactersList.length;
+        slctMax.appendChild(opt);
+    }
+}
+
+function changeCoupleGame() {
+    // 'selectedIndex' devuelve : 0,1,2,3 NO EL VALOR REAL DE 'value'
+    let n = document.getElementById("selector-couple").selectedIndex;
+    let isNumeric = document.getElementById("numeric-cards");
+    let m = document.getElementById("selector-max").value;
+    player = new Couple(quienEsQuien[n].characters, parseInt(m), isNumeric.checked);
+    generateCards();
+}
+
+function changeMaxCard() {
+    let m = document.getElementById("selector-couple").selectedIndex;
+    let n = document.getElementById("selector-max").value;
+    let isNumeric = document.getElementById("numeric-cards");
+    player = new Couple(quienEsQuien[m].characters, parseInt(n), isNumeric.checked);
+    generateCards();
+}
+
+function toggleNumericCards() {
+    let isNumeric = document.getElementById("numeric-cards");
+    player.helpWithNums = isNumeric.checked;
+    generateCards();
+}
+
+function cardHTML(props, index, numeric) {
+    let numericHTML = '';
+    console.log("numerirc", numeric);
+    if (numeric) numericHTML = `<div class="help-num">${index + 1}</div>`;
     return `<li class="card">
     <div class="flip-card">
         <div class="flip-card-inner" data-key="${index}" data-card="${props.id}"  onclick="cardClicked(event)">
-            <div class="flip-card-front" >
+            <div class="flip-card-front">
                 <svg xmlns="http://www.w3.org/2000/svg" aria-label="Carta oculta" width="150" height="150" viewBox="0 -3 114 120">
                     <use xlink:href="zp.svg#outerzp" />
                 </svg>
+                ${numericHTML}  
             </div>
-            <div class="flip-card-back">
-            <img aria-hidden="true" title="${props.name}" id="img-${props.id}" src="${props.image}" alt="${props.name}" height="100%" width="100%">
+            <div class="flip-card-back" aria-hidden="true" >
+            <img src="${props.image}" alt="Carta de ${props.name}" height="100%" width="100%">
             </div>
         </div>
     </div>
 </li>`
 }
+
 
 function cardClicked(event) {
     // comprova si esta jugant
@@ -135,24 +202,9 @@ function generateCards() {
     let cards = document.getElementById("cards");
     deleteChilds(cards);
     player.doubleCards.forEach((e, index) => {
-        let card = cardHTML(e, index);
+        let card = cardHTML(e, index, player.helpWithNums);
         cards.innerHTML += card;
     });
-}
-function generateSelector() {
-    let slct = document.getElementById("selector-couple");
-    deleteChilds(slct);
-    quienEsQuien.forEach((e, i) => {
-        let opt = document.createElement("option");
-        opt.innerText = e.title;
-        opt.value = i;
-        slct.appendChild(opt);
-    });
-}
-function changeCoupleGame() {
-    let n = document.getElementById("selector-couple").selectedIndex;
-    player = new Couple(quienEsQuien[n].characters, 10);
-    generateCards();
 }
 
 function deleteChilds(currentDiv) {

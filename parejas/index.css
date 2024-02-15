@@ -8,7 +8,7 @@ body {
 
 
 
-main{
+main {
   margin: 0 auto;
   max-width: 800px;
 }
@@ -24,7 +24,7 @@ main{
 
 svg {
   background-color: #01570E;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1355' height='162.6' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%2304300E' stroke-width='19.6' stroke-opacity='0.23'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E"); 
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1355' height='162.6' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%2304300E' stroke-width='19.6' stroke-opacity='0.23'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 
@@ -48,6 +48,7 @@ svg {
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 /*
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
@@ -56,6 +57,7 @@ svg {
 .card-front:hover {
   cursor: pointer;
 }
+
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -74,4 +76,14 @@ svg {
   background-color: black;
   color: lightgray;
   transform: rotateY(180deg);
+  animation-duration: 1s;
+}
+
+.help-num{
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.827), 0 0 5px rgba(0, 0, 0, 0.8);
 }
