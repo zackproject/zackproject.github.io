@@ -6,20 +6,41 @@ class Card {
     }
 }
 
+class Multiplayer {
+    constructor(name) {
+        this.name = name;
+    }
+}
 class Couple {
     constructor(cards, maxCards, helpWithNums) {
+        this.turns = 0;
         this.points = 0;
         this.isPlaying = true;
         this.maxCards = maxCards; // Si tria 10, es dupliquen i son 20
-        this.cards = cards.slice(0, maxCards);
+        this.cards = cards.sort(() => Math.random() - 0.5).slice(0, maxCards);
+        //this.cards = cards.slice(0, maxCards);
         this.doubleCards = this.generateDouble();
         this.rightCardList = [];
         this.firstCard = null; // en realidad solo necesitas guardar una 'card1'
         this.helpWithNums = helpWithNums;
     }
 
+    loadStorage(props) {
+        this.turns = props.turns;
+        this.points = props.points;
+        this.cards = props.cards;
+        this.doubleCards = props.doubleCards;
+        this.rightCardList = props.rightCardList;
+        this.firstCard = props.firstCard;
+        this.helpWithNums = props.helpWithNums;
+        console.log(props);
+    }
     saveResolvedCard(value) {
         this.rightCardList.push(value);
+    }
+
+    isAllCoupleCompleted() {
+        return this.rightCardList.length - this.cards.length === 0;
     }
 
     isSameCard(key) {
@@ -42,6 +63,7 @@ class Couple {
     }
 
     compareCard(value) {
+        this.turns++;
         if (this.firstCard.value === value) {
             this.firstCard = null;
             return true;
@@ -54,80 +76,88 @@ class Couple {
         this.doubleCards = this.doubleCards.sort(() => Math.random() - 0.5);
     }
 }
+const COUPLECARDS = "couplecards";
 
 // HTML TAGS
+const selectorCoupleHTML = document.getElementById("selector-couple");
+const selectorMaxHTML = document.getElementById("selector-max");
+const isNumericHTML = document.getElementById("numeric-cards");
 // CLASS VALUES
 const maxCoupleCards = 4
-const helpWithNums = false;
+const helpWithNums = true;
 var player = new Couple(quienEsQuien[0].characters, maxCoupleCards, helpWithNums);
 
 function loadPage() {
+    let valueLocal = localStorage.getItem(COUPLECARDS);
+    if (valueLocal !== null) {
+        let nPlayer = JSON.parse(valueLocal)
+        console.log("hell is forever", nPlayer);
+        player.loadStorage(nPlayer);
+        generateCards();
+        rotateCorrect();
+        console.log("Cargado");
+    } /*else {
+        player.generateDouble();
+        localStorage.setItem(COUPLECARDS,JSON.stringify(player));
+        console.log("Generado");
+    }*/
+
     generateSelector();
     generateSelectorMax();
-    generateCards();
 }
 
 function generateSelector() {
-    let slct = document.getElementById("selector-couple");
-    deleteChilds(slct);
+    deleteChilds(selectorCoupleHTML);
     quienEsQuien.forEach((e, i) => {
         let opt = document.createElement("option");
         opt.innerText = e.title;
         opt.value = i;
-        slct.appendChild(opt);
+        selectorCoupleHTML.appendChild(opt);
     });
 }
 
 function generateSelectorMax() {
-    let slctMax = document.getElementById("selector-max");
-    let slctSerie = document.getElementById("selector-couple");
-    deleteChilds(slctMax);
-    let charactersList = quienEsQuien[slctSerie.selectedIndex].characters;
+    deleteChilds(selectorMaxHTML);
+    let charactersList = quienEsQuien[selectorCoupleHTML.selectedIndex].characters;
     /// predefault list
     let llistat = [4, 6, 8, 10, 14, 20];
     for (let i = 0; i <= charactersList.length; i++) {
         if (i < llistat.length) {
             let opt = document.createElement("option");
-            opt.innerText = llistat[i] + " parejas";
+            opt.innerText = llistat[i];
             opt.value = llistat[i];
-            slctMax.appendChild(opt);
+            selectorMaxHTML.appendChild(opt);
         }
     }
 
     if (!llistat.includes(charactersList.length)) {
         let opt = document.createElement("option");
-        opt.innerText = charactersList.length + " parejas";
+        opt.innerText = charactersList.length;
         opt.value = charactersList.length;
-        slctMax.appendChild(opt);
+        selectorMaxHTML.appendChild(opt);
     }
 }
 
-function changeCoupleGame() {
-    // 'selectedIndex' devuelve : 0,1,2,3 NO EL VALOR REAL DE 'value'
-    let n = document.getElementById("selector-couple").selectedIndex;
-    let isNumeric = document.getElementById("numeric-cards");
-    let m = document.getElementById("selector-max").value;
-    player = new Couple(quienEsQuien[n].characters, parseInt(m), isNumeric.checked);
+
+function startCoupleGame(event) {
+    // Prevent default auto-send
+    event.preventDefault();
+    // Generate ob from 'form'
+    player = new Couple(
+        quienEsQuien[selectorCoupleHTML.value].characters,
+        selectorMaxHTML.value,
+        isNumericHTML.checked
+    );
+
+    player.generateDouble();
+    localStorage.setItem(COUPLECARDS, JSON.stringify(player));
     generateCards();
 }
 
-function changeMaxCard() {
-    let m = document.getElementById("selector-couple").selectedIndex;
-    let n = document.getElementById("selector-max").value;
-    let isNumeric = document.getElementById("numeric-cards");
-    player = new Couple(quienEsQuien[m].characters, parseInt(n), isNumeric.checked);
-    generateCards();
-}
 
-function toggleNumericCards() {
-    let isNumeric = document.getElementById("numeric-cards");
-    player.helpWithNums = isNumeric.checked;
-    generateCards();
-}
 
 function cardHTML(props, index, numeric) {
     let numericHTML = '';
-    console.log("numerirc", numeric);
     if (numeric) numericHTML = `<div class="help-num">${index + 1}</div>`;
     return `<li class="card">
     <div class="flip-card">
@@ -155,25 +185,28 @@ function cardClicked(event) {
     let valueCard = cardClosestInner.getAttribute('data-card');
     let keyCard = cardClosestInner.getAttribute('data-key');
 
+    cardClosestInner.getElementsByClassName("flip-card-front")[0].ariaHidden = "true";
+    cardClosestInner.getElementsByClassName("flip-card-back")[0].ariaHidden = "false";
+
     // Comprova si tria una ja encertada
     if (player.isResolvedCard(valueCard)) return;
 
     //comprova si es la primera jugada i guarda la carta {key, value}
     if (player.firstMove(keyCard, valueCard)) {
         cardClosestInner.style.transform = "rotateY(180deg)";
+        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
         return;
     };
 
     // Comprova si tria la mateixa carta en comptes d'una altre
-    if (player.isSameCard(keyCard)) {
-        console.log("lol eso no");
-        return;
-    }
+    if (player.isSameCard(keyCard)) return;
+
 
     // si es la segonda jugada fa la comparacio
     if (player.compareCard(valueCard)) {
         cardClosestInner.style.transform = "rotateY(180deg)";
         player.saveResolvedCard(valueCard);
+        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
     } else {
         cardClosestInner.style.transform = "rotateY(180deg)";
         player.isPlaying = false
@@ -182,6 +215,11 @@ function cardClicked(event) {
             rotateAll();
             player.isPlaying = true;
         }, 1000);
+    }
+
+    if (player.isAllCoupleCompleted()) {
+        console.log("WIN!\nModo " + player.cards.length + " parejas\nTurnos: " + player.turns);
+        localStorage.removeItem(COUPLECARDS);
     }
 
 }
@@ -195,16 +233,30 @@ function rotateAll() {
     }
 }
 
+function rotateCorrect() {
+    for (let i = 0; i < document.getElementsByClassName("flip-card-inner").length; i++) {
+        const element = document.getElementsByClassName("flip-card-inner")[i];
+        // ? prevent null
+        if (player.isResolvedCard(element.getAttribute("data-card")) || player.firstCard?.key == element.getAttribute("data-key")) {
+            element.style.transform = "rotateY(180deg)";
+        }
+
+    }
+}
 
 
 function generateCards() {
-    player.generateDouble();
     let cards = document.getElementById("cards");
     deleteChilds(cards);
     player.doubleCards.forEach((e, index) => {
         let card = cardHTML(e, index, player.helpWithNums);
         cards.innerHTML += card;
     });
+
+    for (let i = 0; i < document.getElementsByClassName("flip-card-inner").length; i++) {
+        const element = document.getElementsByClassName("flip-card-inner")[i];
+        element.style.animation = "0.5s ease 0s 1 normal running aparece";
+    }
 }
 
 function deleteChilds(currentDiv) {
