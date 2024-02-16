@@ -28,9 +28,6 @@ header>a {
   text-align: center;
 }
 
-.card-front {
-  width: 200px;
-}
 
 
 
@@ -38,6 +35,69 @@ main {
   margin: 0 auto;
   max-width: 800px;
   min-height: 100vh;
+}
+
+#info {
+  font-family: Arial, Helvetica, sans-serif;
+  position: sticky;
+  bottom: 0px;
+  left: 0px;
+  color: white;
+  background-color: rgb(40, 90, 14);
+  padding: 5px;
+  margin: 0px;
+  text-align: center;
+}
+
+#menu-couple {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  max-width: 350px;
+  background-color: white;
+margin: 0 auto;
+  select,
+  option {
+    border-radius: 6px;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  input[type="submit"] {
+    padding: 5px;
+    color: white;
+    border-radius: 0.2rem;
+    background-color: rgb(52, 121, 18);
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    transition: background-color 0.5s;
+
+    &:hover {
+      background-color: rgb(40, 90, 14);
+    }
+  }
+
+  label[for="numeric-cards"] {
+    cursor: pointer;
+  }
+
+}
+
+#newGameBtn {
+  display: none;
+  width:100%;
+  font-size: 16px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  background-color: rgb(40, 90, 14);
+  border: 1px solid white;
+  border-radius: 6px;
+  text-align: center;
 }
 
 #cards {
@@ -49,11 +109,14 @@ main {
   list-style-type: none;
 }
 
+.card-front {
+  width: 200px;
+}
+
 svg {
   background-color: #02450C;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg fill-opacity='0.34'%3E%3Ccircle fill='%2302450C' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23024f0d' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%2302580f' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%23026210' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%23016c12' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23017613' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
 }
-
 
 
 .flip-card {
@@ -116,43 +179,7 @@ svg {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.827), 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
-#menu-couple {
-  font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid black;
-  padding: 15px;
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  max-width: 350px;
-  background-color: white;
 
-  select,
-  option {
-    border-radius: 6px;
-    padding: 5px;
-    cursor: pointer;
-  }
-
-  input[type="submit"] {
-    padding: 5px;
-    color: white;
-    border-radius: 0.2rem;
-    background-color: rgb(52, 121, 18);
-    cursor: pointer;
-    border: none;
-    padding: 10px;
-    transition: background-color 0.5s;
-
-    &:hover {
-      background-color: rgb(40, 90, 14);
-    }
-  }
-
-  label[for="numeric-cards"] {
-    cursor: pointer;
-  }
-
-}
 
 @keyframes aparece {
   0% {

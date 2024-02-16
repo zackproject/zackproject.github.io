@@ -36,7 +36,7 @@ class Couple {
         console.log(props);
     }
     saveResolvedCard(value) {
-        this.rightCardList.push(value);
+        this.rightCardList.push(parseInt(value));
     }
 
     isAllCoupleCompleted() {
@@ -49,7 +49,7 @@ class Couple {
     }
 
     isResolvedCard(value) {
-        return this.rightCardList.includes(value);
+        return this.rightCardList.includes(parseInt(value));
     }
 
     // Al clicar una carta envia la carta aquesta funcion
@@ -82,6 +82,10 @@ const COUPLECARDS = "couplecards";
 const selectorCoupleHTML = document.getElementById("selector-couple");
 const selectorMaxHTML = document.getElementById("selector-max");
 const isNumericHTML = document.getElementById("numeric-cards");
+const infoHTML = document.getElementById("info");
+const menuCoupleHTML = document.getElementById("menu-couple");
+const newGameBtnHTML = document.getElementById("newGameBtn");
+
 // CLASS VALUES
 const maxCoupleCards = 4
 const helpWithNums = true;
@@ -91,16 +95,13 @@ function loadPage() {
     let valueLocal = localStorage.getItem(COUPLECARDS);
     if (valueLocal !== null) {
         let nPlayer = JSON.parse(valueLocal)
-        console.log("hell is forever", nPlayer);
         player.loadStorage(nPlayer);
         generateCards();
         rotateCorrect();
+        menuCoupleHTML.style.display = "none";
+        newGameBtnHTML.style.display = "block";
         console.log("Cargado");
-    } /*else {
-        player.generateDouble();
-        localStorage.setItem(COUPLECARDS,JSON.stringify(player));
-        console.log("Generado");
-    }*/
+    }
 
     generateSelector();
     generateSelectorMax();
@@ -109,9 +110,8 @@ function loadPage() {
 function generateSelector() {
     deleteChilds(selectorCoupleHTML);
     quienEsQuien.forEach((e, i) => {
-        let opt = document.createElement("option");
-        opt.innerText = e.title;
-        opt.value = i;
+        // let opt = document.createElement("option")
+        let opt = new Option(e.title, i);
         selectorCoupleHTML.appendChild(opt);
     });
 }
@@ -123,17 +123,13 @@ function generateSelectorMax() {
     let llistat = [4, 6, 8, 10, 14, 20];
     for (let i = 0; i <= charactersList.length; i++) {
         if (i < llistat.length) {
-            let opt = document.createElement("option");
-            opt.innerText = llistat[i];
-            opt.value = llistat[i];
+            let opt = new Option(llistat[i], llistat[i]);
             selectorMaxHTML.appendChild(opt);
         }
     }
 
     if (!llistat.includes(charactersList.length)) {
-        let opt = document.createElement("option");
-        opt.innerText = charactersList.length;
-        opt.value = charactersList.length;
+        let opt = new Option(charactersList.length, charactersList.length);
         selectorMaxHTML.appendChild(opt);
     }
 }
@@ -151,24 +147,34 @@ function startCoupleGame(event) {
 
     player.generateDouble();
     localStorage.setItem(COUPLECARDS, JSON.stringify(player));
+
+    menuCoupleHTML.style.display = "none";
+    newGameBtnHTML.style.display = "block";
     generateCards();
+    addAnimationGenerations();
 }
 
 
-
 function cardHTML(props, index, numeric) {
+    console.log(player.isResolvedCard(props.id), props.id, player.rightCardList);
+    // si es resolta, la card sencera es oculta 'aria-hidden'
     let numericHTML = '';
-    if (numeric) numericHTML = `<div class="help-num">${index + 1}</div>`;
+    let number = "";
+    // si la carta es clicada la part frontal es oculta, la de darrere visible
+    let isCard1Clicked = player.firstCard == null;
+    // afegegeix un numero al html
+    if (numeric) numericHTML = `<div class="help-num" aria-hidden="true">${index + 1}</div>`;
+    if (numeric) number = index + 1;
     return `<li class="card">
-    <div class="flip-card">
+    <div class="flip-card" aria-hidden="${player.isResolvedCard(props.id)}">
         <div class="flip-card-inner" data-key="${index}" data-card="${props.id}"  onclick="cardClicked(event)">
-            <div class="flip-card-front">
-                <svg xmlns="http://www.w3.org/2000/svg" aria-label="Carta oculta" width="150" height="150" viewBox="0 -3 114 120">
+            <div class="flip-card-front" aria-hidden="${!isCard1Clicked}">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-label="Carta oculta ${number}" width="150" height="150" viewBox="0 -3 114 120">
                     <use xlink:href="zp.svg#outerzp" />
                 </svg>
-                ${numericHTML}  
+                ${numericHTML}
             </div>
-            <div class="flip-card-back" aria-hidden="true" >
+            <div class="flip-card-back" aria-hidden="${isCard1Clicked}" >
             <img src="${props.image}" alt="Carta de ${props.name}" height="100%" width="100%">
             </div>
         </div>
@@ -180,21 +186,27 @@ function cardHTML(props, index, numeric) {
 function cardClicked(event) {
     // comprova si esta jugant
     if (!player.isPlaying) return;
-    // agafa el valor de la caera
-    let cardClosestInner = event.target.closest('.flip-card-inner');
-    let valueCard = cardClosestInner.getAttribute('data-card');
-    let keyCard = cardClosestInner.getAttribute('data-key');
 
-    cardClosestInner.getElementsByClassName("flip-card-front")[0].ariaHidden = "true";
-    cardClosestInner.getElementsByClassName("flip-card-back")[0].ariaHidden = "false";
+    // agafa el valor mes proper al 'event
+    const crdInner = event.target.closest('.flip-card-inner');
+    const valueCard = crdInner.getAttribute('data-card');
+    const keyCard = crdInner.getAttribute('data-key');
+    // del valor html mes proper, extrau el front, back i img
+    const backCard = crdInner.querySelector(".flip-card-front");
+    const frontCard = crdInner.querySelector(".flip-card-back");
+    const imgCard = crdInner.querySelector("img");
 
     // Comprova si tria una ja encertada
     if (player.isResolvedCard(valueCard)) return;
 
     //comprova si es la primera jugada i guarda la carta {key, value}
     if (player.firstMove(keyCard, valueCard)) {
-        cardClosestInner.style.transform = "rotateY(180deg)";
+        crdInner.style.transform = "rotateY(180deg)";
+        frontCard.ariaHidden = "false";
+        backCard.ariaHidden = "true";
+        imgCard.focus();
         localStorage.setItem(COUPLECARDS, JSON.stringify(player));
+        console.log(frontCard, backCard, "hidden1");
         return;
     };
 
@@ -204,21 +216,33 @@ function cardClicked(event) {
 
     // si es la segonda jugada fa la comparacio
     if (player.compareCard(valueCard)) {
-        cardClosestInner.style.transform = "rotateY(180deg)";
+        crdInner.style.transform = "rotateY(180deg)";
+        frontCard.ariaHidden = "false";
+        backCard.ariaHidden = "true";
+        crdInner.ariaHidden = "true";
+        infoHTML.innerText = "Correcto, resuelve otra pareja ";
+        infoHTML.focus();
         player.saveResolvedCard(valueCard);
         localStorage.setItem(COUPLECARDS, JSON.stringify(player));
     } else {
-        cardClosestInner.style.transform = "rotateY(180deg)";
-        player.isPlaying = false
+        crdInner.style.transform = "rotateY(180deg)";
+        frontCard.ariaHidden = "true";
+        backCard.ariaHidden = "false";
+        player.isPlaying = false;
+        infoHTML.innerText = "Incorrecto, prueba otra pareja ";
+        infoHTML.focus();
+        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
         // si falla es voltejan totes
         setTimeout(() => {
             rotateAll();
             player.isPlaying = true;
         }, 1000);
     }
+    console.log(frontCard, backCard, "hidden2");
 
     if (player.isAllCoupleCompleted()) {
-        console.log("WIN!\nModo " + player.cards.length + " parejas\nTurnos: " + player.turns);
+        infoHTML.innerText = "¡Enhorabuena! Resuelto en " + player.turns + " turnos";
+        infoHTML.focus();
         localStorage.removeItem(COUPLECARDS);
     }
 
@@ -253,10 +277,20 @@ function generateCards() {
         cards.innerHTML += card;
     });
 
+}
+
+function addAnimationGenerations() {
     for (let i = 0; i < document.getElementsByClassName("flip-card-inner").length; i++) {
         const element = document.getElementsByClassName("flip-card-inner")[i];
         element.style.animation = "0.5s ease 0s 1 normal running aparece";
     }
+}
+
+
+function showMenu() {
+    menuCoupleHTML.style.display = "flex";
+    newGameBtnHTML.style.display = "none";
+    menuCoupleHTML.focus();
 }
 
 function deleteChilds(currentDiv) {
