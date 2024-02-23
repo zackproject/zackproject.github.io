@@ -58,7 +58,9 @@ main {
   flex-direction: column;
   max-width: 350px;
   background-color: white;
-margin: 0 auto;
+  margin: 0 auto;
+  display: none;
+
   select,
   option {
     border-radius: 6px;
@@ -81,15 +83,37 @@ margin: 0 auto;
     }
   }
 
-  label[for="numeric-cards"] {
+  label[for="numeric-cards"],
+  label[for="multiplayer-cards"],
+  input[type="checkbox"],
+  details {
     cursor: pointer;
+  }
+
+  fieldset {
+    margin-top: 8px;
+
+    button {
+      color: white;
+      border-radius: 0.2rem;
+      background-color: rgb(52, 121, 18);
+      cursor: pointer;
+      border: none;
+      padding: 5px 5px 5px 5px;
+      transition: background-color 0.5s;
+
+      &:hover {
+        background-color: rgb(40, 90, 14);
+      }
+    }
   }
 
 }
 
+
 #newGameBtn {
-  display: none;
-  width:100%;
+  display: block;
+  width: 100%;
   font-size: 16px;
   padding: 10px;
   color: white;

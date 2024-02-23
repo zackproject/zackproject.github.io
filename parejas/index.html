@@ -25,21 +25,23 @@
             <label for="selector-max">Parejas a resolver</label>
             <select name="selector-max" id="selector-max">
             </select>
-            <!-- 
-            <label for="selector-players">Jugadores</label>
-            <select name="selector-players" id="selector-players">
-                <option value="0">Solitario</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="">5</option>
-            </select> -->
             <div>
                 <label for="numeric-cards">
                     Cartas numeradas
                 </label>
                 <input type="checkbox" id="numeric-cards" value="checkbox" checked>
             </div>
+            <details>
+                <summary>Multijugador</summary>
+                <fieldset id="multiplayer-fieldset">
+                    <legend>Agregar</legend>
+                    <label for="selector-players">Nombre de los jugadores</label>
+                    <ul id="playerList">
+                    </ul>
+                    <input id="player-name" placeholder="Nombre del jugador">
+                    <button onclick="addFormPlayer(event)">Añadir</button>
+                </fieldset>
+            </details>
             <input type="submit" value="EMPEZAR" />
         </form>
         <ul id="cards"> </ul>
