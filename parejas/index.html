@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar pareja con cartas de anime</title>
+    <title>Minijuego de buscar parejas de cartas anime</title>
+    <meta name="description"
+        content="Juego de hacer parejas con diferentes cartas de anime, un jugador o multijugador local">
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="../icopz.ico">
     <link rel="stylesheet" href="../footer/index.css">
@@ -46,7 +48,15 @@
         </form>
         <ul id="cards"> </ul>
     </main>
-    <p id="info"></p>
+    <div class="stickyInfo">
+        <details id="detailInfo">
+            <summary id="info">Partida no iniciada</summary>
+            <ul id="infoplayerList">
+                <li>Información adicional sólo disponible en Multijugador</li>
+            </ul>
+        </details>
+    </div>
+
     <!-- Carga la informacion de las cartas i las genera-->
     <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
     <script src="../footer/index.js"></script>

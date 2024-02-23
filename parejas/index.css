@@ -37,13 +37,13 @@ main {
   min-height: 100vh;
 }
 
-#info {
-  font-family: Arial, Helvetica, sans-serif;
+.stickyInfo{
   position: sticky;
   bottom: 0px;
   left: 0px;
-  color: white;
   background-color: rgb(40, 90, 14);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
   padding: 5px;
   margin: 0px;
   text-align: center;
@@ -86,7 +86,7 @@ main {
   label[for="numeric-cards"],
   label[for="multiplayer-cards"],
   input[type="checkbox"],
-  details {
+  summary {
     cursor: pointer;
   }
 
@@ -203,7 +203,9 @@ svg {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.827), 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
-
+.selected-player{
+  background-color: black;
+}
 
 @keyframes aparece {
   0% {

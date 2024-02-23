@@ -18,6 +18,9 @@ class Multiplayer {
         this.players = players;
         this.currentPlayerIndex = currentPlayerIndex; // Índice del jugador actual
     }
+    getmIndex() {
+        return this.currentPlayerIndex;
+    }
 
     getCurrentPlayer() {
         return this.players[this.currentPlayerIndex];
@@ -58,6 +61,21 @@ class Multiplayer {
         this.currentPlayerIndex = props.currentPlayerIndex; // Índice del jugador actual
     }
 
+    getmBestPlayerName() {
+        return this.sortByPoints()[0].name;
+    }
+
+    getmBestPlayerPoints() {
+        return this.sortByPoints()[0].score;
+    }
+
+    sortByPoints() {
+        return this.players.sort((a, b) => b.score - a.score);
+    }
+
+    cleanmScore() {
+        this.players.forEach(e => e.score = 0);
+    }
 }
 
 class Couple {
@@ -74,38 +92,10 @@ class Couple {
         this.helpWithNums = helpWithNums;
         this.multiplayer = new Multiplayer()
     }
-    unorderPlayers() {
-        this.multiplayer.unorderMPlayers();
-    }
 
-    isMultiplayer() {
-        return this.multiplayer.ismMultiplayer();
+    getIndex() {
+        return this.multiplayer.getmIndex();
     }
-
-    addPlayerPoints(){
-        this.multiplayer.addmPlayerPoints();
-    }
-
-    getPlayerName() {
-        return this.multiplayer.getmPlayerName()
-    }
-    setNewMultiplayer(multiplayer) {
-        return this.multiplayer = multiplayer;
-    }
-
-    getCurrentPlayer() {
-        return this.multiplayer.getCurrentPlayer();
-    }
-
-    nextPlayer() {
-        this.multiplayer.nextPlayer();
-    }
-    addPlayer(name) {
-        this.multiplayer.postPlayer(name);
-    }
-
-
-
     loadStorage(props) {
         this.turns = props.turns;
         this.points = props.points;
@@ -114,7 +104,6 @@ class Couple {
         this.rightCardList = props.rightCardList;
         this.firstCard = props.firstCard;
         this.helpWithNums = props.helpWithNums;
-        console.log(props.multiplayer.players, "bb");
         this.multiplayer = new Multiplayer(props.multiplayer.currentPlayerIndex, props.multiplayer.players);
     }
     saveResolvedCard(value) {
@@ -167,11 +156,55 @@ class Couple {
         return this.getCardName(this.firstCard.value);
     }
 
+    // multiplayer
+    cleanScore() {
+        this.multiplayer.cleanmScore()
+    }
     getPlayerList() {
         return this.multiplayer.players;
     }
+
+    unorderPlayers() {
+        this.multiplayer.unorderMPlayers();
+    }
+
+    isMultiplayer() {
+        return this.multiplayer.ismMultiplayer();
+    }
+
+    addPlayerPoints() {
+        this.multiplayer.addmPlayerPoints();
+    }
+
+    getPlayerName() {
+        return this.multiplayer.getmPlayerName()
+    }
+    setNewMultiplayer(multiplayer) {
+        return this.multiplayer = multiplayer;
+    }
+
+    getCurrentPlayer() {
+        return this.multiplayer.getCurrentPlayer();
+    }
+
+    nextPlayer() {
+        this.multiplayer.nextPlayer();
+    }
+
+    addPlayer(name) {
+        this.multiplayer.postPlayer(name);
+    }
+
+    getBestPlayerName() {
+        return this.multiplayer.getmBestPlayerName();
+    }
+
+    getBestPlayerPoints() {
+        return this.multiplayer.getmBestPlayerPoints();
+    }
+
 }
-const COUPLECARDS = "couplecards";
+const COUPLECARDS = "couplecard";
 
 // HTML TAGS
 const selectorCoupleHTML = document.getElementById("selector-couple");
@@ -197,12 +230,18 @@ function loadPage() {
         if (player.firstCard !== null) {
             infoHTML.innerText = `Carta de '${player.getFirstCardName()}' seleccionada`;
         } else {
-            infoHTML.innerText = `Selecciona cualquier carta`;
+            if (player.isMultiplayer()) {
+                infoHTML.innerText = "Empieza " + player.getPlayerName();
+                generateHTMLPlayers();
+            } else {
+                infoHTML.innerText = `Selecciona cualquier carta`;
+            }
         }
+
+
     }
     menuCoupleHTML.style.display = "none";
     newGameBtnHTML.style.display = "block";
-    console.log("Cargado");
 
     generateSelector();
     generateSelectorMax();
@@ -235,17 +274,10 @@ function generateSelectorMax() {
     }
 }
 
-let a = null;
 
 function startCoupleGame(event) {
-    event.preventDefault();
-    console.log("e", event);
     // Prevent default auto-send
-    a = new FormData(event.target);
-    for (var pair of a.entries()) {
-        console.log(pair[0] + ': ' + pair[1]);
-      }
-    // Generate ob from 'form'
+    event.preventDefault();
     player = new Couple(
         quienEsQuien[selectorCoupleHTML.value].characters,
         selectorMaxHTML.value,
@@ -254,18 +286,21 @@ function startCoupleGame(event) {
     player.setNewMultiplayer(multiplayer);
     player.generateDouble();
     player.unorderPlayers();
+    player.cleanScore();
+    if (player.isMultiplayer()) {
+        infoHTML.innerText = "Empieza " + player.getPlayerName();
+        generateHTMLPlayers();
+    } else {
+        infoHTML.innerText = `Selecciona cualquier carta`;
+    }
     localStorage.setItem(COUPLECARDS, JSON.stringify(player));
 
     menuCoupleHTML.style.display = "none";
     newGameBtnHTML.style.display = "block";
     generateCards();
     addAnimationGenerations();
-    infoHTML.innerText = `Selecciona cualquier carta`;
-    if (player.isMultiplayer()) {
-        console.info("Empieza a ", player.getPlayerName());
-    }
-}
 
+}
 
 function cardHTML(props, index, numeric) {
     // si es resolta, la card sencera es oculta 'aria-hidden'
@@ -277,7 +312,7 @@ function cardHTML(props, index, numeric) {
     if (numeric) numericHTML = `<div class="help-num" aria-hidden="true">${index + 1}</div>`;
     if (numeric) number = index + 1;
     return `<li class="card">
-    <div class="flip-card" aria-hidden="${player.isResolvedCard(props.id)}">
+    <article class="flip-card" aria-hidden="${player.isResolvedCard(props.id)}">
         <div class="flip-card-inner" data-key="${index}" data-card="${props.id}"  onclick="cardClicked(event)">
             <div class="flip-card-front" aria-hidden="${!isCard1Clicked}">
                 <svg xmlns="http://www.w3.org/2000/svg" aria-label="Carta oculta ${number}" width="150" height="150" viewBox="0 -3 114 120">
@@ -289,7 +324,7 @@ function cardHTML(props, index, numeric) {
             <img src="${props.image}" alt="Carta de ${props.name}" height="100%" width="100%">
             </div>
         </div>
-    </div>
+    </article>
 </li>`
 }
 
@@ -326,30 +361,34 @@ function cardClicked(event) {
 
     // si es la segonda jugada fa la comparacio
     if (player.compareCard(valueCard)) {
+        player.saveResolvedCard(valueCard);
+        if (player.isMultiplayer()) {
+            player.addPlayerPoints();
+            generateHTMLPlayers();
+            infoHTML.innerText = "Correcto, continua " + player.getPlayerName();
+        } else {
+            infoHTML.innerText = "Correcto, resuelve otra pareja ";
+        }
+        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
         crdInner.style.transform = "rotateY(180deg)";
         frontCard.ariaHidden = "false";
         backCard.ariaHidden = "true";
         crdInner.ariaHidden = "true";
-        infoHTML.innerText = "Correcto, resuelve otra pareja ";
-        if(player.isMultiplayer()){
-            console.log(player.multiplayer.players);
-            player.addPlayerPoints();
-        }
         infoHTML.focus();
-        player.saveResolvedCard(valueCard);
-        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
     } else {
+        if (player.isMultiplayer()) {
+            player.nextPlayer();
+            generateHTMLPlayers();
+            infoHTML.innerText = "Carta '" + player.getCardName(valueCard) + "' incorrecta, le toca a " + player.getPlayerName();
+        } else {
+            infoHTML.innerText = "Carta '" + player.getCardName(valueCard) + "' incorrecta, prueba otra vez ";
+        }
+        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
         crdInner.style.transform = "rotateY(180deg)";
         frontCard.ariaHidden = "true";
         backCard.ariaHidden = "false";
         player.isPlaying = false;
-        infoHTML.innerText = "Incorrecto, prueba otra pareja ";
-        if (player.isMultiplayer()) {
-            player.nextPlayer();
-            console.log("Le toca a ", player.getPlayerName());
-        }
         infoHTML.focus();
-        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
         // si falla es voltejan totes
         setTimeout(() => {
             rotateAll();
@@ -358,7 +397,13 @@ function cardClicked(event) {
     }
 
     if (player.isAllCoupleCompleted()) {
-        infoHTML.innerText = "¡Enhorabuena! Resuelto en " + player.turns + " turnos";
+        if (player.isMultiplayer()) {
+            infoHTML.innerText = "Mejor puntación de  " + player.getBestPlayerName() + ": " + player.getBestPlayerPoints();
+            document.getElementById("detailInfo").open = "true";
+        } else {
+            infoHTML.innerText = "¡Enhorabuena! Resuelto en " + player.turns + " turnos";
+        }
+
         infoHTML.focus();
         localStorage.removeItem(COUPLECARDS);
     }
@@ -411,6 +456,20 @@ function generateCards() {
         cards.innerHTML += card;
     });
 
+}
+
+function generateHTMLPlayers() {
+    let infoplayerList = document.getElementById("infoplayerList");
+    deleteChilds(infoplayerList);
+    player.getPlayerList().forEach((e, i) => {
+        let li = document.createElement("li");
+        li.innerText = `${e.name} : ${e.score} puntos`;
+        infoplayerList.appendChild(li);
+        if (i === player.getIndex()) {
+            li.className = "selected-player";
+            li.title = "Jugador actual"
+        }
+    });
 }
 
 function addAnimationGenerations() {
