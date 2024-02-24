@@ -204,7 +204,7 @@ class Couple {
     }
 
 }
-const COUPLECARDS = "couplecard";
+const COUPLECARDS = "couplecar";
 
 // HTML TAGS
 const selectorCoupleHTML = document.getElementById("selector-couple");
@@ -300,6 +300,7 @@ function startCoupleGame(event) {
     generateCards();
     addAnimationGenerations();
 
+
 }
 
 function cardHTML(props, index, numeric) {
@@ -315,7 +316,7 @@ function cardHTML(props, index, numeric) {
     <article class="flip-card" aria-hidden="${player.isResolvedCard(props.id)}">
         <div class="flip-card-inner" data-key="${index}" data-card="${props.id}"  onclick="cardClicked(event)">
             <div class="flip-card-front" aria-hidden="${!isCard1Clicked}">
-                <svg xmlns="http://www.w3.org/2000/svg" aria-label="Carta oculta ${number}" width="150" height="150" viewBox="0 -3 114 120">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-label="Carta oculta ${number}" title="Click para revelar" width="150" height="150" viewBox="0 -3 114 120">
                     <use xlink:href="zp.svg#outerzp" />
                 </svg>
                 ${numericHTML}
@@ -366,29 +367,32 @@ function cardClicked(event) {
             player.addPlayerPoints();
             generateHTMLPlayers();
             infoHTML.innerText = "Correcto, continua " + player.getPlayerName();
+            infoHTML.focus();
         } else {
             infoHTML.innerText = "Correcto, resuelve otra pareja ";
+            infoHTML.focus();
         }
         localStorage.setItem(COUPLECARDS, JSON.stringify(player));
         crdInner.style.transform = "rotateY(180deg)";
         frontCard.ariaHidden = "false";
         backCard.ariaHidden = "true";
         crdInner.ariaHidden = "true";
-        infoHTML.focus();
     } else {
         if (player.isMultiplayer()) {
             player.nextPlayer();
             generateHTMLPlayers();
             infoHTML.innerText = "Carta '" + player.getCardName(valueCard) + "' incorrecta, le toca a " + player.getPlayerName();
+            infoHTML.focus();
         } else {
             infoHTML.innerText = "Carta '" + player.getCardName(valueCard) + "' incorrecta, prueba otra vez ";
+            infoHTML.focus();
         }
         localStorage.setItem(COUPLECARDS, JSON.stringify(player));
         crdInner.style.transform = "rotateY(180deg)";
         frontCard.ariaHidden = "true";
         backCard.ariaHidden = "false";
+        crdInner.ariaHidden = "false";
         player.isPlaying = false;
-        infoHTML.focus();
         // si falla es voltejan totes
         setTimeout(() => {
             rotateAll();
@@ -400,11 +404,11 @@ function cardClicked(event) {
         if (player.isMultiplayer()) {
             infoHTML.innerText = "Mejor puntación de  " + player.getBestPlayerName() + ": " + player.getBestPlayerPoints();
             document.getElementById("detailInfo").open = "true";
+            infoHTML.focus();
         } else {
             infoHTML.innerText = "¡Enhorabuena! Resuelto en " + player.turns + " turnos";
+            infoHTML.focus();
         }
-
-        infoHTML.focus();
         localStorage.removeItem(COUPLECARDS);
     }
 
@@ -426,6 +430,7 @@ function addFormPlayer(event) {
         li.innerText = e.name;
         ulPlayerHTML.appendChild(li);
     });
+    ulPlayerHTML.focus();
 }
 
 function rotateAll() {
