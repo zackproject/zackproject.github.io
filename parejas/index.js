@@ -93,6 +93,12 @@ class Couple {
         this.multiplayer = new Multiplayer()
     }
 
+    getFirstKeyCard() {
+        if (this.firstCard !== null) {
+            return this.firstCard.key
+        }
+        return null;
+    }
     getIndex() {
         return this.multiplayer.getmIndex();
     }
@@ -204,7 +210,7 @@ class Couple {
     }
 
 }
-const COUPLECARDS = "couplecar";
+const COUPLECARDS = "couplecards";
 
 // HTML TAGS
 const selectorCoupleHTML = document.getElementById("selector-couple");
@@ -214,37 +220,51 @@ const infoHTML = document.getElementById("info");
 const menuCoupleHTML = document.getElementById("menu-couple");
 const newGameBtnHTML = document.getElementById("newGameBtn");
 const ulPlayerHTML = document.getElementById("playerList");
+const hideMenuHTML = document.getElementById("hide-menu");
 
 // CLASS VALUES
 const maxCoupleCards = 4
 const helpWithNums = true;
 var player = new Couple(quienEsQuien[0].characters, maxCoupleCards, helpWithNums);
 var multiplayer = new Multiplayer();
+
+
 function loadPage() {
     let valueLocal = localStorage.getItem(COUPLECARDS);
+    generateSelector();
+    generateSelectorMax();
+
     if (valueLocal !== null) {
         let nPlayer = JSON.parse(valueLocal)
         player.loadStorage(nPlayer);
         generateCards();
         rotateCorrect();
+        generateHTMLPlayers();
         if (player.firstCard !== null) {
             infoHTML.innerText = `Carta de '${player.getFirstCardName()}' seleccionada`;
         } else {
             if (player.isMultiplayer()) {
                 infoHTML.innerText = "Empieza " + player.getPlayerName();
-                generateHTMLPlayers();
             } else {
                 infoHTML.innerText = `Selecciona cualquier carta`;
             }
+            infoHTML.focus()
         }
+        menuCoupleHTML.style.display = "none";
+        newGameBtnHTML.style.display = "block";
 
-
+    } else {
+        menuCoupleHTML.style.display = "flex";
+        newGameBtnHTML.style.display = "none";
+        hideMenuHTML.style.display = "none";
     }
-    menuCoupleHTML.style.display = "none";
-    newGameBtnHTML.style.display = "block";
 
-    generateSelector();
-    generateSelectorMax();
+    menuCoupleHTML.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            e.preventDefault(); // Evitar el comportamiento predeterminado de enviar el formulario
+            addFormPlayer(e);
+        }
+    });
 }
 
 function generateSelector() {
@@ -292,11 +312,13 @@ function startCoupleGame(event) {
         generateHTMLPlayers();
     } else {
         infoHTML.innerText = `Selecciona cualquier carta`;
+        infoHTML.focus()
     }
     localStorage.setItem(COUPLECARDS, JSON.stringify(player));
 
     menuCoupleHTML.style.display = "none";
     newGameBtnHTML.style.display = "block";
+    hideMenuHTML.style.display = "block";
     generateCards();
     addAnimationGenerations();
 
@@ -347,11 +369,11 @@ function cardClicked(event) {
 
     //comprova si es la primera jugada i guarda la carta {key, value}
     if (player.firstMove(keyCard, valueCard)) {
+        infoHTML.innerText = `Carta de '${player.getCardName(valueCard)}' seleccionada`;
+        infoHTML.focus();
         crdInner.style.transform = "rotateY(180deg)";
         frontCard.ariaHidden = "false";
         backCard.ariaHidden = "true";
-        infoHTML.innerText = `Carta de '${player.getCardName(valueCard)}' seleccionada`;
-        infoHTML.focus();
         localStorage.setItem(COUPLECARDS, JSON.stringify(player));
         return;
     };
@@ -359,7 +381,8 @@ function cardClicked(event) {
     // Comprova si tria la mateixa carta en comptes d'una altre
     if (player.isSameCard(keyCard)) return;
 
-
+    // quan fa la compareCard() la primera es torna null, la guardo temporalment
+    const tempCard1 = document.querySelector(`[data-key="${player.getFirstKeyCard(valueCard)}"]`);
     // si es la segonda jugada fa la comparacio
     if (player.compareCard(valueCard)) {
         player.saveResolvedCard(valueCard);
@@ -367,31 +390,38 @@ function cardClicked(event) {
             player.addPlayerPoints();
             generateHTMLPlayers();
             infoHTML.innerText = "Correcto, continua " + player.getPlayerName();
-            infoHTML.focus();
         } else {
             infoHTML.innerText = "Correcto, resuelve otra pareja ";
-            infoHTML.focus();
         }
-        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
+        infoHTML.focus();
         crdInner.style.transform = "rotateY(180deg)";
         frontCard.ariaHidden = "false";
         backCard.ariaHidden = "true";
         crdInner.ariaHidden = "true";
+        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
+
     } else {
         if (player.isMultiplayer()) {
             player.nextPlayer();
             generateHTMLPlayers();
             infoHTML.innerText = "Carta '" + player.getCardName(valueCard) + "' incorrecta, le toca a " + player.getPlayerName();
-            infoHTML.focus();
         } else {
             infoHTML.innerText = "Carta '" + player.getCardName(valueCard) + "' incorrecta, prueba otra vez ";
-            infoHTML.focus();
         }
-        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
+        infoHTML.focus();
         crdInner.style.transform = "rotateY(180deg)";
+        //card 2
         frontCard.ariaHidden = "true";
         backCard.ariaHidden = "false";
         crdInner.ariaHidden = "false";
+
+        //card 1
+        tempCard1.ariaHidden = "true";
+        tempCard1.querySelector(".flip-card-front").ariaHidden = "false";
+        tempCard1.querySelector(".flip-card-back").ariaHidden = "true";
+        tempCard1.ariaHidden = "false";
+        infoHTML.focus();
+        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
         player.isPlaying = false;
         // si falla es voltejan totes
         setTimeout(() => {
@@ -404,14 +434,12 @@ function cardClicked(event) {
         if (player.isMultiplayer()) {
             infoHTML.innerText = "Mejor puntación de  " + player.getBestPlayerName() + ": " + player.getBestPlayerPoints();
             document.getElementById("detailInfo").open = "true";
-            infoHTML.focus();
         } else {
             infoHTML.innerText = "¡Enhorabuena! Resuelto en " + player.turns + " turnos";
-            infoHTML.focus();
         }
+        infoHTML.focus();
         localStorage.removeItem(COUPLECARDS);
     }
-
 }
 
 function addFormPlayer(event) {
@@ -431,6 +459,12 @@ function addFormPlayer(event) {
         ulPlayerHTML.appendChild(li);
     });
     ulPlayerHTML.focus();
+}
+
+function hideMenu(event) {
+    event.preventDefault();
+    menuCoupleHTML.style.display = "none";
+    newGameBtnHTML.style.display = "block";
 }
 
 function rotateAll() {

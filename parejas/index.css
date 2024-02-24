@@ -37,7 +37,7 @@ main {
   min-height: 100vh;
 }
 
-.stickyInfo{
+.stickyInfo {
   position: sticky;
   bottom: 0px;
   left: 0px;
@@ -59,7 +59,27 @@ main {
   max-width: 350px;
   background-color: white;
   margin: 0 auto;
-  display: none;
+  position: relative;
+
+  #hide-menu {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: 1px solid #112d06;
+    color: #112d06;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+  }
+
+  #hide-menu:hover {
+    transition: 0.5s all;
+    background-color: #112d06;
+    color: white;
+  }
 
   select,
   option {
@@ -112,7 +132,7 @@ main {
 
 
 #newGameBtn {
-  display: block;
+  display: none;
   width: 100%;
   font-size: 16px;
   padding: 10px;
@@ -203,7 +223,7 @@ svg {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.827), 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
-.selected-player{
+.selected-player {
   background-color: black;
 }
 
