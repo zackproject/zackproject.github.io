@@ -361,8 +361,8 @@ function cardClicked(event) {
     const valueCard = crdInner.getAttribute('data-card');
     const keyCard = crdInner.getAttribute('data-key');
     // del valor html mes proper, extrau el front, back i img
-    const backCard = crdInner.querySelector(".flip-card-front");
-    const frontCard = crdInner.querySelector(".flip-card-back");
+    const backCard = crdInner.querySelector(".flip-card-back");
+    const frontCard = crdInner.querySelector(".flip-card-front");
 
     // Comprova si tria una ja encertada
     if (player.isResolvedCard(valueCard)) return;
@@ -372,8 +372,8 @@ function cardClicked(event) {
         infoHTML.innerText = `Carta de '${player.getCardName(valueCard)}' seleccionada`;
         infoHTML.focus();
         crdInner.style.transform = "rotateY(180deg)";
-        frontCard.ariaHidden = "false";
-        backCard.ariaHidden = "true";
+        frontCard.ariaHidden = "true";
+        backCard.ariaHidden = "false";
         localStorage.setItem(COUPLECARDS, JSON.stringify(player));
         return;
     };
@@ -395,10 +395,15 @@ function cardClicked(event) {
         }
         infoHTML.focus();
         crdInner.style.transform = "rotateY(180deg)";
-        frontCard.ariaHidden = "false";
-        backCard.ariaHidden = "true";
-        crdInner.ariaHidden = "true";
-        localStorage.setItem(COUPLECARDS, JSON.stringify(player));
+
+        // oculta amdos cartas encertades per complet
+        event.target.closest(".flip-card").ariaHidden = "true";
+
+        tempCard1.querySelector(".flip-card-front").closest(".flip-card").ariaHidden = "true";
+        tempCard1.querySelector(".flip-card-front").removeAttribute('aria-hidden');
+        tempCard1.querySelector(".flip-card-back").removeAttribute('aria-hidden');
+        frontCard.removeAttribute('aria-hidden');
+        backCard.removeAttribute('aria-hidden');
 
     } else {
         if (player.isMultiplayer()) {
@@ -410,16 +415,12 @@ function cardClicked(event) {
         }
         infoHTML.focus();
         crdInner.style.transform = "rotateY(180deg)";
-        //card 2
-        frontCard.ariaHidden = "true";
-        backCard.ariaHidden = "false";
-        crdInner.ariaHidden = "false";
 
-        //card 1
-        tempCard1.ariaHidden = "true";
-        tempCard1.querySelector(".flip-card-front").ariaHidden = "false";
+        // volteja de nou amdos cartas incorrecter
         tempCard1.querySelector(".flip-card-back").ariaHidden = "true";
-        tempCard1.ariaHidden = "false";
+        tempCard1.querySelector(".flip-card-front").ariaHidden = "false";
+        backCard.ariaHidden = "true";
+        frontCard.ariaHidden = "false";
         infoHTML.focus();
         localStorage.setItem(COUPLECARDS, JSON.stringify(player));
         player.isPlaying = false;
