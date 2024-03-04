@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    animation: aparece 5s forwards;
+    text-align: center;
+    color: white;
+    opacity: 0;
+}
+
+a {
+    animation: aparece 4s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes aparece {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
