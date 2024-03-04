@@ -250,5 +250,55 @@ let quienEsQuien = [
             {"id": 208, "name": "Xuppu", "image": "https://i.ibb.co/GkZN2Tm/Xuppu.webp", "alt": ""},
             {"id": 209, "name": "Ziggy", "image": "https://i.ibb.co/Gs9DVfv/Ziggy.webp", "alt": ""}
         ]
+    }, 
+    {
+        "title": "Hazbin Hotel",
+        "characters": [
+            {"id": 210, "name": "Adam", "image": "https://i.ibb.co/bWG24NC/adam.webp", "alt": ""},
+            {"id": 211, "name": "Alastor", "image": "https://i.ibb.co/kBNjn5y/alastor.webp", "alt": ""},
+            {"id": 212, "name": "Angel Dust", "image": "https://i.ibb.co/D86sKnx/angeldust.webp", "alt": ""},
+            {"id": 213, "name": "Carmilla", "image": "https://i.ibb.co/jgWwTCw/carmillacarmine.webp", "alt": ""},
+            {"id": 214, "name": "Charlie", "image": "https://i.ibb.co/y51hTs7/charlie.webp", "alt": ""},
+            {"id": 215, "name": "Cherry Bomb", "image": "https://i.ibb.co/YQPVYtD/cherrybomb.webp", "alt": ""},
+            {"id": 216, "name": "Emily", "image": "https://i.ibb.co/YtJqCnd/emily.webp", "alt": ""},
+            {"id": 217, "name": "Huevo", "image": "https://i.ibb.co/f1SMrpM/huevo.webp", "alt": ""},
+            {"id": 218, "name": "Husk", "image": "https://i.ibb.co/yfzvhjJ/husk.webp", "alt": ""},
+            {"id": 219, "name": "Katie", "image": "https://i.ibb.co/1m874bz/katiekilljoy.webp", "alt": ""},
+            {"id": 220, "name": "Lucifer", "image": "https://i.ibb.co/FK635Vr/lucifer.webp", "alt": ""},
+            {"id": 221, "name": "Lute", "image": "https://i.ibb.co/YbFkK2y/lute.webp", "alt": ""},
+            {"id": 222, "name": "Mimzy", "image": "https://i.ibb.co/zSHWX8y/mimzy.webp", "alt": ""},
+            {"id": 223, "name": "Niffty", "image": "https://i.ibb.co/dQLfQ3k/niffty.webp", "alt": ""},
+            {"id": 224, "name": "Rosie", "image": "https://i.ibb.co/Q8f4pnC/rosie.webp", "alt": ""},
+            {"id": 225, "name": "San Pedro", "image": "https://i.ibb.co/61Zj4tr/sanpedro.webp", "alt": ""},
+            {"id": 226, "name": "Sera", "image": "https://i.ibb.co/nQvPS0q/sera.webp", "alt": ""},
+            {"id": 227, "name": "Sr Pentious", "image": "https://i.ibb.co/1RjdWpD/sirpentious.webp", "alt": ""},
+            {"id": 228, "name": "Susan", "image": "https://i.ibb.co/t47cJNf/susan.webp", "alt": ""},
+            {"id": 229, "name": "Tocinete", "image": "https://i.ibb.co/xG6RKs4/tocinete.webp", "alt": ""},
+            {"id": 230, "name": "Tom", "image": "https://i.ibb.co/yys2pDD/tomtrench.webp", "alt": ""},
+            {"id": 231, "name": "Vaggie", "image": "https://i.ibb.co/mHLtkr9/vaggie.webp", "alt": ""},
+            {"id": 232, "name": "Valentino", "image": "https://i.ibb.co/H4SXnKR/valentino.webp", "alt": ""},
+            {"id": 233, "name": "Velvette", "image": "https://i.ibb.co/t2K4zKF/velvette.webp", "alt": ""},
+            {"id": 234, "name": "Vox", "image": "https://i.ibb.co/XJqb1pd/vox.webp", "alt": ""},
+            {"id": 235, "name": "Zestial", "image": "https://i.ibb.co/cDjV30q/zestialmorde.webp", "alt": ""},
+        ]
+    },
+    {
+        "title": "One Punch Man",
+        "characters": [
+            {"id": 237, "name": "Amai Mask", "image": "https://i.ibb.co/5Bz4smk/amaimask.webp", "alt": ""},
+            {"id": 238, "name": "Bang", "image": "https://i.ibb.co/j5TGBfh/bang.webp", "alt": ""},
+            {"id": 239, "name": "Dr Genius", "image": "https://i.ibb.co/pfPNk4d/drgenus.webp", "alt": ""},
+            {"id": 240, "name": "Flashy", "image": "https://i.ibb.co/R4Kgfm5/flashy.webp", "alt": ""},
+            {"id": 241, "name": "Fubuki", "image": "https://i.ibb.co/8zGjpQZ/fubuki.webp", "alt": ""},
+            {"id": 242, "name": "Garou", "image": "https://i.ibb.co/yNhQVCL/garou.webp", "alt": ""},
+            {"id": 243, "name": "Genos", "image": "https://i.ibb.co/wc6vsm5/genos.webp", "alt": ""},
+            {"id": 244, "name": "Hammer Head", "image": "https://i.ibb.co/FqLpgfM/hammerhead.webp", "alt": ""},
+            {"id": 245, "name": "King", "image": "https://i.ibb.co/vDqkYMM/king.webp", "alt": ""},
+            {"id": 246, "name": "Saitama", "image": "https://i.ibb.co/zZfW70z/saitama.webp", "alt": ""},
+            {"id": 247, "name": "Sonic", "image": "https://i.ibb.co/nz4QBsr/sonic.webp", "alt": ""},
+            {"id": 248, "name": "Superalloy", "image": "https://i.ibb.co/qC0r9pY/superalloy.webp", "alt": ""},
+            {"id": 249, "name": "Tatsumaki", "image": "https://i.ibb.co/VSvTNsC/tatsumaki.webp", "alt": ""},
+            {"id": 250, "name": "Zombie Man", "image": "https://i.ibb.co/wW1y068/zombieman.webp", "alt": ""},
+        ]
     }
 ]
