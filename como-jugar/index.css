@@ -54,7 +54,7 @@ body {
   margin: 0 auto;
 }
 #how-to-play p {
-  text-align: justify;
+  text-align:left;
 }
 #back-up {
   position: fixed;

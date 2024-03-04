@@ -122,7 +122,10 @@ class Couple {
 
     isSameCard(key) {
         // key es valor unic, value es repeteix
-        return this.firstCard.key == key;
+        if (this.firstCard !== null) {
+            return this.firstCard.key == key;
+        }
+        return null;
     }
 
     isResolvedCard(value) {
@@ -329,8 +332,6 @@ function cardHTML(props, index, numeric) {
     // si es resolta, la card sencera es oculta 'aria-hidden'
     let numericHTML = '';
     let number = "";
-    // si la carta es clicada la part frontal es oculta, la de darrere visible
-    let isCard1Clicked = player.firstCard !== null;
     // afegegeix un numero al html
     if (numeric) numericHTML = `<div class="help-num" aria-hidden="true">${index + 1}</div>`;
     if (numeric) number = index + 1;
@@ -338,6 +339,7 @@ function cardHTML(props, index, numeric) {
     let front = "";
 
     // carta clicacda
+
     if (player.isSameCard(index)) {
         front = "aria-hidden='true'";
         back = "aria-hidden='false'";
@@ -350,6 +352,8 @@ function cardHTML(props, index, numeric) {
         back = "";
         front = "";
     }
+
+
     return `<li class="card">
     <article class="flip-card" aria-hidden="${player.isResolvedCard(props.id)}">
         <div class="flip-card-inner" data-key="${index}" data-card="${props.id}"  onclick="cardClicked(event)">
