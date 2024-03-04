@@ -1,5 +1,13 @@
 var cards = [
     {
+        "title": "Parejas",
+        "image": "https://i.ibb.co/vPzQPXR/parejas.webp",
+        "description": "Memoriza las cartas anime y resuelve las posibles parejas. También puedes jugar en multijugador local por turnos, quien resuelva más parejas gana.",
+        "alt": "Parejas",
+        "link": "parejas"
+        // como-jugar
+    },
+    {
         "title": "Se Busca",
         "image": "https://i.ibb.co/RQvj6Mv/wanted.webp",
         "alt": "Se busca",
@@ -28,7 +36,7 @@ var cards = [
         "link": "adivina-anime"
     },
 
-  
+
     {
         "title": "Quien es Quien",
         "image": "https://i.ibb.co/j8nbtfK/quien-es-quien.webp",
@@ -43,7 +51,7 @@ var cards = [
         "alt": "PokeHigher or PokeLower",
         "description": "Quien tiene mas ataque, defensa o velocidad entre estas dos poke-criaturas.",
         "link": "higherlower",
-        "store":"https://play.google.com/store/apps/details?id=apps.zack.pokemorelessapp"
+        "store": "https://play.google.com/store/apps/details?id=apps.zack.pokemorelessapp"
     },
     {
         "title": "Poke Sort",
@@ -72,6 +80,6 @@ var cards = [
         "alt": "Anime Birthday",
         "description": "Find the birthday of the character by day and month. Demo of the App Anime Birthday",
         "link": "animebirthday",
-        "store":"https://play.google.com/store/apps/details?id=apps.zack.AnimeBirthday"
+        "store": "https://play.google.com/store/apps/details?id=apps.zack.AnimeBirthday"
     }
 ];
