@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who want to be friki</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="dades.js"></script>
+    <script src="index.js"></script>
+    <script src="object.js"></script>
+    <link rel="icon" href="../icopz.ico">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body onload="onLoadGame()">
+    <div id="settings"></div>
+    <h2>Ajustes</h2>
+
+    <main id="login">
+        <!-- Primer camp omple el nom-->
+        <label for="inputName" class="title-input">Nick</label>
+        <input maxlength="12" class="text-input" placeholder="Escribe tu nombre" autocomplete="off" type="text"
+            id="inputName" name="name">
+        <!-- Segon camp omple categoria -->
+        <label for="categoriaViewList" class="title-input">Categoria</label>
+        <select class="select-opt" id="categoriaViewList" onchange="generateRutaList()">
+            <option value="0">Anime</option>
+            <option value="0">Otros</option>
+        </select>
+        <!-- Tercer camp omple  subcategoria -->
+        <select class="select-opt" id="rutaViewList">
+            <option value="0">Ruta Shingeki</option>
+            <option value="0">Ruta Jojos</option>
+        </select>
+        <!-- Boton de Start -->
+        <div class="start-btn">
+            <button onclick="playNow()">NUEVA PARTIDA</button>
+            <button id="resumeGame" onclick="reloadLastGame()">RECUPERAR PARTIDA</button>
+        </div>
+    </main>
+
+
+    <h2>In game</h2>
+
+    <!-- Menu 4 opciones-->
+    <div id="quiz">
+        <div id="question">lorem</div>
+        <div id="pt0">
+            <input id="quiz-0" name="quiz-element" type="radio" value="0" onchange="checkQuestion()">
+            <label class="answer" for="quiz-0"></label>
+        </div>
+        <div id="pt1">
+            <input id="quiz-1" name="quiz-element" type="radio" value="1" onchange="checkQuestion()">
+            <label class="answer" for="quiz-1"></label>
+        </div>
+        <div id="pt2">
+            <input id="quiz-2" name="quiz-element" type="radio" value="2" onchange="checkQuestion()">
+            <label class="answer" for="quiz-2"></label>
+        </div>
+        <div id="pt3">
+            <input id="quiz-3" name="quiz-element" type="radio" value="3" onchange="checkQuestion()">
+            <label class="answer" for="quiz-3"></label>
+        </div>
+    </div>
+    <!-- <button id="btn-check" onclick="checkQuestion()">Responder</button> -->
+    <button id="btn-next" onclick="goNextQuestion(event)" disabled>Siguiente</button>
+    <div>Presentador: <span id="npcPresentador"></span></div>
+
+    <h2>Comodines</h2>
+    <div id="applycomodin"></div>
+
+
+    <div id="comodines">
+        <!-- .comodin en el js -->
+        <button class="comodin" onclick="comodinLlamada(event)">Llamada</button>
+        <button class="comodin" onclick="comodinPublico(event)">Publico</button>
+        <button class="comodin" onclick="comodinFifty(event)">50%</button>
+    </div>
+
+    <select id="callViewList" name="select">
+    </select>
+
+    <form method="get" id="winnerUrl" action="/">
+        <button type="submit">Descargar Premio</button>
+    </form>
+
+</body>
+
+</html>
