@@ -12,6 +12,7 @@
     <script src="object.js"></script>
     <link rel="icon" href="../icopz.ico">
     <link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="animation.css"> -->
 </head>
 
 <body onload="onLoadGame()">
@@ -20,7 +21,7 @@
 
     <main id="login">
         <!-- Primer camp omple el nom-->
-        <label for="inputName" class="title-input">Nick</label>
+        <label for="inputName" class="title-input">Nick</label> <!--input required -->
         <input maxlength="12" class="text-input" placeholder="Escribe tu nombre" autocomplete="off" type="text"
             id="inputName" name="name">
         <!-- Segon camp omple categoria -->
@@ -44,28 +45,35 @@
 
     <h2>In game</h2>
 
-    <!-- Menu 4 opciones-->
-    <div id="quiz">
-        <div id="question">lorem</div>
-        <div id="pt0">
-            <input id="quiz-0" name="quiz-element" type="radio" value="0" onchange="checkQuestion()">
-            <label class="answer" for="quiz-0"></label>
-        </div>
-        <div id="pt1">
-            <input id="quiz-1" name="quiz-element" type="radio" value="1" onchange="checkQuestion()">
-            <label class="answer" for="quiz-1"></label>
-        </div>
-        <div id="pt2">
-            <input id="quiz-2" name="quiz-element" type="radio" value="2" onchange="checkQuestion()">
-            <label class="answer" for="quiz-2"></label>
-        </div>
-        <div id="pt3">
-            <input id="quiz-3" name="quiz-element" type="radio" value="3" onchange="checkQuestion()">
-            <label class="answer" for="quiz-3"></label>
+
+    <div id="quiz-and-options">
+        <div id="question" class="option-quiz question-quiz">lorem</div>
+        <div class="answer-list">
+            <div id="pt0" class="option-quiz answer-quiz">
+                <span class="suboption-quiz">A</span>
+                <input id="quiz-0" name="quiz-element" type="radio" value="0" onchange="checkQuestion()">
+                <label class="answer" for="quiz-0"></label>
+            </div>
+            <div id="pt1" class="option-quiz answer-quiz">
+                <span class="suboption-quiz">B</span>
+                <input id="quiz-1" name="quiz-element" type="radio" value="1" onchange="checkQuestion()">
+                <label class="answer" for="quiz-1"></label>
+            </div>
+            <div id="pt2" class="option-quiz answer-quiz">
+                <span class="suboption-quiz">C</span>
+                <input id="quiz-2" name="quiz-element" type="radio" value="2" onchange="checkQuestion()">
+                <label class="answer" for="quiz-2"></label>
+            </div>
+            <div id="pt3" class="option-quiz answer-quiz">
+                <span class="suboption-quiz">D</span>
+                <input id="quiz-3" name="quiz-element" type="radio" value="3" onchange="checkQuestion()">
+                <label class="answer" for="quiz-3"></label>
+            </div>
         </div>
     </div>
     <!-- <button id="btn-check" onclick="checkQuestion()">Responder</button> -->
     <button id="btn-next" onclick="goNextQuestion(event)" disabled>Siguiente</button>
+    <!-- las imagenes puedes usar solo una imagen y cuadrarlas como hace midu-->
     <div>Presentador: <span id="npcPresentador"></span></div>
 
     <h2>Comodines</h2>
