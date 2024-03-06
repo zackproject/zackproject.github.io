@@ -122,3 +122,34 @@ h2 {
         font-size: 18px;
     }
 }
+
+
+#presentador {
+    .img-presentador {
+        margin-left: 10px;
+    }
+
+    .text-presentador {
+        border: 1px solid white;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        color: white;
+    }
+
+    .btn-presentador>button {
+        background-color: transparent;
+        border-radius: 6px;
+        color: white;
+        font-size: 16px;
+        border: 1px solid lightgray;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        margin-top: 6px;
+        position: absolute;
+        right: 0px;
+    }
+}

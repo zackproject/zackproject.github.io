@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who want to be friki</title>
+    <title>El desafío - Crea tu propio concurso digital</title>
     <link rel="stylesheet" href="index.css">
     <script src="dades.js"></script>
     <script src="index.js"></script>
@@ -35,11 +35,16 @@
             <option value="0">Ruta Shingeki</option>
             <option value="0">Ruta Jojos</option>
         </select>
+
         <!-- Boton de Start -->
         <div class="start-btn">
             <button onclick="playNow()">NUEVA PARTIDA</button>
             <button id="resumeGame" onclick="reloadLastGame()">RECUPERAR PARTIDA</button>
         </div>
+        <input type="checkbox" id="usePresentador" name="vehicle1" checked value="Bike">
+        <label for="label">Presentador</label>
+        <input type="checkbox" id="useGrenscreen" name="vehicle1" value="Bike">
+        <label for="useGrenscreen">Pantalla verde</label>
     </main>
 
 
@@ -71,10 +76,19 @@
             </div>
         </div>
     </div>
-    <!-- <button id="btn-check" onclick="checkQuestion()">Responder</button> -->
-    <button id="btn-next" onclick="goNextQuestion(event)" disabled>Siguiente</button>
-    <!-- las imagenes puedes usar solo una imagen y cuadrarlas como hace midu-->
-    <div>Presentador: <span id="npcPresentador"></span></div>
+    <h2>Presentador</h2>
+    <div id="presentador">
+        <div class="img-presentador">
+            <img src="images/person.png" height="100" width="100" alt="Es el Presentador">
+        </div>
+        <div id="npcPresentador" class="text-presentador">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore cum soluta itaque vitae molestiae
+            libero ullam in perspiciatis cumque?
+        </div>
+        <div class="btn-presentador">
+            <button id="btn-next" onclick="goNextQuestion(event)" disabled>Continuar</button>
+        </div>
+    </div>
 
     <h2>Comodines</h2>
     <div id="applycomodin"></div>
