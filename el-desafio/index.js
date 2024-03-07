@@ -160,8 +160,9 @@ function comodinLlamada(event) {
     "% seguro";
   //console.log(comodin.name, textRespuesta);
   //Escriu el resultat del comodi al html
-  let text = document.getElementById("applycomodin");
-  text.innerText = comodin.name + " - " + textRespuesta;
+  let text = document.getElementById("text-call");
+  document.getElementById("name-call").innerText = nameCalling[contactCall].name;
+  text.innerText = textRespuesta;
   // Marquem com utilizat el comodi
   comodin.used = true;
   //Desactiva el pare que l'ha cridat, o sigui el boton

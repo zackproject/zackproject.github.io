@@ -153,3 +153,240 @@ h2 {
         right: 0px;
     }
 }
+
+#comodines {
+
+    .comodin-parent {
+        background-color: #4B5269;
+        padding: 10px;
+        border-radius: 6px;
+        margin: 0 auto;
+        max-width: 300px;
+        margin-top: 50px;
+        /* El hijo es absolute, el padre relativo */
+        position: relative;
+    }
+
+    .comodin-items {
+        /*Espai entre logo i select */
+        margin-top: 20px;
+        /*Centra els elements al centre */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-comodin {
+        background-color: #858585;
+        width: 50px;
+        /* El hijo es absolute, el padre relativo */
+        position: absolute;
+        padding-left: 12px;
+        padding-right: 8px;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        right: 40%;
+        left: 40%;
+        top: -30px;
+        border-radius: 50%;
+    }
+
+    .close-btn {
+        background-color: red;
+        color: white;
+        padding-left: 9px;
+        padding-right: 9px;
+        padding-top: 6px;
+        padding-bottom: 8px;
+        border-radius: 50%;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+
+    /* Comodin Llamada - Contactos*/
+    .contact-call>button {
+        background-color: #0F871B;
+        border: none;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-radius: 6px;
+        color: white;
+        font-size: 18px;
+        margin: 20px;
+        -webkit-box-shadow: 7px 2px 15px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 7px 2px 15px -3px rgba(0, 0, 0, 0.75);
+        box-shadow: 7px 2px 15px -3px rgba(0, 0, 0, 0.75);
+    }
+
+    /* Contactos css */
+    /* Tamany scrollball 'select'*/
+    .comodin-items>select::-webkit-scrollbar {
+        width: 14px;
+        background-color: #171929;
+        border-radius: 6px;
+    }
+
+    /*select::-webkit-scrollbar-track{
+    }*/
+    .comodin-items>select::-webkit-scrollbar-thumb {
+        background-color: #727382;
+        border-radius: 6px;
+    }
+
+    .comodin-items>select {
+        background-color: #4B5269;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        width: 200px;
+        margin-top: 20px;
+    }
+
+    .comodin-items>select>option:checked {
+        background-color: #303543;
+        color: white;
+    }
+
+    .comodin-items>select>option {
+        color: white;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 16px;
+        margin: 5px;
+    }
+
+
+    /* Comodin Llamada - Llamando*/
+    .call-close>button {
+        background-color: transparent;
+        border: none;
+        margin-top: 20px;
+    }
+
+    #name-call {
+        color: white;
+        margin-top: 30px;
+        font-size: 25px;
+        text-decoration: underline;
+    }
+
+    #text-call {
+        color: white;
+        text-align: center;
+        margin: 20px;
+    }
+
+    #time-call {
+        font-size: 30px;
+        color: white;
+    }
+
+
+    /*Comodin public */
+    #public-percent {
+        display: grid;
+        grid-column: auto auto auto auto;
+        grid-row: auto auto auto;
+
+        grid-template-areas:
+            "p1 p2 p3 p4"
+            "bar1 bar2 bar3 bar4"
+            "opta optb optc optd";
+
+    }
+
+    .item-1 {
+        grid-area: p1;
+    }
+
+    .item-2 {
+        grid-area: p2;
+    }
+
+    .item-3 {
+        grid-area: p3;
+    }
+
+    .item-4 {
+        grid-area: p4;
+    }
+
+    .item-5 {
+        grid-area: bar1;
+    }
+
+    .item-6 {
+        grid-area: bar2;
+    }
+
+    .item-7 {
+        grid-area: bar3;
+    }
+
+    .item-8 {
+        grid-area: bar4;
+    }
+
+    .item-9 {
+        grid-area: opta;
+    }
+
+    .item-10 {
+        grid-area: optb;
+    }
+
+    .item-11 {
+        grid-area: optc;
+    }
+
+    .item-12 {
+        grid-area: optd;
+    }
+
+    #percent-1,
+    #percent-2,
+    #percent-3,
+    #percent-4 {
+        background-color: rgb(126, 126, 202);
+        padding: 10px;
+        height: 100px;
+        margin-right: 10px;
+    }
+
+    .percent {
+        color: white;
+        margin: 5x;
+        margin-top: 20px;
+    }
+
+    .public {
+        color: yellow;
+        margin: 5px;
+    }
+
+
+    /* comodin de comodines */
+    .flex-btn-comodines {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .flex-btn-comodines>button {
+        background-color: #302E82;
+        border-radius: 6px;
+        color: white;
+        font-size: 20px;
+        border: 1px solid lightgray;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin: 10px;
+    }
+}

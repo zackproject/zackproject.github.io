@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
     <script src="dades.js"></script>
     <script src="index.js"></script>
     <script src="object.js"></script>
+    <script src="dom.js"></script>
     <link rel="icon" href="../icopz.ico">
     <link rel="stylesheet" href="index.css">
     <!-- <link rel="stylesheet" href="animation.css"> -->
@@ -91,18 +92,55 @@
     </div>
 
     <h2>Comodines</h2>
-    <div id="applycomodin"></div>
-
 
     <div id="comodines">
-        <!-- .comodin en el js -->
-        <button class="comodin" onclick="comodinLlamada(event)">Llamada</button>
-        <button class="comodin" onclick="comodinPublico(event)">Publico</button>
-        <button class="comodin" onclick="comodinFifty(event)">50%</button>
-    </div>
+        <div class="comodin-parent">
+            <div class="logo-comodin">
+                <img src="images/lightbulb.png" height="50" width="50" alt="Es una imagen">
+            </div>
+            <span class="close-btn">X</span>
+            <div class="comodin-items">
+                <!-- BOTONS COMODINS-->
+                <div class="flex-btn-comodines">
+                    <button>LLAMADA</button>
+                    <button class="comodin" onclick="comodinPublico(event)">PÚBLICO</button>
+                    <button class="comodin" onclick="comodinFifty(event)"> 50%</button>
+                </div>
+            </div>
+        </div>
 
-    <select id="callViewList" name="select">
-    </select>
+
+        <div class="comodin-parent">
+            <div class="logo-comodin">
+                <img src="images/contact.png" height="50" width="45" alt="Es una imagen">
+            </div>
+            <span class="close-btn">X</span>
+            <div class="comodin-items">
+                <select id="callViewList" name="select" size="5">
+                    <!-- generated -->
+                </select>
+                <div class="contact-call">
+                    <button class="comodin" onclick="comodinLlamada(event)">LLAMAR</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="comodin-parent">
+            <div class="logo-comodin">
+                <img src="images/phone_logo.png" height="50" width="45" alt="Es una imagen">
+            </div>
+            <span class="close-btn">X</span>
+            <div class="comodin-items">
+                <div id="name-call">Contacto</div>
+                <div id="text-call">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed cum maxime laborum,
+                    officiis quod quae incidunt temporibus quos natus pariatur!</div>
+                <div id="time-call">00:00</div>
+                <div class="call-close">
+                    <button><img src="images/phone_close.png" width="50" height="50" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <form method="get" id="winnerUrl" action="/">
         <button type="submit">Descargar Premio</button>
