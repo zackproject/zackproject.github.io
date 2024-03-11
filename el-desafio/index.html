@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El desafío - Crea tu propio concurso digital</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="dades.js"></script>
+    <script src="index.js"></script>
+    <script src="object.js"></script>
+    <script src="dom.js"></script>
+    <link rel="icon" href="../icopz.ico">
+    <link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="animation.css"> -->
+</head>
+
+<body onload="onLoadGame()">
+    <div id="settings"></div>
+    <h2>Ajustes</h2>
+
+    <main id="login">
+        <!-- Primer camp omple el nom-->
+        <label for="inputName" class="title-input">Nick</label> <!--input required -->
+        <input maxlength="12" class="text-input" placeholder="Escribe tu nombre" autocomplete="off" type="text"
+            id="inputName" name="name">
+        <!-- Segon camp omple categoria -->
+        <label for="categoriaViewList" class="title-input">Categoria</label>
+        <select class="select-opt" id="categoriaViewList" onchange="generateRutaList()">
+            <option value="0">Anime</option>
+            <option value="0">Otros</option>
+        </select>
+        <!-- Tercer camp omple  subcategoria -->
+        <select class="select-opt" id="rutaViewList">
+            <option value="0">Ruta Shingeki</option>
+            <option value="0">Ruta Jojos</option>
+        </select>
+
+        <!-- Boton de Start -->
+        <div class="start-btn">
+            <button onclick="playNow()">NUEVA PARTIDA</button>
+            <button id="resumeGame" onclick="reloadLastGame()">RECUPERAR PARTIDA</button>
+        </div>
+        <input type="checkbox" id="usePresentador" name="vehicle1" checked value="Bike">
+        <label for="label">Presentador</label>
+        <input type="checkbox" id="useGrenscreen" name="vehicle1" value="Bike">
+        <label for="useGrenscreen">Pantalla verde</label>
+    </main>
+
+
+    <h2>In game</h2>
+
+
+    <div id="quiz-and-options">
+        <div id="question" class="option-quiz question-quiz">lorem</div>
+        <div class="answer-list">
+            <div id="pt0" class="option-quiz answer-quiz">
+                <span class="suboption-quiz">A</span>
+                <input id="quiz-0" name="quiz-element" type="radio" value="0" onchange="checkQuestion()">
+                <label class="answer" for="quiz-0"></label>
+            </div>
+            <div id="pt1" class="option-quiz answer-quiz">
+                <span class="suboption-quiz">B</span>
+                <input id="quiz-1" name="quiz-element" type="radio" value="1" onchange="checkQuestion()">
+                <label class="answer" for="quiz-1"></label>
+            </div>
+            <div id="pt2" class="option-quiz answer-quiz">
+                <span class="suboption-quiz">C</span>
+                <input id="quiz-2" name="quiz-element" type="radio" value="2" onchange="checkQuestion()">
+                <label class="answer" for="quiz-2"></label>
+            </div>
+            <div id="pt3" class="option-quiz answer-quiz">
+                <span class="suboption-quiz">D</span>
+                <input id="quiz-3" name="quiz-element" type="radio" value="3" onchange="checkQuestion()">
+                <label class="answer" for="quiz-3"></label>
+            </div>
+        </div>
+    </div>
+    <h2>Presentador</h2>
+    <div id="presentador">
+        <div class="img-presentador">
+            <img src="images/person.png" height="100" width="100" alt="Es el Presentador">
+        </div>
+        <div id="npcPresentador" class="text-presentador">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore cum soluta itaque vitae molestiae
+            libero ullam in perspiciatis cumque?
+        </div>
+        <div class="btn-presentador">
+            <button id="btn-next" onclick="goNextQuestion(event)" disabled>Continuar</button>
+        </div>
+    </div>
+
+    <h2>Comodines</h2>
+
+    <div id="comodines">
+        <div class="comodin-parent">
+            <div class="logo-comodin">
+                <img src="images/lightbulb.png" height="50" width="50" alt="Es una imagen">
+            </div>
+            <span class="close-btn">X</span>
+            <div class="comodin-items">
+                <!-- BOTONS COMODINS-->
+                <div class="flex-btn-comodines">
+                    <button>LLAMADA</button>
+                    <button class="comodin" onclick="comodinPublico(event)">PÚBLICO</button>
+                    <button class="comodin" onclick="comodinFifty(event)"> 50%</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="comodin-parent">
+            <div class="logo-comodin">
+                <img src="images/contact.png" height="50" width="45" alt="Es una imagen">
+            </div>
+            <span class="close-btn">X</span>
+            <div class="comodin-items">
+                <select id="callViewList" name="select" size="5">
+                    <!-- generated -->
+                </select>
+                <div class="contact-call">
+                    <button class="comodin" onclick="comodinLlamada(event)">LLAMAR</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="comodin-parent">
+            <div class="logo-comodin">
+                <img src="images/phone_logo.png" height="50" width="45" alt="Es una imagen">
+            </div>
+            <span class="close-btn">X</span>
+            <div class="comodin-items">
+                <div id="name-call">Contacto</div>
+                <div id="text-call">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed cum maxime laborum,
+                    officiis quod quae incidunt temporibus quos natus pariatur!</div>
+                <div id="time-call">00:00</div>
+                <div class="call-close">
+                    <button><img src="images/phone_close.png" width="50" height="50" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form method="get" id="winnerUrl" action="/">
+        <button type="submit">Descargar Premio</button>
+    </form>
+
+</body>
+
+</html>
