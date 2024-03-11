@@ -1,5 +1,11 @@
 var comoJugar = [
     {
+        "title": "Parejas",
+        "description": "Memoriza las cartas anime y resuelve las posibles parejas, recuerda la ubicación de las cartas y sus personajes para encontrar las parejas coincidentes. Ya sea jugando en solitario o en modo multijugador local por turnos, la clave para el éxito radica en la concentración y la atención mientras se voltean las cartas para descubrir las coincidencias. Con una variedad de cartas de anime para elegir, este juego ofrece una experiencia divertida y emocionante para todos los entusiastas del anime y los aficionados a los juegos de memoria",
+        "path": "parejas",
+        "video": "ndbs21zY_IA",
+    },
+    {
         "title": "Se busca",
         "description": "Encuentra al personaje buscado en el cartel y haz clic en él dentro del panel antes de que se acabe el tiempo. Cada acierto suma 2 segundos, mientras que cada fallo resta 10 segundos. Administra cuidadosamente tu tiempo, ya que cuando alcances cierta puntuación, solo tendrás un segundo por acierto.<br>Los niveles son infinitos. Cada vez que aciertes, la dificultad aumentará, los movimientos de los personajes se actualizarán y tendrán comportamientos diferentes. Una vez que se acabe el tiempo, se registrará tu puntuación máxima y podrás ver tus 5 mejores marcas.<br>En la parte inferior, encontrarás un botón de 'pausa' que te permite detener o reanudar el juego en cualquier momento, así como un botón de 'música' que reproduce la música del juego.<br>Hay dos modos de juego disponibles:<br>-Modo Clásico: Juega en un panel donde los personajes se colocarán al azar y deberás encontrarlos visualmente.-Modo Accesible: Juega a través de una tabla y pulsa el botón del personaje que se indica en la imagen 'Se busca'. Este modo está diseñado especialmente para personas que utilizan lectores de pantalla como Talkback o VoiceOver.",
         "path": "se-busca",
