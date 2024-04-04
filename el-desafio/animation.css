@@ -1,7 +1,7 @@
 .question-quiz {
     animation: example 1s, amplia 1s;
     /* forward, se queda con el ultimo frame de la animacion*/
-    animation-fill-mode: forwards;
+    /*animation-fill-mode: forwards; */
   }
   
   .answer-quiz,

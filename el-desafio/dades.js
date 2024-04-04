@@ -1,23 +1,27 @@
 const categoriaList = [
   {
-    "name": "Anime",
+    "name": "Por defecto",
     "subcategoria": [
       {
-        "name": "Ruta Pokemon",
+        "name": "Quiz Pokemon",
         "id": 0,
       },
       {
-        "name": "Ruta Shingeki",
+        "name": "Quiz Shingek",
         "id": 10,
       },
       {
-        "name": "Ruta Jojos",
+        "name": "Quiz Jojos",
         "id": 20,
+      },
+      {
+        "name": "Quiz Catalunya",
+        "id": 30,
       },
     ],
   },
   {
-    "name": "Otras",
+    "name": "Personalizado",
     "subcategoria": [
       {
         "name": "Ruta catalana",
