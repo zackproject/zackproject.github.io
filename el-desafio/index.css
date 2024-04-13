@@ -9,6 +9,10 @@ body {
 
 h2 {
     color: white;
+    text-align: center;
+}
+label{
+    color: white;
 }
 
 /* LOGIN */
@@ -38,6 +42,24 @@ h2 {
         display: flex;
         flex-direction: column;
         gap: 10px;
+    }
+
+    a {
+        border: 1px solid white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 10px 40px 10px 40px;
+        border-radius: 6px;
+        text-align: center;
+        transition: all 0.5s;
+        &&:hover{
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
     }
 
     .start-btn>button {
@@ -388,4 +410,9 @@ h2 {
         padding-bottom: 10px;
         margin: 10px;
     }
+}
+
+#resumeGame,
+#custom-option {
+    display: none;
 }

@@ -17,10 +17,8 @@
 </head>
 
 <body onload="onLoadGame()">
-    <div id="settings"></div>
-    <h2>Ajustes</h2>
-
     <main id="login">
+        <h2 style="text-align: CE;">Ajustes</h2>
         <!-- Primer camp omple el nom-->
         <label for="inputName" class="title-input">Nick</label> <!--input required -->
         <input maxlength="12" class="text-input" placeholder="Escribe tu nombre" autocomplete="off" type="text"
@@ -29,7 +27,7 @@
         <label for="categoriaViewList" class="title-input">Categoria</label>
         <select class="select-opt" id="categoriaViewList" onchange="generateRutaList()">
             <option value="0">Por defecto</option>
-            <option value="1">Personalizado</option>
+            <option value="1" id="custom-option">Personalizado</option>
         </select>
         <!-- Tercer camp omple  subcategoria -->
         <select class="select-opt" id="rutaViewList">
@@ -42,17 +40,22 @@
             <button id="resumeGame" onclick="reloadLastGame()">RECUPERAR PARTIDA</button>
         </div>
 
-        <a href="./creativo">Añadir desafios</a>
+        <a href="./creativo">EDITAR DESAFIOS</a>
         <div>
-            <label for="useGrenscreen">Pantalla verde</label>
+            <label for="useGrenscreen">Green Screen</label>
             <input type="checkbox" id="useGrenscreen" name="vehicle1" value="Bike" onchange="useGreenScreen(event)">
         </div>
 
     </main>
 
 
-    <h2>Presentador</h2>
     <div id="presentador">
+        <div id="empty space" style="border: 1px solid red; height: 40vh;">
+           Este espacio es experimental para que las preguntas queden abajo, faltan los iconos de los comidenes arriba,
+            puedes ahorrarte el panel de comodines si pones un iconos de cada uno arriba a la derecha
+            
+            </div>
+        <h2>Presentador</h2>
         <div class="img-presentador">
             <img src="images/person.png" height="100" width="100" alt="Es el Presentador">
         </div>
@@ -65,8 +68,8 @@
         </div>
     </div>
 
-    <h2>In game</h2>
     <div id="quiz-and-options">
+        <h2>Pregunta</h2>
         <div id="question" class="option-quiz question-quiz">lorem</div>
         <div class="answer-list">
             <div id="pt0" class="option-quiz answer-quiz">
@@ -92,11 +95,9 @@
         </div>
     </div>
 
-
-    <h2>Comodines</h2>
-
     <div id="comodines">
-        <div class="comodin-parent">
+        <!-- https://developer.mozilla.org/es/docs/Web/HTML/Element/dialog -->
+        <dialog class="comodin-parent">
             <div class="logo-comodin">
                 <img src="images/lightbulb.png" height="50" width="50" alt="Es una imagen">
             </div>
@@ -109,10 +110,9 @@
                     <button class="comodin" onclick="comodinFifty(event)"> 50%</button>
                 </div>
             </div>
-        </div>
+        </dialog>
 
-
-        <div class="comodin-parent">
+        <dialog class="comodin-parent">
             <div class="logo-comodin">
                 <img src="images/contact.png" height="50" width="45" alt="Es una imagen">
             </div>
@@ -125,9 +125,9 @@
                     <button class="comodin" onclick="comodinLlamada(event)">LLAMAR</button>
                 </div>
             </div>
-        </div>
+        </dialog>
 
-        <div class="comodin-parent">
+        <dialog class="comodin-parent">
             <div class="logo-comodin">
                 <img src="images/phone_logo.png" height="50" width="45" alt="Es una imagen">
             </div>
@@ -141,10 +141,10 @@
                     <button><img src="images/phone_close.png" width="50" height="50" alt=""></button>
                 </div>
             </div>
-        </div>
+        </dialog>
     </div>
 
-    <form method="get" id="winnerUrl" action="/">
+    <form method="get" id="winnerUrl" action="/" style="display: none;">
         <button type="submit">Descargar Premio</button>
     </form>
 

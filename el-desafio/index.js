@@ -1,7 +1,7 @@
 var player;
 var npc;
 var optionsHTMList;
-const GAMESTORAGE = "whanttobeafriki";
+const GAMESTORAGE = "el-desafio";
 var npcPresentadorHtml;
 // from 'creativo'
 const ELDESAFIOLIST = "el-desafio-creator";
@@ -33,6 +33,8 @@ function playNow() {
   //Neteja els 2 botons del quiz
   cleanQuizBtn();
   npcPresentadorHtml.innerText = npc.callPresentacion(player.name);
+  // Amaga el menu
+  hideSettings();
 }
 
 function onLoadGame() {
@@ -46,6 +48,8 @@ function onLoadGame() {
 
   if (localStorage.getItem(ELDESAFIOLIST) !== null) {
     customChallenge = JSON.parse(localStorage.getItem(ELDESAFIOLIST));
+    // Mostra en el selector principar el "Personalizado"
+    document.getElementById("custom-option").style.display = "block";
   }
 }
 
@@ -426,8 +430,15 @@ function generateRutaList() {
       parent.appendChild(new Option(e.name, i));
     });
   }
+}
 
+/************************************
+ *  DOM JS HTML CONTROL             *
+ ************************************/
 
+function useGreenScreen(event) {
+  // 'background' sobrescribe: background-color, background-image
+  document.querySelector("body").style.background = event.target.checked ? "green" : "";
 }
 
 //Esborra els fills del div pasat
@@ -435,4 +446,10 @@ function deleteChilds(currentDiv) {
   while (currentDiv.firstChild) {
     currentDiv.removeChild(currentDiv.firstChild);
   }
+}
+
+function hideSettings(){
+  document.getElementById("login").style.display ="none";
+  document.getElementById("presentador").style.display ="block";
+  document.getElementById("quiz-and-options").style.display ="block";
 }
