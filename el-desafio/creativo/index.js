@@ -64,18 +64,21 @@ function saveQuiz(event) {
     }
 
     let myQuiz = new MyQuiz(title, quizList, selectedAnswers)
+    addDesafioLocalStorage(myQuiz);
 
+    document.getElementById("form-quiz").style.display = "block";
+    document.getElementById("save-quiz").style.display = "none";
+    window.location = "../";
+}
+
+function addDesafioLocalStorage(myQuiz) {
     if (localStorage.getItem(ELDESAFIOLIST)) {
         let tempList = JSON.parse(localStorage.getItem(ELDESAFIOLIST));
         tempList.push(myQuiz);
         localStorage.setItem(ELDESAFIOLIST, JSON.stringify(tempList))
-
     } else {
         localStorage.setItem(ELDESAFIOLIST, JSON.stringify([myQuiz]))
     }
-    document.getElementById("form-quiz").style.display = "block";
-    document.getElementById("save-quiz").style.display = "none";
-    console.log(myQuiz);
 }
 
 function createQuiz(event) {
@@ -84,10 +87,9 @@ function createQuiz(event) {
         const question = document.getElementById("question-" + i);
         const answer = document.getElementsByName('answers-' + i)
         const answerList = [answer[0].value, answer[1].value, answer[2].value, answer[3].value];
-        quizQuestion = new QuizQuestion(i, question.value, answerList);
-        quizList.push(quizQuestion);
+        quizList.push(new QuizQuestion(i, question.value, answerList));
         // https://stackoverflow.com/questions/16975350/assign-multiple-variables-to-the-same-value-in-javascript
-        question = answer[0] = answer[1] = answer[2] = answer[3] = null;
+        question.value = answer[0].value = answer[1].value = answer[2].value = answer[3].value = "";
     }
     document.getElementById("form-quiz").style.display = "none";
     document.getElementById("save-quiz").style.display = "block";
@@ -101,6 +103,11 @@ function fillFormAnswer() {
         document.querySelector(`label[for='q${(i + 1)}-opt-2']`).innerText = quizList[i].options[1];
         document.querySelector(`label[for='q${(i + 1)}-opt-3']`).innerText = quizList[i].options[2];
         document.querySelector(`label[for='q${(i + 1)}-opt-4']`).innerText = quizList[i].options[3];
+
+        document.getElementById(`q${(i + 1)}-opt-1`).checked = false;
+        document.getElementById(`q${(i + 1)}-opt-2`).checked = false;
+        document.getElementById(`q${(i + 1)}-opt-3`).checked = false;
+        document.getElementById(`q${(i + 1)}-opt-4`).checked = false;
     }
 }
 
@@ -114,16 +121,92 @@ function downloadFile(content, fileName, contentType) {
     a.click();
 }
 
-function uploadFile() {
-    var fileReader = new FileReader();
-    fileReader.readAsText(document.querySelector("#import-selector").value);
-};
 
-function exportJson() {
+function exportChallenge() {
     // the value in select is the position on array [0,1,2] from array json localstorage
-    let nId = document.getElementById("select-desafio").selectedOptions[0].value;
+    let nId = document.getElementById("select-export").selectedOptions[0].value;
     let desafioList = JSON.parse(localStorage.getItem(ELDESAFIOLIST))[nId];
     downloadFile(JSON.stringify(desafioList, null, 2), "el-desafio.json", "text/plain");
+}
+
+function importChallenge(event) {
+    const fileReader = new FileReader();
+    const [file] = event.target.files;
+    const infoHtml = document.getElementById("info-import-file");
+    infoHtml.style.innerText = "";
+    infoHtml.style.color = "red";
+    fileReader.onload = (event) => {
+        const content = event.target.result;
+        try {
+            const jsonData = JSON.parse(content);
+            // test js vanilla
+            const validation = testJson(jsonData);
+            if (validation !== "200") {
+                infoHtml.innerText = validation
+                return;
+            }
+            addDesafioLocalStorage(jsonData);
+            infoHtml.innerText = "El archivo '" + file.name + "' se ha importado correctamente"
+            infoHtml.style.color = "green";
+        } catch (error) {
+            infoHtml.innerText = "El archivo '" + file.name + "' no es un formato válido"
+        }
+    }
+
+    if (file) {
+        fileReader.readAsText(file);
+    }
+    fillSelector();
+}
+
+function testJson(data) {
+    if (typeof data["name"] !== "string") {
+        return "ERROR: El valor 'name' no es valido"
+    }
+    if (!Array.isArray(data["quizQuestion"])) {
+        return "ERROR: El valor 'quizQuestion' no es valido"
+    }
+
+    if (!Array.isArray(data["quizQuestion"])) {
+        return "ERROR: El valor 'quizQuestion' no es valido"
+    }
+    if (!Array.isArray(data["solutionsList"])) {
+        return "ERROR: El valor 'solutionsList' no es valido"
+    }
+
+    if (data["quizQuestion"].length !== data["solutionsList"].length) {
+        return "ERROR: Las listas 'quizQuestion' y 'solutionsList' no miden lo mismo"
+    }
+
+    let testMessage = "200";
+    data["quizQuestion"].forEach((element, i) => {
+        // si troba un error, para el bucle i el missatge enviar sera aquest
+        if (typeof element["id"] !== "number") {
+            testMessage = "ERROR: El valor 'id' de la pregunta " + (i + 1) + " no es valido";
+            return;
+        }
+        if (typeof element["question"] !== "string") {
+            testMessage = "ERROR: El valor 'question' de la pregunta " + (i + 1) + " no es valido";
+            return;
+        }
+        if (!Array.isArray(element["options"])) {
+            testMessage = "ERROR: El valor 'options de la pregunta " + (i + 1) + " no es valido"
+            return;
+        }
+    });
+
+    return testMessage;
+}
+
+function deleteChallenge() {
+    let nId = document.getElementById("select-export").selectedOptions[0].value;
+    let ndesafioList = JSON.parse(localStorage.getItem(ELDESAFIOLIST));
+    // position array to remove
+    ndesafioList.splice(nId, 1);
+    console.log(ndesafioList);
+
+    localStorage.setItem(ELDESAFIOLIST, JSON.stringify(ndesafioList));
+    fillSelector();
 }
 
 function deleteChilds(currentDiv) {
@@ -132,50 +215,17 @@ function deleteChilds(currentDiv) {
     }
 }
 
+
 function fillSelector() {
     if (localStorage.getItem(ELDESAFIOLIST) != null) {
-        let select = document.getElementById("select-desafio");
+        let selectDelete = document.getElementById("select-delete");
+        let selectExport = document.getElementById("select-export");
+        deleteChilds(selectDelete);
+        deleteChilds(selectExport);
         let desafioList = JSON.parse(localStorage.getItem(ELDESAFIOLIST));
         desafioList.forEach((e, i) => {
-            let opt = new Option(e.name, i);
-            select.appendChild(opt);
+            selectDelete.appendChild(new Option(e.name, i));
+            selectExport.appendChild(new Option(e.name, i));
         });
     }
-}
-
-function validateJSON(jsonData, schema) {
-    // Helper function to recursively validate properties
-    function validateProperty(data, schema) {
-        if (schema.type === "object") {
-            for (const key in schema.properties) {
-                if (!(key in data)) {
-                    console.error(`Missing property: ${key}`);
-                    return false;
-                }
-                if (!validateProperty(data[key], schema.properties[key])) {
-                    return false;
-                }
-            }
-            return true;
-        } else if (schema.type === "array") {
-            if (!Array.isArray(data)) {
-                console.error("Expected array, got:", data);
-                return false;
-            }
-            for (let i = 0; i < data.length; i++) {
-                if (!validateProperty(data[i], schema.items)) {
-                    return false;
-                }
-            }
-            return true;
-        } else {
-            if (typeof data !== schema.type) {
-                console.error(`Expected ${schema.type}, got:`, data);
-                return false;
-            }
-            return true;
-        }
-    }
-
-    return validateProperty(jsonData, schema);
 }
