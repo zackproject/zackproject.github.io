@@ -28,13 +28,12 @@
         <!-- Segon camp omple categoria -->
         <label for="categoriaViewList" class="title-input">Categoria</label>
         <select class="select-opt" id="categoriaViewList" onchange="generateRutaList()">
-            <option value="0">Anime</option>
-            <option value="0">Otros</option>
+            <option value="0">Por defecto</option>
+            <option value="1">Personalizado</option>
         </select>
         <!-- Tercer camp omple  subcategoria -->
         <select class="select-opt" id="rutaViewList">
-            <option value="0">Ruta Shingeki</option>
-            <option value="0">Ruta Jojos</option>
+            <!-- auto generated-->
         </select>
 
         <!-- Boton de Start -->
@@ -42,10 +41,13 @@
             <button onclick="playNow()">NUEVA PARTIDA</button>
             <button id="resumeGame" onclick="reloadLastGame()">RECUPERAR PARTIDA</button>
         </div>
-        <input type="checkbox" id="usePresentador" name="vehicle1" checked value="Bike">
-        <label for="label">Presentador</label>
-        <input type="checkbox" id="useGrenscreen" name="vehicle1" value="Bike">
-        <label for="useGrenscreen">Pantalla verde</label>
+
+        <a href="./creativo">Añadir desafios</a>
+        <div>
+            <label for="useGrenscreen">Pantalla verde</label>
+            <input type="checkbox" id="useGrenscreen" name="vehicle1" value="Bike" onchange="useGreenScreen(event)">
+        </div>
+
     </main>
 
 
@@ -62,7 +64,7 @@
             <button id="btn-next" onclick="goNextQuestion(event)" disabled>Continuar</button>
         </div>
     </div>
-    
+
     <h2>In game</h2>
     <div id="quiz-and-options">
         <div id="question" class="option-quiz question-quiz">lorem</div>
@@ -89,7 +91,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <h2>Comodines</h2>
 

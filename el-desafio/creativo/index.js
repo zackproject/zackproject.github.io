@@ -194,17 +194,14 @@ function testJson(data) {
             return;
         }
     });
-
     return testMessage;
 }
 
 function deleteChallenge() {
     let nId = document.getElementById("select-export").selectedOptions[0].value;
     let ndesafioList = JSON.parse(localStorage.getItem(ELDESAFIOLIST));
-    // position array to remove
-    ndesafioList.splice(nId, 1);
-    console.log(ndesafioList);
-
+    //  position array to remove
+    ndesafioList = ndesafioList.splice(nId, 1);
     localStorage.setItem(ELDESAFIOLIST, JSON.stringify(ndesafioList));
     fillSelector();
 }

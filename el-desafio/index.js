@@ -1,9 +1,11 @@
 var player;
 var npc;
 var optionsHTMList;
-var GAMESTORAGE = "whanttobeafriki";
+const GAMESTORAGE = "whanttobeafriki";
 var npcPresentadorHtml;
-
+// from 'creativo'
+const ELDESAFIOLIST = "el-desafio-creator";
+var customChallenge = [];
 function playNow() {
   // Si el campo de nombre esta vacio no continuara la funcion
   let inputName = document.getElementById("inputName");
@@ -38,11 +40,13 @@ function onLoadGame() {
   if (localStorage.getItem(GAMESTORAGE) != null) {
     document.getElementById("resumeGame").style.display = "block";
   }
-  generateCategoriaList();
-
   generateHTMLSelectView();
 
   generateRutaList();
+
+  if (localStorage.getItem(ELDESAFIOLIST) !== null) {
+    customChallenge = JSON.parse(localStorage.getItem(ELDESAFIOLIST));
+  }
 }
 
 function reloadLastGame() {
@@ -72,23 +76,37 @@ function reloadLastGame() {
 
 //Emplena un nou objecte de joc
 function playNewGame() {
-  let inputName = document.getElementById("inputName").value;
   let selectedCategory =
     document.getElementById("rutaViewList").selectedOptions[0];
-  let idAcualQuestion = 0;
-  let comodinList = [c1, c2, c3];
-  let firstRange = parseInt(selectedCategory.value);
-  let secondRange = firstRange + 10;
-  let rangeQuestion = quizList.slice(firstRange, secondRange);
+  let categoryHtml = document.getElementById("categoriaViewList").selectedOptions[0].value;
+  let parent = document.getElementById("rutaViewList").selectedOptions[0].value;
+  // Depenen si es default o customized, vindra del localstorage o del arxiu
+  let rangeQuestion;
+  let rangeSolution;
   //la posicio del award es la id categoria sense multiplicar per 10
-  let award = rotate(awardsList[parseInt(selectedCategory.value) / 10]);
-  let rangeSolution = optionsPositionCorrect.slice(firstRange, secondRange);
+  let award;
+  if (categoryHtml === 0) {
+    // default
+    let firstRange = parseInt(selectedCategory.value);
+    let secondRange = firstRange + 10;
+    rangeQuestion = quizList.slice(firstRange, secondRange);
+    rangeSolution = optionsPositionCorrect.slice(firstRange, secondRange);
+    award = rotate(awardsList[parseInt(selectedCategory.value) / 10])
+  } else {
+    // custom === 1 (localstorage DESAFIOLIST 'customChallenge' )
+    rangeQuestion = customChallenge[parseInt(parent)].quizQuestion;
+    rangeSolution = customChallenge[parseInt(parent)].solutionsList;
+    award = "https://www.zksama.com/el-juego/";
+  }
+
+
+
   //Una vegada creat el player el retorna
   return new QuizFriki(
-    inputName,
+    document.getElementById("inputName").value,
     selectedCategory.innerText,
-    idAcualQuestion,
-    comodinList,
+    0, // idActualQuestion
+    [c1, c2, c3], // comidinList
     rangeQuestion,
     rangeSolution,
     award
@@ -389,42 +407,27 @@ function addAgainMethodOnComodins() {
   });
 }
 
-
-//Genera les categorias <select>
-
-function generateCategoriaList() {
-  let padre = document.getElementById("categoriaViewList");
-
-  deleteChilds(padre);
-
-  for (let i = 0; i < categoriaList.length; i++) {
-    let hijo = document.createElement("option");
-    if (i == 0) {
-      hijo.selected = true;
-    }
-    hijo.value = i;
-    hijo.innerText = categoriaList[i].name;
-    padre.appendChild(hijo);
-  }
-}
-
 //Genera les subcategorias <select>
 function generateRutaList() {
-  let abuelo = document.getElementById("categoriaViewList");
-  let padre = document.getElementById("rutaViewList");
-  deleteChilds(padre);
-  let iSelected = parseInt(abuelo.selectedOptions[0].value);
-  let subCategoriaList = categoriaList[iSelected].subcategoria;
-  for (let i = 0; i < subCategoriaList.length; i++) {
-    let hijo = document.createElement("option");
-    if (i == 0) {
-      hijo.selected = true;
-    }
-    // la subcategoria ve per l'objecte 
-    hijo.value = subCategoriaList[i].id;
-    hijo.innerText = subCategoriaList[i].name;
-    padre.appendChild(hijo);
+  let categoryHtml = document.getElementById("categoriaViewList");
+  let parent = document.getElementById("rutaViewList");
+  deleteChilds(parent);
+  let iSelected = parseInt(categoryHtml.selectedOptions[0].value);
+  if (iSelected === 0) {
+    //default
+    defaultCategory.forEach(e => {
+      parent.appendChild(new Option(e.name, e.id));
+    });
   }
+
+  if (iSelected === 1) {
+    //personalizado
+    customChallenge.forEach((e, i) => {
+      parent.appendChild(new Option(e.name, i));
+    });
+  }
+
+
 }
 
 //Esborra els fills del div pasat

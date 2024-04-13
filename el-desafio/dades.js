@@ -1,37 +1,19 @@
-const categoriaList = [
+const defaultCategory = [
   {
-    "name": "Por defecto",
-    "subcategoria": [
-      {
-        "name": "Quiz Pokemon",
-        "id": 0,
-      },
-      {
-        "name": "Quiz Shingek",
-        "id": 10,
-      },
-      {
-        "name": "Quiz Jojos",
-        "id": 20,
-      },
-      {
-        "name": "Quiz Catalunya",
-        "id": 30,
-      },
-    ],
+    "name": "Quiz Pokemon",
+    "id": 0,
   },
   {
-    "name": "Personalizado",
-    "subcategoria": [
-      {
-        "name": "Ruta catalana",
-        "id": 30,
-      },
-      /*{
-        "name": "Ruta madrid",
-        "id": 40,
-      },*/
-    ],
+    "name": "Quiz Shingeki",
+    "id": 10,
+  },
+  {
+    "name": "Quiz Jojos",
+    "id": 20,
+  },
+  {
+    "name": "Quiz Catalunya",
+    "id": 30,
   },
 ];
 
