@@ -130,34 +130,42 @@ function exportChallenge() {
 }
 
 function importChallenge(event) {
-    const fileReader = new FileReader();
-    const [file] = event.target.files;
+    const files = event.target.files;
     const infoHtml = document.getElementById("info-import-file");
-    infoHtml.style.innerText = "";
-    infoHtml.style.color = "red";
-    fileReader.onload = (event) => {
-        const content = event.target.result;
-        try {
-            const jsonData = JSON.parse(content);
-            // test js vanilla
-            const validation = testJson(jsonData);
-            if (validation !== "200") {
-                infoHtml.innerText = validation
-                return;
+    infoHtml.innerText = ""; // Limpiar el contenido anterior
+    infoHtml.style.color = "green";
+
+    for (let i = 0; i < files.length; i++) {
+        const fileReader = new FileReader();
+        const file = files[i];
+
+        fileReader.onload = (event) => {
+            const content = event.target.result;
+            try {
+                const jsonData = JSON.parse(content);
+                // test js vanilla
+                const validation = testJson(jsonData);
+                if (validation !== "200") {
+                    infoHtml.innerHTML +=`<span style="color: red;">${file.name} ${validation} </span><br>`
+                    return;
+                }
+                addDesafioLocalStorage(jsonData);
+                infoHtml.innerHTML += file.name + "' se ha importado correctamente<br>";
+                //infoHtml.style.color = "green";
+            } catch (error) {
+                infoHtml.innerHTML += file.name + "' no es un formato válido<br>";
             }
-            addDesafioLocalStorage(jsonData);
-            infoHtml.innerText = "El archivo '" + file.name + "' se ha importado correctamente"
-            infoHtml.style.color = "green";
-        } catch (error) {
-            infoHtml.innerText = "El archivo '" + file.name + "' no es un formato válido"
+        };
+
+        if (file) {
+            fileReader.readAsText(file);
         }
     }
 
-    if (file) {
-        fileReader.readAsText(file);
-    }
     fillSelector();
 }
+
+
 
 function testJson(data) {
     if (typeof data["name"] !== "string") {

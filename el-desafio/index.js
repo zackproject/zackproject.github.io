@@ -453,3 +453,11 @@ function hideSettings(){
   document.getElementById("presentador").style.display ="block";
   document.getElementById("quiz-and-options").style.display ="block";
 }
+
+function checkCorrect(jsonRespuestas) {
+  return jsonRespuestas.solutionsList.map((indiceRespuesta, index) => {
+      const pregunta = jsonRespuestas.questionsList[index];
+      return `${pregunta.question} ${pregunta.options[indiceRespuesta]}`;
+  });
+}
+
