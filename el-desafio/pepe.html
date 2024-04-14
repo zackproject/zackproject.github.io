@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transmisión de la Cámara</title>
+</head>
+<body>
+    <h1>Transmisión de la Cámara</h1>
+    <video id="videoElement" autoplay></video>
+
+    <script>
+        // Función para solicitar acceso a la cámara y mostrar la transmisión en el elemento de video
+        async function enableCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                const videoElement = document.getElementById('videoElement');
+                videoElement.srcObject = stream;
+            } catch (error) {
+                console.error('Error al acceder a la cámara:', error);
+            }
+        }
+
+        // Llamamos a la función para habilitar la cámara cuando se carga la página
+        enableCamera();
+    </script>
+</body>
+</html>

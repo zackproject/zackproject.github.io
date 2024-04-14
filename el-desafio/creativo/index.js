@@ -146,7 +146,7 @@ function importChallenge(event) {
                 // test js vanilla
                 const validation = testJson(jsonData);
                 if (validation !== "200") {
-                    infoHtml.innerHTML +=`<span style="color: red;">${file.name} ${validation} </span><br>`
+                    infoHtml.innerHTML += `<span style="color: red;">${file.name} ${validation} </span><br>`
                     return;
                 }
                 addDesafioLocalStorage(jsonData);
@@ -206,13 +206,16 @@ function testJson(data) {
 }
 
 function deleteChallenge() {
-    let nId = document.getElementById("select-export").selectedOptions[0].value;
+    let nId = document.getElementById("select-delete").selectedOptions[0].value;
     let ndesafioList = JSON.parse(localStorage.getItem(ELDESAFIOLIST));
-    //  position array to remove
-    ndesafioList = ndesafioList.splice(nId, 1);
+
+    // Eliminar el elemento seleccionado
+    ndesafioList.splice(parseInt(nId), 1);
+
     localStorage.setItem(ELDESAFIOLIST, JSON.stringify(ndesafioList));
     fillSelector();
 }
+
 
 function deleteChilds(currentDiv) {
     while (currentDiv.firstChild) {

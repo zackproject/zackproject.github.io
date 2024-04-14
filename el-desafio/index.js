@@ -6,6 +6,10 @@ var npcPresentadorHtml;
 // from 'creativo'
 const ELDESAFIOLIST = "el-desafio-creator";
 var customChallenge = [];
+// Trucada
+let tiempo = null;
+let segundos = 0;
+
 function playNow() {
   // Si el campo de nombre esta vacio no continuara la funcion
   let inputName = document.getElementById("inputName");
@@ -35,6 +39,8 @@ function playNow() {
   npcPresentadorHtml.innerText = npc.callPresentacion(player.name);
   // Amaga el menu
   hideSettings();
+  // Llamamos a la función para habilitar la cámara cuando se carga la página
+  enableCamera();
 }
 
 function onLoadGame() {
@@ -148,7 +154,12 @@ function fillQuiz() {
   }
 }
 
+
+
 function comodinLlamada(event) {
+  event.target.closest(".comodin-parent").close();
+  showDialog("call");
+  tiempo = setInterval(doInBucle, 1000)
   //Nom del comodi
   let comodin = player.comodinList[0];
   //Anihacking, si el comodin fue usado, no deja usarlo mas
@@ -448,16 +459,80 @@ function deleteChilds(currentDiv) {
   }
 }
 
-function hideSettings(){
-  document.getElementById("login").style.display ="none";
-  document.getElementById("presentador").style.display ="block";
-  document.getElementById("quiz-and-options").style.display ="block";
+function hideSettings() {
+  document.getElementById("login").style.display = "none";
+  document.getElementById("presentador").style.display = "block";
+  document.getElementById("quiz-and-options").style.display = "block";
 }
 
 function checkCorrect(jsonRespuestas) {
   return jsonRespuestas.solutionsList.map((indiceRespuesta, index) => {
-      const pregunta = jsonRespuestas.questionsList[index];
-      return `${pregunta.question} ${pregunta.options[indiceRespuesta]}`;
+    const pregunta = jsonRespuestas.questionsList[index];
+    return `${pregunta.question} ${pregunta.options[indiceRespuesta]}`;
   });
 }
 
+
+function showDialog(option) {
+
+  switch (option) {
+    case "contact":
+      document.getElementById("contact-comodin").showModal();
+      break;
+    case "call":
+      document.getElementById("call-comodin").showModal();
+      document.getElementById("contact-comodin").close();
+      break;
+    case "public":
+      document.getElementById("call-public").showModal();
+      break;
+    default:
+      console.log("No options avaliable: " + option);
+      break;
+  }
+}
+
+
+function closeDialog(option) {
+  switch (option) {
+    case "contact":
+      document.getElementById("contact-comodin").close();
+      break;
+    case "call":
+      document.getElementById("call-comodin").close();
+      break;
+    case "public":
+      document.getElementById("call-public").showModal();
+      break;
+    default:
+      console.log("No options avaliable: " + option);
+      break;
+  }
+}
+
+function doInBucle() {
+  if (segundos <= 30) {
+    document.getElementById("time-call").innerText = format(segundos);
+    segundos++;
+  } else {
+    clearInterval(tiempo);
+  }
+}
+
+function format(segundos) {
+  if (segundos < 10) {
+    return "00:0" + segundos;
+  }
+  return "00:" + segundos;
+}
+
+
+async function enableCamera() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    const videoElement = document.getElementById('videoElement');
+    videoElement.srcObject = stream;
+  } catch (error) {
+    console.error('Error al acceder a la cámara:', error);
+  }
+}
