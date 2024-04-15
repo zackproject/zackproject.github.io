@@ -90,20 +90,27 @@
 
         <a href="./creativo">EDITAR DESAFIOS</a>
         <div>
-            <label for="useGrenscreen">Green Screen</label>
-            <input type="checkbox" id="useGrenscreen" name="vehicle1" value="Bike" onchange="useGreenScreen(event)">
+            <label for="usePresentator">Presentador</label>
+            <input type="checkbox" id="usePresentator" name="presentator" value="use" onchange="usePresentator(event)"
+                checked>
         </div>
-
+        <div>
+            <label for="useCamera">Videocamara</label>
+            <input type="checkbox" id="useCamera" name="useCamera" value="camera" checked>
+        </div>
+        <div>
+            <label for="useGrenscreen">Pantalla verde</label>
+            <input type="checkbox" id="useGrenscreen" name="greenscreen" value="green" onchange="useGreenScreen(event)">
+        </div>
     </main>
 
+    <div id="empty space" style="border: 1px solid red; height: 20vh;">
+        Este espacio es experimental para que las preguntas queden abajo, faltan los iconos de los comidenes arriba,
+        puedes ahorrarte el panel de comodines si pones un iconos de cada uno arriba a la derecha
+        <video id="videoElement" autoplay></video>
 
+    </div>
     <div id="presentador">
-        <div id="empty space" style="border: 1px solid red; height: 20vh;">
-            Este espacio es experimental para que las preguntas queden abajo, faltan los iconos de los comidenes arriba,
-            puedes ahorrarte el panel de comodines si pones un iconos de cada uno arriba a la derecha
-            <video id="videoElement" autoplay></video>
-
-        </div>
         <h2>Presentador</h2>
         <div class="img-presentador">
             <img src="images/person.png" height="100" width="100" alt="Es el Presentador">

@@ -40,7 +40,9 @@ function playNow() {
   // Amaga el menu
   hideSettings();
   // Llamamos a la función para habilitar la cámara cuando se carga la página
-  enableCamera();
+  if (document.getElementById("useCamera").checked) {
+    enableCamera();
+  }
 }
 
 function onLoadGame() {
@@ -95,7 +97,7 @@ function playNewGame() {
   let rangeSolution;
   //la posicio del award es la id categoria sense multiplicar per 10
   let award;
-  if (categoryHtml === 0) {
+  if (categoryHtml === "0") {
     // default
     let firstRange = parseInt(selectedCategory.value);
     let secondRange = firstRange + 10;
@@ -452,6 +454,12 @@ function useGreenScreen(event) {
   document.querySelector("body").style.background = event.target.checked ? "green" : "";
 }
 
+
+function usePresentator(event) {
+  document.getElementById("presentador").style.display = event.target.checked ? "" : "none";
+
+}
+
 //Esborra els fills del div pasat
 function deleteChilds(currentDiv) {
   while (currentDiv.firstChild) {
@@ -461,7 +469,9 @@ function deleteChilds(currentDiv) {
 
 function hideSettings() {
   document.getElementById("login").style.display = "none";
-  document.getElementById("presentador").style.display = "block";
+  if (document.getElementById("usePresentator").checked) {
+    document.getElementById("presentador").style.display = "block";
+  }
   document.getElementById("quiz-and-options").style.display = "block";
 }
 
