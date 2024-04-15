@@ -18,13 +18,16 @@
 
 <body onload="onLoadGame()">
     <nav>
-        <a href="/" title="Salir"><img src="./images/home.png" height="40" width="40" alt="Inicio"></a>
+        <div>
+            <a href="/" title="Volver a la página principal inicio"><img src="./images/home.png" height="40" width="40" alt="Inicio"></a>
+            <a href="." title="Salir"><img src="./images/return.png" height="40" width="40" alt="Inicio"></a>
+        </div>
         <!--  <button class="comodin" onclick="comodinPublico(event)">PÚBLICO</button> -->
         <div>
             <button class="icon-comodin" onclick="showDialog('contact')" title="Usar comodin llamada">
                 <img src="./images/phone_logo.png" height="30" width="30" alt="Comodin llamada">
             </button>
-            <button class="icon-comodin" onclick="showDialog('contact')" title="Usar comodin público">
+            <button class="icon-comodin" onclick="showDialog('public')" title="Usar comodin público">
                 <img src="./images/people.png" height="30" width="30" alt="Comodi público">
             </button>
             <button class="icon-comodin" onclick="comodinFifty(event)" title="Usar comodín 50%">
@@ -32,6 +35,38 @@
             </button>
         </div>
     </nav>
+
+    <dialog class="comodin-parent" id="public-comodin">
+        <div class="logo-comodin">
+            <img src="images/people.png" height="50" width="45" alt="Es una imagen">
+        </div>
+        <span class="close-btn" onclick="closeDialog('public')">X</span>
+        <div class="comodin-items">
+            <div id="public-percent">
+                <div class="percent item-1">60%</div>
+                <div class="percent item-2">15%</div>
+                <div class="percent item-3">20%</div>
+                <div class="percent item-4">5%</div>
+                <div class="public item-5">
+                    <div id="percent-1"></div>
+                </div>
+                <div class="public item-6">
+                    <div id="percent-2"></div>
+                </div>
+                <div class="public item-7">
+                    <div id="percent-3"></div>
+                </div>
+                <div class="public item-8">
+                    <div id="percent-4"></div>
+                </div>
+                <div class="public item-9">A</div>
+                <div class="public item-10">B</div>
+                <div class="public item-11">C</div>
+                <div class="public item-12">D</div>
+            </div>
+        </div>
+        <button onclick="">Encuestar</button>
+    </dialog>
 
     <!-- start Comodin contactos-->
     <dialog class="comodin-parent" id="contact-comodin">
@@ -51,7 +86,7 @@
     <!-- end Comodin contactos-->
     <dialog class="comodin-parent" id="call-comodin">
         <div class="logo-comodin">
-            <img src="images/phone_logo.png" height="50" width="45" alt="Es una imagen">
+            <img src="images/phone.png" height="50" width="45" alt="Es una imagen">
         </div>
         <div class="comodin-items">
             <div id="name-call">Contacto</div>
@@ -104,15 +139,11 @@
         </div>
     </main>
 
-    <div id="empty space" style="border: 1px solid red; height: 20vh;">
-        Este espacio es experimental para que las preguntas queden abajo, faltan los iconos de los comidenes arriba,
-        puedes ahorrarte el panel de comodines si pones un iconos de cada uno arriba a la derecha
-        <video id="videoElement" autoplay></video>
-
-    </div>
+    <video id="videoElement" autoplay></video>
+<!-- display flex nav + main(video) + question  and divide space verticaly-->
     <div id="presentador">
-        <h2>Presentador</h2>
         <div class="img-presentador">
+            <!-- mobile version hide this photo and lg do it absolute img-->
             <img src="images/person.png" height="100" width="100" alt="Es el Presentador">
         </div>
         <div id="npcPresentador" class="text-presentador">

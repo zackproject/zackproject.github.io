@@ -187,7 +187,7 @@ label {
     width: 250px;
     margin-top: 50px;
     overflow: unset;
-
+    border: none;
 }
 
 .comodin-parent::backdrop {
@@ -423,11 +423,12 @@ label {
 /* COMODINES END */
 
 
-nav{
+nav {
     display: flex;
     gap: 10px;
     justify-content: space-between;
 }
+
 #resumeGame,
 #custom-option {
     display: none;
@@ -447,4 +448,15 @@ nav{
         cursor: pointer;
         border: 1px solid black;
     }
+}
+
+video {
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    display: block;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
 }

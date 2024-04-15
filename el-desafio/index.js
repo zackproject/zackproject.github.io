@@ -494,7 +494,7 @@ function showDialog(option) {
       document.getElementById("contact-comodin").close();
       break;
     case "public":
-      document.getElementById("call-public").showModal();
+      document.getElementById("public-comodin").showModal();
       break;
     default:
       console.log("No options avaliable: " + option);
@@ -512,7 +512,7 @@ function closeDialog(option) {
       document.getElementById("call-comodin").close();
       break;
     case "public":
-      document.getElementById("call-public").showModal();
+      document.getElementById("public-comodin").close();
       break;
     default:
       console.log("No options avaliable: " + option);
