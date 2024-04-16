@@ -149,11 +149,20 @@ function fillQuiz() {
   let pregunta = document.getElementById("question");
   pregunta.innerText = player.id_actual_question + 1 + ". " + quiz.question;
 
-  //GLOBAL let optionsList
   for (let i = 0; i < optionsHTMList.length; i++) {
-    //Hi ha tantes clases com opcions: 4
-    optionsHTMList[i].innerText = quiz.options[i];
+      optionsHTMList[i].innerText = "";
   }
+
+  for (let i = 0; i < optionsHTMList.length; i++) {
+    setTimeout(() => {
+      optionsHTMList[i].innerText = quiz.options[i];
+      optionsHTMList[i].style.animation = 'none';
+      void optionsHTMList[i].offsetWidth; // Reflujos forzados para reiniciar la animación
+      optionsHTMList[i].style.animation = "example 1s forwards"
+    }, i * 1000); // Multiply by 2000 to get the desired two-second delay
+  }
+
+
 }
 
 
@@ -347,6 +356,7 @@ function goNextQuestion(event) {
     npcPresentadorHtml.innerText = "";
     //Activa les opcions quiz
     optionHTMLDisabled(false);
+
   } else {
     let dwnload = document.getElementById("winnerUrl");
     dwnload.action = rotate(player.award);

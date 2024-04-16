@@ -17,184 +17,181 @@
 </head>
 
 <body onload="onLoadGame()">
-    <nav>
-        <div>
-            <a href="/" title="Volver a la página principal inicio"><img src="./images/home.png" height="40" width="40" alt="Inicio"></a>
-            <a href="." title="Salir"><img src="./images/return.png" height="40" width="40" alt="Inicio"></a>
-        </div>
-        <!--  <button class="comodin" onclick="comodinPublico(event)">PÚBLICO</button> -->
-        <div>
-            <button class="icon-comodin" onclick="showDialog('contact')" title="Usar comodin llamada">
-                <img src="./images/phone_logo.png" height="30" width="30" alt="Comodin llamada">
-            </button>
-            <button class="icon-comodin" onclick="showDialog('public')" title="Usar comodin público">
-                <img src="./images/people.png" height="30" width="30" alt="Comodi público">
-            </button>
-            <button class="icon-comodin" onclick="comodinFifty(event)" title="Usar comodín 50%">
-                <img src="./images/fifty.png" height="30" width="30" alt="Comodin 50%">
-            </button>
-        </div>
-    </nav>
-
-    <dialog class="comodin-parent" id="public-comodin">
-        <div class="logo-comodin">
-            <img src="images/people.png" height="50" width="45" alt="Es una imagen">
-        </div>
-        <span class="close-btn" onclick="closeDialog('public')">X</span>
-        <div class="comodin-items">
-            <div id="public-percent">
-                <div class="percent item-1">60%</div>
-                <div class="percent item-2">15%</div>
-                <div class="percent item-3">20%</div>
-                <div class="percent item-4">5%</div>
-                <div class="public item-5">
-                    <div id="percent-1"></div>
-                </div>
-                <div class="public item-6">
-                    <div id="percent-2"></div>
-                </div>
-                <div class="public item-7">
-                    <div id="percent-3"></div>
-                </div>
-                <div class="public item-8">
-                    <div id="percent-4"></div>
-                </div>
-                <div class="public item-9">A</div>
-                <div class="public item-10">B</div>
-                <div class="public item-11">C</div>
-                <div class="public item-12">D</div>
+    <div class="container">
+        <nav class="element1">
+            <div>
+                <a href="/" title="Volver a la página principal inicio"><img src="./images/home.png" height="40"
+                        width="40" alt="Inicio"></a>
+                <a href="." title="Salir"><img src="./images/return.png" height="40" width="40" alt="Inicio"></a>
             </div>
-        </div>
-        <button onclick="">Encuestar</button>
-    </dialog>
+            <!--  <button class="comodin" onclick="comodinPublico(event)">PÚBLICO</button> -->
+            <div>
+                <button class="icon-comodin" onclick="showDialog('contact')" title="Usar comodin llamada">
+                    <img src="./images/phone_logo.png" height="30" width="30" alt="Comodin llamada">
+                </button>
+                <button class="icon-comodin" onclick="showDialog('public')" title="Usar comodin público">
+                    <img src="./images/people.png" height="30" width="30" alt="Comodi público">
+                </button>
+                <button class="icon-comodin" onclick="comodinFifty(event)" title="Usar comodín 50%">
+                    <img src="./images/fifty.png" height="30" width="30" alt="Comodin 50%">
+                </button>
+            </div>
+        </nav>
 
-    <!-- start Comodin contactos-->
-    <dialog class="comodin-parent" id="contact-comodin">
-        <div class="logo-comodin">
-            <img src="images/contact.png" height="50" width="45" alt="Es una imagen">
-        </div>
-        <span class="close-btn" onclick="closeDialog('contact')">X</span>
-        <div class="comodin-items">
-            <select id="callViewList" name="select" size="5">
-                <!-- generated -->
+        <dialog class="comodin-parent" id="public-comodin">
+            <div class="logo-comodin">
+                <img src="images/people.png" height="50" width="45" alt="Es una imagen">
+            </div>
+            <span class="close-btn" onclick="closeDialog('public')">X</span>
+            <div class="comodin-items">
+                <div id="public-percent">
+                    <!-- Empieza de cero y cuando pulses el boton de "encuestrar" mete un transtion del with de cad uno y muestra los porcentajes-->
+                    <div class="percent item-1">60%</div>
+                    <div class="percent item-2">15%</div>
+                    <div class="percent item-3">20%</div>
+                    <div class="percent item-4">5%</div>
+                    <div class="public item-5">
+                        <div id="percent-1"></div>
+                    </div>
+                    <div class="public item-6">
+                        <div id="percent-2"></div>
+                    </div>
+                    <div class="public item-7">
+                        <div id="percent-3"></div>
+                    </div>
+                    <div class="public item-8">
+                        <div id="percent-4"></div>
+                    </div>
+                    <div class="public item-9">A</div>
+                    <div class="public item-10">B</div>
+                    <div class="public item-11">C</div>
+                    <div class="public item-12">D</div>
+                </div>
+            </div>
+            <button onclick="">Encuestar</button>
+        </dialog>
+        <dialog class="comodin-parent" id="contact-comodin">
+            <div class="logo-comodin">
+                <img src="images/contact.png" height="50" width="45" alt="Es una imagen">
+            </div>
+            <span class="close-btn" onclick="closeDialog('contact')">X</span>
+            <div class="comodin-items">
+                <select id="callViewList" name="select" size="5">
+                    <!-- generated -->
+                </select>
+                <div class="contact-call">
+                    <button class="comodin" onclick="comodinLlamada(event)">LLAMAR</button>
+                </div>
+            </div>
+        </dialog>
+        <dialog class="comodin-parent" id="call-comodin">
+            <div class="logo-comodin">
+                <img src="images/phone.png" height="50" width="45" alt="Es una imagen">
+            </div>
+            <div class="comodin-items">
+                <div id="name-call">Contacto</div>
+                <div id="text-call">Llamando ...</div>
+                <div id="time-call">00:00</div>
+                <div class="call-close">
+                    <button onclick="closeDialog('call')"><img src="images/phone_close.png" width="50" height="50"
+                            alt=""></button>
+                </div>
+            </div>
+        </dialog>
+
+
+        <main id="login">
+            <h2 style=" text-align: CE;">El desafio</h2>
+            <!-- Primer camp omple el nom-->
+            <label for="inputName" class="title-input">Nick</label> <!--input required -->
+            <input maxlength="12" class="text-input" placeholder="Escribe tu nombre" autocomplete="off" type="text"
+                id="inputName" name="name">
+            <!-- Segon camp omple categoria -->
+            <label for="categoriaViewList" class="title-input">Categoria</label>
+            <select class="select-opt" id="categoriaViewList" onchange="generateRutaList()">
+                <option value="0">Por defecto</option>
+                <option value="1" id="custom-option">Personalizado</option>
             </select>
-            <div class="contact-call">
-                <button class="comodin" onclick="comodinLlamada(event)">LLAMAR</button>
+            <!-- Tercer camp omple  subcategoria -->
+            <select class="select-opt" id="rutaViewList">
+                <!-- auto generated-->
+            </select>
+
+            <!-- Boton de Start -->
+            <div class="start-btn">
+                <button onclick="playNow()">NUEVA PARTIDA</button>
+                <button id="resumeGame" onclick="reloadLastGame()">RECUPERAR PARTIDA</button>
             </div>
-        </div>
-    </dialog>
-    <!-- end Comodin contactos-->
-    <dialog class="comodin-parent" id="call-comodin">
-        <div class="logo-comodin">
-            <img src="images/phone.png" height="50" width="45" alt="Es una imagen">
-        </div>
-        <div class="comodin-items">
-            <div id="name-call">Contacto</div>
-            <div id="text-call">Llamando ...</div>
-            <div id="time-call">00:00</div>
-            <div class="call-close">
-                <button onclick="closeDialog('call')"><img src="images/phone_close.png" width="50" height="50"
-                        alt=""></button>
+
+            <a href="./creativo">EDITAR DESAFIOS</a>
+            <div>
+                <label for="usePresentator">Presentador</label>
+                <input type="checkbox" id="usePresentator" name="presentator" value="use"
+                    onchange="usePresentator(event)" checked>
             </div>
-        </div>
-    </dialog>
-
-
-    <main id="login">
-        <h2 style=" text-align: CE;">El desafio</h2>
-        <!-- Primer camp omple el nom-->
-        <label for="inputName" class="title-input">Nick</label> <!--input required -->
-        <input maxlength="12" class="text-input" placeholder="Escribe tu nombre" autocomplete="off" type="text"
-            id="inputName" name="name">
-        <!-- Segon camp omple categoria -->
-        <label for="categoriaViewList" class="title-input">Categoria</label>
-        <select class="select-opt" id="categoriaViewList" onchange="generateRutaList()">
-            <option value="0">Por defecto</option>
-            <option value="1" id="custom-option">Personalizado</option>
-        </select>
-        <!-- Tercer camp omple  subcategoria -->
-        <select class="select-opt" id="rutaViewList">
-            <!-- auto generated-->
-        </select>
-
-        <!-- Boton de Start -->
-        <div class="start-btn">
-            <button onclick="playNow()">NUEVA PARTIDA</button>
-            <button id="resumeGame" onclick="reloadLastGame()">RECUPERAR PARTIDA</button>
-        </div>
-
-        <a href="./creativo">EDITAR DESAFIOS</a>
-        <div>
-            <label for="usePresentator">Presentador</label>
-            <input type="checkbox" id="usePresentator" name="presentator" value="use" onchange="usePresentator(event)"
-                checked>
-        </div>
-        <div>
-            <label for="useCamera">Videocamara</label>
-            <input type="checkbox" id="useCamera" name="useCamera" value="camera" checked>
-        </div>
-        <div>
-            <label for="useGrenscreen">Pantalla verde</label>
-            <input type="checkbox" id="useGrenscreen" name="greenscreen" value="green" onchange="useGreenScreen(event)">
-        </div>
-    </main>
-
-    <video id="videoElement" autoplay></video>
-<!-- display flex nav + main(video) + question  and divide space verticaly-->
-    <div id="presentador">
-        <div class="img-presentador">
-            <!-- mobile version hide this photo and lg do it absolute img-->
-            <img src="images/person.png" height="100" width="100" alt="Es el Presentador">
-        </div>
-        <div id="npcPresentador" class="text-presentador">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore cum soluta itaque vitae molestiae
-            libero ullam in perspiciatis cumque?
-        </div>
-        <div class="btn-presentador">
-            <button id="btn-next" onclick="goNextQuestion(event)" disabled>Continuar</button>
-        </div>
-    </div>
-
-    <div id="quiz-and-options">
-        <h2>Pregunta</h2>
-        <div id="question" class="option-quiz question-quiz">lorem</div>
-        <div class="answer-list">
-            <div id="pt0" class="option-quiz answer-quiz">
-                <span class="suboption-quiz">A</span>
-                <input id="quiz-0" name="quiz-element" type="radio" value="0" onchange="checkQuestion()">
-                <label class="answer" for="quiz-0"></label>
+            <div>
+                <label for="useCamera">Videocamara</label>
+                <input type="checkbox" id="useCamera" name="useCamera" value="camera" checked>
             </div>
-            <div id="pt1" class="option-quiz answer-quiz">
-                <span class="suboption-quiz">B</span>
-                <input id="quiz-1" name="quiz-element" type="radio" value="1" onchange="checkQuestion()">
-                <label class="answer" for="quiz-1"></label>
+            <div>
+                <label for="useGrenscreen">Pantalla verde</label>
+                <input type="checkbox" id="useGrenscreen" name="greenscreen" value="green"
+                    onchange="useGreenScreen(event)">
             </div>
-            <div id="pt2" class="option-quiz answer-quiz">
-                <span class="suboption-quiz">C</span>
-                <input id="quiz-2" name="quiz-element" type="radio" value="2" onchange="checkQuestion()">
-                <label class="answer" for="quiz-2"></label>
+        </main>
+
+        <video id="videoElement" autoplay class="element2"></video>
+        <!-- display flex nav + main(video) + question  and divide space verticaly-->
+        <div class="testing element3">
+            <div class="btn-presentador">
+                <button id="btn-next" onclick="goNextQuestion(event)" disabled>Continuar</button>
             </div>
-            <div id="pt3" class="option-quiz answer-quiz">
-                <span class="suboption-quiz">D</span>
-                <input id="quiz-3" name="quiz-element" type="radio" value="3" onchange="checkQuestion()">
-                <label class="answer" for="quiz-3"></label>
+            <div id="presentador">
+                <div class="img-presentador">
+                    <!-- mobile version hide this photo and lg do it absolute img-->
+                    <img src="images/person.png" height="100" width="100" alt="Es el Presentador">
+                </div>
+                <div id="npcPresentador" class="text-presentador">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore cum soluta itaque vitae
+                    molestiae
+                    libero ullam in perspiciatis cumque?
+                </div>
+            </div>
+
+            <div id="quiz-and-options">
+                <div id="question" class="option-quiz question-quiz">lorem</div>
+                <div class="answer-list">
+                    <div id="pt0" class="option-quiz answer-quiz">
+                        <span class="suboption-quiz">A</span>
+                        <input id="quiz-0" name="quiz-element" type="radio" value="0" onchange="checkQuestion()">
+                        <label class="answer" for="quiz-0"></label>
+                    </div>
+                    <div id="pt1" class="option-quiz answer-quiz">
+                        <span class="suboption-quiz">B</span>
+                        <input id="quiz-1" name="quiz-element" type="radio" value="1" onchange="checkQuestion()">
+                        <label class="answer" for="quiz-1"></label>
+                    </div>
+                    <div id="pt2" class="option-quiz answer-quiz">
+                        <span class="suboption-quiz">C</span>
+                        <input id="quiz-2" name="quiz-element" type="radio" value="2" onchange="checkQuestion()">
+                        <label class="answer" for="quiz-2"></label>
+                    </div>
+                    <div id="pt3" class="option-quiz answer-quiz">
+                        <span class="suboption-quiz">D</span>
+                        <input id="quiz-3" name="quiz-element" type="radio" value="3" onchange="checkQuestion()">
+                        <label class="answer" for="quiz-3"></label>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
     <!-- https://developer.mozilla.org/es/docs/Web/HTML/Element/dialog -->
-
-
-
-
-
-
-
+    <!--
     <form method="get" id="winnerUrl" action="/" style="display: none;">
         <button type="submit">Descargar Premio</button>
     </form>
 
-
+ -->
 </body>
 
 </html>
