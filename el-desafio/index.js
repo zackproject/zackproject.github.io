@@ -150,7 +150,7 @@ function fillQuiz() {
   pregunta.innerText = player.id_actual_question + 1 + ". " + quiz.question;
 
   for (let i = 0; i < optionsHTMList.length; i++) {
-      optionsHTMList[i].innerText = "";
+    optionsHTMList[i].innerText = "";
   }
 
   for (let i = 0; i < optionsHTMList.length; i++) {
@@ -237,9 +237,8 @@ function comodinPublico(event) {
   let optionListAnswer =
     player.questionsList[player.id_actual_question].options;
   //Escriu el resultat del comodi al html
-  let text = document.getElementById("applycomodin");
-  text.innerText =
-    comodin.name + " - " + representPublic(percentPublicList, optionListAnswer);
+  console.log(percentPublicList, optionListAnswer);
+  representPublic(percentPublicList)
   // Marquem com utilizat el comodi
   comodin.used = true;
   //Desactiva el pare que l'ha cridat, o sigui el boton
@@ -279,13 +278,15 @@ function comodinFifty(event) {
 }
 
 //Retorna el text de comodi Public en format llegible
-function representPublic(percentList, questionList) {
-  let text = "";
-  for (let i = 0; i < percentList.length; i++) {
-    text = text + "'" + questionList[i] + "' " + percentList[i] + "% | ";
-  }
-
-  return text;
+function representPublic(percentList) {
+  document.getElementById("public-a").style.height = percentList[0] + "%"
+  document.getElementById("public-b").style.height = percentList[1] + "%"
+  document.getElementById("public-c").style.height = percentList[2] + "%"
+  document.getElementById("public-d").style.height = percentList[3] + "%"
+  document.getElementById("percent-a").innerText = percentList[0] + "%"
+  document.getElementById("percent-b").innerText = percentList[1] + "%"
+  document.getElementById("percent-c").innerText = percentList[2] + "%"
+  document.getElementById("percent-d").innerText = percentList[3] + "%"
 }
 
 //Omple les opcions del comodi Trucada

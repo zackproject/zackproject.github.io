@@ -455,6 +455,50 @@ label {
     margin: 10px;
 }
 
+#public-comodin {
+    background-color: #303543;
+    width: 300px;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    .header,
+    .footer,
+    .main {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        color: white;
+
+    }
+
+    .footer {
+        color: yellow;
+    }
+
+    .main {
+        height: 200px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        border-radius: 4px;
+        border: 1px solid white;
+    }
+
+    .bar-parent {
+        height: 100%;
+        position: relative;
+    }
+
+    .bar-content {
+        background-color: lightblue;
+        position: absolute;
+        bottom: 0px;
+        left: -10px;
+        width: 20px;
+        transition: height 2s; /* no va xd */
+    }
+}
+
 /* COMODINES END */
 
 
