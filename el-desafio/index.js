@@ -1,6 +1,9 @@
 var player;
 var npc;
 var optionsHTMList;
+
+var textQuiz = document.getElementsByClassName("text-answer");
+var labelQuiz = document.getElementsByClassName("answer-quiz");
 const GAMESTORAGE = "el-desafio";
 var npcPresentadorHtml;
 // from 'creativo'
@@ -84,6 +87,8 @@ function reloadLastGame() {
   disableComodinOnReload();
   // Posa els metodes de nou
   addAgainMethodOnComodins();
+  // amaga el menu i mostra les opcions configurades
+  hideSettings();
 }
 
 //Emplena un nou objecte de joc
@@ -136,9 +141,8 @@ function rotate(mensaje) {
 
 function fillQuestionList() {
   let list = [];
-  let clsslist = document.getElementsByClassName("answer");
-  for (let i = 0; i < clsslist.length; i++) {
-    const element = clsslist[i];
+  for (let i = 0; i < textQuiz.length; i++) {
+    const element = textQuiz[i];
     list.push(element);
   }
   return list;
@@ -148,21 +152,38 @@ function fillQuiz() {
   //La pregunta actual es la del 'obj'
   let pregunta = document.getElementById("question");
   pregunta.innerText = player.id_actual_question + 1 + ". " + quiz.question;
+  pregunta.style.animation = 'none';
+  void pregunta.offsetWidth; // Reflujos forzados para reiniciar la animación
+  pregunta.style.animation = "renew-question 1.5s "
 
-  for (let i = 0; i < optionsHTMList.length; i++) {
-    optionsHTMList[i].innerText = "";
+
+  let anwerList = document.getElementsByClassName("answer");
+  for (let i = 0; i < textQuiz.length; i++) {
+    textQuiz[i].innerText = "";
+    anwerList[i].style.backgroundColor = "#302E82";
   }
-
-  for (let i = 0; i < optionsHTMList.length; i++) {
+  markAnswer(true);
+  for (let i = 0; i < labelQuiz.length; i++) {
     setTimeout(() => {
-      optionsHTMList[i].innerText = quiz.options[i];
-      optionsHTMList[i].style.animation = 'none';
-      void optionsHTMList[i].offsetWidth; // Reflujos forzados para reiniciar la animación
-      optionsHTMList[i].style.animation = "example 1s forwards"
+      textQuiz[i].innerText = quiz.options[i];
+      labelQuiz[i].style.animation = 'none';
+      void labelQuiz[i].offsetWidth; // Reflujos forzados para reiniciar la animación
+      labelQuiz[i].style.animation = "renew-answer 1s"
     }, i * 1000); // Multiply by 2000 to get the desired two-second delay
   }
 
 
+}
+
+function markAnswer(mark) {
+  let anwerList = document.getElementsByClassName("answer");
+  for (let i = 0; i < anwerList.length; i++) {
+    if (mark) {
+      anwerList[i].classList.add("mark-answer");
+    } else {
+      anwerList[i].classList.remove("mark-answer");
+    }
+  }
 }
 
 
@@ -318,14 +339,15 @@ function checkQuestion() {
     //console.log("thing", thing.value, "correcte", correcte);
     if (thing.value == correcte) {
       //Si es correcte o marca en verd
-      optionsHTMList[thing.value].style.background = "green";
+      document.getElementsByClassName("answer")[thing.value].style.backgroundColor = "green";
       //Dialogo del presentador correcto
       npcPresentadorHtml.innerText = npc.callCorrecto();
     } else {
       // si es incorrecta tornara a fer de zero
-      document.getElementById("btn-next").innerText = "Reintentar";
+      document.getElementById("img-next").src = "images/retry.png";
+
       player.id_actual_question = -1;
-      optionsHTMList[thing.value].style.background = "red";
+      document.getElementsByClassName("answer")[thing.value].style.background = "red";
       //Dialogo del presentador incorrecto
       npcPresentadorHtml.innerText = npc.callInorrecto(player.name);
       // vacia el localstorage
@@ -337,6 +359,7 @@ function checkQuestion() {
   }
   //Desactiva les opcions quiz
   optionHTMLDisabled(true);
+  markAnswer(false);
 }
 
 //
@@ -373,14 +396,9 @@ function goNextQuestion(event) {
 }
 
 function cleanOptions() {
-  let cont = 0;
-  optionsHTMList.forEach((element) => {
-    element.style.background = null;
-    const label = optionsHTMList[cont].htmlFor;
-    //label e input comparteixex 'id' i el 'for', treu el radio marcart
-    document.getElementById(label).checked = false;
-    cont++;
-  });
+  for (let i = 0; i < 4; i++) {
+    document.getElementById("quiz-" + i).checked = false;
+  }
 }
 
 function cleanComodin() {
@@ -391,7 +409,7 @@ function cleanComodin() {
 }
 
 function cleanQuizBtn() {
-  document.getElementById("btn-next").innerText = "Siguiente";
+  document.getElementById("img-next").src = "images/next.png";
   // document.getElementById("btn-check").disabled = false;
   document.getElementById("btn-next").disabled = true;
 }
@@ -483,7 +501,10 @@ function hideSettings() {
   if (document.getElementById("usePresentator").checked) {
     document.getElementById("presentador").style.display = "block";
   }
-  document.getElementById("quiz-and-options").style.display = "block";
+  document.getElementById("quiz-and-options").style.display = "block"; /// unused?
+  document.getElementById("presentatorQuestion").style.display = "block";
+
+
 }
 
 function checkCorrect(jsonRespuestas) {
@@ -557,3 +578,4 @@ async function enableCamera() {
     console.error('Error al acceder a la cámara:', error);
   }
 }
+

@@ -18,6 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 5px;
 }
 
 .element1 {
@@ -38,9 +39,7 @@ h2 {
     text-align: center;
 }
 
-label {
-    color: white;
-}
+
 
 /* LOGIN */
 #login {
@@ -126,10 +125,30 @@ label {
     input.text-input {
         color: white;
     }
+
+    .label-settings {
+        color: white;
+    }
+}
+
+#question {
+    padding: 7px 0px 7px 5px;
+    background-color: #302E82;
+    border-radius: 6px;
+    border: 1px solid white;
+    color: white;
 }
 
 
 #quiz-and-options {
+
+    #quiz-0,
+    #quiz-1,
+    #quiz-2,
+    #quiz-3 {
+        display: none;
+    }
+
     margin-bottom: 10px;
 
     /* la pregunta i les opcoions*/
@@ -138,10 +157,17 @@ label {
         background-color: #302E82;
         /* background-color: #019029; CORRECTO*/
         /* background-color: #900101; INCORRECTO*/
-        padding: 8px;
         color: white;
         border-radius: 6px;
         /* opacity: 0; animation.css*/
+        overflow: hidden;
+    }
+
+    .answer {
+        display: block;
+        padding: 7px 0px 7px 0px;
+        cursor: pointer;
+        transition: background-color 0.8s;
     }
 
     /* les opcions disponibles */
@@ -159,11 +185,7 @@ label {
         transition: all 0.8s;
     }
 
-    .answer-quiz:hover {
-        background-color: orangered;
-        text-shadow: #171929;
-        cursor: pointer;
-    }
+
 
     .suboption-quiz {
         color: yellow;
@@ -173,6 +195,10 @@ label {
     }
 }
 
+
+.mark-answer:hover {
+    background-color: orangered !important;
+}
 
 #presentador {
     position: relative;
@@ -495,7 +521,8 @@ label {
         bottom: 0px;
         left: -10px;
         width: 20px;
-        transition: height 2s; /* no va xd */
+        transition: height 2s;
+        /* no va xd */
     }
 }
 
@@ -509,7 +536,10 @@ nav {
 }
 
 #resumeGame,
-#custom-option {
+#custom-option
+
+/*, #presentatorQuestion*/
+    {
     display: none;
 }
 

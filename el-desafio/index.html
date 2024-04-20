@@ -39,6 +39,9 @@
         </nav>
 
         <dialog class="comodin-parent" id="public-comodin">
+            <div class="logo-comodin">
+                <img src="images/people.png" height="50" width="45" alt="Comodin Público">
+            </div>
             <div class="header">
                 <div class="percent" id="percent-a">0%</div>
                 <div class="percent" id="percent-b">0%</div>
@@ -65,7 +68,8 @@
                 <div class="letter">C</div>
                 <div class="letter">D</div>
             </div>
-            <button onclick="comodinPublico(event)">Encuestar</button>
+            <button onclick="comodinPublico(event)">ENCUESTAR</button>
+            <button onclick="closeDialog('public')">CERRAR</button>
         </dialog>
         <dialog class="comodin-parent" id="contact-comodin">
             <div class="logo-comodin">
@@ -98,7 +102,7 @@
 
 
         <main id="login">
-            <h2 style=" text-align: CE;">El desafio</h2>
+            <h2>El desafio</h2>
             <!-- Primer camp omple el nom-->
             <label for="inputName" class="title-input">Nick</label> <!--input required -->
             <input maxlength="12" class="text-input" placeholder="Escribe tu nombre" autocomplete="off" type="text"
@@ -121,27 +125,31 @@
             </div>
 
             <a href="./creativo">EDITAR DESAFIOS</a>
-            <div>
-                <label for="usePresentator">Presentador</label>
+            <div class="label-settings">
                 <input type="checkbox" id="usePresentator" name="presentator" value="use"
                     onchange="usePresentator(event)" checked>
+                <label for="usePresentator">Presentador</label>
+
             </div>
-            <div>
-                <label for="useCamera">Videocamara</label>
+            <div class="label-settings">
                 <input type="checkbox" id="useCamera" name="useCamera" value="camera" checked>
+                <label for="useCamera">Videocamara</label>
+
             </div>
-            <div>
-                <label for="useGrenscreen">Pantalla verde</label>
+            <div class="label-settings">
                 <input type="checkbox" id="useGrenscreen" name="greenscreen" value="green"
                     onchange="useGreenScreen(event)">
+                <label for="useGrenscreen">Pantalla verde</label>
             </div>
         </main>
 
         <video id="videoElement" autoplay class="element2"></video>
         <!-- display flex nav + main(video) + question  and divide space verticaly-->
-        <div class="testing element3">
+        <div id="presentatorQuestion" class="element3">
             <div class="btn-presentador">
-                <button id="btn-next" onclick="goNextQuestion(event)" disabled>Continuar</button>
+                <button id="btn-next" onclick="goNextQuestion(event)" disabled>
+                    <img id="img-next" src="images/next.png" height="30" width="30" alt="Continuar">
+                </button>
             </div>
             <div id="presentador">
                 <div class="img-presentador">
@@ -156,27 +164,31 @@
             </div>
 
             <div id="quiz-and-options">
-                <div id="question" class="option-quiz question-quiz">lorem</div>
+                <div id="question">lorem</div>
                 <div class="answer-list">
                     <div id="pt0" class="option-quiz answer-quiz">
-                        <span class="suboption-quiz">A</span>
                         <input id="quiz-0" name="quiz-element" type="radio" value="0" onchange="checkQuestion()">
-                        <label class="answer" for="quiz-0"></label>
+                        <label class="answer" for="quiz-0"><span class="suboption-quiz">A</span>
+                            <span class="text-answer">a</span>
+                        </label>
                     </div>
                     <div id="pt1" class="option-quiz answer-quiz">
-                        <span class="suboption-quiz">B</span>
                         <input id="quiz-1" name="quiz-element" type="radio" value="1" onchange="checkQuestion()">
-                        <label class="answer" for="quiz-1"></label>
+                        <label class="answer" for="quiz-1"><span class="suboption-quiz">B</span>
+                            <span class="text-answer">a</span>
+                        </label>
                     </div>
                     <div id="pt2" class="option-quiz answer-quiz">
-                        <span class="suboption-quiz">C</span>
                         <input id="quiz-2" name="quiz-element" type="radio" value="2" onchange="checkQuestion()">
-                        <label class="answer" for="quiz-2"></label>
+                        <label class="answer" for="quiz-2"><span class="suboption-quiz">C</span>
+                            <span class="text-answer">a</span>
+                        </label>
                     </div>
                     <div id="pt3" class="option-quiz answer-quiz">
-                        <span class="suboption-quiz">D</span>
                         <input id="quiz-3" name="quiz-element" type="radio" value="3" onchange="checkQuestion()">
-                        <label class="answer" for="quiz-3"></label>
+                        <label class="answer" for="quiz-3"><span class="suboption-quiz">D</span>
+                            <span class="text-answer">a</span>
+                        </label>
                     </div>
                 </div>
             </div>

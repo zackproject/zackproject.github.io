@@ -61,7 +61,7 @@ const quizList = [
   },
   {
     "id": 8,
-    "question": "Que movimiento fue introducido en Octava Generación",
+    "question": "Que movimiento fue introducido en Novena Generación",
     "options": ["Hora del té", "Giro Vil", "Limpieza General", "Sustituto"],
   },
   {

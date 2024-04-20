@@ -1,60 +1,49 @@
-.question-quiz {
-    animation: example 1s, amplia 1s;
-    /* forward, se queda con el ultimo frame de la animacion*/
-    /*animation-fill-mode: forwards; */
+
+
+@keyframes renew-question {
+  0% {
+    transform: scaleX(1);
+    color: transparent;
   }
-  
-  .answer-quiz,
-  .suboption-quiz {
-    transform: rotateX(90deg);
-    animation: example 1s;
-    animation-fill-mode: forwards;
+
+  50% {
+    transform: scaleX(0);
+    color: transparent;
+    opacity: 0;
   }
-  
-  .answer-quiz:nth-child(1) {
-    animation-delay: 0.5s;
+
+  75% {
+    opacity: 0;
   }
-  .answer-quiz:nth-child(2) {
-    animation-delay: 1s;
+
+  90% {
+    color: transparent;
   }
-  .answer-quiz:nth-child(3) {
-    animation-delay: 1.5s;
+
+  100% {
+    transform: scaleX(1);
   }
-  .answer-quiz:nth-child(4) {
-    animation-delay: 2s;
+}
+
+@keyframes renew-answer {
+  0% {
+    transform: rotateX(45deg);
+    /*transform: scaleX(0);*/
+    color: transparent;
   }
-  
-  @keyframes amplia {
-    0% {
-      transform: scaleX(0);
-      color: transparent;
-    }
-    50% {
-      color: transparent;
-    }
-    100% {
-      transform: scaleX(1);
-    }
+
+  50% {
+    color: transparent;
+    transform: rotateX(180deg);
   }
-  @keyframes example {
-    0% {
-      opacity: 0;
-      transform: rotateX(45deg);
-      background-color: black;
-      /*transform: scaleX(0);*/
-      color: transparent;
-    }
-    50% {
-      color: transparent;
-      transform: rotateX(180deg);
-    }
-    75% {
-      color: transparent;
-      transform: rotateX(360deg);
-    }
-    100% { 
-      transform: rotateX(0deg);
-      opacity: 1;
-    }
+
+  75% {
+    color: transparent;
+    transform: rotateX(360deg);
   }
-  
+
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
