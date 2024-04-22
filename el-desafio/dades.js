@@ -41,7 +41,7 @@ const quizList = [
   {
     "id": 4,
     "question": "Cuál NO es un Pokemon palindromo",
-    "options": ["Alomomola", "Girafarig", "Eevee", "Grimer"],
+    "options": ["Alomomola", "Girafarig", "Eevee", "Muk"],
   },
   {
     "id": 5,
@@ -373,7 +373,7 @@ const awardsList = [
 ];
 
 const presenterList = {
-  "trampa": "No se permite editar el codigo, es trampa",
+  "trampa": "Ya has usado este comodin antes",
   "startList": [
     "Bienvenido al concurso {}, tienes comodines disponibles y hay 10 preguntas para resolver, ¡vamos a empezar!",
     "¡Hola concursante {}! Bienvenido al juego, recuerda tienes comodines disponibles y hay 10 preguntas para resolver.",
@@ -387,28 +387,27 @@ const presenterList = {
     "¡Bienvenido al concurso {}! Tienes comodines disponibles y hay 10 preguntas para resolver, ¡vamos a empezar tu camino al premio mayor!",
   ],
   "comodinList": [
-    "Recuerda, puedes pulsar el icono de la bombilla para usar comodines si lo necesitas.",
-    "No tengas miedo de pulsar el icono de la bombilla para usar comodines si estás atascado.",
-    "Los comodines están disponibles si los necesitas, solo pulsa el icono de la bombilla para usarlos.",
-    "No dudes en pulsar el icono de la bombilla para usar un comodín si te sientes inseguro.",
-    "Ten en cuenta, puedes pulsar el icono de la bombilla para usar comodines si lo necesitas.",
-    "No te olvides de pulsar el icono de la bombilla para usar los comodines si te sientes perdido.",
-    "Los comodines están aquí para ayudarte si los necesitas, solo pulsa el icono de la bombilla para usarlos.",
-    "Si estás atascado, no dudes en pulsar el icono de la bombilla para usar un comodín.",
-    "Recuerda que tienes comodines disponibles si los necesitas, solo pulsa el icono de la bombilla para usarlos.",
-    "Los comodines están aquí para ayudarte en caso de duda, solo pulsa el icono de la bombilla para usarlos.",
+    "Recuerda, puedes usar comodines si lo necesitas.",
+    "No tengas miedo de usar comodines si estás atascado.",
+    "Los comodines están disponibles si los necesitas",
+    "No dudes en usar un comodín si te sientes inseguro.",
+    "Ten en cuenta, puedes usar comodines si lo necesitas.",
+    "No te olvides de usar los comodines si te sientes perdido.",
+    "Los comodines están aquí para ayudarte si los necesitas",
+    "Si estás atascado, no dudes en usar un comodín.",
+    "Recuerda que tienes comodines disponibles si los necesitas",
+    "Los comodines están aquí para ayudarte en caso de duda",
   ],
   "failList": [
     "Lo siento {}, ha fallado la pregunta y ha perdido todo.",
-    "Desafortunadamente {}, ha fallado la pregunta y se ha quedado sin premio.",
+    "Desafortunadamente {}, ha fallado la pregunta.",
     "Lamentablemente {}, no ha acertado la pregunta y ha perdido todo.",
     "{}, la pregunta no ha sido respondida correctamente  y ha perdido todo.",
-    "Ha fallado la pregunta {}, lamentablemente no ganará ningún premio.",
+    "Ha fallado la pregunta {}, lamentablemente no ganará El Desafio.",
     "La pregunta no ha sido respondida correctamente {} y ha perdido todas sus ganancias.",
-    "Desafortunadamente {}, no ha acertado la pregunta y se ha quedºdo sin premio.",
     "Lo siento {}, no ha respondido la pregunta correctamente y ha perdido todo.",
-    "Lamentablemente {}, ha fallado la pregunta y su juego ha terminado.",
-    "La pregunta no ha sido respondida correctamente {}, no ganará ningún premio.",
+    "Lamentablemente {}, ha fallado la pregunta y El Desafio ha terminado.",
+    "La pregunta no ha sido respondida correctamente {}, no ganará El desafio.",
   ],
   "correctList": [
     "¡Correcto! Puede continuar con la siguiente pregunta.",
@@ -435,6 +434,6 @@ const presenterList = {
       "¡Fantástico!",
       "¡Gran trabajo!",
     ],
-    "informar": "{} ha ganado el premio, puede descargarlo pulsando el botón.",
+    "informar": "{} has ganado El Desafio",
   },
 };

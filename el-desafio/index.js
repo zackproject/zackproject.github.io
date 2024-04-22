@@ -100,20 +100,16 @@ function playNewGame() {
   // Depenen si es default o customized, vindra del localstorage o del arxiu
   let rangeQuestion;
   let rangeSolution;
-  //la posicio del award es la id categoria sense multiplicar per 10
-  let award;
   if (categoryHtml === "0") {
     // default
     let firstRange = parseInt(selectedCategory.value);
     let secondRange = firstRange + 10;
     rangeQuestion = quizList.slice(firstRange, secondRange);
     rangeSolution = optionsPositionCorrect.slice(firstRange, secondRange);
-    award = rotate(awardsList[parseInt(selectedCategory.value) / 10])
   } else {
     // custom === 1 (localstorage DESAFIOLIST 'customChallenge' )
     rangeQuestion = customChallenge[parseInt(parent)].quizQuestion;
     rangeSolution = customChallenge[parseInt(parent)].solutionsList;
-    award = "https://www.zksama.com/el-juego/";
   }
 
 
@@ -125,9 +121,7 @@ function playNewGame() {
     0, // idActualQuestion
     [c1, c2, c3], // comidinList
     rangeQuestion,
-    rangeSolution,
-    award
-  );
+    rangeSolution);
 }
 
 function rotate(mensaje) {
@@ -345,6 +339,7 @@ function checkQuestion() {
     } else {
       // si es incorrecta tornara a fer de zero
       document.getElementById("img-next").src = "images/retry.png";
+      document.getElementById("img-next").alt = "Reintentar";
 
       player.id_actual_question = -1;
       document.getElementsByClassName("answer")[thing.value].style.background = "red";
@@ -360,6 +355,7 @@ function checkQuestion() {
   //Desactiva les opcions quiz
   optionHTMLDisabled(true);
   markAnswer(false);
+  document.getElementById("btn-next").style.backgroundColor = "#171929"
 }
 
 //
@@ -377,22 +373,18 @@ function goNextQuestion(event) {
     //Guarda els canvis
     localStorage.setItem(GAMESTORAGE, JSON.stringify(player));
     // Builda el text del npc Presentador
-    npcPresentadorHtml.innerText = "";
+    npcPresentadorHtml.innerText = npc.callComodin();
     //Activa les opcions quiz
     optionHTMLDisabled(false);
 
   } else {
-    let dwnload = document.getElementById("winnerUrl");
-    dwnload.action = rotate(player.award);
-    dwnload.style.display = "block";
-    console.info("You win");
     // npc Presentador et felicita
     npcPresentadorHtml.innerText = npc.callWinner(player.name);
-
     event.target.disabled = true;
     //Si guanya reseteja
     localStorage.removeItem(GAMESTORAGE);
   }
+  document.getElementById("btn-next").style.backgroundColor = ""
 }
 
 function cleanOptions() {
@@ -410,6 +402,8 @@ function cleanComodin() {
 
 function cleanQuizBtn() {
   document.getElementById("img-next").src = "images/next.png";
+  document.getElementById("img-next").alt = "Siguiente";
+
   // document.getElementById("btn-check").disabled = false;
   document.getElementById("btn-next").disabled = true;
 }
@@ -480,7 +474,7 @@ function generateRutaList() {
 
 function useGreenScreen(event) {
   // 'background' sobrescribe: background-color, background-image
-  document.querySelector("body").style.background = event.target.checked ? "green" : "";
+  document.querySelector("body").style.background = event.target.checked ? "#01fe0d" : "";
 }
 
 
@@ -503,7 +497,7 @@ function hideSettings() {
   }
   document.getElementById("quiz-and-options").style.display = "block"; /// unused?
   document.getElementById("presentatorQuestion").style.display = "block";
-
+  document.getElementById("comodin-list").style.display = "block";
 
 }
 

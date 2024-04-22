@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El desafío - Crea tu propio concurso digital</title>
+    <meta name="keywords"
+        content="El desafio, Crea tu concurso online, editor de concursos, quien quiere ser millonario, concurso">
+    <meta name="description"
+        content="Crea tu desafio online con comodines del publico, llamada y 50 por ciento. Edita desafios y comparte tu concurso en stream o entre amigos">
+    <meta name="robots" content="index">
     <link rel="stylesheet" href="index.css">
     <script src="dades.js"></script>
     <script src="index.js"></script>
@@ -25,7 +30,7 @@
                 <a href="." title="Salir"><img src="./images/return.png" height="40" width="40" alt="Inicio"></a>
             </div>
             <!--  <button class="comodin" onclick="comodinPublico(event)">PÚBLICO</button> -->
-            <div>
+            <div id="comodin-list">
                 <button class="icon-comodin" onclick="showDialog('contact')" title="Usar comodin llamada">
                     <img src="./images/phone_logo.png" height="30" width="30" alt="Comodin llamada">
                 </button>
@@ -42,6 +47,7 @@
             <div class="logo-comodin">
                 <img src="images/people.png" height="50" width="45" alt="Comodin Público">
             </div>
+            <span class="close-btn" onclick="closeDialog('public')">X</span>
             <div class="header">
                 <div class="percent" id="percent-a">0%</div>
                 <div class="percent" id="percent-b">0%</div>
@@ -68,41 +74,40 @@
                 <div class="letter">C</div>
                 <div class="letter">D</div>
             </div>
-            <button onclick="comodinPublico(event)">ENCUESTAR</button>
-            <button onclick="closeDialog('public')">CERRAR</button>
+            <button class="survey-btn" onclick="comodinPublico(event)" title="Encuestar al público">ENCUESTAR</button>
         </dialog>
         <dialog class="comodin-parent" id="contact-comodin">
             <div class="logo-comodin">
-                <img src="images/contact.png" height="50" width="45" alt="Es una imagen">
+                <img src="images/contact.png" height="50" width="45" alt="Contactos">
             </div>
-            <span class="close-btn" onclick="closeDialog('contact')">X</span>
+            <span class="close-btn" onclick="closeDialog('contact')" aria-label="Cerrar">X</span>
             <div class="comodin-items">
                 <select id="callViewList" name="select" size="5">
                     <!-- generated -->
                 </select>
                 <div class="contact-call">
-                    <button class="comodin" onclick="comodinLlamada(event)">LLAMAR</button>
+                    <button class="comodin" onclick="comodinLlamada(event)" title="Hacer llamada">LLAMAR</button>
                 </div>
             </div>
         </dialog>
         <dialog class="comodin-parent" id="call-comodin">
             <div class="logo-comodin">
-                <img src="images/phone.png" height="50" width="45" alt="Es una imagen">
+                <img src="images/phone.png" height="50" width="45" alt="Teléfono">
             </div>
             <div class="comodin-items">
                 <div id="name-call">Contacto</div>
-                <div id="text-call">Llamando ...</div>
-                <div id="time-call">00:00</div>
+                <div id="text-call" title="Mensaje de llamada">Llamando ...</div>
+                <div id="time-call" title="Tiempo de llamada">00:00</div>
                 <div class="call-close">
-                    <button onclick="closeDialog('call')"><img src="images/phone_close.png" width="50" height="50"
-                            alt=""></button>
+                    <button onclick="closeDialog('call')" title="Finalizar llamada"><img src="images/phone_close.png"
+                            width="50" height="50" alt="Colgar llamada"></button>
                 </div>
             </div>
         </dialog>
 
 
         <main id="login">
-            <h2>El desafio</h2>
+            <h1>El desafio</h1>
             <!-- Primer camp omple el nom-->
             <label for="inputName" class="title-input">Nick</label> <!--input required -->
             <input maxlength="12" class="text-input" placeholder="Escribe tu nombre" autocomplete="off" type="text"
@@ -114,17 +119,19 @@
                 <option value="1" id="custom-option">Personalizado</option>
             </select>
             <!-- Tercer camp omple  subcategoria -->
+            <label for="rutaViewList" class="title-input">Subcategoria</label>
             <select class="select-opt" id="rutaViewList">
                 <!-- auto generated-->
             </select>
 
             <!-- Boton de Start -->
             <div class="start-btn">
-                <button onclick="playNow()">NUEVA PARTIDA</button>
-                <button id="resumeGame" onclick="reloadLastGame()">RECUPERAR PARTIDA</button>
+                <button onclick="playNow()" title="Empezar nueva partida">NUEVA PARTIDA</button>
+                <button id="resumeGame" onclick="reloadLastGame()" title="Recuperar partida anterior">RECUPERAR
+                    PARTIDA</button>
             </div>
 
-            <a href="./creativo">EDITAR DESAFIOS</a>
+            <a href="./creativo" title="Ir a la página de edición de desafios">EDITAR DESAFIOS</a>
             <div class="label-settings">
                 <input type="checkbox" id="usePresentator" name="presentator" value="use"
                     onchange="usePresentator(event)" checked>
@@ -145,10 +152,10 @@
 
         <video id="videoElement" autoplay class="element2"></video>
         <!-- display flex nav + main(video) + question  and divide space verticaly-->
-        <div id="presentatorQuestion" class="element3">
+        <aside id="presentatorQuestion" class="element3">
             <div class="btn-presentador">
-                <button id="btn-next" onclick="goNextQuestion(event)" disabled>
-                    <img id="img-next" src="images/next.png" height="30" width="30" alt="Continuar">
+                <button id="btn-next" onclick="goNextQuestion(event)" disabled title="Ir a la siguiente pregunta">
+                    <img id="img-next" src="images/next.png" height="30" width="30" alt="Siguiente">
                 </button>
             </div>
             <div id="presentador">
@@ -192,15 +199,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </aside>
     </div>
-    <!-- https://developer.mozilla.org/es/docs/Web/HTML/Element/dialog -->
-    <!--
-    <form method="get" id="winnerUrl" action="/" style="display: none;">
-        <button type="submit">Descargar Premio</button>
-    </form>
 
- -->
 </body>
 
 </html>

@@ -34,7 +34,7 @@ body {
 }
 
 
-h2 {
+h1 {
     color: white;
     text-align: center;
 }
@@ -47,6 +47,7 @@ h2 {
     flex-direction: column;
     max-width: 300px;
     margin: 0 auto;
+    gap: 10px;
 
     .select-opt {
         background: transparent;
@@ -56,7 +57,6 @@ h2 {
         font-size: 18px;
         padding: 8px;
         text-align: center;
-        margin-bottom: 30px;
     }
 
     .select-opt>option {
@@ -68,12 +68,11 @@ h2 {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        margin-top: 20px;
     }
 
     a {
         border: 1px solid white;
-        margin-top: 10px;
-        margin-bottom: 10px;
         color: white;
         text-decoration: none;
         font-size: 20px;
@@ -90,7 +89,6 @@ h2 {
     }
 
     .start-btn>button {
-
         background-color: transparent;
         border-radius: 6px;
         color: white;
@@ -117,8 +115,6 @@ h2 {
     }
 
     .title-input {
-        margin-top: 30px;
-        margin-bottom: 5px;
         color: white;
     }
 
@@ -203,6 +199,7 @@ h2 {
 #presentador {
     position: relative;
     margin-bottom: 15px;
+    background-color: #171929;
 
     .img-presentador {
         position: absolute;
@@ -289,6 +286,23 @@ h2 {
     right: 10px;
     top: 10px;
     cursor: pointer;
+}
+
+.survey-btn {
+    background-color: transparent;
+    width: 100%;
+    padding: 6px;
+    color: white;
+    border: 1px solid white;
+    margin-top: 10px;
+    background-color: #171929;
+    border-radius: 4px;
+
+    transition: border 0.8s;
+    &&:hover {
+        border: 1px solid #171929;
+        cursor: pointer;
+    }
 }
 
 
@@ -497,6 +511,9 @@ h2 {
         color: white;
 
     }
+    .header{
+        padding-top: 10px;
+    }
 
     .footer {
         color: yellow;
@@ -536,34 +553,48 @@ nav {
 }
 
 #resumeGame,
-#custom-option
-
-/*, #presentatorQuestion*/
-    {
+#custom-option,
+#comodin-list,
+#presentatorQuestion {
     display: none;
 }
 
 .icon-comodin {
-    background-color: transparent;
+    background-color: #171929;
     border-radius: 50%;
     border: 1px solid white;
     width: 50px;
     height: 50px;
     color: white;
-    transition: background-color 0.5s;
+    transition: border 0.8s;
 
     &&:hover {
-        background-color: #171929;
         cursor: pointer;
         border: 1px solid black;
     }
 }
 
 video {
+    border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     /*width: 100%; */
     height: 100px;
-    background-color: transparent;
+}
 
+#btn-next {
+    transition: all 0.8s;
+}
+
+#btn-next:hover {
+    background-color: #171929;
+    cursor: pointer;
+    border: 1px solid #171929;
+}
+
+button:disabled,
+button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
 }
