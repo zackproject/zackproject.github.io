@@ -12,7 +12,7 @@ const defaultCategory = [
     "id": 20,
   },
   {
-    "name": "Quiz Catalunya",
+    "name": "Quiz Hazbin",
     "id": 30,
   },
 ];
@@ -186,67 +186,55 @@ const quizList = [
   },
   {
     "id": 30,
-    "question": "Cuando es la Diada de Catalunya",
-    "options": ["9 de octubre", "11 de septiembre", "2 de mayo", "9 de junio"],
+    "question": "¿Cómo se llama el demonio de la radio?",
+    "options": ["Alastor", "Vox", "Valentino", "Velvette"]
   },
   {
     "id": 31,
-    "question": "¿Qué famosa serie de televisión ha sido rodada en Girona?",
-    "options": ["La Casa de Papel", "Elite", "Juego de Tronos", "Vikings"],
+    "question": "¿Quién es la novia de Charlie?",
+    "options": ["Adam", "Vaggie", "Alastor", "Angel Dust"]
   },
   {
     "id": 32,
-    "question": "¿Que significa la expresión 'Aixo es bufar i fer ampolles'?",
-    "options": [
-      "Va a ser facil",
-      "Cuesta pero intentalo",
-      "No soples fuerte",
-      "Haz botellas",
-    ],
+    "question": "¿Quién está custodiando las puertas del cielo?",
+    "options": ["San Pedro", "Santo Tomas", "Santa Claus", "San Juan Pablo II"]
   },
   {
     "id": 33,
-    "question":
-      "Que predica la leyenda en la ciudad de Girona, si besas el culo de la Leona?",
-    "options": [
-      "Te vas a caer en un charco",
-      "Volveras a la ciudad",
-      "Seras infeliz",
-      "Te vas ha enamorar",
-    ],
+    "question": "¿Quién es el dueño del alma del demonio Husk?",
+    "options": ["Lucifer", "Charlie", "Mimzy", "Alastor"]
   },
   {
     "id": 34,
-    "question":
-      "¿Dónde estaba ubicada originalmente la fabrica de Anis del Mono?",
-    "options": ["Badalona", "Mataró", "Manresa", "Hospitalet"],
+    "question": "En el primer capitulo. ¿Cada cuánto se hace el exterminio de los demonios?",
+    "options": ["Anual", "Mensual", "Semanal", "Diario"]
   },
   {
     "id": 35,
-    "question": "¿Qué famoso parque temático es conocido en Tarragona?",
-    "options": ["Isla Magica", "Parque Warner", "Tibidabo", "PortAventura"],
+    "question": "¿Cómo se llama la mascota de Angel Dust?",
+    "options": ["Puerquito / Gorrino", "Lenchonk / Gourmelet", "Tocinete / Patitas gordas", "Babe / Cerdito Valiente"]
   },
   {
     "id": 36,
-    "question": "¿Qué anime No se emite en SX3, canal del grupo TV3?",
-    "options": ["Haikyuu", "Kimetsu No Yaiba", "Black Clover", "Sword Art Online",
-    ],
+    "question": "¿Qué colecciona el demonio Lucifer señor del Infierno?",
+    "options": ["Lágrimas de pecadores", "Huesos de ángeles", "Patitos de goma", "Piedras ovaladas"]
   },
   {
     "id": 37,
-    "question": "¿Quien fue el presidente de Catalunya en 1934?",
-    "options": ["Josep Irla", "Josep Tarradellas", "Lluis Companys", "Francesc Macia"],
+    "question": "¿Cómo se llama el huevo que se cuela en la reunión de los soberanos supremos?",
+    "options": ["Huevón", "Frank", "Luca", "Smith"]
   },
   {
     "id": 38,
-    "question": "Que hora sera numéricamente 'Tres cuartos y 5 minutos de once'",
-    "options": ["10:50", "10:45", "11:50", "11:45"],
+    "question": "¿Qué nombre NO dijo la serafín Emily para referirse a ella cuando le hablen?",
+    "options": ["E", "Em", "Emmy", "Emma"]
   },
   {
     "id": 39,
-    "question": "Si pregunto 'Es aquesta resposta correcta?' respondería:",
-    "options": ["Sí, l'és", "Sí, ho és", "Si, que és", "Si, és"],
+    "question": "En el piloto. ¿Qué ofrece Alator a sus 'amigos' luego de acabar con su enemigo?",
+    "options": ["¿Queréis hacer un trato?", "¿Quién quiere Jambalaya?", "¿Quién es el siguiente?", "¿Por qué no sonreís?"]
   },
+
   {
     "id": 40,
     "question": "",
@@ -308,7 +296,7 @@ const optionsPositionCorrect = [
   0, 0, 2, 3, 3, 2, 0, 2, 2, 3, //quizpk 0
   0, 1, 0, 2, 2, 1, 0, 3, 2, 3, //quizsnk 10
   0, 3, 3, 2, 0, 1, 3, 1, 2, 3, //quizjos 20
-  1, 2, 0, 1, 0, 3, 3, 2, 0, 1, // quizcat 30
+  0, 1, 0, 3, 0, 2, 2, 1, 3, 1, // quizcat 30
   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //quizmdz 40
 ];
 

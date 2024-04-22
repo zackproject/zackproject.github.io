@@ -40,6 +40,7 @@ function playNow() {
   //Neteja els 2 botons del quiz
   cleanQuizBtn();
   npcPresentadorHtml.innerText = npc.callPresentacion(player.name);
+  npcPresentadorHtml.focus();
   // Amaga el menu
   hideSettings();
   // Llamamos a la función para habilitar la cámara cuando se carga la página
@@ -191,6 +192,7 @@ function comodinLlamada(event) {
   //Anihacking, si el comodin fue usado, no deja usarlo mas
   if (comodin.used) {
     npcPresentadorHtml.innerText = npc.callTrampa();
+    npcPresentadorHtml.focus();
     return;
   }
   //Guarda el index de la resposta correcta
@@ -228,6 +230,8 @@ function comodinLlamada(event) {
   event.target.disabled = true;
   //Guarda els canvis
   localStorage.setItem(GAMESTORAGE, JSON.stringify(player));
+  document.getElementById("call-com").disabled = true;
+
 }
 
 function comodinPublico(event) {
@@ -236,6 +240,7 @@ function comodinPublico(event) {
   //Anihacking, si el comodin fue usado, no deja usarlo mas
   if (comodin.used) {
     npcPresentadorHtml.innerText = npc.callTrampa();
+    npcPresentadorHtml.focus();
     return;
   }
   //Guarda el index de la resposta correcta
@@ -256,10 +261,10 @@ function comodinPublico(event) {
   representPublic(percentPublicList)
   // Marquem com utilizat el comodi
   comodin.used = true;
-  //Desactiva el pare que l'ha cridat, o sigui el boton
-  event.target.disabled = true;
   //Guarda els canvis
-  localStorage.setItem(GAMESTORAGE, JSON.stringify(player));
+  localStorage.setItem(GAMESTORAGE, JSON.stringify(player)); 
+   //Desactiva el pare que l'ha cridat, o sigui el boton
+  document.getElementById("public-com").disabled = true;
 }
 
 function comodinFifty(event) {
@@ -268,6 +273,7 @@ function comodinFifty(event) {
   //Anihacking, si el comodin fue usado, no deja usarlo mas
   if (comodin.used) {
     npcPresentadorHtml.innerText = npc.callTrampa();
+    npcPresentadorHtml.focus();
     return;
   }
 
@@ -287,7 +293,7 @@ function comodinFifty(event) {
   // Marquem com utilizat el comodi
   comodin.used = true;
   //Desactiva el pare que l'ha cridat, o sigui el boton
-  event.target.disabled = true;
+  document.getElementById("fifty-com").disabled = true;
   //Guarda els canvis
   localStorage.setItem(GAMESTORAGE, JSON.stringify(player));
 }
@@ -336,6 +342,7 @@ function checkQuestion() {
       document.getElementsByClassName("answer")[thing.value].style.backgroundColor = "green";
       //Dialogo del presentador correcto
       npcPresentadorHtml.innerText = npc.callCorrecto();
+      npcPresentadorHtml.focus();
     } else {
       // si es incorrecta tornara a fer de zero
       document.getElementById("img-next").src = "images/retry.png";
@@ -345,6 +352,7 @@ function checkQuestion() {
       document.getElementsByClassName("answer")[thing.value].style.background = "red";
       //Dialogo del presentador incorrecto
       npcPresentadorHtml.innerText = npc.callInorrecto(player.name);
+      npcPresentadorHtml.focus();
       // vacia el localstorage
       localStorage.removeItem(GAMESTORAGE);
     }
@@ -374,12 +382,14 @@ function goNextQuestion(event) {
     localStorage.setItem(GAMESTORAGE, JSON.stringify(player));
     // Builda el text del npc Presentador
     npcPresentadorHtml.innerText = npc.callComodin();
+    npcPresentadorHtml.focus();
     //Activa les opcions quiz
     optionHTMLDisabled(false);
 
   } else {
     // npc Presentador et felicita
     npcPresentadorHtml.innerText = npc.callWinner(player.name);
+    npcPresentadorHtml.focus();
     event.target.disabled = true;
     //Si guanya reseteja
     localStorage.removeItem(GAMESTORAGE);
