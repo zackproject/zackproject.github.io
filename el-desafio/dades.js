@@ -12,7 +12,7 @@ const defaultCategory = [
     "id": 20,
   },
   {
-    "name": "Quiz Hazbin",
+    "name": "Quiz Hazbin Hotel",
     "id": 30,
   },
 ];

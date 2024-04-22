@@ -1,5 +1,11 @@
 var comoJugar = [
     {
+        "title": "El Desafio",
+        "description": "Crea tu propio concurso al estilo de uno de los programas más famoso de televisón. Personaliza las preguntas que aparecerán en este quiz. Activa el presentador que narrarrá el concurso, activa la cámara para poner el concursante en el foco de la acción y/o activa la pantalla verde para poder jugarlo en directo o editarlo de una forma más fácil en video.<br>En la opción de Edición de desafios:-Crear: Crea 10 preguntas con 4 opciones posibles y guardalo localmente para poder jugar cuando quieras. -Exportar: Exporta desafios creados en un archivo json y comparte tus quiz con cualquier persona. -Importar: Importa los diferentes retos que te han enviado, uno a varios a la vez. Los verás disponibles en el desplegable de personalizados. -Eliminar: Borra retos importados o creados localmente",
+        "path": "el-desafio",
+        "video": "ndbs21zY_IA",
+    },
+    {
         "title": "Parejas",
         "description": "Memoriza las cartas anime y resuelve las posibles parejas, recuerda la ubicación de las cartas y sus personajes para encontrar las parejas coincidentes. Ya sea jugando en solitario o en modo multijugador local por turnos, la clave para el éxito radica en la concentración y la atención mientras se voltean las cartas para descubrir las coincidencias. Con una variedad de cartas de anime para elegir, este juego ofrece una experiencia divertida y emocionante para todos los entusiastas del anime y los aficionados a los juegos de memoria",
         "path": "parejas",
