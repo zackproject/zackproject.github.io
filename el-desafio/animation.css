@@ -1,0 +1,49 @@
+
+
+@keyframes renew-question {
+  0% {
+    transform: scaleX(1);
+    color: transparent;
+  }
+
+  50% {
+    transform: scaleX(0);
+    color: transparent;
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  90% {
+    color: transparent;
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes renew-answer {
+  0% {
+    transform: rotateX(45deg);
+    /*transform: scaleX(0);*/
+    color: transparent;
+  }
+
+  50% {
+    color: transparent;
+    transform: rotateX(180deg);
+  }
+
+  75% {
+    color: transparent;
+    transform: rotateX(360deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
