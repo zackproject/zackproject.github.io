@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navidad Senior</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="shortcut icon" href="../2022/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    Navidad Senior
+    <main id="main"></main>
+    <script>
+        const NAVIDAD2024 = "navidadsenior";
+        const defaultSettings = {
+            questions: [
+                {
+                    "id": 1,
+                    "question": "¿Cuál es el término que NO se utiliza para describir a las crías de las cabras?",
+                    "options": ["Potro", "Chivo", "Choto", "Cabrito"]
+                },
+                {
+                    "id": 2,
+                    "question": "Continua la canción: 'Chipi, chipi, chapa chapa..'",
+                    "options": ["duba duba", "dube dube", "dubi dubi", "dubo dubo"]
+                },
+                {
+                    "id": 3,
+                    "question": "¿Donde se encuentra la iglesia del Santo Sepulcro lugar Sagrado del cristianismo?",
+                    "options": ["Roma", "Jerusalem", "Wano", "París"]
+                },
+                {
+                    "id": 4,
+                    "question": "¿Qué profesional puede recetar medicamentos para tratar trastornos mentales?",
+                    "options": ["Psicólogo", "Nutricionista", "Fisioterapeuta", "Psiquiatra"]
+                },
+                {
+                    "id": 5,
+                    "question": "Miembro cercano de la familia con el que compartes los padres o al menos un progenitor común.",
+                    "options": ["Hermano", "Tio", "Abuelo", "Primo"]
+                },
+                {
+                    "id": 6,
+                    "question": "¿Qué festividad NO se celebra el mismo día que Navidad?",
+                    "options": ["Nacimiento de Jesús", "Solsticio de invierno", "Halloween", "Aniversario de Levi Ackerman"]
+                },
+                {
+                    "id": 7,
+                    "question": "¿Cómo se llama a la fase lunar en la que solo vemos la mitad iluminada?",
+                    "options": ["Luna nueva", "Luna llena", "Cuarto creciente", "Tercio menguante"]
+                },
+                {
+                    "id": 8,
+                    "question": "¿Cuál es la profesión de Mario del videojuego 'Mario Bros'?",
+                    "options": ["Médico", "Fontanero", "VTuber", "Mecánico"]
+                },
+                {
+                    "id": 9,
+                    "question": "¿Qué arma con 4 lados puntiagudos utilizan los ninjas?",
+                    "options": ["Shuriken", "Katana", "Kunai", "Nunchaku"]
+                },
+                {
+                    "id": 10,
+                    "question": "Mi cumple es el 21 de marzo. ¿Cuál es mi signo?",
+                    "options": ["Piscis", "Aries", "Tauro", "Acuario"]
+                },
+                {
+                    "id": 11,
+                    "question": "¿Cómo se dice 'biblioteca' en inglés?",
+                    "options": ["Book Shop", "Librostation", "Ohara", "Library"]
+                },
+                {
+                    "id": 12,
+                    "question": "¿Cómo se llama es el dios del sol del antiguo Egipto?",
+                    "options": ["Bills", "Zeus", "Ra", "Atenea"]
+                },
+                {
+                    "id": 13,
+                    "question": "¿Qué sucede si te acuerdas de 'El juego'?",
+                    "options": ["Has ganado", "Has perdido", "Has empatado", "Mec", "Tonto el que lo lea"]
+                },
+                {
+                    "id": 14,
+                    "question": "En los Simpsons, Bart y su grupo hacen una canción con un mensaje subliminal para que jóvenes se apunten en la Marina. ¿Qué decía el estribillo?",
+                    "options": ["ANIRAM AL NE ETATSILA", "AEL OL EUQ LE OTNOT", "ANILINA", "LAER SI ECEIP ENO"]
+                },
+                {
+                    "id": 15,
+                    "question": "Según un Trend viral ¿En que piensan los hombres todo el rato?",
+                    "options": ["Tetas", "El imperio romano", "elrubius", "El One Piece"]
+                },
+                {
+                    "id": 16,
+                    "question": "¿Cómo se llama el presidente de El Salvador?",
+                    "options": ["Javier Milei", "Nayib Bukele", "Pedro Sanchez", "Gustavo Petro"]
+                },
+                {
+                    "id": 17,
+                    "question": "Durante la 1º Guerra Mundial hubo una tregua entre soldados. ¿Cuándo tuvo lugar?",
+                    "options": ["Primavera de 1915", "Verano de 1916", "Otoño de 1917", "Navidad de 1914"]
+                },
+                {
+                    "id": 18,
+                    "question": "¿Qué dictador español fue exhumado en 2019?",
+                    "options": ["Primo de Rivera", "Tejero", "Franco", "Carrero Blanco"]
+                },
+                {
+                    "id": 19,
+                    "question": "¿Cómo es la posición 'religiosa' que no confirma ni niega la existencia de un Dios",
+                    "options": ["Ateismo", "Pastafarismo", "Jediismo", "Agnosticismo"]
+                },
+                {
+                    "id": 20,
+                    "question": "¿Qué nombre recibe las noticias falsas o manipuladas de los medios de comunicación?",
+                    "options": ["Fake News", "Wrongs News", "Incorrect News", "Auron News"]
+                },
+                {
+                    "id": 21,
+                    "question": "Una vez Napoleón fue derrotado por conejitos. ¿Qué país fue derrotado por Emúes?",
+                    "options": ["Australia", "Canada", "EEUU", "Uruguay"]
+                },
+                {
+                    "id": 22,
+                    "question": "En el experimento del Gato de Schrödinger, ¿cual es el estado del gato antes de abrir la caja?",
+                    "options": ["Está vivo y muerto a la vez", "Está vivo", "Esta muerto", "Es invisible"]
+                },
+                {
+                    "id": 23,
+                    "question": "¿Qué término describe sentirse triste la mayor parte del tiempo y perder interés en las actividades diarias?",
+                    "options": ["Alegría", "Depresión", "Euforia", "Ansiedad"]
+                },
+                {
+                    "id": 24,
+                    "question": "Según la historia de los 3 reyes magos. ¿Qué objeto NO llevaron al niño Jesús?",
+                    "options": [ "Incienso","Oro", "Cobre", "Mirra"]
+                }
+            ]
+            ,
+            resolves: [0, 2, 1, 3, 0, 2, 2, 1, 0, 1, 3, 2, 1, 0, 1, 1, 3, 2, 3, 1, 0, 0, 1, 2],
+            surprises: ["M290iCoG5E4", "mtv-LQTemMk", "VCPLZjU0MLI", "WrXDJWRtmDE", "UaMBtjxvuMA", "0o268IlcLbY", "ZbQZcZyxKf4", "76IbldEdBBQ", "EehdIcypknY", "xYIOgB4RRvI", "rL9blMBJa54", "Zcc4_-rQA64", "rqkBPTKWS68", "PrkczcYto4w", "SAmqYjM_v2w", "69qKUoGhoQo", "gOv8xA4p9dI", "ROrFUvCMU5o", "yuPSXBZYS54", "lpCoy_syMsg", "zqRwStq8zDI", "dmUIt6DvGkc", "E5FXdoO6PNs", "QUw4G1nMa6c"]
+        }
+    </script>
+    <script src="../index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navidad Otaku</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="shortcut icon" href="../2022/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    Navidad Otaku
+    <main id="main"></main>
+    <script>
+        const NAVIDAD2024 = "navidadotaku";
+        const defaultSettings = {
+            questions:
+                [
+                    {
+                        "id": 1,
+                        "question": "¿Quién fue el creador de Dragon Ball?",
+                        "options": ["Eichiro Oda", "Akira Toriyama", "Kentaro Miura", "Inio Asano"]
+                    },
+                    {
+                        "id": 2,
+                        "question": "¿Qué significan las siglas AMV?",
+                        "options": ["Association Male Virgin", "American Movie VFX", "Animation Movie Var", "Anime Music Video",]
+                    },
+                    {
+                        "id": 3,
+                        "question": "¿Qué famosa comida adora Doraemon?",
+                        "options": ["Dorayakis", "Ramen", "Paella", "Sushi"]
+                    },
+                    {
+                        "id": 4,
+                        "question": "¿En qué famosa saga se inspiró el anime Mashle?",
+                        "options": ["Juego de tronos", "El señor de los anillos", "Harry Potter", "Friends"]
+                    },
+                    {
+                        "id": 5,
+                        "question": "¿Qué nombre reciben las celebridades cantantes/actrices en Japón?",
+                        "options": ["Sensei", "Idol", "Kawai", "Sama"]
+                    },
+                    {
+                        "id": 6,
+                        "question": "¿Qué término describe la combinación de personajes o universos de diferentes series en un mismo evento o historia?",
+                        "options": ["Reboot", "Remake", "Spin-off", "Crossover"]
+                    },
+                    {
+                        "id": 7,
+                        "question": "¿Qué nombre recibe los concursos en los cuales cada participante enseña su talento en un escenario?",
+                        "options": ["El concursillo", "GOTY", "Got Talent", "EsLand"]
+                    },
+                    {
+                        "id": 8,
+                        "question": "En el Festival cultural de la U.A en My Hero Academia. ¿Qué elige hacer la Clase 1-A?",
+                        "options": ["Concierto en vivo", "Maid Café", "Tienda de mochi", "Clase de cocina (Deku el Brócoli)"]
+                    },
+                    {
+                        "id": 9,
+                        "question": "¿Cuál es el error típico de una página web cuando no se encuentra disponible?",
+                        "options": ["200", "404", "301", "418"]
+                    },
+                    {
+                        "id": 10,
+                        "question": "En la serie Shigeki No Kyojin, ¿en qué año cayó el muro Maria?",
+                        "options": ["1000", "400", "845", "615"]
+                    },
+                    {
+                        "id": 11,
+                        "question": "¿Cuál de los siguientes animes trata de fútbol?",
+                        "options": ["Inazuma Eleven", "Free", "Slam Dunk", "Kuroko No Basket"]
+                    },
+                    {
+                        "id": 12,
+                        "question": "En el anime Kimetsu No Yaiba, ¿cómo se llama la hermana de Tanjiro?",
+                        "options": ["Pico", "Inosuke", "Nezuko", "Zenitsu"]
+                    },
+                    {
+                        "id": 13,
+                        "question": "¿Qué género de anime suelen tener los anime románticos?",
+                        "options": ["Shojo", "Isekai", "Mecha", "Gore"]
+                    },
+                    {
+                        "id": 14,
+                        "question": "¿Cómo se denomina los animes que tienen una versión con actores reales de la serie?",
+                        "options": ["Live Action", "Actor Anime", "Live Anime", "Anime Action"]
+                    },
+                    {
+                        "id": 15,
+                        "question": "En la serie de Jujutsu Kaisen, ¿Cómo se llama el antagonista?",
+                        "options": ["Gojo", "Megumi", "Kento", "Sukuna"]
+                    },
+                    {
+                        "id": 16,
+                        "question": "En la serie de Kimetsu No Yaiba, ¿A qué persona real se parece físicamente Muzan?",
+                        "options": ["Freddy Mercury", "Michael Jackson", "Rafael Catala", "Bertin Osborne"]
+                    },
+                    {
+                        "id": 17,
+                        "question": "En Pokemon, ¿En qué región se desarrolla la séptima generación?",
+                        "options": ["Kalos", "Sinnoh", "Alola", "Kanto"]
+                    },
+                    {
+                        "id": 18,
+                        "question": "¿Cómo se llama el juego móvil de Pokemon que controla el sueño?",
+                        "options": ["Pokemon Sweet Dreams", "Siestar Pokemon", "Pokemon Sleep", "Pokemon ZzZ"]
+                    },
+                    {
+                        "id": 19,
+                        "question": "En la serie de Naruto, ¿En qué se quiere convertir el protagonista?",
+                        "options": ["Rey de los piratas", "Marine", "Ghoul", "Hokage"]
+                    },
+                    {
+                        "id": 20,
+                        "question": "¿Cómo se denomina la música pop de grupos japoneses?",
+                        "options": ["JPop", "KPop", "Lpop", "MPop"]
+                    },
+                    {
+                        "id": 21,
+                        "question": "En la región de Sinnoh de Pokemon Diamante. ¿Quién es la campeona de la Liga?",
+                        "options": ["Iris", "Dianta", "Sagita", "Cintia"]
+                    },
+                    {
+                        "id": 22,
+                        "question": "En la serie Re Zero. ¿Cómo se llama el protagonista?",
+                        "options": ["Ram", "Subaru", "Emilia", "Felix", "Rem"]
+                    },
+                    {
+                        "id": 23,
+                        "question": "En el anime de Sword Art Online. ¿Cuál es el nombre real de Kirito?",
+                        "options": ["Kirito", "Kazuto Kirigaya", "Kabuto Kirigaya", "Kizuto Ritogaya"]
+                    },
+                    {
+                        "id": 24,
+                        "question": "¿Cómo se dice Feliz Navidad en japonés?",
+                        "options": ["Meri kurisumasu", "Opai Opai", "Yamete Kudasai", "Mochi Mosh"]
+                    }
+                ],
+            resolves: [1, 3, 0, 2, 1, 3, 2, 0, 1, 2, 0, 2, 0, 0, 3, 1, 2, 1, 3, 0, 3, 1, 1, 0],
+            surprises: ["vQbYvjmfbr4", "3uPm3g5oqKY", "fs_mH4QnAe4", "TXvwdNM_43I", "tHW0N0_sGk8", "zf8hXUUkVOs", "o-Qu8-ZGL14", "TS10AEqqfTg", "_NXrTujMP50", "r0xOGoJ8JNI", "LkZiRHrZpQw", "vVaqXLcNvIM", "S6TnIh2M6Pw", "1Eb7RAW0oYU", "x-J7Jw_9Sbo", "N0eLjSPvy88", "PeVkUcA3p4A", "Osu0Tb3MpRQ", "7o4FQuhCpy4", "NgpIRBOOFTg", "lty-2iLQy9c", "R4Vn5nfd0Fk", "CKEMNlXgvI0", "eJZ-ZMwuqpo"],
+            fondoHtml: "https://www.zksama.com/navidad/2022/images/web/fondo.webp",
+            candadoCerrado: "https://www.zksama.com/navidad/2022/images/web/candado_cerrado.png",
+            candadoAbierto: "https://www.zksama.com/navidad/2022/images/web/candado_abierto.png",
+        }
+    </script>
+    <script src="../index.js"></script>
+</body>
+
+</html>
