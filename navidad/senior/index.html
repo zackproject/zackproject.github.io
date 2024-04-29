@@ -4,17 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navidad Senior</title>
+    <title>Navidad Senior - Calendario de Adviento</title>
     <link rel="stylesheet" href="../index.css">
     <link rel="shortcut icon" href="../2022/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../index.css">
 </head>
 
 <body>
-    Navidad Senior
-    <main id="main"></main>
+    <header id="headnavidad">
+        <a href="../"><img height="35" width="35" src="../../logo.webp" alt="Logo de la página"></a>
+        <h1>Navidad Senior</h1>
+    </header>
+    <p id="infonavidad">Sólo disponible en diciembre</p>
+    <div id="snowing" aria-hidden="true">
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+    </div>
+    <ul id="pare">
+    </ul>
+    <dialog id="modal" aria-modal="true" aria-labelledby="quiz-modal">
+        <header>
+            <h2 id="quiz-modal">Pregunta del dia <span id="day-quiz"></span></h2>
+            <button aria-label="Cerrar" onclick="closeModal()">x</button>
+        </header>
+        <main>
+            <form id="form-quiz" onsubmit="return checkAnswer(event)">
+                <p id="quiz-question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, totam.</p>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-1" name="quiz_answer" value="0">
+                    <label for="quiz-1">HTML</label>
+                </div>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-2" name="quiz_answer" value="1">
+                    <label for="quiz-2">CSS</label>
+                </div>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-3" name="quiz_answer" value="2">
+                    <label for="quiz-3">JavaScript</label>
+                </div>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-4" name="quiz_answer" value="3">
+                    <label for="quiz-4">JavaScript</label>
+                </div>
+                <input type="submit" value="Contestar">
+                <div id="retrato" aria-hidden="true">
+                    <div class="mano"></div>
+                    <div id="respuesta" class="correct">✓</div>
+                    <div class="dedo"></div>
+                    <div class="brazo">
+                    </div>
+                </div>
+            </form>
+        </main>
+        <footer id="title-modal">
+            Marca una opción
+        </footer>
+    </dialog>
+    <footer id="footer-main">info@zksama.com</footer>
+    <script src="../../footer/index.js"></script>
     <script>
-        const NAVIDAD2024 = "navidadsenior";
         const defaultSettings = {
+            localChristmas: "navidadsenior",
+            backgroundImage: "../2022/images/web/fondo.webp",
+            padlockCloseImage: "../2022/images/web/candado_cerrado.png",
+            padlockOpenImage: "../2022/images/web/candado_abierto.png",
             questions: [
                 {
                     "id": 1,
