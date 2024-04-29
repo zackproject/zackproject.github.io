@@ -4,9 +4,9 @@ const candadoCerrado = defaultSettings.padlockCloseImage;
 const candadoAbierto = defaultSettings.padlockOpenImage;
 const NAVIDAD = defaultSettings.localChristmas;
 const d = new Date();
-const dayGlobal = d.getDate();
+const dayGlobal = 9;
 const monthGlobal = d.getMonth() + 1;
-const monthWorkThisProgram = 12; //Mes que funciona el programa
+const monthWorkThisProgram = 4; //Mes que funciona el programa
 let player = null;
 const adventList = defaultSettings;
 //Pagina
@@ -122,7 +122,7 @@ function infoChristmas() {
     let info = document.getElementById("infonavidad");
     if (monthGlobal === monthWorkThisProgram) {
         document.getElementById("snowing").style.display = "flex";
-        if (dayGlobal < 25) {
+        if (dayGlobal < 24) {
             info.innerText = "Abre la casilla de hoy";
         } else {
             info.innerHTML = "¡Feliz Navidad!<br> Mira otros minijuegos <a href='https://www.zksama.com'>AQUÍ</a>";
