@@ -36,7 +36,7 @@ const cardResolveHTML = (ytVideo, day) => {
     return `<li class="carta">
     <a href="https://youtu.be/${ytVideo}" target="_blank" >
     <img class="fondo-card-resolved" data-day="${day}" height="200" width="200" src="http://i3.ytimg.com/vi/${ytVideo}/mqdefault.jpg"
-            alt="Dia ${day}, candado resuelto" title="Casilla del dia ${day} resuelta, click para ver la sorpresa" >
+            alt="Dia ${day}, candado resuelto" title="Volver a ver video de Youtube del Dia ${day}" alt="Logo Youtube" >
             ${showYtLogo(day)}        
     </a>
         <div class="carta-text" aria-hidden="true">${day}</div>
@@ -46,7 +46,7 @@ const cardResolveHTML = (ytVideo, day) => {
 const showYtLogo = (day) => {
     if (player.showLogo(day)) {
         console.log("hola");
-        return `<img onclick="watchedVideo(${day}, event)" aria-hidden="true" class="fondo-card-resolved" height="200" width="200" src="${ytLogo}" title="Ver video Youtube" alt="Logo Youtube">`
+        return `<img onclick="watchedVideo(${day}, event)" aria-hidden="true" class="fondo-card-resolved" height="200" width="200" src="${ytLogo}" title="Ver video de Youtube del Dia ${day}" alt="Logo Youtube">`
     }
     return "";
 }

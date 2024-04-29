@@ -40,7 +40,11 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     font-family: Arial, Helvetica, sans-serif;
     transition: background-color 1s;
+    button:hover{
+        cursor: pointer;
+    }
 }
+
 
 #title-modal {
     text-align: end;
