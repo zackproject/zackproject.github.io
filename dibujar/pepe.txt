@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>36 Colors</title>
+<style>
+    .color-button {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <button class="color-button" style="background-color: #FF0000;"></button>
+    <button class="color-button" style="background-color: #FF3300;"></button>
+    <button class="color-button" style="background-color: #FF6600;"></button>
+    <button class="color-button" style="background-color: #FF9900;"></button>
+    <button class="color-button" style="background-color: #FFCC00;"></button>
+    <button class="color-button" style="background-color: #FFFF00;"></button>
+    <button class="color-button" style="background-color: #CCFF00;"></button>
+    <button class="color-button" style="background-color: #99FF00;"></button>
+    <button class="color-button" style="background-color: #66FF00;"></button>
+    <button class="color-button" style="background-color: #33FF00;"></button>
+    <button class="color-button" style="background-color: #00FF00;"></button>
+    <button class="color-button" style="background-color: #00FF33;"></button>
+    <button class="color-button" style="background-color: #00FF66;"></button>
+    <button class="color-button" style="background-color: #00FF99;"></button>
+    <button class="color-button" style="background-color: #00FFCC;"></button>
+    <button class="color-button" style="background-color: #00FFFF;"></button>
+    <button class="color-button" style="background-color: #00CCFF;"></button>
+    <button class="color-button" style="background-color: #0099FF;"></button>
+    <button class="color-button" style="background-color: #0066FF;"></button>
+    <button class="color-button" style="background-color: #0033FF;"></button>
+    <button class="color-button" style="background-color: #0000FF;"></button>
+    <button class="color-button" style="background-color: #3300FF;"></button>
+    <button class="color-button" style="background-color: #6600FF;"></button>
+    <button class="color-button" style="background-color: #9900FF;"></button>
+    <button class="color-button" style="background-color: #CC00FF;"></button>
+    <button class="color-button" style="background-color: #FF00FF;"></button>
+    <button class="color-button" style="background-color: #FF33FF;"></button>
+    <button class="color-button" style="background-color: #FF66FF;"></button>
+    <button class="color-button" style="background-color: #FF99FF;"></button>
+    <button class="color-button" style="background-color: #FFCCFF;"></button>
+    <button class="color-button" style="background-color: #FFFFFF;"></button>
+    <button class="color-button" style="background-color: #000000;"></button>
+
+    <script>
+        const colorButtons = document.querySelectorAll('.color-button');
+
+        colorButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Get the background color of the clicked button
+                const color = button.style.backgroundColor;
+                // Do something with the color, for example, log it to the console
+                console.log('Selected color:', color);
+            });
+        });
+    </script>
+</body>
+</html>

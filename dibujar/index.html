@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint App</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+            cursor: crosshair;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="paintCanvas" width="200" height="200"></canvas>
+    <button class="color-button" style="background-color: #FF0000;"></button>
+    <button class="color-button" style="background-color: #FF3300;"></button>
+    <button class="color-button" style="background-color: #FF6600;"></button>
+    <button class="color-button" style="background-color: #FF9900;"></button>
+    <button class="color-button" style="background-color: #FFCC00;"></button>
+    <button class="color-button" style="background-color: #FFFF00;"></button>
+    <button class="color-button" style="background-color: #CCFF00;"></button>
+    <button class="color-button" style="background-color: #99FF00;"></button>
+    <button class="color-button" style="background-color: #66FF00;"></button>
+    <button class="color-button" style="background-color: #33FF00;"></button>
+    <button class="color-button" style="background-color: #00FF00;"></button>
+    <button class="color-button" style="background-color: #00FF33;"></button>
+    <button class="color-button" style="background-color: #00FF66;"></button>
+    <button class="color-button" style="background-color: #00FF99;"></button>
+    <button class="color-button" style="background-color: #00FFCC;"></button>
+    <button class="color-button" style="background-color: #00FFFF;"></button>
+    <button class="color-button" style="background-color: #00CCFF;"></button>
+    <button class="color-button" style="background-color: #0099FF;"></button>
+    <button class="color-button" style="background-color: #0066FF;"></button>
+    <button class="color-button" style="background-color: #0033FF;"></button>
+    <button class="color-button" style="background-color: #0000FF;"></button>
+    <button class="color-button" style="background-color: #3300FF;"></button>
+    <button class="color-button" style="background-color: #6600FF;"></button>
+    <button class="color-button" style="background-color: #9900FF;"></button>
+    <button class="color-button" style="background-color: #CC00FF;"></button>
+    <button class="color-button" style="background-color: #FF00FF;"></button>
+    <button class="color-button" style="background-color: #FF33FF;"></button>
+    <button class="color-button" style="background-color: #FF66FF;"></button>
+    <button class="color-button" style="background-color: #FF99FF;"></button>
+    <button class="color-button" style="background-color: #FFCCFF;"></button>
+    <button class="color-button" style="background-color: #FFFFFF;"></button>
+    <button class="color-button" style="background-color: #000000;"></button>
+    <style>
+        .color-button {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        const colorButtons = document.querySelectorAll('.color-button');
+
+
+
+        // Getting the canvas and context
+        var canvas = document.getElementById('paintCanvas');
+        var ctx = canvas.getContext('2d');
+
+        // Variables to store current position and drawing state
+        var drawing = false;
+        var lastX = 0;
+        var lastY = 0;
+        var color = "black";
+        // Event listeners
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        // Event listeners for mobile
+        canvas.addEventListener('touchstart', startDrawing, { passive: false });
+        canvas.addEventListener('touchmove', draw, { passive: false });
+        canvas.addEventListener('touchend', stopDrawing, { passive: true });
+        canvas.addEventListener('touchcancel', stopDrawing, { passive: true });
+
+        function startDrawing(e) {
+            drawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        function draw(e) {
+            if (!drawing) return;
+            ctx.strokeStyle = color; // Color of the stroke
+            ctx.lineWidth = 5; // Thickness of the stroke
+            ctx.lineCap = 'round'; // Rounded end cap
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY); // Start from
+            ctx.lineTo(e.offsetX, e.offsetY); // Go to
+            ctx.stroke();
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        function stopDrawing() {
+            drawing = false;
+        }
+
+        colorButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Get the background color of the clicked button
+                color = button.style.backgroundColor;
+                // Do something with the color, for example, log it to the console
+            });
+        });
+
+
+
+        /// 200 x 200  canvas => del 1 al 20 x y
+        function paintMe(myX, myY, myColor = "black") {
+            const grosor = 10; // cuadrado
+            ctx.fillStyle = myColor;
+            ctx.fillRect((myX - 1) * 10, (myY - 1) * 10, grosor, grosor)
+        }
+        const letras = "hola me llamo kevin ";
+
+
+        const colors = {
+            'a': '#FF0000',
+            'b': '#FF3300',
+            'c': '#FF6600',
+            'd': '#FF9900',
+            'e': '#FFCC00',
+            'f': '#FFFF00',
+            'g': '#CCFF00',
+            'h': '#99FF00',
+            'i': '#66FF00',
+            'j': '#33FF00',
+            'k': '#00FF00',
+            'l': '#00FF33',
+            'm': '#00FF66',
+            'n': '#00FF99',
+            'o': '#00FFCC',
+            'p': '#00FFFF',
+            'q': '#00CCFF',
+            'r': '#0099FF',
+            's': '#0066FF',
+            't': '#0033FF',
+            'u': '#0000FF',
+            'v': '#3300FF',
+            'w': '#6600FF',
+            'x': '#9900FF',
+            'y': '#CC00FF',
+            'z': '#FF00FF',
+            '1': '#FF33FF',
+            '2': '#FF66FF',
+            '3': '#FF99FF',
+            '4': '#FFCCFF',
+            '5': '#FFFFFF',
+            '' : '#000000'
+        };
+
+        for (let i = 0; i < letras.length; i++) {
+            let x = i;
+            let y = 0;
+            if (i > canvas.width / 10) {
+                x = i;
+                y = 2;
+            }
+            paintMe(x, y + 1, colors[letras[i]]);
+
+        }
+        // Ejemplo de uso:
+        console.log(colors['r']); // Devuelve '#FF0000'
+
+    </script>
+</body>
+
+</html>
