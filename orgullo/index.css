@@ -1,0 +1,384 @@
+#headnavidad {
+    position: sticky;
+    top: 0px;
+    left: 0;
+    color: white;
+    background-color: #990808;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    -webkit-box-shadow: -1px 0px 9px 0px black;
+    box-shadow: -1px 0px 9px 0px black;
+    margin-bottom: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /*snow is z-index:2 */
+    z-index: 3;
+    padding: 10px 0px 10px 0px;
+
+    h1 {
+        margin: 0px;
+    }
+}
+
+
+
+#headnavidad>a {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/*Modal*/
+#modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.684);
+}
+
+#modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 1s;
+
+    button:hover {
+        cursor: pointer;
+    }
+}
+
+
+#title-modal {
+    text-align: end;
+}
+
+#modal>header {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#modal>header>button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    height: 40px;
+    width: 40px;
+    font-size: 1.6em;
+}
+
+#modal>main {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#quiz-question {
+    font-weight: bold;
+}
+
+#form-quiz {
+    position: relative;
+    overflow: hidden;
+}
+
+#form-quiz>input[type=submit] {
+    border: none;
+    background-color: white;
+    font-size: 1.2em;
+    border-radius: 6px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #235e6f;
+    color: white;
+    transition: background-color 1s;
+
+}
+
+#form-quiz>input[type=submit]:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+#quiz-modal {
+    color: #235e6f;
+}
+
+
+.quiz-options {
+    background-color: lightgray;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 1s;
+    display: flex;
+
+    label {
+        display: block;
+        width: 100%;
+        padding: 10px;
+
+        cursor: pointer;
+        transition: background-color 0.5s;
+    }
+
+    input {
+        display: none;
+    }
+
+    input:checked~label {
+        background-color: black;
+        color: white;
+    }
+}
+
+
+
+
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/024/701/089/non_2x/lesbian-gay-bisexual-transgender-lgbt-pride-floral-seamless-pattern-rainbow-flag-gay-and-lesbian-love-hand-drawn-doodle-texture-stock-illustration-vector.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+
+    /* Adjust if needed */
+    margin: 0;
+}
+
+.opacity-padlock {
+    transition: opacity 0.5s;
+}
+
+.opacity-padlock:hover {
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+.shake-padlock:hover {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg)
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+
+#pare {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0px;
+    gap: 25px;
+    list-style-type: none;
+
+}
+
+.carta {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    /*Aplica ombra */
+    -webkit-box-shadow: -1px 0px 9px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 0px 9px 0px rgba(0, 0, 0, 0.75);
+}
+
+.padlock {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+}
+
+.carta-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 50px;
+    font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+}
+
+.fondo-card-resolved {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s transform;
+}
+
+.fondo-card-resolved:hover {
+    transform: scale(1.2);
+}
+
+
+/* footer */
+#footer-main {
+    margin-top: 10px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#footer-main>a {
+    text-decoration: underline;
+    color: white;
+}
+
+/*animation*/
+@keyframes mueve {
+    0% {
+        transform: translateY(150%);
+    }
+
+    50% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(150%);
+    }
+}
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}
+
+
+#retrato {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    bottom: 0px;
+    right: 0px;
+    transform: translateY(150%);
+}
+
+#respuesta {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 170px;
+    right: 10px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.mano {
+    background-color: #ffdbac;
+    width: 50px;
+    height: 75px;
+    border-radius: 15px 15px 15px 15px;
+    position: absolute;
+    bottom: 140px;
+    right: 48px;
+    z-index: 1;
+    border: 1px solid black;
+}
+
+.dedo {
+    background-color: #ffdbac;
+    width: 25px;
+    height: 50px;
+    border-radius: 10px 10px 10px 0px;
+    position: absolute;
+    bottom: 140px;
+    right: 35px;
+    z-index: 1;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.brazo {
+    padding: 5px;
+    background-color: blue;
+    width: 35px;
+    height: 150px;
+    border-radius: 25px 25px 0px 0px;
+    position: absolute;
+    bottom: 0px;
+    right: 45px;
+    border: 1px solid black;
+}
+
+
+#infonavidad {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 6px;
+    text-align: center;
+    color: white;
+    font-size: 1.em;
+}
+
+
+
+
+
+/*.snow {
+    -webkit-animation-name: snow-now;
+    animation-name: snow-now;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}*/
+
