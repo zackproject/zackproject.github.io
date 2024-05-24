@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="footer/index.css">
 </head>
 
-<body onload="fillCard()">
+<body>
     <header>
         <nav class="topnavbar">
             <a href="/"><img height="35" width="35" src="./logo.webp" alt="Logo de la página"></a>
@@ -31,16 +31,44 @@
     </header>
     <main id="cartas" class="container d-flex flex-row flex-wrap justify-content-center">
         <!-- cartas autogeneradas-->
+        <article class="carta card" id="the-game">
+            <div style="background-color: black; width:318px; height: 171px" class="card-img-top" src=""></div>
+            <header class="card-body">
+                <h1 class="card-title">El Juego</h1>
+                <p class="card-text">Has perdido</p>
+            </header>
+            <footer>
+                <a href="/el-juego" title="Ir a la página El Juego" class="btn btn-outline-primary">¿Qué juego?</a>
+            </footer>
+        </article>
+        <article class="carta card">
+            <img width="318" height="171" class="card-img-top" src="https://i.ibb.co/XCX7ghF/lgbt.webp"
+                alt="Calendario LGBT+">
+            <header class="card-body">
+                <h1 class="card-title">Calendario LGBT+</h1>
+                <p class="card-text">Cada dia se desbloquea una casilla. Acierta la quiz y descubre una celebridad del
+                    colectivo. Sólo disponible en junio</p>
+            </header>
+            <footer>
+                <a href="/orgullo/" title="Ir a la página navidad" class="btn btn-outline-primary">Jugar</a>
+                <a href="/como-jugar/#orgullo" title="Ir al tutorial Calendario LGBT+"
+                    class="btn btn-outline-secondary">Como
+                    jugar</a>
+
+            </footer>
+        </article>
         <article class="carta card">
             <img width="318" height="171" class="card-img-top" src="https://i.ibb.co/CwkmYkw/desafio.webp"
                 alt="El desafio">
             <header class="card-body">
                 <h1 class="card-title">El Desafio</h1>
-                <p class="card-text">Crea tu concurso digital con sus comodines del público, llamada y 50%. Activa las opciones de presentador, videocamara o pantalla verde para una experiencia más inmersiva</p>
+                <p class="card-text">Crea tu concurso digital con sus comodines del público, llamada y 50%. Activa las
+                    opciones de presentador, videocamara o pantalla verde para una experiencia más inmersiva</p>
             </header>
             <footer>
                 <a href="/el-desafio" title="Ir a la página navidad" class="btn btn-outline-primary">Jugar</a>
-                <a href="/como-jugar/#el-desafio" title="Ir al tutorial el desafio" class="btn btn-outline-secondary">Como
+                <a href="/como-jugar/#el-desafio" title="Ir al tutorial el desafio"
+                    class="btn btn-outline-secondary">Como
                     jugar</a>
 
             </footer>
@@ -206,6 +234,12 @@
             </footer>
         </article>
     </main>
+    <script>
+        const today = new Date();
+        if (today.getDate() === 28 && today.getMonth() === 11) {
+            document.getElementById("the-game").style.display = "flex";
+        }
+    </script>
     <!-- Carga la informacion de las cartas i las genera-->
     <footer id="footer-main"><a href="/"> Inicio</a> · <span id="dateYear">2022</span> · info@zksama.com </footer>
     <script src="../footer/index.js"></script>
