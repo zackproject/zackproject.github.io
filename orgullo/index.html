@@ -63,14 +63,14 @@
     <script>
         const defaultSettings = {
             localChristmas: "calendariolgbt2024",
-            backgroundImage: "./images/wood_back.png",
-            padlockCloseImage: "./images/close_closet.png",
-            padlockOpenImage: "./images/open_closet.png",
+            backgroundImage: "./images/back_black.png",
+            padlockCloseImage: "./images/close_door.png",
+            padlockOpenImage: "./images/open_door.png",
             questions: [
                 {
                     "id": 1,
                     "question": "Qué expresión usa David Rees en una de sus canciones para referirse a una pareja que se atrae mutuamente?",
-                    "options": ["Hacer match", "Dar dislike", "Estar mood", "Hacer zzz"]
+                    "options": ["Dar dislike", "Estar mood", "Hacer match", "Hacer zzz"]
                 },
                 {
                     "id": 2,
@@ -80,17 +80,17 @@
                 {
                     "id": 3,
                     "question": "¿De qué país es Nemo, la persona que ganó Eurovisión 2024?",
-                    "options": ["Suiza", "Croacia", "Francia", "Irlanda"]
+                    "options": ["Croacia", "Suiza", "Francia", "Irlanda"]
                 },
                 {
                     "id": 4,
                     "question": "¿Qué informativos presenta Mónica Carrillo junto a Matías Prats?",
-                    "options": ["Antena 3 Noticias", "Informativos Telecinco", "El intermedio", "Tot es mou"]
+                    "options": ["Informativos Telecinco", "El intermedio", "Tot es mou", "Antena 3 Noticias",]
                 },
                 {
                     "id": 5,
-                    "question": "En la serie 'Cómo conocí a vuestra madre' Neil Patrick Harris, ¿cómo se llama el personaje que interpreta?",
-                    "options": ["Barney Stinson", "Ted Mosby", "Marshall Eriksen", "Lily Aldrin"]
+                    "question": "En la serie 'Cómo conocí a vuestra madre', ¿cómo se llama el personaje que interpreta Neil Patrick Harris?",
+                    "options": ["Ted Mosby", "Marshall Eriksen", "Barney Stinson", "Lily Aldrin"]
                 },
                 {
                     "id": 6,
@@ -100,17 +100,17 @@
                 {
                     "id": 7,
                     "question": "¿Qué máquina utilizada por los alemanes para enviar mensajes encriptados fue descifrada por Alan Turing durante la 2º Guerra Mundial?",
-                    "options": ["Enigma", "Cryptobox", "GermanBox", "NazBox"]
+                    "options": ["Cryptobox", "GermanBox", "NazBox", "Enigma"]
                 },
                 {
                     "id": 8,
-                    "question": "¿Cuál es el nombre real de Lady Gaga?",
-                    "options": ["Stefani Joanne Angelina Germanotta", "Elizabeth Woolridge Grant", "Katheryn Elizabeth Hudson", "Robyn Rihanna Fenty"]
+                    "question": "¿Cuál es el nombre real de la influencer Dulceida?",
+                    "options": ["Maria Iglesias", "Aida Domenech", "Marta Sanchez", "Dusty Domenech"]
                 },
                 {
                     "id": 9,
                     "question": "¿Cuál de las siguientes bandas fue participe Freddie Mercury?",
-                    "options": ["Queen", "The Beatles", "The Rolling Stones", "Morancos"]
+                    "options": ["The Beatles", "The Rolling Stones", "Queen", "Morancos"]
                 },
                 {
                     "id": 10,
@@ -125,7 +125,7 @@
                 {
                     "id": 12,
                     "question": "¿En qué famosa serie de Disney Channel participó Miley Cyrus como cantante?",
-                    "options": ["Hannah Montana", "Zack y Cody", "Los magos de Waverly Place", "Casa Búho"]
+                    "options": ["Zack y Cody", "Los magos de Waverly Place", "Casa Búho", "Hannah Montana",]
                 },
                 {
                     "id": 13,
@@ -135,22 +135,22 @@
                 {
                     "id": 14,
                     "question": "¿Cuál es un tema de Billie Eilish?",
-                    "options": ["Bad guy", "I'm a Believer", "I'm Just Ken", "Hello"]
+                    "options": ["I'm a Believer", "I'm Just Ken", "Bad guy", "Hello"]
                 },
                 {
                     "id": 15,
                     "question": "¿Qué personaje interpreta Jim Parsons en 'The Big Bang Theory'?",
-                    "options": ["Sheldon Cooper", "Jerry O'Connell", "Simon Helberg", "Lance Barber"]
+                    "options": ["Jerry O'Connell", "Sheldon Cooper", "Simon Helberg", "Lance Barber"]
                 },
                 {
                     "id": 16,
                     "question": "¿A qué universo pertenece Harley Quinn?",
-                    "options": ["DC Comics", "Marvel", "Mármol", "CD Mangas"]
+                    "options": ["Marvel", "Mármol", "CD Mangas", "DC Comics"]
                 },
                 {
                     "id": 17,
                     "question": "¿Cuál es una canción de Mónica Naranjo?",
-                    "options": ["Sobreviviré", "Blanco y negro", "Despechá", "Mon amour"]
+                    "options": ["Blanco y negro", "Sobreviviré", "Despechá", "Mon amour"]
                 },
                 {
                     "id": 18,
@@ -160,22 +160,22 @@
                 {
                     "id": 19,
                     "question": "¿Para qué famosa película de Disney compuso Elton John?",
-                    "options": ["El rey león", "Aladdín", "Pocahontas", "Brave Indomable"]
+                    "options": ["Aladdín", "Pocahontas", "El rey león", "Brave Indomable"]
                 },
                 {
                     "id": 20,
                     "question": "¿Qué personaje de la serie Aída interpretó Paco León?",
-                    "options": ["Luisma", "Fidel", "Chema", "Mauricio"]
+                    "options": ["Fidel", "Chema", "Mauricio", "Luisma"]
                 },
                 {
                     "id": 21,
                     "question": "Continua la canción de Ricky Martin: 'Si tú quieres nos bañamos, si tú quieres nos soplamos ...'",
-                    "options": ["Pa' secarnos lo mojao", "Pa' bailar en el tejado", "Pa' volar como un halcón", "Pa' soñar con el mar azul"]
+                    "options": ["Pa' bailar en el tejado", "Pa' secarnos lo mojao", "Pa' volar como un halcón", "Pa' soñar con el mar azul"]
                 },
                 {
                     "id": 22,
                     "question": "Continua la canción de Pablo Alborán: 'En Saturno viven los hijos ...'",
-                    "options": ["que nunca tuvimos", "que abandonaste", "que deseamos", "esperándonos"]
+                    "options": ["que abandonaste", "que deseamos", "que nunca tuvimos", "esperándonos"]
                 },
                 {
                     "id": 23,
@@ -185,42 +185,42 @@
                 {
                     "id": 24,
                     "question": "¿Cómo se llama el programa de televisión estadounidense de Ellen DeGeneres?",
-                    "options": ["The Ellen Show", "The Elly Show", "The Ellen Magazine", "The Elly Magazine"]
+                    "options": ["The Elly Show", "The Ellen Magazine", "The Elly Magazine", "The Ellen Show"]
                 },
                 {
                     "id": 25,
                     "question": "¿Cómo se llamaba el personaje de Eduardo Casanova en Aída?",
-                    "options": ["Fidel Martínez", "Chema", "Jonathan", "Toni"]
+                    "options": ["Chema", "Fidel Martínez", "Jonathan", "Toni"]
                 },
                 {
                     "id": 26,
                     "question": "¿En qué programa de crónica social de Antena 3 fue presentador Jaime Cantizano?",
-                    "options": ["Donde estás corazón","Donde esta mi amor","Encuentra corazón","Eres mi corazón"]
+                    "options": ["Donde estás corazón", "Donde esta mi amor", "Encuentra corazón", "Eres mi corazón"]
                 },
                 {
                     "id": 27,
                     "question": "Continua la canción de María del Monte: 'Andalucía es mi tierra yo ...'",
-                    "options": ["soy del sur", "soy del norte", "soy del este", "soy del oeste"]
+                    "options": ["soy del norte", "soy del este", "soy del sur", "soy del oeste"]
                 },
                 {
                     "id": 28,
-                    "question": "¿Cuál es una película de Pedro Almodóvar?",
-                    "options": ["Mujeres al borde de un ataque de nervios", "A todo tren", "Mi gran noche", "Muertos de risa"]
+                    "question": "¿De qué famosa serie deriva 'Xena: la princesa guerrera'?",
+                    "options": ["Embrujadas", "Hércules", "El príncipe de Bel-Air", "One Piece"]
                 },
                 {
                     "id": 29,
-                    "question": "¿De qué país es originalmente el periodista, presentador de televisión, guionista y escritor Boris Izaguirre?",
-                    "options": ["Venezuela", "Colombia", "Chile", "Perú"]
+                    "question": "¿Cuál es una película de Pedro Almodóvar?",
+                    "options": ["A todo tren", "Mi gran noche", "Muertos de risa", "Mujeres al borde de un ataque de nervios"]
                 },
                 {
                     "id": 30,
-                    "question": "¿De qué famosa serie deriva 'Xena: la princesa guerrera'?",
-                    "options": ["Hércules", "Embrujadas", "El príncipe de Bel-Air", "One Piece"]
-                }
+                    "question": "¿De qué país es originalmente el periodista, presentador de televisión, guionista y escritor Boris Izaguirre?",
+                    "options": ["Venezuela", "Colombia", "Chile", "Perú"]
+                },
 
             ],
-            resolves: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            surprises: ["VssAH-JRrBQ", "aUY3UjNTLs8", "0uy4jeN2Qas", "MsrFEwuDKwU", "EW4qzAOdIlw", "0jNg2lG2dQg", "zXKHGaRxQaE", "qrO4YZeyl0I", "uO4SpuFvAvs", "usrSy2spEW4", "9-hXhniscj4", "uVjRe8QXFHY", "Zgxxx_yDveg", "9qNLisOCWLc", "ShkAMt0Ye2o", "GRbY5qAio0Y", "xErS7G3-tCQ", "FstWK65RJcI", "IwH9YvhPN7c", "Sg_8nJ-ahfs", "iOe6dI2JhgU", "yBAx5nBdJqU", "j12QXhEzHis", "IbSHXcxWVcE", "bkvVvdDZ2c8", "95SJ0ZguP_4", "vCsRTDRctFE", "-Vl9nv_KBmE", "xNLsc70RHts", "6OX2bvHcnGQ"],
+            resolves: [2, 0, 1, 3, 2, 0, 3, 1, 2, 1, 0, 3, 0, 2, 1, 3, 1, 0, 2, 3, 1, 2, 0, 3, 1, 0, 2, 1, 3, 0],
+            surprises: ["VssAH-JRrBQ", "aUY3UjNTLs8", "0uy4jeN2Qas", "MsrFEwuDKwU", "EW4qzAOdIlw", "0jNg2lG2dQg", "zXKHGaRxQaE", "Tkdid_ZzHe8", "uO4SpuFvAvs", "usrSy2spEW4", "9-hXhniscj4", "uVjRe8QXFHY", "Zgxxx_yDveg", "9qNLisOCWLc", "ShkAMt0Ye2o", "GRbY5qAio0Y", "xErS7G3-tCQ", "FstWK65RJcI", "IwH9YvhPN7c", "Sg_8nJ-ahfs", "iOe6dI2JhgU", "yBAx5nBdJqU", "j12QXhEzHis", "IbSHXcxWVcE", "bkvVvdDZ2c8", "95SJ0ZguP_4", "vCsRTDRctFE", "6OX2bvHcnGQ", "-Vl9nv_KBmE", "xNLsc70RHts"],
         }
     </script>
     <script src="index.js"></script>

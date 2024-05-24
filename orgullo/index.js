@@ -45,7 +45,6 @@ const cardResolveHTML = (ytVideo, day) => {
 
 const showYtLogo = (day) => {
     if (player.showLogo(day)) {
-        console.log("hola");
         return `<img onclick="watchedVideo(${day}, event)" aria-hidden="true" class="fondo-card-resolved" height="200" width="200" src="${ytLogo}" title="Ver video de Youtube del Dia ${day}" alt="Logo Youtube">`
     }
     return "";

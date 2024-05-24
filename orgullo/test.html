@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <meta name="robots" content="noindex, nofollow">
+</head>
+
+<body>
+    <h1>Sorpresas</h1>
+    <h2>LGBT</h2>
+    <div id="lgbt"></div>
+    <script>
+        let lgbtList = ["VssAH-JRrBQ", "aUY3UjNTLs8", "0uy4jeN2Qas", "MsrFEwuDKwU", "EW4qzAOdIlw", "0jNg2lG2dQg", "zXKHGaRxQaE", "Tkdid_ZzHe8", "uO4SpuFvAvs", "usrSy2spEW4", "9-hXhniscj4", "uVjRe8QXFHY", "Zgxxx_yDveg", "9qNLisOCWLc", "ShkAMt0Ye2o", "GRbY5qAio0Y", "xErS7G3-tCQ", "FstWK65RJcI", "IwH9YvhPN7c", "Sg_8nJ-ahfs", "iOe6dI2JhgU", "yBAx5nBdJqU", "j12QXhEzHis", "IbSHXcxWVcE", "bkvVvdDZ2c8", "95SJ0ZguP_4", "vCsRTDRctFE", "6OX2bvHcnGQ", "-Vl9nv_KBmE", "xNLsc70RHts"];
+        const lgbt = document.getElementById("lgbt");
+
+        lgbtList.forEach((e, i) => {
+            const img = document.createElement("img");
+            img.src = `http://i3.ytimg.com/vi/${e}/mqdefault.jpg`;
+            img.alt = "LGBT " + (i + 1);
+            img.title = "LGBT " + (i + 1);
+            lgbt.appendChild(img);
+        });
+        
+    </script>
+</body>
+
+</html>
