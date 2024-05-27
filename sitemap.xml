@@ -3,31 +3,26 @@
     <!-- Página principal -->
     <url>
         <loc>https://www.zksama.com</loc>
-        <lastmod>2024-01-21</lastmod>
+        <lastmod>2024-05-24</lastmod>
         <priority>0.9</priority>
     </url>
-    <url>
-        <loc>https://www.zksama.com/se-busca</loc>
-        <lastmod>2024-01-21</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.zksama.com/piano</loc>
-        <lastmod>2024-01-21</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.zksama.com/escribe-tu-historia</loc>
-        <lastmod>2024-01-21</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
+        <url>
         <loc>https://www.zksama.com/adivina-anime</loc>
         <lastmod>2024-01-21</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.zksama.com/quien-es-quien</loc>
+        <loc>https://www.zksama.com/animebirthday</loc>
+        <lastmod>2024-01-21</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.zksama.com/el-desafio</loc>
+        <lastmod>2024-05-08</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.zksama.com/escribe-tu-historia</loc>
         <lastmod>2024-01-21</lastmod>
         <priority>0.8</priority>
     </url>
@@ -37,17 +32,37 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.zksama.com/sort</loc>
-        <lastmod>2024-01-21</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://www.zksama.com/navidad</loc>
+        <lastmod>2024-05-24</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.zksama.com/orgullo</loc>
+        <lastmod>2024-05-24</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.zksama.com/parejas</loc>
+        <lastmod>2024-05-08</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.zksama.com/piano</loc>
         <lastmod>2024-01-21</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.zksama.com/animebirthday</loc>
+        <loc>https://www.zksama.com/quien-es-quien</loc>
+        <lastmod>2024-03-04</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.zksama.com/se-busca</loc>
+        <lastmod>2024-01-21</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.zksama.com/sort</loc>
         <lastmod>2024-01-21</lastmod>
         <priority>0.8</priority>
     </url>

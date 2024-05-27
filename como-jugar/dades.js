@@ -23,6 +23,11 @@ var comoJugar = [
         "path": "navidad",
     },
     {
+        "title": "Calendario LGBT+",
+        "description": "Celebra el mes del orgullo lgbt+ con este Calendario que cuenta con 30 casillas disponibles, una para cada día del 1 al 30 de junio. Cada día, tendrás la oportunidad de abrir una casilla y desvelar un quiz que se encuentra en su interior. Es una forma divertida de conocer a gente del colectivo.<br>Cuando resuelvas el quiz diario, la casilla correspondiente a ese día se desbloqueará y serás recompensado con una sorpresa relacionada con la pregunta. Recuerda que las casillas están numeradas del 1 al 30 y solo se abrirán en el día específico que corresponde.",
+        "path": "orgullo",
+    },
+    {
         "title": "Escribe tu historia",
         "description": "Saca al escritor que llevas dentro y sumérgete en el mundo de las palabras. Antes de empezar tu historia, elige una de las lenguas del desplegable (catalán, castellano, gallego, euskera, canario, valenciano y asturiano) y pulsa el botón 'Empezar mi historia'. En cada párrafo que escribas, te pediré que incluyas una palabra específica en ese párrafo. Una vez hayas alcanzado una cantidad de párrafos adecuada, te solicitaré que le des un título a este capítulo. Estableceré un mínimo de capítulos que debes cumplir, pero una vez lo alcances, podrás cerrar el libro en cualquier momento y darle un título. Entonces, podrás crear otra historia si lo deseas. <br>No se permite escribir más de un libro al mismo tiempo; primero finaliza el anterior, dejar la tarea a medias es como no haberla comenzado.",
         "path": "escribe-tu-historia",

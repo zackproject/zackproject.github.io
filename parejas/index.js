@@ -355,7 +355,7 @@ function cardHTML(props, index, numeric) {
 
 
     return `<li class="card">
-    <article class="flip-card" aria-hidden="${player.isResolvedCard(props.id)}">
+    <div class="flip-card" aria-hidden="${player.isResolvedCard(props.id)}">
         <div class="flip-card-inner" data-key="${index}" data-card="${props.id}"  onclick="cardClicked(event)">
             <div class="flip-card-front" ${front}>
                 <svg xmlns="http://www.w3.org/2000/svg" aria-label="Carta oculta ${number}" title="Click para revelar" width="150" height="150" viewBox="0 -3 114 120">
@@ -367,7 +367,7 @@ function cardHTML(props, index, numeric) {
             <img src="${props.image}" alt="Carta de ${props.name}" height="100%" width="100%">
             </div>
         </div>
-    </article>
+    </div>
 </li>`
 }
 

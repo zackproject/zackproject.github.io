@@ -1,4 +1,4 @@
-const ytLogo = "../images/yt.png";
+const ytLogo = "./images/yt.png";
 const fondoHtml = defaultSettings.backgroundImage;
 const candadoCerrado = defaultSettings.padlockCloseImage;
 const candadoAbierto = defaultSettings.padlockOpenImage;
@@ -6,7 +6,7 @@ const NAVIDAD = defaultSettings.localChristmas;
 const d = new Date();
 const dayGlobal = d.getDate();
 const monthGlobal = d.getMonth() + 1;
-const monthWorkThisProgram = 12; //Mes que funciona el programa
+const monthWorkThisProgram = 6; //Mes que funciona el programa
 let player = null;
 const adventList = defaultSettings;
 //Pagina
@@ -45,7 +45,6 @@ const cardResolveHTML = (ytVideo, day) => {
 
 const showYtLogo = (day) => {
     if (player.showLogo(day)) {
-        console.log("hola");
         return `<img onclick="watchedVideo(${day}, event)" aria-hidden="true" class="fondo-card-resolved" height="200" width="200" src="${ytLogo}" title="Ver video de Youtube del Dia ${day}" alt="Logo Youtube">`
     }
     return "";
@@ -121,14 +120,9 @@ infoChristmas();
 function infoChristmas() {
     let info = document.getElementById("infonavidad");
     if (monthGlobal === monthWorkThisProgram) {
-        document.getElementById("snowing").style.display = "flex";
-        if (dayGlobal < 24) {
-            info.innerText = "Abre la casilla de hoy";
-        } else {
-            info.innerHTML = "¡Feliz Navidad!<br> Mira otros minijuegos <a href='https://www.zksama.com'>AQUÍ</a>";
-        }
+            info.innerText = "Todas las personas que aparecen en este calendario son parte del colectivo LGBT+ en mayor o menor medida. Cada casilla está dedicada a una persona de este colectivo. La finalidad de este calendario de junio es mostrar a referentes que conocemos (o que vas a conocer) no por su orientación, sino por lo que son: personas. Dejo la búsqueda de 'qué es cada uno/a/e' (gay, lesbiana, trans, bisexual, no binario) a la persona que esté realizando este Calendario LGBTIQ+. ¡Feliz Mes del Orgullo!";
     } else {
-        info.innerText = "Disponible sólo en diciembre";
+        info.innerText = "Disponible sólo en junio";
 
     }
 

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navidad Junior - Calendario de Adviento</title>
+    <meta name="description" content="Esta Navidad, aprovecha nuestro Calendario Junior Online para encontrar los mejores regalos navideños con solo un clic.">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="shortcut icon" href="../2022/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../index.css">
+</head>
+
+<body>
+    <header id="headnavidad">
+        <a href="../"><img height="35" width="35" src="../../logo.webp" alt="Logo de la página"></a>
+        <h1>Navidad Junior</h1>
+    </header>
+    <p id="infonavidad">Sólo disponible en diciembre</p>
+    <div id="snowing" aria-hidden="true">
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+        <div class="snow">*</div>
+    </div>
+    <ul id="pare">
+    </ul>
+    <dialog id="modal" aria-modal="true" aria-labelledby="quiz-modal">
+        <header>
+            <h2 id="quiz-modal">Pregunta del dia <span id="day-quiz"></span></h2>
+            <button aria-label="Cerrar" onclick="closeModal()">x</button>
+        </header>
+        <main>
+            <form id="form-quiz" onsubmit="return checkAnswer(event)">
+                <p id="quiz-question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, totam.</p>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-1" name="quiz_answer" value="0">
+                    <label for="quiz-1">HTML</label>
+                </div>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-2" name="quiz_answer" value="1">
+                    <label for="quiz-2">CSS</label>
+                </div>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-3" name="quiz_answer" value="2">
+                    <label for="quiz-3">JavaScript</label>
+                </div>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-4" name="quiz_answer" value="3">
+                    <label for="quiz-4">JavaScript</label>
+                </div>
+                <input type="submit" value="Contestar">
+                <div id="retrato" aria-hidden="true">
+                    <div class="mano"></div>
+                    <div id="respuesta" class="correct">✓</div>
+                    <div class="dedo"></div>
+                    <div class="brazo">
+                    </div>
+                </div>
+            </form>
+        </main>
+        <footer id="title-modal">
+            Marca una opción
+        </footer>
+    </dialog>
+    <footer id="footer-main">info@zksama.com</footer>
+    <script src="../../footer/index.js"></script>
+
+    <script>
+        const defaultSettings = {
+            localChristmas: "navidadjunior",
+            backgroundImage: "../2022/images/web/fondo.webp",
+            padlockCloseImage: "../images/close_cartoon.png",
+            padlockOpenImage: "../images/open_cartoon.png",
+            questions: [
+                {
+                    "id": 1,
+                    "question": "¿Qué animal es conocido por su trompa larga y flexible?",
+                    "options": ["Elefante", "Buho", "Jirafa", "Guepardo"]
+                },
+                {
+                    "id": 2,
+                    "question": "¿Qué animal mítico es conocido por lanzar fuego por la boca y tener alas para volar?",
+                    "options": ["Unicornio", "Lince", "Minotauro", "Dragon"]
+                },
+                {
+                    "id": 3,
+                    "question": "¿Qué animal es conocido por su capacidad de saltar y su piel húmeda y resbaladiza?",
+                    "options": ["Tortuga", "Rana", "Serpiente", "Ratón"]
+                },
+                {
+                    "id": 4,
+                    "question": "¿Cómo se llama la heroína principal de la serie 'Las Aventuras de Ladybug'?",
+                    "options": ["Joana", "Gabi", "Marta", "Marinette",]
+                },
+                {
+                    "id": 5,
+                    "question": "Pokémon amarillo y eléctrico, reconocido por tener forma de roedor.",
+                    "options": ["Charmander", "Squirtle", "Pikachu", "Bulbasaur"]
+                },
+                {
+                    "id": 6,
+                    "question": "¿Cuál es el color de los pantalones de Mickey Mouse?",
+                    "options": ["Rojo", "Azul", "Amarillo", "Verde"]
+                },
+                {
+                    "id": 7,
+                    "question": "¿Qué temperatura debería hacer en invierno?",
+                    "options": ["Frío", "Calor", "Tibio", "Mucho calor"]
+                },
+                {
+                    "id": 8,
+                    "question": "¿De qué sabor suelen ser las gominolas de color rojo?",
+                    "options": ["Limón", "Plátano", "Naranja", "Fresa",]
+                },
+                {
+                    "id": 9,
+                    "question": "¿Qué youtuber usa una skin de un perrito amarillo?",
+                    "options": ["Rubius", "Mikecrack", "Willyrex", "Alexby"]
+                },
+                {
+                    "id": 10,
+                    "question": "¿Cómo se llama la princesa del videojuego 'The Legend of Zelda'?",
+                    "options": ["Zelda", "Link", "Goron", "Zaint"]
+                },
+                {
+                    "id": 11,
+                    "question": "¿Cuál NO es un instrumento musical?",
+                    "options": ["Piano", "Flauta", "Violín", "Silla",]
+                },
+                {
+                    "id": 12,
+                    "question": "¿Qué animal es el Pokémon tipo agua Magikarp?",
+                    "options": ["Pájaro", "Pez", "Insecto", "Avión"]
+                },
+                {
+                    "id": 13,
+                    "question": "¿Quién vive en una piña debajo del mar?",
+                    "options": ["Bob Esponja", "Gumball", "Homer Simpson", "Bluey"]
+                },
+                {
+                    "id": 14,
+                    "question": "¿Qué animal NO encontramos en una granja?",
+                    "options": ["Tiburón", "Pollito", "Oveja", "Cabra"]
+                },
+                {
+                    "id": 15,
+                    "question": "¿En qué película de Disney se canta Hakuna Matata?",
+                    "options": ["El Rey León", "La Cenicienta", "Toy Story", "Up"]
+                },
+                {
+                    "id": 16,
+                    "question": "Según el dicho popular, ¿qué animal trae a los bebés al mundo?",
+                    "options": ["Perro", "Gato", "Cigüeña", "León"]
+                },
+                {
+                    "id": 17,
+                    "question": "¿Qué animal puede nadar, volar y caminar?",
+                    "options": ["Perro", "Pez", "Pato", "Guepardo"]
+                },
+                {
+                    "id": 18,
+                    "question": "¿Qué deporte NO se juega con un balón?",
+                    "options": ["Baloncesto", "Fútbol", "Patinaje sobre hielo", "Waterpolo"]
+                },
+                {
+                    "id": 19,
+                    "question": "¿Cómo se llama la acción de hacer sonidos con la voz, ya sea formando palabras o simplemente melodías?",
+                    "options": ["Bailar", "Comer", "Correr", "Cantar"]
+                },
+                {
+                    "id": 20,
+                    "question": "¿Cómo se llama el ship de Rubius y Vegetta777?",
+                    "options": ["Wigetta", "Rubegetta", "Rubelangel", "Wisplay"]
+                },
+                {
+                    "id": 21,
+                    "question": "En la serie 'El asombroso Mundo de Gumball', ¿qué animal es Darwin?",
+                    "options": ["Gato", "Conejo", "Perro", "Pez"]
+                },
+                {
+                    "id": 22,
+                    "question": "En la serie Phineas y Ferb, ¿cómo se llama el ornitorrinco de la familia?",
+                    "options": ["Tom", "Perry", "Pinky", "Bu"]
+                },
+                {
+                    "id": 23,
+                    "question": "¿Cuál es el nombre del dios griego del mar?",
+                    "options": ["Poseidón", "Hades", "Zeus", "Ares"]
+                },
+                {
+                    "id": 24,
+                    "question": "¿Cuál es el nombre del personaje que trae regalos a los niños en Navidad en muchas culturas occidentales?",
+                    "options": ["Ratoncito Pérez", "Hada Madrina", "Santa Claus", "Todoroki"]
+                }
+            ],
+            resolves: [0, 3, 1, 3, 2, 0, 0, 3, 1, 0, 3, 1, 0, 0, 0, 2, 2, 2, 3, 1, 3, 1, 0, 2],
+            surprises: ["otPU_gXSCjY", "K4K3wn9k7vk", "k85mRPqvMbE", "1RYuBFyPGms", "p7mpr5qyB3o", "kAdisqDpdhg", "wVL0ovnq6O4", "w7w59Zp8bEM", "-1rQp8jxTbQ", "nmh0xyN44uk", "z3peKAQIR50", "Wkrs11bLvpo", "bF86ZTNOLWg", "dhsy6epaJGs", "Eq0J2W7vkDQ", "rwOuv0SgH2c", "CwGfMgFWcT4", "0pJU3jm0zkI", "8N_tupPBtWQ", "TQjHizA2pc0", "hi1WyEi8qiA", "uCzUsX7IoF4", "2-VTUyI3w7U", "RBCC_JGWEPo"]
+        }
+    </script>
+    <script src="../index.js"></script>
+</body>
+
+</html>

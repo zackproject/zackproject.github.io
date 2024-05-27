@@ -262,8 +262,8 @@ function comodinPublico(event) {
   // Marquem com utilizat el comodi
   comodin.used = true;
   //Guarda els canvis
-  localStorage.setItem(GAMESTORAGE, JSON.stringify(player)); 
-   //Desactiva el pare que l'ha cridat, o sigui el boton
+  localStorage.setItem(GAMESTORAGE, JSON.stringify(player));
+  //Desactiva el pare que l'ha cridat, o sigui el boton
   document.getElementById("public-com").disabled = true;
 }
 
@@ -300,10 +300,20 @@ function comodinFifty(event) {
 
 //Retorna el text de comodi Public en format llegible
 function representPublic(percentList) {
-  document.getElementById("public-a").style.height = percentList[0] + "%"
-  document.getElementById("public-b").style.height = percentList[1] + "%"
-  document.getElementById("public-c").style.height = percentList[2] + "%"
-  document.getElementById("public-d").style.height = percentList[3] + "%"
+  const publicA = document.getElementById("public-a");
+  const publicB = document.getElementById("public-b");
+  const publicC = document.getElementById("public-c");
+  const publicD = document.getElementById("public-d");
+
+  publicA.style.height = percentList[0] + "%"
+  publicB.style.height = percentList[1] + "%"
+  publicC.style.height = percentList[2] + "%"
+  publicD.style.height = percentList[3] + "%"
+  publicA.title = "Respuesta A: " + percentList[0] + "%";
+  publicB.title = "Respuesta B: " + percentList[1] + "%";
+  publicC.title = "Respuesta C: " + percentList[2] + "%";
+  publicD.title = "Respuesta D: " + percentList[3] + "%";
+
   document.getElementById("percent-a").innerText = percentList[0] + "%"
   document.getElementById("percent-b").innerText = percentList[1] + "%"
   document.getElementById("percent-c").innerText = percentList[2] + "%"

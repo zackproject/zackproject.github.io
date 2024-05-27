@@ -4,83 +4,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario Adviento Digital</title>
-    <link rel="stylesheet" href="index.css">
-    <meta name="keywords"
-        content="sopresa navidad, calendarios adviento 2023,mejores calendarios de adviento, otaku, digital, anime">
-    <meta name="description"
-        content="Calendario de Adviento Digital. Abre una casilla cada dia de 1 al 24 de diciembre. Cada dia una sorpresa personalizada. Todos los dias antes de Navidad.">
-    <meta name="robots" content="index">
-    <link href="https://fonts.googleapis.com/css?family=Mountains of Christmas" rel="stylesheet">
-    <link rel="stylesheet" href="../footer/index.css">
-    <link rel="icon" href="./2022/favicon.ico">
+    <title>Navidad Personalizada - Elige una temática</title>
+    <meta name="description" content="Esta Navidad, aprovecha nuestro Calendario de Sorpresas Online para encontrar los mejores regalos navideños con solo un clic.">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../icopz.ico" type="image/x-icon">
 </head>
 
 <body>
-    <header id="headnavidad">Calendario de adviento</header>
-    <p id="infonavidad">Sólo disponible en diciembre</p>
-    <div id="snowing" aria-hidden="true">
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-    </div>
-    <ul id="pare">
-    </ul>
-    <div id="modal">
-        <div id="modal-content" role="dialog" aria-modal="true" aria-labelledby="quiz-modal">
-            <header>
-                <h2 id="quiz-modal">Pregunta del dia <span id="day-quiz"></span></h2>
-                <button aria-label="Cerrar" onclick="closeModal()">x</button>
+    <header id="headnavidad">
+        <a href="../"><img height="35" width="35" src="../../logo.webp" alt="Logo de la página"></a>
+        <h1>Navidad 2024</h1>
+    </header>
+    <main id="main-calendars">
+        <article class="carta card">
+            <img width="318" height="171" class="card-img-top" src="./images/calendar_junior.webp" alt="Navidad Junior">
+            <header class="card-body">
+                <h1 class="card-title">Navidad Junior</h1>
+                <p class="card-text">24 preguntas pensadas para niños para este mes de diciembre. Videos músicales y
+                    videos divertidos para todas las edades</p>
             </header>
-            <main>
-                <form id="form-quiz" onsubmit="return checkAnswer(event)">
-                    <p id="quiz-question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, totam.</p>
-                    <div class="quiz-options">
-                        <input type="radio" id="quiz-1" name="quiz_answer" value="0">
-                        <label for="quiz-1">HTML</label>
-                    </div>
-                    <div class="quiz-options">
-                        <input type="radio" id="quiz-2" name="quiz_answer" value="1">
-                        <label for="quiz-2">CSS</label>
-                    </div>
-                    <div class="quiz-options">
-                        <input type="radio" id="quiz-3" name="quiz_answer" value="2">
-                        <label for="quiz-3">JavaScript</label>
-                    </div>
-                    <div class="quiz-options">
-                        <input type="radio" id="quiz-4" name="quiz_answer" value="3">
-                        <label for="quiz-4">JavaScript</label>
-                    </div>
-                    <input type="submit" value="Contestar">
-                    <div id="retrato" aria-hidden="true">
-                        <div class="mano"></div>
-                        <div id="respuesta" class="correct">✓</div>
-                        <div class="dedo"></div>
-                        <div class="brazo">
-                        </div>
-                    </div>
-                </form>
-            </main>
-            <footer id="title-modal">
-                Marca una opción
+            <footer>
+                <a href="./junior" title="Ir a Navidad Junior" class="btn btn-outline-primary">Jugar</a>
             </footer>
+        </article>
 
-        </div>
-    </div>
-    <footer id="footer-main">info@zksama.com</footer>
-    <script src="../footer/index.js"></script>
-    <!-- end modal-->
-    <script src="dades.js"></script>
-    <script src="index.js"></script>
+        <article class="carta card">
+            <img width="318" height="171" class="card-img-top" src="./images/calendar_senior.webp" alt="Navidad Senior">
+            <header class="card-body">
+                <h1 class="card-title">Navidad Senior</h1>
+                <p class="card-text">24 preguntas de cultura general, cultura de internet y curiosidades que te
+                    sorprenderán. Videos músicales, curiosidades del mundo e historia de internet.</p>
+            </header>
+            <footer>
+                <a href="./senior" title="Ir a Navidad senior" class="btn btn-outline-primary">Jugar</a>
+            </footer>
+        </article>
 
+        <article class="carta card">
+            <img width="318" height="171" class="card-img-top" src="./images/calendar_otaku.webp" alt="Navidad Anime">
+            <header class="card-body">
+                <h1 class="card-title">Navidad Otaku</h1>
+                <p class="card-text">24 preguntas para frikis del mundo anime y manga. Descubre animes, memes y AMV que
+                    engloban éste mundo.</p>
+            </header>
+            <footer>
+                <a href="./otaku" title="Ir a Navidad Otaku" class="btn btn-outline-primary">Jugar</a>
+            </footer>
+        </article>
+    </main>
+    <footer>
+
+    </footer>
+
+    <style>
+        #headnavidad {
+            position: sticky;
+            top: 0px;
+            left: 0;
+            color: white;
+            background-color: #235e6f;
+            width: 100%;
+            text-align: center;
+            font-size: 1rem;
+            -webkit-box-shadow: -1px 0px 9px 0px black;
+            box-shadow: -1px 0px 9px 0px black;
+            margin-bottom: 5px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /*snow is z-index:2 */
+            z-index: 3;
+            padding: 10px 0px 10px 0px;
+
+            h1 {
+                margin: 0px;
+            }
+        }
+
+        #headnavidad>a {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        body {
+            margin: 0px;
+            background-color: #338729;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000' fill-opacity='.1' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            max-width: 20em;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 0.25rem;
+            height: 420;
+        }
+
+        .card-img-top {
+            width: 100%;
+            border-top-left-radius: calc(0.25rem - 1px);
+            border-top-right-radius: calc(0.25rem - 1px);
+        }
+
+        .card-body {
+            flex: 1;
+            padding: 1.25rem;
+        }
+
+        .card>footer {
+            padding: 5px;
+
+            a {
+                text-align: center;
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .btn {
+            text-align: center;
+            border: 1px solid transparent;
+            padding: 0.375rem 0rem 0.75rem 0rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+        }
+
+        .btn-outline-primary {
+            color: #007bff;
+            background-color: transparent;
+            background-image: none;
+            border-color: #007bff;
+            transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+        }
+
+        .btn-outline-primary:hover {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    </style>
 </body>
-
 
 </html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario LGBT+ - Una celebridad diaria del colectivo</title>
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="../2022/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icopz.ico">
+</head>
+
+<body>
+    <header id="headnavidad">
+        <a href="../"><img height="35" width="35" src="../../logo.webp" alt="Logo de la página"></a>
+        <h1> LGBT+</h1>
+    </header>
+    <a class="link-form" href="https://forms.gle/dw3zmz6NiDAe7ZHw5">¿Quién crees que aparecerá en el Calendario?</a>
+    <ul id="pare">
+    </ul>
+    <p id="infonavidad">Sólo disponible en junio</p>
+
+    <dialog id="modal" aria-modal="true" aria-labelledby="quiz-modal">
+        <header>
+            <h2 id="quiz-modal">Pregunta del dia <span id="day-quiz"></span></h2>
+            <button aria-label="Cerrar" onclick="closeModal()">x</button>
+        </header>
+        <main>
+            <form id="form-quiz" onsubmit="return checkAnswer(event)">
+                <p id="quiz-question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, totam.</p>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-1" name="quiz_answer" value="0">
+                    <label for="quiz-1">HTML</label>
+                </div>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-2" name="quiz_answer" value="1">
+                    <label for="quiz-2">CSS</label>
+                </div>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-3" name="quiz_answer" value="2">
+                    <label for="quiz-3">JavaScript</label>
+                </div>
+                <div class="quiz-options">
+                    <input type="radio" id="quiz-4" name="quiz_answer" value="3">
+                    <label for="quiz-4">JavaScript</label>
+                </div>
+                <input type="submit" value="Contestar">
+                <div id="retrato" aria-hidden="true">
+                    <div class="mano"></div>
+                    <div id="respuesta" class="correct">✓</div>
+                    <div class="dedo"></div>
+                    <div class="brazo">
+                    </div>
+                </div>
+            </form>
+        </main>
+        <footer id="title-modal">
+            Marca una opción
+        </footer>
+    </dialog>
+    <footer id="footer-main">info@zksama.com</footer>
+    <script src="../../footer/index.js"></script>
+    <script>
+        const defaultSettings = {
+            localChristmas: "calendariolgbt2024",
+            backgroundImage: "./images/back_black.png",
+            padlockCloseImage: "./images/close_door.png",
+            padlockOpenImage: "./images/open_door.png",
+            questions: [
+                {
+                    "id": 1,
+                    "question": "¿Qué expresión usa David Rees en una de sus canciones para referirse a una pareja que se atrae mutuamente?",
+                    "options": ["Dar dislike", "Estar mood", "Hacer match", "Hacer zzz"]
+                },
+                {
+                    "id": 2,
+                    "question": "¿Cómo se llama el programa de Telecinco presentado por Sandra Barneda que comenta la crónica social y los reality shows de la cadena?",
+                    "options": ["Así es la vida", "El Diario de Patricia", "MasterChef", "Operación Triunfo"]
+                },
+                {
+                    "id": 3,
+                    "question": "¿De qué país es Nemo, la persona que ganó Eurovisión 2024?",
+                    "options": ["Croacia", "Suiza", "Francia", "Irlanda"]
+                },
+                {
+                    "id": 4,
+                    "question": "¿Qué informativos presenta Mónica Carrillo junto a Matías Prats?",
+                    "options": ["Informativos Telecinco", "El intermedio", "Tot es mou", "Antena 3 Noticias",]
+                },
+                {
+                    "id": 5,
+                    "question": "En la serie 'Cómo conocí a vuestra madre', ¿cómo se llama el personaje que interpreta Neil Patrick Harris?",
+                    "options": ["Ted Mosby", "Marshall Eriksen", "Barney Stinson", "Lily Aldrin"]
+                },
+                {
+                    "id": 6,
+                    "question": "Continua la canción de Lola Indigo: 'Soy aquella niña de la ...'",
+                    "options": ["escuela", "universidad", "empresa", "fumada en el bar"]
+                },
+                {
+                    "id": 7,
+                    "question": "¿Qué máquina utilizada por los alemanes para enviar mensajes encriptados fue descifrada por Alan Turing durante la 2º Guerra Mundial?",
+                    "options": ["Cryptobox", "GermanBox", "NazBox", "Enigma"]
+                },
+                {
+                    "id": 8,
+                    "question": "¿Cuál es el nombre real de la influencer Dulceida?",
+                    "options": ["Maria Iglesias", "Aida Domenech", "Marta Sanchez", "Dusty Domenech"]
+                },
+                {
+                    "id": 9,
+                    "question": "¿Cuál de las siguientes bandas fue participe Freddie Mercury?",
+                    "options": ["The Beatles", "The Rolling Stones", "Queen", "Morancos"]
+                },
+                {
+                    "id": 10,
+                    "question": "¿En qué videojuego de drama interactivo sale Eliot Page?",
+                    "options": ["Life is Strange", "Beyond Two Souls", "The Walking Dead", "The Legend of Zelda"]
+                },
+                {
+                    "id": 11,
+                    "question": "¿Cuál es el nombre del famoso poeta español Lorca?",
+                    "options": ["Federico García Lorca", "Fernando García Lorca", "Federico Rodríguez Lorca", "Eric García Lorca"]
+                },
+                {
+                    "id": 12,
+                    "question": "¿En qué famosa serie de Disney Channel participó Miley Cyrus como cantante?",
+                    "options": ["Zack y Cody", "Los magos de Waverly Place", "Casa Búho", "Hannah Montana",]
+                },
+                {
+                    "id": 13,
+                    "question": "¿Cómo se llama el dúo humorístico donde es partícipe Jorge Cadaval?",
+                    "options": ["Los Morancos", "Azul y negro", "Azúcar Moreno", "Los bistecs"]
+                },
+                {
+                    "id": 14,
+                    "question": "¿Cuál es un tema de Billie Eilish?",
+                    "options": ["I'm a Believer", "I'm Just Ken", "Bad guy", "Hello"]
+                },
+                {
+                    "id": 15,
+                    "question": "¿Qué personaje interpreta Jim Parsons en 'The Big Bang Theory'?",
+                    "options": ["Jerry O'Connell", "Sheldon Cooper", "Simon Helberg", "Lance Barber"]
+                },
+                {
+                    "id": 16,
+                    "question": "¿A qué universo pertenece Harley Quinn?",
+                    "options": ["Marvel", "Mármol", "CD Mangas", "DC Comics"]
+                },
+                {
+                    "id": 17,
+                    "question": "¿Cuál es una canción de Mónica Naranjo?",
+                    "options": ["Blanco y negro", "Sobreviviré", "Despechá", "Mon amour"]
+                },
+                {
+                    "id": 18,
+                    "question": "¿Cómo se llama la hermana de He-Man?",
+                    "options": ["She-Ra", "She-Woman", "She-Girl", "She-Man"]
+                },
+                {
+                    "id": 19,
+                    "question": "¿Para qué famosa película de Disney compuso Elton John?",
+                    "options": ["Aladdín", "Pocahontas", "El rey león", "Brave Indomable"]
+                },
+                {
+                    "id": 20,
+                    "question": "¿Qué personaje de la serie Aída interpretó Paco León?",
+                    "options": ["Fidel", "Chema", "Mauricio", "Luisma"]
+                },
+                {
+                    "id": 21,
+                    "question": "Continua la canción de Ricky Martin: 'Si tú quieres nos bañamos, si tú quieres nos soplamos ...'",
+                    "options": ["Pa' bailar en el tejado", "Pa' secarnos lo mojao", "Pa' volar como un halcón", "Pa' soñar con el mar azul"]
+                },
+                {
+                    "id": 22,
+                    "question": "Continua la canción de Pablo Alborán: 'En Saturno viven los hijos ...'",
+                    "options": ["que abandonaste", "que deseamos", "que nunca tuvimos", "esperándonos"]
+                },
+                {
+                    "id": 23,
+                    "question": "¿En qué famosa revista fue portada Jesús Vázquez?",
+                    "options": ["Men's Health", "Man Healthy", "Good Boy", "Adult Swim"]
+                },
+                {
+                    "id": 24,
+                    "question": "¿Cómo se llama el programa de televisión estadounidense de Ellen DeGeneres?",
+                    "options": ["The Elly Show", "The Ellen Magazine", "The Elly Magazine", "The Ellen Show"]
+                },
+                {
+                    "id": 25,
+                    "question": "¿Cómo se llamaba el personaje de Eduardo Casanova en Aída?",
+                    "options": ["Chema", "Fidel Martínez", "Jonathan", "Toni"]
+                },
+                {
+                    "id": 26,
+                    "question": "¿En qué programa de crónica social de Antena 3 fue presentador Jaime Cantizano?",
+                    "options": ["Donde estás corazón", "Donde esta mi amor", "Encuentra corazón", "Eres mi corazón"]
+                },
+                {
+                    "id": 27,
+                    "question": "Continua la canción de María del Monte: 'Andalucía es mi tierra yo ...'",
+                    "options": ["soy del norte", "soy del este", "soy del sur", "soy del oeste"]
+                },
+                {
+                    "id": 28,
+                    "question": "¿De qué famosa serie deriva 'Xena: la princesa guerrera'?",
+                    "options": ["Embrujadas", "Hércules", "El príncipe de Bel-Air", "One Piece"]
+                },
+                {
+                    "id": 29,
+                    "question": "¿Cuál es una película de Pedro Almodóvar?",
+                    "options": ["A todo tren", "Mi gran noche", "Muertos de risa", "Mujeres al borde de un ataque de nervios"]
+                },
+                {
+                    "id": 30,
+                    "question": "¿De qué país es originalmente el periodista, presentador de televisión, guionista y escritor Boris Izaguirre?",
+                    "options": ["Venezuela", "Colombia", "Chile", "Perú"]
+                },
+
+            ],
+            resolves: [2, 0, 1, 3, 2, 0, 3, 1, 2, 1, 0, 3, 0, 2, 1, 3, 1, 0, 2, 3, 1, 2, 0, 3, 1, 0, 2, 1, 3, 0],
+            surprises: ["VssAH-JRrBQ", "aUY3UjNTLs8", "0uy4jeN2Qas", "MsrFEwuDKwU", "EW4qzAOdIlw", "0jNg2lG2dQg", "zXKHGaRxQaE", "Tkdid_ZzHe8", "uO4SpuFvAvs", "usrSy2spEW4", "9-hXhniscj4", "uVjRe8QXFHY", "Zgxxx_yDveg", "9qNLisOCWLc", "ShkAMt0Ye2o", "GRbY5qAio0Y", "xErS7G3-tCQ", "FstWK65RJcI", "IwH9YvhPN7c", "Sg_8nJ-ahfs", "iOe6dI2JhgU", "yBAx5nBdJqU", "j12QXhEzHis", "IbSHXcxWVcE", "bkvVvdDZ2c8", "95SJ0ZguP_4", "vCsRTDRctFE", "6OX2bvHcnGQ", "-Vl9nv_KBmE", "xNLsc70RHts"],
+        }
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>

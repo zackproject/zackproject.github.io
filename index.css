@@ -23,6 +23,10 @@ header:nth-child(1) {
   text-decoration: underline;
 }
 
+#the-game{
+  display: none;
+}
+
 .card {
   position: relative;
   display: flex;
