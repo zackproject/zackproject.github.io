@@ -61,7 +61,7 @@ body {
   border-radius: 50%;
   bottom: 10px;
   right: 10px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.696);
   text-decoration: none;
   color: white;
   transition: right 1s;

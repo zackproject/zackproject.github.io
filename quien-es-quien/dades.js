@@ -1,5 +1,7 @@
+// const urlparent = "https://mxndickgpuawvydrrqpe.supabase.co/storage/v1/object/public/images";
+
 const urlparent =
-  "https://mxndickgpuawvydrrqpe.supabase.co/storage/v1/object/public/images";
+  "https://raw.githubusercontent.com/zackproject/static-images/master";
 let quienEsQuien = [
   {
     title: "Shingeki no Kyojin",
