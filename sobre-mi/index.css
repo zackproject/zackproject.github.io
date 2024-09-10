@@ -7,6 +7,17 @@ body {
   margin: 0;
   padding: 0px;
 }
+aside {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 15px;
+}
+
 p {
   text-wrap: wrap;
 }
@@ -19,13 +30,6 @@ p > a {
   align-items: center;
 }
 
-.links {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
 .btn-social-network {
   background-color: #1f2937;
   border: 1px solid #4b5462;
@@ -35,6 +39,7 @@ p > a {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   padding: 5px;
   border-radius: 20px;
   color: white;
@@ -50,14 +55,14 @@ p > a {
   max-width: 900px;
   margin: auto;
   padding-bottom: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .skills {
   flex-wrap: wrap;
+  padding: 50px 0px 50px 0px;
 
-  padding: 70px 0px 70px 0px;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -65,11 +70,6 @@ p > a {
 .skills > img {
   height: 40px;
   width: 40px;
-}
-
-.links img,
-.profile-pic {
-  margin-right: 10px;
 }
 
 .profile-pic {
@@ -92,10 +92,16 @@ p > a {
   justify-content: space-between;
 }
 
+h1{
+  padding-bottom: 30px;
+}
 h1,
 h2,
 h3 {
+  display: flex;
+  align-items: center;
   color: white;
+  gap: 10px;
 }
 h3 {
   margin: 0px 0px 10px 0px;
@@ -167,9 +173,41 @@ h3 {
   }
 }
 
-@media (max-width: 768px) {
+.ranking-list {
+  list-style: none;
+  border-left: 1px solid white;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ranking-list li {
+  position: relative;
+}
+
+.year {
+  position: absolute;
+  top: 0px;
+  left: -90px;
+}
+
+@media (max-width: 1200px) {
   .presentation,
   .project {
     flex-direction: column;
+  }
+
+  aside {
+    position: relative;
+  }
+  .skills {
+    padding: 70px 0px 70px 0px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .text-icon-link {
+    display: none;
   }
 }
