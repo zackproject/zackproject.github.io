@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre mi zksama_</title>
+    <title>Sobre mi - Porfolio Personal</title>
     <meta
       name="description"
       content="Desarrolador web y movil, hago aplicaciones web inclusivas y accesibles para todos. Trabajo bien en equipos diversos y valoro la retroalimentación para mejorar. Quiero seguir creciendo en informática y enfrentar proyectos tecnológicos desafiantes. "
@@ -14,10 +14,16 @@
     <link rel="stylesheet" href="../footer/index.css" />
   </head>
   <body>
+    <header>
+      <nav>
+        <a href="#inicio">Sobre mi</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#formacion">Formación</a>
+      </nav>
+    </header>
     <main class="container">
-      <h1 style="font-size: 2rem; margin-bottom: 0px">
-        ¡Hey 👋! Soy Kevin Sama 👨🏻‍💻
-      </h1>
+      <h1 id="inicio">¡Hey 👋! Soy Kevin Sama 👨🏻‍💻</h1>
       <div class="presentation">
         <img
           class="profile-pic"
@@ -26,11 +32,13 @@
           src="https://avatars.githubusercontent.com/u/44408822?v=4"
           alt="profile picture"
         />
-        <p style="max-width: 700px; font-size: 1.25rem">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa quas,
-          mollitia nostrum animi fugiat maxime reiciendis in id temporibus
-          impedit nesciunt illum beatae unde vel tempore cupiditate inventore
-          natus voluptatem!
+        <p class="info-profile">
+          <strong>Desarrollador web</strong> y otros proyectos informáticos.
+          Actualmente, me dedico a crear aplicaciones web inclusivas y
+          accesibles para todos los usuarios. Sé trabajar en equipos diversos y
+          creo que la retroalimentación es esencial para mejorar. Mi objetivo es
+          seguir evolucionando como profesional de la informática y contribuir a
+          proyectos tecnológicos desafiantes.
         </p>
       </div>
 
@@ -166,21 +174,18 @@
         />
       </div>
 
-      <h2>
+      <h2 id="proyectos">
         <img
           height="50"
           width="50"
           src="https://img.icons8.com/?size=50&id=114117&format=png&color=FFFFFF"
-          alt="Logo Codigo"
+          alt="Logo Código"
         />
         Proyectos
       </h2>
       <div class="projects">
         <article class="project">
-          <img
-            src="https://github.com/zackproject/zackproject/assets/44408822/785b9937-b762-4835-a7f2-1a1e8d2a8cff"
-            alt="Minigames"
-          />
+          <img src="./images/minigames.webp" alt="Minigames" />
           <div class="aside-project">
             <h3>Minijuegos en javascript vanilla</h3>
             <div class="project-icons">
@@ -250,14 +255,13 @@
         </article>
 
         <article class="project">
-          <img
-            src="https://github.com/user-attachments/assets/04274d4a-be1c-4ead-9d3c-2666259a19db"
-            alt="Anime Birthday APP"
-          />
+          <img src="./images/animebirthday.webp" alt="Anime Birthday APP" />
           <div class="aside-project">
             <h3>Anime Birthday App</h3>
             <div class="project-icons">
               <img
+                height="375"
+                width="250"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg"
                 alt="androidstudio logo"
                 title="Android Studio"
@@ -273,7 +277,7 @@
               La herramienta permite buscar por nombre del anime, nombre del
               personaje o desde la fecha específica. Además, puedes añadir
               personajes a tus favoritos y guardarlos en tu calendario para no
-              olvidarlo.
+              olvidarlos.
             </p>
             <div class="btn-project">
               <a
@@ -295,10 +299,7 @@
         </article>
 
         <article class="project">
-          <img
-            src="https://github.com/user-attachments/assets/8a0dedfb-e773-4c6c-8bc7-efae0b6e81bc"
-            alt="La Velada IV"
-          />
+          <img src="./images/velada.webp" alt="La Velada IV" />
           <div class="aside-project">
             <h3>La Velada IV</h3>
             <div class="project-icons">
@@ -320,9 +321,9 @@
             </div>
             <p>
               La Velada IV es una competición de boxeo que enfrenta a streamers,
-              creadores de contenido y otras celebridades sobre un ring de Ibai
-              Llanos. La web es de código abierto y creada por
-              <a href="https://github.com/midudev">Midudev</a>
+              creadores de contenido y otras celebridades en un ring. La web es
+              de código abierto y creada por
+              <a href="https://github.com/midudev">Midudev</a>.
             </p>
             <div class="btn-project">
               <a
@@ -621,39 +622,14 @@
               </a>
 
               <a href="." class="btn-social-network" title="Ir a la Twitter">
-                <span>En desarollo</span>
+                <span>En desarrollo</span>
               </a>
             </div>
           </div>
         </article>
       </div>
-      <h2>
-        <img
-          height="25"
-          width="25"
-          src="https://img.icons8.com/?size=25&id=ca5kj1gM9a7s&format=png&color=FFFFFF"
-          alt="Logo Codigo"
-        />
-        Formación
-      </h2>
-      <article>
-        <ol class="ranking-list">
-          <li>
-            <span class="year">2022</span>Grado Superior DAW - Institut Jaume
-            Balmes
-          </li>
-          <li>
-            <span class="year">2018</span>Grado Superior DAM - Institut Poblenou
-          </li>
-          <li><span class="year">2016</span>Grado Medio SMX - FP Llefià</li>
-          <li>
-            <span class="year">2015</span>Level Intermediate B2 - Escola Ser &
-            Estar
-          </li>
-        </ol>
-      </article>
 
-      <h2>
+      <h2 id="experiencia">
         <img
           height="25"
           width="25"
@@ -665,23 +641,101 @@
       <article>
         <ol class="ranking-list">
           <li>
-            <span class="year">2024</span> Pràctiques en IRIS Technology
-            Solutions - FullStack
+            <span class="year">2024</span>
+            <span class="dot" aria-hidden="true">•</span>
+            <h3>IRIS Technology Solutions</h3>
+            <p>
+              Durante el periodo que he estado colaborando en Iris Technology
+              Solutions, he estado realizando tareas como programador fullstack.
+              En proyectos de investigación y desarrollo del programa Horizon de
+              la Comunidad Europea, en áreas de industria, economía circular y
+              sostenibilidad ambiental.
+            </p>
           </li>
           <li>
-            <span class="year">2022</span> Pràctiques en Telanto - Frontend
+            <span class="year">2022</span>
+            <span class="dot" aria-hidden="true">•</span>
+            <h3>TELANTO - Global Academic Business Network</h3>
+            <p>
+              Durante mi tiempo en Telanto, he realizado tareas de desarrollo
+              frontend, colaborando en la plataforma digital que facilita y
+              promueve la cooperación entre universidades e industrias.
+            </p>
           </li>
           <li>
-            <span class="year">2018</span> Operari Base FCC (actualmente de
-            noche)
+            <span class="year">2018</span>
+            <span class="dot" aria-hidden="true">•</span>
+            <h3>Operari Base FCC</h3>
+            <p>
+              Actualmente estoy trabajando de noche en Fomento realizando tareas
+              de operario base y otras tareas logísticas de oficina.
+            </p>
           </li>
           <li>
-            <span class="year">2016</span> Pràctiques en FoxLive - Botiga
-            informàtica
+            <span class="year">2016</span>
+            <span class="dot" aria-hidden="true">•</span>
+            <h3>FoxLive - Servicio Técnico</h3>
+            <p>
+              Durante mi tiempo en Foxlive, he llevado a cabo diversas tareas de
+              reparación de portátiles y ordenadores de sobremesa, abarcando
+              tanto aspectos de hardware como de software. Entre las tareas
+              realizadas se incluyen el reemplazo de pantallas y la reparación
+              de sistemas operativos.
+            </p>
           </li>
         </ol>
       </article>
 
+      <h2 id="formacion">
+        <img
+          height="25"
+          width="25"
+          src="https://img.icons8.com/?size=25&id=ca5kj1gM9a7s&format=png&color=FFFFFF"
+          alt="Logo Codigo"
+        />
+        Formación
+      </h2>
+      <article>
+        <ol class="ranking-list">
+          <li>
+            <span class="year">2022</span>
+            <span class="dot" aria-hidden="true">•</span>
+            <h3>Grado Superior DAW</h3>
+            <p>
+              Dos años de formación de Desarrollador de Aplicaciones Web en el
+              Institut Jaume Balmes de Barcelona.
+            </p>
+          </li>
+          <li>
+            <span class="year">2018</span>
+            <span class="dot" aria-hidden="true">•</span>
+            <h3>Grado Superior DAM</h3>
+            <p>
+              Dos años de formación de Desarrollador de Aplicaciones
+              Multiplataforma en el Institut Poblenou de Barcelona.
+            </p>
+          </li>
+          <li>
+            <span class="year">2016</span>
+            <span class="dot" aria-hidden="true">•</span>
+            <h3>Grado Medio SMX</h3>
+            <p>
+              Dos años de formación de Sistemas microinformáticos y redes en el
+              FP Llefia.
+            </p>
+          </li>
+          <li>
+            <span class="year">2015</span>
+            <span class="dot" aria-hidden="true">•</span>
+            <h3>Level Intermediate B2</h3>
+            <p>
+              Título de inglés del 'Level Intermediate B2' en la Escola Ser &
+              Estar
+            </p>
+          </li>
+        </ol>
+      </article>
+      <!--
       <h2>
         <img
           height="30"
@@ -691,15 +745,7 @@
         />
         Sobre mi
       </h2>
-      <p style="max-width: 700px; font-size: 1.25rem">
-        <strong>Desarrollo web</strong> y otros proyectos informáticos.
-        Actualmente, me dedico a crear aplicaciones web inclusivas y accesibles
-        para todos los usuarios. Sé trabajar en equipos diversos y creo que la
-        retroalimentación es esencial para mejorar. Mi objetivo es seguir
-        evolucionando como profesional de la informática y contribuir a
-        proyectos tecnológicos desafiantes.
-      </p>
-    </main>
+    --></main>
     <footer id="footer-main">
       <a href="/"> Inicio</a> · <span id="dateYear">2022</span> ·
       zackprojectapp@gmail.com
