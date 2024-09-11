@@ -257,8 +257,19 @@ h3 {
   }
 }
 
-@media (max-width: 1400px) {
-  .text-icon-link {
-    display: none;
+@media (max-width: 760px) {
+  .btn-project {
+    flex-direction: column;
+  }
+
+  .project > img {
+    width: 100%;
+  }
+  .project {
+    gap: 5px;
+  }
+
+  article {
+    margin-bottom: 50px;
   }
 }
