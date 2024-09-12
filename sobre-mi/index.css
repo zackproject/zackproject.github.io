@@ -94,7 +94,7 @@ p > a {
   max-width: 900px;
   margin: auto;
   padding-top: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 100px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -241,6 +241,70 @@ h3 {
   top: -12px;
   left: -46px;
   font-size: 2rem;
+}
+
+.skills > img {
+}
+
+@keyframes disapear {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  20% {
+    opacity: 0.8;
+    scale: 0.8;
+  }
+
+  50% {
+    opacity: 0.6;
+    scale: 0.8;
+  }
+  80% {
+    opacity: 0.6;
+    scale: 0.8;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+/**/
+.projects > article, #btn-hide-project {
+  animation: translateXLeft linear;
+  animation-timeline: view();
+  animation-range-start: cover;
+  animation-range-end: 200px;
+}
+
+
+
+.ranking-list > li {
+  animation: translateXRight linear;
+  animation-timeline: view();
+  animation-range-start: cover;
+  animation-range-end: 200px;
+}
+@keyframes translateXLeft {
+  from {
+    scale: 0.9;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes translateXRight {
+  from {
+    transform: translateX(190px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 1200px) {

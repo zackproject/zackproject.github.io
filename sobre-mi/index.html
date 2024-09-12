@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="../footer/index.css" />
   </head>
-  <body>
+  <body onload="loadPage()">
     <header>
       <nav>
         <a href="#inicio">Sobre mi</a>
@@ -771,7 +771,52 @@
         />
         Sobre mi
       </h2>
-    --></main>
+
+      <section>
+        <p style="text-align: center; color: yellow;">¡Has encontrado un Easter Egg musical!</p>
+        <button onclick="easterEgg()">TOCA ESTO</button>
+
+        <div class="tetris piece1"></div>
+        <div class="tetris piece2"></div>
+        <div class="tetris piece3"></div>
+        <div class="tetris piece4"></div>
+        <div class="tetris piece5"></div>
+
+        <style>
+          .tetris {
+            border: 1px solid red;
+            background-image: url("./images/tetris.png"); /* Ruta del spritesheet */
+          }
+          .piece1 {
+            width: 95px; /* Ancho de cada imagen individual */
+            height: 24px; /* Alto de cada imagen individual */
+            background-position: 0px -24px; /* Mueve la imagen de fondo hacia la izquierda */
+          }
+
+          .piece2 {
+            width: 72px; /* Ancho de cada imagen individual */
+            height: 48px; /* Alto de cada imagen individual */
+            background-position: -120px 0px; /* Mueve la imagen de fondo hacia la izquierda */
+          }
+          .piece3 {
+            width: 72px; /* Ancho de cada imagen individual */
+            height: 48px; /* Alto de cada imagen individual */
+            background-position: -216px 0px; /* Mueve la imagen de fondo hacia la izquierda */
+          }
+          .piece4 {
+            width: 72px; /* Ancho de cada imagen individual */
+            height: 48px; /* Alto de cada imagen individual */
+            background-position: -48px -72px; /* Mueve la imagen de fondo hacia la izquierda */
+          }
+          .piece5 {
+            width: 72px; /* Ancho de cada imagen individual */
+            height: 48px; /* Alto de cada imagen individual */
+            background-position: -144px -72px; /* Mueve la imagen de fondo hacia la izquierda */
+          }
+        </style>
+      </section>
+          -->
+    </main>
     <footer id="footer-main">
       <a href="/"> Inicio</a> · <span id="dateYear">2022</span> ·
       zackprojectapp@gmail.com
