@@ -38,6 +38,7 @@ nav {
 }
 aside {
   position: fixed;
+  z-index: 1;
   top: 10px;
   left: 10px;
   height: 100%;
