@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memoriza - Recuerda la secuencia</title>
+    <meta
+      name="description"
+      content="Recuerda la secuencia de imagenes y sonidos. ¿Hasta cual podrás llegar?"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" href="../icopz.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <h1>Memoriza</h1>
+    <button onclick="playSequence()">Siguiente secuencia</button>
+    <h2>Juego</h2>
+    <button class="btn-game" id="btn-1">Rojo</button>
+    <button class="btn-game" id="btn-2">Verde</button>
+    <button class="btn-game" id="btn-3">Amarillo</button>
+    <button class="btn-game" id="btn-4">Azul</button>
+  </body>
+  <style>
+    #btn-1 {
+      background-color: red;
+    }
+
+    #btn-2 {
+      background-color: green;
+    }
+    #btn-3 {
+      background-color: yellow;
+    }
+    #btn-4 {
+      background-color: blue;
+    }
+
+    .btn-game {
+      padding: 10px;
+      transition: all 1s;
+    }
+  </style>
+  <script>
+    const speed = 3000;
+    const btnList = document.getElementsByClassName("btn-game");
+    let responseList = [0, 1, 2, 3, 0, 2, 1, 2, 3];
+
+    // add funcions to button
+    for (let i = 0; i < btnList.length; i++) {
+      btnList[i].addEventListener("click", () => {
+        // send 0,1,2,3 in sendBtn
+        sendBtn(i);
+      });
+    }
+
+    function playSequence() {
+      useButtons(true);
+      for (let i = 0; i < responseList.length; i++) {
+        setTimeout(() => {
+          visualEffect(responseList[i]);
+          console.log(responseList[i]);
+        }, i * speed);
+      }
+      setTimeout(() => {
+        useButtons(false);
+      }, responseList.length * speed);
+    }
+
+    let cont = 0;
+
+    function useButtons(isEnabled) {
+      for (let i = 0; i < btnList.length; i++) {
+        btnList[i].disabled = isEnabled;
+      }
+    }
+
+    function sendBtn(value) {
+      document.getElementById;
+      if (value == responseList[cont]) {
+        console.log("Correct", value);
+      } else {
+        console.log("Wrong", value);
+      }
+      cont++;
+    }
+
+    function visualEffect(value) {
+      btnList[value].style.filter = "brightness(0)";
+      setTimeout(() => {
+        btnList[value].style.filter = "brightness(1)";
+      }, 1000);
+    }
+  </script>
+</html>
