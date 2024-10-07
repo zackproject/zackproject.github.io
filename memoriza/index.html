@@ -13,38 +13,101 @@
   </head>
   <body>
     <h1>Memoriza</h1>
-    <button onclick="playSequence()">Siguiente secuencia</button>
+    <p id="infoText"></p>
     <h2>Juego</h2>
-    <button class="btn-game" id="btn-1">Rojo</button>
-    <button class="btn-game" id="btn-2">Verde</button>
-    <button class="btn-game" id="btn-3">Amarillo</button>
-    <button class="btn-game" id="btn-4">Azul</button>
+    <div class="simon">
+      <button onclick="playSequence()" id="infoBtn">EMPEZAR</button>
+      <button class="btn-game" id="btn-1" disabled>1</button>
+      <button class="btn-game" id="btn-2" disabled>2</button>
+      <button class="btn-game" id="btn-3" disabled>3</button>
+      <button class="btn-game" id="btn-4" disabled>4</button>
+    </div>
   </body>
   <style>
+    body {
+      background-color: #002618;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000' fill-opacity='.1' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
+    }
+    #infoText {
+      color: white;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .simon {
+      position: relative;
+      display: grid;
+      height: 400px;
+      width: 400px;
+      gap: 20px;
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto;
+      background-color: black;
+      padding: 30px;
+      border-radius: 50%;
+    }
+    .btn-game {
+      color: white;
+      font-size: 40px;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      transition: all 1s;
+      border: 1px solid black;
+      -webkit-box-shadow: inset 0px 0px 10px 8px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: inset 0px 0px 10px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0px 0px 10px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /*.btn-game:hover {
+      cursor: pointer;
+      filter: brightness(1.5);
+      transform: scale(1.1);
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }*/
     #btn-1 {
-      background-color: red;
+      background-color: rgb(183, 0, 0);
+      border-radius: 400px 50px 50px 50px;
     }
 
     #btn-2 {
-      background-color: green;
+      background-color: rgb(0, 183, 0);
+      border-radius: 50px 400px 50px 50px;
     }
     #btn-3 {
-      background-color: yellow;
+      background-color: rgb(183, 183, 0);
+      border-radius: 50px 50px 50px 400px;
     }
     #btn-4 {
-      background-color: blue;
+      background-color: rgb(37, 37, 184);
+      border-radius: 50px 50px 400px;
     }
-
-    .btn-game {
-      padding: 10px;
-      transition: all 1s;
+    #infoBtn {
+      z-index: 1;
+      cursor: pointer;
+      background-color: rgb(84, 84, 84);
+      color: white;
+      position: absolute;
+      font-size: 20px;
+      border: 10px solid black;
+      height: 130px;
+      width: 130px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      border-radius: 50%;
+      transition: background-color 0.5s;
     }
   </style>
   <script>
     const speed = 3000;
+    const btn = document.getElementById("infoBtn");
     const btnList = document.getElementsByClassName("btn-game");
-    let responseList = [0, 1, 2, 3, 0, 2, 1, 2, 3];
-
+    let cont = 0;
+    let responseList = [];
+    btn.innerText = "INICIAR";
     // add funcions to button
     for (let i = 0; i < btnList.length; i++) {
       btnList[i].addEventListener("click", () => {
@@ -54,7 +117,12 @@
     }
 
     function playSequence() {
+      responseList.push(randInt(0, 3));
+      btn.innerText = "ATENTO";
+      btn.style.backgroundColor = "rgb(29, 29, 29)";
+      btn.disabled = true;
       useButtons(true);
+      cont = 0;
       for (let i = 0; i < responseList.length; i++) {
         setTimeout(() => {
           visualEffect(responseList[i]);
@@ -63,10 +131,9 @@
       }
       setTimeout(() => {
         useButtons(false);
+        btn.innerText = "TU TURNO";
       }, responseList.length * speed);
     }
-
-    let cont = 0;
 
     function useButtons(isEnabled) {
       for (let i = 0; i < btnList.length; i++) {
@@ -75,20 +142,43 @@
     }
 
     function sendBtn(value) {
-      document.getElementById;
       if (value == responseList[cont]) {
         console.log("Correct", value);
       } else {
-        console.log("Wrong", value);
+        btn.innerText = "OTRA VEZ";
+        btn.disabled = true;
       }
       cont++;
+      if (cont === responseList.length) {
+        console.log("Next Sequence");
+        btn.innerText = "SEGUIR";
+        btn.style.backgroundColor = "rgb(84, 84, 84)";
+        btn.disabled = false;
+      }
+      console.log(value + " / " + responseList.length);
     }
 
     function visualEffect(value) {
-      btnList[value].style.filter = "brightness(0)";
+      applyCssEffect(btnList[value]);
       setTimeout(() => {
-        btnList[value].style.filter = "brightness(1)";
+        clearCssEffect(btnList[value]);
       }, 1000);
+    }
+
+    function applyCssEffect(mDoc) {
+      mDoc.style.filter = "brightness(1.5)";
+      mDoc.style.transform = "scale(1.1)";
+      mDoc.style.boxShadow = "none";
+    }
+
+    function clearCssEffect(mDoc) {
+      mDoc.style.filter = "";
+      mDoc.style.transform = "";
+      mDoc.style.boxShadow = "";
+    }
+
+    function randInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
     }
   </script>
 </html>
