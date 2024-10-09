@@ -1,5 +1,6 @@
 html,
 body {
+  font-family: Arial, Helvetica, sans-serif;
   height: 100%;
   margin: 0;
   background-color: #002618;
@@ -23,7 +24,7 @@ body {
   flex: 1 1 auto;
 }
 
-header {
+#header-memorize {
   position: relative;
   color: white;
   background-color: black;
@@ -44,14 +45,14 @@ header > a {
   text-align: center;
 }
 
-main {
+#main-container {
   display: grid;
   place-items: center;
   width: 100%;
   position: relative;
 }
 
-#settings {
+#settings-btn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -61,14 +62,65 @@ main {
   background-color: lightgray;
 }
 
-#settings:hover {
+#settings-btn:hover {
   background-color: white;
   transform: rotate(30deg);
   cursor: pointer;
 }
 
 #modal-simon {
-  background-color: white;
+  border-radius: 10px;
+  header {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+    color: darkgreen;
+    font-size: 22px;
+    border-radius: 2px;
+    border-bottom: 2px solid gray;
+  }
+  main {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align: left;
+    gap: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    input,
+    select {
+      cursor: pointer;
+    }
+
+    select {
+      padding: 5px;
+    }
+   
+  }
+  footer {
+    border-radius: 2px;
+    border-top: 2px solid gray;
+    padding: 10px;
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      background-color: darkgreen;
+      color: white;
+      padding: 5px;
+      font-size: 18px;
+      transition: background-color 0.5s;
+      &&:hover {
+        background-color: #191d1f;
+        cursor: pointer;
+      }
+    }
+    p{
+      padding: 0px;
+      margin-top: 0px;
+    }
+  }
 }
 
 #modal-simon::backdrop {
