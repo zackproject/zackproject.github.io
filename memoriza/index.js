@@ -1,5 +1,6 @@
 class Memorize {
   constructor(speed) {
+    this.isPlaying = false;
     this.sequenceList = [];
     this.cont = 0;
     // miliseconds
@@ -57,13 +58,22 @@ class Memorize {
 const circleBtn = document.getElementById("infoBtn");
 const btnList = document.getElementsByClassName("btn-game");
 
+const localMusic = [
+  "https://www.zksama.com/piano/notes/40.mp3",
+  "https://www.zksama.com/piano/notes/44.mp3",
+  "https://www.zksama.com/piano/notes/47.mp3",
+  "https://www.zksama.com/piano/notes/51.mp3",
+  "https://www.zksama.com/piano/notes/28.mp3",
+];
+
 // 2000 Lento
 // 1500 normal
 // 1000 rapido
 // 500 super rapido
 // 200 hiperrapido
 
-let player = new Memorize(1500);
+let player = new Memorize(500);
+
 function getFourRandCharacters(serie) {
   if (serie + 1 > quienEsQuien.length) {
     serie = quienEsQuien.length - 1;
@@ -90,6 +100,7 @@ function loadAssets() {
       sendBtn(i);
     });
   }
+  preloadAudio();
 }
 
 function playSequence() {
@@ -97,6 +108,7 @@ function playSequence() {
   player.addSequence();
   circleBtn.style.setProperty("--percentage", 0);
   circleBtn.innerText = "ATENTO";
+  circleBtn.focus();
   circleBtn.disabled = true;
   useButtons(true);
   player.resetCont();
@@ -111,6 +123,7 @@ function playSequence() {
   setTimeout(() => {
     useButtons(false);
     circleBtn.innerText = "TU TURNO";
+    circleBtn.focus();
   }, player.getLastDelay());
 }
 
@@ -123,10 +136,12 @@ function useButtons(isEnabled) {
 function sendBtn(mValue) {
   if (player.isCorrectSequence(mValue)) {
     circleBtn.style.setProperty("--percentage", player.getPercent());
+    playAudio(mValue);
   } else {
     circleBtn.innerText = "OTRA VEZ";
     circleBtn.disabled = false;
     player.resetGame();
+    playAudio(3); // fail
   }
   player.addCont();
   if (player.isLastSequence()) {
@@ -138,9 +153,15 @@ function sendBtn(mValue) {
 
 function visualEffect(mValue) {
   applyCssEffect(btnList[mValue]);
+  playAudio(mValue);
   setTimeout(() => {
     clearCssEffect(btnList[mValue]);
   }, player.getSpeed() / 2);
+}
+
+function playAudio(mValue) {
+  let audio = new Audio(localMusic[mValue]);
+  audio.play();
 }
 
 function applyCssEffect(mDoc) {
@@ -161,4 +182,13 @@ function randInt(min, max) {
 
 function changeSpeed(event) {
   player.setSpeed(parseInt(event.target.value));
+}
+
+//Preload audio https://stackoverflow.com/a/13116795
+function preloadAudio() {
+  for (var x = 0; x < localMusic.length; x++) {
+    let aud = new Audio(localMusic[x]);
+    //console.log("Cached", aud);
+    aud.preload = "auto";
+  }
 }
