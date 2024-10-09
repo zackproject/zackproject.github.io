@@ -1,15 +1,21 @@
 class Memorize {
   constructor(speed) {
-    this.isPlaying = false;
+    this.playing = false;
     this.sequenceList = [];
     this.cont = 0;
     // miliseconds
     this.speed = speed;
   }
 
+  isPlaying() {
+    return this.playing;
+  }
+
   addSequence() {
+    if (!this.playing) {
+      this.sequenceList.push(randInt(0, 3));
+    }
     // 4 buttons avaliables: [0, 1, 2, 3]
-    this.sequenceList.push(randInt(0, 3));
   }
   getSpeed() {
     return this.speed;
@@ -42,7 +48,9 @@ class Memorize {
   addCont() {
     this.cont++;
   }
-
+  setPlaying(val) {
+    this.playing = val;
+  }
   getPercent() {
     return ((this.cont + 1) * 100) / this.sequenceList.length;
   }
@@ -72,7 +80,7 @@ const localMusic = [
 // 500 super rapido
 // 200 hiperrapido
 
-let player = new Memorize(500);
+let player = new Memorize(1500);
 
 function getFourRandCharacters(serie) {
   if (serie + 1 > quienEsQuien.length) {
@@ -91,7 +99,6 @@ function fillButonImages(serie = 9) {
 }
 
 function loadAssets() {
-  console.log("Load Page");
   fillButonImages();
   // add funcions to button
   for (let i = 0; i < btnList.length; i++) {
@@ -104,50 +111,55 @@ function loadAssets() {
 }
 
 function playSequence() {
-  // inizialize new sequence
-  player.addSequence();
-  circleBtn.style.setProperty("--percentage", 0);
-  circleBtn.innerText = "ATENTO";
-  circleBtn.focus();
-  circleBtn.disabled = true;
-  useButtons(true);
-  player.resetCont();
-  let mSequenceList = player.getSequenceList();
-  // play sequence
-  for (let i = 0; i < mSequenceList.length; i++) {
-    setTimeout(() => {
-      visualEffect(mSequenceList[i]);
-    }, player.getDelay(i));
-  }
-  // after sequence, guess order
-  setTimeout(() => {
-    useButtons(false);
-    circleBtn.innerText = "TU TURNO";
+  if (!player.isPlaying()) {
+    // inizialize new sequence
+    player.addSequence();
+    circleBtn.style.setProperty("--percentage", 0);
+    circleBtn.innerText = "ATENTO";
     circleBtn.focus();
-  }, player.getLastDelay());
-}
-
-function useButtons(isEnabled) {
-  for (let i = 0; i < btnList.length; i++) {
-    btnList[i].disabled = isEnabled;
+    circleBtn.disabled = true;
+    player.resetCont();
+    let mSequenceList = player.getSequenceList();
+    // play sequence
+    for (let i = 0; i < mSequenceList.length; i++) {
+      setTimeout(() => {
+        visualEffect(mSequenceList[i]);
+      }, player.getDelay(i));
+    }
+    // after sequence, guess order
+    setTimeout(() => {
+      circleBtn.innerText = "TU TURNO";
+      circleBtn.title = "Resuelto al 0%";
+      circleBtn.focus();
+      player.setPlaying(true);
+      circleBtn.disabled = false;
+    }, player.getLastDelay());
   }
 }
 
 function sendBtn(mValue) {
-  if (player.isCorrectSequence(mValue)) {
-    circleBtn.style.setProperty("--percentage", player.getPercent());
+  if (!player.isPlaying()) {
     playAudio(mValue);
-  } else {
-    circleBtn.innerText = "OTRA VEZ";
-    circleBtn.disabled = false;
-    player.resetGame();
-    playAudio(3); // fail
+    return;
   }
-  player.addCont();
-  if (player.isLastSequence()) {
-    circleBtn.innerText = "SEGUIR";
-    circleBtn.style.backgroundColor = "rgb(84, 84, 84)";
-    circleBtn.disabled = false;
+
+  if (player.isPlaying()) {
+    if (player.isCorrectSequence(mValue)) {
+      circleBtn.style.setProperty("--percentage", player.getPercent());
+      circleBtn.title = " Resuelto al " + player.getPercent() + "%";
+      playAudio(mValue);
+    } else {
+      circleBtn.innerText = "OTRA VEZ";
+      player.setPlaying(false);
+      player.resetGame();
+      playAudio(3); // fail
+    }
+    player.addCont();
+    if (player.isLastSequence()) {
+      circleBtn.innerText = "SEGUIR";
+      circleBtn.style.backgroundColor = "rgb(84, 84, 84)";
+      player.setPlaying(false);
+    }
   }
 }
 
@@ -188,7 +200,13 @@ function changeSpeed(event) {
 function preloadAudio() {
   for (var x = 0; x < localMusic.length; x++) {
     let aud = new Audio(localMusic[x]);
-    //console.log("Cached", aud);
     aud.preload = "auto";
   }
+}
+
+function showModal() {
+  document.getElementById("modal-simon").showModal();
+}
+function closeModal() {
+  document.getElementById("modal-simon").close();
 }
