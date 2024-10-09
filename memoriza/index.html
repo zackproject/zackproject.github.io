@@ -11,20 +11,35 @@
     <meta name="robots" content="index, follow" />
     <link rel="shortcut icon" href="../icopz.ico" type="image/x-icon" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="../footer/index.css" />
   </head>
   <body onload="loadAssets()">
-    <h1>Memoriza</h1>
     <p id="infoText"></p>
-    <h2>Juego</h2>
-    <div class="simon">
-      <button onclick="playSequence()" id="infoBtn">EMPEZAR</button>
-      <button class="btn-game" id="btn-1" disabled>1</button>
-      <button class="btn-game" id="btn-2" disabled>2</button>
-      <button class="btn-game" id="btn-3" disabled>3</button>
-      <button class="btn-game" id="btn-4" disabled>4</button>
-    </div>
+    <header><h1>Memoriza</h1></header>
+    <main>
+      <label for="speed-selected"></label>
+      <select
+        name="speed-selected"
+        id="speed-selected"
+        onchange="changeSpeed(event)"
+      >
+        <option value="2000">Lento</option>
+        <option value="1500" selected>Normal</option>
+        <option value="1000">Rapido</option>
+        <option value="500">Superrapido</option>
+        <option value="200">hiperrapido</option>
+      </select>
+      <div class="simon">
+        <button onclick="playSequence()" id="infoBtn">INICIAR</button>
+        <button class="btn-game" id="btn-1" disabled>1</button>
+        <button class="btn-game" id="btn-2" disabled>2</button>
+        <button class="btn-game" id="btn-3" disabled>3</button>
+        <button class="btn-game" id="btn-4" disabled>4</button>
+      </div>
+    </main>
   </body>
-  <style></style>
+  <footer id="footer-main">info@zksama.com</footer>
   <script src="../quien-es-quien/dades.js"></script>
   <script src="index.js"></script>
+  <script src="../footer/index.js"></script>
 </html>
