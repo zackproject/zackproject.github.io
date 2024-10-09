@@ -64,15 +64,29 @@ const btnList = document.getElementsByClassName("btn-game");
 // 200 hiperrapido
 
 let player = new Memorize(1500);
+function getFourRandCharacters(serie) {
+  if (serie + 1 > quienEsQuien.length) {
+    serie = quienEsQuien.length - 1;
+    console.info("Oversized query, setting max default");
+  }
+  let listChar = quienEsQuien[serie].characters.sort(() => Math.random() - 0.5);
+  return listChar.slice(0, 4);
+}
 
-circleBtn.innerText = "INICIAR";
+function fillButonImages(serie = 9) {
+  const charactersList = getFourRandCharacters(serie);
+  charactersList.forEach((e, i) => {
+    btnList[i].style.backgroundImage = `url('${e.image}')`;
+  });
+}
 
 function loadAssets() {
   console.log("Load Page");
+  fillButonImages();
   // add funcions to button
   for (let i = 0; i < btnList.length; i++) {
     btnList[i].addEventListener("click", () => {
-      // send 0,1,2,3 in sendBtn
+      // send 0,1,2,3 in sendBtn total: 4
       sendBtn(i);
     });
   }
