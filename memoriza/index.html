@@ -37,8 +37,24 @@
           <option value="500">Superrápido</option>
           <option value="200">Ultarápido</option>
         </select>
+
+        <label for="blend-select">Blend-mode de los botones</label>
+        <select name="blend-select" id="blend-select" onchange="changeBlendButtons(event)">
+          <option value="multiply">Multiply</option>
+          <option value="color-burn">Color Burn</option>
+          <option value="darken">Darken</option>
+          <option value="hard-light">Hard Light</option>
+          <option value="lighten">Lighten</option>
+          <option value="luminosity">Luminosity</option>
+          <option value="normal">No color</option>
+        </select>
+
         <div>
-          <label for="useSound">Usar sonido</label>
+          <label for="colorpg-select">Color de la página</label>
+          <input type="color" id="colorpg-select" name="colorpg-select"  onchange="changeColorPage(event)"/>
+        </div>
+        <div>
+          <label for="useSound">Usar sonidos</label>
           <input
             id="useSound"
             type="checkbox"

@@ -1,14 +1,51 @@
 class Memorize {
-  constructor(speed) {
+  constructor(speed = 1500) {
     this.playing = false;
+    this.useButton = true;
     this.sequenceList = [];
     this.cont = 0;
     this.serie = 0;
     // miliseconds
     this.speed = speed;
     this.useMusic = true;
+    this.colorPage = "#002618";
+    this.blendColor = "multiply";
   }
 
+  setLoadGame(speed, useMusic, colorPage, blendColor, serie) {
+    this.playing = false;
+    this.useButton = true;
+    this.sequenceList = [];
+    this.cont = 0;
+    this.serie = serie;
+    // miliseconds
+    this.speed = speed;
+    this.useMusic = useMusic;
+    this.colorPage = colorPage;
+    this.blendColor = blendColor;
+  }
+
+  getColorPage() {
+    return this.colorPage;
+  }
+
+  setColorPage(value) {
+    this.colorPage = value;
+  }
+  getBlendColor() {
+    return this.blendColor;
+  }
+
+  setBlendColor(value) {
+    this.blendColor = value;
+  }
+
+  getUseButton() {
+    return this.useButton;
+  }
+  setUseButton(value) {
+    this.useButton = value;
+  }
   isPlaying() {
     return this.playing;
   }
@@ -65,7 +102,7 @@ class Memorize {
     this.playing = val;
   }
   getPercent() {
-    return ((this.cont + 1) * 100) / this.sequenceList.length;
+    return (((this.cont + 1) * 100) / this.sequenceList.length).toFixed(2);
   }
 
   isLastSequence() {
@@ -78,12 +115,13 @@ class Memorize {
 
 const circleBtn = document.getElementById("infoBtn");
 const btnList = document.getElementsByClassName("btn-game");
+const MEMORIZELOCAL = "memorize-game";
 
 const localMusic = [
-  "https://www.zksama.com/piano/notes/40.mp3",
-  "https://www.zksama.com/piano/notes/44.mp3",
-  "https://www.zksama.com/piano/notes/47.mp3",
-  "https://www.zksama.com/piano/notes/51.mp3",
+  "../piano/notes/40.mp3",
+  "../piano/notes/44.mp3",
+  "../piano/notes/47.mp3",
+  "../piano/notes/51.mp3",
 ];
 
 // 2000 Lento
@@ -110,8 +148,66 @@ function fillButonImages(serie = 0) {
   });
 }
 
+function changeBlendButtons(event) {
+  for (let i = 0; i < btnList.length; i++) {
+    btnList[i].style.backgroundBlendMode = event.target.value;
+  }
+  player.setBlendColor(event.target.value);
+  localStorage.setItem(MEMORIZELOCAL, JSON.stringify(player));
+}
+
+function changeColorPage(event) {
+  document.querySelector("body").style.backgroundColor = event.target.value;
+  player.setColorPage(event.target.value);
+  localStorage.setItem(MEMORIZELOCAL, JSON.stringify(player));
+}
+
+function changeSpeed(event) {
+  player.setSpeed(parseInt(event.target.value));
+  localStorage.setItem(MEMORIZELOCAL, JSON.stringify(player));
+}
+
+function changeMusic(event) {
+  console.log(event.target.checked);
+  player.setMusic(event.target.checked);
+  localStorage.setItem(MEMORIZELOCAL, JSON.stringify(player));
+}
+
+function changeSerie(event) {
+  fillButonImages(parseInt(event.target.value));
+  player.setSerie(parseInt(event.target.value));
+  localStorage.setItem(MEMORIZELOCAL, JSON.stringify(player));
+}
+
+function getLocalStorage() {
+  if (localStorage.getItem(MEMORIZELOCAL) != null) {
+    let loc = JSON.parse(localStorage.getItem(MEMORIZELOCAL));
+    player.setLoadGame(
+      loc.speed,
+      loc.useMusic,
+      loc.colorPage,
+      loc.blendColor,
+      loc.serie
+    );
+    for (let i = 0; i < btnList.length; i++) {
+      // blend-color
+      btnList[i].style.backgroundBlendMode = loc.blendColor;
+    }
+    // background-color
+    document.querySelector("body").style.backgroundColor = loc.colorPage;
+    document.getElementById("colorpg-select").value = loc.colorPage;
+    document.getElementById("useSound").checked = loc.useMusic;
+    document.getElementById("speed-selected").value = loc.speed;
+    document.getElementById("blend-select").value = loc.blendColor;
+    document.getElementById("serie-selected").value = loc.serie;
+    fillButonImages(loc.serie);
+  }
+}
+
 function loadAssets() {
   fillButonImages();
+
+  getLocalStorage();
   // add funcions to button
   for (let i = 0; i < btnList.length; i++) {
     btnList[i].addEventListener("click", () => {
@@ -130,33 +226,40 @@ function loadAssets() {
 function playSequence() {
   if (!player.isPlaying()) {
     // inizialize new sequence
-    player.addSequence();
-    circleBtn.style.setProperty("--percentage", 0);
-    circleBtn.innerText = "ATENTO";
-    circleBtn.disabled = true;
-    // circleBtn.focus();
-    player.resetCont();
-    let mSequenceList = player.getSequenceList();
-    // play sequence
-    for (let i = 0; i < mSequenceList.length; i++) {
+    // circleBtn.disabled = true;
+    if (player.getUseButton()) {
+      player.addSequence();
+      circleBtn.style.setProperty("--percentage", 0);
+      circleBtn.innerText = "ATENTO";
+      circleBtn.title = "Escucha la secuencia";
+      circleBtn.focus();
+      player.setUseButton(false);
+      player.resetCont();
+      let mSequenceList = player.getSequenceList();
+      // play sequence
+      for (let i = 0; i < mSequenceList.length; i++) {
+        setTimeout(() => {
+          visualEffect(mSequenceList[i]);
+          console.log(player);
+        }, player.getDelay(i));
+      }
+      // after sequence, guess order
       setTimeout(() => {
-        visualEffect(mSequenceList[i]);
-      }, player.getDelay(i));
+        circleBtn.innerText = "TU TURNO";
+        circleBtn.title = "Resuelto al 0%";
+        circleBtn.focus();
+        player.setPlaying(true);
+        player.setUseButton(true);
+      }, player.getLastDelay());
     }
-    // after sequence, guess order
-    setTimeout(() => {
-      circleBtn.innerText = "TU TURNO";
-      circleBtn.title = "Resuelto al 0%";
-      // circleBtn.focus();
-      player.setPlaying(true);
-      circleBtn.disabled = false;
-    }, player.getLastDelay());
   }
 }
 
 function sendBtn(mValue) {
   if (!player.isPlaying()) {
-    playAudio(mValue);
+    if (player.getUseButton()) {
+      playAudio(mValue);
+    }
     return;
   }
 
@@ -166,14 +269,18 @@ function sendBtn(mValue) {
       circleBtn.title = " Resuelto al " + player.getPercent() + "%";
       playAudio(mValue);
     } else {
-      circleBtn.innerText = "OTRA VEZ";
+      circleBtn.innerText = "❌\n OTRA VEZ";
+      circleBtn.title = "Fallaste, vuelve a intentar";
+      circleBtn.focus();
       player.setPlaying(false);
       player.resetGame();
     }
     player.addCont();
     if (player.isLastSequence()) {
       circleBtn.innerText = "SEGUIR";
+      circleBtn.title = "Resuelto al 100%, continuar";
       circleBtn.style.backgroundColor = "rgb(84, 84, 84)";
+      circleBtn.focus();
       player.setPlaying(false);
     }
   }
@@ -201,28 +308,13 @@ function applyCssEffect(mDoc) {
 }
 
 function clearCssEffect(mDoc) {
-  mDoc.style.backgroundBlendMode = "multiply";
+  mDoc.style.backgroundBlendMode = player.getBlendColor();
   mDoc.style.transform = "";
   mDoc.style.boxShadow = "";
 }
 
 function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function changeSpeed(event) {
-  player.setSpeed(parseInt(event.target.value));
-}
-
-function changeMusic(event) {
-  console.log(event.target.checked);
-
-  player.setMusic(event.target.checked);
-}
-
-function changeSerie(event) {
-  player.setSerie(parseInt(event.target.value));
-  fillButonImages(parseInt(event.target.value));
 }
 
 //Preload audio https://stackoverflow.com/a/13116795
