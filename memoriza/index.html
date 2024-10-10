@@ -33,13 +33,17 @@
         >
           <option value="2000">Lento</option>
           <option value="1500" selected>Normal</option>
-          <option value="1000">Rapido</option>
+          <option value="1000">Rápido</option>
           <option value="500">Superrápido</option>
-          <option value="200">Ultarápido</option>
+          <option value="200">Ultrarápido</option>
         </select>
 
         <label for="blend-select">Blend-mode de los botones</label>
-        <select name="blend-select" id="blend-select" onchange="changeBlendButtons(event)">
+        <select
+          name="blend-select"
+          id="blend-select"
+          onchange="changeBlendButtons(event)"
+        >
           <option value="multiply">Multiply</option>
           <option value="color-burn">Color Burn</option>
           <option value="darken">Darken</option>
@@ -51,7 +55,12 @@
 
         <div>
           <label for="colorpg-select">Color de la página</label>
-          <input type="color" id="colorpg-select" name="colorpg-select"  onchange="changeColorPage(event)"/>
+          <input
+            type="color"
+            id="colorpg-select"
+            name="colorpg-select"
+            onchange="changeColorPage(event)"
+          />
         </div>
         <div>
           <label for="useSound">Usar sonidos</label>
@@ -80,6 +89,7 @@
         <h1>Memoriza</h1>
       </header>
       <main class="element2" id="main-container">
+        <p id="infoText">1ª ronda</p>
         <button id="settings-btn" title="Configuración" onclick="showModal()">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -115,6 +115,7 @@ class Memorize {
 
 const circleBtn = document.getElementById("infoBtn");
 const btnList = document.getElementsByClassName("btn-game");
+const infoText = document.getElementById("infoText");
 const MEMORIZELOCAL = "memorize-game";
 
 const localMusic = [
@@ -206,7 +207,6 @@ function getLocalStorage() {
 
 function loadAssets() {
   fillButonImages();
-
   getLocalStorage();
   // add funcions to button
   for (let i = 0; i < btnList.length; i++) {
@@ -231,6 +231,7 @@ function playSequence() {
       player.addSequence();
       circleBtn.style.setProperty("--percentage", 0);
       circleBtn.innerText = "ATENTO";
+      infoText.innerText = player.getSequenceList().length + "ª ronda";
       circleBtn.title = "Escucha la secuencia";
       circleBtn.focus();
       player.setUseButton(false);
