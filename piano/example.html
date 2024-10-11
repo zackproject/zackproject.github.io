@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    consola
+  </body>
+  <script>
+    //notas https://virtualpiano.net/?song-post-28488
+    const tecladoOnline = "8*9(0qQwWeErtTyYuiIoOpPasSdDfgGhHjJk";
+    // notas locales
+    const tecladoMiPiano = "AaBbCDcEdFeGHfIgJKhLiMjNOkPlQRmSnToU";
+    let melodia = "uetyuetyuetyuetyueTyueTyueTyueTyu";
+    let result = "";
+
+    for (let i = 0; i < melodia.length; i++) {
+      if (tecladoOnline.indexOf(melodia[i])) {
+        result = result + tecladoMiPiano[tecladoOnline.indexOf(melodia[i])];
+      } else {
+        console.log("Hay notas fuera de mi rango", melodia[i]);
+      }
+    }
+    // let
+    console.log("http://localhost:5500/piano/?song=" + result + "&title=b");
+  </script>
+</html>
