@@ -3,27 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Transcriptor de Melodías</title>
   </head>
   <body>
-    consola
+    <h1>Transcriptor de Melodías</h1>
+    <textarea
+      name="melodia"
+      id="melodia"
+      placeholder="Introduce tu melodía aquí..."
+    ></textarea>
+    <div>
+      <button onclick="transcribirTexto()">Transcribir</button>
+    </div>
+    <a id="resultado" href="#" target="_blank">Ver Resultado</a>
+    <p id="info"></p>
   </body>
   <script>
-    //notas https://virtualpiano.net/?song-post-28488
-    const tecladoOnline = "8*9(0qQwWeErtTyYuiIoOpPasSdDfgGhHjJk";
-    // notas locales
-    const tecladoMiPiano = "AaBbCDcEdFeGHfIgJKhLiMjNOkPlQRmSnToU";
-    let melodia = "uetyuetyuetyuetyueTyueTyueTyueTyu";
-    let result = "";
+    const info = document.getElementById("info");
+    const result = document.getElementById("resultado");
+    const melodia = document.getElementById("melodia");
 
-    for (let i = 0; i < melodia.length; i++) {
-      if (tecladoOnline.indexOf(melodia[i])) {
-        result = result + tecladoMiPiano[tecladoOnline.indexOf(melodia[i])];
-      } else {
-        console.log("Hay notas fuera de mi rango", melodia[i]);
+    function transcribirTexto() {
+      const tecladoOnline = "8*9(0qQwWeErtTyYuiIoOpPasSdDfgGhHjJk";
+      const tecladoMiPiano = "AaBbCDcEdFeGHfIgJKhLiMjNOkPlQRmSnToU";
+      let sum = "";
+
+      // Elimina espacios, barras verticales y saltos de línea
+      const text = melodia.value.replace(/[\s|\r?\n]/g, "");
+      console.log(`Texto limpio: ${text}`);
+
+      for (let i = 0; i < text.length; i++) {
+        const nota = text[i];
+        const index = tecladoOnline.indexOf(nota);
+
+        // Valida que la nota exista en el tecladoOnline
+        melodia.value = text;
+        if (index !== -1) {
+          sum += tecladoMiPiano[index];
+        } else {
+          console.warn(`Nota fuera de rango: ${nota}`);
+          info.innerText = `Nota fuera de rango: ${nota}`;
+
+          // Selecciona la nota fuera de rango en el textarea
+          melodia.focus();
+          melodia.setSelectionRange(i, i + 1);
+
+          return; // Termina la ejecución si hay una nota fuera de rango
+        }
       }
+
+      const url = `http://localhost:5500/piano/?song=${sum}&title=b`;
+      result.innerText = "Ver Resultado";
+      result.href = url;
+      info.innerText = "Transcripción completada.";
     }
-    // let
-    console.log("http://localhost:5500/piano/?song=" + result + "&title=b");
   </script>
 </html>
