@@ -258,13 +258,57 @@ class Piano {
     this.disordedTitle = disordedTitle;
   }
 
-  setNewCesar(texto) {
-    console.log(texto, "que spliteees leche");
-    
+  getTitleSong() {
+    return this.titleSong;
+  }
+
+  getTitleUpperCase() {
+    return this.titleSong.toUpperCase();
+  }
+
+  setTitleSong(mTitleSong) {
+    this.titleSong = this.muestraCancion(mTitleSong);
+    this.disortMyTitle();
+  }
+
+  getLetters() {
+    return this.letras;
+  }
+
+  updateLetra(letter) {
+    this.letras = this.letras + letter;
+  }
+
+  resetLetters() {
+    this.letras = 0;
+  }
+
+  getImportSong() {
+    return this.cancionImportada;
+  }
+
+  getDisordedTitle() {
+    return this.disordedTitle;
+  }
+
+  getTransportPiece() {
+    if (this.tranportePieza > 0) {
+      return `+${this.tranportePieza}`;
+    }
+    return this.tranportePieza;
+  }
+
+  getActualNote() {
+    return this.cancionImportada[this.notaActual];
+  }
+
+  addActualNote() {
+    this.notaActual++;
+  }
+
+  setNewCesar(texto, teclado) {
     // Estructura del teclat
     let textoList = texto.split("");
-    console.log("voy", textoList);
-    
     let total = "";
     for (let i = 0; i < textoList.length; i++) {
       //Cada tecla s'ha de moure el segons l'escala 'teclado'
@@ -272,29 +316,20 @@ class Piano {
     }
     return total;
   }
+
   isFourthFirstNotes() {
     return (
       player.notaActual > 4 ||
       player.notaActual == player.cancionImportada.length
     );
   }
-  addActualNote() {
-    this.notaActual++;
-  }
 
-  getActualNote() {
-    return this.cancionImportada[this.notaActual];
-  }
   resetIfOut() {
     if (this.notaActual >= this.cancionImportada.length) {
       this.notaActual = 0;
     }
   }
 
-  setTitleSong(mTitleSong) {
-    this.titleSong = this.muestraCancion(mTitleSong);
-    this.disortMyTitle();
-  }
   setCancionImportada(stringNotes, teclado, notesPiano) {
     this.cancionImportada = stringNotes.split("").map((letra) => {
       const letterIndex = teclado.indexOf(letra);
@@ -336,9 +371,6 @@ class Piano {
     this.notaActual = 0;
   }
 
-  getTitleUpperCase() {
-    return this.titleSong.toUpperCase();
-  }
   retrocedePieza(notesPiano) {
     let maxNote = notesPiano[0].sound;
     if (!this.cancionImportada.includes(maxNote)) {
@@ -352,6 +384,7 @@ class Piano {
     }
     this.notaActual = 0;
   }
+
   ocultaCancion(hideSong) {
     let nuevoTexto = "";
     //Si es true encripta el texto
@@ -395,9 +428,5 @@ class Piano {
       }
     }
     return nuevoTexto;
-  }
-
-  updateLetra(letter) {
-    this.letras = this.letras + letter;    
   }
 }
