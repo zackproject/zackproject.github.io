@@ -1,5 +1,6 @@
 const PARAMSONG = "song";
 const PARAMTITLE = "title";
+const PARAMID = "id";
 
 let player = new Piano(0, 0);
 let numInNote = 1;
@@ -23,6 +24,9 @@ const progresBar = document.getElementById("progress-bar-music");
 const tempo = document.getElementById("tempo");
 
 const documentSearch = document.location.search;
+const challengePianoHtml = document.getElementById("challengePiano");
+
+const PIANOSTORAGE = "piano-challenges";
 
 teclaNotes.forEach(function (e, i) {
   e.addEventListener("contextmenu", (event) => drawNumber(event));
@@ -93,6 +97,7 @@ function loadMusic() {
     inputGuesSongHtml.maxLength = player.getTitleSong().length;
   }
   updateTextPiano();
+  generateSectionGuess();
   preloadAudio(notesPiano);
 }
 
@@ -318,12 +323,15 @@ function deleteChilds(currentDiv) {
 // Send me this in 3/21, thanks
 function sendBirthday() {
   let namePerson = nameBirthHtml.value.toLowerCase();
+
   let linkBirth = document.getElementById("linkBirth");
   let noteBirthday = "IIJILhIIJIMLIIPNLhJOONLML";
   if (namePerson != "") {
+    document.getElementById("infoBirth").innerText =
+    "Entra al enlace y comparte la felicitación a " + namePerson.toUpperCase();
     linkBirth.href =
       "./?song=" + noteBirthday + "&title=" + player.ocultaCancion(namePerson);
-    linkBirth.innerText = `Comparte este link con '${namePerson}' `;
+    linkBirth.innerText = `¡Click Aqui!`;
     linkBirth.focus();
   }
 }
@@ -339,7 +347,28 @@ function preloadAudio(preloads) {
 function getNewLink() {
   let stringNotes = new URLSearchParams(documentSearch).get(PARAMSONG);
   const newNotes = player.setNewCesar(stringNotes, teclado);
-  const hideTitle = player.ocultaCancion(player.titleSong);
+  const hideTitle = new URLSearchParams(documentSearch).get(PARAMTITLE);
   const urlNewLink = `./?${PARAMSONG}=${newNotes}&${PARAMTITLE}=${hideTitle}`;
   document.getElementById("newPiece").href = urlNewLink;
+}
+
+function getLocalChallenge() {}
+function generateSectionGuess() {
+  for (let i = 0; i < challengesPianoList.length; i++) {
+    const el = challengesPianoList[i];
+    let li = document.createElement("li");
+    let a = document.createElement("a");
+    a.innerText = el.id;
+    a.href = el.link + "&" + PARAMID + "=" + el.id;
+
+    if (el.link == "") {
+      console.log("aa");
+      li.style.backgroundColor = "darkgreen";
+    }
+    let p = document.createElement("p");
+    p.innerText = el.help;
+    li.appendChild(a);
+    li.appendChild(p);
+    challengePianoHtml.appendChild(li);
+  }
 }

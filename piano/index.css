@@ -3,9 +3,6 @@
   display: none;
 }
 
-
-
-
 header {
   position: relative;
   color: white;
@@ -20,7 +17,7 @@ header {
   margin-bottom: 5px;
 }
 
-header>a {
+header > a {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -31,9 +28,26 @@ body {
   margin: 0;
 }
 
+main {
+  padding: 12px;
+}
 h2 {
   font-size: 1rem;
   text-align: center;
+}
+
+.birth-section {
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.564);
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 0px 5px 0px black;
+  box-shadow: -1px 0px 5px 0px black;
+  .material-icons {
+    font-size: 80px;
+  }
 }
 
 #menu-piano {
@@ -80,6 +94,7 @@ h2 {
   flex-wrap: wrap;
   /* gap: 5px;*/
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 .escala {
@@ -211,12 +226,12 @@ h2 {
   padding: 10px;
 }
 
-.href-resultat>a {
+.href-resultat > a {
   color: white;
   font-size: 18px;
 }
 
-#menu-escribir-cancion>button {
+#menu-escribir-cancion > button {
   background-color: black;
   color: white;
   border-radius: 6px;
@@ -227,14 +242,14 @@ h2 {
   text-align: center;
 }
 
-#menu-escribir-cancion>input {
+#menu-escribir-cancion > input {
   background-color: black;
   color: white;
   padding: 6px;
   border-radius: 6px;
 }
 
-#menu-escribir-cancion>a {
+#menu-escribir-cancion > a {
   color: white;
 }
 
@@ -256,7 +271,7 @@ h2 {
   transition: 1s width;
 }
 
-.piano-reset>a {
+.piano-reset > a {
   color: white;
   text-decoration: none;
   border: 1px solid white;
@@ -264,13 +279,23 @@ h2 {
   border-radius: 6px;
 }
 
-.piano-reset>a:hover {
+.piano-reset > a:hover {
   background-color: black;
   border: 1px solid black;
   transition: border 0.5s;
 }
 
+#show-link-birth {
+  display: none;
+}
+.birth-form {
+}
 @media (max-width: 600px) {
+  .birth-section {
+    .material-icons {
+      font-size: 60px;
+    }
+  }
   .primary-note {
     width: 38px;
     /*height: 80px;*/
@@ -335,7 +360,7 @@ h2 {
   border: 1px solid white;
 }
 
-#selectTextPiano>option {
+#selectTextPiano > option {
   background-color: black;
   color: white;
 }
@@ -362,22 +387,22 @@ h2 {
   max-width: 300px;
 }
 
-#dialogAdivina>h2 {
+#dialogAdivina > h2 {
   margin-bottom: 0px;
 }
 
-#dialogAdivina>label {
+#dialogAdivina > label {
   margin-top: 10px;
 }
 
-#dialogAdivina>h3 {
+#dialogAdivina > h3 {
   margin: 10px;
   font-size: 14px;
   text-align: center;
   font-weight: normal;
 }
 
-#dialogAdivina>input {
+#dialogAdivina > input {
   margin: 10px;
   background-color: #1c1c1c;
   padding: 10px;
@@ -386,7 +411,7 @@ h2 {
   color: white;
 }
 
-#btnGenerated>button {
+#btnGenerated > button {
   height: 30px;
   width: 30px;
   font-size: 20px;
@@ -404,7 +429,7 @@ h2 {
   padding: 10px;
 }
 
-.options-piano>input[type="checkbox"] {
+.options-piano > input[type="checkbox"] {
   margin-left: 15px;
   /* Double-sized Checkboxes */
   -ms-transform: scale(1.7);
@@ -420,7 +445,7 @@ h2 {
   accent-color: red;
 }
 
-.options-piano>input[type="checkbox"]:hover{
+.options-piano > input[type="checkbox"]:hover {
   cursor: pointer;
 }
 
@@ -443,16 +468,16 @@ h2 {
   text-shadow: 1px 1px 1px white;
 }
 
-.songs-example>li {
+.songs-example > li {
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
-.songs-example>li>a {
+.songs-example > li > a {
   color: white;
 }
 
-.songs-example>li>a:hover {
+.songs-example > li > a:hover {
   text-decoration: un;
 }
 
@@ -489,10 +514,8 @@ h2 {
 
 #nameBirth {
   background-color: black;
-  padding: 5px;
-  border: 1px solid wheat;
+  border: 1px solid lightgray;
   border-radius: 2px;
-  margin-left: 10px;
   margin-top: 10px;
   font-size: 16px;
   padding: 5px;
@@ -500,13 +523,12 @@ h2 {
 }
 
 .btn-birth {
-  background-color: black;
+  background-color: rgb(0, 104, 7);
   color: white;
-  border-radius: 2px;
+  border-radius: 3px;
   font-size: 16px;
   padding: 5px;
-  margin-left: 10px;
-  border: 1px solid black;
+  border: none;
   transition: all 0.5s;
 }
 
@@ -528,6 +550,67 @@ h2 {
 
 #newPiece:hover {
   text-decoration: underline;
+}
+
+section {
+  margin-top: 50px;
+  text-align: center;
+  h2 {
+    color: yellow;
+    padding: 0px;
+  }
+  p {
+    padding-top: 0px;
+    padding-bottom: 10px;
+  }
+}
+#challengePiano {
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#challengePiano > li > p {
+  margin: 0px;
+  color: rgb(162, 162, 162);
+}
+
+#challengePiano > li > a {
+  padding-top: 10px;
+  font-size: 40px;
+  display: grid;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  &&:hover {
+    text-decoration: underline;
+    color: yellow;
+  }
+}
+
+#challengePiano > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  text-align: center;
+  background-color: #272727;
+
+  background-size: fixed;
+  border: 2px solid white;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100px;
+  width: 100px;
+  transition: background-color 0.5s;
+  &&:hover {
+    background-color: black;
+  }
 }
 
 @media (max-width: 800px) {

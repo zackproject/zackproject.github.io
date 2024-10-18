@@ -40,246 +40,6 @@
 
       <!-- fondo 'dark' per quan obro un modal -->
       <div id="fondo-card"></div>
-      <div id="menu-escribir-cancion">
-        <!-- solo acepta de la 'a' a la 'z' y ' ' espaciones. No ñ -->
-        <label class="material-icons" for="inputSong" aria-label="Canción"
-          >music_note</label
-        >
-        <input
-          id="inputSong"
-          type="text"
-          placeholder="Escribe un titulo"
-          onkeydown="return /[a-z\s]/i.test(event.key)"
-          maxlength="50"
-        />
-        <button
-          onclick="generateLink()"
-          class="material-icons"
-          aria-label="Compartir cancion"
-        >
-          share
-        </button>
-        <button
-          onclick="resetSong()"
-          class="material-icons"
-          aria-label="Eliminar canción"
-        >
-          delete
-        </button>
-      </div>
-      <details>
-        <summary>Más opciones</summary>
-        <div class="menu-options-piano">
-          <div id="menu-create-song" class="options-piano">
-            <div class="piano-reset">
-              Nueva canción <a href="/piano">CREAR</a>
-            </div>
-          </div>
-          <div class="options-piano">
-            <label
-              for="cbox1"
-              aria-label="Colorear piano"
-              title="Clica para activar el color del piano"
-            >
-              Colorear
-            </label>
-            <input
-              type="checkbox"
-              id="cbox1"
-              onchange="changeColorWhiteNotes(event)"
-              aria-label="Colorear piano"
-              title="Marque esta casilla para colorear el piano"
-              value="first_checkbox"
-            />
-          </div>
-          <div class="options-piano">
-            <label for="selectTextPiano">Notación</label>
-            <select
-              name="notacion"
-              id="selectTextPiano"
-              onchange="updateTextPiano()"
-            >
-              <option value="0">NOTACIÓN INGLESA</option>
-              <option value="1" selected>NOTACIÓN DO</option>
-              <option value="2">Alfabetico</option>
-              <option value="3">Sin notación</option>
-            </select>
-          </div>
-          <div id="menu-transport-song" class="options-piano">
-            <a id="newPiece" href="">Pieza transportada</a>:
-            <span id="transportePieza">0</span>
-            <button
-              class="btn-escala"
-              onclick="retrocedeEscala()"
-              aria-label="Transportar pieza a menor"
-            >
-              <span class="material-icons"> arrow_back </span>
-            </button>
-
-            <button class="btn-escala" onclick="avanzaEscala()">
-              <span
-                class="material-icons"
-                aria-label="Transportar pieza a mayor"
-              >
-                arrow_forward
-              </span>
-            </button>
-          </div>
-        </div>
-      </details>
-
-      <!--<div class="note-fall material-icons">music_note</div>-->
-
-      <div id="updateSave">Notas grabadas: 0</div>
-      <div class="href-resultat">
-        <a id="resultat" aria-hidden="true" href="./?music="></a>
-      </div>
-      <div id="menu-adivinar-cancion">
-        <p id="infoToca">Toca repetidas veces la nota musical</p>
-        <div id="progress-bar-container">
-          <div id="tempo">0/0</div>
-          <div id="progress-bar-music"></div>
-        </div>
-        <div id="menu-piano">
-          <button
-            class="btn-piano"
-            aria-label="Abrir modal para adivinar cancion"
-            onclick="switchModalGuess()"
-            id="btn-adivina-song"
-          >
-            ADIVINAR CANCIÓN
-          </button>
-
-          <button
-            aria-label="Reproducir nota de la cancion grabada"
-            id="touch-this"
-            class="material-icons noselect"
-            onclick="tocaEsto()"
-          >
-            music_note
-          </button>
-        </div>
-      </div>
-
-      <div class="piano">
-        <div class="escala">
-          <button class="tecla primary-note">DO C3</button>
-          <button class="tecla secondary-note n1">DO# Reb</button>
-          <button class="tecla primary-note">RE D3</button>
-          <button class="tecla secondary-note n2">Re# Mib</button>
-          <button class="tecla primary-note">MI E3</button>
-          <button class="tecla primary-note">FA F3</button>
-          <button class="tecla secondary-note n3">Fa# Solb</button>
-          <button class="tecla primary-note">SOL G3</button>
-          <button class="tecla secondary-note n4">Sol# Lab</button>
-          <button class="tecla primary-note">LA A4</button>
-          <button class="tecla secondary-note n5">Fa# Solb</button>
-          <button class="tecla primary-note">SI B4</button>
-        </div>
-        <div class="escala">
-          <button class="tecla primary-note">DO C4</button>
-          <button class="tecla secondary-note n1">Fa# Solb</button>
-          <button class="tecla primary-note">RE D4</button>
-          <button class="tecla secondary-note n2">Fa# Solb</button>
-          <button class="tecla primary-note">MI E4</button>
-          <button class="tecla primary-note">FA F4</button>
-          <button class="tecla secondary-note n3">Sol# Lab</button>
-          <button class="tecla primary-note">SOL G4</button>
-          <button class="tecla secondary-note n4">Sol# Lab</button>
-          <button class="tecla primary-note">LA A5</button>
-          <button class="tecla secondary-note n5">Sol# Lab</button>
-          <button class="tecla primary-note">SI B5</button>
-        </div>
-        <div class="escala">
-          <button class="tecla primary-note">DO C5</button>
-          <button class="tecla secondary-note n1">Sol# Lab</button>
-          <button class="tecla primary-note">RE D5</button>
-          <button class="tecla secondary-note n2">Sol# Lab</button>
-          <button class="tecla primary-note">MI E5</button>
-          <button class="tecla primary-note">FA F5</button>
-          <button class="tecla secondary-note n3">Sol# Lab</button>
-          <button class="tecla primary-note">SOL G5</button>
-          <button class="tecla secondary-note n4">Sol# Lab</button>
-          <button class="tecla primary-note">SOL A5</button>
-          <button class="tecla secondary-note n5">Sol# Lab</button>
-          <button class="tecla primary-note">SOL A5</button>
-        </div>
-      </div>
-
-      <h2>Retos en Piano</h2>
-
-      <article>
-        <img src="" alt="" />
-      </article>
-      <details class="detail-question" id="detail-example-song">
-        <summary>
-          <h2 class="inline">¿Quieres tocar canciones ya creadas?</h2>
-        </summary>
-        <ul class="songs-example">
-          <li>
-            <a href="./?song=NQSmQUTmQSmlRN&title=sfuupq0zssbi">Harry Potter</a>
-          </li>
-          <li>
-            <a href="./?song=QNOPONMMOQPONOPQOMMPRTSRQOQPONNOPQOMM&title=tjsufu"
-              >Tetris</a
-            >
-          </li>
-          <li>
-            <a
-              href="./?song=JMNOMJMNOMJMNONMONMQQQQPQRRRQPRQQPONQONM&title=pbjd0bmmfc"
-              >Bella Ciao</a
-            >
-          </li>
-          <li>
-            <a href="./?song=QQQOQSLOLJMNjMLQSTRSQOPN&title=tpsc0pjsbn"
-              >Mario Bros</a
-            >
-          </li>
-          <li>
-            <a href="./?song=HgKgKKKjiLKLLjOKgjjLjjO&title=opjmfhobwf"
-              >Evangelion</a
-            >
-          </li>
-          <li>
-            <a href="./?song=LLjOLLKhLLjOLLKhoSPoSkoSjjO&title=fmcjtpqnj0opjtjn"
-              >Mision Imposible</a
-            >
-          </li>
-          <li>
-            <a href="./?song=FJMNkNMJIhkQkM&title=ugbsdfojn">Minecraft</a>
-          </li>
-          <li>
-            <a href="./?song=NQSmQSQmQOPNNQSmQSQmQjMMOlmMOlQ&title=pojsebq0mf"
-              >El padrino</a
-            >
-          </li>
-          <li>
-            <a href="./?song=gJhLgJhLONJLNjMLJIJ&title=btps0bsfuobq"
-              >Pantera Rosa</a
-            >
-          </li>
-          <li>
-            <a href="./?song=eeggegKgKiLgeeggegKKiLKgKgKg&title=fdfjq0fop"
-              >One Piece</a
-            >
-          </li>
-        </ul>
-      </details>
-      <details class="detail-question" id="detail-example-birth">
-        <summary>
-          <h2 class="inline">¿Quieres felicitar a alguien ?</h2>
-        </summary>
-        <input type="text" id="nameBirth" placeholder="Nombre de la persona" />
-        <button class="btn-birth" onclick="sendBirthday()">
-          Generar felicitación
-        </button>
-        <a
-          id="linkBirth"
-          aria-label="Link de feliz cumpleaños con el nombre de la persona"
-          href=""
-        ></a>
-      </details>
-
       <div id="dialogAdivina" aria-modal="true" aria-hidden="true">
         <h2 id="adivinatitle">Adivina</h2>
         <h3>
@@ -304,9 +64,209 @@
           CERRAR
         </button>
       </div>
+      <main>
+        <div id="menu-escribir-cancion">
+          <!-- solo acepta de la 'a' a la 'z' y ' ' espaciones. No ñ -->
+          <label class="material-icons" for="inputSong" aria-label="Canción"
+            >music_note</label
+          >
+          <input
+            id="inputSong"
+            type="text"
+            placeholder="Escribe un titulo"
+            onkeydown="return /[a-z\s]/i.test(event.key)"
+            maxlength="50"
+          />
+          <button
+            onclick="generateLink()"
+            class="material-icons"
+            aria-label="Compartir cancion"
+          >
+            share
+          </button>
+          <button
+            onclick="resetSong()"
+            class="material-icons"
+            aria-label="Eliminar canción"
+          >
+            delete
+          </button>
+        </div>
+        <details>
+          <summary>Más opciones</summary>
+          <div class="menu-options-piano">
+            <div id="menu-create-song" class="options-piano">
+              <div class="piano-reset">
+                Nueva canción <a href="/piano">CREAR</a>
+              </div>
+            </div>
+            <div class="options-piano">
+              <label
+                for="cbox1"
+                aria-label="Colorear piano"
+                title="Clica para activar el color del piano"
+              >
+                Colorear
+              </label>
+              <input
+                type="checkbox"
+                id="cbox1"
+                onchange="changeColorWhiteNotes(event)"
+                aria-label="Colorear piano"
+                title="Marque esta casilla para colorear el piano"
+                value="first_checkbox"
+              />
+            </div>
+            <div class="options-piano">
+              <label for="selectTextPiano">Notación</label>
+              <select
+                name="notacion"
+                id="selectTextPiano"
+                onchange="updateTextPiano()"
+              >
+                <option value="0">NOTACIÓN INGLESA</option>
+                <option value="1" selected>NOTACIÓN DO</option>
+                <option value="2">Alfabetico</option>
+                <option value="3">Sin notación</option>
+              </select>
+            </div>
+            <div id="menu-transport-song" class="options-piano">
+              <a id="newPiece" href="">Pieza transportada</a>:
+              <span id="transportePieza">0</span>
+              <button
+                class="btn-escala"
+                onclick="retrocedeEscala()"
+                aria-label="Transportar pieza a menor"
+              >
+                <span class="material-icons"> arrow_back </span>
+              </button>
+
+              <button class="btn-escala" onclick="avanzaEscala()">
+                <span
+                  class="material-icons"
+                  aria-label="Transportar pieza a mayor"
+                >
+                  arrow_forward
+                </span>
+              </button>
+            </div>
+          </div>
+        </details>
+
+        <!--<div class="note-fall material-icons">music_note</div>-->
+
+        <div id="updateSave">Notas grabadas: 0</div>
+        <div class="href-resultat">
+          <a id="resultat" aria-hidden="true" href="./?music="></a>
+        </div>
+        <div id="menu-adivinar-cancion">
+          <p id="infoToca">Toca repetidas veces la nota musical</p>
+          <div id="progress-bar-container">
+            <div id="tempo">0/0</div>
+            <div id="progress-bar-music"></div>
+          </div>
+          <div id="menu-piano">
+            <button
+              class="btn-piano"
+              aria-label="Abrir modal para adivinar cancion"
+              onclick="switchModalGuess()"
+              id="btn-adivina-song"
+            >
+              ADIVINAR CANCIÓN
+            </button>
+
+            <button
+              aria-label="Reproducir nota de la cancion grabada"
+              id="touch-this"
+              class="material-icons noselect"
+              onclick="tocaEsto()"
+            >
+              music_note
+            </button>
+          </div>
+        </div>
+
+        <div class="piano">
+          <div class="escala">
+            <button class="tecla primary-note">DO C3</button>
+            <button class="tecla secondary-note n1">DO# Reb</button>
+            <button class="tecla primary-note">RE D3</button>
+            <button class="tecla secondary-note n2">Re# Mib</button>
+            <button class="tecla primary-note">MI E3</button>
+            <button class="tecla primary-note">FA F3</button>
+            <button class="tecla secondary-note n3">Fa# Solb</button>
+            <button class="tecla primary-note">SOL G3</button>
+            <button class="tecla secondary-note n4">Sol# Lab</button>
+            <button class="tecla primary-note">LA A4</button>
+            <button class="tecla secondary-note n5">Fa# Solb</button>
+            <button class="tecla primary-note">SI B4</button>
+          </div>
+          <div class="escala">
+            <button class="tecla primary-note">DO C4</button>
+            <button class="tecla secondary-note n1">Fa# Solb</button>
+            <button class="tecla primary-note">RE D4</button>
+            <button class="tecla secondary-note n2">Fa# Solb</button>
+            <button class="tecla primary-note">MI E4</button>
+            <button class="tecla primary-note">FA F4</button>
+            <button class="tecla secondary-note n3">Sol# Lab</button>
+            <button class="tecla primary-note">SOL G4</button>
+            <button class="tecla secondary-note n4">Sol# Lab</button>
+            <button class="tecla primary-note">LA A5</button>
+            <button class="tecla secondary-note n5">Sol# Lab</button>
+            <button class="tecla primary-note">SI B5</button>
+          </div>
+          <div class="escala">
+            <button class="tecla primary-note">DO C5</button>
+            <button class="tecla secondary-note n1">Sol# Lab</button>
+            <button class="tecla primary-note">RE D5</button>
+            <button class="tecla secondary-note n2">Sol# Lab</button>
+            <button class="tecla primary-note">MI E5</button>
+            <button class="tecla primary-note">FA F5</button>
+            <button class="tecla secondary-note n3">Sol# Lab</button>
+            <button class="tecla primary-note">SOL G5</button>
+            <button class="tecla secondary-note n4">Sol# Lab</button>
+            <button class="tecla primary-note">SOL A5</button>
+            <button class="tecla secondary-note n5">Sol# Lab</button>
+            <button class="tecla primary-note">SOL A5</button>
+          </div>
+        </div>
+        <section class="birth-section">
+          <h2 class="inline">¿Quieres felicitar a alguien?</h2>
+
+          <form class="birth-form" action="return sendBirthday()">
+            <span class="material-icons"> cake </span>
+            <label id="infoBirth">
+              Escribe el nombre de la persona en el recuadro
+            </label>
+            <input type="text" id="nameBirth" placeholder="Nombre" />
+            <input type="submit" value="Generar felicitación" />
+          </form>
+
+          <div id="show-link-birth">
+            <p>Entra al enlace y comparte la felicitación a <span id="name-birth"></span></p>
+            <a
+              id="linkBirth"
+              aria-label="Link de feliz cumpleaños con el nombre de la persona"
+              href=""
+            ></a>
+          </div>
+        </section>
+        <section>
+          <h2>Retos en Piano</h2>
+          <p>
+            Entra al enlace y resuelve los siguientes retos pulsando varias
+            veces el
+            <span class="material-icons" aria-label="Canción">music_note</span>
+            botón circular. Luego, en el botón 'Adivinar canción' estarán las
+            letras desordenadas del titulo.
+          </p>
+          <ul id="challengePiano"></ul>
+        </section>
+      </main>
     </div>
     <footer id="footer-main">info@zksama.com</footer>
     <script src="../footer/index.js"></script>
+    <script src="challenge.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
