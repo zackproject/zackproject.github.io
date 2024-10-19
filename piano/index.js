@@ -27,7 +27,7 @@ const documentSearch = document.location.search;
 const challengePianoHtml = document.getElementById("challengePiano");
 
 const PIANOSTORAGE = "piano-challenges";
-
+let challengeArray = [];
 teclaNotes.forEach(function (e, i) {
   e.addEventListener("contextmenu", (event) => drawNumber(event));
   e.addEventListener("click", () => {
@@ -43,6 +43,35 @@ function changeColorWhiteNotes(e) {
       teclaNotes[i].style.background = checked ? notesPiano[i].color : "white";
     }
   }
+}
+
+function fillChallenges() {
+  challengePianoHtml.childNodes.forEach((element, i) => {
+    let index = i + 1; //start by 1 challenge;
+    if (challengeArray.includes(index)) {
+      element.style.background = "darkgreen";
+    }
+  });
+}
+
+function getLocalChallenge() {
+  if (localStorage.getItem(PIANOSTORAGE) == null) {
+    localStorage.setItem(PIANOSTORAGE, JSON.stringify(challengeArray));
+    return;
+  }
+  challengeArray = JSON.parse(localStorage.getItem(PIANOSTORAGE));
+  fillChallenges();
+}
+
+function setLocalChallenge() {
+  const idChallenge = new URLSearchParams(documentSearch).get(PARAMID);
+  if (challengeArray.includes(parseInt(idChallenge))) {
+    return;
+  }
+  challengeArray.push(parseInt(idChallenge));
+  challengeArray = challengeArray.sort();
+  localStorage.setItem(PIANOSTORAGE, JSON.stringify(challengeArray));
+  fillChallenges();
 }
 
 function drawNumber(event) {
@@ -80,6 +109,7 @@ function readPath() {
 
   player.setCancionImportada(stringNotes, teclado, notesPiano);
   player.setTitleSong(titleSong);
+
   return true;
 }
 
@@ -97,7 +127,10 @@ function loadMusic() {
     inputGuesSongHtml.maxLength = player.getTitleSong().length;
   }
   updateTextPiano();
+
   generateSectionGuess();
+  getLocalChallenge();
+
   preloadAudio(notesPiano);
 }
 
@@ -290,6 +323,8 @@ function checkInputSong() {
     }
     // Sobrescribe el texto si
     label.innerText = "Titulo correctamente escrito";
+    // setChallenge Id if exist
+    setLocalChallenge();
     let btn = document.getElementById("btn-adivina-song");
     btn.disabled = true;
     btn.innerText = player.getTitleUpperCase();
@@ -357,7 +392,6 @@ function getNewLink() {
   document.getElementById("newPiece").href = urlNewLink;
 }
 
-function getLocalChallenge() {}
 function generateSectionGuess() {
   for (let i = 0; i < challengesPianoList.length; i++) {
     const el = challengesPianoList[i];
