@@ -232,24 +232,34 @@
         </div>
         <section class="birth-section">
           <h2 class="inline">¿Quieres felicitar a alguien?</h2>
-
-          <form class="birth-form" action="return sendBirthday()">
-            <span class="material-icons"> cake </span>
-            <label id="infoBirth">
-              Escribe el nombre de la persona en el recuadro
-            </label>
-            <input type="text" id="nameBirth" placeholder="Nombre" />
-            <input type="submit" value="Generar felicitación" />
-          </form>
-
           <div id="show-link-birth">
-            <p>Entra al enlace y comparte la felicitación a <span id="name-birth"></span></p>
+            <p>
+              Entra al enlace y comparte la felicitación con
+              <span id="nBirthResult"></span>
+            </p>
             <a
               id="linkBirth"
               aria-label="Link de feliz cumpleaños con el nombre de la persona"
               href=""
             ></a>
           </div>
+          <form
+            class="birth-form gr-parent"
+            onsubmit="return sendBirthday(event)"
+          >
+            <label id for="nameBirth" class="gr-1">
+              Escribe el nombre de la persona en el recuadro
+            </label>
+
+            <span class="material-icons gr-2">cake</span>
+            <input
+              type="text"
+              id="nameBirth"
+              class="gr-3"
+              placeholder="Nombre"
+            />
+            <input type="submit" value="Generar felicitación" class="gr-4" />
+          </form>
         </section>
         <section>
           <h2>Retos en Piano</h2>

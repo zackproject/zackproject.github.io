@@ -321,19 +321,24 @@ function deleteChilds(currentDiv) {
 }
 
 // Send me this in 3/21, thanks
-function sendBirthday() {
-  let namePerson = nameBirthHtml.value.toLowerCase();
-
+function sendBirthday(event) {
+  event.preventDefault();
+  let namePerson = event.target.nameBirth.value.toLowerCase();
   let linkBirth = document.getElementById("linkBirth");
   let noteBirthday = "IIJILhIIJIMLIIPNLhJOONLML";
   if (namePerson != "") {
-    document.getElementById("infoBirth").innerText =
-    "Entra al enlace y comparte la felicitación a " + namePerson.toUpperCase();
+    document.getElementById("show-link-birth").style.display = "block";
+    document.getElementById("nBirthResult").innerText = capitalize(namePerson);
+    event.target.style.display = "none";
     linkBirth.href =
       "./?song=" + noteBirthday + "&title=" + player.ocultaCancion(namePerson);
     linkBirth.innerText = `¡Click Aqui!`;
     linkBirth.focus();
   }
+}
+
+function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 //Preload audio https://stackoverflow.com/a/13116795
