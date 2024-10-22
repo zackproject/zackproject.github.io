@@ -1,9 +1,8 @@
-#menu-transport-song,
-#menu-create-song {
+.guess-settings {
   display: none;
 }
 
-header {
+.piano-head {
   position: relative;
   color: white;
   background-color: black;
@@ -28,16 +27,52 @@ body {
   margin: 0;
 }
 
-main {
-  padding: 12px;
+.main-piano {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0px 10px 20px 10px;
 }
+
+.top-separator {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 5px 0px 5px;
+  overflow: hidden; /* settings btn rotation scroll-y*/
+}
+.settings-top {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 40px;
+  transition: transform 0.5s;
+  &&:hover {
+    transform: rotate(75deg);
+    cursor: pointer;
+  }
+}
+
+#updateSave {
+  display: none;
+  text-align: center;
+}
+
 h2 {
   font-size: 1rem;
   text-align: center;
 }
 
-.birth-section {
-  margin: 0 auto;
+.sections-piano {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.piano-section {
+  text-align: center;
   padding: 10px;
   max-width: 400px;
   background-color: rgba(0, 0, 0, 0.564);
@@ -57,20 +92,6 @@ h2 {
   gap: 10px;
   padding-top: 5px;
   padding-bottom: 15px;
-}
-
-.btn-escala {
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  transition: border 0.5s;
-}
-
-.btn-escala:hover {
-  border: 1px solid black;
-  background-color: black;
-
-  cursor: pointer;
 }
 
 .btn-piano {
@@ -180,6 +201,35 @@ h2 {
   text-transform: capitalize;
 }
 
+#inputSong {
+  background-color: black;
+  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+.btns-gues-song {
+  display: flex;
+  gap: 10px;
+
+  input {
+    width: 100%;
+  }
+  button {
+    background-color: darkred;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.5s;
+    width: 100%;
+
+    &:hover {
+      background-color: red;
+    }
+  }
+}
+
 .piano-page {
   color: white;
   background-color: #1c1c1c;
@@ -188,10 +238,6 @@ h2 {
   background-attachment: fixed;
   background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.subpage-piano {
-  min-height: 100vh;
 }
 
 /*
@@ -214,31 +260,19 @@ h2 {
 }
 
 #menu-escribir-cancion {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   display: none;
   justify-content: center;
   gap: 10px;
-}
-
-.href-resultat {
-  text-align: center;
-}
-
-.href-resultat > a {
-  color: white;
-  font-size: 18px;
+  button:hover {
+    cursor: pointer;
+  }
 }
 
 #menu-escribir-cancion > button {
   background-color: black;
   color: white;
   border-radius: 6px;
-}
-
-#updateSave {
-  display: none;
-  text-align: center;
 }
 
 #menu-escribir-cancion > input {
@@ -270,24 +304,12 @@ h2 {
   transition: 1s width;
 }
 
-.piano-reset > a {
-  color: white;
-  text-decoration: none;
-  border: 1px solid white;
-  padding: 6px;
-  border-radius: 6px;
-}
-
-.piano-reset > a:hover {
-  background-color: black;
-  border: 1px solid black;
-  transition: border 0.5s;
-}
-
-#show-link-birth {
+#show-link-birth,
+#show-link-song {
   display: none;
 }
-.birth-form {
+#link-song {
+  color: white;
 }
 
 .gr-parent {
@@ -310,31 +332,35 @@ h2 {
 
 .gr-2 {
   grid-area: g2;
-  padding-top: 10px;
 }
 
 .gr-3 {
   grid-area: g3;
-  text-align: center;
-  padding: 5px;
 }
 
-.gr-4 {
-  grid-area: g4;
-  background-color: green;
+.submit-section {
   color: white;
   padding: 8px;
   border: none;
   border-radius: 4px;
   font-size: 16px;
   transition: all 0.5s;
+  background-color: green;
   &&:hover {
     cursor: pointer;
     background-color: rgb(0, 164, 0);
   }
 }
+
+.gr-4 {
+  grid-area: g4;
+}
 @media (max-width: 600px) {
-  .birth-section {
+  #menu-escribir-cancion {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .piano-section {
     .material-icons {
       font-size: 60px;
     }
@@ -378,34 +404,27 @@ h2 {
   border: none;
   animation: rotate 5s infinite;
   background-color: darkgray;
+  position: relative;
 }
 
 #menu-adivinar-cancion {
+  width: 100%;
   display: none;
   position: relative;
 }
 
 #infoToca {
-  margin: 0px;
-  padding: 0px;
   position: absolute;
-  top: -20px;
-  left: 10px;
+  bottom: -12px;
+  left: -10px;
+  font-size: 14px;
+  text-align: center;
   color: yellow;
-  z-index: 1;
-}
-
-#selectTextPiano {
-  border-radius: 6px;
-  background-color: transparent;
-  color: white;
-  padding: 10px;
-  border: 1px solid white;
-}
-
-#selectTextPiano > option {
+  padding: 5px;
+  z-index: 4;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: black;
-  color: white;
+  text-shadow: none;
 }
 
 #touch-this:hover {
@@ -464,32 +483,80 @@ h2 {
   border-radius: 4px;
 }
 
-.menu-options-piano {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: rgba(0, 0, 0, 0.356);
-  padding: 10px;
+#settings-dialog {
+  font-family: Arial, Helvetica, sans-serif;
+  .menu-options-piano {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  header {
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  main {
+    padding: 12px;
+    width: 250px;
+    a {
+      color: black;
+    }
+    select {
+      padding: 5px;
+    }
+    input,
+    select,
+    button,
+    a {
+      cursor: pointer;
+    }
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid black;
+    padding-top: 10px;
+    button {
+      cursor: pointer;
+      padding: 5px;
+      width: 100%;
+      background-color: black;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+  }
+
+  .options-piano {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    input[type="checkbox"] {
+      margin-left: 15px;
+      /* Double-sized Checkboxes */
+      -ms-transform: scale(1.7);
+      /* IE */
+      -moz-transform: scale(1.7);
+      /* FF */
+      -webkit-transform: scale(1.7);
+      /* Safari and Chrome */
+      -o-transform: scale(1.7);
+      /* Opera */
+      transform: scale(1.7);
+      padding: 10px;
+      accent-color: red;
+    }
+  }
 }
 
-.options-piano > input[type="checkbox"] {
-  margin-left: 15px;
-  /* Double-sized Checkboxes */
-  -ms-transform: scale(1.7);
-  /* IE */
-  -moz-transform: scale(1.7);
-  /* FF */
-  -webkit-transform: scale(1.7);
-  /* Safari and Chrome */
-  -o-transform: scale(1.7);
-  /* Opera */
-  transform: scale(1.7);
-  padding: 10px;
-  accent-color: red;
-}
-
-.options-piano > input[type="checkbox"]:hover {
-  cursor: pointer;
+#settings-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.684);
 }
 
 #fondo-card {
@@ -555,16 +622,6 @@ h2 {
   padding: 5px;
 }
 
-#nameBirth {
-  background-color: black;
-  border: 1px solid lightgray;
-  border-radius: 2px;
-  margin-top: 10px;
-  font-size: 16px;
-  padding: 5px;
-  color: white;
-}
-
 .btn-birth {
   background-color: rgb(0, 104, 7);
   color: white;
@@ -585,37 +642,33 @@ h2 {
   display: inline;
 }
 
-#newPiece {
-  text-decoration: none;
-  color: white;
-  text-decoration: none;
-}
-
-#newPiece:hover {
-  text-decoration: underline;
-}
-
 section {
-  margin-top: 50px;
-  text-align: center;
   h2 {
     color: yellow;
     padding: 0px;
   }
-  p {
-    padding-top: 0px;
-    padding-bottom: 10px;
-  }
 }
+
+.input-section {
+  background-color: black;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  margin-top: 10px;
+  font-size: 16px;
+  padding-block: 6px;
+  color: white;
+  text-align: center;
+}
+
 #challengePiano {
-  padding: 0px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 10px;
   justify-content: center;
   max-width: 1000px;
-  margin: 0 auto;
+  padding: 0px; /* reset ul*/
 }
 
 #challengePiano > li > p {

@@ -270,6 +270,10 @@ class Piano {
     this.titleSong = this.muestraCancion(mTitleSong);
     this.disortMyTitle();
   }
+  
+  setTitle(mTitle) {
+    this.titleSong = mTitle;
+  }
 
   getLetters() {
     return this.letras;
@@ -280,7 +284,7 @@ class Piano {
   }
 
   resetLetters() {
-    this.letras = 0;
+    this.letras = "";
   }
 
   getImportSong() {

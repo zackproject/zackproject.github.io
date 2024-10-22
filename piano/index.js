@@ -8,9 +8,8 @@ let numInNote = 1;
 const teclaNotes = document.querySelectorAll(".tecla");
 const btnContainer = document.getElementById("btnGenerated");
 const slct = document.getElementById("selectTextPiano");
-const menuTransortSong = document.getElementById("menu-transport-song");
 const menuEscribirSong = document.getElementById("menu-escribir-cancion");
-const menuCreateSong = document.getElementById("menu-create-song");
+const settingsHideMenu = document.getElementsByClassName("guess-settings");
 const menuGuessSong = document.getElementById("menu-adivinar-cancion");
 const updateSaveSong = document.getElementById("updateSave");
 const detailExampleSong = document.getElementById("detail-example-song");
@@ -89,13 +88,13 @@ function soundTecla(i) {
 function avanzaEscala() {
   player.avanzaPieza(notesPiano);
   tranportePiezaHtml.innerText = player.getTransportPiece();
-  getNewLink();
+  updateLinkSong();
 }
 
 function retrocedeEscala() {
   player.retrocedePieza(notesPiano);
   tranportePiezaHtml.innerText = player.getTransportPiece();
-  getNewLink();
+  updateLinkSong();
 }
 
 function readPath() {
@@ -116,11 +115,13 @@ function readPath() {
 function loadMusic() {
   let paramsDisponibles = readPath();
   //Show / hide menus of 'Guess' or 'Create Song'
-  menuTransortSong.style.display = paramsDisponibles ? "block" : "none";
   menuEscribirSong.style.display = paramsDisponibles ? "none" : "flex";
-  menuCreateSong.style.display = paramsDisponibles ? "block" : "none";
   menuGuessSong.style.display = paramsDisponibles ? "block" : "none";
   updateSaveSong.style.display = paramsDisponibles ? "none" : "block";
+
+  for (let i = 0; i < settingsHideMenu.length; i++) {
+    settingsHideMenu[i].style.display = paramsDisponibles ? "flex" : "none";
+  }
 
   if (paramsDisponibles) {
     generateButtonsGuess();
@@ -207,10 +208,18 @@ function updateTextPiano() {
   }
 }
 
+function resetSong(event) {
+  event.preventDefault();
+  player.resetLetters();
+  document.getElementById("numUpdateSave").innerText =
+    player.getLetters().length;
+}
+
 function saveSong(mNoteId) {
   // is the same index ARRAY NOTE & 'teclado'
   player.updateLetra(teclado[mNoteId]);
-  updateSaveSong.innerText = "Notas grabadas: " + player.getLetters().length;
+  document.getElementById("numUpdateSave").innerText =
+    player.getLetters().length;
 }
 
 function pulsado(event) {
@@ -241,23 +250,23 @@ function inputActive() {
   }
 }
 
-function generateLink() {
+function generateNewSong(event) {
+  event.preventDefault();
+
   let nameSong = inputSongHtml.value.toLowerCase();
-  let nResultat = document.getElementById("resultat");
-  let notesLink = player.ocultaCancion(player.getTitleSong());
+  let nResultat = document.getElementById("link-song");
+
   if (nameSong != "") {
+    let notesLink = player.ocultaCancion(nameSong);
     nResultat.href = `./?${PARAMSONG}=${player.letras}&${PARAMTITLE}=${notesLink} `;
-    nResultat.innerText = "Click aquí: " + nameSong;
+    nResultat.innerText = "¡Click Aqui!";
     nResultat.ariaLabel =
       "Enlace clicable de la canción creada '" + nameSong + "'";
     nResultat.ariaHidden = false;
     nResultat.focus();
+    event.target.style.display = "none";
+    document.getElementById("show-link-song").style.display = "block";
   }
-}
-
-function resetSong() {
-  player.resetLetters();
-  updateSaveSong.innerText = "Notas grabadas: " + player.getLetters().length;
 }
 
 function createNoteAnimated(isWhite, color) {
@@ -384,7 +393,8 @@ function preloadAudio(preloads) {
   }
 }
 
-function getNewLink() {
+function updateLinkSong() {
+  // On tranport piece, change melody high or low sound
   let stringNotes = new URLSearchParams(documentSearch).get(PARAMSONG);
   const newNotes = player.setNewCesar(stringNotes, teclado);
   const hideTitle = new URLSearchParams(documentSearch).get(PARAMTITLE);
@@ -401,7 +411,6 @@ function generateSectionGuess() {
     a.href = el.link + "&" + PARAMID + "=" + el.id;
 
     if (el.link == "") {
-      console.log("aa");
       li.style.backgroundColor = "darkgreen";
     }
     let p = document.createElement("p");
@@ -410,4 +419,12 @@ function generateSectionGuess() {
     li.appendChild(p);
     challengePianoHtml.appendChild(li);
   }
+}
+
+function openSettings() {
+  document.getElementById("settings-dialog").showModal();
+}
+
+function closeSettings() {
+  document.getElementById("settings-dialog").close();
 }

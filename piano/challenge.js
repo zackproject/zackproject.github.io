@@ -102,7 +102,7 @@ let challengesPianoList = [
   {
     id: 21,
     link: "/piano/?song=LLLgjLgjLPPPljhgjL&title=tsbx0sbut",
-    help: "20th Century Fox",
+    help: "George Lucas",
   },
   {
     id: 22,
@@ -192,7 +192,7 @@ let challengesPianoList = [
   {
     id: 39,
     link: "/piano/?song=HIJHJHJIJKKJIKJKLJLJLKLMMLKMLHIJKLMMIJKLMNNJKLMNOONjMKNLOHIJKLMNOLO&title=jnfspe",
-    help: "La Si Do",
+    help: "Fa Sol La",
   },
   {
     id: 40,
