@@ -319,4 +319,201 @@ let challengesPianoList = [
     link: "/piano/?song=KKIKeHIKKIKMjOjjLjRPjjjLjRPORRPRj&title=fjoob",
     help: "Disney",
   },
+  {
+    id: 65,
+    link: "/piano/?song=QlQlQNPOMHJMNJiNOQlQlQNPOMHJMNJONMNOPQLRQPKQPOJPONJJQJQQQlQlQlQNOPMHJMNJiNOQlQlQNOPMHJMNJONMNOPQLRQPKQPOJPONJJQJQQQlQlQ&title=ftjmf0svg",
+    help: "Beethoven",
+  },
+  {
+    id: 66,
+    link: "/piano/?song=LILILILNPOMOMOMhMILLNMLLhhMOhMLLNMLLhhMOhLLLhJhLLNMLMNNPONOP&title=bosvudpo0bubofsft0bòfvrfq",
+    help: "Mozart",
+  },
+  {
+    id: 67,
+    link: "/piano/?song=hmmQPPkNjNkhhLhJIfGIfGchmmQPPkNjNkhhLhJhNPmhjPmG&title=bmmfobqnbd0bm",
+    help: "Liszt",
+  },
+  {
+    id: 68,
+    link: "/piano/?song=JJJhiJJhMihJJJJhiJJhMihJJJJhiJJhMihJhhhiMhhiNMih&title=pnb0fu0fvrspq0bsft",
+    help: "Ricchi e Poveri",
+  },
+  {
+    id: 69,
+    link: "/piano/?song=OOOOMJLKNNNNLIJJJJJMONMPPPONLNMMMMMLHLKKKKJIIIJ&title=hopt0tji0iujx0zmugpt0fn0hojmmjl",
+    help: "The Fugees",
+  },
+  {
+    id: 70,
+    link: "/piano/?song=TmSTmSTMNkPQmSmPQmhLMNMLMhLMLNMLhJhJIJhLMNLNMNkPkNMNkPQm&title=e0oj0opobd",
+    help: "Pachelbel",
+  },
+  {
+    id: 71,
+    link: "/piano/?song=MLKIKLKKLMOOMPOOMLKIKLKKLMOOMPOOMLKIKLKKLMOOMPOOMLKIKLKKLMOOMPOOMLKIKLKKLMOOMPOOMLKIKLKKLMOOMPOOMMKKMMKKKK&title=ojmpjw0utfmmbnt0t(emspx",
+    help: "AJR",
+  },
+  {
+    id: 72,
+    link: "/piano/?song=llilOOjilOOjNOlOOjiKijlKijinSSQRlOOjNOlOOjiKijlKiji&title=tvdsjd0mbujhje",
+    help: "Glitch Productions",
+  },
+  {
+    id: 73,
+    link: "/piano/?song=OlRmRlOjPOOlRmRlmmRlmRlO&title=tv0hopnb",
+    help: "Videojuego",
+  },
+  {
+    id: 74,
+    link: "/piano/?song=JGIFGIFGHIFJGIFGIFGHIIBBCCCFEccccEGHGBCHGEEGFEcCQNPMNPMNOPMQNPMNPMNOPPIIJJJMLhhhLNONIJONLLNMNPQ&title=obmvn",
+    help: "Disney",
+  },
+  {
+    id: 75,
+    link: "/piano/?song=jLKgHIgjLKgHgeHgeeHIgiLLKgKjLKgHIgjLKgHgeHgeeHIgiLgKKg&title=fdfjq0fop",
+    help: "Anime",
+  },
+  {
+    id: 76,
+    link: "/piano/?song=ljLljLljkjKkjKkjkjKkjKkjOiKOiKOi&title=tldpmd",
+    help: "Coldplay",
+  },
+  {
+    id: 77,
+    link: "/piano/?song=LMLJOMLLMLMLONKLKINMLLMLMLMJLMLJOMLLMLMLONKLKINMLLMLMLPOMMOMLJLKMLKJIJLMNNNOONMLKILMLJOMLLMLMLONKLKINMLLMLMLPO&title=gmpevs",
+    help: "Navidad",
+  },
+  {
+    id: 78,
+    link: "/piano/?song=CEGHDCEGHIHIJKLLKJIHKJIHECEGHDCEGHIJIJLHHGHJDJKIJHHIJKLFHKMLHIJKLLKJIHHIJHIcFfJdcFfJhIJhLMMLhJILhJIGcFfJdcFfJhhJhMIIfIhEhMJhIhJhMIIfIhEhMJhI&title=bjutfc0z0bmmfc",
+    help: "Disney",
+  },
+  {
+    id: 79,
+    link: "/piano/?song=JJJJJIHEJJJIHLLOOOONLMNJKJIHIJJJJJIHEJJJIHLLOOOONLMNJKJIHI&title=opubs0ov0fofju0bujobtvt",
+    help: "Payasos de la tele",
+  },
+  {
+    id: 80,
+    link: "/piano/?song=JKhLLONPOLJKhLLONPOKLiMMPkQPMMOMNNLMNMJKhLLONPOLJKhLLONPOKLiMMPkQPMMOMNNNOPOOLLLMLOLLLMLOLLLMLLLOLLLMPMMMjMMMPMMMNLOLLMLLLMNO&title=pujqfq0ope0bmpi",
+    help: "Payasos de la tele",
+  },
+  {
+    id: 81,
+    link: "",
+    help: "",
+  },
+  {
+    id: 82,
+    link: "",
+    help: "",
+  },
+  {
+    id: 83,
+    link: "",
+    help: "",
+  },
+  {
+    id: 84,
+    link: "",
+    help: "",
+  },
+  {
+    id: 85,
+    link: "",
+    help: "",
+  },
+  {
+    id: 86,
+    link: "",
+    help: "",
+  },
+  {
+    id: 87,
+    link: "",
+    help: "",
+  },
+  {
+    id: 88,
+    link: "",
+    help: "",
+  },
+  {
+    id: 89,
+    link: "",
+    help: "",
+  },
+  {
+    id: 90,
+    link: "",
+    help: "",
+  },
+  {
+    id: 91,
+    link: "",
+    help: "",
+  },
+  {
+    id: 92,
+    link: "",
+    help: "",
+  },
+  {
+    id: 93,
+    link: "",
+    help: "",
+  },
+  {
+    id: 94,
+    link: "",
+    help: "",
+  },
+  {
+    id: 95,
+    link: "",
+    help: "",
+  },
+  {
+    id: 96,
+    link: "",
+    help: "",
+  },
+  {
+    id: 97,
+    link: "",
+    help: "",
+  },
+  {
+    id: 98,
+    link: "",
+    help: "",
+  },
+  {
+    id: 99,
+    link: "",
+    help: "",
+  },
+  {
+    id: 100,
+    link: "",
+    help: "",
+  },
 ];
+
+function getAllChallenges(sort = false) {
+  let pianoInstance = new Piano(0, 0);
+  if (sort) {
+    challengesPianoList.sort((a, b) => a.help.localeCompare(b.help));
+  }
+
+  challengesPianoList.forEach(({ id, link, help }) => {
+    if (link.includes("title")) {
+      const songTitle = link.split("title=")[1];
+      const result = pianoInstance.muestraCancion(songTitle);
+      console.log(id, result, help);
+    }
+  });
+}
+
+getAllChallenges();
