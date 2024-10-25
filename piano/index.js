@@ -12,6 +12,8 @@ const menuEscribirSong = document.getElementById("menu-escribir-cancion");
 const settingsHideMenu = document.getElementsByClassName("guess-settings");
 const menuGuessSong = document.getElementById("menu-adivinar-cancion");
 const updateSaveSong = document.getElementById("updateSave");
+const updateCreateSong = document.getElementById("updateCreate");
+
 const detailExampleSong = document.getElementById("detail-example-song");
 const detailExampleBirth = document.getElementById("detail-example-birth");
 const tranportePiezaHtml = document.getElementById("transportePieza");
@@ -54,6 +56,12 @@ function fillChallenges() {
 }
 
 function getLocalChallenge() {
+  const idChallenge = new URLSearchParams(documentSearch).get(PARAMID);
+  if (idChallenge !== null) {
+    challengePianoHtml.childNodes[parseInt(idChallenge) - 1].style.background =
+      "#c02e00";
+  }
+
   if (localStorage.getItem(PIANOSTORAGE) == null) {
     localStorage.setItem(PIANOSTORAGE, JSON.stringify(challengeArray));
     return;
@@ -117,8 +125,8 @@ function loadMusic() {
   //Show / hide menus of 'Guess' or 'Create Song'
   menuEscribirSong.style.display = paramsDisponibles ? "none" : "flex";
   menuGuessSong.style.display = paramsDisponibles ? "block" : "none";
-  updateSaveSong.style.display = paramsDisponibles ? "none" : "block";
-
+  updateSaveSong.style.display = paramsDisponibles ? "none" : "grid";
+  updateCreateSong.style.display = paramsDisponibles ? "block" : "none";
   for (let i = 0; i < settingsHideMenu.length; i++) {
     settingsHideMenu[i].style.display = paramsDisponibles ? "flex" : "none";
   }
@@ -411,7 +419,9 @@ function generateSectionGuess() {
     a.href = el.link + "&" + PARAMID + "=" + el.id;
 
     if (el.link == "") {
-      li.style.backgroundColor = "darkgreen";
+      li.style.display = "none";
+
+      //li.style.backgroundColor = "red";
     }
     let p = document.createElement("p");
     p.innerText = el.help;

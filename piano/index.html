@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Piano</title>
+    <title>Piano - Toca canciones y resuelve retos</title>
     <link rel="icon" href="../icopz.ico" />
     <meta
       name="description"
@@ -29,11 +29,6 @@
     <dialog id="settings-dialog">
       <header>Ajustes</header>
       <main class="menu-options-piano">
-        <div class="options-piano">
-          <span>Nueva canción:</span>
-          <a href="/piano">CREAR</a>
-        </div>
-
         <div class="options-piano">
           <label
             for="cbox1"
@@ -101,7 +96,6 @@
     </header>
 
     <div class="top-separator">
-      <span aria-hidden="true"></span>
       <button
         onclick="openSettings()"
         class="settings-top material-icons"
@@ -116,9 +110,7 @@
       <h2 id="adivinatitle">Adivina</h2>
       <h3>Crea el título a partir de las siguientes letras y pulsa 'Enter'.</h3>
       <div id="btnGenerated"></div>
-      <label for="inputGuesSong" style="text-align: center">
-        Escribe el titulo
-      </label>
+      <label for="inputGuesSong"> Escribe el titulo </label>
       <input
         type="text"
         id="inputGuesSong"
@@ -134,6 +126,7 @@
         CERRAR
       </button>
     </div>
+
     <main class="main-piano">
       <div id="menu-adivinar-cancion">
         <div id="progress-bar-container">
@@ -206,7 +199,7 @@
           <button class="tecla primary-note">SOL A5</button>
         </div>
       </div>
-      <div class="sections-piano">
+      <div class="sub-sections-piano">
         <section class="piano-section">
           <h2 class="inline">¿Quieres felicitar a alguien?</h2>
           <div id="show-link-birth">
@@ -225,8 +218,8 @@
             onsubmit="return sendBirthday(event)"
           >
             <label id for="nameBirth" class="gr-1">
-              Escribe el nombre de la persona en el recuadro<br />
-              y comparte la felcitación.
+              Escribe el nombre de la persona en el recuadro y comparte la
+              felcitación.
             </label>
             <span class="material-icons gr-2">cake</span>
             <input
@@ -243,7 +236,7 @@
           </form>
         </section>
 
-        <section class="piano-section" id="updateSave">
+        <section class="piano-section">
           <h2 class="inline">¿Quieres crear una canción?</h2>
           <div id="show-link-song">
             <p>Entra al enlace y comparte la canción</p>
@@ -253,13 +246,25 @@
               href=""
             ></a>
           </div>
+          <div id="updateCreate">
+            <p>
+              Accede al modo de composición musical pulsando el siguiente botón.
+            </p>
+
+            <div class="create-section">
+              <a class="submit-section" href="/piano">Componer</a>
+            </div>
+          </div>
           <form
+            id="updateSave"
             class="birth-form gr-parent"
             onsubmit="return generateNewSong(event)"
           >
             <label id for="inputSong" class="gr-1">
-              Pon un titulo a la canción y compartela. <br />Notas grabadas:
-              <span id="numUpdateSave">0</span>
+              Toca las teclas, escribe un titulo para la canción y compártela.
+              <strong>
+                Notas grabadas: <span id="numUpdateSave">0</span></strong
+              >
             </label>
 
             <span class="material-icons gr-2">music_note</span>

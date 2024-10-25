@@ -16,7 +16,7 @@ let challengesPianoList = [
   },
   {
     id: 4,
-    link: "/piano/?song=JJKLLKJIHHIJJIIJJKLLKJIHHIJIHH&title=bjshfmb0bm0b0ponji",
+    link: "/piano/?song=JJKLLKJIHHIJJIIJJKLLKJIHHIJIHH&title=bjshfmb0bm0b0bep",
     help: "Beethoven",
   },
   {
@@ -226,7 +226,7 @@ let challengesPianoList = [
   },
   {
     id: 46,
-    link: "/piano/?song=IIJILhIIJIMLIIPNLhJOONLML&title=90mfe0pwbid0mF",
+    link: "/piano/?song=KIIIKIIPOjMLKgIgKKIIIKIIPOjMLKhLjLLLOMMMOMOMPjPjKIIIKIIPOjMLKgIgKKIIIKIIPOjMLKMj&title=pidp0mfe0pwbid0mf",
     help: "Serie Mexico",
   },
   {
@@ -401,13 +401,13 @@ let challengesPianoList = [
   },
   {
     id: 81,
-    link: "",
-    help: "",
+    link: "/piano/?song=hLMNMLmmmmQQPPkkNNMLJhLMLhQQQQPPkkNNMMLhhLMNMLmmmmQQPPkkNNMNSSmQPkNNMmQPkNMMLQPkMNkP&title=bdfmvsvu0bojmmbh0bm",
+    help: "Payasos de la tele",
   },
   {
     id: 82,
-    link: "",
-    help: "",
+    link: "/piano/?song=NMLJIJNMLJIJNMLJIJLMNMNMLJIJNMLJIJJLMNPQPSTU&title=ppmgobosfg",
+    help: "Youtuber",
   },
   {
     id: 83,
