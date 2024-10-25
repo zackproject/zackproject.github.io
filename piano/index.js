@@ -26,7 +26,7 @@ const tempo = document.getElementById("tempo");
 
 const documentSearch = document.location.search;
 const challengePianoHtml = document.getElementById("challengePiano");
-
+const PARAMSTRINGNOTES = new URLSearchParams(documentSearch).get(PARAMSONG);
 const PIANOSTORAGE = "piano-challenges";
 let challengeArray = [];
 teclaNotes.forEach(function (e, i) {
@@ -132,6 +132,7 @@ function loadMusic() {
   }
 
   if (paramsDisponibles) {
+    printPartiture();
     generateButtonsGuess();
     inputGuesSongHtml.maxLength = player.getTitleSong().length;
   }
@@ -166,7 +167,7 @@ function generateButtonsGuess() {
 
 function tocaEsto() {
   player.resetIfOut();
-
+  printPartiture();
   const index = notesPiano.findIndex((n) => n.sound === player.getActualNote());
   drawTecla(notesPiano[index]);
 
@@ -264,7 +265,8 @@ function generateNewSong(event) {
   let nameSong = inputSongHtml.value.toLowerCase();
   let nResultat = document.getElementById("link-song");
 
-  if (nameSong != "") {
+  if (nameSong != "" && player.getLetters().length != 0) {
+    // only can share with title and notes recorded not empty
     let notesLink = player.ocultaCancion(nameSong);
     nResultat.href = `./?${PARAMSONG}=${player.letras}&${PARAMTITLE}=${notesLink} `;
     nResultat.innerText = "¡Click Aqui!";
@@ -329,7 +331,7 @@ function checkInputSong() {
     }
   }
   // If Incorrect
-  label.innerText = "Titulo incorrecto, prueba otra vez";
+  label.innerText = "Titulo incorrecto, prueba otra combinación de letras.";
 
   //If correct
   if (player.compareInputTitle(inputGuesSongHtml.value.toLowerCase())) {
@@ -339,7 +341,7 @@ function checkInputSong() {
       btnList[i].disabled = true;
     }
     // Sobrescribe el texto si
-    label.innerText = "Titulo correctamente escrito";
+    label.innerText = "¡Muy bien! Has escrito el titulo correctamente.";
     // setChallenge Id if exist
     setLocalChallenge();
     let btn = document.getElementById("btn-adivina-song");
@@ -347,22 +349,6 @@ function checkInputSong() {
     btn.innerText = player.getTitleUpperCase();
   }
   label.focus();
-}
-
-function switchModalGuess() {
-  let dialogAdivina = document.getElementById("dialogAdivina");
-  let fons = document.getElementById("fondo-card");
-  if (dialogAdivina.style.top === "") {
-    dialogAdivina.ariaHidden = false;
-    inputGuesSongHtml.focus();
-    dialogAdivina.style.top = "50%";
-    fons.style.display = "block";
-    return;
-  }
-  fons.style.display = "none";
-
-  dialogAdivina.style.top = "";
-  dialogAdivina.ariaHidden = true;
 }
 
 // my favorite function <3
@@ -431,10 +417,40 @@ function generateSectionGuess() {
   }
 }
 
+let dialogAdivina = document.getElementById("dialogAdivina");
+
+function openDialogGuess() {
+  document.getElementById("dialogAdivina").showModal();
+}
+
+function closeDialogGuess() {
+  document.getElementById("dialogAdivina").close();
+}
+
 function openSettings() {
   document.getElementById("settings-dialog").showModal();
 }
 
 function closeSettings() {
   document.getElementById("settings-dialog").close();
+}
+
+function printPartiture() {
+  let mPartiture = player.getPartiture(
+    PARAMSTRINGNOTES,
+    teclado,
+    textoDisponibles[0]
+  );
+
+  let pare = document.getElementById("englishNotesPiano");
+  deleteChilds(pare);
+  for (let i = 0; i < mPartiture.length; i++) {
+    let span = document.createElement("span");
+    span.innerText = mPartiture[i];
+    if (i === player.notaActual) {
+      span.style.color = "yellow";
+    }
+
+    pare.appendChild(span);
+  }
 }

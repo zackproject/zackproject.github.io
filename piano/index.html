@@ -53,8 +53,8 @@
             id="selectTextPiano"
             onchange="updateTextPiano()"
           >
-            <option value="0">Anglosajona</option>
-            <option value="1" selected>Latina</option>
+            <option value="0" selected>Anglosajona</option>
+            <option value="1">Latina</option>
             <option value="2">Alfabética</option>
             <option value="3">Sin notación</option>
           </select>
@@ -64,16 +64,14 @@
         </div>
 
         <div class="options-piano guess-settings">
-          <button
-            onclick="retrocedeEscala()"
-            aria-label="Transportar pieza a menor"
-          >
-            <span class="material-icons"> arrow_back </span>
+          <button title="Transportar pieza a menor" onclick="retrocedeEscala()">
+            <span class="material-icons" aria-label="Retroceder pieza">
+              arrow_back
+            </span>
           </button>
           <span id="transportePieza">0</span>
-
-          <button onclick="avanzaEscala()">
-            <span class="material-icons" aria-label="Transportar pieza a mayor">
+          <button onclick="avanzaEscala()" title="Transportar pieza a mayor">
+            <span class="material-icons" aria-label="Avanzar pieza">
               arrow_forward
             </span>
           </button>
@@ -83,7 +81,32 @@
         </footer>
       </main>
     </dialog>
-
+    <dialog id="dialogAdivina">
+      <header id="adivinatitle">
+        <h2>Adivina</h2>
+      </header>
+      <main>
+        <label for="inputGuesSong"
+          >Crea el título a partir de las siguientes letras y pulsa
+          'ENTER'.</label
+        >
+        <div id="btnGenerated"></div>
+        <input
+          type="text"
+          id="inputGuesSong"
+          placeholder="Escribe las letras ordenadas"
+          autofocus
+          onchange="checkInputSong()"
+        />
+        <button
+          class="btn-piano"
+          aria-label="Cerrar el modal de adivinar canción"
+          onclick="closeDialogGuess()"
+        >
+          CERRAR
+        </button>
+      </main>
+    </dialog>
     <header
       class="piano-head"
       role="banner"
@@ -97,6 +120,7 @@
 
     <div class="top-separator">
       <button
+        title="Abrir ajustes"
         onclick="openSettings()"
         class="settings-top material-icons"
         aria-label="Ajustes"
@@ -105,27 +129,6 @@
       </button>
     </div>
     <!-- fondo 'dark' per quan obro un modal -->
-    <div id="fondo-card"></div>
-    <div id="dialogAdivina" aria-modal="true" aria-hidden="true">
-      <h2 id="adivinatitle">Adivina</h2>
-      <h3>Crea el título a partir de las siguientes letras y pulsa 'Enter'.</h3>
-      <div id="btnGenerated"></div>
-      <label for="inputGuesSong"> Escribe el titulo </label>
-      <input
-        type="text"
-        id="inputGuesSong"
-        placeholder="titulo"
-        autofocus
-        onchange="checkInputSong()"
-      />
-      <button
-        class="btn-piano"
-        aria-label="Cerrar el modal de adivinar canción"
-        onclick="switchModalGuess()"
-      >
-        CERRAR
-      </button>
-    </div>
 
     <main class="main-piano">
       <div id="menu-adivinar-cancion">
@@ -137,70 +140,76 @@
           <button
             class="btn-piano"
             aria-label="Abrir modal para adivinar cancion"
-            onclick="switchModalGuess()"
+            onclick="openDialogGuess()"
             id="btn-adivina-song"
           >
             ADIVINAR CANCIÓN
           </button>
 
           <button
-            aria-label="Reproducir nota de la cancion grabada"
+            title="Reproducir nota de la cancion grabada"
+            aria-label="Nota Musical"
             id="touch-this"
             class="noselect"
             onclick="tocaEsto()"
           >
-            <span class="material-icons">music_note</span>
-            <span id="infoToca">¡Púlsame!</span>
+            <span class="material-icons" aria-hidden="true">music_note</span>
+            <span id="infoToca" aria-hidden="true">¡Púlsame!</span>
           </button>
         </div>
       </div>
-
       <div class="piano">
         <div class="escala">
-          <button class="tecla primary-note">DO C3</button>
-          <button class="tecla secondary-note n1">DO# Reb</button>
-          <button class="tecla primary-note">RE D3</button>
-          <button class="tecla secondary-note n2">Re# Mib</button>
-          <button class="tecla primary-note">MI E3</button>
-          <button class="tecla primary-note">FA F3</button>
-          <button class="tecla secondary-note n3">Fa# Solb</button>
-          <button class="tecla primary-note">SOL G3</button>
-          <button class="tecla secondary-note n4">Sol# Lab</button>
-          <button class="tecla primary-note">LA A4</button>
-          <button class="tecla secondary-note n5">Fa# Solb</button>
-          <button class="tecla primary-note">SI B4</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota C3">C3</button>
+          <button class="tecla secondary-note n1" aria-label="Reproducir nota C3#  D3b">C3#  D3b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota D3">D3</button>
+          <button class="tecla secondary-note n2" aria-label="Reproducir nota D3#  E3b">D3#  E3b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota E3">E3</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota F3">F3</button>
+          <button class="tecla secondary-note n3" aria-label="Reproducir nota F3#  G3b">F3#  G3b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota G3">G3</button>
+          <button class="tecla secondary-note n4" aria-label="Reproducir nota G3#  A3b">G3#  A3b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota A3">A3</button>
+          <button class="tecla secondary-note n5" aria-label="Reproducir nota A3#  B3b">A3#  B3b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota B3">B3</button>
         </div>
         <div class="escala">
-          <button class="tecla primary-note">DO C4</button>
-          <button class="tecla secondary-note n1">Fa# Solb</button>
-          <button class="tecla primary-note">RE D4</button>
-          <button class="tecla secondary-note n2">Fa# Solb</button>
-          <button class="tecla primary-note">MI E4</button>
-          <button class="tecla primary-note">FA F4</button>
-          <button class="tecla secondary-note n3">Sol# Lab</button>
-          <button class="tecla primary-note">SOL G4</button>
-          <button class="tecla secondary-note n4">Sol# Lab</button>
-          <button class="tecla primary-note">LA A5</button>
-          <button class="tecla secondary-note n5">Sol# Lab</button>
-          <button class="tecla primary-note">SI B5</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota C4">C4</button>
+          <button class="tecla secondary-note n1" aria-label="Reproducir nota C4#  D4b">C4#  D4b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota D4">D4</button>
+          <button class="tecla secondary-note n2" aria-label="Reproducir nota D4#  E4b">D4#  E4b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota E4">E4</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota F4">F4</button>
+          <button class="tecla secondary-note n3" aria-label="Reproducir nota F4#  G4b">F4#  G4b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota G4">G4</button>
+          <button class="tecla secondary-note n4" aria-label="Reproducir nota G4#  A4b">G4#  A4b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota A4">A4</button>
+          <button class="tecla secondary-note n5" aria-label="Reproducir nota A4#  B4b">A4#  B4b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota B4">B4</button>
         </div>
         <div class="escala">
-          <button class="tecla primary-note">DO C5</button>
-          <button class="tecla secondary-note n1">Sol# Lab</button>
-          <button class="tecla primary-note">RE D5</button>
-          <button class="tecla secondary-note n2">Sol# Lab</button>
-          <button class="tecla primary-note">MI E5</button>
-          <button class="tecla primary-note">FA F5</button>
-          <button class="tecla secondary-note n3">Sol# Lab</button>
-          <button class="tecla primary-note">SOL G5</button>
-          <button class="tecla secondary-note n4">Sol# Lab</button>
-          <button class="tecla primary-note">SOL A5</button>
-          <button class="tecla secondary-note n5">Sol# Lab</button>
-          <button class="tecla primary-note">SOL A5</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota C5">C5</button>
+          <button class="tecla secondary-note n1" aria-label="Reproducir nota C5#  D5b">C5#  D5b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota D5">D5</button>
+          <button class="tecla secondary-note n2" aria-label="Reproducir nota D5#  E5b">D5#  E5b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota E5">E5</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota F5">F5</button>
+          <button class="tecla secondary-note n3" aria-label="Reproducir nota F5#  G5b">F5#  G5b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota G5">G5</button>
+          <button class="tecla secondary-note n4" aria-label="Reproducir nota G5# A5b">G5# A5b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota A5">A5</button>
+          <button class="tecla secondary-note n5" aria-label="Reproducir nota A5# B5b">A5# B5b</button>
+          <button class="tecla primary-note" aria-label="Reproducir nota B5">B5</button>
         </div>
       </div>
+
+      <section class="piano-section">
+        <h2>Notas anglosajonas</h2>
+        <p id="englishNotesPiano"></p>
+      </section>
+
       <div class="sub-sections-piano">
-        <section class="piano-section">
+        <section class="piano-section max-piano-section">
           <h2 class="inline">¿Quieres felicitar a alguien?</h2>
           <div id="show-link-birth">
             <p>
@@ -221,7 +230,7 @@
               Escribe el nombre de la persona en el recuadro y comparte la
               felcitación.
             </label>
-            <span class="material-icons gr-2">cake</span>
+            <span class="material-icons gr-2" aria-hidden="true">cake</span>
             <input
               type="text"
               id="nameBirth"
@@ -236,7 +245,7 @@
           </form>
         </section>
 
-        <section class="piano-section">
+        <section class="piano-section max-piano-section">
           <h2 class="inline">¿Quieres crear una canción?</h2>
           <div id="show-link-song">
             <p>Entra al enlace y comparte la canción</p>
@@ -252,7 +261,9 @@
             </p>
 
             <div class="create-section">
-              <a class="submit-section" href="/piano">Componer</a>
+              <a class="submit-section" href="/piano" title="Ir a modo creación"
+                >Componer</a
+              >
             </div>
           </div>
           <form
@@ -267,7 +278,9 @@
               >
             </label>
 
-            <span class="material-icons gr-2">music_note</span>
+            <span class="material-icons gr-2" aria-hidden="true"
+              >music_note</span
+            >
             <input
               type="text"
               class="input-section"
@@ -278,7 +291,9 @@
               maxlength="50"
             />
             <div class="btns-gues-song gr-4">
-              <button onclick="resetSong(event)">Borrar</button>
+              <button onclick="resetSong(event)" title="Borrar notas grabadas">
+                Reiniciar
+              </button>
               <input type="submit" value="Crear" class="submit-section" />
             </div>
           </form>
@@ -289,19 +304,21 @@
           </div>
           <!-- -->
         </section>
-
-        <section>
-          <h2>Retos en Piano</h2>
-          <p>
-            Entra al enlace y resuelve los siguientes retos pulsando varias
-            veces el
-            <span class="material-icons" aria-label="Canción">music_note</span>
-            botón circular. Luego, en el botón 'Adivinar canción' estarán las
-            letras desordenadas del titulo.
-          </p>
-          <ul id="challengePiano"></ul>
-        </section>
       </div>
+
+      <section>
+        <h2>Retos en Piano</h2>
+        <p>
+          Entra al enlace y resuelve los siguientes retos pulsando varias veces
+          el
+          <span class="material-icons" aria-label="Nota Musical"
+            >music_note</span
+          >
+          botón circular. Luego, en el botón 'Adivinar canción' estarán las
+          letras desordenadas del titulo.
+        </p>
+        <ul id="challengePiano"></ul>
+      </section>
     </main>
     <footer id="footer-main">info@zksama.com</footer>
     <script src="../footer/index.js"></script>

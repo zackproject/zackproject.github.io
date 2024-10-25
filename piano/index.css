@@ -1,4 +1,23 @@
+body {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+dialog {
+  border: 1px solid lightgray;
+}
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.684);
+}
 .guess-settings {
+  display: none;
+}
+
+#show-link-birth,
+#show-link-song {
   display: none;
 }
 
@@ -16,15 +35,10 @@
   margin-bottom: 5px;
 }
 
-header > a {
+.piano-head > a {
   position: absolute;
   top: 10px;
   left: 10px;
-  text-align: center;
-}
-
-body {
-  margin: 0;
 }
 
 .main-piano {
@@ -51,28 +65,36 @@ body {
   }
 }
 
-h2 {
-  font-size: 1rem;
-}
-
 .sub-sections-piano {
   display: flex;
   gap: 50px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
 }
 
 .piano-section {
-  max-width: 400px;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.564);
   border: none;
   border-radius: 10px;
   -webkit-box-shadow: -1px 0px 5px 0px black;
   box-shadow: -1px 0px 5px 0px black;
+  margin-bottom: 20px;
   .material-icons {
     font-size: 80px;
   }
+}
+
+.max-piano-section {
+  max-width: 400px;
+}
+#englishNotesPiano{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .submit-section {
@@ -130,7 +152,7 @@ h2 {
   flex-wrap: wrap;
   /* gap: 5px;*/
   justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .escala {
@@ -319,10 +341,6 @@ h2 {
   transition: 1s width;
 }
 
-#show-link-birth,
-#show-link-song {
-  display: none;
-}
 #link-song {
   color: white;
 }
@@ -367,14 +385,12 @@ h2 {
       font-size: 60px;
     }
   }
-  .primary-note {
+  /*.primary-note {
     width: 38px;
-    /*height: 80px;*/
   }
 
   .secondary-note {
     width: 30px;
-    /* height: 40px;*/
   }
 
   .n1 {
@@ -395,7 +411,7 @@ h2 {
 
   .n5 {
     left: 236px;
-  }
+  }*/
 }
 
 #touch-this {
@@ -434,45 +450,34 @@ h2 {
 }
 
 #dialogAdivina {
+  header {
+    text-align: center;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  color: white;
   background-color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: -50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  padding: 10px;
-  width: 80%;
   border-radius: 6px;
-  transition: top 1s;
   max-width: 300px;
 }
 
-#dialogAdivina > h2 {
-  margin-bottom: 0px;
-}
-
-#dialogAdivina > label {
-  margin-top: 10px;
-}
-
-#dialogAdivina > h3 {
-  margin: 10px;
-  font-size: 14px;
+#dialogAdivina > main > label {
   text-align: center;
-  font-weight: normal;
 }
 
-#dialogAdivina > input {
-  margin: 10px;
+#dialogAdivina > main > input {
+  width: 90%;
   background-color: #1c1c1c;
   padding: 10px;
   border: 1px solid white;
   border-radius: 6px;
   color: white;
+  text-align: center;
 }
 
 #btnGenerated > button {
@@ -557,21 +562,6 @@ h2 {
   }
 }
 
-#settings-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.684);
-}
-
-#fondo-card {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 2;
-  display: none;
-}
-
 .note-fall {
   position: absolute;
   bottom: 0px;
@@ -644,11 +634,9 @@ h2 {
   display: inline;
 }
 
-section {
-  h2 {
-    color: yellow;
-    padding: 0px;
-  }
+h2 {
+  color: yellow;
+  padding: 0px;
 }
 
 .input-section {
@@ -675,7 +663,7 @@ section {
 
 #challengePiano > li > p {
   margin: 0px;
-  color: rgb(162, 162, 162);
+  color: #fafafa;
 }
 
 #challengePiano > li > a {

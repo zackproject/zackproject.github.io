@@ -411,13 +411,13 @@ let challengesPianoList = [
   },
   {
     id: 83,
-    link: "",
-    help: "",
+    link: "/piano/?song=DHKLKHFHDHKLKHFHdHKLKHFHdHKLKHFHeIjMOLMLeIjMOMLKGHIJIHGHdIiLKJKH&title=jspnp",
+    help: "Videojuego",
   },
   {
     id: 84,
-    link: "",
-    help: "",
+    link: "/piano/?song=hJgfGddJgJgfGccgffgJgfGddJgggggghJgfGgfG&title=pdjutpsdb",
+    help: "Shakira",
   },
   {
     id: 85,
@@ -516,4 +516,4 @@ function getAllChallenges(sort = false) {
   });
 }
 
-getAllChallenges();
+// getAllChallenges();

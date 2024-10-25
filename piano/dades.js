@@ -270,13 +270,22 @@ class Piano {
     this.titleSong = this.muestraCancion(mTitleSong);
     this.disortMyTitle();
   }
-  
+
   setTitle(mTitle) {
     this.titleSong = mTitle;
   }
 
   getLetters() {
     return this.letras;
+  }
+
+  getPartiture(songLetters, teclado, englishNote) {
+    let result = [];
+    for (let i = 0; i < songLetters.length; i++) {
+      let index = teclado.indexOf(songLetters[i]);
+      result.push(englishNote[index].split(" ")[0]);
+    }
+    return result;
   }
 
   updateLetra(letter) {
