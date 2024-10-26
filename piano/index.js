@@ -1,430 +1,467 @@
-const NOTESONLINE = './notes/';
-const PATHMUSIC = 'song'
-const PATHSONG = 'title';
-//tranportePieza //notaActual
+const PIANOSTORAGE = "piano-challenges";
+
+// get from url path 'title=' 'id=' & 'song="
+const PARAMSONG = "song";
+const PARAMTITLE = "title";
+const PARAMID = "id";
+const docSearch = document.location.search;
+const CONTENT_ID = new URLSearchParams(docSearch).get(PARAMID);
+const CONTENT_SONG = new URLSearchParams(docSearch).get(PARAMSONG);
+const CONTENT_TITLE = new URLSearchParams(docSearch).get(PARAMTITLE);
+
+// Global DOM
+const teclaNotes = document.querySelectorAll(".tecla");
+const slct = document.getElementById("selectTextPiano");
+const tranportePiezaHtml = document.getElementById("transportePieza");
+const inputGuesSongHtml = document.getElementById("inputGuesSong");
+const inputSongHtml = document.getElementById("inputSong");
+const challengePianoHtml = document.getElementById("challengePiano");
+// Play song DOM
+const progressContainer = document.getElementById("progress-bar-container");
+const progressMusic = document.getElementById("progress-bar-music");
+const progressNumbers = document.getElementById("tempo");
+
 let player = new Piano(0, 0);
-console.log(player);
 let numInNote = 1;
-let urlNotes = "";
-function readPath() {
-    //Guarda el parametres de 'PATHMUSIC' y 'PATHSONG'
-    let listaStringNotes = new URLSearchParams(document.location.search).get(PATHMUSIC);
-    urlNotes = listaStringNotes;
-    let titleSong = new URLSearchParams(document.location.search).get(PATHSONG);
 
-    if (listaStringNotes == null || listaStringNotes == '') return false;
-    if (titleSong == null || titleSong == '') return false;
+// globall challengeArrayCorrect in localstorage
+let challengeArray = [];
 
-    let lista = listaStringNotes.split("");
-    ///console.log("Path:", lista,"Title", titleSong);
-    //Tabla ASCII: 65:Mayuscula 97:Minuscula
-    let textoListToNumbers = (e) => {
-        //Las letras minusculas coresponden a las negras 'abcdefg'
-        if (e === e.toLowerCase()) return notasNegras[e.charCodeAt(0) - 97];
-        //Las letras mayusculas coresponden a las negras 'ABCDEFG'
-        return notasBlancas[e.charCodeAt(0) - 65];
-    }
-
-    //Notas musicales
-    player.titleSong = player.muestraCancion(titleSong)
-    player.disordedTitle = disorderWord(player.titleSong);
-
-    player.cancionImportada = lista.map(textoListToNumbers);
-    return true;
-}
-
-// Dibuixa numeros en la tecla
-function drawNumber(event) {
-    event.preventDefault();
-    let slct = document.getElementById("selectTextPiano");
-    if (slct.value == "3") {
-        event.target.innerText = numInNote;
-        numInNote++;
-    }
-}
-
-const teclaElements = document.querySelectorAll('.tecla');
-
-teclaElements.forEach(function (element) {
-    element.addEventListener('contextmenu', (event) => drawNumber(event));
+// Applt function in piano notes
+teclaNotes.forEach(function (e, i) {
+  e.addEventListener("contextmenu", (event) => drawNumber(event));
+  e.addEventListener("click", () => {
+    soundTecla(i);
+    saveSong(i);
+  });
 });
 
-document.getElementsByClassName("tecla").se
-function loadMusic() {
-    // Si hi han paramentres, retorna 'true'
-    let paramsDisponibles = readPath();
-    //Si hi han parametres de 'song' i 'title' es mostra el menu, sino el menu es per crearla
-    document.getElementById("menu-transport-song").style.display = paramsDisponibles ? "block" : "none";
-    document.getElementById("menu-escribir-cancion").style.display = paramsDisponibles ? "none" : "flex";
-    document.getElementById("menu-create-song").style.display = paramsDisponibles ? "block" : "none";
-    document.getElementById("menu-adivinar-cancion").style.display = paramsDisponibles ? "block" : "none";
-    document.getElementById("updateSave").style.display = paramsDisponibles ? "none" : "block";
-    // si es modo crear, mostra la llista de cancons, si es modo adivinar obre el desplegable
-    document.getElementById("detail-example-song").open = !paramsDisponibles;
-    document.getElementById("detail-example-birth").open = !paramsDisponibles;
-
-    if (paramsDisponibles) {
-        //GeneraButtons
-        generateButtonsGuess();
-        //L'input nomes admet la quantitat de lletres de la 'song'
-        document.getElementById("inputGuesSong").maxLength = player.titleSong.length;
-    }
-    //Canvia segons l'escala
-    updateTextPiano();
-
-    //Precarrega tots els audios
-    preloadAudio(notasBlancas.map(obj => NOTESONLINE + obj + ".mp3"));
-    preloadAudio(notasNegras.map(obj => NOTESONLINE + obj + ".mp3"));
+function drawNumber(event) {
+  event.preventDefault();
+  if (slct.value == "3") {
+    event.target.innerText = numInNote;
+    numInNote++;
+  }
 }
 
-function generateButtonsGuess() {
-    let btnContainer = document.getElementById("btnGenerated");
-
-    deleteChilds(btnContainer);
-    let listLetras = player.disordedTitle;
-    for (let i = 0; i < listLetras.length; i++) {
-        let btn = document.createElement("span");
-        btn.className = "btn-guess";
-        if (listLetras[i] === " ") {
-            btn.innerHTML = "&nbsp";
-            btn.ariaLabel = `Espacio. Escribe espacio en el cuadro de edición `;
-        }
-
-        if (listLetras[i] !== " ") {
-            btn.innerText = listLetras[i];
-            btn.ariaLabel = `Letra ${listLetras[i]}. Escribe la letra en el cuadro de edición `;
-        }
-
-        btn.setAttribute("usat", "no");
-        btnContainer.appendChild(btn);
+function changeColorWhiteNotes(e) {
+  let checked = e.target.checked;
+  for (let i = 0; i < teclaNotes.length; i++) {
+    if (notesPiano[i].note == "white") {
+      teclaNotes[i].style.background = checked ? notesPiano[i].color : "white";
     }
+  }
 }
 
-function tocaEsto() {
-    //Si la nota es fora del teclat, reseteja
-    if (player.notaActual >= player.cancionImportada.length) player.notaActual = 0;
-    //Dibuixa la nota al teclat
-    drawTecla(player.cancionImportada[player.notaActual]);
-    // Crea un link de
-    let linkSong = NOTESONLINE + player.cancionImportada[player.notaActual] + '.mp3';
-    var audio = new Audio(linkSong);
-    audio.play();
-
-    let progresBarContainer = document.getElementById("progress-bar-container");
-    let progresBar = document.getElementById("progress-bar-music");
-    let tempo = document.getElementById("tempo");
-    tempo.innerHTML = `${player.notaActual + 1}/${player.cancionImportada.length}`;
-    progresBar.style.width = (100 * (player.notaActual + 1) / player.cancionImportada.length) + "%";
-    progresBar.ariaLabel = `Notas tocadas: ${player.notaActual + 1}/${player.cancionImportada.length}`
-    tempo.ariaLabel = `Notas tocadas: ${player.notaActual + 1}/${player.cancionImportada.length}`
-    progresBarContainer.ariaLabel = `Notas restantes: ${player.cancionImportada.length - player.notaActual + 1}`
-    player.notaActual++;
-    // Amaga la info si es toca mes de 4 notes o arriba al final de la canco
-    if (player.notaActual > 4 || player.notaActual == player.cancionImportada.length) {
-        document.getElementById("infoToca").style.display = "none";
+function fillChallenges() {
+  challengePianoHtml.childNodes.forEach((element, i) => {
+    let index = i + 1; //start by 1 challenge;
+    if (challengeArray.includes(index)) {
+      element.style.background = "darkgreen";
     }
+  });
 }
 
-function drawTecla(num) {
-    //Neteja totes les tecles blanques
-    let listBlancaHTML = document.getElementsByClassName("primary-note");
-    for (let i = 0; i < listBlancaHTML.length; i++) {
-        // listBlancaHTML[i].style.background = "";
-        listBlancaHTML[i].style.transform = "";
-    }
-    //Neteja totes les tecles negres
-    let listNegraHTML = document.getElementsByClassName("secondary-note");
-    for (let i = 0; i < listNegraHTML.length; i++) {
-        listNegraHTML[i].style.transform = "";
-    }
-    let clrsHTML = document.getElementById("touch-this");
-    //Si toca una blanca, es mou
-    if (notasBlancas.includes(parseInt(num))) {
-        let pos = notasBlancas.indexOf(num);
-        //Color de la nota del boton
-        clrsHTML.style.color = colorList[0][pos];
-        //Crea nota
-        createNoteAnimated(true, colorList[0][pos]);
-        // listBlancaHTML[pos].style.background = "lightgray";
-        listBlancaHTML[pos].style.transform = "translateY(5px)";
-    }
-    //Si toca una negra, es mou
-    if (notasNegras.includes(parseInt(num))) {
-        let pos = notasNegras.indexOf(num);
-        //Crea nota
-        createNoteAnimated(false, colorList[1][pos]);
-        clrsHTML.style.color = colorList[1][pos];
-        listNegraHTML[pos].style.transform = "translateY(5px)";
-    }
+function getLocalChallenge() {
+  if (CONTENT_ID !== null) {
+    challengePianoHtml.childNodes[parseInt(CONTENT_ID) - 1].style.background =
+      "#c02e00";
+  }
 
+  if (localStorage.getItem(PIANOSTORAGE) == null) {
+    localStorage.setItem(PIANOSTORAGE, JSON.stringify(challengeArray));
+    return;
+  }
+  challengeArray = JSON.parse(localStorage.getItem(PIANOSTORAGE));
+  fillChallenges();
 }
 
-function updateTextPiano() {
-    // reseteja el numero que es mostra en "Sin notacion"
-    numInNote = 1;
-    let slct = document.getElementById("selectTextPiano");
-    let slctNum = parseInt(slct.selectedOptions[0].value);
-    //0 = Inglesa, 1= Do 2= Alphabet
-    for (let i = 0; i < document.getElementsByClassName("tecla").length; i++) {
-        //Per cada tecla actualitza el contingut
-        const element = document.getElementsByClassName("tecla")[i];
-        element.innerText = textoDisponibles[slctNum][i];
-        element.ariaLabel = "Reproducir nota " + textoDisponibles[slctNum][i];
-    }
-
+function setLocalChallenge() {
+  if (!challengeArray.includes(parseInt(CONTENT_ID))) {
+    challengeArray.push(parseInt(CONTENT_ID));
+    challengeArray = challengeArray.sort();
+    localStorage.setItem(PIANOSTORAGE, JSON.stringify(challengeArray));
+    fillChallenges();
+  }
 }
 
-function soundBlanca(ntecla) {
-    //Crea animacio nota blanca
-    let clrsHTML = document.getElementById("touch-this");
-    clrsHTML.style.color = colorList[0][ntecla];
-    createNoteAnimated(true, colorList[0][ntecla]);
-    //Toca la blanca i guarda la tecla
-    let linkSong = NOTESONLINE + notasBlancas[ntecla] + '.mp3';
-    var audio = new Audio(linkSong);
-    audio.play();
-    saveSong(notasBlancas[ntecla]);
+function soundTecla(i) {
+  new Audio(notesPiano[i].sound).play();
 }
-
-function soundNegra(ntecla) {
-    //Crea animacio nota blanca
-    let clrsHTML = document.getElementById("touch-this");
-    clrsHTML.style.color = colorList[1][ntecla];
-    createNoteAnimated(false, colorList[1][ntecla]);
-    //Toca la negra i guarda la tecla
-    let linkSong = NOTESONLINE + notasNegras[ntecla] + ".mp3"
-    var audio = new Audio(linkSong);
-    audio.play();
-    saveSong(notasNegras[ntecla]);
-}
-
-function saveSong(nTecla) {
-    //Guarda si el troba, sino es '-1'
-    player.updateLetra(notasBlancas, notasNegras, nTecla)
-    //Acualitza el 'a:href'
-    document.getElementById("updateSave").innerText = "Notas grabadas: " + player.letras.length;
-}
-function pulsado(event) {
-    //console.log(event.keyCode, "notado", event.key);
-    //Si no es dins del 'input', sona
-    if (!inputActive()) {
-        let obj = tecles[event.keyCode];
-        //Si la tecla existeix
-        if (typeof obj !== 'undefined') {
-            // do something 
-            let linkSong = NOTESONLINE + obj.tecla + '.mp3';
-            var audio = new Audio(linkSong);
-            audio.play();
-            //Pinta la tecla blanca o gris en css premuda
-            drawTecla(obj.tecla);
-            //Guarda en 'letras' la nota actual en ASCII 
-            saveSong(obj.tecla);
-
-        }
-    }
-}
-
-//Mira si el 'input' de la cancio es actiu, per desacticar el teclat premut
-function inputActive() {
-    switch (document.activeElement) {
-        case document.getElementById("inputSong"):
-            return true;
-        case document.getElementById("inputGuesSong"):
-            return true;
-        case document.getElementById("nameBirth"):
-            return true;
-        default:
-            return false;
-    }
-}
-
 
 function avanzaEscala() {
-    //Reseteja la song
-    //Si incluye la ultima nota no puede avanzarla
-    player.avanzaPieza(notasBlancas)
-    document.getElementById("transportePieza").innerText = textSum(player.tranportePieza);
-    getNewLink();
+  player.avanzaPieza(notesPiano);
+  tranportePiezaHtml.innerText = player.getTransportPiece();
+  updateLinkSong();
+  printPartiture();
 }
 
 function retrocedeEscala() {
-    //Reseteja la song
-    //Si incluye la primera nota no puede retroceder
-    player.retrocedePieza(notasBlancas)
-    document.getElementById("transportePieza").innerText = textSum(player.tranportePieza);
-    getNewLink();
+  player.retrocedePieza(notesPiano);
+  tranportePiezaHtml.innerText = player.getTransportPiece();
+  updateLinkSong();
+  printPartiture();
 }
 
-function textSum(num) {
-    //Si es positiu '+1, +2'
-    if (num > 0) return "+" + num;
-    //Si no retorna tal cual (el negatiu ja te el -num)
-    return num;
+function readPath() {
+  // Break here if not song to guess
+  if (CONTENT_SONG == null || CONTENT_SONG == "") return false;
+  if (CONTENT_TITLE == null || CONTENT_TITLE == "") return false;
+
+  player.setCancionImportada(CONTENT_SONG, teclado, notesPiano);
+  player.setTitleSong(CONTENT_TITLE);
+  return true;
 }
 
-function generateLink() {
-    let nameSong = document.getElementById("inputSong").value.toLowerCase();
-    let nResultat = document.getElementById("resultat");
-    if (nameSong != "") {
-        nResultat.href = `./?${PATHMUSIC}=${player.letras}&${PATHSONG}=${player.ocultaCancion(nameSong)} `
-        nResultat.innerText = "Click aquí: " + nameSong;
-        nResultat.ariaLabel = "Enlace clicable de la canción creada '" + nameSong + "'";
-        nResultat.ariaHidden = false;
-        nResultat.focus();
+function loadMusic() {
+  let isParamSong = readPath();
+  let creatorSong = document.getElementsByClassName("creator-song");
+  const menuEscribirSong = document.getElementById("menu-escribir-cancion");
+  const settingsHideMenu = document.getElementsByClassName("guess-settings");
+  const updateSaveSong = document.getElementById("updateSave");
+
+  //Show / hide menus of 'Guess' or 'Create Song'
+  Array.from(creatorSong).forEach((e) => {
+    e.style.display = isParamSong ? "block" : "none";
+  });
+
+  updateSaveSong.style.display = isParamSong ? "none" : "grid";
+  menuEscribirSong.style.display = isParamSong ? "none" : "flex";
+
+  for (let i = 0; i < settingsHideMenu.length; i++) {
+    settingsHideMenu[i].style.display = isParamSong ? "flex" : "none";
+  }
+
+  if (isParamSong) {
+    printPartiture();
+    generateButtonsGuess();
+    inputGuesSongHtml.maxLength = player.getTitleSong().length;
+  }
+  updateTextPiano();
+  generateSectionGuess();
+  getLocalChallenge();
+
+  preloadAudio(notesPiano);
+}
+
+function generateButtonsGuess() {
+  const btnContainer = document.getElementById("btnGenerated");
+  deleteChilds(btnContainer);
+  let listLetras = player.getDisordedTitle();
+  for (let i = 0; i < listLetras.length; i++) {
+    let btn = document.createElement("span");
+    btn.className = "btn-guess";
+    if (listLetras[i] === " ") {
+      btn.innerHTML = "&nbsp";
+      btn.ariaLabel = `Espacio. Escribe espacio en el cuadro de edición `;
     }
+
+    if (listLetras[i] !== " ") {
+      btn.innerText = listLetras[i];
+      btn.ariaLabel = `Letra ${listLetras[i]}. Escribe la letra en el cuadro de edición `;
+    }
+
+    btn.setAttribute("usat", "no");
+    btnContainer.appendChild(btn);
+  }
 }
 
+function tocaEsto() {
+  player.resetIfOut();
+  printPartiture();
+  const index = notesPiano.findIndex((n) => n.sound === player.getActualNote());
+  drawTecla(notesPiano[index]);
 
+  new Audio(player.getActualNote()).play();
 
+  const noteWithLength = `${player.notaActual + 1} / ${
+    player.getImportSong().length
+  }`;
+  progressNumbers.innerHTML = noteWithLength;
+  progressNumbers.ariaLabel = `Notas tocadas: ${noteWithLength}`;
 
-function resetSong() {
-    player.letras = "";
-    document.getElementById("updateSave").innerText = "Notas Grabadas: " + player.letras.length;
+  progressMusic.style.width =
+    (100 * (player.notaActual + 1)) / player.getImportSong().length + "%";
+  progressMusic.ariaLabel = `Notas tocadas: ${player.notaActual + 1}/${
+    player.getImportSong().length
+  }`;
+  progressContainer.ariaLabel = `Notas restantes: ${
+    player.getImportSong().length - player.notaActual + 1
+  }`;
+
+  player.addActualNote();
+
+  // Info help for new users
+  if (player.isFourthFirstNotes()) {
+    document.getElementById("infoToca").style.display = "none";
+  }
 }
 
+function drawTecla(note) {
+  //Clear animation for each keys notes
+  Array.from(teclaNotes).forEach((item) => (item.style.transform = ""));
+  // Apply the new animation
+  teclaNotes[note.id].style.transform = "translateY(5px)";
+  const isWhite = notesPiano[note.id].note === "white";
+  createNoteAnimated(isWhite, note.color);
+  document.getElementById("touch-this").style.color = note.color;
+}
+
+function updateTextPiano() {
+  // Helper mark notes
+  numInNote = 1;
+  let slctNum = parseInt(slct.selectedOptions[0].value);
+  //0 = Inglesa, 1= Do 2= Alphabet
+  for (let i = 0; i < teclaNotes.length; i++) {
+    teclaNotes[i].innerText = textoDisponibles[slctNum][i];
+    teclaNotes[i].ariaLabel = "Reproducir nota " + textoDisponibles[slctNum][i];
+  }
+  player.resetPieza();
+  tranportePiezaHtml.innerText = player.getTransportPiece();
+  if (readPath()) {
+    //only if guess song avaliable
+    printPartiture();
+  }
+}
+
+function resetSong(event) {
+  event.preventDefault();
+  player.resetLetters();
+  document.getElementById("numUpdateSave").innerText =
+    player.getLetters().length;
+}
+
+function saveSong(mNoteId) {
+  // is the same index ARRAY NOTE & 'teclado'
+  player.updateLetra(teclado[mNoteId]);
+  document.getElementById("numUpdateSave").innerText =
+    player.getLetters().length;
+}
+
+function pulsado(event) {
+  //Si no es dins del 'input', sona
+  if (!inputActive()) {
+    let obj = tecles[event.keyCode];
+    //Si la tecla existeix
+    if (typeof obj !== "undefined") {
+      // do something
+      new Audio(obj.sound).play();
+      drawTecla(obj);
+      saveSong(obj.id);
+    }
+  }
+}
+
+//Only works sounds of keyboards if not in this inputs
+function inputActive() {
+  const nameBirthHtml = document.getElementById("nameBirth");
+  switch (document.activeElement) {
+    case inputSongHtml:
+      return true;
+    case inputGuesSongHtml:
+      return true;
+    case nameBirthHtml:
+      return true;
+    default:
+      return false;
+  }
+}
+
+function generateNewSong(event) {
+  event.preventDefault();
+
+  let nameSong = inputSongHtml.value.toLowerCase();
+  let nResultat = document.getElementById("link-song");
+
+  if (nameSong != "" && player.getLetters().length != 0) {
+    // only can share with title and notes recorded not empty
+    let notesLink = player.ocultaCancion(nameSong);
+    nResultat.href = `./?${PARAMSONG}=${player.letras}&${PARAMTITLE}=${notesLink} `;
+    nResultat.innerText = "¡Click Aqui!";
+    nResultat.ariaLabel =
+      "Enlace clicable de la canción creada '" + nameSong + "'";
+    nResultat.ariaHidden = false;
+    nResultat.focus();
+    event.target.style.display = "none";
+    document.getElementById("show-link-song").style.display = "block";
+  }
+}
 
 function createNoteAnimated(isWhite, color) {
-    let father = document.getElementById("menu-piano");
-    //<div class="note-fall material-icons">music_note</div>
-    let note = document.createElement("div");
-    note.className = "note-fall material-icons";
-    note.ariaHidden = true;
-    note.innerText = "music_note";
-    note.style.color = color;
-    if (isWhite) {
-        note.style.animation = "fall-music-left 3s linear, rotate 4s linear";
-    } else {
-        note.style.animation = "fall-music-right 3s linear, rotate 4s linear";
-    }
-    note.style.animationFillMode = "forwards";
-    father.appendChild(note);
-    //Borrara las notas que sean mayores de'50'
-    if (document.getElementsByClassName("note-fall").length > 50) {
-        father.removeChild(document.getElementsByClassName("note-fall")[0]);
-    }
-
+  let father = document.getElementById("menu-piano");
+  //<div class="note-fall material-icons">music_note</div>
+  let note = document.createElement("div");
+  note.className = "note-fall material-icons";
+  note.ariaHidden = true;
+  note.innerText = "music_note";
+  note.style.color = color;
+  if (isWhite) {
+    note.style.animation = "fall-music-left 3s linear, rotate 4s linear";
+  } else {
+    note.style.animation = "fall-music-right 3s linear, rotate 4s linear";
+  }
+  note.style.animationFillMode = "forwards";
+  father.appendChild(note);
+  // Clear div if it's mayor of 50 divs
+  if (document.getElementsByClassName("note-fall").length > 50) {
+    father.removeChild(document.getElementsByClassName("note-fall")[0]);
+  }
 }
 
 function checkInputSong() {
-    //Genera de nuevo los botones, era eso o limpiar el formato
-    generateButtonsGuess();
-    //El text del 'input' es posa en minuscula i es torna array
-    let inputGuess = document.getElementById("inputGuesSong").value.toLowerCase();
-    let inputGuessList = inputGuess.split("");
-    //Canvia los espacios del input ' ' por '&nbsp;' 
-    inputGuessList = inputGuessList.map((e) => e.replace(' ', '&nbsp;'));
-    let btnList = document.getElementsByClassName("btn-guess");
-    var label = document.querySelector("label[for='inputGuesSong']");
+  // Regenerate buttons
+  generateButtonsGuess();
 
-    //Segon bucle per les lletres del input
-    for (let i = 0; i < inputGuessList.length; i++) {
-        //Bucle per als botons
-        for (let j = 0; j < btnList.length; j++) {
-            //Per cada lletra del input es comprova els botons 
-            if (inputGuessList[i] == btnList[j].innerHTML && btnList[j].getAttribute("usat") != "yes") {
-                btnList[j].style.background = "white";
-                btnList[j].style.color = "black";
-                btnList[j].ariaLabel = "Letra usada:" + btnList[j].innerHTML.replace('&nbsp;', "Espacio");
-                //Aqui controlo si la lletra s'ha utilitzat o no a partir d'aquesta variable
-                btnList[j].setAttribute("usat", "yes");
-                //btnList[j].disabled = true;
-                break;
-            }
-        }
+  let inputGuessList = inputGuesSongHtml.value.toLowerCase().split("");
+  //Chane space button ' ' by '&nbsp; for visual 'space'
+  inputGuessList = inputGuessList.map((e) => e.replace(" ", "&nbsp;"));
+  let btnList = document.getElementsByClassName("btn-guess");
+  var label = document.querySelector("label[for='inputGuesSong']");
 
+  //Seconds loop for inputs letters
+  for (let i = 0; i < inputGuessList.length; i++) {
+    //Loop buttons
+    for (let j = 0; j < btnList.length; j++) {
+      //For each letters input trigger buttons
+      if (
+        inputGuessList[i] == btnList[j].innerHTML &&
+        btnList[j].getAttribute("usat") != "yes"
+      ) {
+        btnList[j].style.background = "white";
+        btnList[j].style.color = "black";
+        btnList[j].ariaLabel =
+          "Letra usada:" + btnList[j].innerHTML.replace("&nbsp;", "Espacio");
+        // triger if used
+        btnList[j].setAttribute("usat", "yes");
+        //btnList[j].disabled = true;
+        break;
+      }
     }
+  }
+  // If Incorrect
+  label.innerText = "Titulo incorrecto, prueba otra combinación de letras.";
 
-    //Si falla
-    label.innerText = "Titulo incorrecto, prueba otra vez";
-    //Si adivina la cancion
-    if (inputGuess === player.titleSong) {
-        for (let i = 0; i < btnList.length; i++) {
-            btnList[i].style.background = "green";
-            btnList[i].style.color = "white";
-            btnList[i].disabled = true;
-        }
-        // Sobrescribe el texto si 
-        label.innerText = "Titulo correctamente escrito";
-        let btn = document.getElementById("btn-adivina-song");
-        btn.disabled = true;
-        btn.innerText = player.titleSong.toUpperCase();
+  //If correct
+  if (player.compareInputTitle(inputGuesSongHtml.value.toLowerCase())) {
+    for (let i = 0; i < btnList.length; i++) {
+      btnList[i].style.background = "green";
+      btnList[i].style.color = "white";
+      btnList[i].disabled = true;
     }
-    label.focus()
-}
-function switchModalGuess() {
-    let dialogAdivina = document.getElementById("dialogAdivina");
-    let fons = document.getElementById("fondo-card");
-    if (dialogAdivina.style.top === "") {
-        dialogAdivina.ariaHidden = false;
-        document.getElementById("inputGuesSong").focus();
-        dialogAdivina.style.top = "50%";
-        fons.style.display = "block";
-        return;
+    // Sobrescribe el texto si
+    label.innerText = "¡Muy bien! Has escrito el titulo correctamente.";
+    // setChallenge Id if exist
+    if (CONTENT_ID !== null) {
+      setLocalChallenge();
     }
-    fons.style.display = "none";
-
-    dialogAdivina.style.top = "";
-    dialogAdivina.ariaHidden = true;
+    let btn = document.getElementById("btn-adivina-song");
+    btn.disabled = true;
+    btn.innerText = player.getTitleUpperCase();
+  }
+  label.focus();
 }
 
-
-
+// my favorite function <3
 function deleteChilds(currentDiv) {
-    while (currentDiv.firstChild) {
-        currentDiv.removeChild(currentDiv.firstChild);
-    }
-}
-//Disorder the word randoom
-function disorderWord(word) {
-    let disorded = word.split('').sort(function () { return 0.5 - Math.random() }).join('').toLowerCase();
-    //Que lo haga una segunda vez solo
-    if (disorded === word) disorded = word.split('').sort(function () { return 0.5 - Math.random() }).join('').toLowerCase();
-    return disorded;
+  while (currentDiv.firstChild) {
+    currentDiv.removeChild(currentDiv.firstChild);
+  }
 }
 
-
-function pintaPrimaryNote(e) {
-    let checked = e.target.checked;
-    for (let i = 0; i < document.getElementsByClassName("primary-note").length; i++) {
-        const element = document.getElementsByClassName("primary-note")[i];
-        //Canvia colors entre colorit o blancs
-        element.style.background = checked ? colorList[0][i] : "white";
-    }
+// Send me this in 3/21, thanks
+function sendBirthday(event) {
+  event.preventDefault();
+  let namePerson = event.target.nameBirth.value.toLowerCase();
+  let linkBirth = document.getElementById("linkBirth");
+  let noteBirthday = "IIJILhIIJIMLIIPNLhJOONLML";
+  if (namePerson != "") {
+    document.getElementById("show-link-birth").style.display = "block";
+    document.getElementById("nBirthResult").innerText = capitalize(namePerson);
+    event.target.style.display = "none";
+    linkBirth.href =
+      "./?song=" + noteBirthday + "&title=" + player.ocultaCancion(namePerson);
+    linkBirth.innerText = `¡Click Aqui!`;
+    linkBirth.focus();
+  }
 }
 
-
-function sendBirthday() {
-    let namePerson = document.getElementById("nameBirth").value;
-    let linkBirth = document.getElementById("linkBirth");
-    if (namePerson != "") {
-        linkBirth.href = "./?song=IIJILhIIJIMLIIPNLhJOONLML&title=" + player.ocultaCancion(namePerson);
-        linkBirth.innerText = `Comparte este link con '${namePerson}' `;
-        document.getElementById("linkBirth").focus();
-    }
+function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
 //Preload audio https://stackoverflow.com/a/13116795
 function preloadAudio(preloads) {
-    for (var x = 0; x < preloads.length; x++) {
-        let aud = new Audio(preloads[x])
-        //console.log("Cached", aud);
-        aud.preload = 'auto';
-    }
+  for (var x = 0; x < preloads.length; x++) {
+    let aud = new Audio(preloads[x].sound);
+    aud.preload = "auto";
+  }
 }
 
-function cifrarCesar(texto, numeroCifrado) {
-    // Estructura del teclat
-    const teclado = "AaBbCDcEdFeGHfIgJKhLiMjNOkPlQRmSnToU"
-    let textoList = texto.split("");
-    let total = "";
-    console.log(textoList);
-    for (let i = 0; i < textoList.length; i++) {
-        //Cada tecla s'ha de moure el segons l'escala 'teclado'
-        total += teclado[teclado.indexOf(textoList[i]) +numeroCifrado] ;
-    }
-    return total;
+function updateLinkSong() {
+  // On tranport piece, change melody high or low sound
+  const newNotes = player.setNewCesar(CONTENT_SONG, teclado);
+  const urlNewLink = `./?${PARAMSONG}=${newNotes}&${PARAMTITLE}=${CONTENT_TITLE}`;
+  document.getElementById("newPiece").href = urlNewLink;
 }
 
-function getNewLink() {
-    console.log(player);
-    document.getElementById("newPiece").href = `./?${PATHMUSIC}=${cifrarCesar(urlNotes, player.tranportePieza)}&${PATHSONG}=${player.ocultaCancion(player.titleSong)}`
+function generateSectionGuess() {
+  for (let i = 0; i < challengesPianoList.length; i++) {
+    const el = challengesPianoList[i];
+    let li = document.createElement("li");
+    let a = document.createElement("a");
+    a.innerText = el.id;
+    a.href = el.link + "&" + PARAMID + "=" + el.id;
+
+    if (el.link == "") {
+      li.style.display = "none";
+
+      //li.style.backgroundColor = "red";
+    }
+    let p = document.createElement("p");
+    p.innerText = el.help;
+    li.appendChild(a);
+    li.appendChild(p);
+    challengePianoHtml.appendChild(li);
+  }
+}
+
+let dialogAdivina = document.getElementById("dialogAdivina");
+
+function openDialogGuess() {
+  document.getElementById("dialogAdivina").showModal();
+}
+
+function closeDialogGuess() {
+  document.getElementById("dialogAdivina").close();
+}
+
+function openSettings() {
+  document.getElementById("settings-dialog").showModal();
+}
+
+function closeSettings() {
+  document.getElementById("settings-dialog").close();
+}
+
+function printPartiture() {
+  let useBemol = document.getElementById("slect-bemol").value == "0";
+  let slctNum = parseInt(slct.selectedOptions[0].value);
+  let mPartiture = player.getPartiture(
+    CONTENT_SONG,
+    teclado,
+    textoDisponibles[slctNum],
+    useBemol
+  );
+
+  let pare = document.getElementById("englishNotesPiano");
+  deleteChilds(pare);
+  for (let i = 0; i < mPartiture.length; i++) {
+    let span = document.createElement("span");
+    span.innerText = mPartiture[i];
+    if (i === player.notaActual) {
+      span.style.color = "yellow";
+      span.title = "Nota actual";
+    }
+    pare.appendChild(span);
+  }
 }
