@@ -9,26 +9,17 @@ const CONTENT_ID = new URLSearchParams(docSearch).get(PARAMID);
 const CONTENT_SONG = new URLSearchParams(docSearch).get(PARAMSONG);
 const CONTENT_TITLE = new URLSearchParams(docSearch).get(PARAMTITLE);
 
-// DOM elements
+// Global DOM
 const teclaNotes = document.querySelectorAll(".tecla");
-const btnContainer = document.getElementById("btnGenerated");
 const slct = document.getElementById("selectTextPiano");
-const menuEscribirSong = document.getElementById("menu-escribir-cancion");
-const settingsHideMenu = document.getElementsByClassName("guess-settings");
-const menuGuessSong = document.getElementById("menu-adivinar-cancion");
-const updateSaveSong = document.getElementById("updateSave");
-const updateCreateSong = document.getElementById("updateCreate");
-const detailExampleSong = document.getElementById("detail-example-song");
-const detailExampleBirth = document.getElementById("detail-example-birth");
 const tranportePiezaHtml = document.getElementById("transportePieza");
 const inputGuesSongHtml = document.getElementById("inputGuesSong");
 const inputSongHtml = document.getElementById("inputSong");
-const nameBirthHtml = document.getElementById("nameBirth");
-const progresBarContainer = document.getElementById("progress-bar-container");
-const progresBar = document.getElementById("progress-bar-music");
-const tempo = document.getElementById("tempo");
-const notesWritedPiano = document.getElementById("notesWritedPiano");
 const challengePianoHtml = document.getElementById("challengePiano");
+// Play song DOM
+const progressContainer = document.getElementById("progress-bar-container");
+const progressMusic = document.getElementById("progress-bar-music");
+const progressNumbers = document.getElementById("tempo");
 
 let player = new Piano(0, 0);
 let numInNote = 1;
@@ -123,18 +114,25 @@ function readPath() {
 }
 
 function loadMusic() {
-  let paramsDisponibles = readPath();
+  let isParamSong = readPath();
+  let creatorSong = document.getElementsByClassName("creator-song");
+  const menuEscribirSong = document.getElementById("menu-escribir-cancion");
+  const settingsHideMenu = document.getElementsByClassName("guess-settings");
+  const updateSaveSong = document.getElementById("updateSave");
+
   //Show / hide menus of 'Guess' or 'Create Song'
-  menuEscribirSong.style.display = paramsDisponibles ? "none" : "flex";
-  menuGuessSong.style.display = paramsDisponibles ? "block" : "none";
-  updateSaveSong.style.display = paramsDisponibles ? "none" : "grid";
-  updateCreateSong.style.display = paramsDisponibles ? "block" : "none";
-  notesWritedPiano.style.display = paramsDisponibles ? "block" : "none";
+  Array.from(creatorSong).forEach((e) => {
+    e.style.display = isParamSong ? "block" : "none";
+  });
+
+  updateSaveSong.style.display = isParamSong ? "none" : "grid";
+  menuEscribirSong.style.display = isParamSong ? "none" : "flex";
+
   for (let i = 0; i < settingsHideMenu.length; i++) {
-    settingsHideMenu[i].style.display = paramsDisponibles ? "flex" : "none";
+    settingsHideMenu[i].style.display = isParamSong ? "flex" : "none";
   }
 
-  if (paramsDisponibles) {
+  if (isParamSong) {
     printPartiture();
     generateButtonsGuess();
     inputGuesSongHtml.maxLength = player.getTitleSong().length;
@@ -147,6 +145,7 @@ function loadMusic() {
 }
 
 function generateButtonsGuess() {
+  const btnContainer = document.getElementById("btnGenerated");
   deleteChilds(btnContainer);
   let listLetras = player.getDisordedTitle();
   for (let i = 0; i < listLetras.length; i++) {
@@ -178,15 +177,15 @@ function tocaEsto() {
   const noteWithLength = `${player.notaActual + 1} / ${
     player.getImportSong().length
   }`;
-  tempo.innerHTML = noteWithLength;
-  tempo.ariaLabel = `Notas tocadas: ${noteWithLength}`;
+  progressNumbers.innerHTML = noteWithLength;
+  progressNumbers.ariaLabel = `Notas tocadas: ${noteWithLength}`;
 
-  progresBar.style.width =
+  progressMusic.style.width =
     (100 * (player.notaActual + 1)) / player.getImportSong().length + "%";
-  progresBar.ariaLabel = `Notas tocadas: ${player.notaActual + 1}/${
+  progressMusic.ariaLabel = `Notas tocadas: ${player.notaActual + 1}/${
     player.getImportSong().length
   }`;
-  progresBarContainer.ariaLabel = `Notas restantes: ${
+  progressContainer.ariaLabel = `Notas restantes: ${
     player.getImportSong().length - player.notaActual + 1
   }`;
 
@@ -255,6 +254,7 @@ function pulsado(event) {
 
 //Only works sounds of keyboards if not in this inputs
 function inputActive() {
+  const nameBirthHtml = document.getElementById("nameBirth");
   switch (document.activeElement) {
     case inputSongHtml:
       return true;
@@ -351,7 +351,9 @@ function checkInputSong() {
     // Sobrescribe el texto si
     label.innerText = "¡Muy bien! Has escrito el titulo correctamente.";
     // setChallenge Id if exist
-    setLocalChallenge();
+    if (CONTENT_ID !== null) {
+      setLocalChallenge();
+    }
     let btn = document.getElementById("btn-adivina-song");
     btn.disabled = true;
     btn.innerText = player.getTitleUpperCase();

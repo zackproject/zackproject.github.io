@@ -419,6 +419,9 @@ summary > h2 {
   }*/
 }
 
+#updateSave {
+  display: none;
+}
 #touch-this {
   text-shadow: 1px 1px 1px white;
   width: 50px;
@@ -432,7 +435,6 @@ summary > h2 {
 
 #menu-adivinar-cancion {
   width: 100%;
-  display: none;
   position: relative;
 }
 
