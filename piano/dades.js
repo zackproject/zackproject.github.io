@@ -122,42 +122,42 @@ let textoDisponibles = [
     "B5",
   ],
   [
-    "DO",
-    "DO# REb",
-    "RE",
-    "RE# MIb",
-    "MI",
-    "FA",
-    "FA# SOLb",
-    "SOL",
-    "SOL# LAb",
-    "LA",
-    "LA# SIb",
-    "SI",
-    "DO",
-    "DO# REb",
-    "RE",
-    "RE# MIb",
-    "MI",
-    "FA",
-    "FA# SOLb",
-    "SOL",
-    "SOL# LAb",
-    "LA",
-    "LA# SIb",
-    "SI",
-    "DO",
-    "DO# REb",
-    "RE",
-    "RE# MIb",
-    "MI",
-    "FA",
-    "FA# SOLb",
-    "SOL",
-    "SOL# LAb",
-    "LA",
-    "LA# SIb",
-    "SI",
+    "DO³",
+    "DO#³ REb",
+    "RE³",
+    "RE#³ MIb",
+    "MI³",
+    "FA³",
+    "FA#³ SOLb",
+    "SOL³",
+    "SOL#³ LAb",
+    "LA³",
+    "LA#³ SIb",
+    "SI³",
+    "DO⁴",
+    "DO#⁴ REb",
+    "RE⁴",
+    "RE#⁴ MIb",
+    "MI⁴",
+    "FA⁴",
+    "FA#⁴ SOLb",
+    "SOL⁴",
+    "SOL#⁴ LAb",
+    "LA⁴",
+    "LA#⁴ SIb",
+    "SI⁴",
+    "DO⁵",
+    "DO#⁵ REb",
+    "RE⁵",
+    "RE#⁵ MIb",
+    "MI⁵",
+    "FA⁵",
+    "FA#⁵ SOLb",
+    "SOL⁵",
+    "SOL#⁵ LAb",
+    "LA⁵",
+    "LA#⁵ SIb",
+    "SI⁵",
   ],
   [
     "A",
@@ -282,8 +282,9 @@ class Piano {
   getPartiture(songLetters, teclado, englishNote) {
     let result = [];
     for (let i = 0; i < songLetters.length; i++) {
+      // add trasported pieza new notes
       let index = teclado.indexOf(songLetters[i]);
-      result.push(englishNote[index].split(" ")[0]);
+      result.push(englishNote[index + this.tranportePieza].split(" ")[0]);
     }
     return result;
   }
@@ -382,6 +383,11 @@ class Piano {
       this.tranportePieza++;
     }
     this.notaActual = 0;
+  }
+
+  resetPieza() {
+    this.notaActual = 0;
+    this.tranportePieza = 0;
   }
 
   retrocedePieza(notesPiano) {

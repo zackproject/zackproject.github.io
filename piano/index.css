@@ -12,6 +12,12 @@ dialog {
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.684);
 }
+summary:hover {
+  cursor: pointer;
+}
+summary > h2 {
+  display: inline;
+}
 .guess-settings {
   display: none;
 }
@@ -72,7 +78,6 @@ dialog::backdrop {
   flex-wrap: wrap;
   margin-top: 100px;
   margin-bottom: 100px;
-
 }
 
 .piano-section {
@@ -91,7 +96,7 @@ dialog::backdrop {
 .max-piano-section {
   max-width: 400px;
 }
-#englishNotesPiano{
+#englishNotesPiano {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -628,10 +633,6 @@ dialog::backdrop {
   cursor: pointer;
   background-color: white;
   color: black;
-}
-
-.inline {
-  display: inline;
 }
 
 h2 {

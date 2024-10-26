@@ -118,7 +118,7 @@
       <h1 aria-label="Encabezado: PIANO" id="titol-piano">PIANO</h1>
     </header>
 
-    <div class="top-separator">
+    <nav class="top-separator">
       <button
         title="Abrir ajustes"
         onclick="openSettings()"
@@ -127,182 +127,314 @@
       >
         settings
       </button>
-    </div>
+    </nav>
     <!-- fondo 'dark' per quan obro un modal -->
 
     <main class="main-piano">
-      <div id="menu-adivinar-cancion">
-        <div id="progress-bar-container">
-          <div id="tempo">0/0</div>
-          <div id="progress-bar-music"></div>
-        </div>
-        <div id="menu-piano">
-          <button
-            class="btn-piano"
-            aria-label="Abrir modal para adivinar cancion"
-            onclick="openDialogGuess()"
-            id="btn-adivina-song"
-          >
-            ADIVINAR CANCIÓN
-          </button>
+      <section>
+        <div id="menu-adivinar-cancion">
+          <div id="progress-bar-container">
+            <div id="tempo">0/0</div>
+            <div id="progress-bar-music"></div>
+          </div>
+          <div id="menu-piano">
+            <button
+              class="btn-piano"
+              aria-label="Abrir modal para adivinar cancion"
+              onclick="openDialogGuess()"
+              id="btn-adivina-song"
+            >
+              ADIVINAR CANCIÓN
+            </button>
 
-          <button
-            title="Reproducir nota de la cancion grabada"
-            aria-label="Nota Musical"
-            id="touch-this"
-            class="noselect"
-            onclick="tocaEsto()"
-          >
-            <span class="material-icons" aria-hidden="true">music_note</span>
-            <span id="infoToca" aria-hidden="true">¡Púlsame!</span>
-          </button>
+            <button
+              title="Reproducir nota de la cancion grabada"
+              aria-label="Nota Musical"
+              id="touch-this"
+              class="noselect"
+              onclick="tocaEsto()"
+            >
+              <span class="material-icons" aria-hidden="true">music_note</span>
+              <span id="infoToca" aria-hidden="true">¡Púlsame!</span>
+            </button>
+          </div>
         </div>
-      </div>
-      <div class="piano">
-        <div class="escala">
-          <button class="tecla primary-note" aria-label="Reproducir nota C3">C3</button>
-          <button class="tecla secondary-note n1" aria-label="Reproducir nota C3#  D3b">C3#  D3b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota D3">D3</button>
-          <button class="tecla secondary-note n2" aria-label="Reproducir nota D3#  E3b">D3#  E3b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota E3">E3</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota F3">F3</button>
-          <button class="tecla secondary-note n3" aria-label="Reproducir nota F3#  G3b">F3#  G3b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota G3">G3</button>
-          <button class="tecla secondary-note n4" aria-label="Reproducir nota G3#  A3b">G3#  A3b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota A3">A3</button>
-          <button class="tecla secondary-note n5" aria-label="Reproducir nota A3#  B3b">A3#  B3b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota B3">B3</button>
+        <div class="piano">
+          <div class="escala">
+            <button class="tecla primary-note" aria-label="Reproducir nota C3">
+              C3
+            </button>
+            <button
+              class="tecla secondary-note n1"
+              aria-label="Reproducir nota C3#  D3b"
+            >
+              C3# D3b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota D3">
+              D3
+            </button>
+            <button
+              class="tecla secondary-note n2"
+              aria-label="Reproducir nota D3#  E3b"
+            >
+              D3# E3b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota E3">
+              E3
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota F3">
+              F3
+            </button>
+            <button
+              class="tecla secondary-note n3"
+              aria-label="Reproducir nota F3#  G3b"
+            >
+              F3# G3b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota G3">
+              G3
+            </button>
+            <button
+              class="tecla secondary-note n4"
+              aria-label="Reproducir nota G3#  A3b"
+            >
+              G3# A3b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota A3">
+              A3
+            </button>
+            <button
+              class="tecla secondary-note n5"
+              aria-label="Reproducir nota A3#  B3b"
+            >
+              A3# B3b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota B3">
+              B3
+            </button>
+          </div>
+          <div class="escala">
+            <button class="tecla primary-note" aria-label="Reproducir nota C4">
+              C4
+            </button>
+            <button
+              class="tecla secondary-note n1"
+              aria-label="Reproducir nota C4#  D4b"
+            >
+              C4# D4b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota D4">
+              D4
+            </button>
+            <button
+              class="tecla secondary-note n2"
+              aria-label="Reproducir nota D4#  E4b"
+            >
+              D4# E4b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota E4">
+              E4
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota F4">
+              F4
+            </button>
+            <button
+              class="tecla secondary-note n3"
+              aria-label="Reproducir nota F4#  G4b"
+            >
+              F4# G4b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota G4">
+              G4
+            </button>
+            <button
+              class="tecla secondary-note n4"
+              aria-label="Reproducir nota G4#  A4b"
+            >
+              G4# A4b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota A4">
+              A4
+            </button>
+            <button
+              class="tecla secondary-note n5"
+              aria-label="Reproducir nota A4#  B4b"
+            >
+              A4# B4b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota B4">
+              B4
+            </button>
+          </div>
+          <div class="escala">
+            <button class="tecla primary-note" aria-label="Reproducir nota C5">
+              C5
+            </button>
+            <button
+              class="tecla secondary-note n1"
+              aria-label="Reproducir nota C5#  D5b"
+            >
+              C5# D5b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota D5">
+              D5
+            </button>
+            <button
+              class="tecla secondary-note n2"
+              aria-label="Reproducir nota D5#  E5b"
+            >
+              D5# E5b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota E5">
+              E5
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota F5">
+              F5
+            </button>
+            <button
+              class="tecla secondary-note n3"
+              aria-label="Reproducir nota F5#  G5b"
+            >
+              F5# G5b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota G5">
+              G5
+            </button>
+            <button
+              class="tecla secondary-note n4"
+              aria-label="Reproducir nota G5# A5b"
+            >
+              G5# A5b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota A5">
+              A5
+            </button>
+            <button
+              class="tecla secondary-note n5"
+              aria-label="Reproducir nota A5# B5b"
+            >
+              A5# B5b
+            </button>
+            <button class="tecla primary-note" aria-label="Reproducir nota B5">
+              B5
+            </button>
+          </div>
         </div>
-        <div class="escala">
-          <button class="tecla primary-note" aria-label="Reproducir nota C4">C4</button>
-          <button class="tecla secondary-note n1" aria-label="Reproducir nota C4#  D4b">C4#  D4b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota D4">D4</button>
-          <button class="tecla secondary-note n2" aria-label="Reproducir nota D4#  E4b">D4#  E4b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota E4">E4</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota F4">F4</button>
-          <button class="tecla secondary-note n3" aria-label="Reproducir nota F4#  G4b">F4#  G4b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota G4">G4</button>
-          <button class="tecla secondary-note n4" aria-label="Reproducir nota G4#  A4b">G4#  A4b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota A4">A4</button>
-          <button class="tecla secondary-note n5" aria-label="Reproducir nota A4#  B4b">A4#  B4b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota B4">B4</button>
-        </div>
-        <div class="escala">
-          <button class="tecla primary-note" aria-label="Reproducir nota C5">C5</button>
-          <button class="tecla secondary-note n1" aria-label="Reproducir nota C5#  D5b">C5#  D5b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota D5">D5</button>
-          <button class="tecla secondary-note n2" aria-label="Reproducir nota D5#  E5b">D5#  E5b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota E5">E5</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota F5">F5</button>
-          <button class="tecla secondary-note n3" aria-label="Reproducir nota F5#  G5b">F5#  G5b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota G5">G5</button>
-          <button class="tecla secondary-note n4" aria-label="Reproducir nota G5# A5b">G5# A5b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota A5">A5</button>
-          <button class="tecla secondary-note n5" aria-label="Reproducir nota A5# B5b">A5# B5b</button>
-          <button class="tecla primary-note" aria-label="Reproducir nota B5">B5</button>
-        </div>
-      </div>
-
-      <section class="piano-section">
-        <h2>Notas anglosajonas</h2>
-        <p id="englishNotesPiano"></p>
+      </section>
+      <section id="notesWritedPiano" class="piano-section">
+        <details open>
+          <summary>
+            <h2>Notas</h2>
+          </summary>
+          <p id="englishNotesPiano">Sin datos</p>
+        </details>
       </section>
 
       <div class="sub-sections-piano">
         <section class="piano-section max-piano-section">
-          <h2 class="inline">¿Quieres felicitar a alguien?</h2>
-          <div id="show-link-birth">
-            <p>
-              Entra al enlace y comparte la felicitación con
-              <span id="nBirthResult"></span>
-            </p>
-            <a
-              id="linkBirth"
-              aria-label="Link de feliz cumpleaños con el nombre de la persona"
-              href=""
-            ></a>
-          </div>
-          <form
-            class="birth-form gr-parent"
-            onsubmit="return sendBirthday(event)"
-          >
-            <label id for="nameBirth" class="gr-1">
-              Escribe el nombre de la persona en el recuadro y comparte la
-              felcitación.
-            </label>
-            <span class="material-icons gr-2" aria-hidden="true">cake</span>
-            <input
-              type="text"
-              id="nameBirth"
-              class="input-section gr-3"
-              placeholder="Nombre"
-            />
-            <input
-              type="submit"
-              value="Generar felicitación"
-              class="submit-section gr-4"
-            />
-          </form>
+          <details open>
+            <summary>
+              <h2 class="inline">¿Quieres felicitar a alguien?</h2>
+            </summary>
+            <div id="show-link-birth">
+              <p>
+                Entra al enlace y comparte la felicitación con
+                <span id="nBirthResult"></span>
+              </p>
+              <a
+                id="linkBirth"
+                aria-label="Link de feliz cumpleaños con el nombre de la persona"
+                href=""
+              ></a>
+            </div>
+            <form
+              class="birth-form gr-parent"
+              onsubmit="return sendBirthday(event)"
+            >
+              <label id for="nameBirth" class="gr-1">
+                Escribe el nombre de la persona en el recuadro y comparte la
+                felcitación.
+              </label>
+              <span class="material-icons gr-2" aria-hidden="true">cake</span>
+              <input
+                type="text"
+                id="nameBirth"
+                class="input-section gr-3"
+                placeholder="Nombre"
+              />
+              <input
+                type="submit"
+                value="Generar felicitación"
+                class="submit-section gr-4"
+              />
+            </form>
+          </details>
         </section>
 
         <section class="piano-section max-piano-section">
-          <h2 class="inline">¿Quieres crear una canción?</h2>
-          <div id="show-link-song">
-            <p>Entra al enlace y comparte la canción</p>
-            <a
-              id="link-song"
-              aria-label="Link de feliz cumpleaños con el nombre de la persona"
-              href=""
-            ></a>
-          </div>
-          <div id="updateCreate">
-            <p>
-              Accede al modo de composición musical pulsando el siguiente botón.
-            </p>
-
-            <div class="create-section">
-              <a class="submit-section" href="/piano" title="Ir a modo creación"
-                >Componer</a
-              >
+          <details open>
+            <summary><h2>¿Quieres crear una canción?</h2></summary>
+            <div id="show-link-song">
+              <p>Entra al enlace y comparte la canción</p>
+              <a
+                id="link-song"
+                aria-label="Link de feliz cumpleaños con el nombre de la persona"
+                href=""
+              ></a>
             </div>
-          </div>
-          <form
-            id="updateSave"
-            class="birth-form gr-parent"
-            onsubmit="return generateNewSong(event)"
-          >
-            <label id for="inputSong" class="gr-1">
-              Toca las teclas, escribe un titulo para la canción y compártela.
-              <strong>
-                Notas grabadas: <span id="numUpdateSave">0</span></strong
-              >
-            </label>
+            <div id="updateCreate">
+              <p>
+                Accede al modo de composición musical pulsando el siguiente
+                botón.
+              </p>
 
-            <span class="material-icons gr-2" aria-hidden="true"
-              >music_note</span
+              <div class="create-section">
+                <a
+                  class="submit-section"
+                  href="/piano"
+                  title="Ir a modo creación"
+                  >Componer</a
+                >
+              </div>
+            </div>
+            <form
+              id="updateSave"
+              class="birth-form gr-parent"
+              onsubmit="return generateNewSong(event)"
             >
-            <input
-              type="text"
-              class="input-section"
-              id="inputSong"
-              class="gr-3"
-              placeholder="Titulo canción"
-              onkeydown="return /[a-z\s]/i.test(event.key)"
-              maxlength="50"
-            />
-            <div class="btns-gues-song gr-4">
-              <button onclick="resetSong(event)" title="Borrar notas grabadas">
-                Reiniciar
-              </button>
-              <input type="submit" value="Crear" class="submit-section" />
-            </div>
-          </form>
-          <!-- -->
+              <label id for="inputSong" class="gr-1">
+                Toca las teclas, escribe un titulo para la canción y compártela.
+                <strong>
+                  Notas grabadas: <span id="numUpdateSave">0</span></strong
+                >
+              </label>
 
-          <div id="menu-escribir-cancion">
-            <!-- solo acepta de la 'a' a la 'z' y ' ' espaciones. No ñ -->
-          </div>
-          <!-- -->
+              <span class="material-icons gr-2" aria-hidden="true"
+                >music_note</span
+              >
+              <input
+                type="text"
+                class="input-section"
+                id="inputSong"
+                class="gr-3"
+                placeholder="Titulo canción"
+                onkeydown="return /[a-z\s]/i.test(event.key)"
+                maxlength="50"
+              />
+              <div class="btns-gues-song gr-4">
+                <button
+                  onclick="resetSong(event)"
+                  title="Borrar notas grabadas"
+                >
+                  Reiniciar
+                </button>
+                <input type="submit" value="Crear" class="submit-section" />
+              </div>
+            </form>
+            <div id="menu-escribir-cancion">
+              <!-- solo acepta de la 'a' a la 'z' y ' ' espaciones. No ñ -->
+            </div>
+          </details>
         </section>
       </div>
 

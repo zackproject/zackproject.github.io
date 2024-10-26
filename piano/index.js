@@ -97,12 +97,14 @@ function avanzaEscala() {
   player.avanzaPieza(notesPiano);
   tranportePiezaHtml.innerText = player.getTransportPiece();
   updateLinkSong();
+  printPartiture();
 }
 
 function retrocedeEscala() {
   player.retrocedePieza(notesPiano);
   tranportePiezaHtml.innerText = player.getTransportPiece();
   updateLinkSong();
+  printPartiture();
 }
 
 function readPath() {
@@ -127,6 +129,10 @@ function loadMusic() {
   menuGuessSong.style.display = paramsDisponibles ? "block" : "none";
   updateSaveSong.style.display = paramsDisponibles ? "none" : "grid";
   updateCreateSong.style.display = paramsDisponibles ? "block" : "none";
+
+  document.getElementById("notesWritedPiano").style.display = paramsDisponibles
+    ? "block"
+    : "none";
   for (let i = 0; i < settingsHideMenu.length; i++) {
     settingsHideMenu[i].style.display = paramsDisponibles ? "flex" : "none";
   }
@@ -214,6 +220,12 @@ function updateTextPiano() {
   for (let i = 0; i < teclaNotes.length; i++) {
     teclaNotes[i].innerText = textoDisponibles[slctNum][i];
     teclaNotes[i].ariaLabel = "Reproducir nota " + textoDisponibles[slctNum][i];
+  }
+  player.resetPieza();
+  tranportePiezaHtml.innerText = player.getTransportPiece();
+  if (readPath()) {
+    //only if guess song avaliable
+    printPartiture();
   }
 }
 
@@ -436,21 +448,24 @@ function closeSettings() {
 }
 
 function printPartiture() {
+  let slctNum = parseInt(slct.selectedOptions[0].value);
   let mPartiture = player.getPartiture(
     PARAMSTRINGNOTES,
     teclado,
-    textoDisponibles[0]
+    textoDisponibles[slctNum]
   );
 
   let pare = document.getElementById("englishNotesPiano");
   deleteChilds(pare);
+  console.log(mPartiture);
+
   for (let i = 0; i < mPartiture.length; i++) {
     let span = document.createElement("span");
     span.innerText = mPartiture[i];
     if (i === player.notaActual) {
       span.style.color = "yellow";
+      span.title = "Nota actual";
     }
-
     pare.appendChild(span);
   }
 }
