@@ -697,6 +697,10 @@ h2 {
   }
 }
 
+.form-piano{
+  margin-top: 30px;
+}
+
 @media (max-width: 800px) {
   #touch-this:hover {
     cursor: auto;

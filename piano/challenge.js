@@ -421,83 +421,83 @@ let challengesPianoList = [
   },
   {
     id: 85,
-    link: "",
-    help: "",
+    link: "/piano/?song=PTSPSTUTSTPTSPSTUTSTPTSPSTUTSTPTSPSTUTSTjPRSRjOOjPPRSTSRPOOjOOPj&title=ojbhb0vpz0fft",
+    help: "Wiz Khalifa",
   },
   {
     id: 86,
-    link: "",
-    help: "",
+    link: "/piano/?song=kkkkkklRRkkkkkkmR&title=ufmjpu0jejcjlt",
+    help: "Meme",
   },
   {
     id: 87,
-    link: "",
-    help: "",
+    link: "/piano/?song=SQRSQRSQOPQOPQOPQPOMMMMLMLLLLLMMMON&title=tfjspnfn",
+    help: "Maroon 5",
   },
   {
     id: 88,
-    link: "",
-    help: "",
+    link: "/piano/?song=hiNihihJihhiMihJifJfhiNihihJihhiMihJihhfJfihhJJf&title=tsbut0hojuovpd",
+    help: "One Republic",
   },
   {
     id: 89,
-    link: "",
-    help: "",
+    link: "/piano/?song=LMLMLKOMKKKKLMKKKKLMIHHLMLMLKOMKKKKLMKKKKLMIHHIHIHFF&title=efjsspx0u(ojb0j",
+    help: "One Republic",
   },
   {
     id: 90,
-    link: "",
-    help: "",
+    link: "/piano/?song=IKLIgIKIIKIIHjMjLjMjLjMjKjMjKMLMKMLMKMLMKMLMK&title=fwpm0tj0ubix",
+    help: "Haddaway",
   },
   {
     id: 91,
-    link: "",
-    help: "",
+    link: "/piano/?song=MNMLIJLJNMNMLIJLJNMMNMLIJLJLPNLMN&title=ph0sfi0ufm",
+    help: "Passenger",
   },
   {
     id: 92,
-    link: "",
-    help: "",
+    link: "/piano/?song=NMLMJMNMLMJJMNMLMLMNLJLMMNMLLJLMMMNLJIGFEEMMMNLJIGFEMMMNLJIGFEMNLMNL&title=ggp0uj0flbit",
+    help: "Taylor Swift",
   },
   {
     id: 93,
-    link: "",
-    help: "",
+    link: "/piano/?song=jjjjnmRjOOkklRRjOklRmmRjOkllRRjnmRjOklRRjOklRmmRRllklRRnmRjkkOnmRjkkO&title=hojeobut0mmjut0n(j",
+    help: "Elton John",
   },
   {
     id: 94,
-    link: "",
-    help: "",
+    link: "/piano/?song=ejkRfikRDHKibegL&title=ptfc",
+    help: "Rosalia",
   },
   {
     id: 95,
-    link: "",
-    help: "",
+    link: "/piano/?song=JJJJIHIJHFOPQQPOJJJJIHIHFOPQQPO&title=hopt0z7bm0fiu",
+    help: "Bruno Mars",
   },
   {
     id: 96,
-    link: "",
-    help: "",
+    link: "/piano/?song=SnOSnOSnOnSjRSjRSlk&title=of7psg",
+    help: "Disney",
   },
   {
     id: 97,
-    link: "",
-    help: "",
+    link: "/piano/?song=hkjjihhNjjiihhkjjiihhgfhhkjjiihhNjjiihhkjjihhig&title=sbut0mmb",
+    help: "Smash Mouth",
   },
   {
     id: 98,
-    link: "",
-    help: "",
+    link: "/piano/?song=HJhMLJHFcccEcccEeHHHH&title=toptqnjt0tpm",
+    help: "Matt Groening",
   },
   {
     id: 99,
-    link: "",
-    help: "",
+    link: "/piano/?song=JiLMiNkNMgJJiLMiNkNMgJMMkQPmQQQQPkMMMMkQPmQQQQPkMM&title=ftvpn0zfldjn",
+    help: "Disney",
   },
   {
     id: 100,
-    link: "",
-    help: "",
+    link: "/piano/?song=jjjPOjjjjRlPjLRlPOPMjjjjPOjjjRlPjLRlPOPMjLSToTPRPPRPSROjPRPPRPSROjjOlPLLjOjOlPOjMKjjjPOjjjjRlPjLRlPO&title=tsbfz0eobtvpiu0b",
+    help: "Christina Perri",
   },
 ];
 
@@ -516,4 +516,4 @@ function getAllChallenges(sort = false) {
   });
 }
 
-// getAllChallenges();
+// getAllChallenges(true);
