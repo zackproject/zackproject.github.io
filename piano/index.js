@@ -444,11 +444,13 @@ function closeSettings() {
 }
 
 function printPartiture() {
+  let useBemol = document.getElementById("slect-bemol").value == "0";
   let slctNum = parseInt(slct.selectedOptions[0].value);
   let mPartiture = player.getPartiture(
     CONTENT_SONG,
     teclado,
-    textoDisponibles[slctNum]
+    textoDisponibles[slctNum],
+    useBemol
   );
 
   let pare = document.getElementById("englishNotesPiano");

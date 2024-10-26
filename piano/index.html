@@ -321,10 +321,19 @@
           </div>
         </div>
       </section>
-      <section class="piano-section creator-song">
+      <section class="piano-section center-section creator-song">
         <details open>
           <summary>
             <h2>Notas</h2>
+            <label for="slect-bemol">con alteración</label>
+            <select
+              name="slect-bemol"
+              id="slect-bemol"
+              onchange="printPartiture()"
+            >
+              <option value="0">bemol</option>
+              <option value="1">sostenido</option>
+            </select>
           </summary>
           <p id="englishNotesPiano">Sin datos</p>
         </details>
@@ -422,13 +431,13 @@
                 maxlength="50"
               />
               <div class="btns-gues-song gr-4">
+                <input type="submit" value="Crear" class="submit-section" />
                 <button
                   onclick="resetSong(event)"
                   title="Borrar notas grabadas"
                 >
                   Reiniciar
                 </button>
-                <input type="submit" value="Crear" class="submit-section" />
               </div>
             </form>
             <div id="menu-escribir-cancion">

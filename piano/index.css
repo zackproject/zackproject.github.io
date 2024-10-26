@@ -92,7 +92,9 @@ summary > h2 {
     font-size: 80px;
   }
 }
-
+.center-section{
+  margin: 0 auto;
+}
 .max-piano-section {
   max-width: 400px;
 }
@@ -251,6 +253,7 @@ summary > h2 {
 }
 .btns-gues-song {
   display: flex;
+  flex-direction: row-reverse;
   gap: 10px;
 
   input {
@@ -700,6 +703,16 @@ h2 {
 .form-piano{
   margin-top: 30px;
 }
+
+#slect-bemol{
+  background-color: black;
+  border: 1px solid gray;
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 
 @media (max-width: 800px) {
   #touch-this:hover {

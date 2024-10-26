@@ -85,36 +85,36 @@ let tecles = {
 let textoDisponibles = [
   [
     "C3",
-    "C3#  D3b",
+    "C3# D3b",
     "D3",
-    "D3#  E3b",
+    "D3# E3b",
     "E3",
     "F3",
-    "F3#  G3b",
+    "F3# G3b",
     "G3",
-    "G3#  A3b",
+    "G3# A3b",
     "A3",
-    "A3#  B3b",
+    "A3# B3b",
     "B3",
     "C4",
-    "C4#  D4b",
+    "C4# D4b",
     "D4",
-    "D4#  E4b",
+    "D4# E4b",
     "E4",
     "F4",
-    "F4#  G4b",
+    "F4# G4b",
     "G4",
-    "G4#  A4b",
+    "G4# A4b",
     "A4",
-    "A4#  B4b",
+    "A4# B4b",
     "B4",
     "C5",
-    "C5#  D5b",
+    "C5# D5b",
     "D5",
-    "D5#  E5b",
+    "D5# E5b",
     "E5",
     "F5",
-    "F5#  G5b",
+    "F5# G5b",
     "G5",
     "G5# A5b",
     "A5",
@@ -279,12 +279,18 @@ class Piano {
     return this.letras;
   }
 
-  getPartiture(songLetters, teclado, englishNote) {
+  getPartiture(songLetters, teclado, englishNote, checked) {
     let result = [];
     for (let i = 0; i < songLetters.length; i++) {
       // add trasported pieza new notes
       let index = teclado.indexOf(songLetters[i]);
-      result.push(englishNote[index + this.tranportePieza].split(" ")[0]);
+      let mText = englishNote[index + this.tranportePieza].split(" ");
+      if (mText.length > 1 && checked) {
+        result.push(mText[1]);
+      } else {
+        result.push(mText[0]);
+      }
+      result.push();
     }
     return result;
   }
