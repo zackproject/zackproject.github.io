@@ -7,13 +7,23 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://www.zksama.com/adivina-anime</loc>
-        <lastmod>2024-01-21</lastmod>
+        <loc>https://www.zksama.com/navidad</loc>
+        <lastmod>2024-10-10</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.zksama.com/memoriza</loc>
+        <lastmod>2024-10-10</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.zksama.com/sobre-mi</loc>
+        <lastmod>2024-09-06</lastmod>
         <priority>0.8</priority>
     </url>
         <url>
-        <loc>https://www.zksama.com/sobre-mi</loc>
-        <lastmod>2024-09-06</lastmod>
+        <loc>https://www.zksama.com/piano</loc>
+        <lastmod>2024-10-26</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
@@ -37,11 +47,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.zksama.com/navidad</loc>
-        <lastmod>2024-05-24</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://www.zksama.com/orgullo</loc>
         <lastmod>2024-05-24</lastmod>
         <priority>0.8</priority>
@@ -49,11 +54,6 @@
     <url>
         <loc>https://www.zksama.com/parejas</loc>
         <lastmod>2024-05-08</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.zksama.com/piano</loc>
-        <lastmod>2024-01-21</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
