@@ -1,10 +1,15 @@
+const PIANOSTORAGE = "piano-challenges";
+
+// get from url path 'title=' 'id=' & 'song="
 const PARAMSONG = "song";
 const PARAMTITLE = "title";
 const PARAMID = "id";
+const docSearch = document.location.search;
+const CONTENT_ID = new URLSearchParams(docSearch).get(PARAMID);
+const CONTENT_SONG = new URLSearchParams(docSearch).get(PARAMSONG);
+const CONTENT_TITLE = new URLSearchParams(docSearch).get(PARAMTITLE);
 
-let player = new Piano(0, 0);
-let numInNote = 1;
-
+// DOM elements
 const teclaNotes = document.querySelectorAll(".tecla");
 const btnContainer = document.getElementById("btnGenerated");
 const slct = document.getElementById("selectTextPiano");
@@ -13,7 +18,6 @@ const settingsHideMenu = document.getElementsByClassName("guess-settings");
 const menuGuessSong = document.getElementById("menu-adivinar-cancion");
 const updateSaveSong = document.getElementById("updateSave");
 const updateCreateSong = document.getElementById("updateCreate");
-
 const detailExampleSong = document.getElementById("detail-example-song");
 const detailExampleBirth = document.getElementById("detail-example-birth");
 const tranportePiezaHtml = document.getElementById("transportePieza");
@@ -23,12 +27,16 @@ const nameBirthHtml = document.getElementById("nameBirth");
 const progresBarContainer = document.getElementById("progress-bar-container");
 const progresBar = document.getElementById("progress-bar-music");
 const tempo = document.getElementById("tempo");
-
-const documentSearch = document.location.search;
+const notesWritedPiano = document.getElementById("notesWritedPiano");
 const challengePianoHtml = document.getElementById("challengePiano");
-const PARAMSTRINGNOTES = new URLSearchParams(documentSearch).get(PARAMSONG);
-const PIANOSTORAGE = "piano-challenges";
+
+let player = new Piano(0, 0);
+let numInNote = 1;
+
+// globall challengeArrayCorrect in localstorage
 let challengeArray = [];
+
+// Applt function in piano notes
 teclaNotes.forEach(function (e, i) {
   e.addEventListener("contextmenu", (event) => drawNumber(event));
   e.addEventListener("click", () => {
@@ -36,6 +44,14 @@ teclaNotes.forEach(function (e, i) {
     saveSong(i);
   });
 });
+
+function drawNumber(event) {
+  event.preventDefault();
+  if (slct.value == "3") {
+    event.target.innerText = numInNote;
+    numInNote++;
+  }
+}
 
 function changeColorWhiteNotes(e) {
   let checked = e.target.checked;
@@ -56,9 +72,8 @@ function fillChallenges() {
 }
 
 function getLocalChallenge() {
-  const idChallenge = new URLSearchParams(documentSearch).get(PARAMID);
-  if (idChallenge !== null) {
-    challengePianoHtml.childNodes[parseInt(idChallenge) - 1].style.background =
+  if (CONTENT_ID !== null) {
+    challengePianoHtml.childNodes[parseInt(CONTENT_ID) - 1].style.background =
       "#c02e00";
   }
 
@@ -71,21 +86,11 @@ function getLocalChallenge() {
 }
 
 function setLocalChallenge() {
-  const idChallenge = new URLSearchParams(documentSearch).get(PARAMID);
-  if (challengeArray.includes(parseInt(idChallenge))) {
-    return;
-  }
-  challengeArray.push(parseInt(idChallenge));
-  challengeArray = challengeArray.sort();
-  localStorage.setItem(PIANOSTORAGE, JSON.stringify(challengeArray));
-  fillChallenges();
-}
-
-function drawNumber(event) {
-  event.preventDefault();
-  if (slct.value == "3") {
-    event.target.innerText = numInNote;
-    numInNote++;
+  if (!challengeArray.includes(parseInt(CONTENT_ID))) {
+    challengeArray.push(parseInt(CONTENT_ID));
+    challengeArray = challengeArray.sort();
+    localStorage.setItem(PIANOSTORAGE, JSON.stringify(challengeArray));
+    fillChallenges();
   }
 }
 
@@ -108,17 +113,12 @@ function retrocedeEscala() {
 }
 
 function readPath() {
-  //Save el parametres de 'PARAMSONG' y 'PARAMTITLE'
-  const stringNotes = new URLSearchParams(documentSearch).get(PARAMSONG);
-  const titleSong = new URLSearchParams(documentSearch).get(PARAMTITLE);
-
   // Break here if not song to guess
-  if (stringNotes == null || stringNotes == "") return false;
-  if (titleSong == null || titleSong == "") return false;
+  if (CONTENT_SONG == null || CONTENT_SONG == "") return false;
+  if (CONTENT_TITLE == null || CONTENT_TITLE == "") return false;
 
-  player.setCancionImportada(stringNotes, teclado, notesPiano);
-  player.setTitleSong(titleSong);
-
+  player.setCancionImportada(CONTENT_SONG, teclado, notesPiano);
+  player.setTitleSong(CONTENT_TITLE);
   return true;
 }
 
@@ -129,10 +129,7 @@ function loadMusic() {
   menuGuessSong.style.display = paramsDisponibles ? "block" : "none";
   updateSaveSong.style.display = paramsDisponibles ? "none" : "grid";
   updateCreateSong.style.display = paramsDisponibles ? "block" : "none";
-
-  document.getElementById("notesWritedPiano").style.display = paramsDisponibles
-    ? "block"
-    : "none";
+  notesWritedPiano.style.display = paramsDisponibles ? "block" : "none";
   for (let i = 0; i < settingsHideMenu.length; i++) {
     settingsHideMenu[i].style.display = paramsDisponibles ? "flex" : "none";
   }
@@ -143,7 +140,6 @@ function loadMusic() {
     inputGuesSongHtml.maxLength = player.getTitleSong().length;
   }
   updateTextPiano();
-
   generateSectionGuess();
   getLocalChallenge();
 
@@ -401,10 +397,8 @@ function preloadAudio(preloads) {
 
 function updateLinkSong() {
   // On tranport piece, change melody high or low sound
-  let stringNotes = new URLSearchParams(documentSearch).get(PARAMSONG);
-  const newNotes = player.setNewCesar(stringNotes, teclado);
-  const hideTitle = new URLSearchParams(documentSearch).get(PARAMTITLE);
-  const urlNewLink = `./?${PARAMSONG}=${newNotes}&${PARAMTITLE}=${hideTitle}`;
+  const newNotes = player.setNewCesar(CONTENT_SONG, teclado);
+  const urlNewLink = `./?${PARAMSONG}=${newNotes}&${PARAMTITLE}=${CONTENT_TITLE}`;
   document.getElementById("newPiece").href = urlNewLink;
 }
 
@@ -450,15 +444,13 @@ function closeSettings() {
 function printPartiture() {
   let slctNum = parseInt(slct.selectedOptions[0].value);
   let mPartiture = player.getPartiture(
-    PARAMSTRINGNOTES,
+    CONTENT_SONG,
     teclado,
     textoDisponibles[slctNum]
   );
 
   let pare = document.getElementById("englishNotesPiano");
   deleteChilds(pare);
-  console.log(mPartiture);
-
   for (let i = 0; i < mPartiture.length; i++) {
     let span = document.createElement("span");
     span.innerText = mPartiture[i];
