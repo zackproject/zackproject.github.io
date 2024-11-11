@@ -235,6 +235,10 @@ let textoDisponibles = [
     "",
     "",
   ],
+  [
+    28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46,
+    47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63,
+  ],
 ];
 
 let cancionImportada = null;
@@ -282,16 +286,34 @@ class Piano {
   getPartiture(songLetters, teclado, englishNote, checked) {
     let result = [];
     for (let i = 0; i < songLetters.length; i++) {
-      // add trasported pieza new notes
-      let index = teclado.indexOf(songLetters[i]);
-      let mText = englishNote[index + this.tranportePieza].split(" ");
-      if (mText.length > 1 && checked) {
-        result.push(mText[1]);
+      if (isNaN(songLetters[i])) {
+        // add trasported pieza new notes
+        let index = teclado.indexOf(songLetters[i]);
+        let mText = englishNote[index + this.tranportePieza].split(" ");
+        if (mText.length > 1 && checked) {
+          result.push(mText[1]);
+        } else {
+          result.push(mText[0]);
+        }
       } else {
-        result.push(mText[0]);
+        const count = parseInt(songLetters[i]);
+        const insideArray = songLetters.slice(i + 1, i + 1 + count);
+        let tempList = [];
+        for (let j = 0; j < insideArray.length; j++) {
+          let index = teclado.indexOf(insideArray[j]);
+          let mText = englishNote[index + this.tranportePieza].split(" ");
+          if (mText.length > 1 && checked) {
+            tempList.push(mText[1]);
+          } else {
+            tempList.push(mText[0]);
+          }
+        }
+        result.push(tempList)
+        i += count;
       }
-      result.push();
     }
+    console.log(result);
+    
     return result;
   }
 
@@ -351,10 +373,39 @@ class Piano {
   }
 
   setCancionImportada(stringNotes, teclado, notesPiano) {
-    this.cancionImportada = stringNotes.split("").map((letra) => {
-      const letterIndex = teclado.indexOf(letra);
-      return notesPiano[letterIndex].sound;
-    });
+    this.cancionImportada = [];
+    const notesArray = stringNotes.split("");
+    for (let i = 0; i < notesArray.length; i++) {
+      const letra = notesArray[i];
+
+      if (isNaN(letra)) {
+        // not number in string
+        const letterIndex = teclado.indexOf(letra);
+        this.cancionImportada.push(notesPiano[letterIndex].sound);
+      } else {
+        const count = parseInt(letra);
+        // if 'count' is 2 get the two elements after ZZZ2ABCCC => ["A","B"]
+        this.setChordCancionImportada(
+          stringNotes,
+          i,
+          count,
+          teclado,
+          notesPiano
+        );
+        // skip elements pushed
+        i += count;
+      }
+    }
+  }
+
+  setChordCancionImportada(stringNotes, i, count, teclado, notesPiano) {
+    const insideArray = stringNotes.slice(i + 1, i + 1 + count);
+    let tempList = [];
+    for (let j = 0; j < insideArray.length; j++) {
+      const letterIndex = teclado.indexOf(insideArray[j]);
+      tempList.push(notesPiano[letterIndex].sound);
+    }
+    this.cancionImportada.push(tempList);
   }
 
   disortMyTitle() {
@@ -455,3 +506,25 @@ class Piano {
     return nuevoTexto;
   }
 }
+
+//let borrador = "SQTQmSQUTSmQP2LS2JQ2MT2JQ2hm2LS2aJQ2NU2MT2LS2hm2JQ2IP";
+
+// let myListBorrador = [];
+/*
+for (let i = 0; i < borrador.length; i++) {
+  const element = borrador[i];
+  if (isNaN(element)) {
+    // not number in string
+    myListBorrador.push(element);
+  } else {
+    const count = parseInt(element);
+    // if 'count' is 2 get the two elements after ZZZ2ABCCC => ["A","B"]
+    const insideArray = borrador.slice(i + 1, i + 1 + count).split("");
+    myListBorrador.push(insideArray);
+    // skip elements pushed
+    i += count;
+  }
+}
+
+console.log(myListBorrador);
+*/

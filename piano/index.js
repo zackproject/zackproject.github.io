@@ -169,10 +169,17 @@ function generateButtonsGuess() {
 function tocaEsto() {
   player.resetIfOut();
   printPartiture();
-  const index = notesPiano.findIndex((n) => n.sound === player.getActualNote());
-  drawTecla(notesPiano[index]);
-
-  new Audio(player.getActualNote()).play();
+  // mymelody -> SQTQmSQUTSmQP
+  // myChord -> SQTQmSQUTSmQP2LS2JQ2MT2JQ2hm2LS2JQ2NU2MT2LS2hm2JQ2IP
+  Array.from(teclaNotes).forEach((item) => (item.style.transform = ""));
+  const myNoteOrArray = player.getActualNote();
+  if (Array.isArray(myNoteOrArray)) {
+    // sound as chords (more notes at the same time)
+    myNoteOrArray.forEach((sound) => soundMyNote(notesPiano, sound));
+  } else {
+    // sound One note
+    soundMyNote(notesPiano, myNoteOrArray);
+  }
 
   const noteWithLength = `${player.notaActual + 1} / ${
     player.getImportSong().length
@@ -199,11 +206,10 @@ function tocaEsto() {
 
 function drawTecla(note) {
   //Clear animation for each keys notes
-  Array.from(teclaNotes).forEach((item) => (item.style.transform = ""));
   // Apply the new animation
   teclaNotes[note.id].style.transform = "translateY(5px)";
   const isWhite = notesPiano[note.id].note === "white";
-  createNoteAnimated(isWhite, note.color);
+  //  createNoteAnimated(isWhite, note.color);
   document.getElementById("touch-this").style.color = note.color;
 }
 
@@ -457,11 +463,73 @@ function printPartiture() {
   deleteChilds(pare);
   for (let i = 0; i < mPartiture.length; i++) {
     let span = document.createElement("span");
-    span.innerText = mPartiture[i];
+
+    if (typeof mPartiture[i] === "object") {
+      span.innerText = "[" + mPartiture[i].join(" ") + "]";
+    } else {
+      span.innerText = mPartiture[i];
+    }
     if (i === player.notaActual) {
       span.style.color = "yellow";
       span.title = "Nota actual";
     }
     pare.appendChild(span);
+  }
+}
+
+let myCont = 0;
+let myLocalSong = [
+  "./notes/47.mp3",
+  "./notes/44.mp3",
+  "./notes/49.mp3",
+  "./notes/44.mp3",
+  "./notes/46.mp3",
+  "./notes/47.mp3",
+  "./notes/44.mp3",
+  "./notes/51.mp3",
+  "./notes/49.mp3",
+  "./notes/47.mp3",
+  "./notes/46.mp3",
+  "./notes/44.mp3",
+  "./notes/42.mp3",
+
+  ["./notes/47.mp3", "./notes/59.mp3"],
+  ["./notes/44.mp3", "./notes/56.mp3"],
+  ["./notes/49.mp3", "./notes/61.mp3"],
+  ["./notes/44.mp3", "./notes/56.mp3"],
+  ["./notes/46.mp3", "./notes/58.mp3"],
+  ["./notes/47.mp3", "./notes/59.mp3"],
+  ["./notes/44.mp3", "./notes/56.mp3"],
+  ["./notes/51.mp3", "./notes/63.mp3"],
+  ["./notes/49.mp3", "./notes/61.mp3"],
+  ["./notes/47.mp3", "./notes/59.mp3"],
+  ["./notes/46.mp3", "./notes/58.mp3"],
+  ["./notes/44.mp3", "./notes/56.mp3"],
+  ["./notes/42.mp3", "./notes/54.mp3"],
+];
+
+function chord() {
+  const currentNote = myLocalSong[myCont];
+  Array.from(teclaNotes).forEach((item) => (item.style.transform = ""));
+  if (Array.isArray(currentNote)) {
+    currentNote.forEach((sound) => {
+      soundMyNote(notesPiano, sound);
+    });
+  } else {
+    soundMyNote(notesPiano, currentNote);
+  }
+
+  // Avanza el contador y reinicia si es necesario
+  myCont++;
+  if (myCont == myLocalSong.length) {
+    myCont = 0;
+  }
+}
+
+function soundMyNote(notesPiano, currentNote) {
+  const index = notesPiano.findIndex((n) => n.sound === currentNote);
+  if (index !== -1) {
+    drawTecla(notesPiano[index]);
+    new Audio(currentNote).play();
   }
 }
