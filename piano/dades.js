@@ -83,162 +83,17 @@ let tecles = {
   191: notesPiano[35],
 };
 let textoDisponibles = [
-  [
-    "C3",
-    "C3# D3b",
-    "D3",
-    "D3# E3b",
-    "E3",
-    "F3",
-    "F3# G3b",
-    "G3",
-    "G3# A3b",
-    "A3",
-    "A3# B3b",
-    "B3",
-    "C4",
-    "C4# D4b",
-    "D4",
-    "D4# E4b",
-    "E4",
-    "F4",
-    "F4# G4b",
-    "G4",
-    "G4# A4b",
-    "A4",
-    "A4# B4b",
-    "B4",
-    "C5",
-    "C5# D5b",
-    "D5",
-    "D5# E5b",
-    "E5",
-    "F5",
-    "F5# G5b",
-    "G5",
-    "G5# A5b",
-    "A5",
-    "A5# B5b",
-    "B5",
-  ],
-  [
-    "DO³",
-    "DO#³ REb",
-    "RE³",
-    "RE#³ MIb",
-    "MI³",
-    "FA³",
-    "FA#³ SOLb",
-    "SOL³",
-    "SOL#³ LAb",
-    "LA³",
-    "LA#³ SIb",
-    "SI³",
-    "DO⁴",
-    "DO#⁴ REb",
-    "RE⁴",
-    "RE#⁴ MIb",
-    "MI⁴",
-    "FA⁴",
-    "FA#⁴ SOLb",
-    "SOL⁴",
-    "SOL#⁴ LAb",
-    "LA⁴",
-    "LA#⁴ SIb",
-    "SI⁴",
-    "DO⁵",
-    "DO#⁵ REb",
-    "RE⁵",
-    "RE#⁵ MIb",
-    "MI⁵",
-    "FA⁵",
-    "FA#⁵ SOLb",
-    "SOL⁵",
-    "SOL#⁵ LAb",
-    "LA⁵",
-    "LA#⁵ SIb",
-    "SI⁵",
-  ],
-  [
-    "A",
-    "a",
-    "B",
-    "b",
-    "C",
-    "D",
-    "c",
-    "E",
-    "d",
-    "F",
-    "e",
-    "G",
-    "H",
-    "f",
-    "I",
-    "g",
-    "J",
-    "K",
-    "h",
-    "L",
-    "i",
-    "M",
-    "j",
-    "N",
-    "O",
-    "k",
-    "P",
-    "l",
-    "Q",
-    "R",
-    "m",
-    "S",
-    "n",
-    "T",
-    "o",
-    "U",
-  ],
-  [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ],
-  [
-    28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46,
-    47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63,
-  ],
+  "C3,C3# D3b,D3,D3# E3b,E3,F3,F3# G3b,G3,G3# A3b,A3,A3# B3b,B3,C4,C4# D4b,D4,D4# E4b,E4,F4,F4# G4b,G4,G4# A4b,A4,A4# B4b,B4,C5,C5# D5b,D5,D5# E5b,E5,F5,F5# G5b,G5,G5# A5b,A5,A5# B5b,B5".split(
+    ","
+  ),
+  "DO³,DO#³ REb³,RE³,RE#³ MIb³,MI³,FA³,FA#³ SOLb³,SOL³,SOL#³ LAb³,LA³,LA#³ SIb³,SI³,DO⁴,DO#⁴ REb⁴,RE⁴,RE#⁴ MIb⁴,MI⁴,FA⁴,FA#⁴ SOLb⁴,SOL⁴,SOL#⁴ LAb⁴,LA⁴,LA#⁴ SIb⁴,SI⁴,DO⁵,DO#⁵ REb⁵,RE⁵,RE#⁵ MIb⁵,MI⁵,FA⁵,FA#⁵ SOLb⁵,SOL⁵,SOL#⁵ LAb⁵,LA⁵,LA#⁵ SIb⁵,SI⁵".split(
+    ","
+  ),
+  teclado.split(""),
+  Array(36).fill(""),
+  "28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63".split(
+    ","
+  ),
 ];
 
 let cancionImportada = null;
@@ -308,12 +163,10 @@ class Piano {
             tempList.push(mText[0]);
           }
         }
-        result.push(tempList)
+        result.push(tempList);
         i += count;
       }
     }
-    console.log(result);
-    
     return result;
   }
 
@@ -430,12 +283,20 @@ class Piano {
 
   avanzaPieza(notesPiano) {
     let maxNote = notesPiano[notesPiano.length - 1].sound;
+    // if chord(array pass test 'includes'?????)
     if (!this.cancionImportada.includes(maxNote)) {
       for (let i = 0; i < this.cancionImportada.length; i++) {
-        const index = notesPiano.findIndex(
-          (note) => note.sound === this.cancionImportada[i]
-        );
-        this.cancionImportada[i] = notesPiano[index + 1].sound;
+        if (typeof this.cancionImportada[i] !== "object") {
+          const index = notesPiano.findIndex(
+            (note) => note.sound === this.cancionImportada[i]
+          );
+          this.cancionImportada[i] = notesPiano[index + 1].sound;
+        } else {
+          // if found and arrayObject is a chord
+          for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+          }
+        }
       }
       this.tranportePieza++;
     }
@@ -506,7 +367,7 @@ class Piano {
     return nuevoTexto;
   }
 }
-
+// http://192.168.1.133:5500/piano/?song=2HSSQRST2GSRQP2QFQOPQR2EQPONFMM2ODT2HS2OFPQ2eRQPO2EPONO&title=uh0mmbc0ophbse
 //let borrador = "SQTQmSQUTSmQP2LS2JQ2MT2JQ2hm2LS2aJQ2NU2MT2LS2hm2JQ2IP";
 
 // let myListBorrador = [];

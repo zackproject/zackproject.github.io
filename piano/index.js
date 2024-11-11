@@ -209,7 +209,7 @@ function drawTecla(note) {
   // Apply the new animation
   teclaNotes[note.id].style.transform = "translateY(5px)";
   const isWhite = notesPiano[note.id].note === "white";
-  //  createNoteAnimated(isWhite, note.color);
+  createNoteAnimated(isWhite, note.color);
   document.getElementById("touch-this").style.color = note.color;
 }
 
@@ -508,23 +508,7 @@ let myLocalSong = [
   ["./notes/42.mp3", "./notes/54.mp3"],
 ];
 
-function chord() {
-  const currentNote = myLocalSong[myCont];
-  Array.from(teclaNotes).forEach((item) => (item.style.transform = ""));
-  if (Array.isArray(currentNote)) {
-    currentNote.forEach((sound) => {
-      soundMyNote(notesPiano, sound);
-    });
-  } else {
-    soundMyNote(notesPiano, currentNote);
-  }
 
-  // Avanza el contador y reinicia si es necesario
-  myCont++;
-  if (myCont == myLocalSong.length) {
-    myCont = 0;
-  }
-}
 
 function soundMyNote(notesPiano, currentNote) {
   const index = notesPiano.findIndex((n) => n.sound === currentNote);
