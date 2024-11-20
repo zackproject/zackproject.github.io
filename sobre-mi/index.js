@@ -8,25 +8,6 @@ function showProject() {
   document.getElementById("btn-hide-project").style.display = "none";
 }
 
-function loadPage() {
-  const skills = document
-    .getElementsByClassName("skills")[0]
-    .getElementsByTagName("img");
-
-  for (let i = 0; i < skills.length; i++) {
-    const element = skills[i];
-
-    element.style.animation = `disapear 3s infinite`;
-    element.style.animationDelay = i / 10 + "s";
-  }
-
-  preloadAudio(songList.map((obj) => NOTESONLINE + songList[obj] + ".mp3"));
-}
-
-// piano imported
-const NOTESONLINE = "../piano/";
-
-let note = 0;
 const songList = [
   "notes/56.mp3",
   "notes/51.mp3",
@@ -66,6 +47,26 @@ const songList = [
   "notes/49.mp3",
   "notes/49.mp3",
 ];
+const NOTESONLINE = "../piano/";
+
+function loadPage() {
+  const skills = document
+    .getElementsByClassName("skills")[0]
+    .getElementsByTagName("img");
+
+  for (let i = 0; i < skills.length; i++) {
+    const element = skills[i];
+
+    element.style.animation = `disapear 3s infinite`;
+    element.style.animationDelay = i / 10 + "s";
+  }
+
+  preloadAudio(songList);
+}
+
+// piano imported
+
+let note = 0;
 
 function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -87,7 +88,9 @@ function easterEgg() {
 
 function preloadAudio(preloads) {
   for (var x = 0; x < preloads.length; x++) {
-    let aud = new Audio(preloads[x]);
+    let aud = new Audio(NOTESONLINE + preloads[x]);
+    let linkSong = +songList[note];
+
     //console.log("Cached", aud);
     aud.preload = "auto";
   }
