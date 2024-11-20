@@ -88,10 +88,7 @@ function easterEgg() {
 
 function preloadAudio(preloads) {
   for (var x = 0; x < preloads.length; x++) {
-    let aud = new Audio(NOTESONLINE + preloads[x]);
-    let linkSong = +songList[note];
-
-    //console.log("Cached", aud);
+    let aud = new Audio(NOTESONLINE + preloads[x]);    
     aud.preload = "auto";
   }
 }

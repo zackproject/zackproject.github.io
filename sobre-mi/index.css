@@ -241,19 +241,24 @@ h3 {
 .ranking-list li {
   position: relative;
 }
+.year-color {
+  color: yellow;
+}
 
 .year {
   position: absolute;
   top: 0px;
-  left: -90px;
+  left: -100px;
   color: yellow;
+  text-align: left;
 }
 
 .dot {
   position: absolute;
   top: -12px;
-  left: -46px;
+  left: -55px;
   font-size: 2rem;
+  background-color: #1e1e1e;
 }
 
 .stack-languages {
@@ -301,7 +306,7 @@ h3 {
 }
 
 .ranking-list > li {
-  animation: translateXRight linear;
+  animation: translateYRight linear;
   animation-timeline: view();
   animation-range-start: cover;
   animation-range-end: 200px;
@@ -318,16 +323,24 @@ h3 {
   }
 }
 
-@keyframes translateXRight {
-  from {
-    transform: translateX(190px);
-    opacity: 0;
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
   }
-  to {
-    transform: translateX(0px);
-    opacity: 1;
+
+  50% {
+    rotate: 45deg;
+  }
+
+  75% {
+    rotate: -45deg;
+  }
+
+  100% {
+    rotate: 0deg;
   }
 }
+
 
 @keyframes translateYRight {
   from {
@@ -343,12 +356,6 @@ h3 {
 @media (max-width: 1200px) {
   .project {
     flex-direction: column;
-  }
-  .ranking-list > li {
-    animation: translateYRight linear;
-    animation-timeline: view();
-    animation-range-start: cover;
-    animation-range-end: 200px;
   }
 }
 
@@ -429,6 +436,8 @@ h3 {
   animation: rotate 5s infinite;
   background-color: darkgray;
   position: relative;
+  animation: rotate 5s infinite;
+
   span {
     position: absolute;
     bottom: -20px;
