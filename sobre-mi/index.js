@@ -24,18 +24,61 @@ function loadPage() {
 }
 
 // piano imported
-const NOTESONLINE = "../piano/notes/";
+const NOTESONLINE = "../piano/";
 
 let note = 0;
 const songList = [
-  56, 51, 52, 54, 52, 51, 49, 49, 52, 56, 54, 52, 51, 52, 54, 56, 52, 49, 49,
-  54, 57, 61, 59, 57, 56, 52, 56, 54, 52, 51, 51, 52, 54, 56, 52, 49, 49,
+  "notes/56.mp3",
+  "notes/51.mp3",
+  "notes/52.mp3",
+  "notes/54.mp3",
+  "notes/52.mp3",
+  "notes/51.mp3",
+  "notes/49.mp3",
+  "notes/49.mp3",
+  "notes/52.mp3",
+  "notes/56.mp3",
+  "notes/54.mp3",
+  "notes/52.mp3",
+  "notes/51.mp3",
+  "notes/52.mp3",
+  "notes/54.mp3",
+  "notes/56.mp3",
+  "notes/52.mp3",
+  "notes/49.mp3",
+  "notes/49.mp3",
+  "notes/54.mp3",
+  "notes/57.mp3",
+  "notes/61.mp3",
+  "notes/59.mp3",
+  "notes/57.mp3",
+  "notes/56.mp3",
+  "notes/52.mp3",
+  "notes/56.mp3",
+  "notes/54.mp3",
+  "notes/52.mp3",
+  "notes/51.mp3",
+  "notes/51.mp3",
+  "notes/52.mp3",
+  "notes/54.mp3",
+  "notes/56.mp3",
+  "notes/52.mp3",
+  "notes/49.mp3",
+  "notes/49.mp3",
 ];
+
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const tetrisPiece = document.getElementById("piece-tetris");
 function easterEgg() {
   //Si la nota es fora del teclat, reseteja
   if (note >= songList.length) note = 0;
+  tetrisPiece.style.right = `${randInt(0, 80)}%`;
+  tetrisPiece.className = `piece${randInt(1, 7)}`;
 
-  let linkSong = NOTESONLINE + songList[note] + ".mp3";
+  let linkSong = NOTESONLINE + songList[note];
   var audio = new Audio(linkSong);
   audio.play();
 

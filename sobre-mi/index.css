@@ -37,14 +37,8 @@ nav {
   }
 }
 aside {
-  position: fixed;
-  z-index: 1;
-  top: 10px;
-  left: 10px;
-  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   gap: 15px;
 }
 
@@ -54,7 +48,7 @@ aside {
 }
 
 .info-profile {
-  max-width: 700px;
+  max-width: 800px;
   font-size: 1.25rem;
 }
 
@@ -63,11 +57,6 @@ p {
 }
 p > a {
   color: #c9d1d9;
-}
-.presentation {
-  display: flex;
-  gap: 20px;
-  align-items: center;
 }
 
 .btn-social-network {
@@ -101,22 +90,52 @@ p > a {
 }
 
 .skills {
-  flex-wrap: wrap;
+  overflow-x: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
   padding: 50px 0px 50px 0px;
-
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
   display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-.skills > img {
-  height: 40px;
-  width: 40px;
+  gap: 50px;
+  img {
+    height: 50px;
+    width: 50px;
+  }
+  li {
+    animation: noria 20s infinite linear alternate;
+    width: 110px;
+    height: 100px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    span {
+      background-color: #1f2937;
+      padding: 0px 6px 0px 6px;
+      border-radius: 6px;
+    }
+  }
 }
 
 .profile-pic {
   border-radius: 50%;
   float: right;
-  height: 150px;
   transition: border-radius 0.5s;
   &:hover {
     border-radius: 40%;
@@ -134,7 +153,7 @@ p > a {
 }
 
 h1 {
-  padding-bottom: 30px;
+  margin-top: 60px;
 }
 h2 {
   margin-top: 60px;
@@ -198,17 +217,10 @@ h3 {
 
 #btn-hide-project {
   margin: 0 auto;
-  background-color: white;
-  border: 1px solid #4b5462;
-  min-height: 30px;
-  min-width: 80px;
-
   padding: 5px;
-  border-radius: 20px;
-  color: black;
-  padding-inline: 10px;
+  padding: 10px 15px 10px 15px;
   transition: all 0.5s;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   &:hover {
     cursor: pointer;
     background-color: black;
@@ -244,7 +256,19 @@ h3 {
   font-size: 2rem;
 }
 
-.skills > img {
+.stack-languages {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+@keyframes noria {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-1000px);
+  }
 }
 
 @keyframes disapear {
@@ -253,32 +277,27 @@ h3 {
     scale: 1;
   }
   20% {
-    opacity: 0.8;
-    scale: 0.8;
+    opacity: 0.7;
   }
 
   50% {
-    opacity: 0.6;
-    scale: 0.8;
+    opacity: 0.7;
   }
   80% {
-    opacity: 0.6;
-    scale: 0.8;
+    opacity: 0.7;
   }
   100% {
     opacity: 1;
-    scale: 1;
   }
 }
 /**/
-.projects > article, #btn-hide-project {
+.projects > article,
+#btn-hide-project {
   animation: translateXLeft linear;
   animation-timeline: view();
   animation-range-start: cover;
   animation-range-end: 200px;
 }
-
-
 
 .ranking-list > li {
   animation: translateXRight linear;
@@ -286,6 +305,7 @@ h3 {
   animation-range-start: cover;
   animation-range-end: 200px;
 }
+
 @keyframes translateXLeft {
   from {
     scale: 0.9;
@@ -308,17 +328,26 @@ h3 {
   }
 }
 
+@keyframes translateYRight {
+  from {
+    transform: translateY(190px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 1200px) {
-  .presentation,
   .project {
     flex-direction: column;
   }
-
-  aside {
-    position: relative;
-  }
-  .skills {
-    padding: 70px 0px 70px 0px;
+  .ranking-list > li {
+    animation: translateYRight linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 200px;
   }
 }
 
@@ -336,5 +365,97 @@ h3 {
 
   article {
     margin-bottom: 50px;
+  }
+}
+
+/*TETRIS*/
+#piece-tetris {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  background-image: url("./images/tetris.png"); /* Ruta del spritesheet */
+}
+.tetris {
+  background-image: url("./images/tetris.png"); /* Ruta del spritesheet */
+  border: 1px solid red;
+}
+
+.piece1 {
+  width: 95px;
+  height: 24px;
+  background-position: 0px -24px;
+}
+
+.piece2 {
+  width: 72px;
+  height: 48px;
+  background-position: -120px 0px;
+}
+.piece3 {
+  width: 72px;
+  height: 48px;
+  background-position: -216px 0px;
+}
+.piece4 {
+  width: 72px;
+  height: 48px;
+  background-position: -48px -72px;
+}
+.piece5 {
+  width: 72px;
+  height: 48px;
+  background-position: -144px -72px;
+}
+
+.piece6 {
+  width: 48px;
+  height: 48px;
+  background-position: -312px 0px;
+}
+
+.piece7 {
+  width: 72px;
+  height: 48px;
+  background-position: -240px -72px;
+}
+#touch-easter {
+  cursor: pointer;
+  text-shadow: 1px 1px 1px white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  animation: rotate 5s infinite;
+  background-color: darkgray;
+  position: relative;
+  span {
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    font-size: 14px;
+    text-align: center;
+    color: yellow;
+    padding: 5px;
+    z-index: 4;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    text-shadow: none;
+  }
+  transition: background-color 0.5s;
+  &&:hover {
+    background-color: gray;
+  }
+}
+
+.game-tetris {
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 250px;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  p {
+    color: yellow;
   }
 }
