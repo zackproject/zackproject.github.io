@@ -80,15 +80,14 @@ function easterEgg() {
   tetrisPiece.className = `piece${randInt(1, 7)}`;
 
   let linkSong = NOTESONLINE + songList[note];
-  var audio = new Audio(linkSong);
-  audio.play();
+  new Audio(linkSong).play();
 
   note++;
 }
 
 function preloadAudio(preloads) {
   for (var x = 0; x < preloads.length; x++) {
-    let aud = new Audio(NOTESONLINE + preloads[x]);    
+    let aud = new Audio(NOTESONLINE + preloads[x]);
     aud.preload = "auto";
   }
 }
