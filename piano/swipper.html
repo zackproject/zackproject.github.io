@@ -25,16 +25,11 @@
     const result = document.getElementById("resultado");
     const melodia = document.getElementById("melodia");
 
-    const leftOut = "1!@34$4%6^7";
     const rightOut = "lLzZxcCvVbBnm";
-    const tecladoOnline = "8*9(0qQwWeErtTyYuiIoOpPasSdDfgGhHjJk";
-    const tecladoMiPiano = "AaBbCDcEdFeGHfIgJKhLiMjNOkPlQRmSnToU";
-    let alternativePiano = leftOut + tecladoOnline + rightOut;
+    const tecladoOnline = "1!2@34$5%6^78*9(0qQwWeErtTyYuiIoOpPasSdDfgGhHjJk";
+    const tecladoMiPiano = "VpWqXYrZstuvAaBbCDcEdFeGHfIgJKhLiMjNOkPlQRmSnToU";
     function canTranportPiece(nota) {
       let mText = melodia.value.replace(/[\s|\r?\n]/g, "");
-      if (leftOut.indexOf(nota) != -1) {
-        console.log("Esta por la izquierda");
-      }
       if (rightOut.indexOf(nota) != -1) {
         console.log("Esta por la derecha");
       }
@@ -48,25 +43,35 @@
       console.log(`Texto limpio: ${text}`);
 
       for (let i = 0; i < text.length; i++) {
-        const nota = text[i];
-        const index = tecladoOnline.indexOf(nota);
-
-        // Valida que la nota exista en el tecladoOnline
-        melodia.value = text;
-        if (index !== -1) {
-          sum += tecladoMiPiano[index];
+        if (text[i] === "[" || text[i] == "]") {
+          sum += text[i];
         } else {
-          canTranportPiece(nota);
-          console.warn(`Nota fuera de rango: ${nota}`);
-          info.innerText = `Nota fuera de rango: ${nota}`;
+          const nota = text[i];
+          const index = tecladoOnline.indexOf(nota);
 
-          // Selecciona la nota fuera de rango en el textarea
-          melodia.focus();
-          melodia.setSelectionRange(i, i + 1);
+          // Valida que la nota exista en el tecladoOnline
+          melodia.value = text;
+          if (index !== -1) {
+            sum += tecladoMiPiano[index];
+          } else {
+            canTranportPiece(nota);
+            console.warn(`Nota fuera de rango: ${nota}`);
 
-          return; // Termina la ejecución si hay una nota fuera de rango
+            if (rightOut.includes(nota)) {
+              info.innerText = `Nota fuera de rango derecho: ${nota}`;
+              console.log(`Nota fuera de rango derecho: ${nota}`);
+            }
+
+            // Selecciona la nota fuera de rango en el textarea
+            melodia.focus();
+            melodia.setSelectionRange(i, i + 1);
+
+            return; // Termina la ejecución si hay una nota fuera de rango
+          }
         }
       }
+
+      sum = tranformBrackets(sum);
 
       const url = `/piano/?song=${sum}&title=b`;
       result.innerText = "Ver Resultado";
@@ -74,57 +79,89 @@
       info.innerText = "Transcripción completada.";
     }
     /*
-    
-✅ https://virtualpiano.net/music-sheet/overworld-theme-super-mario-bros/
-✅ https://virtualpiano.net/music-sheet/hes-a-pirate-pirates-of-the-caribbean-klaus-badelt/
-✅ https://virtualpiano.net/music-sheet/bad-apple-touhou-alternative/
-✅ https://virtualpiano.net/music-sheet/let-it-snow-easy/
-✅ https://virtualpiano.net/music-sheet/we-wish-you-a-merry-christmas-super-easy/
-✅ https://virtualpiano.net/music-sheet/pokemon-theme-jason-paige/
-✅  https://virtualpiano.net/music-sheet/joy-to-the-world-easy/
-✅  https://virtualpiano.net/music-sheet/whole-new-world-aladdin/
-✅  https://virtualpiano.net/music-sheet/its-a-small-world-sherman-brothers/
-✅  https://virtualpiano.net/music-sheet/do-re-mi-the-sound-of-music/
-✅  https://virtualpiano.net/music-sheet/rudolph-the-red-nosed-reindeer-alternative/
-✅  https://virtualpiano.net/music-sheet/tale-as-old-as-time-beauty-and-the-beast-angela-lansbury/
 
-    https://virtualpiano.net/music-sheet/a-place-to-call-home-melodies-of-life/  final fantasy
-    https://virtualpiano.net/music-sheet/calm-before-the-storm-final-fantasy-x-nobuo-uematsu/
+    ✅ https://virtualpiano.net/music-sheet/overworld-theme-super-mario-bros/
+    ✅ https://virtualpiano.net/music-sheet/hes-a-pirate-pirates-of-the-caribbean-klaus-badelt/
+    ✅ https://virtualpiano.net/music-sheet/bad-apple-touhou-alternative/
+    ✅ https://virtualpiano.net/music-sheet/let-it-snow-easy/
+    ✅ https://virtualpiano.net/music-sheet/we-wish-you-a-merry-christmas-super-easy/
+    ✅ https://virtualpiano.net/music-sheet/pokemon-theme-jason-paige/
+    ✅  https://virtualpiano.net/music-sheet/joy-to-the-world-easy/
+    ✅  https://virtualpiano.net/music-sheet/whole-new-world-aladdin/
+    ✅  https://virtualpiano.net/music-sheet/its-a-small-world-sherman-brothers/
+    ✅  https://virtualpiano.net/music-sheet/do-re-mi-the-sound-of-music/
+    ✅  https://virtualpiano.net/music-sheet/rudolph-the-red-nosed-reindeer-alternative/
+    ✅  https://virtualpiano.net/music-sheet/tale-as-old-as-time-beauty-and-the-beast-angela-lansbury/
 
-
-    https://virtualpiano.net/music-sheet/song-of-healing-the-legend-of-zelda/
-    https://virtualpiano.net/music-sheet/great-fairy-fountain-the-legend-of-zelda/
-
-    https://virtualpiano.net/music-sheet/lost-library-omori-ost/
-    https://virtualpiano.net/music-sheet/mii-channel-theme-easy/
-    https://virtualpiano.net/music-sheet/snow-buried-tales-genshin-impact/
-    https://virtualpiano.net/music-sheet/enter-pony-pony-island-jonah-senzel/
- 
-    https://virtualpiano.net/music-sheet/obstacles-life-is-strange-alternative-syd-matters/
-    https://virtualpiano.net/music-sheet/not-tomorrow-silent-hill-akira-yamaoka/
-    https://virtualpiano.net/music-sheet/luigis-mansion-theme/
-    ? https://virtualpiano.net/music-sheet/sonic-1-end-credits-masato-nakamura/
-    https://virtualpiano.net/music-sheet/polish-cow-song-cypis/
-    https://virtualpiano.net/music-sheet/without-you-usher-david-guetta/
-    https://virtualpiano.net/music-sheet/promises-sam-smith/
-    https://virtualpiano.net/music-sheet/blinding-lights-the-weeknd/
-    ? https://virtualpiano.net/music-sheet/dna-bts/
-    https://virtualpiano.net/music-sheet/i-wanna-be-like-you-the-jungle-book/
+        https://virtualpiano.net/music-sheet/a-place-to-call-home-melodies-of-life/  final fantasy
+        https://virtualpiano.net/music-sheet/calm-before-the-storm-final-fantasy-x-nobuo-uematsu/
 
 
+        https://virtualpiano.net/music-sheet/song-of-healing-the-legend-of-zelda/
+        https://virtualpiano.net/music-sheet/great-fairy-fountain-the-legend-of-zelda/
 
-    https://virtualpiano.net/music-sheet/in-the-bleak-midwinter-super-easy-gustav-holst/
-    https://virtualpiano.net/music-sheet/moon-river-easy/
-    https://virtualpiano.net/music-sheet/do-you-want-to-build-a-snowman-easy/
-    https://virtualpiano.net/music-sheet/the-other-side-the-greatest-showman/
-    https://virtualpiano.net/music-sheet/see-you-again-fast-furious-7-super-easy/
-    ? https://virtualpiano.net/music-sheet/saw-theme-charlie-clouser/
-    https://virtualpiano.net/music-sheet/nightmare-on-elm-street-theme-charles-bernstein/
-    https://virtualpiano.net/music-sheet/star-wars-main-theme-john-williams/
+        https://virtualpiano.net/music-sheet/lost-library-omori-ost/
+        https://virtualpiano.net/music-sheet/mii-channel-theme-easy/
+        https://virtualpiano.net/music-sheet/snow-buried-tales-genshin-impact/
+        https://virtualpiano.net/music-sheet/enter-pony-pony-island-jonah-senzel/
+
+        https://virtualpiano.net/music-sheet/obstacles-life-is-strange-alternative-syd-matters/
+        https://virtualpiano.net/music-sheet/not-tomorrow-silent-hill-akira-yamaoka/
+        https://virtualpiano.net/music-sheet/luigis-mansion-theme/
+        ? https://virtualpiano.net/music-sheet/sonic-1-end-credits-masato-nakamura/
+        https://virtualpiano.net/music-sheet/polish-cow-song-cypis/
+        https://virtualpiano.net/music-sheet/without-you-usher-david-guetta/
+        https://virtualpiano.net/music-sheet/promises-sam-smith/
+        https://virtualpiano.net/music-sheet/blinding-lights-the-weeknd/
+        ? https://virtualpiano.net/music-sheet/dna-bts/
+        https://virtualpiano.net/music-sheet/i-wanna-be-like-you-the-jungle-book/
 
 
-        https://virtualpiano.net/music-sheet-categories/songs-from-movies/?pages=6
 
-    */
+        https://virtualpiano.net/music-sheet/in-the-bleak-midwinter-super-easy-gustav-holst/
+        https://virtualpiano.net/music-sheet/moon-river-easy/
+        https://virtualpiano.net/music-sheet/do-you-want-to-build-a-snowman-easy/
+        https://virtualpiano.net/music-sheet/the-other-side-the-greatest-showman/
+        https://virtualpiano.net/music-sheet/see-you-again-fast-furious-7-super-easy/
+        ? https://virtualpiano.net/music-sheet/saw-theme-charlie-clouser/
+        https://virtualpiano.net/music-sheet/nightmare-on-elm-street-theme-charles-bernstein/
+        https://virtualpiano.net/music-sheet/star-wars-main-theme-john-williams/
+
+
+            https://virtualpiano.net/music-sheet-categories/songs-from-movies/?pages=6
+
+        */
+
+    // Ejemplo de uso
+    function tranformBrackets(text) {
+      let firstBracketList = [];
+      let numberiNBrackets = [];
+      let myResult = "";
+
+      let start = 0;
+      let end = 0;
+      for (let i = 0; i < text.length; i++) {
+        // save the first brackets
+        if (text[i] === "[") {
+          firstBracketList.push(i);
+          start = i;
+        }
+
+        if (text[i] === "]") {
+          //save total elements inside brackets
+          numberiNBrackets.push(i - start - 1);
+        }
+      }
+      let cont = 0;
+      for (let i = 0; i < text.length; i++) {
+        if (text[i] === "[") {
+          myResult = myResult + numberiNBrackets[cont];
+          cont++;
+        } else {
+          myResult = myResult + text[i];
+        }
+      }
+      return myResult.replaceAll("]", "");
+    }
   </script>
 </html>
