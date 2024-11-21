@@ -8,6 +8,47 @@ function showProject() {
   document.getElementById("btn-hide-project").style.display = "none";
 }
 
+const songList = [
+  "notes/56.mp3",
+  "notes/51.mp3",
+  "notes/52.mp3",
+  "notes/54.mp3",
+  "notes/52.mp3",
+  "notes/51.mp3",
+  "notes/49.mp3",
+  "notes/49.mp3",
+  "notes/52.mp3",
+  "notes/56.mp3",
+  "notes/54.mp3",
+  "notes/52.mp3",
+  "notes/51.mp3",
+  "notes/52.mp3",
+  "notes/54.mp3",
+  "notes/56.mp3",
+  "notes/52.mp3",
+  "notes/49.mp3",
+  "notes/49.mp3",
+  "notes/54.mp3",
+  "notes/57.mp3",
+  "notes/61.mp3",
+  "notes/59.mp3",
+  "notes/57.mp3",
+  "notes/56.mp3",
+  "notes/52.mp3",
+  "notes/56.mp3",
+  "notes/54.mp3",
+  "notes/52.mp3",
+  "notes/51.mp3",
+  "notes/51.mp3",
+  "notes/52.mp3",
+  "notes/54.mp3",
+  "notes/56.mp3",
+  "notes/52.mp3",
+  "notes/49.mp3",
+  "notes/49.mp3",
+];
+const NOTESONLINE = "../piano/";
+
 function loadPage() {
   const skills = document
     .getElementsByClassName("skills")[0]
@@ -20,32 +61,33 @@ function loadPage() {
     element.style.animationDelay = i / 10 + "s";
   }
 
-  preloadAudio(songList.map((obj) => NOTESONLINE + songList[obj] + ".mp3"));
+  preloadAudio(songList);
 }
 
 // piano imported
-const NOTESONLINE = "../piano/notes/";
 
 let note = 0;
-const songList = [
-  56, 51, 52, 54, 52, 51, 49, 49, 52, 56, 54, 52, 51, 52, 54, 56, 52, 49, 49,
-  54, 57, 61, 59, 57, 56, 52, 56, 54, 52, 51, 51, 52, 54, 56, 52, 49, 49,
-];
+
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const tetrisPiece = document.getElementById("piece-tetris");
 function easterEgg() {
   //Si la nota es fora del teclat, reseteja
   if (note >= songList.length) note = 0;
+  tetrisPiece.style.right = `${randInt(0, 80)}%`;
+  tetrisPiece.className = `piece${randInt(1, 7)}`;
 
-  let linkSong = NOTESONLINE + songList[note] + ".mp3";
-  var audio = new Audio(linkSong);
-  audio.play();
+  let linkSong = NOTESONLINE + songList[note];
+  new Audio(linkSong).play();
 
   note++;
 }
 
 function preloadAudio(preloads) {
   for (var x = 0; x < preloads.length; x++) {
-    let aud = new Audio(preloads[x]);
-    //console.log("Cached", aud);
+    let aud = new Audio(NOTESONLINE + preloads[x]);
     aud.preload = "auto";
   }
 }
