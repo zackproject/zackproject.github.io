@@ -62,12 +62,16 @@ p > a {
   color: #c9d1d9;
 }
 
+.about-social{
+  width: 100px ;
+  font-size: 0.95rem;
+}
+
 .btn-social-network {
   background-color: #1f2937;
   border: 1px solid #4b5462;
   text-decoration: none;
   min-height: 30px;
-  min-width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -224,6 +228,7 @@ h3 {
   padding: 10px 15px 10px 15px;
   transition: all 0.5s;
   font-size: 1.2rem;
+  width: 210px;
   &:hover {
     cursor: pointer;
     background-color: black;
