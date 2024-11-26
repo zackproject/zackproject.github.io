@@ -225,6 +225,7 @@ h3 {
   padding: 10px 15px 10px 15px;
   transition: all 0.5s;
   font-size: 1.2rem;
+  width: 210px;
   &:hover {
     cursor: pointer;
     background-color: black;
