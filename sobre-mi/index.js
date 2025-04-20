@@ -8,6 +8,10 @@ function showProject() {
   document.getElementById("btn-hide-project").style.display = "none";
 }
 
+function esIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+
 const songList = [
   "notes/56.mp3",
   "notes/51.mp3",
@@ -50,6 +54,13 @@ const songList = [
 const NOTESONLINE = "../piano/";
 
 function loadPage() {
+  if (esIOS()) {
+    const notIoS = document.getElementsByClassName("not-ios");
+    for (let i = 0; i < notIoS.length; i++) {
+      const element = notIoS[i];
+      element.style.display = "none";
+    }
+  }
   const skills = document
     .getElementsByClassName("skills")[0]
     .getElementsByTagName("img");
