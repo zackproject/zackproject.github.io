@@ -316,6 +316,9 @@ h3 {
   img {
     border-radius: 6px;
   }
+  ul>li{
+    margin-bottom: 10px
+  }
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -415,7 +418,14 @@ h3 {
 @media (max-width: 760px) {
   .company-image {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
+    img{
+      object-fit: cover;
+      height: 130px;
+    }
+    ul{
+      padding: 0px;
+    }
   }
   .btn-project {
     flex-direction: column;
