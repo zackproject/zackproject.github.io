@@ -3,31 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi Rotativo</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <title>
+      Mi Rotativo - App para gestionar turnos con festivos rotativos
+    </title>
+    <meta
+      name="description"
+      content="Mi Rotativo es una app para gestionar turnos rotativos y festivos de forma automática. Visualiza tu calendario, registra tareas y mantén el control de tu historial laboral fácilmente. Disponible en iOS y Android."
+    />
+    <meta
+      name="keywords"
+      content="turnos rotativos, app turnos, calendario laboral, gestión de turnos, festivos trabajo, jornada laboral, turnos trabajo, app festivos, Mi Rotativo, trabajo por turnos, rotativo laboral, app calendario turnos"
+    />
+
     <meta name="robots" content="index, follow" />
     <link rel="icon" href="../icopz.ico" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="../footer/index.css" />
   </head>
-  <body>
+  <body onload="loadPage()">
     <!-- https://thebondyapp.com/ -->
     <div class="image-header">
       <nav>
         <a
-          href="https://www.zksama.com/sobre-mi/"
+          href="/sobre-mi"
           target="_blank"
           title="Ir a Linkedin"
           class="btn-social-network about-social"
         >
-         Sobre Mi
+          Sobre Mi
         </a>
         <ul>
           <li>
             <a
               target="_blank"
               href="mailto:zackprojectapp@gmail.com"
-              target="_blank"
               height="25"
               width="25"
               class="btn-social-network about-social"
@@ -97,6 +106,7 @@
           </a>
 
           <a
+            class="not-ios"
             href="https://play.google.com/store/apps/details?id=com.zksama.MiRotativo&hl=es"
           >
             <img
@@ -142,33 +152,200 @@
       </article>
 
       <!-- video youtube ?? -->
-      <div class="image-header">
-        <article class="how-works">
+      <div class="image-header-2">
+        <article style="padding-left: 0px; padding-right: 0px">
           <!-- image backgground-->
-          <h2>¿Cómo funciona?</h2>
-          <section>
-            <h3>Selecciona tu rotativo e Inserta los datos</h3>
-            <img src="inicioinsertar.webp" alt="" />
-          </section>
-          <section>
-            <h3>Elige tu rotativo y turno y visualiza tu Calendario</h3>
-            <img src="iniciocalendario.webp" alt="" />
-          </section>
-          <section>
-            <h3>
-              Registra tus tareas diarias usando colores y nombres
-              personalizados
-            </h3>
-            <img src="apuntescoloresnombres.webp" alt="" />
-          </section>
-          <section>
-            <h3>
-              Consulta y filtra tus tareas por año, mes y tipo de servicio.
-            </h3>
-            <img src="filtroapuntes.webp" alt="" />
-          </section>
+          <h2 style="color: white; text-align: center">¿Cómo funciona?</h2>
+          <div class="how-works">
+            <section>
+              <h3>Selecciona tu rotativo</h3>
+              <img
+                src="images/MockupInsert.png"
+                width="350"
+                height="690"
+                alt="Jimmy presentado la app e instando a que elijas que rotativo insertar"
+              />
+            </section>
+            <section>
+              <h3>Visualiza tu calendario</h3>
+              <img
+                src="images/MockupCalendar.png"
+                width="350"
+                height="690"
+                alt="Calendario Anual Turno 4"
+              />
+            </section>
+            <section>
+              <h3>Guarda las tareas</h3>
+              <img
+                src="images/MockupDetail.png"
+                width="350"
+                height="690"
+                alt="Diez colores a eligir y un cuadro de texto para escribir"
+              />
+            </section>
+            <section>
+              <h3>Filtra las fechas</h3>
+              <img
+                src="images/MockupFilter.png"
+                width="350"
+                height="690"
+                alt="Desplegables con fechas anuales y todos los meses y una lista de fechas de diferentes colores."
+              />
+            </section>
+          </div>
         </article>
       </div>
+      <article>
+        <h2 class="subtitle">Reseñas en App Store & Google Play</h2>
+        <div class="reviews">
+          <section class="rev¡ew">
+            <div class="title-review">
+              <div class="title-review-container">
+                <span class="initial-review">L</span>
+                <h3>Luichi</h3>
+              </div>
+              <span class="platform-review">
+                <a
+                  href="https://apps.apple.com/es/app/mi-rotativo/id6744820680"
+                  title="Ir a App Store"
+                >
+                  <img
+                    height="30"
+                    width="30"
+                    src="https://img.icons8.com/?size=100&id=30840&format=png&color=000000"
+                    alt="Apple Logo"
+                /></a>
+              </span>
+            </div>
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p>
+              Totalmente recomendable para todos mis compañeros. Muchísimas
+              gracias.
+            </p>
+          </section>
+
+          <section class="rev¡ew not-ios">
+            <div class="title-review">
+              <div class="title-review-container">
+                <span class="initial-review">L</span>
+                <h3>Luis</h3>
+              </div>
+              <span class="platform-review">
+                <a
+                  title="Ir a Google Play"
+                  href="https://play.google.com/store/apps/details?id=com.zksama.MiRotativo&hl=es"
+                >
+                  <img
+                    height="30"
+                    width="30"
+                    src="https://img.icons8.com/?size=100&id=L1ws9zn2uD01&format=png&color=000000"
+                    alt="Google Play Logo"
+                  />
+                </a>
+              </span>
+            </div>
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p>
+              Fácil e intuitiva, con previsión de fiestas y herramientas para
+              organizar trabajo y descanso.
+            </p>
+          </section>
+          <section class="rev¡ew">
+            <div class="title-review">
+              <div class="title-review-container">
+                <span class="initial-review">K</span>
+                <h3>Knene</h3>
+              </div>
+              <span class="platform-review">
+                <a
+                  href="https://apps.apple.com/es/app/mi-rotativo/id6744820680"
+                  title="Ir a App Store"
+                >
+                  <img
+                    height="30"
+                    width="30"
+                    src="https://img.icons8.com/?size=100&id=30840&format=png&color=000000"
+                    alt="Apple Logo"
+                /></a>
+              </span>
+            </div>
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p>Esta app me ha solucionado la vida, ideal.</p>
+          </section>
+          <section class="rev¡ew not-ios">
+            <div class="title-review">
+              <div class="title-review-container">
+                <span class="initial-review">R</span>
+                <h3>Raúl</h3>
+              </div>
+              <span class="platform-review">
+                <a
+                  title="Ir a Google Play"
+                  href="https://play.google.com/store/apps/details?id=com.zksama.MiRotativo&hl=es"
+                >
+                  <img
+                    height="30"
+                    width="30"
+                    src="https://img.icons8.com/?size=100&id=L1ws9zn2uD01&format=png&color=000000"
+                    alt="Google Play Logo"
+                  />
+                </a>
+              </span>
+            </div>
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p>Aplicación muy intuitiva. Animación y diseños muy logrados.</p>
+          </section>
+          <section class="rev¡ew">
+            <div class="title-review">
+              <div class="title-review-container">
+                <span class="initial-review">Q</span>
+                <h3>Quim</h3>
+              </div>
+
+              <span class="platform-review">
+                <a
+                  href="https://apps.apple.com/es/app/mi-rotativo/id6744820680"
+                  title="Ir a App Store"
+                >
+                  <img
+                    height="30"
+                    width="30"
+                    src="https://img.icons8.com/?size=100&id=30840&format=png&color=000000"
+                    alt="Apple Logo"
+                /></a>
+              </span>
+            </div>
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p>¡Excelente calendario!</p>
+          </section>
+
+          <section class="rev¡ew not-ios">
+            <div class="title-review">
+              <div class="title-review-container">
+                <span class="initial-review">D</span>
+                <h3>Dolores</h3>
+              </div>
+              <span class="platform-review">
+                <a
+                  title="Ir a Google Play"
+                  href="https://play.google.com/store/apps/details?id=com.zksama.MiRotativo&hl=es"
+                >
+                  <img
+                    height="30"
+                    width="30"
+                    src="https://img.icons8.com/?size=100&id=L1ws9zn2uD01&format=png&color=000000"
+                    alt="Google Play Logo"
+                  />
+                </a>
+              </span>
+            </div>
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p>Gracias, me ayuda mucho.</p>
+          </section>
+        </div>
+      </article>
+      <!--  y video tutorial aqui? -->
       <article>
         <h2>¿Tienes un rotativo?</h2>
         <p>Rellena el siguiente formulario y vemos si podemos añadirlo</p>
@@ -176,99 +353,112 @@
         <a href="https://forms.gle/tuformulario">Google Form</a>
       </article>
 
-      <section>
-        <h2>Preguntas Frecuentes</h2>
-        <details>
-          <summary>¿Cómo configuro mis turnos rotativos en la app?</summary>
-          <p>
-            Puedes configurar tus ciclos y turnos fácilmente desde el panel de
-            ajustes, definiendo la duración y el orden de cada turno.
-          </p>
-        </details>
+      <article>
+        <h2 class="subtitle">Preguntas Frecuentes</h2>
+        <div class="frequent-questions">
+          <details>
+            <summary>
+              <h3>¿Cómo configuro mis turnos rotativos en la app?</h3>
+            </summary>
+            <p>
+              La primera vez que instalas la aplicación puedes elegir tu tipo de
+              rotativo. Si ya tienes un rotativo generado ves a Ajustes (arriba
+              a la derecha de la pantalla) y seleccina otro rotativo para
+              generar.
+            </p>
+          </details>
 
-        <details>
-          <summary>¿Puedo añadir festivos locales o personalizados?</summary>
-          <p>
-            Sí, la app permite añadir festivos nacionales, autonómicos y
-            personalizados para adaptarse a tus necesidades.
-          </p>
-        </details>
+          <details>
+            <summary>
+              <h3>¿Puedo añadir festivos locales o personalizados?</h3>
+            </summary>
+            <p>
+              No se añaden los festivos locales automáticamente. Si quieres
+              puedes personalizar el nombre de un color y marcar manualmente los
+              dias festivos locales y estatales con ese color.
+            </p>
+          </details>
 
-        <details>
-          <summary>¿Cómo registro lo que he hecho cada día?</summary>
-          <p>
-            Registra tus tareas diarias asignando colores y nombres
-            personalizados para visualizar claramente cada servicio o
-            incidencia.
-          </p>
-        </details>
+          <details>
+            <summary><h3>¿Cómo registro lo que he hecho cada día?</h3></summary>
+            <p>
+              En el Calendario de la pantalla de Inicio al pulsar un dia se abre
+              una sección para apuntar que has hecho ese dia. Cuando eligimos
+              uno de los colores podemos cambiar el nombre que viene por defecto
+              "Tarea" dejando pulsada esta palabra. Se nos abrira un desplegable
+              para cambiar ese nombre por otro que queremos. Ejemplo: Oficina,
+              Conducción, etc. El cuadro de texto es para añadir información
+              extra. Para guardar solo pulsamos el boton Guardar y volvemos a la
+              pantalla de Inicio.
+            </p>
+          </details>
 
-        <details>
-          <summary>¿Puedo editar o eliminar registros ya guardados?</summary>
-          <p>
-            Sí, puedes modificar o borrar cualquier anotación directamente desde
-            el calendario o la lista de registros.
-          </p>
-        </details>
+          <details>
+            <summary>
+              <h3>¿Puedo editar o eliminar apuntes ya guardados?</h3>
+            </summary>
+            <p>
+              Sí, puedes modificar o borrar cualquier apunte directamente desde
+              el calendario. Sólo debes volver a entrar en el dia marcado y
+              Eliminar o Modificar el contenido.
+            </p>
+          </details>
 
-        <details>
-          <summary>
-            ¿Cómo filtro mis registros por fecha o tipo de servicio?
-          </summary>
-          <p>
-            Utiliza los filtros por año, mes y tipo de servicio para encontrar
-            rápidamente las tareas que necesitas consultar.
-          </p>
-        </details>
+          <details>
+            <summary>
+              <h3>¿Cómo filtro mis registros por fecha o tipo de servicio?</h3>
+            </summary>
+            <p>
+              Asegurate haber marcado apuntes con colores en la pantalla de
+              Inicio. Luego, abajo a la izquierda de la pantalla accede a Filtro
+              y pulsa Buscar. Utiliza los filtros por año, mes para una busqueda
+              mas concreta. Tambien puedes pulsar los numeros coloreados para
+              una búsqueda mas exhaustiva.
+            </p>
+          </details>
 
-        <details>
-          <summary>
-            ¿La app guarda mi historial? ¿Puedo consultarlo en cualquier
-            momento?
-          </summary>
-          <p>
-            Todo tu historial queda guardado y accesible para que puedas
-            consultarlo cuando quieras.
-          </p>
-        </details>
+          <details>
+            <summary><h3>¿La app guarda mi información personal?</h3></summary>
+            <p>
+              Toda la información que se almacena en la app se guarda
+              localmente, incluyendo los rotativos generados y cualquier apunte
+              realizado. El creador no tiene acceso a esta información. Sin
+              embargo, en caso de que se añada publicidad a la app, es posible
+              que Google (u otros proveedores de anuncios) recopile ciertos
+              datos del usuario con fines analíticos o publicitarios. Esto
+              depende de sus propias políticas de privacidad y configuración.
+            </p>
+          </details>
 
-        <details>
-          <summary>¿Se pueden exportar los cuadrantes o registros?</summary>
-          <p>
-            Actualmente, la app permite exportar los datos en formatos
-            compatibles para facilitar su uso fuera de la aplicación.
-          </p>
-        </details>
+          <details>
+            <summary>
+              <h3>¿Es necesario registrarse para usar la app?</h3>
+            </summary>
+            <p>
+              No, la app no exige ningún registro previo para su utilización.
+            </p>
+          </details>
 
-        <details>
-          <summary>
-            ¿Mi Rotativo funciona en dispositivos móviles y ordenadores?
-          </summary>
-          <p>
-            Sí, está diseñado para funcionar perfectamente tanto en móviles como
-            en ordenadores, adaptándose a diferentes pantallas.
-          </p>
-        </details>
-
-        <details>
-          <summary>¿Es necesario registrarse para usar la app?</summary>
-          <p>
-            La app puede usarse sin registro, pero crear una cuenta permite
-            guardar tus datos en la nube y sincronizarlos entre dispositivos.
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            ¿Puedo usar Mi Rotativo para varios empleados o solo para mí?
-          </summary>
-          <p>
-            Actualmente, está pensado para uso individual, aunque pronto habrá
-            funciones para gestionar equipos.
-          </p>
-        </details>
-      </section>
+          <details>
+            <summary>
+              <h3>Si mi rotativo no está en la app, ¿se puede añadir?</h3>
+            </summary>
+            <p>
+              Si tu rotativo no aparece en la app pero sigue un patrón definido,
+              puedes rellenar el formulario y valoraremos su posible
+              incorporación. El creador se reserva el derecho de decidir si es
+              viable añadirlo.<br /><br />
+              En caso de que tu rotativo ya exista con el mismo patrón, podemos
+              añadir el nombre de tu entidad para que los usuarios sepan cuál
+              deben descargar.
+            </p>
+          </details>
+        </div>
+      </article>
     </main>
-    <footer></footer>
+    <footer id="footer-main">
+      Mi Rotativo · <a href="/sobre-mi/">Kevin Sama Villegas</a> · 2025
+    </footer>
+    <script src="index.js"></script>
   </body>
 </html>
