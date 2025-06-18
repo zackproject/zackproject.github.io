@@ -18,7 +18,13 @@
     <meta name="robots" content="index, follow" />
     <link rel="icon" href="../icopz.ico" />
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="../footer/index.css" />
+    <link
+      rel="preload"
+      href="../footer/index.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/footer/index.css" /></noscript>
   </head>
   <body onload="loadPage()">
     <!-- https://thebondyapp.com/ -->
@@ -26,8 +32,7 @@
       <nav>
         <a
           href="/sobre-mi"
-          target="_blank"
-          title="Ir a Linkedin"
+          title="Ir a Sobre Mi"
           class="btn-social-network about-social"
         >
           Sobre Mi
@@ -55,15 +60,15 @@
             <a
               href="https://www.linkedin.com/in/kevin-sama"
               target="_blank"
-              title="Ir a Linkedin"
+              title="Ir a LinkedIn"
               class="btn-social-network about-social"
             >
               <img
                 height="25"
                 width="25"
                 src="https://img.icons8.com/?size=50&id=8808&format=png&color=FFFFFF"
-                alt="Linkedin logo"
-                title="Linkedin"
+                alt="LinkedIn logo"
+                title="Ir a LinkedIn"
               />
             </a>
           </li>
@@ -71,7 +76,7 @@
             <a
               href="https://www.instagram.com/jimmysgram7/"
               target="_blank"
-              title="Ir a Linkedin"
+              title="Ir a Instagram"
               class="btn-social-network about-social"
             >
               <img
@@ -79,24 +84,26 @@
                 width="25"
                 src="https://img.icons8.com/?size=50&id=32320&format=png&color=FFFFFF"
                 alt="Instagram logo"
-                title="Instagram"
               />
             </a>
           </li>
         </ul>
       </nav>
       <header>
-        <!-- image backgground-->
+        <!-- image background-->
         <h1>Bienvendidx a Mi Rotativo</h1>
         <img
           height="200"
           width="200"
-          src="images/logo512.png"
-          alt=""
+          src="images/logo512.webp"
+          alt="Logo app Mi Rotativo"
           style="border-radius: 50px"
         />
         <div class="download-apps">
-          <a href="https://apps.apple.com/es/app/mi-rotativo/id6744820680">
+          <a
+            target="_blank"
+            href="https://apps.apple.com/es/app/mi-rotativo/id6744820680"
+          >
             <img
               height="53"
               width="180"
@@ -106,6 +113,7 @@
           </a>
 
           <a
+            target="_blank"
             class="not-ios"
             href="https://play.google.com/store/apps/details?id=com.zksama.MiRotativo&hl=es"
           >
@@ -124,8 +132,8 @@
         <img
           height="300"
           width="400"
-          src="https://www.zksama.com/sobre-mi/images/rotativo_app.webp"
-          alt=""
+          src="images/MockupMultiScreen.webp"
+          alt="Tres capturas de pantalla de la app Mi Rotativo"
         />
         <section>
           <h2>¿Qué es Mi Rotativo?</h2>
@@ -151,16 +159,16 @@
         </section>
       </article>
 
-      <!-- video youtube ?? -->
+      <!-- video YouTube ?? -->
       <div class="image-header-2">
         <article style="padding-left: 0px; padding-right: 0px">
-          <!-- image backgground-->
+          <!-- image background-->
           <h2 style="color: white; text-align: center">¿Cómo funciona?</h2>
           <div class="how-works">
             <section>
               <h3>Selecciona tu rotativo</h3>
               <img
-                src="images/MockupInsert.png"
+                src="images/MockupInsert.webp"
                 width="350"
                 height="690"
                 alt="Jimmy presentado la app e instando a que elijas que rotativo insertar"
@@ -169,16 +177,16 @@
             <section>
               <h3>Visualiza tu calendario</h3>
               <img
-                src="images/MockupCalendar.png"
+                src="images/MockupCalendar.webp"
                 width="350"
                 height="690"
-                alt="Calendario Anual Turno 4"
+                alt="La app Mi Rotativo con el Calendario Anual Turno 4"
               />
             </section>
             <section>
               <h3>Guarda las tareas</h3>
               <img
-                src="images/MockupDetail.png"
+                src="images/MockupDetail.webp"
                 width="350"
                 height="690"
                 alt="Diez colores a eligir y un cuadro de texto para escribir"
@@ -187,7 +195,7 @@
             <section>
               <h3>Filtra las fechas</h3>
               <img
-                src="images/MockupFilter.png"
+                src="images/MockupFilter.webp"
                 width="350"
                 height="690"
                 alt="Desplegables con fechas anuales y todos los meses y una lista de fechas de diferentes colores."
@@ -197,7 +205,9 @@
         </article>
       </div>
       <article>
-        <h2 class="subtitle">Reseñas en App Store & Google Play</h2>
+        <h2 class="subtitle">
+          Reseñas en App Store<span class="not-ios"> & Google Play</span>
+        </h2>
         <div class="reviews">
           <section class="rev¡ew">
             <div class="title-review">
@@ -207,6 +217,7 @@
               </div>
               <span class="platform-review">
                 <a
+                  target="_blank"
                   href="https://apps.apple.com/es/app/mi-rotativo/id6744820680"
                   title="Ir a App Store"
                 >
@@ -233,6 +244,7 @@
               </div>
               <span class="platform-review">
                 <a
+                  target="_blank"
                   title="Ir a Google Play"
                   href="https://play.google.com/store/apps/details?id=com.zksama.MiRotativo&hl=es"
                 >
@@ -259,6 +271,7 @@
               </div>
               <span class="platform-review">
                 <a
+                  target="_blank"
                   href="https://apps.apple.com/es/app/mi-rotativo/id6744820680"
                   title="Ir a App Store"
                 >
@@ -281,6 +294,7 @@
               </div>
               <span class="platform-review">
                 <a
+                  target="_blank"
                   title="Ir a Google Play"
                   href="https://play.google.com/store/apps/details?id=com.zksama.MiRotativo&hl=es"
                 >
@@ -305,6 +319,7 @@
 
               <span class="platform-review">
                 <a
+                  target="_blank"
                   href="https://apps.apple.com/es/app/mi-rotativo/id6744820680"
                   title="Ir a App Store"
                 >
@@ -328,6 +343,7 @@
               </div>
               <span class="platform-review">
                 <a
+                  target="_blank"
                   title="Ir a Google Play"
                   href="https://play.google.com/store/apps/details?id=com.zksama.MiRotativo&hl=es"
                 >
@@ -345,55 +361,58 @@
           </section>
         </div>
       </article>
-      <!--  y video tutorial aqui? -->
-      <article>
-        <h2>¿Tienes un rotativo?</h2>
-        <p>Rellena el siguiente formulario y vemos si podemos añadirlo</p>
-
-        <a href="https://forms.gle/tuformulario">Google Form</a>
+      <!--  y video tutorial aquí? -->
+      <article class="image-header">
+        <div class="form-section">
+          <h2>¿Tienes un rotativo?</h2>
+          <p>Rellena el siguiente formulario y vemos si podemos añadirlo</p>
+          <a target="_blank" href="https://forms.gle/YukRvV6aSRtmbWm39"
+            >Formulario</a
+          >
+        </div>
       </article>
 
       <article>
         <h2 class="subtitle">Preguntas Frecuentes</h2>
         <div class="frequent-questions">
-          <details>
+          <details name="regular-questions">
             <summary>
               <h3>¿Cómo configuro mis turnos rotativos en la app?</h3>
             </summary>
             <p>
               La primera vez que instalas la aplicación puedes elegir tu tipo de
               rotativo. Si ya tienes un rotativo generado ves a Ajustes (arriba
-              a la derecha de la pantalla) y seleccina otro rotativo para
+              a la derecha de la pantalla) y selecciona otro rotativo para
               generar.
             </p>
           </details>
 
-          <details>
+          <details name="regular-questions">
             <summary>
               <h3>¿Puedo añadir festivos locales o personalizados?</h3>
             </summary>
             <p>
               No se añaden los festivos locales automáticamente. Si quieres
               puedes personalizar el nombre de un color y marcar manualmente los
-              dias festivos locales y estatales con ese color.
+              días festivos locales y estatales con ese color.
             </p>
           </details>
 
-          <details>
+          <details name="regular-questions">
             <summary><h3>¿Cómo registro lo que he hecho cada día?</h3></summary>
             <p>
               En el Calendario de la pantalla de Inicio al pulsar un dia se abre
-              una sección para apuntar que has hecho ese dia. Cuando eligimos
+              una sección para apuntar que has hecho ese dia. Cuando elegimos
               uno de los colores podemos cambiar el nombre que viene por defecto
-              "Tarea" dejando pulsada esta palabra. Se nos abrira un desplegable
-              para cambiar ese nombre por otro que queremos. Ejemplo: Oficina,
+              "Tarea" dejando pulsada esta palabra. Se nos abrirá un desplegable
+              para cambiar ese nombre por otro que queramos. Ejemplo: Oficina,
               Conducción, etc. El cuadro de texto es para añadir información
-              extra. Para guardar solo pulsamos el boton Guardar y volvemos a la
+              extra. Para guardar solo pulsamos el botón Guardar y volvemos a la
               pantalla de Inicio.
             </p>
           </details>
 
-          <details>
+          <details name="regular-questions">
             <summary>
               <h3>¿Puedo editar o eliminar apuntes ya guardados?</h3>
             </summary>
@@ -404,20 +423,20 @@
             </p>
           </details>
 
-          <details>
+          <details name="regular-questions">
             <summary>
               <h3>¿Cómo filtro mis registros por fecha o tipo de servicio?</h3>
             </summary>
             <p>
-              Asegurate haber marcado apuntes con colores en la pantalla de
+              Asegúrate haber marcado apuntes con colores en la pantalla de
               Inicio. Luego, abajo a la izquierda de la pantalla accede a Filtro
-              y pulsa Buscar. Utiliza los filtros por año, mes para una busqueda
-              mas concreta. Tambien puedes pulsar los numeros coloreados para
-              una búsqueda mas exhaustiva.
+              y pulsa Buscar. Utiliza los filtros por año y mes para una
+              búsqueda mas concreta. También puedes pulsar los números
+              coloreados para una búsqueda mas exhaustiva.
             </p>
           </details>
 
-          <details>
+          <details name="regular-questions">
             <summary><h3>¿La app guarda mi información personal?</h3></summary>
             <p>
               Toda la información que se almacena en la app se guarda
@@ -430,7 +449,7 @@
             </p>
           </details>
 
-          <details>
+          <details name="regular-questions">
             <summary>
               <h3>¿Es necesario registrarse para usar la app?</h3>
             </summary>
@@ -439,7 +458,7 @@
             </p>
           </details>
 
-          <details>
+          <details name="regular-questions">
             <summary>
               <h3>Si mi rotativo no está en la app, ¿se puede añadir?</h3>
             </summary>

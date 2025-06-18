@@ -11,7 +11,7 @@ h2 {
   color: #344293;
   font-size: 1.7rem;
 }
-.subtitle{
+.subtitle {
   text-align: center;
 }
 h3 {
@@ -67,7 +67,7 @@ article {
   background-size: cover;
   background-color: #344293;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("images/naturaleza2_jimmy.jpeg");
+    url("images/naturaleza2_jimmy.webp");
 }
 
 .image-header-2 {
@@ -75,7 +75,7 @@ article {
   background-size: cover;
   background-color: #344293;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("images/naturaleza_jimmy.jpeg");
+    url("images/naturaleza_jimmy.webp");
 }
 
 .what-is-rotative {
@@ -164,6 +164,27 @@ article {
   h3 {
     display: inline;
     cursor: pointer;
+  }
+}
+
+.form-section {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  max-width: 800px;
+  text-align: center;
+  h2,
+  p {
+    color: white;
+  }
+
+  a {
+    border: 1px solid lightgray;
+    background-color: #344293;
+    padding: 12px;
+    color: white;
+    border-radius: 20px;
+    font-size: 2rem;
+    text-decoration: none;
   }
 }
 
