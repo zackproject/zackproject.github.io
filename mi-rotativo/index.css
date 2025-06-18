@@ -2,6 +2,10 @@ body {
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.no-wrap {
+  white-space: nowrap;
+}
 h1 {
   text-shadow: rgb(36, 36, 36) 1px 0 10px;
   color: white;
@@ -97,10 +101,12 @@ article {
   display: flex;
   justify-content: center;
   gap: 50px;
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   section {
+    scroll-snap-align: start;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -113,11 +119,15 @@ article {
     color: white;
   }
 }
+
 .reviews {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  /* full screen review broke 3 x 3 boxes*/
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .rev¡ew {
@@ -189,12 +199,14 @@ article {
 }
 
 @media (max-width: 768px) {
-
-  header{
+  .how-works {
+    justify-content: flex-start;
+  }
+  header {
     text-align: center;
   }
 
-  .what-is-rotative > img{
+  .what-is-rotative > img {
     width: 300px;
     height: 225px;
   }
@@ -207,5 +219,4 @@ article {
   .what-is-rotative {
     flex-direction: column;
   }
-
 }
