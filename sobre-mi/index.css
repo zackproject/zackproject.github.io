@@ -47,7 +47,8 @@ aside {
 
 #inicio {
   font-size: 2rem;
-  margin-bottom: 0px;
+
+  margin: 0px;
 }
 
 .info-profile {
@@ -316,8 +317,8 @@ h3 {
   img {
     border-radius: 6px;
   }
-  ul>li{
-    margin-bottom: 10px
+  ul > li {
+    margin-bottom: 10px;
   }
   display: flex;
   justify-content: center;
@@ -419,11 +420,11 @@ h3 {
   .company-image {
     flex-wrap: wrap;
     justify-content: start;
-    img{
+    img {
       object-fit: cover;
       height: 130px;
     }
-    ul{
+    ul {
       padding: 0px;
     }
   }

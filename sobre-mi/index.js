@@ -53,7 +53,14 @@ const songList = [
 ];
 const NOTESONLINE = "../piano/";
 
+function onlyDecember(idElemento) {
+  const esDiciembre = new Date().getMonth() === 11; // 0 = enero, 11 = diciembre
+  const el = document.getElementById(idElemento);
+  if (el) el.style.display = esDiciembre ? "flex" : "none";
+}
+
 function loadPage() {
+  onlyDecember("navida25");
   if (esIOS()) {
     const notIoS = document.getElementsByClassName("not-ios");
     for (let i = 0; i < notIoS.length; i++) {
