@@ -60,7 +60,7 @@ function onlyDecember(idElemento) {
 }
 
 function loadPage() {
-  onlyDecember("navida25");
+  onlyDecember("navidad25");
   if (esIOS()) {
     const notIoS = document.getElementsByClassName("not-ios");
     for (let i = 0; i < notIoS.length; i++) {
