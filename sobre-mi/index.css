@@ -60,7 +60,6 @@ nav {
     grid-area: text;
     color: white;
     max-width: 400px;
-    border: 1px solid red;
     margin: 0px;
     padding: 0px;
   }
@@ -476,36 +475,40 @@ h3 {
       "image"
       "text"
       "btn";
-  }
-}
-.company-image {
-  flex-wrap: wrap;
-  justify-content: start;
-  img {
-    object-fit: cover;
-    height: 130px;
-  }
-  ul {
-    padding: 0px;
-  }
-}
-.btn-project {
-  flex-direction: column;
-}
 
-.profile-about {
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.project > img {
-  width: 100%;
-}
-.project {
-  gap: 5px;
-}
+      a{
+        width: 100%;
+      }
+  }
+  .company-image {
+    flex-wrap: wrap;
+    justify-content: start;
+    img {
+      object-fit: cover;
+      height: 130px;
+    }
+    ul {
+      padding: 0px;
+    }
+  }
+  .btn-project {
+    flex-direction: column;
+  }
 
-article {
-  margin-bottom: 50px;
+  .profile-about {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .project > img {
+    width: 100%;
+  }
+  .project {
+    gap: 5px;
+  }
+
+  article {
+    margin-bottom: 50px;
+  }
 }
 
 /*TETRIS*/
