@@ -53,14 +53,7 @@ const songList = [
 ];
 const NOTESONLINE = "../piano/";
 
-function onlyDecember(idElemento) {
-  const esDiciembre = new Date().getMonth() === 11; // 0 = enero, 11 = diciembre
-  const el = document.getElementById(idElemento);
-  if (el) el.style.display = esDiciembre ? "flex" : "none";
-}
-
 function loadPage() {
-  onlyDecember("navidad25");
   if (esIOS()) {
     const notIoS = document.getElementsByClassName("not-ios");
     for (let i = 0; i < notIoS.length; i++) {
@@ -109,3 +102,29 @@ function preloadAudio(preloads) {
     aud.preload = "auto";
   }
 }
+
+const startEvent = new Date(2025, 12 - 1, 1, 0, 0); // 11-> december
+setInterval(() => {
+  const now = new Date();
+  const diff = startEvent - now;
+
+  if (diff <= 0) {
+    document.getElementById("cuentatras").textContent = "";
+    return;
+  }
+
+  // cálculo exacto de meses, días, horas, minutos
+  const totalMonths =
+    (startEvent.getFullYear() - now.getFullYear()) * 12 +
+    (startEvent.getMonth() - now.getMonth());
+
+  // para los días, horas, minutos restantes
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 30; // aprox 30 días/mes
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+  document.getElementById("cuentatras").textContent = `Empieza en  
+  ${totalMonths != 0 ? totalMonths + " meses, " : ""}
+  ${days != 0 ? days + " dias, " : ""} 
+  ${hours} horas y ${minutes} minutos.`;
+}, 1000);
