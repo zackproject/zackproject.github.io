@@ -462,8 +462,12 @@ h3 {
 
 @media (max-width: 760px) {
   #inicio {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
+  }
+  .profile-pic {
+    height: 130px;
+    width: auto;
   }
   #navidad25 {
     gap: 5px;
@@ -476,9 +480,9 @@ h3 {
       "text"
       "btn";
 
-      a{
-        width: 100%;
-      }
+    a {
+      width: 100%;
+    }
   }
   .company-image {
     flex-wrap: wrap;
