@@ -103,28 +103,73 @@ function preloadAudio(preloads) {
   }
 }
 
-const startEvent = new Date(2025, 12 - 1, 1, 0, 0); // 11-> december
+const startEvent = new Date(2025, 11, 1, 0, 0); // 1 de diciembre de 2025 a las 00:00
+
 setInterval(() => {
   const now = new Date();
-  const diff = startEvent - now;
 
-  if (diff <= 0) {
-    document.getElementById("cuentatras").textContent = "";
+  if (now >= startEvent) {
+    document.getElementById("cuentatras").textContent = "¡Ya empezó!";
     return;
   }
 
-  // cálculo exacto de meses, días, horas, minutos
-  const totalMonths =
-    (startEvent.getFullYear() - now.getFullYear()) * 12 +
-    (startEvent.getMonth() - now.getMonth());
+  // Copiamos la fecha actual para manipularla
+  let tempDate = new Date(now);
 
-  // para los días, horas, minutos restantes
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 30; // aprox 30 días/mes
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  // Calcular meses
+  let months = 0;
+  while (tempDate < startEvent) {
+    tempDate.setMonth(tempDate.getMonth() + 1);
+    if (tempDate <= startEvent) {
+      months++;
+    } else {
+      tempDate.setMonth(tempDate.getMonth() - 1); // revertir el último si se pasó
+      break;
+    }
+  }
 
-  document.getElementById("cuentatras").textContent = `Empieza en  
-  ${totalMonths != 0 ? totalMonths + " meses, " : ""}
-  ${days != 0 ? days + " dias, " : ""} 
-  ${hours} horas y ${minutes} minutos.`;
+  // Calcular días
+  let days = 0;
+  while (tempDate < startEvent) {
+    tempDate.setDate(tempDate.getDate() + 1);
+    if (tempDate <= startEvent) {
+      days++;
+    } else {
+      tempDate.setDate(tempDate.getDate() - 1);
+      break;
+    }
+  }
+
+  // Calcular horas
+  let hours = 0;
+  while (tempDate < startEvent) {
+    tempDate.setHours(tempDate.getHours() + 1);
+    if (tempDate <= startEvent) {
+      hours++;
+    } else {
+      tempDate.setHours(tempDate.getHours() - 1);
+      break;
+    }
+  }
+
+  // Calcular minutos
+  let minutes = 0;
+  while (tempDate < startEvent) {
+    tempDate.setMinutes(tempDate.getMinutes() + 1);
+    if (tempDate <= startEvent) {
+      minutes++;
+    } else {
+      break;
+    }
+  }
+
+  // Mostrar el resultado
+  const parts = [];
+  if (months > 0) parts.push(`${months} ${months === 1 ? "mes" : "meses"}`);
+  if (days > 0) parts.push(`${days} ${days === 1 ? "día" : "días"}`);
+  if (hours > 0 || minutes > 0) {
+    parts.push(`${hours} horas y ${minutes} minutos`);
+  }
+
+  document.getElementById("cuentatras").textContent = `Empieza en ${parts.join(", ")}.`;
 }, 1000);

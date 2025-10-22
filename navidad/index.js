@@ -4,9 +4,9 @@ const candadoCerrado = defaultSettings.padlockCloseImage;
 const candadoAbierto = defaultSettings.padlockOpenImage;
 const NAVIDAD = defaultSettings.localChristmas;
 const d = new Date();
-const dayGlobal = d.getDate();
+const dayGlobal = 26;
 const monthGlobal = d.getMonth() + 1;
-const monthWorkThisProgram = 12; //Mes que funciona el programa
+const monthWorkThisProgram = 10; //Mes que funciona el programa
 let player = null;
 const adventList = defaultSettings;
 //Pagina
