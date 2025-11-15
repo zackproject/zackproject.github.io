@@ -1,213 +1,345 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navidad Otaku - Calendario de Adviento</title>
-    <meta name="description" content="Esta Navidad, aprovecha nuestro Calendario Otaku Online para encontrar los mejores regalos navideños con solo un clic.">
-    <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="../index.css">
-    <link rel="shortcut icon" href="../2022/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../index.css">
-</head>
+    <meta
+      name="description"
+      content="Esta Navidad, aprovecha nuestro Calendario Otaku Online para encontrar los mejores regalos navideños con solo un clic."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="shortcut icon" href="../2022/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../index.css" />
+  </head>
 
-<body>
+  <body>
     <header id="headnavidad">
-        <a href="../"><img height="35" width="35" src="../../logo.webp" alt="Logo de la página"></a>
-        <h1>Navidad Otaku</h1>
+      <a href="../"
+        ><img
+          height="35"
+          width="35"
+          src="../../logo.webp"
+          alt="Logo de la página"
+      /></a>
+      <h1>🎄 Otaku 25</h1>
     </header>
     <p id="infonavidad">Sólo disponible en diciembre</p>
     <div id="snowing" aria-hidden="true">
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
     </div>
-    <ul id="pare">
-    </ul>
+    <ul id="pare"></ul>
     <dialog id="modal" aria-modal="true" aria-labelledby="quiz-modal">
-        <header>
-            <h2 id="quiz-modal">Pregunta del dia <span id="day-quiz"></span></h2>
-            <button aria-label="Cerrar" onclick="closeModal()">x</button>
-        </header>
-        <main>
-            <form id="form-quiz" onsubmit="return checkAnswer(event)">
-                <p id="quiz-question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, totam.</p>
-                <div class="quiz-options">
-                    <input type="radio" id="quiz-1" name="quiz_answer" value="0">
-                    <label for="quiz-1">HTML</label>
-                </div>
-                <div class="quiz-options">
-                    <input type="radio" id="quiz-2" name="quiz_answer" value="1">
-                    <label for="quiz-2">CSS</label>
-                </div>
-                <div class="quiz-options">
-                    <input type="radio" id="quiz-3" name="quiz_answer" value="2">
-                    <label for="quiz-3">JavaScript</label>
-                </div>
-                <div class="quiz-options">
-                    <input type="radio" id="quiz-4" name="quiz_answer" value="3">
-                    <label for="quiz-4">JavaScript</label>
-                </div>
-                <input type="submit" value="Contestar">
-                <div id="retrato" aria-hidden="true">
-                    <div class="mano"></div>
-                    <div id="respuesta" class="correct">✓</div>
-                    <div class="dedo"></div>
-                    <div class="brazo">
-                    </div>
-                </div>
-            </form>
-        </main>
-        <footer id="title-modal">
-            Marca una opción
-        </footer>
+      <header>
+        <h2 id="quiz-modal">Pregunta del dia <span id="day-quiz"></span></h2>
+        <button aria-label="Cerrar" onclick="closeModal()">x</button>
+      </header>
+      <main>
+        <form id="form-quiz" onsubmit="return checkAnswer(event)">
+          <p id="quiz-question">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
+            totam.
+          </p>
+          <div class="quiz-options">
+            <input type="radio" id="quiz-1" name="quiz_answer" value="0" />
+            <label for="quiz-1">HTML</label>
+          </div>
+          <div class="quiz-options">
+            <input type="radio" id="quiz-2" name="quiz_answer" value="1" />
+            <label for="quiz-2">CSS</label>
+          </div>
+          <div class="quiz-options">
+            <input type="radio" id="quiz-3" name="quiz_answer" value="2" />
+            <label for="quiz-3">JavaScript</label>
+          </div>
+          <div class="quiz-options">
+            <input type="radio" id="quiz-4" name="quiz_answer" value="3" />
+            <label for="quiz-4">JavaScript</label>
+          </div>
+          <input type="submit" value="Contestar" />
+          <div id="retrato" aria-hidden="true">
+            <div class="mano"></div>
+            <div id="respuesta" class="correct">✓</div>
+            <div class="dedo"></div>
+            <div class="brazo"></div>
+          </div>
+        </form>
+      </main>
+      <footer id="title-modal">Marca una opción</footer>
     </dialog>
     <footer id="footer-main">info@zksama.com</footer>
     <script src="../../footer/index.js"></script>
     <script>
-        const defaultSettings = {
-            localChristmas: "navidadotaku",
-            backgroundImage: "../images/wood_back.png",
-            padlockCloseImage: "../images/close_anime.png",
-            padlockOpenImage: "../images/open_anime.png",
-            questions: [
-                {
-                    "id": 1,
-                    "question": "¿Qué significan las siglas AMV?",
-                    "options": ["Association Male Virgin", "American Movie VFX", "Animation Movie Var", "Anime Music Video",]
-                },
-                {
-                    "id": 2,
-                    "question": "¿Quién fue el creador de Dragon Ball?",
-                    "options": ["Eichiro Oda", "Akira Toriyama", "Kentaro Miura", "Inio Asano"]
-                },
-                {
-                    "id": 3,
-                    "question": "¿Qué famosa comida adora Doraemon?",
-                    "options": ["Dorayakis", "Ramen", "Paella", "Sushi"]
-                },
-                {
-                    "id": 4,
-                    "question": "¿En qué famosa saga se inspiró el anime Mashle?",
-                    "options": ["Juego de tronos", "El señor de los anillos", "Harry Potter", "Friends"]
-                },
-                {
-                    "id": 5,
-                    "question": "¿Qué nombre reciben las celebridades cantantes/actrices en Japón?",
-                    "options": ["Sensei", "Idol", "Kawai", "Sama"]
-                },
-                {
-                    "id": 6,
-                    "question": "¿Qué término describe la combinación de personajes o universos de diferentes series en un mismo evento o historia?",
-                    "options": ["Reboot", "Remake", "Spin-off", "Crossover"]
-                },
-                {
-                    "id": 7,
-                    "question": "¿Qué nombre recibe los concursos en los cuales cada participante enseña su talento en un escenario?",
-                    "options": ["El concursillo", "GOTY", "Got Talent", "EsLand"]
-                },
-                {
-                    "id": 8,
-                    "question": "En el Festival cultural de la U.A en My Hero Academia. ¿Qué elige hacer la Clase 1-A?",
-                    "options": ["Concierto en vivo", "Maid Café", "Tienda de mochi", "Clase de cocina (Deku el Brócoli)"]
-                },
-                {
-                    "id": 9,
-                    "question": "¿Cuál es el error típico de una página web cuando no se encuentra disponible?",
-                    "options": ["200", "404", "301", "418"]
-                },
-                {
-                    "id": 10,
-                    "question": "En la serie Shigeki No Kyojin, ¿en qué año cayó el muro Maria?",
-                    "options": ["1000", "400", "845", "615"]
-                },
-                {
-                    "id": 11,
-                    "question": "¿Cuál de los siguientes animes trata de fútbol?",
-                    "options": ["Inazuma Eleven", "Free", "Slam Dunk", "Kuroko No Basket"]
-                },
-                {
-                    "id": 12,
-                    "question": "En el anime Kimetsu No Yaiba, ¿cómo se llama la hermana de Tanjiro?",
-                    "options": ["Pico", "Inosuke", "Nezuko", "Zenitsu"]
-                },
-                {
-                    "id": 13,
-                    "question": "¿Qué género de anime suelen tener los anime románticos?",
-                    "options": ["Shojo", "Isekai", "Mecha", "Gore"]
-                },
-                {
-                    "id": 14,
-                    "question": "¿Cómo se denomina los animes que tienen una versión con actores reales de la serie?",
-                    "options": ["Live Action", "Actor Anime", "Live Anime", "Anime Action"]
-                },
-                {
-                    "id": 15,
-                    "question": "En la serie de Jujutsu Kaisen, ¿Cómo se llama el antagonista?",
-                    "options": ["Gojo", "Megumi", "Kento", "Sukuna"]
-                },
-                {
-                    "id": 16,
-                    "question": "En la serie de Kimetsu No Yaiba, ¿A qué persona real se parece físicamente Muzan?",
-                    "options": ["Freddy Mercury", "Michael Jackson", "Rafael Catala", "Bertin Osborne"]
-                },
-                {
-                    "id": 17,
-                    "question": "En Pokemon, ¿En qué región se desarrolla la séptima generación?",
-                    "options": ["Kalos", "Sinnoh", "Alola", "Kanto"]
-                },
-                {
-                    "id": 18,
-                    "question": "¿Cómo se llama el juego móvil de Pokemon que controla el sueño?",
-                    "options": ["Pokemon Sweet Dreams", "Pokemon Sleep", "Siestar Pokemon", "Pokemon ZzZ"]
-                },
-                {
-                    "id": 19,
-                    "question": "En la serie de Naruto, ¿En qué se quiere convertir el protagonista?",
-                    "options": ["Rey de los piratas", "Marine", "Ghoul", "Hokage"]
-                },
-                {
-                    "id": 20,
-                    "question": "¿Cómo se denomina la música pop de grupos japoneses?",
-                    "options": ["JPop", "KPop", "Lpop", "MPop"]
-                },
-                {
-                    "id": 21,
-                    "question": "En la región de Sinnoh de Pokemon Diamante. ¿Quién es la campeona de la Liga?",
-                    "options": ["Iris", "Dianta", "Sagita", "Cintia"]
-                },
-                {
-                    "id": 22,
-                    "question": "En la serie Re Zero. ¿Cómo se llama el protagonista?",
-                    "options": ["Ram", "Subaru", "Emilia", "Felix", "Rem"]
-                },
-                {
-                    "id": 23,
-                    "question": "En el anime de Sword Art Online. ¿Cuál es el nombre real de Kirito?",
-                    "options": ["Kirito", "Kazuto Kirigaya", "Kabuto Kirigaya", "Kizuto Ritogaya"]
-                },
-                {
-                    "id": 24,
-                    "question": "¿Cómo se dice Feliz Navidad en japonés?",
-                    "options": ["Meri kurisumasu", "Opai Opai", "Yamete Kudasai", "Mochi Mosh"]
-                }
+      const defaultSettings = {
+        localChristmas: "navidadotaku25",
+        backgroundImage: "../images/wood_back.png",
+        padlockCloseImage: "../images/close_anime.png",
+        padlockOpenImage: "../images/open_anime.png",
+
+        questions: [
+          {
+            id: 1,
+            question: "¿Cómo se llama la protagonista femenina de Dan Da Dan?",
+            options: ["Seiko Ayase", "Momo Ayase", "Aira Shiratori", "Miko"],
+          },
+          {
+            id: 2,
+            question:
+              "En el anime One Piece, ¿qué fruta del diablo comió Luffy?",
+            options: ["Mera Mera", "Hie Hie", "Yami Yami", "Gomu Gomu"],
+          },
+          {
+            id: 3,
+            question:
+              "¿Quién es la amiga de Eren y miembro del Cuerpo de Exploración que siempre lo apoya?",
+            options: [
+              "Historia Reiss",
+              "Mikasa Ackerman",
+              "Annie Leonhart",
+              "Gabi Braun",
             ],
-            resolves: [3, 1, 0, 2, 1, 3, 2, 0, 1, 2, 0, 2, 0, 0, 3, 1, 2, 1, 3, 0, 3, 1, 1, 0],
-            surprises: ["3uPm3g5oqKY", "vQbYvjmfbr4", "fs_mH4QnAe4", "TXvwdNM_43I", "tHW0N0_sGk8", "zf8hXUUkVOs", "o-Qu8-ZGL14", "TS10AEqqfTg", "_NXrTujMP50", "r0xOGoJ8JNI", "LkZiRHrZpQw", "vVaqXLcNvIM", "S6TnIh2M6Pw", "1Eb7RAW0oYU", "x-J7Jw_9Sbo", "N0eLjSPvy88", "PeVkUcA3p4A", "Osu0Tb3MpRQ", "7o4FQuhCpy4", "jzi6RNVEOtA", "lty-2iLQy9c", "R4Vn5nfd0Fk", "CKEMNlXgvI0", "eJZ-ZMwuqpo"],
-            fondoHtml: "https://www.zksama.com/navidad/2022/images/web/fondo.webp",
-            candadoCerrado: "https://www.zksama.com/navidad/2022/images/web/candado_cerrado.png",
-            candadoAbierto: "https://www.zksama.com/navidad/2022/images/web/candado_abierto.png",
-        }
+          },
+          {
+            id: 4,
+            question:
+              "¿Cómo se llama el famoso parque público de Japón donde puedes dar de comer a ciervos?",
+            options: [
+              "Parque de Asakusa",
+              "Parque de Nokotan",
+              "Parque de Nara",
+              "Parque Sama",
+            ],
+          },
+          {
+            id: 5,
+            question:
+              "En el anime Naruto, ¿Cuál es el nombre de la prueba que los genin deben superar para ascender de nivel?",
+            options: [
+              "Examen Jonin",
+              "Examen Chunin",
+              "Examen Hokage",
+              "Examen Genin",
+            ],
+          },
+          {
+            id: 6,
+            question:
+              "Continúa la canción: 'Never gonna give you up, never gonna...'",
+            options: [
+              "Let pick me",
+              "Let cross this",
+              "Let you up",
+              "Let you down",
+            ],
+          },
+          {
+            id: 7,
+            question:
+              "¿De qué tipo es la respiración que domina Zenitsu en Kimetsu No Yaiba?",
+            options: [
+              "Respiración del Rayo",
+              "Respiración del Agua",
+              "Respiración del Fuego",
+              "Respiración del Viento",
+            ],
+          },
+          {
+            id: 8,
+            question:
+              "¿Qué personaje de Naruto sería más probable que intentara infiltrarse en el Área 51 para robar secretos sobre jutsus prohibidos?",
+            options: ["Boruto", "Sasuke", "Sakura", "Naruto"],
+          },
+          {
+            id: 9,
+            question: "En Your Lie in April, Kousei Arima toca principalmente:",
+            options: ["Piano", "Violín", "Guitarra", "Flauta"],
+          },
+          {
+            id: 10,
+            question:
+              "Si Bakugo protagonizara una canción de BTS, ¿cuál encajaría mejor con su personalidad explosiva?",
+            options: ["Spring Day", "ON", "Dynamite", "Life Goes On"],
+          },
+          {
+            id: 11,
+            question: "¿Cuál es la mayor debilidad de Muzan Kibutsuji?",
+            options: ["Agua bendita", "Luz del sol", "Hierro", "Fuego"],
+          },
+          {
+            id: 12,
+            question: "¿Cuál es la habilidad especial de Anya Forger?",
+            options: [
+              "Leer mentes",
+              "Telequinesis",
+              "Invisibilidad",
+              "Superfuerza",
+            ],
+          },
+          {
+            id: 13,
+            question:
+              "¿Cuál es la profesión de Uramichi Omota en el anime Uramichi Oniisan?",
+            options: [
+              "Profesor de educación física",
+              "Músico",
+              "Presentador de un programa infantil",
+              "Estudiante escolar",
+            ],
+          },
+          {
+            id: 14,
+            question:
+              "¿Cuál describe mejor la relación entre Vi y Jinx en Arcane?",
+            options: [
+              "Aliadas inseparables",
+              "Compañeras de laboratorio",
+              "Creadoras del Hextech",
+              "Rivales unidas por el pasado",
+            ],
+          },
+          {
+            id: 15,
+            question:
+              "¿Qué opening de Kimetsu no Yaiba es interpretado por LiSA y refleja la determinación de Tanjiro?",
+            options: ["Kaikai Kitan", "Unlasting", "Homura", "Gurenge"],
+          },
+          {
+            id: 16,
+            question:
+              "¿Cuál es la principal habilidad de Maomao en Los diarios de la boticaria?",
+            options: [
+              "Conocimiento médico y botánico",
+              "Magia elemental",
+              "Lucha con espadas",
+              "Cantante",
+            ],
+          },
+          {
+            id: 17,
+            question: "¿Qué objeto permite que Eevee evolucione a Vaporeon?",
+            options: [
+              "Piedra Eterna",
+              "Piedra Agua",
+              "Piedra Fuego",
+              "Piedra Hielo",
+            ],
+          },
+          {
+            id: 18,
+            question:
+              "¿Cómo se llama la aldea que Pain destruye con su técnica Shinra Tensei?",
+            options: [
+              "Aldea de la hoja",
+              "Aldea de la niebla",
+              "Aldea del sonido",
+              "Aldea de la arena",
+            ],
+          },
+          {
+            id: 19,
+            question:
+              "Tetris es un videojuego lanzado en 1984. ¿En qué país fue creado?",
+            options: [
+              "Estados Unidos",
+              "China",
+              "Unión Soviética (Rusia)",
+              "Francia",
+            ],
+          },
+          {
+            id: 20,
+            question:
+              "¿Cuál de los siguientes valores representa mejor el espíritu samurái tradicional japonés?",
+            options: ["Honor", "Riqueza", "Diversión", "Astucia"],
+          },
+          {
+            id: 21,
+            question:
+              "En el anime de Dan Dan Dan, ¿qué pierde el protagonista Okarun?",
+            options: ["Sus llaves", "Sus bolas", "Sus gafas", "Su móvil"],
+          },
+          {
+            id: 22,
+            question:
+              "En el anime Jujutsu Kaisen, ¿qué dice el estribillo de la canción referente al Arco del incidente de Shibuya?",
+            options: [
+              "You're my friend",
+              "You're my special",
+              "You're the best",
+              "You're my enemy",
+            ],
+          },
+          {
+            id: 23,
+            question: "¿Cuál es el símbolo químico del Ácido Nítrico?",
+            options: ["HNO₃", "HNO₂", "H₂NO₃", "NHNO₃"],
+          },
+          {
+            id: 24,
+            question:
+              "En el anime Chainsaw Man, ¿cómo se llama el demonio que convive dentro de Denji?",
+            options: ["Akaza", "Alastor", "Pochita", "Inuyasha"],
+          },
+          {
+            id: 25,
+            question:
+              "En el anime Dan Dan Dan, ¿cuál es el verdadero nombre de Okarun?",
+            options: [
+              "Takakura Kin",
+              "Takakura Ken",
+              "Tekakura Ken",
+              "Teoka Run",
+            ],
+          },
+        ],
+        surprises: [
+          "msGQOO6f3h0",
+          "JD_zkczJBkM",
+          "g8hIjOoddnM",
+          "A8DI6DF4r3Q",
+          "DAAsjzd-JQ8",
+          "LsqFoKwIJqw",
+          "Lvc1_3pNcTM",
+          "vS1ZohQziGY",
+          "Y5UsPxHGoxk",
+          "m2kwfV_gN5Q",
+          "LNdQgh4OR3k",
+          "aSh7XCKGAoE",
+          "Ufa7nQoWlGg",
+          "VHwYfjPWG2M",
+          "x1FV6IrjZCY",
+          "CewzOF4SHak",
+          "dv3_5XaSIXI",
+          "AE4b9jO1uB4",
+          "XXEfNA-ofp8",
+          "l1HeItO98FI",
+          "3owSo80ItYM",
+          "fhzKLBZJC3w",
+          "yQEUGxngQN4",
+          "5mfDzBeeBSI",
+          "bltVXVCuzOc",
+        ],
+        resolves: [
+          1, 3, 1, 2, 1, 3, 0, 3, 0, 2, 1, 0, 2, 3, 3, 0, 1, 0, 2, 0, 1, 1, 0,
+          2, 1,
+        ],
+        fondoHtml: "https://www.zksama.com/navidad/2022/images/web/fondo.webp",
+        candadoCerrado:
+          "https://www.zksama.com/navidad/2022/images/web/candado_cerrado.png",
+        candadoAbierto:
+          "https://www.zksama.com/navidad/2022/images/web/candado_abierto.png",
+      };
     </script>
     <script src="../index.js"></script>
-</body>
-
+  </body>
 </html>

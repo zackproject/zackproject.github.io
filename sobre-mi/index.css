@@ -1,4 +1,4 @@
-html{
+html {
   scroll-behavior: smooth;
 }
 body {
@@ -9,6 +9,17 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0px;
+}
+.underline-link {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  color: #c9d1d9;
+  transition: all 0.5s;
+  white-space: nowrap;
+  &&:hover {
+    color: #58a6ff;
+    text-underline-offset: 2px;
+  }
 }
 
 header {
@@ -39,6 +50,50 @@ nav {
     }
   }
 }
+
+#navidad25 {
+  display: grid;
+  background-color: rgba(0, 151, 28, 0.697);
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 6px;
+  gap: 10px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "image title"
+    "image text"
+    "btn btn";
+  h2 {
+    grid-area: title;
+  }
+  p {
+    grid-area: text;
+    color: white;
+    max-width: 400px;
+    margin: 0px;
+    padding: 0px;
+  }
+  img {
+    grid-area: image;
+  }
+  a {
+    grid-area: btn;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    border: 1px solid white;
+    background-color: white;
+    text-decoration: none;
+    padding-block: 8px;
+    border-radius: 6px;
+    transition: all 0.5s;
+  }
+  a:hover {
+    background-color: black;
+    color: white;
+  }
+}
 aside {
   display: flex;
   flex-wrap: wrap;
@@ -47,7 +102,8 @@ aside {
 
 #inicio {
   font-size: 2rem;
-  margin-bottom: 0px;
+
+  margin: 0px;
 }
 
 .info-profile {
@@ -62,12 +118,21 @@ p > a {
   color: #c9d1d9;
 }
 
+.about-social {
+  width: 100px;
+  font-size: 0.95rem;
+}
+.profile-about {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
 .btn-social-network {
   background-color: #1f2937;
   border: 1px solid #4b5462;
   text-decoration: none;
   min-height: 30px;
-  min-width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,61 +157,40 @@ p > a {
   padding-right: 20px;
 }
 
-.skills {
-  overflow-x: hidden;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 20%,
-    black 80%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 20%,
-    black 80%,
-    transparent
-  );
-  padding: 50px 0px 50px 0px;
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
-  display: flex;
-  gap: 50px;
-  img {
-    height: 50px;
-    width: 50px;
-  }
-  li {
-    animation: noria 20s infinite linear alternate;
-    width: 110px;
-    height: 100px;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    span {
-      background-color: #1f2937;
-      padding: 0px 6px 0px 6px;
-      border-radius: 6px;
-    }
-  }
-}
-
 .profile-pic {
   border-radius: 50%;
-  float: right;
   transition: border-radius 0.5s;
   &:hover {
     border-radius: 40%;
   }
 }
-.project-icons > img {
-  width: 30px;
-  height: 30px;
+
+.project-icons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0px;
+
+  li {
+    color: rgb(171, 171, 171);
+    border: 1px solid rgb(132, 131, 131);
+    display: flex;
+    padding: 5px 10px 5px 10px;
+    background-color: rgb(33, 33, 33);
+    border-radius: 20px;
+    align-items: center;
+    margin: 0px;
+    gap: 10px;
+    list-style: none;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  span {
+    font-size: 16px;
+  }
 }
 
 .aside-project {
@@ -155,9 +199,6 @@ p > a {
   justify-content: space-between;
 }
 
-h1 {
-  margin-top: 60px;
-}
 h2 {
   margin-top: 60px;
 }
@@ -204,11 +245,6 @@ h3 {
   margin-bottom: 10px;
 }
 
-.project-icons {
-  display: flex;
-  gap: 20px;
-}
-
 .btn-project {
   display: flex;
   gap: 10px;
@@ -224,6 +260,7 @@ h3 {
   padding: 10px 15px 10px 15px;
   transition: all 0.5s;
   font-size: 1.2rem;
+  width: 210px;
   &:hover {
     cursor: pointer;
     background-color: black;
@@ -271,6 +308,22 @@ h3 {
   margin-bottom: 20px;
 }
 
+.tecno-stack {
+  img {
+    height: 20px;
+    width: 20px;
+  }
+  color: rgb(171, 171, 171);
+  border: 1px solid rgb(132, 131, 131);
+  display: flex;
+  padding: 5px 10px 5px 10px;
+  background-color: rgb(33, 33, 33);
+  border-radius: 20px;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+}
+
 @keyframes noria {
   from {
     transform: translateX(0);
@@ -315,6 +368,63 @@ h3 {
   animation-range-end: 200px;
 }
 
+.company-image {
+  img {
+    border-radius: 6px;
+  }
+  ul > li {
+    margin-bottom: 10px;
+  }
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.skills {
+  overflow-x: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  padding: 50px 0px 50px 0px;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  gap: 50px;
+  img {
+    height: 50px;
+    width: 50px;
+  }
+  li {
+    animation: noria 20s infinite linear alternate;
+    width: 110px;
+    height: 100px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    span {
+      background-color: #1f2937;
+      padding: 0px 6px 0px 6px;
+      border-radius: 6px;
+    }
+  }
+}
+
 @keyframes translateXLeft {
   from {
     scale: 0.9;
@@ -344,7 +454,6 @@ h3 {
   }
 }
 
-
 @keyframes translateYRight {
   from {
     transform: translateY(190px);
@@ -363,10 +472,48 @@ h3 {
 }
 
 @media (max-width: 760px) {
+  #inicio {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .profile-pic {
+    height: 130px;
+    width: auto;
+  }
+  #navidad25 {
+    gap: 5px;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    place-items: center;
+    grid-template-areas:
+      "title "
+      "image"
+      "text"
+      "btn";
+
+    a {
+      width: 100%;
+    }
+  }
+  .company-image {
+    flex-wrap: wrap;
+    justify-content: start;
+    img {
+      object-fit: cover;
+      height: 130px;
+    }
+    ul {
+      padding: 0px;
+    }
+  }
   .btn-project {
     flex-direction: column;
   }
 
+  .profile-about {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .project > img {
     width: 100%;
   }
@@ -443,7 +590,7 @@ h3 {
 
   span {
     position: absolute;
-    bottom: -20px;
+    bottom: -30px;
     left: -10px;
     font-size: 14px;
     text-align: center;

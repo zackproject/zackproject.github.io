@@ -8,6 +8,10 @@ function showProject() {
   document.getElementById("btn-hide-project").style.display = "none";
 }
 
+function esIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+
 const songList = [
   "notes/56.mp3",
   "notes/51.mp3",
@@ -50,6 +54,13 @@ const songList = [
 const NOTESONLINE = "../piano/";
 
 function loadPage() {
+  if (esIOS()) {
+    const notIoS = document.getElementsByClassName("not-ios");
+    for (let i = 0; i < notIoS.length; i++) {
+      const element = notIoS[i];
+      element.style.display = "none";
+    }
+  }
   const skills = document
     .getElementsByClassName("skills")[0]
     .getElementsByTagName("img");
@@ -91,3 +102,74 @@ function preloadAudio(preloads) {
     aud.preload = "auto";
   }
 }
+
+const startEvent = new Date(2025, 11, 1, 0, 0); // 1 de diciembre de 2025 a las 00:00
+
+setInterval(() => {
+  const now = new Date();
+
+  if (now >= startEvent) {
+    document.getElementById("cuentatras").textContent = "¡Ya empezó!";
+    return;
+  }
+
+  // Copiamos la fecha actual para manipularla
+  let tempDate = new Date(now);
+
+  // Calcular meses
+  let months = 0;
+  while (tempDate < startEvent) {
+    tempDate.setMonth(tempDate.getMonth() + 1);
+    if (tempDate <= startEvent) {
+      months++;
+    } else {
+      tempDate.setMonth(tempDate.getMonth() - 1); // revertir el último si se pasó
+      break;
+    }
+  }
+
+  // Calcular días
+  let days = 0;
+  while (tempDate < startEvent) {
+    tempDate.setDate(tempDate.getDate() + 1);
+    if (tempDate <= startEvent) {
+      days++;
+    } else {
+      tempDate.setDate(tempDate.getDate() - 1);
+      break;
+    }
+  }
+
+  // Calcular horas
+  let hours = 0;
+  while (tempDate < startEvent) {
+    tempDate.setHours(tempDate.getHours() + 1);
+    if (tempDate <= startEvent) {
+      hours++;
+    } else {
+      tempDate.setHours(tempDate.getHours() - 1);
+      break;
+    }
+  }
+
+  // Calcular minutos
+  let minutes = 0;
+  while (tempDate < startEvent) {
+    tempDate.setMinutes(tempDate.getMinutes() + 1);
+    if (tempDate <= startEvent) {
+      minutes++;
+    } else {
+      break;
+    }
+  }
+
+  // Mostrar el resultado
+  const parts = [];
+  if (months > 0) parts.push(`${months} ${months === 1 ? "mes" : "meses"}`);
+  if (days > 0) parts.push(`${days} ${days === 1 ? "día" : "días"}`);
+  if (hours > 0 || minutes > 0) {
+    parts.push(`${hours} horas y ${minutes} minutos`);
+  }
+
+  document.getElementById("cuentatras").textContent = `Empieza en ${parts.join(", ")}.`;
+}, 1000);

@@ -1,211 +1,329 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navidad Senior - Calendario de Adviento</title>
-    <meta name="description" content="Esta Navidad, aprovecha nuestro Calendario Senior Online para encontrar los mejores regalos navideños con solo un clic.">
-    <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="../index.css">
-    <link rel="shortcut icon" href="../2022/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../index.css">
-</head>
+    <meta
+      name="description"
+      content="Esta Navidad, aprovecha nuestro Calendario Senior Online para encontrar los mejores regalos navideños con solo un clic."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="shortcut icon" href="../2022/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../index.css" />
+  </head>
 
-<body>
+  <body>
     <header id="headnavidad">
-        <a href="../"><img height="35" width="35" src="../../logo.webp" alt="Logo de la página"></a>
-        <h1>Navidad Senior</h1>
+      <a href="../"
+        ><img
+          height="35"
+          width="35"
+          src="../../logo.webp"
+          alt="Logo de la página"
+      /></a>
+      <h1>🎄 Senior 25</h1>
     </header>
     <p id="infonavidad">Sólo disponible en diciembre</p>
     <div id="snowing" aria-hidden="true">
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
-        <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
+      <div class="snow">*</div>
     </div>
-    <ul id="pare">
-    </ul>
+    <ul id="pare"></ul>
     <dialog id="modal" aria-modal="true" aria-labelledby="quiz-modal">
-        <header>
-            <h2 id="quiz-modal">Pregunta del dia <span id="day-quiz"></span></h2>
-            <button aria-label="Cerrar" onclick="closeModal()">x</button>
-        </header>
-        <main>
-            <form id="form-quiz" onsubmit="return checkAnswer(event)">
-                <p id="quiz-question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, totam.</p>
-                <div class="quiz-options">
-                    <input type="radio" id="quiz-1" name="quiz_answer" value="0">
-                    <label for="quiz-1">HTML</label>
-                </div>
-                <div class="quiz-options">
-                    <input type="radio" id="quiz-2" name="quiz_answer" value="1">
-                    <label for="quiz-2">CSS</label>
-                </div>
-                <div class="quiz-options">
-                    <input type="radio" id="quiz-3" name="quiz_answer" value="2">
-                    <label for="quiz-3">JavaScript</label>
-                </div>
-                <div class="quiz-options">
-                    <input type="radio" id="quiz-4" name="quiz_answer" value="3">
-                    <label for="quiz-4">JavaScript</label>
-                </div>
-                <input type="submit" value="Contestar">
-                <div id="retrato" aria-hidden="true">
-                    <div class="mano"></div>
-                    <div id="respuesta" class="correct">✓</div>
-                    <div class="dedo"></div>
-                    <div class="brazo">
-                    </div>
-                </div>
-            </form>
-        </main>
-        <footer id="title-modal">
-            Marca una opción
-        </footer>
+      <header>
+        <h2 id="quiz-modal">Pregunta del dia <span id="day-quiz"></span></h2>
+        <button aria-label="Cerrar" onclick="closeModal()">x</button>
+      </header>
+      <main>
+        <form id="form-quiz" onsubmit="return checkAnswer(event)">
+          <p id="quiz-question">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
+            totam.
+          </p>
+          <div class="quiz-options">
+            <input type="radio" id="quiz-1" name="quiz_answer" value="0" />
+            <label for="quiz-1">HTML</label>
+          </div>
+          <div class="quiz-options">
+            <input type="radio" id="quiz-2" name="quiz_answer" value="1" />
+            <label for="quiz-2">CSS</label>
+          </div>
+          <div class="quiz-options">
+            <input type="radio" id="quiz-3" name="quiz_answer" value="2" />
+            <label for="quiz-3">JavaScript</label>
+          </div>
+          <div class="quiz-options">
+            <input type="radio" id="quiz-4" name="quiz_answer" value="3" />
+            <label for="quiz-4">JavaScript</label>
+          </div>
+          <input type="submit" value="Contestar" />
+          <div id="retrato" aria-hidden="true">
+            <div class="mano"></div>
+            <div id="respuesta" class="correct">✓</div>
+            <div class="dedo"></div>
+            <div class="brazo"></div>
+          </div>
+        </form>
+      </main>
+      <footer id="title-modal">Marca una opción</footer>
     </dialog>
     <footer id="footer-main">info@zksama.com</footer>
     <script src="../../footer/index.js"></script>
     <script>
-        const defaultSettings = {
-            localChristmas: "navidadsenior",
-            backgroundImage: "../images/back_black.png",
-            padlockCloseImage: "../images/close_door.png",
-            padlockOpenImage: "../images/open_door.png",
-            questions: [
-                {
-                    "id": 1,
-                    "question": "Continua la canción: 'Chipi, chipi, chapa chapa..'",
-                    "options": ["duba duba", "dube dube", "dubi dubi", "dubo dubo"]
-                },
-                {
-                    "id": 2,
-                    "question": "¿Cuál es el término que NO se utiliza para describir a las crías de las cabras?",
-                    "options": ["Potro", "Chivo", "Choto", "Cabrito"]
-                },
-                {
-                    "id": 3,
-                    "question": "¿Donde se encuentra la iglesia del Santo Sepulcro lugar Sagrado del cristianismo?",
-                    "options": ["Roma", "Jerusalem", "Wano", "París"]
-                },
-                {
-                    "id": 4,
-                    "question": "¿Qué profesional puede recetar medicamentos para tratar trastornos mentales?",
-                    "options": ["Psicólogo", "Nutricionista", "Fisioterapeuta", "Psiquiatra"]
-                },
-                {
-                    "id": 5,
-                    "question": "Miembro cercano de la familia con el que compartes los padres o al menos un progenitor común.",
-                    "options": ["Hermano", "Tio", "Abuelo", "Primo"]
-                },
-                {
-                    "id": 6,
-                    "question": "¿Qué festividad NO se celebra el mismo día que Navidad?",
-                    "options": ["Nacimiento de Jesús", "Solsticio de invierno", "Halloween", "Aniversario de Levi Ackerman"]
-                },
-                {
-                    "id": 7,
-                    "question": "¿Cómo se llama a la fase lunar en la que solo vemos la mitad iluminada?",
-                    "options": ["Luna nueva", "Luna llena", "Cuarto creciente", "Tercio menguante"]
-                },
-                {
-                    "id": 8,
-                    "question": "En 1492 Cristobal Colón colonizó 'America'. ¿Qué barco NO fue a la expedición?",
-                    "options": ["Pinta", "Santa Marta", "La niña", "Santa María"]
-                },
-                {
-                    "id": 9,
-                    "question": "¿Qué arma con 4 lados puntiagudos utilizan los ninjas?",
-                    "options": ["Shuriken", "Katana", "Kunai", "Nunchaku"]
-                },
-                {
-                    "id": 10,
-                    "question": "Mi cumple es el 21 de marzo. ¿Cuál es mi signo?",
-                    "options": ["Piscis", "Aries", "Tauro", "Acuario"]
-                },
-                {
-                    "id": 11,
-                    "question": "¿Cómo se dice 'biblioteca' en inglés?",
-                    "options": ["Book Shop", "Librostation", "Ohara", "Library"]
-                },
-                {
-                    "id": 12,
-                    "question": "¿Cómo se llama el dios del sol del antiguo Egipto?",
-                    "options": ["Bills", "Zeus", "Ra", "Atenea"]
-                },
-                {
-                    "id": 13,
-                    "question": "¿Qué sucede si te acuerdas de 'El juego'?",
-                    "options": ["Has ganado", "Has perdido", "Has empatado", "Mec", "Tonto el que lo lea"]
-                },
-                {
-                    "id": 14,
-                    "question": "En los Simpsons, Bart y su grupo hacen una canción con un mensaje subliminal para que jóvenes se apunten en la Marina. ¿Qué decía el estribillo?",
-                    "options": ["ANIRAM AL NE ETATSILA", "AEL OL EUQ LE OTNOT", "ANILINA", "LAER SI ECEIP ENO"]
-                },
-                {
-                    "id": 15,
-                    "question": "Según un Trend viral ¿En que piensan los hombres todo el rato?",
-                    "options": ["Tetas", "El imperio romano", "elrubius", "El One Piece"]
-                },
-                {
-                    "id": 16,
-                    "question": "¿Cómo se llama el presidente de El Salvador?",
-                    "options": ["Javier Milei", "Nayib Bukele", "Pedro Sanchez", "Gustavo Petro"]
-                },
-                {
-                    "id": 17,
-                    "question": "Durante la 1º Guerra Mundial hubo una tregua entre soldados. ¿Cuándo tuvo lugar?",
-                    "options": ["Primavera de 1915", "Verano de 1916", "Otoño de 1917", "Navidad de 1914"]
-                },
-                {
-                    "id": 18,
-                    "question": "¿Qué dictador español fue exhumado en 2019?",
-                    "options": ["Primo de Rivera", "Tejero", "Franco", "Carrero Blanco"]
-                },
-                {
-                    "id": 19,
-                    "question": "¿Cuál es la posición 'religiosa' que no confirma ni niega la existencia de un Dios?",
-                    "options": ["Ateismo", "Pastafarismo", "Jediismo", "Agnosticismo"]
-                },
-                {
-                    "id": 20,
-                    "question": "¿Qué nombre recibe las noticias falsas o manipuladas de los medios de comunicación?",
-                    "options": ["Wrongs News", "Fake News", "Incorrect News", "Auron News"]
-                },
-                {
-                    "id": 21,
-                    "question": "Una vez Napoleón fue derrotado por conejitos. ¿Qué país fue derrotado por Emúes?",
-                    "options": ["Australia", "Canada", "EEUU", "Uruguay"]
-                },
-                {
-                    "id": 22,
-                    "question": "En el experimento del Gato de Schrödinger, ¿cual es el estado del gato antes de abrir la caja?",
-                    "options": ["Está vivo y muerto a la vez", "Está vivo", "Esta muerto", "Es invisible"]
-                },
-                {
-                    "id": 23,
-                    "question": "¿Qué término describe sentirse triste la mayor parte del tiempo y perder interés en las actividades diarias?",
-                    "options": ["Alegría", "Depresión", "Euforia", "Ansiedad"]
-                },
-                {
-                    "id": 24,
-                    "question": "Según la historia de los 3 reyes magos. ¿Qué objeto NO llevaron al niño Jesús?",
-                    "options": ["Incienso", "Oro", "Cobre", "Mirra"]
-                }
-            ]
-            ,
-            resolves: [2, 0, 1, 3, 0, 2, 2, 1, 0, 1, 3, 2, 1, 0, 1, 1, 3, 2, 3, 1, 0, 0, 1, 2],
-            surprises: ["mtv-LQTemMk", "hULDmFNFhh4", "VCPLZjU0MLI", "WrXDJWRtmDE", "UaMBtjxvuMA", "0o268IlcLbY", "ZbQZcZyxKf4", "mLRUK4HC0SU", "EehdIcypknY", "xYIOgB4RRvI", "rL9blMBJa54", "Zcc4_-rQA64", "rqkBPTKWS68", "PrkczcYto4w", "SAmqYjM_v2w", "69qKUoGhoQo", "gOv8xA4p9dI", "ROrFUvCMU5o", "yuPSXBZYS54", "lpCoy_syMsg", "zqRwStq8zDI", "dmUIt6DvGkc", "E5FXdoO6PNs", "QUw4G1nMa6c"]
-        }
+      const defaultSettings = {
+        localChristmas: "navidadsenior25",
+        backgroundImage: "../images/back_black.png",
+        padlockCloseImage: "../images/close_door.png",
+        padlockOpenImage: "../images/open_door.png",
+        questions: [
+          {
+            id: 1,
+            question:
+              "¿A quién se le pide los regalos en 24 de diciembre por la noche?",
+            options: [
+              "Reyes oriente",
+              "Santa Claus",
+              "Conejo de Pascua",
+              "Ratoncito Pérez",
+            ],
+          },
+          {
+            id: 2,
+            question: "¿Qué se canta típicamente en Navidad?",
+            options: ["Villancicos", "Flamencos", "Rap", "Pop"],
+          },
+          {
+            id: 3,
+            question: "Aprender de alguien cercano en la niñez puede llevar a:",
+            options: [
+              "No cambiar nunca",
+              "Ser indiferente",
+              "Perder la memoria",
+              "Imitar comportamientos cuando creces",
+            ],
+          },
+          {
+            id: 4,
+            question: "¿Cómo se llama el actual presidente de España?",
+            options: [
+              "Pedro Sánchez",
+              "Mariano Rajoy",
+              "Aznar",
+              "Felipe González",
+            ],
+          },
+          {
+            id: 5,
+            question:
+              "Continúa la canción: 'Por eso esperaba con la carita empapada a que llegaras con':",
+            options: ["Rosas", "Girasoles", "Tulipanes", "Nomeolvides"],
+          },
+          {
+            id: 6,
+            question: "¿Qué busca la economía circular?",
+            options: [
+              "Consumir sin límites",
+              "Reutilizar recursos",
+              "Generar más residuos",
+              "Usar solo recursos no renovables",
+            ],
+          },
+          {
+            id: 7,
+            question:
+              "¿Cómo se llama el cuadro de Velázquez donde se autorretrató?",
+            options: [
+              "El Triunfo de Baco",
+              "Venus del Espejo",
+              "Las Meninas",
+              "Inocencio X",
+            ],
+          },
+          {
+            id: 8,
+            question:
+              "¿Cómo se llama el expresidente de España que gobernó de 1996 a 2004?",
+            options: [
+              "Mariano Rajoy",
+              "Mario Rajoy",
+              "Jose Antonio Aznar",
+              "José María Aznar",
+            ],
+          },
+          {
+            id: 9,
+            question: "¿Cuál es considerado el séptimo arte?",
+            options: ["Arquitectura", "Pintura", "Cine", "Literatura"],
+          },
+          {
+            id: 10,
+            question:
+              "¿Cuál de estas películas musicales de los años 70 cuenta la historia de una niña huérfana pelirroja que vive en un orfanato y sueña con encontrar a su familia?",
+            options: ["Matilda", "Elena", "Annie", "Alicia", "Alba"],
+          },
+          {
+            id: 11,
+            question: "¿Qué dice el efecto mariposa?",
+            options: [
+              "Pequeños cambios pueden causar grandes consecuencias",
+              "Todo sucede por casualidad",
+              "El clima siempre es predecible",
+              "Las mariposas controlan el tiempo",
+            ],
+          },
+          {
+            id: 12,
+            question:
+              "¿Qué frase completa correctamente el juego de palabras: 'Melo es un elefantito que nació prematuro, y su mamá elefante no lo quiso:'",
+            options: ["Amamantar", "Acelerar", "Amar", "Alimentar"],
+          },
+          {
+            id: 13,
+            question:
+              "La canción 'Tribu Comanche' de Zapato Veloz es muy popular en:",
+            options: [
+              "Conciertos de rock",
+              "Clases de historia",
+              "Festivales de cine",
+              "Ferias y fiestas populares",
+            ],
+          },
+          {
+            id: 14,
+            question: "¿Cómo se llama el vecinito bigotudo de Los Simpson?",
+            options: ["Clancy", "Ned", "Apu", "Max"],
+          },
+          {
+            id: 15,
+            question:
+              "¿Qué valor político podría ser compartido tanto por la izquierda como por la derecha?",
+            options: [
+              "Redistribución de la riqueza",
+              "Liberación del mercado",
+              "Justicia",
+              "Propiedad privada",
+            ],
+          },
+          {
+            id: 16,
+            question:
+              "Según la canción de Daddy Yankee de 2004: ¿qué es lo que le gusta a ella?",
+            options: ["El gasoil", "El petróleo", "El aceite", "La gasolina"],
+          },
+          {
+            id: 17,
+            question: "¿Quién fue Mozart?",
+            options: [
+              "Pintor famoso",
+              "Compositor prodigio",
+              "Escritor alemán",
+              "Científico del siglo XVIII",
+            ],
+          },
+          {
+            id: 18,
+            question:
+              "¿Cómo se llama el concurso donde las personas muestran sus talentos en un escenario?",
+            options: [
+              "Masterchef",
+              "Got Talent",
+              "Supervivientes",
+              "Gran Hermano",
+            ],
+          },
+          {
+            id: 19,
+            question:
+              "En la película de El Mago de Oz, ¿de qué color era el camino que tenían que seguir?",
+            options: ["Azul", "Verde", "Amarillo", "Rosa"],
+          },
+          {
+            id: 20,
+            question:
+              "¿Quién es el narrador/presentador del programa 'Crims' de TV3?",
+            options: [
+              "Carles Porta",
+              "Josep Lluis Trapero",
+              "Sherlock Holmes",
+              "Kevin Sama",
+            ],
+          },
+          {
+            id: 21,
+            question:
+              "Continúa la canción de los teléfonos de juguetes de antes: 'Ay, ay, ay, I'm your little...'",
+            options: ["Blackfly", "Dragonfly", "Barfly", "Butterfly"],
+          },
+          {
+            id: 22,
+            question: "¿Cuál es la media de esperanza de vida en España?",
+            options: ["70", "75", "80", "85"],
+          },
+          {
+            id: 23,
+            question:
+              "¿Qué famosa artista regrabó sus discos para recuperar control de sus másters?",
+            options: ["Taylor Swift", "Beyoncé", "Kanye West", "Shakira"],
+          },
+          {
+            id: 24,
+            question: "¿Quién canta 'Never Gonna Give You Up'?",
+            options: ["Michael Jackson", "Rick Astley", "Prince", "Avicii"],
+          },
+          {
+            id: 25,
+            question: "Continúa la canción: 'Jingle Bells, Jingle Bells'",
+            options: [
+              "Ring through the night!",
+              "Jingle all the way!",
+              "Time to sleigh!",
+              "Sound so bright",
+            ],
+          },
+        ],
+        resolves: [
+          1, 0, 3, 0, 0, 1, 2, 3, 2, 2, 0, 0, 3, 1, 2, 3, 1, 1, 2, 0, 3, 3, 0,
+          1, 1,
+        ], // completar con el índice correcto de cada respuesta
+        surprises: [
+          "clOCFKak1_c",
+          "BqpSODRr2v8",
+          "9ZEcMDAo2Ao",
+          "FAOdQH4ehbc",
+          "PtarWS2Tv9o",
+          "Lc4-2cVKxp0",
+          "Il6p2-40-F0",
+          "bF_zp-fxahE",
+          "EmnSm_d2ll4",
+          "LH6MstVxehQ",
+          "YiztA4Sz6pE",
+          "-BsbiYbmQNU",
+          "GkNNU5L9l_M",
+          "hbUBQJXdi8Q",
+          "DgFdq5kT95M",
+          "T_wnM3le64M",
+          "DU8eKCH-EM8",
+          "ikhQVNyZIRw",
+          "vI0nnaOSKr8",
+          "iBE9rGE6AKk",
+          "QzcvRDWgRIE",
+          "uYYRAPBbr_w",
+          "YmaLdu9LKg0",
+          "oT3mCybbhf0",
+          "oielblzKmCk",
+        ],
+      };
     </script>
     <script src="../index.js"></script>
-</body>
-
+  </body>
 </html>

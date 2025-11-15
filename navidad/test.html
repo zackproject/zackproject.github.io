@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test</title>
-    <meta name="robots" content="noindex, nofollow">
-</head>
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
 
-<body>
+  <body>
     <h1>Sorpresas</h1>
     <h2>Junior</h2>
     <div id="junior"></div>
@@ -17,38 +16,113 @@
     <h2>Otaku</h2>
     <div id="otaku"></div>
     <script>
+      let seniorList = [
+        "clOCFKak1_c",
+        "BqpSODRr2v8",
+        "9ZEcMDAo2Ao",
+        "FAOdQH4ehbc",
+        "PtarWS2Tv9o",
+        "Lc4-2cVKxp0",
+        "Il6p2-40-F0",
+        "bF_zp-fxahE",
+        "EmnSm_d2ll4",
+        "LH6MstVxehQ",
+        "YiztA4Sz6pE",
+        "-BsbiYbmQNU",
+        "GkNNU5L9l_M",
+        "hbUBQJXdi8Q",
+        "DgFdq5kT95M",
+        "T_wnM3le64M",
+        "DU8eKCH-EM8",
+        "ikhQVNyZIRw",
+        "vI0nnaOSKr8",
+        "iBE9rGE6AKk",
+        "QzcvRDWgRIE",
+        "uYYRAPBbr_w",
+        "YmaLdu9LKg0",
+        "oT3mCybbhf0",
+        "oielblzKmCk",
+      ];
+      let otakuList = [
+        "msGQOO6f3h0",
+        "JD_zkczJBkM",
+        "g8hIjOoddnM",
+        "A8DI6DF4r3Q",
+        "DAAsjzd-JQ8",
+        "LsqFoKwIJqw",
+        "Lvc1_3pNcTM",
+        "vS1ZohQziGY",
+        "Y5UsPxHGoxk",
+        "m2kwfV_gN5Q",
+        "LNdQgh4OR3k",
+        "aSh7XCKGAoE",
+        "Ufa7nQoWlGg",
+        "VHwYfjPWG2M",
+        "x1FV6IrjZCY",
+        "CewzOF4SHak",
+        "dv3_5XaSIXI",
+        "AE4b9jO1uB4",
+        "XXEfNA-ofp8",
+        "l1HeItO98FI",
+        "3owSo80ItYM",
+        "fhzKLBZJC3w",
+        "yQEUGxngQN4",
+        "5mfDzBeeBSI",
+        "bltVXVCuzOc",
+      ];
+      let juniorList = [
+        "5AfQeemKy_w",
+        "SN2cQt95iT8",
+        "KZoipAb2fo4",
+        "LDU_Txk06tM",
+        "Iik0py8C40A",
+        "MFCD2cahGoA",
+        "TkG_XOj18EU",
+        "TGQpNhA4bCY",
+        "JNSs_17F9GM",
+        "Eq0J2W7vkDQ",
+        "X8WEMtDqyZg",
+        "Tda5u5JNRko",
+        "VxOhbMG2jJ0",
+        "D4Dnm6dkOVI",
+        "q1A7ardAe4o",
+        "SLgqxChD3TQ",
+        "n8JF_VfbSFA",
+        "VZzSBv6tXMw",
+        "Hrph2EW9VjY",
+        "qdlt_nbUc60",
+        "g5_NVwmNhhQ",
+        "QvsQ9hYKq7c",
+        "cPG8azvS0jk",
+        "LYdG2w8jbws",
+        "kGSimFXar-Y",
+      ];
 
-        let seniorList = [ "mtv-LQTemMk","hULDmFNFhh4", "VCPLZjU0MLI", "WrXDJWRtmDE", "UaMBtjxvuMA", "0o268IlcLbY", "ZbQZcZyxKf4", "mLRUK4HC0SU", "EehdIcypknY", "xYIOgB4RRvI", "rL9blMBJa54", "Zcc4_-rQA64", "rqkBPTKWS68", "PrkczcYto4w", "SAmqYjM_v2w", "69qKUoGhoQo", "gOv8xA4p9dI", "ROrFUvCMU5o", "yuPSXBZYS54", "lpCoy_syMsg", "zqRwStq8zDI", "dmUIt6DvGkc", "E5FXdoO6PNs", "QUw4G1nMa6c"];
-        let otakuList = [ "3uPm3g5oqKY", "vQbYvjmfbr4", "fs_mH4QnAe4", "TXvwdNM_43I", "tHW0N0_sGk8", "zf8hXUUkVOs", "o-Qu8-ZGL14", "TS10AEqqfTg", "_NXrTujMP50", "r0xOGoJ8JNI", "LkZiRHrZpQw", "vVaqXLcNvIM", "S6TnIh2M6Pw", "1Eb7RAW0oYU", "x-J7Jw_9Sbo", "N0eLjSPvy88", "PeVkUcA3p4A", "Osu0Tb3MpRQ", "7o4FQuhCpy4", "jzi6RNVEOtA", "lty-2iLQy9c", "R4Vn5nfd0Fk", "CKEMNlXgvI0", "eJZ-ZMwuqpo"];
-        let juniorList = ["otPU_gXSCjY", "K4K3wn9k7vk", "k85mRPqvMbE", "1RYuBFyPGms", "p7mpr5qyB3o", "kAdisqDpdhg", "wVL0ovnq6O4", "w7w59Zp8bEM", "-1rQp8jxTbQ", "nmh0xyN44uk", "z3peKAQIR50", "Wkrs11bLvpo", "bF86ZTNOLWg", "dhsy6epaJGs", "Eq0J2W7vkDQ", "rwOuv0SgH2c", "CwGfMgFWcT4", "0pJU3jm0zkI", "8N_tupPBtWQ", "TQjHizA2pc0", "hi1WyEi8qiA", "uCzUsX7IoF4", "2-VTUyI3w7U", "RBCC_JGWEPo"];
+      const junior = document.getElementById("junior");
+      const senior = document.getElementById("senior");
+      const otaku = document.getElementById("otaku");
 
-        const junior = document.getElementById("junior");
-        const senior = document.getElementById("senior");
-        const otaku = document.getElementById("otaku");
-
-
-        seniorList.forEach((e, i) => {
-            const img = document.createElement("img");
-            img.src = `http://i3.ytimg.com/vi/${e}/mqdefault.jpg`;
-            img.alt = "Senior " + (i + 1);
-            img.title = "Senior " + (i + 1);
-            senior.appendChild(img);
-        });
-        juniorList.forEach((e, i) => {
-            const img = document.createElement("img");
-            img.src = `http://i3.ytimg.com/vi/${e}/mqdefault.jpg`;
-            img.alt = "Junior " + (i + 1);
-            img.title = "Junior " + (i + 1);
-            junior.appendChild(img);
-        });
-        otakuList.forEach((e, i) => {
-            const img = document.createElement("img");
-            img.src = `http://i3.ytimg.com/vi/${e}/mqdefault.jpg`;
-            img.alt = "Otaku " + (i + 1);
-            img.title = "Otaku " + (i + 1);
-            otaku.appendChild(img);
-        });
+      seniorList.forEach((e, i) => {
+        const img = document.createElement("img");
+        img.src = `http://i3.ytimg.com/vi/${e}/mqdefault.jpg`;
+        img.alt = "Senior " + (i + 1);
+        img.title = "Senior " + (i + 1);
+        senior.appendChild(img);
+      });
+      juniorList.forEach((e, i) => {
+        const img = document.createElement("img");
+        img.src = `http://i3.ytimg.com/vi/${e}/mqdefault.jpg`;
+        img.alt = "Junior " + (i + 1);
+        img.title = "Junior " + (i + 1);
+        junior.appendChild(img);
+      });
+      otakuList.forEach((e, i) => {
+        const img = document.createElement("img");
+        img.src = `http://i3.ytimg.com/vi/${e}/mqdefault.jpg`;
+        img.alt = "Otaku " + (i + 1);
+        img.title = "Otaku " + (i + 1);
+        otaku.appendChild(img);
+      });
     </script>
-</body>
-
+  </body>
 </html>
