@@ -106,8 +106,6 @@ let tecles = {
   188: notesPiano[45],
   190: notesPiano[46],
   189: notesPiano[47],
-
-
 };
 let textoDisponibles = [
   "C2,C2# D2b,D2,D2# E2b,E2,F2,F2# G2b,G2,G2# A2b,A2,A2# B2b,B2,C3,C3# D3b,D3,D3# E3b,E3,F3,F3# G3b,G3,G3# A3b,A3,A3# B3b,B3,C4,C4# D4b,D4,D4# E4b,E4,F4,F4# G4b,G4,G4# A4b,A4,A4# B4b,B4,C5,C5# D5b,D5,D5# E5b,E5,F5,F5# G5b,G5,G5# A5b,A5,A5# B5b,B5".split(
@@ -221,6 +219,7 @@ class Piano {
   }
 
   getActualNote() {
+    if (!this.cancionImportada) return null;
     return this.cancionImportada[this.notaActual];
   }
 
@@ -234,15 +233,16 @@ class Piano {
     let total = "";
     for (let i = 0; i < textoList.length; i++) {
       //Cada tecla s'ha de moure el segons l'escala 'teclado'
-      total += teclado[teclado.indexOf(textoList[i]) + this.tranportePieza];
+      const idx =
+        (teclado.indexOf(textoList[i]) + this.tranportePieza) % teclado.length;
+      total += teclado[idx];
     }
     return total;
   }
 
   isFourthFirstNotes() {
     return (
-      player.notaActual > 4 ||
-      player.notaActual == player.cancionImportada.length
+      this.notaActual > 4 || this.notaActual == this.cancionImportada.length
     );
   }
 
@@ -320,8 +320,11 @@ class Piano {
           this.cancionImportada[i] = notesPiano[index + 1].sound;
         } else {
           // if found and arrayObject is a chord
-          for (let i = 0; i < array.length; i++) {
-            const element = array[i];
+          // si es un acorde
+          for (let j = 0; j < this.cancionImportada[i].length; j++) {
+            const sound = this.cancionImportada[i][j];
+            const index = notesPiano.findIndex((n) => n.sound === sound);
+            this.cancionImportada[i][j] = notesPiano[index + 1].sound;
           }
         }
       }
@@ -339,10 +342,18 @@ class Piano {
     let maxNote = notesPiano[0].sound;
     if (!this.cancionImportada.includes(maxNote)) {
       for (let i = 0; i < this.cancionImportada.length; i++) {
-        const index = notesPiano.findIndex(
-          (note) => note.sound === this.cancionImportada[i]
-        );
-        this.cancionImportada[i] = notesPiano[index - 1].sound;
+        if (typeof this.cancionImportada[i] !== "object") {
+          const index = notesPiano.findIndex(
+            (n) => n.sound === this.cancionImportada[i]
+          );
+          this.cancionImportada[i] = notesPiano[index - 1].sound;
+        } else {
+          for (let j = 0; j < this.cancionImportada[i].length; j++) {
+            const sound = this.cancionImportada[i][j];
+            const index = notesPiano.findIndex((n) => n.sound === sound);
+            this.cancionImportada[i][j] = notesPiano[index - 1].sound;
+          }
+        }
       }
       this.tranportePieza--;
     }
