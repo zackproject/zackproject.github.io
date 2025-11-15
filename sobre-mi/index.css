@@ -10,6 +10,17 @@ body {
   margin: 0;
   padding: 0px;
 }
+.underline-link {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  color: #c9d1d9;
+  transition: all 0.5s;
+  white-space: nowrap;
+  &&:hover {
+    color: #58a6ff;
+    text-underline-offset: 2px;
+  }
+}
 
 header {
   position: fixed;
@@ -579,7 +590,7 @@ h3 {
 
   span {
     position: absolute;
-    bottom: -20px;
+    bottom: -30px;
     left: -10px;
     font-size: 14px;
     text-align: center;
