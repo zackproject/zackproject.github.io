@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel - Juego Código Secreto</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="../icopz.ico" />
   </head>
-  <body>
+  <body onload="generatePanel()">
     <div class="buttons">
-      <button>Crear nuevo</button>
-      <button>Compartir</button>
+      <button onclick="createPanel()">Crear nuevo</button>
+      <button onclick="sharePanel(event)">Ver QR</button>
     </div>
-    <div class="container">
+    <div id="img-container">
+      <img id="img-qr" src="nothing" alt="" />
+    </div>
+    <div id="container">
       <div class="panel">
         <div class="guide top-guide"></div>
         <div class="guide left-guide"></div>
