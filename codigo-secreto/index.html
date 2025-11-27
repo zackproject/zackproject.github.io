@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" href="../icopz.ico" />
   </head>
-  <body onload="generatePanel()">
+  <body>
     <div class="buttons">
-      <button onclick="createPanel()">Crear nuevo</button>
-      <button id="qr-btn" onclick="sharePanel(event)">Ver QR</button>
+      <a id="url-panel" href="">Crear nuevo panel</a>
     </div>
     <div id="img-container">
       <img id="img-qr" src="nothing" alt="" />
@@ -47,6 +46,9 @@
         <div class="panel-item"></div>
         <div class="panel-item"></div>
       </div>
+    </div>
+    <div class="buttons" style="margin-top: 100px">
+      <button id="qr-btn" onclick="btnSharePanel(event)">Ver QR</button>
     </div>
     <script src="index.js"></script>
   </body>
