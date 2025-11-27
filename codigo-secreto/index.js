@@ -10,8 +10,28 @@ const DEAD = "d";
 const imgQR = document.getElementById("img-qr");
 const imgContainer = document.getElementById("img-container");
 
+const PARAMID = "panel";
+const docSearch = document.location.search;
+const CONTENT_ID = new URLSearchParams(docSearch).get(PARAMID);
+
 const containerPanel = document.getElementById("container");
 let generating = false; // evita reentradas
+
+if (CONTENT_ID) {
+  // cargar panel desde URL
+  startPlayer = parseInt(CONTENT_ID.charAt(0));
+  const contentOptions = CONTENT_ID.slice(1).split("");
+  if (contentOptions.length === 25) {
+    allOptions = contentOptions;
+    generatePanel();
+  } else {
+    alert("El panel en la URL no es válido.");
+    generatePanel();
+  }
+} else {
+  document.getElementById("container").style.display = "none";
+  document.getElementById("qr-btn").style.display = "none";
+}
 
 function createPanel() {
   if (generating) return; // ya se está generando
@@ -44,39 +64,40 @@ function disortArray(array) {
 }
 
 function generatePanel() {
-  generating = true;
-  startPlayer = randInt(0, 1);
-  allOptions = [];
-
   const tds = Array.from(document.getElementsByClassName("panel-item"));
   const needed = tds.length;
+  generating = true;
+  if (!CONTENT_ID) {
+    startPlayer = randInt(0, 1);
+    allOptions = [];
 
-  // Pool base
-  for (let i = 0; i < maxPieces; i++) {
-    allOptions.push(BLUE, RED);
+    // Pool base
+    for (let i = 0; i < maxPieces; i++) {
+      allOptions.push(BLUE, RED);
+    }
+
+    // Extra según jugador inicial
+    allOptions.push(startPlayer === 0 ? BLUE : RED);
+
+    // Aguas
+    for (let i = 0; i < maxWater; i++) {
+      allOptions.push(WATER);
+    }
+
+    // Muerto
+    allOptions.push(DEAD);
+
+    // Ajustar longitud para que coincida con el panel
+    if (allOptions.length > needed) {
+      // quitar sobrantes (pop) — puedes cambiar la lógica si prefieres eliminar otro tipo
+      while (allOptions.length > needed) allOptions.pop();
+    } else if (allOptions.length < needed) {
+      // rellenar con WATER (o con otro tipo que prefieras)
+      while (allOptions.length < needed) allOptions.push(WATER);
+    }
+
+    disortArray(allOptions);
   }
-
-  // Extra según jugador inicial
-  allOptions.push(startPlayer === 0 ? BLUE : RED);
-
-  // Aguas
-  for (let i = 0; i < maxWater; i++) {
-    allOptions.push(WATER);
-  }
-
-  // Muerto
-  allOptions.push(DEAD);
-
-  // Ajustar longitud para que coincida con el panel
-  if (allOptions.length > needed) {
-    // quitar sobrantes (pop) — puedes cambiar la lógica si prefieres eliminar otro tipo
-    while (allOptions.length > needed) allOptions.pop();
-  } else if (allOptions.length < needed) {
-    // rellenar con WATER (o con otro tipo que prefieras)
-    while (allOptions.length < needed) allOptions.push(WATER);
-  }
-
-  disortArray(allOptions);
   const qrParent = "https://api.qrserver.com/v1/create-qr-code/?data=";
   const urlParent = "https://www.zksama.com/codigo-secreto/?panel=";
   url = urlParent + startPlayer + allOptions.join("");
