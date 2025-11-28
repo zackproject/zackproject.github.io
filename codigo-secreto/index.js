@@ -29,7 +29,7 @@ class PanelOption {
 
   getUrlQR() {
     return (
-      qrParent + this.urlParent  + this.startPlayer + this.allOptions.join("")
+      this.urlQR + this.urlParent + this.startPlayer + this.allOptions.join("")
     );
   }
 
@@ -73,12 +73,11 @@ class PanelOption {
 const qrParent = "https://api.qrserver.com/v1/create-qr-code/?data=";
 
 let player = new PanelOption(
-  (urlParent =
-    "https://www.zksama.com/codigo-secreto/?panel="), // zksama.com/codigo-secreto/?panel=
-  (urlQR = qrParent),
-  (startPlayer = randInt(0, 1)),
-  (maxPieces = 8),
-  (maxWater = 7)
+  "https://www.zksama.com/codigo-secreto/?panel=",
+  qrParent,
+  randInt(0, 1),
+  8,
+  7
 );
 
 if (CONTENT_ID) {
@@ -116,7 +115,7 @@ function randInt(min, max) {
 function generateUrl() {
   // const urlParent = "https://www.zksama.com/codigo-secreto/?panel=";
 
-  url = urlParent + player.startPlayer + player.allOptions.join("");
+  url = player.urlParent + player.startPlayer + player.allOptions.join("");
   console.log(url);
   return encodeURIComponent(url) + "&size=400";
 }
