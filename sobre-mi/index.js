@@ -1,3 +1,12 @@
+const PARAMID = "app";
+const docSearch = document.location.search;
+const CONTENT_ID = new URLSearchParams(docSearch).get(PARAMID);
+
+// si quieres que el parámetro sea ?panel=mirotativo
+if (CONTENT_ID === "mirotativo") {
+  document.getElementById("mi-rotativo").style.display = "flex";
+}
+
 function showProject() {
   const hideProject = document.getElementsByClassName("hide-project");
   for (let i = 0; i < hideProject.length; i++) {
@@ -171,5 +180,7 @@ setInterval(() => {
     parts.push(`${hours} horas y ${minutes} minutos`);
   }
 
-  document.getElementById("cuentatras").textContent = `Empieza en ${parts.join(", ")}.`;
+  document.getElementById("cuentatras").textContent = `Empieza en ${parts.join(
+    ", "
+  )}.`;
 }, 1000);
