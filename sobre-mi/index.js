@@ -111,7 +111,7 @@ function preloadAudio(preloads) {
     aud.preload = "auto";
   }
 }
-
+/*
 const startEvent = new Date(2025, 11, 1, 0, 0); // 1 de diciembre de 2025 a las 00:00
 
 setInterval(() => {
@@ -184,3 +184,4 @@ setInterval(() => {
     ", "
   )}.`;
 }, 1000);
+*/

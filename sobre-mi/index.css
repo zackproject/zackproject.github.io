@@ -50,7 +50,7 @@ nav {
     }
   }
 }
-
+/*
 #navidad25 {
   display: grid;
   background-color: rgba(0, 151, 28, 0.697);
@@ -94,6 +94,7 @@ nav {
     color: white;
   }
 }
+*/
 aside {
   display: flex;
   flex-wrap: wrap;
