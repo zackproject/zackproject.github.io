@@ -14,6 +14,8 @@
       body {
         font-family: Arial, sans-serif;
         margin: 20px;
+        margin: 0 auto;
+        max-width: 900px;
       }
       h1 {
         font-size: 1.5em;
@@ -74,7 +76,7 @@
             const main = document.getElementById("main");
             main.innerHTML = "";
 
-            for (let i = rows.length - 1; i >= 0; i--) {
+            for (let i = rows.length - 1; i > 0; i--) {
               const row = rows[i];
 
               const div = document.createElement("article");
@@ -92,12 +94,14 @@
               for (let i = 6; i < row.length; i++) {
                 const element = row[i];
                 if (element && element.trim() !== "") {
-                  acum += element + " ";
+                  acum += element + ", ";
                 }
               }
               console.log(acum);
               acum = acum.replace(/"/g, "");
               acum = acum.replace("<br><br>", "<br>");
+              acum = acum.replace(", ,", "");
+              acum = acum.replace(".,", ".");
 
               pNote.innerHTML = acum;
 
